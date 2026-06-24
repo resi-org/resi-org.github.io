@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RESI is coming soon.">
-  <title>RESI</title>
+  <meta name="description" content="resi.org is coming soon.">
+  <title>resi.org</title>
   <style>
     :root {
       color-scheme: light dark;
       --bg: #f7f5f0;
       --ink: #161a1d;
       --muted: #5d646b;
-      --line: #d9d2c5;
-      --accent: #0f766e;
-      --accent-strong: #0b4f4a;
+      --accent: #0b4f4a;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -21,9 +19,7 @@
         --bg: #0f1314;
         --ink: #f2f0ea;
         --muted: #aab3b5;
-        --line: #2a3436;
-        --accent: #5eead4;
-        --accent-strong: #99f6e4;
+        --accent: #99f6e4;
       }
     }
 
@@ -47,56 +43,39 @@
     main {
       min-height: 100vh;
       display: grid;
-      align-items: center;
+      place-items: center;
       padding: 48px 24px;
+      text-align: center;
     }
 
     .content {
-      width: min(100%, 720px);
-      margin: 0 auto;
+      width: min(100%, 560px);
     }
 
-    .label {
-      margin: 0 0 28px;
-      color: var(--accent-strong);
-      font-size: 14px;
+    .site {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0;
-      text-transform: uppercase;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(56px, 13vw, 128px);
-      line-height: 0.95;
-      letter-spacing: 0;
-      font-weight: 780;
-    }
-
-    .rule {
-      width: 100%;
-      height: 1px;
-      margin: 36px 0;
-      background: var(--line);
-    }
-
-    .status {
-      margin: 0 0 14px;
-      font-size: clamp(24px, 5vw, 44px);
-      line-height: 1.12;
+      margin: 0 0 18px;
+      font-size: clamp(32px, 7vw, 56px);
+      line-height: 1.08;
       letter-spacing: 0;
       font-weight: 680;
     }
 
     .contact {
-      max-width: 560px;
       margin: 0;
       color: var(--muted);
       font-size: 18px;
     }
 
     a {
-      color: var(--accent-strong);
+      color: var(--accent);
       text-decoration-thickness: 1px;
       text-underline-offset: 4px;
     }
@@ -109,12 +88,10 @@
 </head>
 <body>
   <main>
-    <section class="content" aria-label="RESI coming soon">
-      <p class="label">resi.org</p>
-      <h1>RESI</h1>
-      <div class="rule" aria-hidden="true"></div>
-      <p class="status">Coming soon.</p>
-      <p class="contact">For inquiries, contact <a href="mailto:info@resi.org">info@resi.org</a>.</p>
+    <section class="content" aria-label="resi.org coming soon">
+      <p class="site">resi.org</p>
+      <h1>Coming soon.</h1>
+      <p class="contact">Contact <a href="mailto:info@resi.org">info@resi.org</a>.</p>
     </section>
   </main>
 </body>
