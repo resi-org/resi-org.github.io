@@ -149,8 +149,35 @@
 
     .person-bio { margin-bottom: 4px; }
 
+    .publication-disclosure { margin: 0; }
+
+    .publication-disclosure summary {
+      display: inline-block;
+      color: #1155cc;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .publication-disclosure summary::-webkit-details-marker { display: none; }
+
+    .publication-disclosure summary::after {
+      display: inline-block;
+      margin-left: 4px;
+      content: "\25BE";
+      text-decoration: none;
+      transition: transform .15s ease;
+    }
+
+    .publication-disclosure[open] summary::after { transform: rotate(180deg); }
+    .publication-disclosure summary:hover { color: #0b3d91; }
+
+    .publication-disclosure summary:focus-visible {
+      outline: 2px solid #1a73e8;
+      outline-offset: 2px;
+    }
+
     .publications {
-      margin: 0;
+      margin: 4px 0 0;
       padding-left: 0;
       list-style: none;
     }
@@ -237,36 +264,45 @@
           <td class="photo-cell"><img class="portrait" src="assets/people/shafi-goldwasser.jpg" alt="Shafi Goldwasser"></td>
           <td>
             <div class="person-name"><a href="https://en.wikipedia.org/wiki/Shafi_Goldwasser">Shafi Goldwasser</a></div>
-            <p class="person-bio">Inventor of zero-knowledge proofs and other seminal strands of modern cryptography. Turing Award winner. Selected publications:</p>
-            <ul class="publications">
-              <li>S. Ball, G. Gluch, S. Goldwasser, F. Kreuter, O. Reingold, G. Rothblum, Computational Barriers to Filtering for AI Alignment. ICLR 2026</li>
-              <li>N. Amit, S. Goldwasser, O. Paradise, G. Rothblum. Models That Prove Their Own Correctness. ICML 2024.</li>
-              <li>S. Goldwasser, M. Kim, V. Vaikuntanathan, and O. Zamir. Planting Undetectable Backdoors in Machine Learning Models. FOCS 2022.</li>
-            </ul>
+            <p class="person-bio">Inventor of zero-knowledge proofs and other seminal strands of modern cryptography. Turing Award winner.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>S. Ball, G. Gluch, S. Goldwasser, F. Kreuter, O. Reingold, G. Rothblum, Computational Barriers to Filtering for AI Alignment. ICLR 2026</li>
+                <li>N. Amit, S. Goldwasser, O. Paradise, G. Rothblum. Models That Prove Their Own Correctness. ICML 2024.</li>
+                <li>S. Goldwasser, M. Kim, V. Vaikuntanathan, and O. Zamir. Planting Undetectable Backdoors in Machine Learning Models. FOCS 2022.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/adam-tauman-kalai.jpg" alt="Adam Tauman Kalai"></td>
           <td>
             <div class="person-name"><a href="https://en.wikipedia.org/wiki/Adam_Tauman_Kalai">Adam Tauman Kalai</a></div>
-            <p class="person-bio">AI safety and ethics researcher coming from 2.5 years at OpenAI. Works in learning theory, game theory, and fairness, and bridges frontier-AI practice with theory. Majulook Prize winner. Selected publications:</p>
-            <ul class="publications">
-              <li>A. Kalai, O. Nachum, S. Vempala, and E. Zhang. Evaluating large language models for accuracy incentivizes hallucinations. <em>Nature</em> 2026.</li>
-              <li>A. Kalai, Y. Tauman Kalai, and O. Zamir. Consensus Sampling for Safer Generative AI. IASEAI 2026.</li>
-              <li>T. Eloundou, A. Beutel, D. Robinson, K. Gu-Lemberg, A. Brakman, P. Mishkin, M. Shah, J. Heidecke, L. Weng, and A. Kalai. First-Person Fairness in Chatbots. ICLR 2025.</li>
-            </ul>
+            <p class="person-bio">AI safety and ethics researcher coming from 2.5 years at OpenAI. Works in learning theory, game theory, and fairness, and bridges frontier-AI practice with theory. Majulook Prize winner.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>A. Kalai, O. Nachum, S. Vempala, and E. Zhang. Evaluating large language models for accuracy incentivizes hallucinations. <em>Nature</em> 2026.</li>
+                <li>A. Kalai, Y. Tauman Kalai, and O. Zamir. Consensus Sampling for Safer Generative AI. IASEAI 2026.</li>
+                <li>T. Eloundou, A. Beutel, D. Robinson, K. Gu-Lemberg, A. Brakman, P. Mishkin, M. Shah, J. Heidecke, L. Weng, and A. Kalai. First-Person Fairness in Chatbots. ICLR 2025.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/vinod-vaikuntanathan.jpg" alt="Vinod Vaikuntanathan"></td>
           <td>
             <div class="person-name"><a href="https://en.wikipedia.org/wiki/Vinod_Vaikuntanathan">Vinod Vaikuntanathan</a></div>
-            <p class="person-bio">MIT cryptographer working on fully homomorphic encryption, lattice-based cryptography, and secure computation. Gödel Prize winner. Selected publications:</p>
-            <ul class="publications">
-              <li>V. Vaikuntanathan and O. Zamir. Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange. FOCS 2026.</li>
-              <li>S. Goldwasser, J. Shafer, N. Vafa, and V. Vaikuntanathan. Oblivious Defense in ML Models: Backdoor Removal without Detection. STOC 2025.</li>
-              <li>S. Goldwasser, M. Kim, V. Vaikuntanathan, and O. Zamir. Planting Undetectable Backdoors in Machine Learning Models. FOCS 2022.</li>
-            </ul>
+            <p class="person-bio">MIT cryptographer working on fully homomorphic encryption, lattice-based cryptography, and secure computation. Gödel Prize winner.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>V. Vaikuntanathan and O. Zamir. Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange. FOCS 2026.</li>
+                <li>S. Goldwasser, J. Shafer, N. Vafa, and V. Vaikuntanathan. Oblivious Defense in ML Models: Backdoor Removal without Detection. STOC 2025.</li>
+                <li>S. Goldwasser, M. Kim, V. Vaikuntanathan, and O. Zamir. Planting Undetectable Backdoors in Machine Learning Models. FOCS 2022.</li>
+              </ul>
+            </details>
           </td>
         </tr>
       </tbody>
@@ -279,22 +315,28 @@
           <td class="photo-cell"><img class="portrait" src="assets/people/ran-canetti.jpg" alt="Ran Canetti"></td>
           <td>
             <div class="person-name"><a href="https://www.bu.edu/cs/profiles/ran-canetti/">Ran Canetti</a></div>
-            <p class="person-bio">Boston University. Design, analysis, and composition of cryptographic protocols. Program obfuscation and applications. Selected publications:</p>
-            <ul class="publications">
-              <li>R. Canetti, S. Goldwasser, O. Zamir. Proofs of Ownership for Machine Learning Models. arXiv 2026.</li>
-              <li>R. Canetti, C. Chamon, E. Mucciolo, A. Ruckenstein. Towards program obfuscation via local mixing. TCC 2024.</li>
-            </ul>
+            <p class="person-bio">Boston University. Design, analysis, and composition of cryptographic protocols. Program obfuscation and applications.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>R. Canetti, S. Goldwasser, O. Zamir. Proofs of Ownership for Machine Learning Models. arXiv 2026.</li>
+                <li>R. Canetti, C. Chamon, E. Mucciolo, A. Ruckenstein. Towards program obfuscation via local mixing. TCC 2024.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/miranda-christ.jpg" alt="Miranda Christ"></td>
           <td>
             <div class="person-name"><a href="https://www.cs.columbia.edu/~mchrist/">Miranda Christ</a></div>
-            <p class="person-bio">MIT postdoc, PhD from Columbia. Works on practically motivated cryptography, ML, and watermarking for AI-generated content. Selected publications:</p>
-            <ul class="publications">
-              <li>M. Christ, N. Golowich, S. Gunn, A. Moitra, D. Wichs. Improved Pseudorandom Codes from Permuted Puzzles. STOC 2026.</li>
-              <li>M. Christ, S. Gunn. Pseudorandom Error-Correcting Codes. CRYPTO 2024.</li>
-            </ul>
+            <p class="person-bio">MIT postdoc, PhD from Columbia. Works on practically motivated cryptography, ML, and watermarking for AI-generated content.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>M. Christ, N. Golowich, S. Gunn, A. Moitra, D. Wichs. Improved Pseudorandom Codes from Permuted Puzzles. STOC 2026.</li>
+                <li>M. Christ, S. Gunn. Pseudorandom Error-Correcting Codes. CRYPTO 2024.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
@@ -305,66 +347,84 @@
           </td>
           <td>
             <div class="person-name"><a href="https://yannai.gonch.name/">Yannai A. Gonczarowski</a></div>
-            <p class="person-bio">Harvard economist and computer scientist working at the intersection of economic theory and theoretical computer science, including mechanism design and market design. ACM SIGecom Doctoral Dissertation Award winner. Selected publications:</p>
-            <ul class="publications">
-              <li>S. Fish, Y.A. Gonczarowski, R.I. Shorrer. Algorithmic Collusion by Large Language Models. EC 2026.</li>
-              <li>Y.A. Gonczarowski S.M. Weinberg. The Sample Complexity of Up-to-ε Multi-dimensional Revenue Maximization. FOCS 2018 / JACM 2021.</li>
-            </ul>
+            <p class="person-bio">Harvard economist and computer scientist working at the intersection of economic theory and theoretical computer science, including mechanism design and market design. ACM SIGecom Doctoral Dissertation Award winner.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>S. Fish, Y.A. Gonczarowski, R.I. Shorrer. Algorithmic Collusion by Large Language Models. EC 2026.</li>
+                <li>Y.A. Gonczarowski S.M. Weinberg. The Sample Complexity of Up-to-ε Multi-dimensional Revenue Maximization. FOCS 2018 / JACM 2021.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/sam-gunn.jpg" alt="Sam Gunn"></td>
           <td>
             <div class="person-name"><a href="https://people.eecs.berkeley.edu/~gunn/">Sam Gunn</a></div>
-            <p class="person-bio">PhD from UC Berkeley. Works on cryptography and foundations of AI. Selected publications:</p>
-            <ul class="publications">
-              <li>S. Gunn. How to sketch a learning algorithm. 2026.</li>
-              <li>S. Gunn, X. Zhao, D. Song. An Undetectable Watermark for Generative Image Models. ICLR 2025.</li>
-            </ul>
+            <p class="person-bio">PhD from UC Berkeley. Works on cryptography and foundations of AI.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>S. Gunn. How to sketch a learning algorithm. 2026.</li>
+                <li>S. Gunn, X. Zhao, D. Song. An Undetectable Watermark for Generative Image Models. ICLR 2025.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/yael-tauman-kalai.jpg" alt="Yael Tauman Kalai"></td>
           <td>
             <div class="person-name"><a href="https://en.wikipedia.org/wiki/Yael_Tauman_Kalai">Yael Tauman Kalai</a></div>
-            <p class="person-bio">MIT cryptographer and theoretical computer scientist. Works on verifiable delegation, interactive proofs, and cryptographic protocols. Winner of the ACM Prize in Computing. Selected publications:</p>
-            <ul class="publications">
-              <li>L. Chen, Y. Tauman Kalai, Z. Xi. How to Avoid Debate: Scalable AI Safety via Doubly-Efficient Interactive Proofs. ICML 2026.</li>
-              <li>S. Goldwasser, Y. Tauman Kalai, G. Rothblum. Delegating Computation: Interactive Proofs for Muggles. STOC 2008.</li>
-            </ul>
+            <p class="person-bio">MIT cryptographer and theoretical computer scientist. Works on verifiable delegation, interactive proofs, and cryptographic protocols. Winner of the ACM Prize in Computing.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>L. Chen, Y. Tauman Kalai, Z. Xi. How to Avoid Debate: Scalable AI Safety via Doubly-Efficient Interactive Proofs. ICML 2026.</li>
+                <li>S. Goldwasser, Y. Tauman Kalai, G. Rothblum. Delegating Computation: Interactive Proofs for Muggles. STOC 2008.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/noam-kolt.jpg" alt="Noam Kolt"></td>
           <td>
             <div class="person-name"><a href="https://www.noamkolt.com/">Noam Kolt</a></div>
-            <p class="person-bio">Assistant Professor at the Hebrew University Faculty of Law and School of Computer Science and Engineering. Selected publications:</p>
-            <ul class="publications">
-              <li>N. Kolt, Superintelligence and Law. Harvard Journal of Law &amp; Technology 2026.</li>
-              <li>N. Kolt et al., Legal Alignment for Safe and Ethical AI. TMLR 2026.</li>
-            </ul>
+            <p class="person-bio">Assistant Professor at the Hebrew University Faculty of Law and School of Computer Science and Engineering.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>N. Kolt, Superintelligence and Law. Harvard Journal of Law &amp; Technology 2026.</li>
+                <li>N. Kolt et al., Legal Alignment for Safe and Ethical AI. TMLR 2026.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/daniela-rus.jpg" alt="Daniela Rus"></td>
           <td>
             <div class="person-name"><a href="https://www.csail.mit.edu/person/daniela-rus">Daniela Rus</a></div>
-            <p class="person-bio">MIT roboticist and director of CSAIL working on autonomous systems, intelligence, and safe control and planning for embodied AI. MacArthur Fellow. Selected publications:</p>
-            <ul class="publications">
-              <li>W. Xiao, D. Rus, et al. BarrierNet: Differentiable Control Barrier Functions for Learning of Safe Robot Control. IEEE Transactions on Robotics 2023.</li>
-              <li>W. Xiao, J. Wang, C. Gan, R. Hasani, M. Lechner, and D. Rus. SafeDiffuser: Safe Planning with Diffusion Probabilistic Models. ICLR 2025.</li>
-            </ul>
+            <p class="person-bio">MIT roboticist and director of CSAIL working on autonomous systems, intelligence, and safe control and planning for embodied AI. MacArthur Fellow.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>W. Xiao, D. Rus, et al. BarrierNet: Differentiable Control Barrier Functions for Learning of Safe Robot Control. IEEE Transactions on Robotics 2023.</li>
+                <li>W. Xiao, J. Wang, C. Gan, R. Hasani, M. Lechner, and D. Rus. SafeDiffuser: Safe Planning with Diffusion Probabilistic Models. ICLR 2025.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/jonathan-shafer.jpg" alt="Jonathan Shafer"></td>
           <td>
             <div class="person-name"><a href="https://shaferjo.com/">Jonathan Shafer</a></div>
-            <p class="person-bio">MIT postdoc and incoming professor at the Weizmann Institute of Science, PhD from UC Berkeley. Works on learning theory and its connections to cryptography. Selected publications:</p>
-            <ul class="publications">
-              <li>Z. Chase, S. Hanneke, S. Moran, and J. Shafer. Optimal Mistake Bounds for Transductive Online Learning. NeurIPS 2025 (Best Paper Runner-Up).</li>
-              <li>S. Goldwasser, G. Rothblum, J. Shafer, and A. Yehudayoff. Interactive Proofs for Verifying Machine Learning. ITCS 2021.</li>
-            </ul>
+            <p class="person-bio">MIT postdoc and incoming professor at the Weizmann Institute of Science, PhD from UC Berkeley. Works on learning theory and its connections to cryptography.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>Z. Chase, S. Hanneke, S. Moran, and J. Shafer. Optimal Mistake Bounds for Transductive Online Learning. NeurIPS 2025 (Best Paper Runner-Up).</li>
+                <li>S. Goldwasser, G. Rothblum, J. Shafer, and A. Yehudayoff. Interactive Proofs for Verifying Machine Learning. ITCS 2021.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
@@ -375,11 +435,14 @@
           </td>
           <td>
             <div class="person-name"><a href="https://www.linkedin.com/in/yaron-singer-76ab6317/">Yaron Singer</a></div>
-            <p class="person-bio">CEO and co-founder of Frontier Security. Previously VP at Cisco, CEO and founder of AI Security startup Robust Intelligence (acquired by Cisco), and Harvard professor of Computer Science and Applied Mathematics. Works on AI in cybersecurity, AI security, adversarial robustness, and robust optimization. Sloan Fellow. Selected publications:</p>
-            <ul class="publications">
-              <li>P. Kassianik, B. Nelson, and Y. Singer. Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents. CAMLIS 2026.</li>
-              <li>A. Mehrotra, M. Zampetakis, P. Kassianik, B. Nelson, H. S. Anderson, Y. Singer, and A. Karbasi. Tree of Attacks: Jailbreaking Black-Box LLMs Automatically. NeurIPS 2024.</li>
-            </ul>
+            <p class="person-bio">CEO and co-founder of Frontier Security. Previously VP at Cisco, CEO and founder of AI Security startup Robust Intelligence (acquired by Cisco), and Harvard professor of Computer Science and Applied Mathematics. Works on AI in cybersecurity, AI security, adversarial robustness, and robust optimization. Sloan Fellow.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>P. Kassianik, B. Nelson, and Y. Singer. Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents. CAMLIS 2026.</li>
+                <li>A. Mehrotra, M. Zampetakis, P. Kassianik, B. Nelson, H. S. Anderson, Y. Singer, and A. Karbasi. Tree of Attacks: Jailbreaking Black-Box LLMs Automatically. NeurIPS 2024.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
@@ -390,44 +453,56 @@
           </td>
           <td>
             <div class="person-name"><a href="https://math.mit.edu/~drew/">Andrew V. Sutherland</a></div>
-            <p class="person-bio">MIT mathematician working in AI-assisted mathematical discovery, formal verification, large-scale mathematical databases, computational number theory, and arithmetic geometry. Selected publications:</p>
-            <ul class="publications">
-              <li>J. S. Ellenberg, C. S. Fraser-Taliente, T. R. Harvey, K. Srivastava, and A. V. Sutherland. Generative Modelling for Mathematical Discovery. Advances in Theoretical and Mathematical Physics 2025.</li>
-              <li>W. Sawin and A. V. Sutherland. Murmurations for Elliptic Curves Ordered by Height. 2025.</li>
-            </ul>
+            <p class="person-bio">MIT mathematician working in AI-assisted mathematical discovery, formal verification, large-scale mathematical databases, computational number theory, and arithmetic geometry.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>J. S. Ellenberg, C. S. Fraser-Taliente, T. R. Harvey, K. Srivastava, and A. V. Sutherland. Generative Modelling for Mathematical Discovery. Advances in Theoretical and Mathematical Physics 2025.</li>
+                <li>W. Sawin and A. V. Sutherland. Murmurations for Elliptic Curves Ordered by Height. 2025.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/mirac-suzgun.jpg" alt="Mirac Suzgun"></td>
           <td>
             <div class="person-name"><a href="https://sites.google.com/view/msuzgun">Mirac Suzgun</a></div>
-            <p class="person-bio">PhD candidate in CS at Stanford and JD from Stanford Law School. Works on LLM reasoning, safety, and factuality, with particular interests in understanding and mitigating hallucinations and evaluating AI systems deployed in high-stakes domains such as law and medicine. Selected publications:</p>
-            <ul class="publications">
-              <li>M. Suzgun, M. Yuksekgonul, F. Bianchi, D. Jurafsky, J. Zou. <em>Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory</em>. EACL 2026.</li>
-              <li>M. Suzgun, T. Gur, F. Bianchi, D.E. Ho, T. Icard, D. Jurafsky, J. Zou. <em>Language Models Cannot Reliably Distinguish Belief from Knowledge and Fact</em>. Nature Machine Intelligence 2025.</li>
-            </ul>
+            <p class="person-bio">PhD candidate in CS at Stanford and JD from Stanford Law School. Works on LLM reasoning, safety, and factuality, with particular interests in understanding and mitigating hallucinations and evaluating AI systems deployed in high-stakes domains such as law and medicine.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>M. Suzgun, M. Yuksekgonul, F. Bianchi, D. Jurafsky, J. Zou. <em>Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory</em>. EACL 2026.</li>
+                <li>M. Suzgun, T. Gur, F. Bianchi, D.E. Ho, T. Icard, D. Jurafsky, J. Zou. <em>Language Models Cannot Reliably Distinguish Belief from Knowledge and Fact</em>. Nature Machine Intelligence 2025.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/neekon-vafa.jpg" alt="Neekon J. Vafa"></td>
           <td>
             <div class="person-name"><a href="https://neekonvafa.com">Neekon J. Vafa</a></div>
-            <p class="person-bio">Junior Fellow of the Harvard Society of Fellows, PhD from MIT. Works on cryptography and its connections to statistics and trustworthy AI. Selected publications:</p>
-            <ul class="publications">
-              <li>A. Bogdanov, A. Rosen, N. Vafa. Statistically Undetectable Backdoors in Deep Neural Networks. ICML 2026.</li>
-              <li>A. Bogdanov, A. Rosen, N. Vafa, and V. Vaikuntanathan. Adaptive Robustness of Hypergrid Johnson-Lindenstrauss. STOC 2026.</li>
-            </ul>
+            <p class="person-bio">Junior Fellow of the Harvard Society of Fellows, PhD from MIT. Works on cryptography and its connections to statistics and trustworthy AI.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>A. Bogdanov, A. Rosen, N. Vafa. Statistically Undetectable Backdoors in Deep Neural Networks. ICML 2026.</li>
+                <li>A. Bogdanov, A. Rosen, N. Vafa, and V. Vaikuntanathan. Adaptive Robustness of Hypergrid Johnson-Lindenstrauss. STOC 2026.</li>
+              </ul>
+            </details>
           </td>
         </tr>
         <tr>
           <td class="photo-cell"><img class="portrait" src="assets/people/rebecca-wexler.jpg" alt="Rebecca Wexler"></td>
           <td>
             <div class="person-name"><a href="https://www.law.columbia.edu/faculty/rebecca-wexler">Rebecca Wexler</a></div>
-            <p class="person-bio">Alfred W. Bressler Professor of Law at Columbia. Works on evidence and criminal law, including interactions of technological and legal design for secrecy, authentication, and accountability. Selected publications:</p>
-            <ul class="publications">
-              <li>S. Barrington, E. Cooper, H. Farid, R. Wexler. AI-Generated Voice Evidence Poses Dangers in Court. Lawfare 2025.</li>
-              <li>D. Bitan, R. Canetti, S. Goldwasser, R. Wexler. Using Zero-Knowledge to Reconcile Law Enforcement Secrecy and Fair Trial. ACM CSLaw 2022.</li>
-            </ul>
+            <p class="person-bio">Alfred W. Bressler Professor of Law at Columbia. Works on evidence and criminal law, including interactions of technological and legal design for secrecy, authentication, and accountability.</p>
+            <details class="publication-disclosure">
+              <summary>Selected publications</summary>
+              <ul class="publications">
+                <li>S. Barrington, E. Cooper, H. Farid, R. Wexler. AI-Generated Voice Evidence Poses Dangers in Court. Lawfare 2025.</li>
+                <li>D. Bitan, R. Canetti, S. Goldwasser, R. Wexler. Using Zero-Knowledge to Reconcile Law Enforcement Secrecy and Fair Trial. ACM CSLaw 2022.</li>
+              </ul>
+            </details>
           </td>
         </tr>
       </tbody>
