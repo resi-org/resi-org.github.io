@@ -3,96 +3,502 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="resi.org is coming soon.">
-  <title>resi.org</title>
+  <meta name="description" content="RESI is a nonprofit research institute building the scientific foundations needed to make superintelligence safe by design.">
+  <meta name="theme-color" content="#f1f3f4">
+  <title>RESI Overview</title>
   <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f7f5f0;
-      --ink: #161a1d;
-      --muted: #5d646b;
-      --accent: #0b4f4a;
-    }
+    * { box-sizing: border-box; }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1314;
-        --ink: #f2f0ea;
-        --muted: #aab3b5;
-        --accent: #99f6e4;
-      }
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      min-height: 100%;
-    }
+    html { background: #f1f3f4; }
 
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--ink);
+      color: #202124;
+      background: #f1f3f4;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11pt;
       line-height: 1.5;
     }
 
-    main {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 48px 24px;
-      text-align: center;
+    .document {
+      width: min(816px, calc(100% - 32px));
+      min-height: 1056px;
+      margin: 32px auto 64px;
+      padding: 72px 72px 84px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(60, 64, 67, .28);
     }
 
-    .content {
-      width: min(100%, 560px);
-    }
-
-    .site {
-      margin: 0 0 18px;
-      color: var(--accent);
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0;
-    }
+    h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      margin: 0 0 18px;
-      font-size: clamp(32px, 7vw, 56px);
-      line-height: 1.08;
-      letter-spacing: 0;
-      font-weight: 680;
+      margin-bottom: 20px;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.25;
     }
 
-    .contact {
-      margin: 0;
-      color: var(--muted);
+    .acronym { color: #0000ff; }
+
+    h2 {
+      margin: 26px 0 8px;
       font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
     }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    p { margin-bottom: 14px; }
 
     a {
-      color: var(--accent);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
+      color: #1155cc;
+      text-decoration: underline;
     }
 
+    a:hover { color: #0b3d91; }
+
     a:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 4px;
+      outline: 2px solid #1a73e8;
+      outline-offset: 2px;
+    }
+
+    .donate {
+      display: inline-block;
+      margin: 2px 0;
+      padding: 7px 14px;
+      border-radius: 3px;
+      color: #fff;
+      background: #1a73e8;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .donate:hover { color: #fff; background: #1558b0; }
+
+    .people-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .people-table td {
+      padding: 8px 0 14px;
+      vertical-align: top;
+    }
+
+    .people-table .photo-cell {
+      width: 112px;
+      padding-right: 18px;
+    }
+
+    .portrait {
+      display: block;
+      width: 94px;
+      height: auto;
+    }
+
+    /* Mirror the two custom crop windows set in the source Google Doc. */
+    .portrait-crop {
+      position: relative;
+      overflow: hidden;
+      width: 94px;
+      aspect-ratio: var(--crop-aspect);
+    }
+
+    .portrait-crop .portrait {
+      position: absolute;
+      top: var(--crop-top);
+      left: var(--crop-left);
+      width: var(--source-width);
+      max-width: none;
+      max-height: none;
+    }
+
+    .portrait-crop--yaron {
+      --crop-aspect: 84.5204398 / 81.0469971;
+      --source-width: 127.5%;
+      --crop-left: -19.6328%;
+      --crop-top: -7.5087%;
+    }
+
+    .portrait-crop--emily {
+      --crop-aspect: 72 / 66.4363636;
+      --source-width: 125.5206%;
+      --crop-left: -25.5206%;
+      --crop-top: -7.8652%;
+    }
+
+    .portrait-crop--bottom {
+      height: 110px;
+      aspect-ratio: auto;
+      --source-width: 100%;
+      --crop-left: 0;
+      --crop-top: 0;
+    }
+
+    .person-name {
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .person-bio { margin-bottom: 4px; }
+
+    .publications {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .publications li { margin: 1px 0; }
+    .publications li::before { content: "- "; }
+
+    .simple-list,
+    .faq-list {
+      margin: 6px 0 16px;
+      padding-left: 25px;
+    }
+
+    .simple-list li { margin: 2px 0; }
+    .faq-list li { margin: 0 0 12px; }
+    .faq-list strong { font-weight: 700; }
+
+    @media (max-width: 650px) {
+      html, body { background: #fff; }
+
+      .document {
+        width: 100%;
+        margin: 0;
+        padding: 34px 24px 56px;
+        box-shadow: none;
+      }
+
+      .people-table .photo-cell {
+        width: 86px;
+        padding-right: 14px;
+      }
+
+      .portrait {
+        width: 72px;
+      }
+
+      .portrait-crop { width: 72px; }
+      .portrait-crop--bottom { height: 84px; }
+    }
+
+    @media print {
+      html, body { background: #fff; }
+      .document { width: auto; margin: 0; box-shadow: none; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <section class="content" aria-label="resi.org coming soon">
-      <p class="site">resi.org</p>
-      <h1>Coming soon.</h1>
-      <p class="contact">Contact <a href="mailto:info@resi.org">info@resi.org</a>.</p>
-    </section>
+  <main class="document">
+    <h1>Institute for <span class="acronym">Re</span>sponsible <span class="acronym">S</span>uper<span class="acronym">i</span>ntelligence</h1>
+
+    <p>RESI is a nonprofit research institute building the scientific foundations needed to make superintelligence safe by design. It is founded by researchers who have already turned seemingly murky concepts into precise definitions and usable mechanisms, in cryptography and other fields. The goal is to do the same for AI safety: safe-by-design means safety properties are specified in advance and achieved by mechanisms whose guarantees can be analyzed before deployment, rather than testing for safety problems post implementation.</p>
+
+    <p>Testing, benchmarking, and red-teaming are crucial for finding failures, but tests cannot establish that important classes of problems are absent. Across many fields, a deeper pattern has repeated. Notions that appeared to be inherently vague were given precise definitions, and unexpected inventions made those definitions usable for design. Safety shifted from something chased after the fact to a property that could be aimed for by construction.</p>
+
+    <p>Cryptography is a good example. Long ago, encryption schemes were ad hoc: constantly broken, red-teamed, and patched. Modern cryptography began when researchers formulated unexpected definitions of security and invented primitives (public-key encryption, digital signatures, and zero-knowledge proofs) that could satisfy them under explicit mathematical assumptions. Those inventions have withstood decades of attack and enormous increases in computing power. The same shift appears elsewhere. Early aviation relied on fly-fix-fly methods until phenomena such as turbulence could be modeled well enough to design against. Other enduring mechanisms, from auctions to contracts, can also achieve robustness by relying on incentives and laws we can understand.</p>
+
+    <p>RESI is a bet that this kind of shift is possible for superintelligence safety, and that it can happen by bringing together researchers who aim their efforts at responsible superintelligence, using frontier AI tools. RESI is founded by Turing Award winner and co-inventor of zero-knowledge proofs Shafi Goldwasser, renowned cryptographer Vinod Vaikuntanathan, and AI safety and ethics researcher Adam Tauman Kalai, who left OpenAI’s Safety Systems team to start the institute. Participating researchers will span computer science and other fields relevant to AI safety, including mathematics, economics and law, with an active visitor program. RESI is based in Cambridge, Massachusetts.</p>
+
+    <p>The concentration of talent is key. RESI aims to recreate the conditions which led to big ideas in the past, amplified by AI tools, with an open, mission-first culture that values sharing over being first to publish. Working groups will open new directions and revisit classical questions in light of superintelligence, while visitors will keep the institute connected to frontier labs and the scientific research community.</p>
+
+    <p><a class="donate" href="http://every.org/resi">Donate</a></p>
+
+    <h2>Mission</h2>
+    <p>To build the foundations of safe-by-design superintelligence.</p>
+
+    <h2>Outputs</h2>
+    <p>RESI will develop an approach to AI safety that will remain relevant as intelligence increases. The approach calls for three types of outputs. First, we will map out which safety properties are meaningful, achievable under stated assumptions, or impossible. Second, we will develop mechanisms, protocols, and architectures that provide useful guarantees, and study whether those guarantees survive composition into larger systems involving models, tools, people, and institutions. As in modern cryptography, definitions and constructions develop together: a new protocol may reveal the right concept, and an impossibility result may show that a problem must be reformulated. Third, we will build implementations and proofs of concept of these constructions. Some constructions, such as harnesses, may be implemented at relatively low cost. Others may involve training entirely new frontier models, which requires resources well beyond what RESI expects to have initially. In that case, we will share proof-of-concept implementations so that frontier AI developers can evaluate and adopt them.</p>
+
+    <p>AI safety does not yet have a mature theory of definitions, constructions, composition, and impossibility comparable to modern cryptography. But early results already point in that direction: limits on inspection-based safety (including undetectable backdoors), definitions and mitigations for hallucinations as an incentive problem, undetectable watermarking of AI-generated content, and methods for boosting the safety of model ensembles under explicit assumptions. RESI exists to develop these seeds into a field aimed at superintelligence, where safety must be designed in rather than patched on afterward.</p>
+
+    <h2>Harnessing the power of AI</h2>
+    <p>Research at RESI is AI-assisted from the start. We will develop and continually improve harnesses that help theoretical alignment research using frontier agents throughout the research process, e.g., ideation, stress-testing definitions, writing and checking proofs, and turning theoretical ideas into experiments. These tools will let us explore new directions, iterate quickly, and tackle questions that might otherwise be out of reach.</p>
+
+    <h2>Working Groups</h2>
+    <p>Superintelligence safety has many aspects, and no single discipline sees the whole picture. RESI's working groups will open new directions and revisit many classical questions in light of superintelligence. Each working group will be organized by one or more leaders who will decide on its structure. The topics and working group leaders will be determined soon. Initial directions may include verification and delegation, modular architectures, incentives and strategic behavior, cryptographic mechanisms for AI safety, and legal mechanisms for superintelligence.</p>
+
+    <h2>Culture</h2>
+    <p>RESI’s culture is mission-first: open collaboration and early sharing of ideas, rather than waiting until results are posted. To protect junior researchers, we will actively support their credit and careers. Internal discussions at RESI follow the <a href="https://www.chathamhouse.org/about-us/chatham-house-rule">Chatham House Rule</a> so participants can speak candidly while ideas can still be shared.</p>
+
+    <h3>Founding Scientific Team</h3>
+    <table class="people-table">
+      <tbody>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/shafi-goldwasser.jpg" alt="Shafi Goldwasser"></td>
+          <td>
+            <div class="person-name"><a href="https://en.wikipedia.org/wiki/Shafi_Goldwasser">Shafi Goldwasser</a></div>
+            <p class="person-bio">Inventor of zero-knowledge proofs and other seminal strands of modern cryptography. Turing Award winner. Selected publications:</p>
+            <ul class="publications">
+              <li>S. Ball, G. Gluch, S. Goldwasser, F. Kreuter, O. Reingold, G. Rothblum, Computational Barriers to Filtering for AI Alignment. ICLR 2026</li>
+              <li>N. Amit, S. Goldwasser, O. Paradise, G. Rothblum. Models That Prove Their Own Correctness. ICML 2024.</li>
+              <li>S. Goldwasser, M. Kim, V. Vaikuntanathan, and O. Zamir. Planting Undetectable Backdoors in Machine Learning Models. FOCS 2022.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/adam-tauman-kalai.jpg" alt="Adam Tauman Kalai"></td>
+          <td>
+            <div class="person-name"><a href="https://en.wikipedia.org/wiki/Adam_Tauman_Kalai">Adam Tauman Kalai</a></div>
+            <p class="person-bio">AI safety and ethics researcher coming from 2.5 years at OpenAI. Works in learning theory, game theory, and fairness, and bridges frontier-AI practice with theory. Majulook Prize winner. Selected publications:</p>
+            <ul class="publications">
+              <li>A. Kalai, O. Nachum, S. Vempala, and E. Zhang. Evaluating large language models for accuracy incentivizes hallucinations. <em>Nature</em> 2026.</li>
+              <li>A. Kalai, Y. Tauman Kalai, and O. Zamir. Consensus Sampling for Safer Generative AI. IASEAI 2026.</li>
+              <li>T. Eloundou, A. Beutel, D. Robinson, K. Gu-Lemberg, A. Brakman, P. Mishkin, M. Shah, J. Heidecke, L. Weng, and A. Kalai. First-Person Fairness in Chatbots. ICLR 2025.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/vinod-vaikuntanathan.jpg" alt="Vinod Vaikuntanathan"></td>
+          <td>
+            <div class="person-name"><a href="https://en.wikipedia.org/wiki/Vinod_Vaikuntanathan">Vinod Vaikuntanathan</a></div>
+            <p class="person-bio">MIT cryptographer working on fully homomorphic encryption, lattice-based cryptography, and secure computation. Gödel Prize winner. Selected publications:</p>
+            <ul class="publications">
+              <li>V. Vaikuntanathan and O. Zamir. Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange. FOCS 2026.</li>
+              <li>S. Goldwasser, J. Shafer, N. Vafa, and V. Vaikuntanathan. Oblivious Defense in ML Models: Backdoor Removal without Detection. STOC 2025.</li>
+              <li>S. Goldwasser, M. Kim, V. Vaikuntanathan, and O. Zamir. Planting Undetectable Backdoors in Machine Learning Models. FOCS 2022.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Research Team</h3>
+    <table class="people-table">
+      <tbody>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/ran-canetti.jpg" alt="Ran Canetti"></td>
+          <td>
+            <div class="person-name"><a href="https://www.bu.edu/cs/profiles/ran-canetti/">Ran Canetti</a></div>
+            <p class="person-bio">Boston University. Design, analysis, and composition of cryptographic protocols. Program obfuscation and applications. Selected publications:</p>
+            <ul class="publications">
+              <li>R. Canetti, S. Goldwasser, O. Zamir. Proofs of Ownership for Machine Learning Models. arXiv 2026.</li>
+              <li>R. Canetti, C. Chamon, E. Mucciolo, A. Ruckenstein. Towards program obfuscation via local mixing. TCC 2024.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/miranda-christ.jpg" alt="Miranda Christ"></td>
+          <td>
+            <div class="person-name"><a href="https://www.cs.columbia.edu/~mchrist/">Miranda Christ</a></div>
+            <p class="person-bio">MIT postdoc, PhD from Columbia. Works on practically motivated cryptography, ML, and watermarking for AI-generated content. Selected publications:</p>
+            <ul class="publications">
+              <li>M. Christ, N. Golowich, S. Gunn, A. Moitra, D. Wichs. Improved Pseudorandom Codes from Permuted Puzzles. STOC 2026.</li>
+              <li>M. Christ, S. Gunn. Pseudorandom Error-Correcting Codes. CRYPTO 2024.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell">
+            <div class="portrait-crop portrait-crop--bottom">
+              <img class="portrait" src="assets/people/yannai-a-gonczarowski.jpg" alt="Yannai A. Gonczarowski">
+            </div>
+          </td>
+          <td>
+            <div class="person-name"><a href="https://yannai.gonch.name/">Yannai A. Gonczarowski</a></div>
+            <p class="person-bio">Harvard economist and computer scientist working at the intersection of economic theory and theoretical computer science, including mechanism design and market design. ACM SIGecom Doctoral Dissertation Award winner. Selected publications:</p>
+            <ul class="publications">
+              <li>S. Fish, Y.A. Gonczarowski, R.I. Shorrer. Algorithmic Collusion by Large Language Models. EC 2026.</li>
+              <li>Y.A. Gonczarowski S.M. Weinberg. The Sample Complexity of Up-to-ε Multi-dimensional Revenue Maximization. FOCS 2018 / JACM 2021.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/sam-gunn.jpg" alt="Sam Gunn"></td>
+          <td>
+            <div class="person-name"><a href="https://people.eecs.berkeley.edu/~gunn/">Sam Gunn</a></div>
+            <p class="person-bio">PhD from UC Berkeley. Works on cryptography and foundations of AI. Selected publications:</p>
+            <ul class="publications">
+              <li>S. Gunn. How to sketch a learning algorithm. 2026.</li>
+              <li>S. Gunn, X. Zhao, D. Song. An Undetectable Watermark for Generative Image Models. ICLR 2025.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/yael-tauman-kalai.jpg" alt="Yael Tauman Kalai"></td>
+          <td>
+            <div class="person-name"><a href="https://en.wikipedia.org/wiki/Yael_Tauman_Kalai">Yael Tauman Kalai</a></div>
+            <p class="person-bio">MIT cryptographer and theoretical computer scientist. Works on verifiable delegation, interactive proofs, and cryptographic protocols. Winner of the ACM Prize in Computing. Selected publications:</p>
+            <ul class="publications">
+              <li>L. Chen, Y. Tauman Kalai, Z. Xi. How to Avoid Debate: Scalable AI Safety via Doubly-Efficient Interactive Proofs. ICML 2026.</li>
+              <li>S. Goldwasser, Y. Tauman Kalai, G. Rothblum. Delegating Computation: Interactive Proofs for Muggles. STOC 2008.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/noam-kolt.jpg" alt="Noam Kolt"></td>
+          <td>
+            <div class="person-name"><a href="https://www.noamkolt.com/">Noam Kolt</a></div>
+            <p class="person-bio">Assistant Professor at the Hebrew University Faculty of Law and School of Computer Science and Engineering. Selected publications:</p>
+            <ul class="publications">
+              <li>N. Kolt, Superintelligence and Law. Harvard Journal of Law &amp; Technology 2026.</li>
+              <li>N. Kolt et al., Legal Alignment for Safe and Ethical AI. TMLR 2026.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/daniela-rus.jpg" alt="Daniela Rus"></td>
+          <td>
+            <div class="person-name"><a href="https://www.csail.mit.edu/person/daniela-rus">Daniela Rus</a></div>
+            <p class="person-bio">MIT roboticist and director of CSAIL working on autonomous systems, intelligence, and safe control and planning for embodied AI. MacArthur Fellow. Selected publications:</p>
+            <ul class="publications">
+              <li>W. Xiao, D. Rus, et al. BarrierNet: Differentiable Control Barrier Functions for Learning of Safe Robot Control. IEEE Transactions on Robotics 2023.</li>
+              <li>W. Xiao, J. Wang, C. Gan, R. Hasani, M. Lechner, and D. Rus. SafeDiffuser: Safe Planning with Diffusion Probabilistic Models. ICLR 2025.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/jonathan-shafer.jpg" alt="Jonathan Shafer"></td>
+          <td>
+            <div class="person-name"><a href="https://shaferjo.com/">Jonathan Shafer</a></div>
+            <p class="person-bio">MIT postdoc and incoming professor at the Weizmann Institute of Science, PhD from UC Berkeley. Works on learning theory and its connections to cryptography. Selected publications:</p>
+            <ul class="publications">
+              <li>Z. Chase, S. Hanneke, S. Moran, and J. Shafer. Optimal Mistake Bounds for Transductive Online Learning. NeurIPS 2025 (Best Paper Runner-Up).</li>
+              <li>S. Goldwasser, G. Rothblum, J. Shafer, and A. Yehudayoff. Interactive Proofs for Verifying Machine Learning. ITCS 2021.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell">
+            <div class="portrait-crop portrait-crop--yaron">
+              <img class="portrait" src="assets/people/yaron-singer.jpg" alt="Yaron Singer">
+            </div>
+          </td>
+          <td>
+            <div class="person-name"><a href="https://www.linkedin.com/in/yaron-singer-76ab6317/">Yaron Singer</a></div>
+            <p class="person-bio">CEO and co-founder of Frontier Security. Previously VP at Cisco, CEO and founder of AI Security startup Robust Intelligence (acquired by Cisco), and Harvard professor of Computer Science and Applied Mathematics. Works on AI in cybersecurity, AI security, adversarial robustness, and robust optimization. Sloan Fellow. Selected publications:</p>
+            <ul class="publications">
+              <li>P. Kassianik, B. Nelson, and Y. Singer. Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents. CAMLIS 2026.</li>
+              <li>A. Mehrotra, M. Zampetakis, P. Kassianik, B. Nelson, H. S. Anderson, Y. Singer, and A. Karbasi. Tree of Attacks: Jailbreaking Black-Box LLMs Automatically. NeurIPS 2024.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell">
+            <div class="portrait-crop portrait-crop--bottom">
+              <img class="portrait" src="assets/people/andrew-v-sutherland.jpg" alt="Andrew V. Sutherland">
+            </div>
+          </td>
+          <td>
+            <div class="person-name"><a href="https://math.mit.edu/~drew/">Andrew V. Sutherland</a></div>
+            <p class="person-bio">MIT mathematician working in AI-assisted mathematical discovery, formal verification, large-scale mathematical databases, computational number theory, and arithmetic geometry. Selected publications:</p>
+            <ul class="publications">
+              <li>J. S. Ellenberg, C. S. Fraser-Taliente, T. R. Harvey, K. Srivastava, and A. V. Sutherland. Generative Modelling for Mathematical Discovery. Advances in Theoretical and Mathematical Physics 2025.</li>
+              <li>W. Sawin and A. V. Sutherland. Murmurations for Elliptic Curves Ordered by Height. 2025.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/mirac-suzgun.jpg" alt="Mirac Suzgun"></td>
+          <td>
+            <div class="person-name"><a href="https://sites.google.com/view/msuzgun">Mirac Suzgun</a></div>
+            <p class="person-bio">PhD candidate in CS at Stanford and JD from Stanford Law School. Works on LLM reasoning, safety, and factuality, with particular interests in understanding and mitigating hallucinations and evaluating AI systems deployed in high-stakes domains such as law and medicine. Selected publications:</p>
+            <ul class="publications">
+              <li>M. Suzgun, M. Yuksekgonul, F. Bianchi, D. Jurafsky, J. Zou. <em>Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory</em>. EACL 2026.</li>
+              <li>M. Suzgun, T. Gur, F. Bianchi, D.E. Ho, T. Icard, D. Jurafsky, J. Zou. <em>Language Models Cannot Reliably Distinguish Belief from Knowledge and Fact</em>. Nature Machine Intelligence 2025.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/neekon-vafa.jpg" alt="Neekon J. Vafa"></td>
+          <td>
+            <div class="person-name"><a href="https://neekonvafa.com">Neekon J. Vafa</a></div>
+            <p class="person-bio">Junior Fellow of the Harvard Society of Fellows, PhD from MIT. Works on cryptography and its connections to statistics and trustworthy AI. Selected publications:</p>
+            <ul class="publications">
+              <li>A. Bogdanov, A. Rosen, N. Vafa. Statistically Undetectable Backdoors in Deep Neural Networks. ICML 2026.</li>
+              <li>A. Bogdanov, A. Rosen, N. Vafa, and V. Vaikuntanathan. Adaptive Robustness of Hypergrid Johnson-Lindenstrauss. STOC 2026.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td class="photo-cell"><img class="portrait" src="assets/people/rebecca-wexler.jpg" alt="Rebecca Wexler"></td>
+          <td>
+            <div class="person-name"><a href="https://www.law.columbia.edu/faculty/rebecca-wexler">Rebecca Wexler</a></div>
+            <p class="person-bio">Alfred W. Bressler Professor of Law at Columbia. Works on evidence and criminal law, including interactions of technological and legal design for secrecy, authentication, and accountability. Selected publications:</p>
+            <ul class="publications">
+              <li>S. Barrington, E. Cooper, H. Farid, R. Wexler. AI-Generated Voice Evidence Poses Dangers in Court. Lawfare 2025.</li>
+              <li>D. Bitan, R. Canetti, S. Goldwasser, R. Wexler. Using Zero-Knowledge to Reconcile Law Enforcement Secrecy and Fair Trial. ACM CSLaw 2022.</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Operations</h3>
+    <table class="people-table">
+      <tbody>
+        <tr>
+          <td class="photo-cell">
+            <div class="portrait-crop portrait-crop--emily">
+              <img class="portrait" src="assets/people/emily-uyeda-kantrim.jpg" alt="Emily Uyeda Kantrim">
+            </div>
+          </td>
+          <td>
+            <div class="person-name"><a href="http://www.emilyuk.com">Emily Uyeda Kantrim</a></div>
+            <p class="person-bio">Emily Uyeda Kantrim’s work spans nonprofit, government, research, and social innovation, with a focus on turning ambitious ideas into durable institutions, scalable systems, and measurable public impact. From ideation to implementation, Emily has turned hand-sketched product designs into open-access tools for creation and entrepreneurship across six continents, scaled mobile public health operations from $4M to $93M in two years, and recognized an opening in municipal policy and built it into an operational social-service model that reached national adoption.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Planned visitors</h3>
+    <ul class="simple-list">
+      <li>Scott Aaronson (UT Austin)</li>
+      <li>Boaz Barak (OpenAI)</li>
+      <li>David Bau (Northeastern)</li>
+      <li>Yonatan Belinkov (Technion)</li>
+      <li>Avrim Blum (TTIC)</li>
+      <li>Christian Borgs (Berkeley)</li>
+      <li>Sebastien Bubeck (OpenAI)</li>
+      <li>Nicholas Carlini (Anthropic)</li>
+      <li>Jennifer Chayes (Berkeley)</li>
+      <li>Andrew Critch (Encultured)</li>
+      <li>Costis Daskalakis (MIT)</li>
+      <li>Geoffrey Irving (Resolution)</li>
+      <li>Sham Kakade (Harvard)</li>
+      <li>Ehud Kalai (Northwestern)</li>
+      <li>Manish Raghavan (MIT)</li>
+      <li>Alon Rosen (Tel Aviv University)</li>
+      <li>Jacob Steinhardt (Transluce, UC Berkeley)</li>
+      <li>Jacob Tsimerman (OpenAI)</li>
+      <li>Santosh Vempala (Georgia Tech)</li>
+      <li>Daniel Wichs (Northeastern)</li>
+      <li>Or Zamir (Tel Aviv University)</li>
+    </ul>
+
+    <h2>Affiliated groups</h2>
+    <ul class="simple-list">
+      <li><a href="https://resolution.org/">Resolution</a></li>
+      <li><a href="https://www.cbai.ai/">Cambridge Boston Alignment Initiative</a> (CBAI)</li>
+      <li><a href="https://simons.berkeley.edu/homepage">Simons Institute for the Theory of Computing</a></li>
+      <li><a href="https://scottaaronson.blog/?p=8790">UT Austin Theory and AI Alignment Group</a></li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <ul class="faq-list">
+      <li><strong>Why the RESI acronym?</strong> IRS was already taken, and RESI (for REsponsible SuperIntelligence) is also <em>the beginning of RESIlience.</em></li>
+      <li><strong>What does success mean for RESI?</strong> The ultimate success would be new safe-by-design approaches adopted in frontier AI systems: breakthroughs comparable to foundational cryptographic primitives. Progress toward that goal includes rigorous definitions of safety objectives, maps of what is and is not achievable under explicit assumptions, new mechanisms with useful guarantees, results on how guarantees compose, and working demonstrations in real systems. Success also means influencing policy and regulation in ways that support human flourishing.</li>
+      <li><strong>How will RESI’s ideas become adopted?</strong> Through design, people, and incentives. RESI designs with practical constraints in mind and tests promising constructions in real systems. It is connected to frontier labs through the experience of its researchers and through regular visitors and speakers, allowing ideas to travel with the people who carry them. Meanwhile, frontier models already face release barriers due to safety considerations. As capabilities increase, developers will face stronger safety, reliability, and deployment requirements. Approaches that provide greater assurance while preserving usefulness can reduce deployment risk and offer incentives for adoption.</li>
+      <li><strong>How is RESI different from other AI safety initiatives?</strong> RESI focuses on the formal and design-oriented foundations of AI safety: precise safety objectives, explicit assumptions, mechanisms and architectures with analyzable guarantees, composition of those guarantees, and impossibility results. The goal is to develop approaches intended to remain meaningful as systems become superintelligent. This complements work on evaluation, interpretability, alignment training, control, and safeguards for existing models. RESI is also distinctive in who is building it: it is led by researchers with a track record of turning murky concepts into precise definitions and usable mechanisms, from cryptography and other fields, and it is organized by those researchers.</li>
+      <li><strong>How will RESI stay up to date with frontier research?</strong> RESI combines researchers with recent frontier-lab experience, regular engagement with researchers at leading labs, a continuing visitor and lecture program, and practical testing of promising ideas on current systems. Its research agenda will evolve as capabilities, architectures, and deployment practices change.</li>
+      <li><strong>Is this approach fast enough?</strong> It has to be, and there is reason for optimism. Foundational fields can move quickly once the right people converge on the right questions, as happened repeatedly in modern cryptography, and RESI is built to concentrate that process and accelerate it with frontier AI tools. Nor does progress depend on one all-or-nothing breakthrough: definitions, impossibility results, and mechanisms can inform current systems along the way. Foundations take time to mature, but they are hardest to build once a crisis has arrived. The best time to begin was long ago; the second best is now.</li>
+      <li><strong>What does superintelligence mean?</strong> Superintelligence means systems that greatly exceed individual humans, and potentially expert teams, across a broad range of cognitive tasks.</li>
+      <li><strong>How does superintelligence differ from AGI?</strong> Artificial General Intelligence usually means matching humans across a broad range of tasks; superintelligence means substantially exceeding that level. Current AI is jagged, already superhuman in some domains and subhuman in others. RESI’s practical concern begins when systems exceed our ability to test and oversee them, because past that point safety must be designed in. In some domains, that point is already here.</li>
+      <li><strong>How can science study something that doesn’t yet exist?</strong> The principles and constraints that any system has to satisfy can be studied and built upon. Much of computer science and engineering falls within what Herbert Simon called the “sciences of the artificial,” which ask not only how existing systems behave, but what systems can be designed. Modern cryptography did not emerge merely from studying the ciphers of the time, but from analyzing what can and cannot be done.</li>
+      <li><strong>How can I get involved?</strong> Sign up for our mailing list <a href="http://tiny.cc/resi-signup">here</a>. RESI will host a small number of researchers and visitors. We welcome inquiries from scientists whose tools could bear on these problems, whether or not they have worked on AI safety before. Email us at <a href="mailto:hello@resi.org">hello@resi.org</a>. Local students interested in AI safety may also want to look at <a href="https://www.cbai.ai/">CBAI.</a></li>
+    </ul>
+
+    <h2>Funding</h2>
+    <p>RESI is fiscally sponsored by the <a href="https://edwardcharlesfoundation.org/">Edward Charles Foundation</a>, a 501(c)(3) public charity (3% overhead). RESI is funded through philanthropic donations, and our list of funding supporters will be announced shortly. Individuals can give at <a href="https://www.every.org/resi">every.org/resi</a>. Contributions of cash, stock, and other assets are tax-deductible to the extent permitted by law. Donations will enable us to bring in more researchers (especially postdocs and junior researchers) and further accelerate our research using AI. To <a href="https://www.every.org/resi">donate</a> or discuss other forms of support, including compute credits or infrastructure, contact <a href="mailto:funding@resi.org">funding@resi.org</a>.</p>
   </main>
 </body>
 </html>
