@@ -102,6 +102,7 @@
 
     /* Mirror the two custom crop windows set in the source Google Doc. */
     .portrait-crop {
+      display: block;
       position: relative;
       overflow: hidden;
       width: 94px;
@@ -217,60 +218,87 @@
       gap: 30px 24px;
     }
 
-    .person-card { min-width: 0; }
+    .person-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid #dadce0;
+      border-radius: 6px;
+      background: #fff;
+    }
 
-    .person-card:has(> .member-disclosure[open]) {
+    .person-card > summary {
+      display: block;
+      min-height: 100%;
+      padding: 12px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .person-card > summary::-webkit-details-marker { display: none; }
+    .person-card > summary:hover { background: #f8f9fa; }
+
+    .person-card > summary:focus-visible {
+      outline: 2px solid #1a73e8;
+      outline-offset: -2px;
+    }
+
+    .person-card[open] {
       display: grid;
       grid-column: 1 / -1;
-      grid-template-columns: 150px minmax(0, 1fr);
-      column-gap: 24px;
+      grid-template-columns: 174px minmax(0, 1fr);
+      border-color: #bdc1c6;
     }
 
-    .person-card:has(> .member-disclosure[open]) > .team-photo {
-      grid-row: 1 / 3;
-      margin-bottom: 0;
-    }
-
-    .person-card:has(> .member-disclosure[open]) > .person-name,
-    .person-card:has(> .member-disclosure[open]) > .member-disclosure {
-      grid-column: 2;
+    .person-card[open] > summary {
+      min-height: 0;
+      border-right: 1px solid #e0e0e0;
     }
 
     .team-photo {
+      display: block;
       width: 100%;
       max-width: 150px;
       margin-bottom: 9px;
     }
 
-    .team-photo > .portrait,
+    .team-photo > .portrait {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center top;
+    }
+
     .team-photo > .portrait-crop {
       width: 100%;
+      aspect-ratio: 1;
     }
 
     .team-photo > .portrait-crop--bottom {
       height: auto;
-      aspect-ratio: 94 / 110;
+      aspect-ratio: 1;
     }
 
-    .member-disclosure { margin-top: 5px; }
-
-    .member-disclosure > summary {
-      display: inline-block;
-      color: #1155cc;
-      cursor: pointer;
-      text-decoration: underline;
-      list-style: none;
+    .person-card > summary .person-name {
+      display: block;
+      position: relative;
+      margin: 0;
+      padding-right: 22px;
+      color: #202124;
     }
 
-    .member-disclosure > summary::-webkit-details-marker { display: none; }
-    .member-disclosure > summary:hover { color: #0b3d91; }
-
-    .member-disclosure > summary:focus-visible {
-      outline: 2px solid #1a73e8;
-      outline-offset: 2px;
+    .card-toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #5f6368;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1;
     }
 
-    .member-disclosure .person-bio { margin-top: 8px; }
+    .person-expanded { padding: 12px 16px 14px; }
+    .person-expanded .person-bio { margin-bottom: 7px; }
+    .profile-link { margin: 0 0 10px; }
 
     .member-publications-heading {
       margin-top: 8px;
@@ -352,12 +380,13 @@
         gap: 26px 18px;
       }
 
-      .person-card:has(> .member-disclosure[open]) {
+      .person-card[open] {
         display: block;
       }
 
-      .person-card:has(> .member-disclosure[open]) > .team-photo {
-        margin-bottom: 9px;
+      .person-card[open] > summary {
+        border-right: 0;
+        border-bottom: 1px solid #e0e0e0;
       }
 
       .people-table .photo-cell {
@@ -395,8 +424,8 @@
             <p class="person-bio">Inventor of zero-knowledge proofs and other seminal strands of modern cryptography. Turing Award winner.</p>
             <details class="publication-disclosure">
               <summary>
-                <span class="closed-label">Show selected publications</span>
-                <span class="open-label">Hide selected publications</span>
+                <span class="closed-label">Selected publications +</span>
+                <span class="open-label">Selected publications −</span>
               </summary>
               <ul class="publications">
                 <li>S. Ball, G. Gluch, S. Goldwasser, F. Kreuter, O. Reingold, G. Rothblum, <a href="https://openreview.net/pdf/7afc23653d068ee199b3f2304f741338a8b3acdd.pdf">Computational Barriers to Filtering for AI Alignment</a>. ICLR 2026</li>
@@ -413,8 +442,8 @@
             <p class="person-bio">AI safety and ethics researcher coming from 2.5 years at OpenAI. Works in learning theory, game theory, and fairness, and bridges frontier-AI practice with theory. Majulook Prize winner.</p>
             <details class="publication-disclosure">
               <summary>
-                <span class="closed-label">Show selected publications</span>
-                <span class="open-label">Hide selected publications</span>
+                <span class="closed-label">Selected publications +</span>
+                <span class="open-label">Selected publications −</span>
               </summary>
               <ul class="publications">
                 <li>A. Kalai, O. Nachum, S. Vempala, and E. Zhang. <a href="https://www.nature.com/articles/s41586-026-10549-w">Evaluating large language models for accuracy incentivizes hallucinations</a>. <em>Nature</em> 2026.</li>
@@ -431,8 +460,8 @@
             <p class="person-bio">MIT cryptographer and theoretical computer scientist with foundational contributions to lattice-based cryptography and fully homomorphic encryption. Gödel Prize winner.</p>
             <details class="publication-disclosure">
               <summary>
-                <span class="closed-label">Show selected publications</span>
-                <span class="open-label">Hide selected publications</span>
+                <span class="closed-label">Selected publications +</span>
+                <span class="open-label">Selected publications −</span>
               </summary>
               <ul class="publications">
                 <li>V. Vaikuntanathan and O. Zamir. <a href="https://arxiv.org/abs/2604.04757">Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange</a>. FOCS 2026.</li>
@@ -448,336 +477,320 @@
     <section class="research-team-section" id="research-team">
       <h3>Research Team</h3>
       <div class="team-grid">
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Ran Canetti" class="portrait" src="../assets/people/ran-canetti.jpg"/>
-          </div>
-          <div class="person-name"><a href="https://www.bu.edu/cs/profiles/ran-canetti/">Ran Canetti</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/ran-canetti.jpg"/>
+            </span>
+            <span class="person-name">Ran Canetti <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">Boston University. Design, analysis, and composition of cryptographic protocols. Program obfuscation and applications.</p>
+            <p class="profile-link"><a href="https://www.bu.edu/cs/profiles/ran-canetti/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>R. Canetti, S. Goldwasser, O. Zamir. <a href="https://arxiv.org/abs/2606.30423">Proofs of Ownership for Machine Learning Models</a>. arXiv 2026.</li>
-              <li>R. Canetti, C. Chamon, E. Mucciolo, A. Ruckenstein. <a href="https://eprint.iacr.org/2024/006">Towards program obfuscation via local mixing</a>. TCC 2024.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>R. Canetti, S. Goldwasser, O. Zamir. <a href="https://arxiv.org/abs/2606.30423">Proofs of Ownership for Machine Learning Models</a>. arXiv 2026.</li>
+            <li>R. Canetti, C. Chamon, E. Mucciolo, A. Ruckenstein. <a href="https://eprint.iacr.org/2024/006">Towards program obfuscation via local mixing</a>. TCC 2024.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Miranda Christ" class="portrait" src="../assets/people/miranda-christ.jpg"/>
           </div>
-          <div class="person-name"><a href="https://www.cs.columbia.edu/~mchrist/">Miranda Christ</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/miranda-christ.jpg"/>
+            </span>
+            <span class="person-name">Miranda Christ <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">MIT postdoc, PhD from Columbia. Works on practically motivated cryptography, ML, and watermarking for AI-generated content.</p>
+            <p class="profile-link"><a href="https://www.cs.columbia.edu/~mchrist/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>M. Christ, N. Golowich, S. Gunn, A. Moitra, D. Wichs. <a href="https://arxiv.org/abs/2512.08918">Improved Pseudorandom Codes from Permuted Puzzles</a>. STOC 2026.</li>
-              <li>M. Christ, S. Gunn. <a href="https://arxiv.org/abs/2402.09370">Pseudorandom Error-Correcting Codes</a>. CRYPTO 2024.</li>
-              </ul>
-            </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <div class="portrait-crop portrait-crop--greg">
-            <img alt="Greg Gluch" class="portrait" src="../assets/people/greg-gluch.jpg"/>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>M. Christ, N. Golowich, S. Gunn, A. Moitra, D. Wichs. <a href="https://arxiv.org/abs/2512.08918">Improved Pseudorandom Codes from Permuted Puzzles</a>. STOC 2026.</li>
+            <li>M. Christ, S. Gunn. <a href="https://arxiv.org/abs/2402.09370">Pseudorandom Error-Correcting Codes</a>. CRYPTO 2024.</li>
+            </ul>
             </div>
           </div>
-          <div class="person-name"><a href="https://grzegorzgluch.github.io/">Greg Gluch</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <span class="portrait-crop portrait-crop--greg">
+              <img alt="" class="portrait" src="../assets/people/greg-gluch.jpg"/>
+              </span>
+            </span>
+            <span class="person-name">Greg Gluch <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">UC Berkeley, Simons Institute for the Theory of Computing postdoc. PhD from EPFL. Works on AI safety and alignment using tools from cryptography and computational complexity.</p>
+            <p class="profile-link"><a href="https://grzegorzgluch.github.io/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>G. Gluch, S. Goldwasser. <a href="https://arxiv.org/abs/2504.20310">A Cryptographic Perspective on Mitigation vs. Detection in Machine Learning</a>. 2026.</li>
-              <li>G. Gluch, B. Turan, S. G. Nagarajan, S. Pokutta. <a href="https://openreview.net/forum?id=NVDrWBwJTV">The Good, the Bad and the Ugly: Meta-Analysis of Watermarks, Transferable Attacks and Adversarial Defenses</a>. NeurIPS 2025.</li>
-              </ul>
-            </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <div class="portrait-crop portrait-crop--bottom">
-            <img alt="Yannai A. Gonczarowski" class="portrait" src="../assets/people/yannai-a-gonczarowski.jpg"/>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>G. Gluch, S. Goldwasser. <a href="https://arxiv.org/abs/2504.20310">A Cryptographic Perspective on Mitigation vs. Detection in Machine Learning</a>. 2026.</li>
+            <li>G. Gluch, B. Turan, S. G. Nagarajan, S. Pokutta. <a href="https://openreview.net/forum?id=NVDrWBwJTV">The Good, the Bad and the Ugly: Meta-Analysis of Watermarks, Transferable Attacks and Adversarial Defenses</a>. NeurIPS 2025.</li>
+            </ul>
             </div>
           </div>
-          <div class="person-name"><a href="https://yannai.gonch.name/">Yannai A. Gonczarowski</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <span class="portrait-crop portrait-crop--bottom">
+              <img alt="" class="portrait" src="../assets/people/yannai-a-gonczarowski.jpg"/>
+              </span>
+            </span>
+            <span class="person-name">Yannai A. Gonczarowski <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">Harvard economist and computer scientist working at the intersection of economic theory and theoretical computer science, including mechanism design and market design. ACM SIGecom Doctoral Dissertation Award winner.</p>
+            <p class="profile-link"><a href="https://yannai.gonch.name/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>S. Fish, Y.A. Gonczarowski, R.I. Shorrer. <a href="https://arxiv.org/abs/2404.00806">Algorithmic Collusion by Large Language Models</a>. EC 2026.</li>
-              <li>Y.A. Gonczarowski S.M. Weinberg. <a href="https://arxiv.org/abs/1808.02458">The Sample Complexity of Up-to-ε Multi-dimensional Revenue Maximization</a>. FOCS 2018 / JACM 2021.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>S. Fish, Y.A. Gonczarowski, R.I. Shorrer. <a href="https://arxiv.org/abs/2404.00806">Algorithmic Collusion by Large Language Models</a>. EC 2026.</li>
+            <li>Y.A. Gonczarowski S.M. Weinberg. <a href="https://arxiv.org/abs/1808.02458">The Sample Complexity of Up-to-ε Multi-dimensional Revenue Maximization</a>. FOCS 2018 / JACM 2021.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Sam Gunn" class="portrait" src="../assets/people/sam-gunn.jpg"/>
           </div>
-          <div class="person-name"><a href="https://people.eecs.berkeley.edu/~gunn/">Sam Gunn</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/sam-gunn.jpg"/>
+            </span>
+            <span class="person-name">Sam Gunn <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">PhD from UC Berkeley. Works on cryptography and foundations of AI.</p>
+            <p class="profile-link"><a href="https://people.eecs.berkeley.edu/~gunn/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>S. Gunn. <a href="https://arxiv.org/abs/2604.07328">How to sketch a learning algorithm</a>. 2026.</li>
-              <li>S. Gunn, X. Zhao, D. Song. <a href="https://arxiv.org/abs/2410.07369">An Undetectable Watermark for Generative Image Models</a>. ICLR 2025.</li>
-              </ul>
-            </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <div class="portrait-crop portrait-crop--dylan">
-              <img alt="Dylan Hadfield-Menell" class="portrait" src="../assets/people/dylan-hadfield-menell.jpg"/>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>S. Gunn. <a href="https://arxiv.org/abs/2604.07328">How to sketch a learning algorithm</a>. 2026.</li>
+            <li>S. Gunn, X. Zhao, D. Song. <a href="https://arxiv.org/abs/2410.07369">An Undetectable Watermark for Generative Image Models</a>. ICLR 2025.</li>
+            </ul>
             </div>
           </div>
-          <div class="person-name"><a href="https://people.csail.mit.edu/dhm/">Dylan Hadfield-Menell</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <span class="portrait-crop portrait-crop--dylan">
+              <img alt="" class="portrait" src="../assets/people/dylan-hadfield-menell.jpg"/>
+              </span>
+            </span>
+            <span class="person-name">Dylan Hadfield-Menell <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">MIT professor working on AI alignment. His research focuses on the theory and practice of AI alignment, as well as the evaluation and (societal) oversight of deployed AI systems.</p>
+            <p class="profile-link"><a href="https://people.csail.mit.edu/dhm/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>D. Hadfield-Menell, A. Dragan, P. Abbeel, and S. Russell. <a href="https://arxiv.org/abs/1606.03137">Cooperative Inverse Reinforcement Learning</a>. NeurIPS 2016.</li>
-              <li>S. Zhuang and D. Hadfield-Menell. <a href="https://arxiv.org/abs/2102.03896">Consequences of Misaligned AI</a>. NeurIPS 2020.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>D. Hadfield-Menell, A. Dragan, P. Abbeel, and S. Russell. <a href="https://arxiv.org/abs/1606.03137">Cooperative Inverse Reinforcement Learning</a>. NeurIPS 2016.</li>
+            <li>S. Zhuang and D. Hadfield-Menell. <a href="https://arxiv.org/abs/2102.03896">Consequences of Misaligned AI</a>. NeurIPS 2020.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Yael Tauman Kalai" class="portrait" src="../assets/people/yael-tauman-kalai.jpg"/>
           </div>
-          <div class="person-name"><a href="https://en.wikipedia.org/wiki/Yael_Tauman_Kalai">Yael Tauman Kalai</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/yael-tauman-kalai.jpg"/>
+            </span>
+            <span class="person-name">Yael Tauman Kalai <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">MIT cryptographer and theoretical computer scientist. Works on verifiable delegation, interactive proofs, and cryptographic protocols. Winner of the ACM Prize in Computing.</p>
+            <p class="profile-link"><a href="https://en.wikipedia.org/wiki/Yael_Tauman_Kalai">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>L. Chen, Y. Tauman Kalai, Z. Xi. <a href="https://arxiv.org/abs/2607.03561">How to Avoid Debate: Scalable AI Safety via Doubly-Efficient Interactive Proofs</a>. ICML 2026.</li>
-              <li>S. Goldwasser, Y. Tauman Kalai, G. Rothblum. <a href="https://www.microsoft.com/en-us/research/publication/delegating-computation-interactive-proofs-muggles/">Delegating Computation: Interactive Proofs for Muggles</a>. STOC 2008.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>L. Chen, Y. Tauman Kalai, Z. Xi. <a href="https://arxiv.org/abs/2607.03561">How to Avoid Debate: Scalable AI Safety via Doubly-Efficient Interactive Proofs</a>. ICML 2026.</li>
+            <li>S. Goldwasser, Y. Tauman Kalai, G. Rothblum. <a href="https://www.microsoft.com/en-us/research/publication/delegating-computation-interactive-proofs-muggles/">Delegating Computation: Interactive Proofs for Muggles</a>. STOC 2008.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Noam Kolt" class="portrait" src="../assets/people/noam-kolt.jpg"/>
           </div>
-          <div class="person-name"><a href="https://www.noamkolt.com/">Noam Kolt</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/noam-kolt.jpg"/>
+            </span>
+            <span class="person-name">Noam Kolt <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">Assistant Professor at the Hebrew University Faculty of Law and School of Computer Science and Engineering.</p>
+            <p class="profile-link"><a href="https://www.noamkolt.com/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>N. Kolt, <a href="https://arxiv.org/abs/2603.28669">Superintelligence and Law</a>. Harvard Journal of Law &amp; Technology 2026.</li>
-              <li>N. Kolt et al., <a href="https://arxiv.org/abs/2601.04175">Legal Alignment for Safe and Ethical AI</a>. TMLR 2026.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>N. Kolt, <a href="https://arxiv.org/abs/2603.28669">Superintelligence and Law</a>. Harvard Journal of Law &amp; Technology 2026.</li>
+            <li>N. Kolt et al., <a href="https://arxiv.org/abs/2601.04175">Legal Alignment for Safe and Ethical AI</a>. TMLR 2026.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Anat Perry" class="portrait" src="../assets/people/anat-perry.jpg"/>
           </div>
-          <div class="person-name"><a href="https://perrylab.huji.ac.il/">Anat Perry</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/anat-perry.jpg"/>
+            </span>
+            <span class="person-name">Anat Perry <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">Associate professor at the Hebrew University and Berkman Klein Center Fellow at Harvard, working at the intersection of social cognitive psychology and neuroscience, with a focus on human–AI interaction and its implications for human flourishing.</p>
+            <p class="profile-link"><a href="https://perrylab.huji.ac.il/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>A. Perry. <a href="https://www.science.org/doi/abs/10.1126/science.aeg3145">In defense of social friction</a>. Science 2026.</li>
-              <li>A. Perry. <a href="https://www.nature.com/articles/s41562-023-01675-w">AI will never convey the essence of human empathy</a>. Nature Human Behaviour 2023.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>A. Perry. <a href="https://www.science.org/doi/abs/10.1126/science.aeg3145">In defense of social friction</a>. Science 2026.</li>
+            <li>A. Perry. <a href="https://www.nature.com/articles/s41562-023-01675-w">AI will never convey the essence of human empathy</a>. Nature Human Behaviour 2023.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Daniela Rus" class="portrait" src="../assets/people/daniela-rus.jpg"/>
           </div>
-          <div class="person-name"><a href="https://www.csail.mit.edu/person/daniela-rus">Daniela Rus</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/daniela-rus.jpg"/>
+            </span>
+            <span class="person-name">Daniela Rus <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">MIT roboticist and director of CSAIL working on autonomous systems, intelligence, and safe control and planning for embodied AI. MacArthur Fellow.</p>
+            <p class="profile-link"><a href="https://www.csail.mit.edu/person/daniela-rus">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>W. Xiao, D. Rus, et al. <a href="https://arxiv.org/abs/2111.11277">BarrierNet: Differentiable Control Barrier Functions for Learning of Safe Robot Control</a>. IEEE Transactions on Robotics 2023.</li>
-              <li>W. Xiao, J. Wang, C. Gan, R. Hasani, M. Lechner, and D. Rus. <a href="https://arxiv.org/abs/2306.00148">SafeDiffuser: Safe Planning with Diffusion Probabilistic Models</a>. ICLR 2025.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>W. Xiao, D. Rus, et al. <a href="https://arxiv.org/abs/2111.11277">BarrierNet: Differentiable Control Barrier Functions for Learning of Safe Robot Control</a>. IEEE Transactions on Robotics 2023.</li>
+            <li>W. Xiao, J. Wang, C. Gan, R. Hasani, M. Lechner, and D. Rus. <a href="https://arxiv.org/abs/2306.00148">SafeDiffuser: Safe Planning with Diffusion Probabilistic Models</a>. ICLR 2025.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Jonathan Shafer" class="portrait" src="../assets/people/jonathan-shafer.jpg"/>
           </div>
-          <div class="person-name"><a href="https://shaferjo.com/">Jonathan Shafer</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/jonathan-shafer.jpg"/>
+            </span>
+            <span class="person-name">Jonathan Shafer <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">MIT postdoc and incoming professor at the Weizmann Institute of Science, PhD from UC Berkeley. Works on learning theory and its connections to cryptography.</p>
+            <p class="profile-link"><a href="https://shaferjo.com/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>Z. Chase, S. Hanneke, S. Moran, and J. Shafer. <a href="https://arxiv.org/abs/2512.12567">Optimal Mistake Bounds for Transductive Online Learning</a>. NeurIPS 2025 (Best Paper Runner-Up).</li>
-              <li>S. Goldwasser, G. Rothblum, J. Shafer, and A. Yehudayoff. <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2021.41">Interactive Proofs for Verifying Machine Learning</a>. ITCS 2021.</li>
-              </ul>
-            </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <div class="portrait-crop portrait-crop--yaron">
-            <img alt="Yaron Singer" class="portrait" src="../assets/people/yaron-singer.jpg"/>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>Z. Chase, S. Hanneke, S. Moran, and J. Shafer. <a href="https://arxiv.org/abs/2512.12567">Optimal Mistake Bounds for Transductive Online Learning</a>. NeurIPS 2025 (Best Paper Runner-Up).</li>
+            <li>S. Goldwasser, G. Rothblum, J. Shafer, and A. Yehudayoff. <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ITCS.2021.41">Interactive Proofs for Verifying Machine Learning</a>. ITCS 2021.</li>
+            </ul>
             </div>
           </div>
-          <div class="person-name"><a href="https://www.linkedin.com/in/yaron-singer-76ab6317/">Yaron Singer</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <span class="portrait-crop portrait-crop--yaron">
+              <img alt="" class="portrait" src="../assets/people/yaron-singer.jpg"/>
+              </span>
+            </span>
+            <span class="person-name">Yaron Singer <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">CEO and co-founder of Frontier Security. Previously VP at Cisco, CEO and founder of AI Security startup Robust Intelligence (acquired by Cisco), and Harvard professor of Computer Science and Applied Mathematics. Works on AI in cybersecurity, AI security, adversarial robustness, and robust optimization. Sloan Fellow.</p>
+            <p class="profile-link"><a href="https://www.linkedin.com/in/yaron-singer-76ab6317/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>P. Kassianik, B. Nelson, and Y. Singer. <a href="https://arxiv.org/abs/2607.15263">Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents</a>. CAMLIS 2026.</li>
-              <li>A. Mehrotra, M. Zampetakis, P. Kassianik, B. Nelson, H. S. Anderson, Y. Singer, and A. Karbasi. <a href="https://arxiv.org/abs/2312.02119">Tree of Attacks: Jailbreaking Black-Box LLMs Automatically</a>. NeurIPS 2024.</li>
-              </ul>
-            </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <div class="portrait-crop portrait-crop--bottom">
-            <img alt="Andrew V. Sutherland" class="portrait" src="../assets/people/andrew-v-sutherland.jpg"/>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>P. Kassianik, B. Nelson, and Y. Singer. <a href="https://arxiv.org/abs/2607.15263">Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents</a>. CAMLIS 2026.</li>
+            <li>A. Mehrotra, M. Zampetakis, P. Kassianik, B. Nelson, H. S. Anderson, Y. Singer, and A. Karbasi. <a href="https://arxiv.org/abs/2312.02119">Tree of Attacks: Jailbreaking Black-Box LLMs Automatically</a>. NeurIPS 2024.</li>
+            </ul>
             </div>
           </div>
-          <div class="person-name"><a href="https://math.mit.edu/~drew/">Andrew V. Sutherland</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <span class="portrait-crop portrait-crop--bottom">
+              <img alt="" class="portrait" src="../assets/people/andrew-v-sutherland.jpg"/>
+              </span>
+            </span>
+            <span class="person-name">Andrew V. Sutherland <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">MIT mathematician working in AI-assisted mathematical discovery, formal verification, large-scale mathematical databases, computational number theory, and arithmetic geometry.</p>
+            <p class="profile-link"><a href="https://math.mit.edu/~drew/">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>J. S. Ellenberg, C. S. Fraser-Taliente, T. R. Harvey, K. Srivastava, and A. V. Sutherland. <a href="https://arxiv.org/abs/2503.11061">Generative Modelling for Mathematical Discovery</a>. Advances in Theoretical and Mathematical Physics 2025.</li>
-              <li>W. Sawin and A. V. Sutherland. <a href="https://arxiv.org/abs/2504.12295">Murmurations for Elliptic Curves Ordered by Height</a>. 2025.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>J. S. Ellenberg, C. S. Fraser-Taliente, T. R. Harvey, K. Srivastava, and A. V. Sutherland. <a href="https://arxiv.org/abs/2503.11061">Generative Modelling for Mathematical Discovery</a>. Advances in Theoretical and Mathematical Physics 2025.</li>
+            <li>W. Sawin and A. V. Sutherland. <a href="https://arxiv.org/abs/2504.12295">Murmurations for Elliptic Curves Ordered by Height</a>. 2025.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Mirac Suzgun" class="portrait" src="../assets/people/mirac-suzgun.jpg"/>
           </div>
-          <div class="person-name"><a href="https://sites.google.com/view/msuzgun">Mirac Suzgun</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/mirac-suzgun.jpg"/>
+            </span>
+            <span class="person-name">Mirac Suzgun <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">PhD candidate in CS at Stanford and JD from Stanford Law School. Works on LLM reasoning, safety, and factuality, with particular interests in understanding and mitigating hallucinations and evaluating AI systems deployed in high-stakes domains such as law and medicine.</p>
+            <p class="profile-link"><a href="https://sites.google.com/view/msuzgun">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>M. Suzgun, M. Yuksekgonul, F. Bianchi, D. Jurafsky, J. Zou. <a href="https://arxiv.org/abs/2504.07952"><em>Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory</em></a>. EACL 2026.</li>
-              <li>M. Suzgun, T. Gur, F. Bianchi, D.E. Ho, T. Icard, D. Jurafsky, J. Zou. <a href="https://arxiv.org/abs/2410.21195"><em>Language Models Cannot Reliably Distinguish Belief from Knowledge and Fact</em></a>. Nature Machine Intelligence 2025.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>M. Suzgun, M. Yuksekgonul, F. Bianchi, D. Jurafsky, J. Zou. <a href="https://arxiv.org/abs/2504.07952"><em>Dynamic Cheatsheet: Test-Time Learning with Adaptive Memory</em></a>. EACL 2026.</li>
+            <li>M. Suzgun, T. Gur, F. Bianchi, D.E. Ho, T. Icard, D. Jurafsky, J. Zou. <a href="https://arxiv.org/abs/2410.21195"><em>Language Models Cannot Reliably Distinguish Belief from Knowledge and Fact</em></a>. Nature Machine Intelligence 2025.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Neekon Vafa" class="portrait" src="../assets/people/neekon-vafa.jpg"/>
           </div>
-          <div class="person-name"><a href="https://neekonvafa.com">Neekon Vafa</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/neekon-vafa.jpg"/>
+            </span>
+            <span class="person-name">Neekon Vafa <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">Junior Fellow of the Harvard Society of Fellows, PhD from MIT. Works on cryptography and its connections to statistics and trustworthy AI.</p>
+            <p class="profile-link"><a href="https://neekonvafa.com">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>A. Bogdanov, A. Rosen, N. Vafa. <a href="https://arxiv.org/abs/2607.09532">Statistically Undetectable Backdoors in Deep Neural Networks</a>. ICML 2026.</li>
-              <li>A. Bogdanov, A. Rosen, N. Vafa, and V. Vaikuntanathan. <a href="https://arxiv.org/abs/2504.09331">Adaptive Robustness of Hypergrid Johnson-Lindenstrauss</a>. STOC 2026.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>A. Bogdanov, A. Rosen, N. Vafa. <a href="https://arxiv.org/abs/2607.09532">Statistically Undetectable Backdoors in Deep Neural Networks</a>. ICML 2026.</li>
+            <li>A. Bogdanov, A. Rosen, N. Vafa, and V. Vaikuntanathan. <a href="https://arxiv.org/abs/2504.09331">Adaptive Robustness of Hypergrid Johnson-Lindenstrauss</a>. STOC 2026.</li>
+            </ul>
             </div>
-          </details>
-        </article>
-        <article class="person-card">
-          <div class="team-photo">
-            <img alt="Rebecca Wexler" class="portrait" src="../assets/people/rebecca-wexler.jpg"/>
           </div>
-          <div class="person-name"><a href="https://www.law.columbia.edu/faculty/rebecca-wexler">Rebecca Wexler</a></div>
-          <details class="member-disclosure">
-            <summary>
-              <span class="closed-label">Show details</span>
-              <span class="open-label">Hide details</span>
-            </summary>
+        </details>
+        <details class="person-card">
+          <summary>
+            <span class="team-photo">
+              <img alt="" class="portrait" src="../assets/people/rebecca-wexler.jpg"/>
+            </span>
+            <span class="person-name">Rebecca Wexler <span class="card-toggle" aria-hidden="true"><span class="closed-label">+</span><span class="open-label">−</span></span></span>
+          </summary>
+          <div class="person-expanded">
             <p class="person-bio">Alfred W. Bressler Professor of Law at Columbia. Works on evidence and criminal law, including interactions of technological and legal design for secrecy, authentication, and accountability.</p>
+            <p class="profile-link"><a href="https://www.law.columbia.edu/faculty/rebecca-wexler">Profile page</a></p>
             <div class="member-publications">
-              <div class="member-publications-heading">Selected publications</div>
-              <ul class="publications">
-              <li>S. Barrington, E. Cooper, H. Farid, R. Wexler. <a href="https://www.lawfaremedia.org/article/ai-generated-voice-evidence-poses-dangers-in-court">AI-Generated Voice Evidence Poses Dangers in Court</a>. Lawfare 2025.</li>
-              <li>D. Bitan, R. Canetti, S. Goldwasser, R. Wexler. <a href="https://doi.org/10.1145/3511265.3550452">Using Zero-Knowledge to Reconcile Law Enforcement Secrecy and Fair Trial</a>. ACM CSLaw 2022.</li>
-              </ul>
+            <div class="member-publications-heading">Selected publications</div>
+            <ul class="publications">
+            <li>S. Barrington, E. Cooper, H. Farid, R. Wexler. <a href="https://www.lawfaremedia.org/article/ai-generated-voice-evidence-poses-dangers-in-court">AI-Generated Voice Evidence Poses Dangers in Court</a>. Lawfare 2025.</li>
+            <li>D. Bitan, R. Canetti, S. Goldwasser, R. Wexler. <a href="https://doi.org/10.1145/3511265.3550452">Using Zero-Knowledge to Reconcile Law Enforcement Secrecy and Fair Trial</a>. ACM CSLaw 2022.</li>
+            </ul>
             </div>
-          </details>
-        </article>
+          </div>
+        </details>
       </div>
     </section>
 
