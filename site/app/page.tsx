@@ -55,9 +55,9 @@ const founders: Person[] = [
 ];
 
 const founderPortraits: Record<string, string> = {
-  'Shafi Goldwasser': '/people/shafi-goldwasser.jpg',
-  'Adam Tauman Kalai': '/people/adam-tauman-kalai.jpg',
-  'Vinod Vaikuntanathan': '/people/vinod-vaikuntanathan.jpg',
+  'Shafi Goldwasser': '/test/people/shafi-goldwasser.jpg',
+  'Adam Tauman Kalai': '/test/people/adam-tauman-kalai.jpg',
+  'Vinod Vaikuntanathan': '/test/people/vinod-vaikuntanathan.jpg',
 };
 
 const operationsLead: Person = {
@@ -252,24 +252,24 @@ const researchTeam: Person[] = [
 ];
 
 const researchPortraits: Record<string, string> = {
-  'Chloé Bakalar': '/people/chloe-bakalar.jpg',
-  'Tal Herman': '/people/tal-herman.jpg',
-  'Dylan Hadfield-Menell': '/people/dylan-hadfield-menell.jpg',
-  'Ran Canetti': '/people/ran-canetti.jpg',
-  'Miranda Christ': '/people/miranda-christ.jpg',
-  'Greg Gluch': '/people/greg-gluch.jpg',
-  'Yannai A. Gonczarowski': '/people/yannai-a-gonczarowski.jpg',
-  'Sam Gunn': '/people/sam-gunn.jpg',
-  'Yael Tauman Kalai': '/people/yael-tauman-kalai.jpg',
-  'Noam Kolt': '/people/noam-kolt.jpg',
-  'Anat Perry': '/people/anat-perry.jpg',
-  'Daniela Rus': '/people/daniela-rus.jpg',
-  'Jonathan Shafer': '/people/jonathan-shafer.jpg',
-  'Yaron Singer': '/people/yaron-singer.jpg',
-  'Andrew V. Sutherland': '/people/andrew-v-sutherland.jpg',
-  'Mirac Suzgun': '/people/mirac-suzgun.jpg',
-  'Neekon Vafa': '/people/neekon-vafa.jpg',
-  'Rebecca Wexler': '/people/rebecca-wexler.jpg',
+  'Chloé Bakalar': '/test/people/chloe-bakalar.jpg',
+  'Tal Herman': '/test/people/tal-herman.jpg',
+  'Dylan Hadfield-Menell': '/test/people/dylan-hadfield-menell.jpg',
+  'Ran Canetti': '/test/people/ran-canetti.jpg',
+  'Miranda Christ': '/test/people/miranda-christ.jpg',
+  'Greg Gluch': '/test/people/greg-gluch.jpg',
+  'Yannai A. Gonczarowski': '/test/people/yannai-a-gonczarowski.jpg',
+  'Sam Gunn': '/test/people/sam-gunn.jpg',
+  'Yael Tauman Kalai': '/test/people/yael-tauman-kalai.jpg',
+  'Noam Kolt': '/test/people/noam-kolt.jpg',
+  'Anat Perry': '/test/people/anat-perry.jpg',
+  'Daniela Rus': '/test/people/daniela-rus.jpg',
+  'Jonathan Shafer': '/test/people/jonathan-shafer.jpg',
+  'Yaron Singer': '/test/people/yaron-singer.jpg',
+  'Andrew V. Sutherland': '/test/people/andrew-v-sutherland.jpg',
+  'Mirac Suzgun': '/test/people/mirac-suzgun.jpg',
+  'Neekon Vafa': '/test/people/neekon-vafa.jpg',
+  'Rebecca Wexler': '/test/people/rebecca-wexler.jpg',
 };
 
 const plannedVisitors = [
@@ -364,7 +364,7 @@ function ResiLogo({ plain = false }: { plain?: boolean }) {
     <span className={plain ? 'logo-crop logo-wordmark' : 'logo-crop'} aria-hidden="true">
       <Image
         className="logo-image"
-        src={plain ? '/resi-wordmark.png' : '/resi-logo-cropped.png'}
+        src={plain ? '/test/resi-wordmark.png' : '/test/resi-logo-cropped.png'}
         alt=""
         width={plain ? 460 : 1678}
         height={plain ? 175 : 1085}
@@ -454,7 +454,7 @@ export default function Home() {
               </summary>
               <div className="people-disclosure-panel">
                 <div className="operations-card-wrap">
-                  <PersonEntry person={operationsLead} featured portraitSrc="/people/emily-uyeda-kantrim.jpg" />
+                  <PersonEntry person={operationsLead} featured portraitSrc="/test/people/emily-uyeda-kantrim.jpg" />
                 </div>
               </div>
             </details>

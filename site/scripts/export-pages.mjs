@@ -1,9 +1,12 @@
-import { cpSync, existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 
 const output = fileURLToPath(new URL('../out/', import.meta.url));
 const repository = fileURLToPath(new URL('../../', import.meta.url));
+const preview = join(repository, 'test');
+const homepageFile = join(repository, 'index.html');
+const homepage = readFileSync(homepageFile);
 const domainFile = join(repository, 'CNAME');
 const domain = readFileSync(domainFile, 'utf8');
 
@@ -19,9 +22,9 @@ for (const name of entries) {
     throw new Error('Unexpected static-export entry: ' + name);
   }
 }
-for (const name of entries) {
-  cpSync(join(output, name), join(repository, name), { recursive: true });
-}
+rmSync(preview, { recursive: true, force: true });
+cpSync(output, preview, { recursive: true });
 writeFileSync(join(repository, '.nojekyll'), '');
 if (readFileSync(domainFile, 'utf8') !== domain) throw new Error('The custom domain changed unexpectedly.');
-console.log('GitHub Pages files updated. CNAME remains resi.org.');
+if (!readFileSync(homepageFile).equals(homepage)) throw new Error('The public homepage changed unexpectedly.');
+console.log('GitHub Pages preview updated at /test/. The homepage and CNAME are unchanged.');

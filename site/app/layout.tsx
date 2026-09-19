@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   description:
     'An independent nonprofit research institute building the foundations needed to make superintelligence safe by design.',
   icons: {
-    icon: '/resi-favicon.png',
-    shortcut: '/resi-favicon.png',
-    apple: '/resi-favicon.png',
+    icon: '/test/resi-favicon.png',
+    shortcut: '/test/resi-favicon.png',
+    apple: '/test/resi-favicon.png',
   },
   openGraph: {
     title: 'Institute for Responsible Superintelligence | RESI',

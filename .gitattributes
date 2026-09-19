@@ -1,7 +1,2 @@
-_next/** linguist-generated=true -diff
-index.html linguist-generated=true
-index.txt linguist-generated=true
-__next.*.txt linguist-generated=true
-404.html linguist-generated=true
-404/** linguist-generated=true
-_not-found/** linguist-generated=true
+test/** linguist-generated=true
+test/_next/** -diff
