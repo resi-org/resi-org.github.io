@@ -14,7 +14,7 @@ The initial archive covers the September 16, September 23, and October 7, 2026 s
 
 ## Seminar Zoom short URL
 
-[resi.org/seminar-zoom](https://resi.org/seminar-zoom) currently displays “Will be added soon”. To enable forwarding, set `url` in `seminar-zoom/destination.json` to the complete HTTPS Zoom invitation URL, including any meeting passcode in its query string, and publish the change. Set it back to `null` to restore the placeholder. This destination is public, so use a link intended for seminar attendees to share.
+[resi.org/seminar-zoom](https://resi.org/seminar-zoom) forwards to the current seminar’s Zoom meeting. To update the destination, set `url` in `seminar-zoom/destination.json` to the complete HTTPS Zoom invitation URL, including any meeting passcode in its query string, and publish the change. Set it to `null` to display “Will be added soon”. This destination is public, so use a link intended for seminar attendees to share.
 
 GitHub Pages currently serves HTML with `Cache-Control: max-age=600`. The short URL therefore keeps its destination in a separate JSON file. On each visit, history restoration, and return to a background tab, it fetches that file with `cache: "no-store"` and a unique query string to avoid reusing browser or CDN cache entries. The HTML shell can be cached without freezing the destination. Forwarding uses `location.replace`, not a permanent HTTP redirect to the meeting. JavaScript is required for forwarding; network or configuration errors show a retry button instead of using a stale destination.
 
