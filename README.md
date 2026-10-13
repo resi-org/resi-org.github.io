@@ -10,6 +10,8 @@ The root `index.html` is the public homepage, restored exactly from commit `258a
 
 The seminar page is in `seminars/index.html`, linked from the homepage. Add confirmed upcoming talks above the archive. After a talk takes place, move its entry to the top of Past seminars and add it to the archive navigation, preserving earlier entries and stable links. Include the speaker and affiliation, date, time, title, abstract, biography, and confirmed location from the seminar announcement. Keep biographies as they appeared at the time of the talk. Also add visiting seminar speakers to the homepage’s Past Visitors list, without duplicating existing names. Add visitors only after their visits have taken place.
 
+Working-group or reading-group attendance alone does not qualify someone for the Past Visitors list.
+
 The initial archive covers the September 16, September 23, and October 7, 2026 seminars, using their RESI announcement emails. There was no seminar on September 30. The October 12 visitor update was checked against Emily’s October 11 email, the October 12–16 “This Week at RESI” update, and the visit correspondence.
 
 ## Seminar Zoom short URL
