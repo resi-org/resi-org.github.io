@@ -198,7 +198,7 @@ const papers = (await getCollection('selectedResearch')).sort(
       const featured = roster.querySelector<HTMLElement>(':scope > .working-group-featured');
       const cards = allCards.filter((card) => card !== featured);
       const onward = roster.querySelector<HTMLElement>('.working-group-onward');
-      const desktop = matchMedia('(min-width: 701px)');
+      const desktop = matchMedia('(min-width: 630.9px)');
       let scheduled = false;
       const layout = () => {
         scheduled = false;
@@ -222,7 +222,7 @@ const papers = (await getCollection('selectedResearch')).sort(
         const leadHeight = tallest(':scope > .working-group-body > .wg-lead');
         roster.style.setProperty('--group-title-height', `${titleHeight}px`);
         roster.style.setProperty('--group-lead-height', `${leadHeight}px`);
-        const gap = parseFloat(getComputedStyle(roster).columnGap);
+        const gap = Math.ceil(parseFloat(getComputedStyle(roster).columnGap));
         let firstRow = 1;
         if (featured) {
           featured.style.gridColumn = '1 / -1';
@@ -323,7 +323,8 @@ const papers = (await getCollection('selectedResearch')).sort(
       min-height: var(--group-lead-height, 0px);
     }
     .research-group-cards.independent-columns {
-      grid-auto-rows: 0.9px;
+      /* The layout script measures row spans in whole CSS pixels. */
+      grid-auto-rows: 1px;
       row-gap: 0;
     }
   }
