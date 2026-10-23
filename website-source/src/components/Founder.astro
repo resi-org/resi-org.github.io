@@ -1,0 +1,73 @@
+---
+import { render } from 'astro:content';
+import { portraitFor } from '../lib/portraits';
+import { groups } from '../data/groups';
+import Disclosure from './Disclosure.astro';
+import PublicationList from './PublicationList.astro';
+import { publicationsFor } from '../lib/publications';
+import { external } from '../lib/external';
+import type { CollectionEntry } from 'astro:content';
+
+// One founding scientist as a bounded card: portrait, name, the bio as it
+// stands, and the selected publications behind the same native expander the
+// rest of the People page uses. Three of these sit side by side in a band a
+// little wider than the column, so the founders share the first screen.
+interface Props {
+  person: CollectionEntry<'people'>;
+}
+const { person } = Astro.props;
+const { Content } = await render(person);
+const d = person.data;
+const portrait = portraitFor(person.id, d.photo);
+const ledGroups = groups.filter((g) => g.leadHref === '/people#' + person.id);
+// The given name sits on its own line, so all three names read the same way
+// beside their portrait whether or not the full name would have fitted.
+const [given, ...rest] = d.name.split(' ');
+const surname = rest.join(' ');
+// A coauthor who is also at RESI links to their own entry; the founder whose
+// list this is does not link to themselves.
+const pubs = await publicationsFor(d.publications, person.id);
+---
+
+<li class="founder card" id={person.id}>
+  <div class="founder-head">
+    {d.photo ? (
+      <span class="person-photo founder-portrait" style={portrait.style}>
+        <img src={portrait.src} alt="" width="90" height="90" decoding="async" />
+      </span>
+    ) : (
+      <span class="person-photo" aria-hidden="true" />
+    )}
+    <h3 class="person-name">
+      {d.url ? (
+        <a href={d.url} {...external(d.url)}>
+          <span class="given">{given}</span><br class="founder-name-break" />{surname}
+        </a>
+      ) : (
+        <Fragment>
+          <span class="given">{given}</span><br class="founder-name-break" />{surname}
+        </Fragment>
+      )}
+    </h3>
+  </div>
+  <div class="person-bio">
+    <Content />
+    {d.wikipedia && !d.url && (
+      <div class="person-links">
+        <a href={d.wikipedia} {...external(d.wikipedia)}>
+          Wikipedia
+        </a>
+      </div>
+    )}
+  </div>
+  {ledGroups.map((g) => (
+    <p class="person-role founder-lead">
+      Leading RESI’s <a href={'/research#' + g.id}>{g.name}</a> working group
+    </p>
+  ))}
+  {d.publications.length > 0 && (
+    <Disclosure class="expander pubs" summary="Selected publications">
+      <PublicationList papers={pubs} />
+    </Disclosure>
+  )}
+</li>

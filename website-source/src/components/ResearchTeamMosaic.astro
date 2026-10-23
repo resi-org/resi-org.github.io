@@ -1,0 +1,181 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { portraitFor } from '../lib/portraits';
+interface Props {
+  people: CollectionEntry<'people'>[];
+}
+const { people } = Astro.props;
+const portraits = people.map((person) => ({ person, portrait: portraitFor(person.id, person.data.photo) }));
+---
+
+<div class="team-mosaic" data-team-mosaic>
+  <ul class="research-team-mosaic" aria-label="Research team">
+    {portraits.map(({ person: p, portrait }) => (
+      <li>
+        <a
+          class="research-team-portrait"
+          style={portrait.style}
+          href={`/people#${p.id}`}
+          aria-label={p.data.name}
+          title={p.data.name}
+        >
+          <img src={portrait.src} alt="" width="56" height="56" loading="lazy" />
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-team-mosaic]').forEach((mosaic) => {
+    const grid = mosaic.querySelector<HTMLUListElement>('ul')!;
+    const people = [...grid.children] as HTMLLIElement[];
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    if (people.length <= 18) return;
+
+    // Eighteen visible tiles; the spare portraits circulate through every position.
+    const tiles = people.slice(0, 18);
+    let waiting: HTMLAnchorElement[] = [];
+    let active = false;
+    let visible = false;
+    let printing = false;
+    let tileIndex = 0;
+    let timer: number | undefined;
+    let fading: Animation | undefined;
+    let incoming: HTMLAnchorElement | undefined;
+
+    function stop() {
+      clearTimeout(timer);
+      timer = undefined;
+      if (fading) {
+        fading.onfinish = null;
+        fading.cancel();
+        fading = undefined;
+      }
+      incoming?.remove();
+      incoming = undefined;
+    }
+
+    function canRotate() {
+      return (
+        active &&
+        visible &&
+        !printing &&
+        !document.hidden &&
+        !reducedMotion.matches &&
+        !mosaic.matches(':hover, :focus-within')
+      );
+    }
+
+    function schedule() {
+      clearTimeout(timer);
+      if (canRotate()) timer = window.setTimeout(rotate, 1100);
+    }
+
+    function rotate() {
+      if (!canRotate()) return;
+      const tile = tiles[tileIndex];
+      const current = tile.querySelector<HTMLAnchorElement>('a')!;
+      const next = waiting[0];
+      const image = next.querySelector<HTMLImageElement>('img')!;
+      if (!image.complete || !image.naturalWidth) {
+        schedule();
+        return;
+      }
+      incoming = next.cloneNode(true) as HTMLAnchorElement;
+      incoming.inert = true;
+      incoming.setAttribute('aria-hidden', 'true');
+      tile.append(incoming);
+      fading = incoming.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 650,
+        easing: 'ease-in-out',
+        fill: 'both',
+      });
+      fading.onfinish = () => {
+        const replacement = incoming!;
+        fading!.cancel();
+        fading = undefined;
+        replacement.inert = false;
+        replacement.removeAttribute('aria-hidden');
+        tile.replaceChildren(replacement);
+        incoming = undefined;
+        waiting.shift();
+        waiting.push(current);
+        // A coprime step moves the fade around the grid instead of marching across a row.
+        tileIndex = (tileIndex + 7) % tiles.length;
+        schedule();
+      };
+    }
+
+    function useStillGrid() {
+      stop();
+      active = false;
+      grid.classList.remove('is-rotating');
+      // Restore every person, including the currently off-screen portrait, for print/reduced motion.
+      const links = [...tiles.flatMap((tile) => [...tile.querySelectorAll('a')]), ...waiting];
+      if (links.length) {
+        grid.replaceChildren(
+          ...links.map((link) => {
+            const item = document.createElement('li');
+            item.append(link);
+            return item;
+          }),
+        );
+      }
+    }
+
+    function enable() {
+      if (reducedMotion.matches || printing || active) return;
+      const items = [...grid.children] as HTMLLIElement[];
+      tiles.splice(0, tiles.length, ...items.slice(0, 18));
+      waiting = items.slice(18).map((item) => item.querySelector<HTMLAnchorElement>('a')!);
+      waiting.forEach((link) => {
+        const image = link.querySelector<HTMLImageElement>('img')!;
+        image.loading = 'eager';
+      });
+      items.slice(18).forEach((item) => item.remove());
+      grid.classList.add('is-rotating');
+      active = true;
+      schedule();
+    }
+
+    // Keep a portrait and its profile link stable while someone interacts with it.
+    mosaic.addEventListener('pointerenter', stop);
+    mosaic.addEventListener('pointerleave', schedule);
+    mosaic.addEventListener('focusin', stop);
+    mosaic.addEventListener('focusout', () => requestAnimationFrame(schedule));
+    document.addEventListener('visibilitychange', () => {
+      stop();
+      schedule();
+    });
+    reducedMotion.addEventListener('change', () => {
+      if (reducedMotion.matches) useStillGrid();
+      else enable();
+    });
+    addEventListener('beforeprint', () => {
+      printing = true;
+      if (active) useStillGrid();
+    });
+    addEventListener('afterprint', () => {
+      printing = false;
+      enable();
+    });
+    new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+        stop();
+        schedule();
+      },
+      { threshold: 0.2 },
+    ).observe(mosaic);
+    enable();
+  });
+</script>
+
+<style>
+  .research-team-portrait img {
+    object-position: var(--portrait-position);
+    transform: scale(var(--portrait-scale));
+    transform-origin: var(--portrait-origin);
+  }
+</style>

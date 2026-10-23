@@ -1,0 +1,25 @@
+---
+const { prefix = '' } = Astro.props;
+---
+
+<section class="institution-block" aria-labelledby={`${prefix}institution-heading`}>
+  <div>
+    <p class="eyebrow">Why RESI, why now</p>
+    <h2 id={`${prefix}institution-heading`}>Academic independence with institutional focus</h2>
+  </div>
+  <div>
+    <p>
+      RESI combines academic independence with sustained institutional focus on the foundational
+      problems of advanced AI safety. We bring together researchers from across fields around shared
+      questions, while remaining focused and flexible to respond as AI capabilities and
+      architectures evolve.
+    </p>
+    <p>
+      The architecture and norms surrounding advanced AI are still being formed. Research developed
+      during this period has an opportunity to shape systems before their designs are entrenched.
+    </p>
+    <a class="text-link" href="/about#institution">
+      Why an independent institute
+    </a>
+  </div>
+</section>

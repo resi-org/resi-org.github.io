@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Scott Aaronson",
+    "affiliation": "UT Austin",
+    "url": "https://www.scottaaronson.com/",
+    "status": "planned"
+  },
+  {
+    "name": "Boaz Barak",
+    "affiliation": "OpenAI",
+    "url": "https://www.boazbarak.org/",
+    "status": "planned"
+  },
+  {
+    "name": "David Bau",
+    "affiliation": "Northeastern",
+    "url": "https://baulab.info/",
+    "status": "planned"
+  },
+  {
+    "name": "Yonatan Belinkov",
+    "affiliation": "Technion",
+    "url": "https://belinkov.com/",
+    "status": "planned"
+  },
+  {
+    "name": "Avrim Blum",
+    "affiliation": "TTIC",
+    "url": "https://home.ttic.edu/~avrim/",
+    "status": "past"
+  },
+  {
+    "name": "Christian Borgs",
+    "affiliation": "Berkeley",
+    "url": "https://www2.eecs.berkeley.edu/Faculty/Homepages/borgs.html",
+    "status": "past"
+  },
+  {
+    "name": "Sebastien Bubeck",
+    "affiliation": "OpenAI",
+    "url": "http://sbubeck.com/",
+    "status": "planned"
+  },
+  {
+    "name": "Nicholas Carlini",
+    "affiliation": "Anthropic",
+    "url": "https://nicholas.carlini.com/",
+    "status": "planned"
+  },
+  {
+    "name": "Jennifer Chayes",
+    "affiliation": "Berkeley",
+    "url": "https://cdss.berkeley.edu/people/jennifer-chayes",
+    "status": "planned"
+  },
+  {
+    "name": "Andrew Critch",
+    "affiliation": "Encultured",
+    "url": "https://acritch.com/",
+    "status": "planned"
+  },
+  {
+    "name": "Costis Daskalakis",
+    "affiliation": "MIT",
+    "url": "https://people.csail.mit.edu/costis/",
+    "status": "planned"
+  },
+  {
+    "name": "Geoffrey Irving",
+    "affiliation": "Resolution",
+    "url": "https://naml.us/",
+    "status": "planned"
+  },
+  {
+    "name": "Sham Kakade",
+    "affiliation": "Harvard",
+    "url": "https://shamulent.github.io/",
+    "status": "planned"
+  },
+  {
+    "name": "Ehud Kalai",
+    "affiliation": "Northwestern",
+    "url": "https://kellogg.northwestern.edu/faculty/kalai/htm/personal_page/welcome.htm",
+    "status": "planned"
+  },
+  {
+    "name": "John Langford",
+    "affiliation": "Microsoft",
+    "url": "https://www.microsoft.com/en-us/research/people/jcl/",
+    "status": "past"
+  },
+  {
+    "name": "Tal Malkin",
+    "affiliation": "Columbia",
+    "url": "https://www.cs.columbia.edu/~tal/",
+    "status": "planned"
+  },
+  {
+    "name": "Moni Naor",
+    "affiliation": "Weizmann Institute",
+    "url": "https://www.wisdom.weizmann.ac.il/~naor/",
+    "status": "planned"
+  },
+  {
+    "name": "Orr Paradise",
+    "affiliation": "EPFL",
+    "url": "https://orrp.net/",
+    "status": "planned"
+  },
+  {
+    "name": "Manish Raghavan",
+    "affiliation": "MIT",
+    "url": "https://mraghavan.github.io/",
+    "status": "planned"
+  },
+  {
+    "name": "Omer Reingold",
+    "affiliation": "Stanford",
+    "url": "https://www.cs.stanford.edu/people/omer-reingold",
+    "status": "planned"
+  },
+  {
+    "name": "Alon Rosen",
+    "affiliation": "Bocconi",
+    "url": "https://www.alonrosen.net/",
+    "status": "planned"
+  },
+  {
+    "name": "Jacob Steinhardt",
+    "affiliation": "Transluce, UC Berkeley",
+    "url": "https://jsteinhardt.stat.berkeley.edu/",
+    "status": "planned"
+  },
+  {
+    "name": "Jacob Tsimerman",
+    "affiliation": "OpenAI",
+    "url": "https://www.math.utoronto.ca/~jacobt/",
+    "status": "planned"
+  },
+  {
+    "name": "Santosh Vempala",
+    "affiliation": "Georgia Tech",
+    "url": "https://faculty.cc.gatech.edu/~vempala/",
+    "status": "planned"
+  },
+  {
+    "name": "Daniel Wichs",
+    "affiliation": "Northeastern",
+    "url": "https://www.khoury.northeastern.edu/home/wichs/",
+    "status": "planned"
+  }
+]

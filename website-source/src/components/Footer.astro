@@ -1,0 +1,64 @@
+---
+import { external } from '../lib/external';
+import Arrow from './Arrow.astro';
+import { institute } from '../data/institute';
+const year = new Date().getUTCFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell">
+    <ul class="footer-list">
+      <li>
+        <a href={institute.announcements} {...external(institute.announcements)}>
+          Mailing list
+        </a>
+      </li>
+      <li>
+        <a href={institute.contact}>hello@resi.org</a>
+      </li>
+      <li>
+        <a href="/privacy">Privacy</a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/company/institute-resi"
+          {...external('https://www.linkedin.com/company/institute-resi')}
+        >
+          LinkedIn
+        </a>
+      </li>
+      <li>
+        <a href="https://x.com/RESI_org" {...external('https://x.com/RESI_org')}>
+          X
+        </a>
+      </li>
+      <li class="footer-copyright">
+        <small>© {year} RESI</small>
+        <span class="footer-controls">
+          <button
+            class="icon-button theme-toggle js-only"
+            type="button"
+            aria-label="Switch color theme"
+          >
+            <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+              <path class="theme-half-dark" d="M10 2.5a7.5 7.5 0 0 0 0 15z" />
+              <path class="theme-half-light" d="M10 2.5a7.5 7.5 0 0 1 0 15z" />
+              <circle
+                class="theme-outline"
+                cx="10"
+                cy="10"
+                r="7.5"
+                fill="none"
+                stroke-width="0.8"
+              />
+            </svg>
+          </button>
+          <a class="back-to-top" href="#top" aria-label="Back to top">
+            <Arrow />
+          </a>
+        </span>
+      </li>
+    </ul>
+  </div>
+</footer>
+

@@ -1,0 +1,232 @@
+---
+import { getCollection } from 'astro:content';
+import { portraitFor } from '../lib/portraits';
+import Base from '../layouts/Base.astro';
+import ResearchAreaCards from '../components/ResearchAreaCards.astro';
+import ResearchTeamMosaic from '../components/ResearchTeamMosaic.astro';
+import Arrow from '../components/Arrow.astro';
+import { getAnnouncements, fmtDay } from '../lib/announcements';
+import { external } from '../lib/external';
+import { institute, researchAgenda } from '../data/institute';
+const entries = (await getAnnouncements()).slice(0, 3);
+const people = await getCollection('people');
+const researchTeam = people
+  .filter((p) => p.data.group === 'research' && p.data.photo)
+  .sort((a, b) => a.data.order - b.data.order);
+const founders = people
+  .filter((p) => p.data.group === 'founders')
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<Base wide>
+  <section class="hero shell" aria-labelledby="hero-title">
+    <div class="hero-grid">
+      <div>
+        <h1 id="hero-title">
+          The Institute for
+          <br />
+          Responsible Superintelligence
+        </h1>
+        <p class="hero-description">
+          RESI is an independent nonprofit research institute based in Cambridge, Massachusetts,
+          building the scientific foundations for making superintelligence <strong>safe by design</strong>.
+        </p>
+        <div class="hero-mission" id="mission">
+          <p class="safe-definition">
+            <strong>Safe by design</strong> means safety properties are specified in advance and
+            achieved by mechanisms whose guarantees can be analyzed before deployment.
+          </p>
+          <p class="mission-bridge">
+            As AI systems become more capable, we need to understand what will keep them trustworthy
+            and under human control. RESI brings technical, legal, and economic research together
+            around that question, drawing on the scientific approach that transformed modern
+            cryptography.
+          </p>
+        </div>
+        <div class="actions">
+          <a class="button" href="/research">
+            Explore our research program <Arrow />
+          </a>
+          <a class="button secondary" href="/support">
+            Support our work <Arrow />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="home-band tint" id="argument" aria-labelledby="precedent-heading">
+    <div class="shell home-rationale">
+      <h2 id="precedent-heading">The modern cryptography precedent</h2>
+      <p>
+        Long ago, encryption schemes were ad hoc: constantly broken, red-teamed, and patched. Modern
+        cryptography began when researchers formulated definitions of computational security and
+        invented primitives that could provably satisfy them under explicit mathematical
+        assumptions: public-key encryption, digital signatures, zero-knowledge proofs, multi-party
+        computation, and obfuscation. These inventions have withstood decades of attacks and
+        enormous increases in computing power.
+      </p>
+      <p>
+        <strong>RESI is a bet that such guarantees are possible for superintelligence safety</strong>, and that it
+        will happen by bringing together researchers who aim their efforts at responsible
+        superintelligence, using frontier AI tools.
+      </p>
+    </div>
+  </section>
+  <section class="home-band tint" id="founders" aria-labelledby="people-heading">
+    <span id="institution" aria-hidden="true"></span>
+    <span id="institution-heading" aria-hidden="true"></span>
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <h2 id="people-heading">Founders</h2>
+        </div>
+      </div>
+      <ul class="home-founders">
+        {founders.map((p) => (
+          <li class="home-founder">
+            <span class="founder-portrait" style={portraitFor(p.id, p.data.photo).style}>
+              <img src={portraitFor(p.id, p.data.photo).src} alt="" width="90" height="90" loading="lazy" />
+            </span>
+            <h3>
+              <a href={`/people#${p.id}`}>
+                <span class="founder-name-line">{p.data.name.split(' ')[0]}</span><br />
+                <span class="founder-name-line">{p.data.name.split(' ').slice(1).join(' ')}</span>
+              </a>
+            </h3>
+            <p>{p.data.summary}</p>
+          </li>
+        ))}
+      </ul>
+      <div class="community">
+        <ResearchTeamMosaic people={researchTeam} />
+        <div class="community-invite">
+          <h3 class="community-heading">Research community</h3>
+          <a class="text-link" href="/people#research">
+            Meet the team <Arrow />
+          </a>
+          <a class="text-link" href="/research#evidence">
+            Explore foundational work <Arrow />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="home-band" id="announcements" aria-labelledby="announcements-heading">
+    <div class="shell home-announcements">
+      <h2 id="announcements-heading">Announcements</h2>
+      <ul class="announcement-list">
+        {entries.map((entry) => {
+          const href = entry.outlet && entry.url ? entry.url : `/news#${entry.id}`;
+          return (
+            <li class="announcement-item">
+              <p class="announcement-meta">
+                <time datetime={entry.date.toISOString().slice(0, 10)}>{fmtDay(entry.date)}</time>
+                {entry.source && <span>{entry.source}</span>}
+              </p>
+              <h3>
+                <a href={href} {...external(href)}>
+                  {entry.homepageTitle || entry.title}
+                </a>
+              </h3>
+              {(entry.homepageSummary || entry.summary) && (
+                <p class="announcement-summary">{entry.homepageSummary || entry.summary}</p>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+      <div class="home-section-links">
+        <a class="text-link" href="/news">See all our news and updates <Arrow /></a>
+      </div>
+    </div>
+  </section>
+  <section class="home-band tint" id="research" aria-labelledby="research-heading">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <h2 id="research-heading">Key research areas</h2>
+        </div>
+        {researchAgenda.intro && <p>{researchAgenda.intro}</p>}
+      </div>
+      <ResearchAreaCards />
+      <div class="home-section-links">
+        <a class="text-link" href="/research#areas">See all our research areas <Arrow /></a>
+        <a class="text-link" href="/research">See our full research program <Arrow /></a>
+      </div>
+    </div>
+  </section>
+  <section class="home-band" id="support" aria-labelledby="support-heading">
+    <div class="shell">
+      <span id="progress-heading" aria-hidden="true"></span>
+      <div class="support-invite">
+        <h2 id="support-heading">Support independent research on safe superintelligence</h2>
+        <div>
+          <p>
+            Donations will enable us to bring in more researchers, especially postdocs and junior
+            researchers, and further accelerate our research using AI. We also welcome support
+            through compute credits and infrastructure.
+          </p>
+          <div class="actions">
+            <a class="button secondary" href="/support">
+              Support RESI <Arrow />
+            </a>
+          </div>
+        </div>
+      </div>
+      <p class="support-acknowledgment" id="fiscal-sponsor">
+        Supported by grants from {institute.supporters.join(', ').replace(/, ([^,]*)$/, ', and $1')}.
+        Fiscally sponsored by {institute.sponsor.name}.
+      </p>
+    </div>
+  </section>
+  <script>
+    const priorWorkHashes = new Set([
+      '#evidence',
+      '#filtering-limits-paper',
+      '#covert-conversations-paper',
+      '#data-attribution-paper',
+    ]);
+    function followPriorWorkLink() {
+      if (priorWorkHashes.has(location.hash)) location.replace('/research#evidence');
+    }
+    followPriorWorkLink();
+    addEventListener('hashchange', followPriorWorkLink);
+  </script>
+</Base>
+
+<style>
+  .home-section-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    text-align: right;
+  }
+  .home-section-links .text-link {
+    margin: 0;
+  }
+  #support-heading {
+    font-size: 35px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+  }
+  .support-acknowledgment {
+    margin-top: 24px;
+    text-wrap: pretty;
+  }
+  @media (max-width: 640px) {
+    #support-heading {
+      font-size: 31px;
+    }
+  }
+</style>
+
+<script is:inline>
+  const legacyAnchors = { '#founding-team': '/people/#founders', '#research-team': '/people/#research' };
+  function restoreLegacyAnchor() {
+    if (legacyAnchors[location.hash]) location.replace(legacyAnchors[location.hash]);
+  }
+  restoreLegacyAnchor();
+  addEventListener('hashchange', restoreLegacyAnchor);
+</script>

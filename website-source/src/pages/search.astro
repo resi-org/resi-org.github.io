@@ -1,0 +1,254 @@
+---
+import Base from '../layouts/Base.astro';
+import seminars from '../data/seminars.json';
+import { getCollection } from 'astro:content';
+import { areas, faq } from '../data/institute';
+import { groups } from '../data/groups';
+const [people, papers, updates] = await Promise.all([
+  getCollection('people'),
+  getCollection('selectedResearch'),
+  getCollection('updates'),
+]);
+const sections = [
+  {
+    title: 'RESI-MIT Seminars',
+    url: '/seminars',
+    category: 'Seminars',
+    text: 'Research talks on the foundations of AI safety, hosted by RESI and MIT.',
+  },
+  {
+    title: 'Making superintelligence safe by design',
+    url: '/',
+    category: 'Home',
+    text: 'The Institute for Responsible Superintelligence (RESI) is an independent nonprofit research institute developing ways to make powerful AI systems trustworthy and controllable by design.',
+  },
+  {
+    title: 'Safe by design',
+    url: '/#mission',
+    category: 'Home',
+    text: 'Safe by design means safety properties are specified in advance and achieved by mechanisms whose guarantees can be analyzed before deployment.',
+  },
+  {
+    title: 'The modern cryptography precedent',
+    url: '/#argument',
+    category: 'Home',
+    text: 'Modern cryptography developed definitions of computational security and primitives that could provably satisfy them under explicit mathematical assumptions: public-key encryption, digital signatures, zero-knowledge proofs, multi-party computation, and obfuscation.',
+  },
+  {
+    title: 'Research excellence and independence',
+    url: '/about#institution',
+    category: 'Who we are',
+    text: 'RESI combines research excellence with independence of industry and profit incentives.',
+  },
+  {
+    title: 'What success will look like',
+    url: '/about#progress',
+    category: 'Who we are',
+    text: 'Progress can be demonstrated through rigorous definitions of safety objectives; mechanisms and architectures with useful guarantees; results establishing what is achievable, impossible, or dependent on particular assumptions; evidence about how guarantees hold up when systems are combined; and working prototypes that can be evaluated in practice.',
+  },
+  {
+    title: 'A research community spanning technical, legal, and economic expertise',
+    url: '/about#collaboration',
+    category: 'Who we are',
+    text: 'Superintelligence safety has many aspects, and no single discipline sees the whole picture. Participating researchers will span computer science and other fields relevant to AI safety, including mathematics, economics and law, with an active visitor program.',
+  },
+  {
+    title: 'How research shapes AI systems and policy',
+    url: '/about#adoption',
+    category: 'Who we are',
+    text: 'Our long-term goal is for safe by design approaches to be adopted in advanced AI systems and for research to inform policy and regulation.',
+  },
+  {
+    title: 'Research outputs',
+    url: '/research#approach',
+    category: 'Research',
+    text: 'Models, definitions, and impossibility results; mechanisms and composition; implementations and proofs of concept. Develop models and define safety requirements, analyze mechanisms, establish limits, and evaluate prototypes.',
+  },
+  {
+    title: 'AI-assisted research',
+    url: '/research#ai-assisted',
+    category: 'Research',
+    text: 'RESI is developing research systems that use frontier AI to help investigate AI safety.',
+  },
+  {
+    title: 'Researchers, visitors, and students',
+    url: '/people#get-involved',
+    category: 'People',
+    text: 'RESI hosts a small number of researchers and visitors and welcomes inquiries from researchers whose expertise could contribute to RESI’s research, whether or not they have previously worked on AI safety.',
+  },
+  {
+    title: 'Visiting researchers',
+    url: '/people#visitors',
+    category: 'People',
+    text: 'RESI’s visitor program keeps the institute connected to frontier laboratories and the wider scientific research community.',
+  },
+  {
+    title: 'How to contribute',
+    url: '/support#give',
+    category: 'Support',
+    text: 'To discuss support and the research it would enable, contact funding@resi.org. We also welcome conversations about compute credits, infrastructure, and other forms of support.',
+  },
+  {
+    title: 'Support independent research on safe superintelligence',
+    url: '/support#case',
+    category: 'Support',
+    text: 'RESI brings together researchers with a record of turning foundational ideas into usable mechanisms in cryptography and other fields.',
+  },
+  {
+    title: 'What support enables',
+    url: '/support#enables',
+    category: 'Support',
+    text: 'Our greatest need is support for people. Alongside reliable compute and a sustained interdisciplinary research environment, this funding will help establish the core institute and give its research community a durable base.',
+  },
+  {
+    title: 'Working groups',
+    url: '/research#concentration',
+    category: 'Research',
+    text: 'Focused research agendas within and across RESI’s broad research themes.',
+  },
+  {
+    title: 'Privacy',
+    url: '/privacy',
+    category: 'Website',
+    text: 'This website has no analytics scripts, advertising trackers, or embedded data-collection forms. Its search runs in your browser.',
+  },
+];
+const entries = [
+  ...sections,
+  ...areas.map((a) => ({
+    title: a.title,
+    url: `/research#${a.id}`,
+    category: 'Research area',
+    text: [a.question, a.detailTitle, a.description, a.example, ...a.paragraphs]
+      .filter(Boolean)
+      .join(' '),
+  })),
+  ...people
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((p) => ({
+      title: p.data.name,
+      url: `/people#${p.id}`,
+      category: 'People',
+      text: [p.data.role, p.body || p.data.summary || ''].filter(Boolean).join('. '),
+    })),
+  ...(await getCollection('visitors')).map((v) => ({
+    title: v.data.name,
+    url: '/people#visitors',
+    category: 'Visiting researcher',
+    text: v.data.affiliation,
+  })),
+  ...papers.map((p) => ({
+    title: p.data.title,
+    url: `/research#${p.data.anchor}`,
+    category: 'Foundational research',
+    text: `${p.data.authors}. ${p.data.venue}. ${p.data.highlight?.title || ''} ${p.data.highlight?.summary || ''} ${p.data.note} ${p.data.limitation || ''}`,
+  })),
+  ...groups.map((g) => ({
+    title: g.name,
+    url: `/research#${g.id}`,
+    category: 'Working group',
+    text: `${g.lead}. ${g.description || ''}`,
+  })),
+  ...faq.map((f) => ({
+    title: f.question,
+    url: `/about#faq-${f.id}`,
+    category: 'Question and answer',
+    text: f.answer,
+  })),
+  ...seminars.talks.map((talk) => ({
+    title: talk.title,
+    url: `/seminars#${talk.id}`,
+    category: 'Seminar',
+    text: talk.text,
+  })),
+  ...updates.map((u) => ({
+    title: u.data.title,
+    url: `/news#update-${u.id}`,
+    category: 'News',
+    text: `${u.data.summary || ''} ${u.data.outlet || ''}`,
+  })),
+];
+---
+
+<Base
+  title="Search"
+  description="Find RESI research, people, working groups, publications, and institutional information."
+>
+  <header class="page-hero">
+    <h1>Search RESI</h1>
+  </header>
+  <div class="prose">
+    <div class="search-form js-only">
+      <label for="site-search">Search the website</label>
+      <input
+        id="site-search"
+        type="search"
+        autocomplete="off"
+        placeholder="Try verification, Shafi, or hallucinations"
+        aria-controls="search-results"
+      />
+      <p class="caption" style="margin-top:12px">
+        Search stays in your browser.
+      </p>
+    </div>
+    <noscript>
+      <p>
+        Browse this complete directory, or use your browser’s Find command to locate a word or name.
+      </p>
+    </noscript>
+    <p id="search-status" class="search-status" role="status" aria-live="polite">
+      {entries.length} entries
+    </p>
+    <p id="search-empty" hidden>
+      No results. Try a shorter term, a researcher’s surname, or a topic such as “control.” You can
+      also explore <a href="/research">Research</a>, <a href="/people">People</a>, or{' '}
+      <a href="/support">Support RESI</a>.
+    </p>
+    <ul class="search-results" id="search-results">
+      {entries.map((e) => (
+        <li data-search={`${e.title} ${e.category} ${e.text}`}>
+          <p class="meta">{e.category}</p>
+          <h2>
+            <a href={e.url}>{e.title}</a>
+          </h2>
+          <p>{e.text}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <script>
+    const input = document.querySelector<HTMLInputElement>('#site-search');
+    const rows = [...document.querySelectorAll<HTMLElement>('[data-search]')];
+    const normalize = (text: string) =>
+      text
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase();
+    const texts = rows.map((row) => normalize(row.dataset.search || ''));
+    function search() {
+      const words = normalize(input?.value.trim() || '')
+        .split(/\s+/)
+        .filter(Boolean);
+      let found = 0;
+      rows.forEach((row, i) => {
+        row.hidden = !words.every((word) => texts[i].includes(word));
+        if (!row.hidden) found++;
+      });
+      const status = document.querySelector('#search-status');
+      if (status)
+        status.textContent = `${found} ${found === 1 ? 'result' : 'results'}${words.length ? ' for your search' : ''}`;
+      const empty = document.querySelector<HTMLElement>('#search-empty');
+      if (empty) empty.hidden = found !== 0;
+    }
+    input?.addEventListener('input', search);
+    input?.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        input.value = '';
+        search();
+      }
+      if (e.key === 'Enter')
+        document.querySelector<HTMLAnchorElement>('.search-results li:not([hidden]) a')?.focus();
+    });
+    search();
+  </script>
+</Base>

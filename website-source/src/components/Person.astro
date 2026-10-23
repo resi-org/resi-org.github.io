@@ -1,0 +1,85 @@
+---
+import { render } from 'astro:content';
+import { portraitFor } from '../lib/portraits';
+import { groups } from '../data/groups';
+import Disclosure from './Disclosure.astro';
+import PublicationList from './PublicationList.astro';
+import { publicationsFor } from '../lib/publications';
+import { external } from '../lib/external';
+import type { CollectionEntry } from 'astro:content';
+
+// One person: photo, name, bio, and the selected publications behind a
+// native expander (works without JavaScript). Every group on the People
+// page uses this identical treatment, so seniority shows only in the order.
+interface Props {
+  person: CollectionEntry<'people'>;
+}
+const { person } = Astro.props;
+const { Content } = await render(person);
+const d = person.data;
+const portrait = portraitFor(person.id, d.photo);
+
+const ledGroups = groups.filter((g) => g.leadHref === '/people#' + person.id);
+// A coauthor who is also at RESI links to their own entry; the person whose
+// list this is does not link to themselves.
+const pubs = await publicationsFor(d.publications, person.id);
+---
+
+<li class="person" id={person.id}>
+  {d.photo ? (
+    <span class="person-photo portrait-frame" style={portrait.style}>
+      <img src={portrait.src} alt="" width="90" height="90" loading="lazy" decoding="async" />
+    </span>
+  ) : (
+    <span class="person-photo" aria-hidden="true" />
+  )}
+  <div class="person-body">
+    <h3 class="person-name">
+      {d.url ? (
+        <a href={d.url} {...external(d.url)}>
+          {d.name}
+        </a>
+      ) : (
+        d.name
+      )}
+    </h3>
+    {ledGroups.length > 0
+      ? ledGroups.map((g) => (
+          <p class="person-role">
+            Leading RESI’s <a href={'/research#' + g.id}>{g.name}</a> working group
+          </p>
+        ))
+      : d.role && d.role !== 'Research community' && <p class="person-role">{d.role}</p>}
+    <div class="person-bio">
+      <Content />
+    </div>
+    {d.wikipedia && !d.url && (
+      <div class="person-links">
+        <a href={d.wikipedia} {...external(d.wikipedia)}>
+          Wikipedia
+        </a>
+      </div>
+    )}
+    {d.publications.length > 0 && (
+      <Disclosure class="expander pubs" summary="Selected publications">
+        <PublicationList papers={pubs} />
+      </Disclosure>
+    )}
+  </div>
+</li>
+
+<style>
+  .portrait-frame {
+    display: block;
+    overflow: hidden;
+  }
+  .portrait-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--portrait-position);
+    transform: scale(var(--portrait-scale));
+    transform-origin: var(--portrait-origin);
+  }
+</style>

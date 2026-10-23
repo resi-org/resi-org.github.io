@@ -1,0 +1,29 @@
+---
+import { external } from '../lib/external';
+import { publicationVenue } from '../lib/publication-display';
+interface Props {
+  papers: { title: string; venue: string; url?: string }[];
+}
+const { papers } = Astro.props;
+---
+<ul class="profile-publications">
+  {papers.map((p) => (
+    <li>
+      <div class="profile-publication-title">
+        {p.url ? <a href={p.url} {...external(p.url)}>{p.title}</a> : <span>{p.title}</span>}
+      </div>
+      {p.venue && <div class="profile-publication-venue">{publicationVenue(p.venue)}</div>}
+    </li>
+  ))}
+</ul>
+<style>
+  ul.profile-publications {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+  }
+  .profile-publications > li { margin: 0 0 22px; }
+  .profile-publications > li:last-child { margin-bottom: 0; }
+  .profile-publication-title { font-size: 15px; line-height: 1.5; font-weight: 600; }
+  .profile-publication-venue { margin-top: 5px; font-size: 13px; line-height: 1.5; color: var(--muted); }
+</style>

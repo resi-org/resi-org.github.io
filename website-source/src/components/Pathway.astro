@@ -1,0 +1,17 @@
+---
+import { pathway } from '../data/institute';
+---
+
+<ol class="pathway" aria-label="From research support to safer advanced AI">
+  {pathway.map((step, i) => (
+    <li>
+      <span class="step-number">{String(i + 1).padStart(2, '0')}</span>
+      <strong>{step.title}</strong>
+      <span>{step.text}</span>
+    </li>
+  ))}
+</ol>
+<p class="caption">
+  Progress depends on useful results, realistic assumptions, evaluation, and adoption by developers
+  and institutions.
+</p>

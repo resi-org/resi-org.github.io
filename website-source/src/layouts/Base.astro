@@ -1,0 +1,117 @@
+---
+import '../styles/global.css';
+import '../styles/structure.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+interface Props {
+  title?: string;
+  description?: string;
+  wide?: boolean;
+}
+const {
+  title,
+  description = 'The Institute for Responsible Superintelligence is an independent nonprofit research institute working on the scientific foundations of safe by design AI.',
+  wide = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title ? `${title} · RESI` : 'RESI · Making superintelligence safe by design'}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/mark-resi-human-circuit.png" type="image/png" />
+    <link
+      rel="preload"
+      href="/fonts/cardo-normal-700-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/plex-sans-normal-100-700-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <script is:inline>
+      document.documentElement.classList.remove('no-js');
+      try {
+        const theme = localStorage.getItem('resi-theme');
+        if (theme === 'dark' || theme === 'light') document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+  </head>
+  <body id="top">
+    <Header />
+    <main id="main" tabindex="-1" class:list={{ 'shell page-content': !wide }}>
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      const root = document.documentElement;
+      const toggle = document.querySelector<HTMLButtonElement>('.theme-toggle');
+      const system = window.matchMedia('(prefers-color-scheme: dark)');
+      const theme = () => root.dataset.theme || (system.matches ? 'dark' : 'light');
+      const label = () => {
+        const next = theme() === 'dark' ? 'light' : 'dark';
+        toggle?.setAttribute('aria-label', `Switch to ${next} theme`);
+        toggle?.setAttribute('data-next-theme', next);
+      };
+      toggle?.addEventListener('click', () => {
+        root.dataset.theme = theme() === 'dark' ? 'light' : 'dark';
+        try {
+          localStorage.setItem('resi-theme', root.dataset.theme);
+        } catch {}
+        label();
+      });
+      system.addEventListener('change', label);
+      label();
+      const menu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && menu?.open) {
+          menu.open = false;
+          menu.querySelector('summary')?.focus();
+        }
+      });
+      document.addEventListener('click', (e) => {
+        if (menu?.open && e.target instanceof Node && !menu.contains(e.target)) menu.open = false;
+      });
+      // A direct link into supplementary content opens every enclosing disclosure.
+      function revealHash() {
+        let id = '';
+        try {
+          id = decodeURIComponent(location.hash.slice(1));
+        } catch {
+          return;
+        }
+        const target = id && document.getElementById(id);
+        if (!target) return;
+        let parent: HTMLElement | null = target;
+        while (parent) {
+          if (parent instanceof HTMLDetailsElement) parent.open = true;
+          parent = parent.parentElement;
+        }
+        target.scrollIntoView({ behavior: 'instant' });
+      }
+      if (location.hash) revealHash();
+      addEventListener('hashchange', revealHash);
+      // Opening, not merely styling, guarantees initially closed content reaches print.
+      let closed: HTMLDetailsElement[] = [];
+      addEventListener('beforeprint', () => {
+        closed = [...document.querySelectorAll<HTMLDetailsElement>('main details:not([open])')];
+        closed.forEach((d) => (d.open = true));
+      });
+      addEventListener('afterprint', () => {
+        closed.forEach((d) => (d.open = false));
+        closed = [];
+      });
+    </script>
+  </body>
+</html>

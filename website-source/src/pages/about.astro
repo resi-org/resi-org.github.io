@@ -1,0 +1,180 @@
+---
+import Base from '../layouts/Base.astro';
+import IntroActions from '../components/IntroActions.astro';
+import Section from '../components/Section.astro';
+import Disclosure from '../components/Disclosure.astro';
+import { faq } from '../data/institute';
+---
+
+<Base
+  title="Who we are"
+  description="RESI exists to develop foundations for building intrinsically safe AI systems, even as their capabilities advance beyond human performance: why an independent, interdisciplinary institute, and how progress will be judged."
+>
+  <Section id="collaboration" class="landing">
+    <span id="purpose" aria-hidden="true"></span>
+    <h1 class="page-title">
+      RESI is a research community spanning technical, legal, and economic expertise
+    </h1>
+    <p>
+      Superintelligence safety has many aspects, and no single discipline sees the whole picture.
+      Drawing on the concentration of talent in the Cambridge area, RESI brings together researchers
+      in computer science and other fields relevant to AI safety, including mathematics, economics
+      and law. Working groups, seminars, and an active visitor program connect senior and early-career
+      scholars to collaborate on shared research problems.
+    </p>
+    <IntroActions
+      items={[
+        { label: 'Support our work', href: '/support' },
+        { label: 'Explore our research program', href: '/research' },
+      ]}
+    />
+  </Section>
+
+  <Section class="wide institute-overview">
+    <div class="institute-cards">
+      <article id="institution" class="institute-card" aria-labelledby="institution-heading">
+        <h2 id="institution-heading" class="section-title">
+          Research excellence and independence
+        </h2>
+        <p>
+          RESI combines research excellence with independence of industry and profit incentives.
+        </p>
+        <p>
+          RESI aims to recreate the conditions which led to big ideas in the past, amplified by AI
+          tools, with an open, mission-first culture that values sharing over being first to
+          publish.
+        </p>
+        <p>Our sole goal is the responsible and safe use of AI to the betterment of humanity.</p>
+        <p class="card-link">
+          <a href="/people">Meet the team</a>
+        </p>
+      </article>
+
+      <article id="adoption" class="institute-card" aria-labelledby="adoption-heading">
+        <h2 id="adoption-heading" class="section-title">
+          How research shapes AI systems and policy
+        </h2>
+        <p>
+          Our long-term goal is for safe by design approaches to be adopted in advanced AI systems
+          and for research to inform policy and regulation.
+        </p>
+        <p>
+          RESI designs with practical constraints in mind and tests promising constructions in real
+          systems. Where implementation requires resources beyond RESI’s capacity, we will share
+          proofs of concept so that frontier AI developers can evaluate and adopt them.
+        </p>
+        <p class="card-link">
+          <a id="priorities" href="/research#concentration">
+            Explore the working groups
+          </a>
+        </p>
+      </article>
+    </div>
+  </Section>
+
+  <Section id="progress" divider>
+    <div class="about-band-content">
+      <span id="faq-success" aria-hidden="true"></span>
+      <h2 id="success-heading" class="section-title">
+        What success will look like
+      </h2>
+      <p>
+        The ultimate success would be new safe by design approaches adopted in frontier AI systems.
+      </p>
+      <p>
+        Progress includes rigorous definitions of safety objectives, maps of what is and is not
+        achievable under explicit assumptions, new mechanisms with useful guarantees, results on how
+        guarantees compose, and working demonstrations in real systems.
+      </p>
+      <p>
+        Success also means influencing policy and regulation in ways that support human flourishing.
+      </p>
+    </div>
+  </Section>
+
+  <Section id="questions" divider>
+    <div class="about-band-content">
+      <h2 class="section-title">FAQ</h2>
+      <div class="faq-list">
+        {faq.map((f) => (
+          <div class="faq-item">
+            <Disclosure id={`faq-${f.id}`} summary={f.question}>
+              <div class="faq-answer">
+                <p>{f.answer}</p>
+              </div>
+            </Disclosure>
+            <a
+              class="faq-permalink"
+              href={`#faq-${f.id}`}
+              aria-label={`Link to answer: ${f.question}`}
+              title="Link to this answer"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.7 1.7" />
+                <path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.7-1.7" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Section>
+</Base>
+
+<style>
+  :global(.section.institute-overview) {
+    width: min(1080px, calc(100vw - 48px));
+    max-width: none;
+    margin-inline: calc((100% - min(1080px, calc(100vw - 48px))) / 2);
+    padding-block: 0 var(--section-space-before, 48px);
+  }
+
+  .institute-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .institute-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    break-inside: avoid;
+  }
+
+  .institute-card .section-title {
+    margin-top: 0;
+  }
+
+  .institute-card .card-link {
+    margin-top: auto;
+    padding-top: 28px;
+  }
+
+  @media (max-width: 760px) {
+    :global(.section.institute-overview) {
+      width: auto;
+      margin-inline: auto;
+    }
+
+    .institute-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .institute-card {
+      padding: 22px;
+    }
+  }
+
+</style>

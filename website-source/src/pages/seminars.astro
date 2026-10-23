@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import Section from '../components/Section.astro';
+import PageNav from '../components/PageNav.astro';
+import seminars from '../data/seminars.json';
+// Source copy is preserved; Rachel moved the October 21 talk into the archive.
+---
+
+<Base title="Seminars" description="Upcoming RESI-MIT seminars and past talks on the foundations of AI safety, with speakers, dates, titles, abstracts, and biographies.">
+  <header class="page-hero">
+    <h1>RESI-MIT Seminars</h1>
+    <Fragment set:html={seminars.intro} />
+  </header>
+  <PageNav items={[
+    ['#upcoming-seminars', 'Upcoming seminars'],
+    ['#past-seminars', 'Past seminars'],
+  ]} />
+  <Section id="upcoming-seminars" label="Upcoming seminars" divider>
+    <p>No upcoming seminars are currently listed.</p>
+  </Section>
+  <Section id="past-seminars" label="Past seminars" divider>
+    <div class="seminar-index" set:html={seminars.pastNav} />
+    <div class="seminar-list" set:html={seminars.talks.map((talk) => talk.html).join('\n')} />
+  </Section>
+</Base>
+
+<style>
+  .seminar-list :global(article) {
+    padding: 0;
+    scroll-margin-top: 110px;
+  }
+  .seminar-list :global(article + article) {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .seminar-list :global(h3) {
+    margin: 12px 0 16px;
+    font: 700 22px/1.35 var(--serif);
+  }
+  .seminar-list :global(.date) {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .seminar-list :global(.speaker) { margin: 0; }
+  .seminar-list :global(.location) { color: var(--muted); }
+  .seminar-list :global(details) { margin-top: 20px; }
+  .seminar-list :global(summary) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    min-height: 44px;
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+  }
+  .seminar-list :global(summary::after) { content: '+'; font-size: 22px; }
+  .seminar-list :global(details[open] > summary::after) { content: '−'; }
+  .seminar-list :global(h4) {
+    margin: 20px 0 10px;
+    font: 600 17px/1.5 var(--sans);
+  }
+  .seminar-list :global(details p:last-child) { margin-bottom: 0; }
+  .seminar-index { margin-bottom: 28px; }
+  .seminar-index :global(ul) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+  }
+  @media print {
+    .seminar-list :global(h3),
+    .seminar-list :global(h4),
+    .seminar-list :global(.date),
+    .seminar-list :global(.speaker) { break-after: avoid; }
+    .seminar-list :global(summary::after) { display: none; }
+  }
+</style>

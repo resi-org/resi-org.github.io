@@ -1,0 +1,133 @@
+---
+import { areas } from '../data/institute';
+import Arrow from './Arrow.astro';
+// Four homepage highlights; the Research page retains the complete agenda.
+const homepageOrder = ['verification', 'delegation', 'composition', 'agent-swarm'];
+const homepageAreas = homepageOrder.map((id) => areas.find((area) => area.id === id)!);
+---
+
+<ul class="research-area-cards" aria-label="Research areas">
+  {homepageAreas.map((area) => {
+    const question = area.question;
+    return (
+      <li id={area.id}>
+        <a
+          class="research-area-card"
+          href={`/research#${area.id}`}
+          aria-labelledby={`home-area-${area.id}`}
+          aria-describedby={`home-question-${area.id}`}
+        >
+          <div class="research-area-card-heading">
+            <h3 id={`home-area-${area.id}`}>{area.title}</h3>
+            <Arrow />
+          </div>
+          <p id={`home-question-${area.id}`}>{question}</p>
+        </a>
+      </li>
+    );
+  })}
+</ul>
+
+<style>
+  .research-area-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .research-area-cards > li {
+    min-width: 0;
+    margin: 0;
+  }
+  .research-area-card {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    height: 100%;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--ink);
+    background: transparent;
+    text-decoration: none;
+  }
+  .research-area-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    color: var(--accent);
+  }
+  .research-area-card h3 {
+    margin: 0;
+    font: 700 22px/1.35 var(--serif);
+    letter-spacing: -0.005em;
+    text-wrap: balance;
+  }
+  .research-area-card-heading :global(.action-arrow) {
+    margin-top: 5px;
+  }
+  .research-area-card p {
+    margin: 0;
+    font: 400 16px/1.55 var(--sans);
+    color: var(--ink);
+  }
+  .research-area-card:hover,
+  .research-area-card:focus-visible {
+    border-color: var(--accent);
+    background: var(--soft);
+    text-decoration: none;
+  }
+  .research-area-card:hover h3,
+  .research-area-card:focus-visible h3 {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+  }
+  @media (min-width: 560px) {
+    .research-area-cards > li {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 2;
+    }
+    .research-area-card {
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 2;
+    }
+    .research-area-card p {
+      align-self: start;
+    }
+  }
+  @media (max-width: 640px) {
+    .research-area-cards {
+      gap: 14px;
+    }
+    .research-area-card {
+      padding: 16px;
+      gap: 12px;
+    }
+    .research-area-card-heading {
+      gap: 8px;
+    }
+    .research-area-card h3 {
+      font-size: 20px;
+    }
+  }
+  @media (max-width: 559px) {
+    .research-area-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media print {
+    .research-area-cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .research-area-cards > li {
+      grid-column: auto;
+      break-inside: avoid;
+    }
+  }
+</style>

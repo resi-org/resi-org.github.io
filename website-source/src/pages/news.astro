@@ -1,0 +1,77 @@
+---
+import { getAnnouncements, fmtDay } from '../lib/announcements';
+import { external } from '../lib/external';
+import Base from '../layouts/Base.astro';
+import { institute } from '../data/institute';
+import Section from '../components/Section.astro';
+
+// Verified institute announcements and clearly attributed external reporting.
+const entries = await getAnnouncements();
+---
+
+<Base
+  title="News"
+  description="Research updates, publications, events, talks, and institute news from RESI."
+>
+  <h1 class="visually-hidden">News</h1>
+
+  <Section id="latest">
+    {entries.length > 0 ? (
+      <ul class="announcement-list">
+        {entries.map((e) => (
+          <li class="announcement-item" id={e.id}>
+            <p class="announcement-meta">
+              <time datetime={e.date.toISOString().slice(0, 10)}>{fmtDay(e.date)}</time>
+              {e.source && <span>{e.source}</span>}
+            </p>
+            <h2>
+              {e.url ? (
+                <a href={e.url} {...external(e.url)}>
+                  {e.title}
+                </a>
+              ) : (
+                e.title
+              )}
+            </h2>
+            {e.byline && <p class="entry-source">By {e.byline}</p>}
+            {e.summary &&
+              (e.outlet ? (
+                <p class="announcement-summary quoted">
+                  <span class="quote-open">{'\u201C'}</span>
+                  {e.summary}
+                  {'\u201D'}
+                </p>
+              ) : (
+                <p class="announcement-summary">{e.summary}</p>
+              ))}
+            {e.url?.startsWith('https://www.lesswrong.com/') && (
+              <p class="page-foot">
+                <a href={e.url} {...external(e.url)}>
+                  Read on LessWrong
+                </a>
+                {e.id === 'update-2026-09-18-formal-verification' && (
+                  <Fragment>
+                    {' '}
+                    · <a href="/research#formal-verification">Explore the on-site agenda</a>
+                  </Fragment>
+                )}
+              </p>
+            )}
+            {e.body && e.body.map((para) => <p class="entry-body">{para}</p>)}
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <>
+        <p class="empty">RESI has not published any announcements yet.</p>
+        <p class="empty">
+          <a href={institute.announcements} {...external(institute.announcements)}>
+            Join the mailing list
+          </a>{' '}
+          to hear when new research and institute updates are published.
+        </p>
+      </>
+    )}
+  </Section>
+
+</Base>

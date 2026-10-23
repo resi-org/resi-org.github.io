@@ -1,0 +1,38 @@
+---
+// Render one authored body into native disclosure and print-only fallback.
+// WebKit cannot expose a closed native disclosure using print CSS alone.
+interface Props {
+  id?: string;
+  summary: string;
+  summaryLead?: string;
+  compactControl?: boolean;
+  accessibleLabel?: string;
+  class?: string;
+}
+const { id, summary, summaryLead, compactControl = false, accessibleLabel, class: className } = Astro.props;
+const body = await Astro.slots.render('default');
+---
+
+<details id={id} class={className} data-print-copy>
+  <summary aria-label={accessibleLabel}>
+    {summaryLead ? (
+      <span class="research-summary">
+        <span class="research-question-title">{summary}</span>
+        <span class="research-question-lead">{summaryLead}</span>
+      </span>
+    ) : compactControl ? (
+      <Fragment>
+        <span class="disclosure-control-label">{summary}</span>
+        <span class="disclosure-control-icon" aria-hidden="true"></span>
+      </Fragment>
+    ) : (
+      summary
+    )}
+  </summary>
+  <Fragment set:html={body} />
+</details>
+<div class:list={['print-disclosure', className]} aria-hidden="true">
+  <h3>{summary}</h3>
+  {summaryLead && <p>{summaryLead}</p>}
+  <Fragment set:html={body} />
+</div>

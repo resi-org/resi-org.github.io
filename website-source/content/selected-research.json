@@ -1,0 +1,223 @@
+[
+  {
+    "title": "Evaluating large language models for accuracy incentivizes hallucinations",
+    "authors": "Adam Tauman Kalai, Ofir Nachum, Santosh S. Vempala, Edwin Zhang",
+    "venue": "Nature · Published April 22, 2026",
+    "url": "https://www.nature.com/articles/s41586-026-10549-w",
+    "note": "This work analyzes how training and evaluation reward guessing, and argues for scoring systems that make acknowledging uncertainty a better strategy.",
+    "placement": "verification",
+    "anchor": "hallucination-incentives",
+    "featured": 1,
+    "topic": "Hallucination incentives",
+    "problem": "Why do models guess instead of admitting uncertainty?",
+    "limitation": "Changing the scoring rule is not a guarantee that hallucinations disappear.",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "highlight": {
+      "id": "hallucinations-paper",
+      "title": "Why language models hallucinate",
+      "tag": "Hallucinations · Nature 2026",
+      "summary": "Why do models guess instead of admitting uncertainty? This work analyzes how training and evaluation reward guessing, and argues for scoring systems that make acknowledging uncertainty a better strategy.",
+      "byline": "Adam Tauman Kalai and coauthors",
+      "caveat": "Changing the scoring rule is not a guarantee that hallucinations disappear."
+    }
+  },
+  {
+    "title": "Models That Prove Their Own Correctness",
+    "authors": "Noga Amit, Shafi Goldwasser, Orr Paradise, Guy N. Rothblum",
+    "venue": "Preprint, May 2024; revised December 2025 · Conference version: NeurIPS 2025",
+    "url": "https://arxiv.org/abs/2405.15722",
+    "note": "A framework for learning models that supply interactive proofs of their outputs.",
+    "placement": "verification",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "models-that-prove-their-own-correctness",
+    "featured": 2,
+    "topic": "Verification",
+    "problem": "How can an overseer obtain meaningful assurance without reproducing all of the system’s work?",
+    "limitation": "Demonstrated on greatest-common-divisor computation, not unrestricted natural-language answers.",
+    "conferenceNote": "The NeurIPS 2025 version appeared as “A Theory for Worst-Case vs. Average-Case Guarantees for LLMs.”",
+    "highlight": {
+      "id": "self-proving-paper",
+      "title": "Models that can prove their answers",
+      "tag": "Verification · NeurIPS 2025",
+      "summary": "A framework for learning models that supply interactive proofs of their outputs. Demonstrated on greatest-common-divisor computation, not unrestricted natural-language answers."
+    }
+  },
+  {
+    "title": "How to Avoid Debate: Scalable AI Safety via Doubly-Efficient Interactive Proofs",
+    "authors": "L. Chen, Y. Tauman Kalai, Z. Xi",
+    "venue": "ICML 2026",
+    "url": "https://arxiv.org/abs/2607.03561",
+    "note": "Develops methods for checking certain computations that use external information, such as database records or human judgments. The guarantees require specific structure in that information or computations that tolerate a limited number of errors.",
+    "placement": "verification",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "how-to-avoid-debate-scalable-ai-safety-via-doubly-efficient-interactive-proofs"
+  },
+  {
+    "title": "BarrierNet: Differentiable Control Barrier Functions for Learning of Safe Robot Control",
+    "authors": "W. Xiao, T.-H. Wang, R. Hasani, M. Chahine, A. Amini, X. Li, D. Rus",
+    "venue": "IEEE Transactions on Robotics 2023",
+    "url": "https://ieeexplore.ieee.org/document/10077790",
+    "note": "Introduces a trainable safety layer that constrains a robot’s actions to satisfy specified requirements, with guarantees that depend on the model of the robot and its environment.",
+    "placement": "control",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "barriernet-differentiable-control-barrier-functions-for-learning-of-safe-robot-control"
+  },
+  {
+    "title": "Consensus Sampling for Safer Generative AI",
+    "authors": "A. Kalai, Y. Tauman Kalai, O. Zamir",
+    "venue": "Preprint, 2025 (revised 2026) · Presented at IASEAI 2026",
+    "url": "https://arxiv.org/abs/2511.09493",
+    "note": "Selects an output from several models, or declines to answer, with a provable limit on the risk of harmful output relative to the more reliable models. The method requires access to each model’s output probabilities. Producing useful answers also depends on sufficient overlap among the reliable models’ output distributions.",
+    "placement": "control",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "consensus-sampling-for-safer-generative-ai"
+  },
+  {
+    "title": "Governing AI Agents",
+    "authors": "N. Kolt",
+    "venue": "Notre Dame Law Review, 2026",
+    "url": "https://ndlawreview.org/governing-ai-agents/",
+    "note": "Examines the responsibilities and limits of authority that arise when AI agents act for people, and explains why existing approaches to monitoring and accountability may be insufficient.",
+    "placement": "control",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "governing-ai-agents"
+  },
+  {
+    "title": "On the Impossibility of Separating Intelligence from Judgment: The Computational Intractability of Filtering for AI Alignment",
+    "authors": "S. Ball, G. Gluch, S. Goldwasser, F. Kreuter, O. Reingold, G. Rothblum",
+    "venue": "Preprint, July 2025 · ICLR 2026",
+    "url": "https://arxiv.org/abs/2507.07341",
+    "note": "Establishes computational barriers to external prompt and output filtering under cryptographic hardness assumptions and specified relationships between the model and filter. These worst-case results do not say that filtering has no practical value.",
+    "placement": "limits",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "computational-barriers-to-filtering-for-ai-alignment",
+    "featured": 4,
+    "highlight": {
+      "id": "filtering-limits-paper",
+      "title": "Understanding the limits of filtering",
+      "tag": "Limits · ICLR 2026",
+      "summary": "Cryptographic constructions expose computational limits of certain input and output filters. The results depend on explicit hardness assumptions and formal settings."
+    }
+  },
+  {
+    "title": "Planting Undetectable Backdoors in Machine Learning Models",
+    "authors": "S. Goldwasser, M. Kim, V. Vaikuntanathan, O. Zamir",
+    "venue": "FOCS 2022",
+    "url": "https://arxiv.org/abs/2204.06974",
+    "note": "Shows how a model can appear to function normally while containing a hidden trigger that changes its behavior. Under cryptographic assumptions, such backdoors can evade inspection within feasible computing limits.",
+    "placement": "limits",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "planting-undetectable-backdoors-in-machine-learning-models"
+  },
+  {
+    "title": "A Cryptographic Perspective on Mitigation vs. Detection in Machine Learning",
+    "authors": "G. Gluch, S. Goldwasser",
+    "venue": "Preprint, 2025",
+    "url": "https://arxiv.org/abs/2504.20310",
+    "note": "Shows that, for certain tasks involving generated outputs, a defense can limit harmful behavior even when the harmful inputs cannot be efficiently identified.",
+    "placement": "limits",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "a-cryptographic-perspective-on-mitigation-vs-detection-in-machine-learning"
+  },
+  {
+    "title": "Pseudorandom Error-Correcting Codes",
+    "authors": "M. Christ, S. Gunn",
+    "venue": "CRYPTO 2024",
+    "url": "https://arxiv.org/abs/2402.09370",
+    "note": "Introduces a way to hide information in apparently random data while allowing a key holder to recover it after specified alterations. This underpins methods for watermarking AI-generated content and hiding communication.",
+    "placement": "cryptography",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "pseudorandom-error-correcting-codes"
+  },
+  {
+    "title": "Oblivious Defense in ML Models: Backdoor Removal without Detection",
+    "authors": "Shafi Goldwasser, Jonathan Shafer, Neekon Vafa, Vinod Vaikuntanathan",
+    "venue": "STOC 2025 · Preprint, November 2024",
+    "url": "https://arxiv.org/abs/2411.03279",
+    "note": "Develops methods for neutralizing hidden triggers that alter a model’s behavior, without first detecting them.",
+    "placement": "cryptography",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "oblivious-defense-in-ml-models-backdoor-removal-without-detection",
+    "featured": 3,
+    "topic": "Backdoor mitigation",
+    "problem": "Can a defense work without identifying an attack?",
+    "limitation": "The guarantees apply to learning tasks with specified mathematical structure in the ground-truth function.",
+    "highlight": {
+      "id": "oblivious-defense-paper",
+      "title": "Defense without detection",
+      "tag": "Robustness · STOC 2025",
+      "summary": "Can a defense work without identifying an attack? This work gives backdoor-mitigation guarantees under assumptions about the ground-truth function."
+    }
+  },
+  {
+    "title": "Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange",
+    "authors": "Vinod Vaikuntanathan, Or Zamir",
+    "venue": "FOCS 2026, accepted · Preprint, April 2026",
+    "url": "https://arxiv.org/abs/2604.04757",
+    "note": "Shows how cooperating AI agents could hide secret exchanges within ordinary-looking messages, even without a shared secret at the outset.",
+    "placement": "cryptography",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "undetectable-conversations-between-ai-agents-via-pseudorandom-noise-resilient-key-exchange",
+    "featured": 5,
+    "topic": "Limits of agent oversight",
+    "problem": "Can ordinary exchanges conceal a second conversation?",
+    "limitation": "The construction assumes cryptographic hardness and sufficient entropy in messages, and concerns passive transcript auditing.",
+    "highlight": {
+      "id": "covert-conversations-paper",
+      "title": "The limits of transcript auditing",
+      "tag": "Agent oversight · FOCS 2026, accepted",
+      "summary": "Can ordinary exchanges conceal a second conversation? Under stated cryptographic and entropy assumptions, this work constructs covert communication between agents with no pre-shared secret, revealing limits of passive transcript auditing.",
+      "byline": "Vinod Vaikuntanathan & Or Zamir"
+    }
+  },
+  {
+    "title": "Algorithmic Collusion by Large Language Models",
+    "authors": "S. Fish, Y. A. Gonczarowski, R. I. Shorrer",
+    "venue": "EC 2026",
+    "url": "https://arxiv.org/abs/2404.00806",
+    "note": "Experiments show that pricing agents based on large language models can reach prices above competitive levels, with outcomes sensitive to changes in their instructions.",
+    "placement": "wg-game-theoretic-foundations",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "algorithmic-collusion-by-large-language-models"
+  },
+  {
+    "title": "Superintelligence and Law",
+    "authors": "N. Kolt",
+    "venue": "Preprint, 2026 · Harvard Journal of Law & Technology, forthcoming",
+    "url": "https://arxiv.org/abs/2603.28669",
+    "note": "Sets out how AI agents acting autonomously become subjects of law, users of legal instruments such as contracts and courts, and in time writers and enforcers of law, and which assumptions in legal theory and doctrine that calls into question.",
+    "placement": "wg-legal-alignment",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "superintelligence-and-law"
+  },
+  {
+    "title": "Legal Alignment for Safe and Ethical AI",
+    "authors": "N. Kolt et al",
+    "venue": "TMLR 2026",
+    "url": "https://arxiv.org/abs/2601.04175",
+    "note": "Surveys how legal rules, principles and methods can be used to specify how AI systems should act and to inform their design, and sets out three research pathways for doing so.",
+    "placement": "wg-legal-alignment",
+    "relationship": "Prior work by researchers now associated with RESI",
+    "anchor": "legal-alignment-for-safe-and-ethical-ai"
+  },
+  {
+    "title": "How to sketch a learning algorithm",
+    "authors": "Sam Gunn",
+    "venue": "Preprint, April 2026; revised June 2026",
+    "url": "https://arxiv.org/abs/2604.07328",
+    "note": "How would a model behave if some training data had been left out? A sketch of the learning algorithm predicts these counterfactual outputs, supporting data deletion queries and attribution, with error and failure guarantees under a stability assumption. The method predicts counterfactual measurements rather than outputting a retrained model. Evidence for the stability assumption comes from small-scale microgpt experiments.",
+    "placement": "wg-data-attribution",
+    "anchor": "data-attribution-paper",
+    "relationship": "Prior work by a researcher now associated with RESI",
+    "problem": "How would a model behave if some training data had been left out?",
+    "featured": 6,
+    "highlight": {
+      "id": "data-attribution-paper",
+      "title": "Data deletion and attribution",
+      "tag": "Data attribution · 2026 preprint",
+      "summary": "How would a model behave if some training data had been left out? A sketch of the learning algorithm predicts these counterfactual outputs, supporting data deletion queries and attribution, with error and failure guarantees under a stability assumption.",
+      "byline": "Sam Gunn",
+      "caveat": "The method predicts counterfactual measurements rather than outputting a retrained model. Evidence for the stability assumption comes from small-scale microgpt experiments."
+    }
+  }
+]

@@ -1,0 +1,109 @@
+/* Current C.2 section structure. These screen rules deliberately leave the
+   established print layout alone. Content-specific cards retain their sizing. */
+@media screen {
+  :root {
+    --section-space-before: 48px;
+    --section-space-after: 40px;
+    --page-opening: 80px;
+  }
+
+  /* A section owns the space after its content. The following section owns
+     its top rule and the inset below it, avoiding compounded padding. */
+  .section {
+    padding-block: 0 var(--section-space-before);
+  }
+  .section.section-divided {
+    border-top: 1px solid var(--line);
+    padding-top: var(--section-space-after);
+  }
+  .page-hero,
+  .section.landing {
+    padding-block: var(--page-opening) var(--section-space-before);
+  }
+  .section#latest {
+    padding-top: var(--page-opening);
+  }
+  .section-body > :last-child,
+  .about-band-content > :last-child,
+  .page-hero > :last-child,
+  .section.landing .actions:last-child,
+  .hero .actions:last-child,
+  .home-band > .shell > :last-child {
+    margin-bottom: 0;
+  }
+
+  .hero.shell {
+    padding-bottom: var(--section-space-before);
+  }
+  .home-band,
+  .home-band.tint {
+    padding-block: 0 var(--section-space-before);
+  }
+  .home-band > .shell {
+    padding-top: var(--section-space-after);
+  }
+  #support > .shell {
+    max-width: var(--content-width);
+  }
+
+  /* Lists separate entries, rather than drawing another rule immediately
+     below the major section's heading. */
+  .approach-step:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .approach-step:last-child {
+    padding-bottom: 0;
+  }
+  .people > .person:first-child {
+    padding-top: 0;
+  }
+  .people > .person:last-child {
+    padding-bottom: 0;
+  }
+  .faq-list {
+    padding-bottom: 0;
+  }
+  .faq-item:last-child {
+    border-bottom: 0;
+  }
+  .faq-item:first-child summary {
+    padding-top: 0;
+  }
+  .faq-item:first-child summary::after {
+    top: 0;
+  }
+  .faq-item:first-child .faq-permalink {
+    top: -7px;
+  }
+
+  /* Equivalent heading roles use the same scale, regardless of HTML level. */
+  .page-hero h1 {
+    line-height: 1.25;
+  }
+  .section-body .entry-title {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  :root {
+    --section-space-before: 36px;
+    --section-space-after: 28px;
+    --page-opening: 48px;
+  }
+}
+
+/* Page titles: a step between section headings and the homepage display title. */
+@media screen {
+  :root {
+    --page-title-size: clamp(34px, calc(18px + 2.5vw), 44px);
+  }
+  .page-content h1,
+  .page-content h1.page-title {
+    font-size: var(--page-title-size);
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+}

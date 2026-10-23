@@ -1,0 +1,7 @@
+---
+import { institute } from '../data/institute';
+---
+
+<p class="trust-line">
+  Supported by grants from {institute.supporters.join(', ').replace(/, ([^,]*)$/, ', and $1')}.
+</p>

@@ -1,0 +1,10 @@
+---
+import SectionIndex from './SectionIndex.astro';
+interface Props {
+  items: [string, string][];
+  align?: 'center' | 'left';
+}
+const { items } = Astro.props;
+---
+
+<SectionIndex items={items} />

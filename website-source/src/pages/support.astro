@@ -1,0 +1,158 @@
+---
+import { external } from '../lib/external';
+import Base from '../layouts/Base.astro';
+import IntroActions from '../components/IntroActions.astro';
+import Section from '../components/Section.astro';
+---
+
+<Base
+  title="Support us"
+  description="Support independent research on safe superintelligence. What your support enables at RESI and how to contribute."
+>
+  <Section id="case" class="landing">
+    <h1 class="page-title">Support independent research on safe superintelligence</h1>
+    <p>
+      Help us build the foundations for making superintelligence safe by design.
+    </p>
+    <p>
+      RESI is an independent nonprofit research institute committed to fundamental research,
+      with the focus and flexibility to respond quickly as AI develops.
+    </p>
+    <p>
+      Our greatest need is support for people. Donations will enable us to bring in more
+      researchers, especially postdocs and junior researchers, and further accelerate our research
+      using AI.
+    </p>
+    <IntroActions
+      items={[
+        { label: 'Announcements', href: '/news' },
+        { label: 'Meet the team', href: '/people' },
+        { label: 'Explore our research program', href: '/research' },
+      ]}
+    />
+  </Section>
+
+  <Section id="give" divider>
+    <h2 class="section-title">How to contribute</h2>
+    <p>
+      <strong>To discuss support and the research it would enable, contact{' '}
+      <a href="mailto:funding@resi.org">funding@resi.org</a>.</strong> We also welcome compute credits,
+      infrastructure support, and donated professional expertise, including specialists working
+      alongside our team.
+    </p>
+    <p class="actions support-donate">
+      <a
+        class="button donate-button"
+        href="https://www.every.org/resi"
+        {...external('https://www.every.org/resi')}
+      >
+        Donate online
+      </a>
+    </p>
+  </Section>
+
+  <Section id="why-now" divider>
+    <h2 class="section-title">Why support matters now</h2>
+    <p>
+      There is a limited window in which the fundamental architecture and norms surrounding
+      advanced AI are still being determined.
+    </p>
+    <p>
+      As AI systems become deeply embedded in science, medicine, finance, and everyday life,
+      retrofitting safety mechanisms will become harder. It may also become harder to establish
+      effective legal and institutional safeguards once these systems and the economic
+      dependencies around them are entrenched.
+    </p>
+    <p>
+      RESI is developing the intellectual foundations for trustworthy AI. The best time to do
+      this work is now, while these systems are being built.
+    </p>
+  </Section>
+
+  <Section id="enables" divider>
+    <h2 class="section-title">What your support enables</h2>
+
+    <div class="support-cards">
+      <article class="support-card" aria-labelledby="talent">
+    <h3 id="talent">Careers in independent AI safety research</h3>
+    <p>
+      Support gives postdocs and junior researchers time to pursue foundational questions
+      alongside the{' '}
+      <a href="/people">RESI team</a>.
+    </p>
+    <p>
+      We aim to sustain research careers with intellectual freedom and adequate compensation.
+    </p>
+      </article>
+      <article class="support-card" aria-labelledby="compute">
+    <h3 id="compute">Compute and tools to develop and test ideas</h3>
+    <p>
+      Compute and research infrastructure support implementations, proofs of concept, and
+      AI-assisted research.
+    </p>
+    <p>
+      Reliable access to compute lets researchers plan and run experiments when they need to.
+    </p>
+      </article>
+    </div>
+  </Section>
+
+  <Section id="why-resi" divider>
+    <h2 class="section-title">Why RESI</h2>
+    <p>
+      Being an independent nonprofit allows us to ask the questions of what is truly required for
+      increasingly powerful AI to remain trustworthy, controllable, and beneficial without our work
+      being influenced by financial targets or business goals.
+    </p>
+    <p>
+      Our working groups bring together researchers across disciplines and career stages.
+      This allows for knowledge transfer between senior and junior researchers. And it promotes
+      the exchange of ideas, the formation of new concepts, and healthy debate between different
+      subject matter experts. RESI focuses on bringing senior experts into superintelligence safety,
+      as our work is built on their research and the knowledge they’ve gained throughout their careers.
+    </p>
+  </Section>
+</Base>
+
+<style>
+  .actions.support-donate {
+    margin-top: 36px;
+  }
+  .button.donate-button {
+    background: color-mix(in srgb, var(--accent) 10%, var(--paper));
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .button.donate-button:hover {
+    background: color-mix(in srgb, var(--accent) 16%, var(--paper));
+    border-color: var(--accent);
+    color: var(--accent-hover);
+  }
+
+  .support-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .support-card {
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+  .support-card h3 {
+    margin-top: 0;
+  }
+  .support-card > :last-child {
+    margin-bottom: 0;
+  }
+  @media (max-width: 760px) {
+    .support-cards {
+      grid-template-columns: 1fr;
+    }
+    .support-card {
+      padding: 22px;
+    }
+  }
+</style>

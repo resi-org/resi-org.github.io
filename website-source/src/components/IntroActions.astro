@@ -1,0 +1,15 @@
+---
+import Arrow from './Arrow.astro';
+interface Props {
+  items: { label: string; href: string }[];
+}
+const { items } = Astro.props;
+---
+
+<div class="actions intro-actions">
+  {items.map((item, index) => (
+    <a class:list={['button', { secondary: index > 0 }]} href={item.href}>
+      {item.label} <Arrow />
+    </a>
+  ))}
+</div>

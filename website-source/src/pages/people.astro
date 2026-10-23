@@ -1,0 +1,184 @@
+---
+import { getCollection } from 'astro:content';
+import { external } from '../lib/external';
+import { institute } from '../data/institute';
+import { groups } from '../data/groups';
+import Base from '../layouts/Base.astro';
+import IntroActions from '../components/IntroActions.astro';
+import Section from '../components/Section.astro';
+import Person from '../components/Person.astro';
+import Founder from '../components/Founder.astro';
+
+// Ordering follows Rachel's instructions of 2026-09-14: founding scientific
+// team, research team, operations, visiting researchers,
+// affiliated groups, and how to get involved. Research-team leaders come first,
+// with Chloé last among leaders (Rachel, 2026-10-23). Preserve the existing
+// order within the remaining groups.
+// Every group uses the same treatment, so seniority shows only in the order.
+const people = await getCollection('people');
+const byOrder = (a: any, b: any) => a.data.order - b.data.order;
+const founders = people.filter((p) => p.data.group === 'founders').sort(byOrder);
+const leaderLinks = new Set(groups.map((g) => g.leadHref));
+const leadershipRank = (p: (typeof people)[number]) => {
+  if (!leaderLinks.has('/people#' + p.id)) return 2;
+  return p.id === 'chloe-bakalar' ? 1 : 0;
+};
+const research = people
+  .filter((p) => p.data.group === 'research')
+  .sort((a, b) => leadershipRank(a) - leadershipRank(b) || byOrder(a, b));
+const operations = people.filter((p) => p.data.group === 'operations').sort(byOrder);
+const visitors = (await getCollection('visitors')).sort(byOrder);
+const affiliated = (await getCollection('affiliated')).sort(byOrder);
+---
+
+<Base
+  title="People"
+  description="The people at RESI: the founding scientific team, the research team, operations, visiting researchers, affiliated groups, and how to get involved."
+>
+  <header class="page-hero" id="intro">
+    <p class="eyebrow">People</p>
+    <h1>Concentrating expertise across disciplines</h1>
+    <p>
+      Participating researchers span computer science and other fields relevant to AI safety,
+      including mathematics, economics and law, with an active visitor program.
+    </p>
+
+    <IntroActions
+      items={[
+        { label: 'Explore our research program', href: '/research' },
+        { label: 'Support our work', href: '/support' },
+        { label: 'Announcements', href: '/news' },
+      ]}
+    />
+  </header>
+
+
+  <Section divider label="Founding scientists" id="founders" class="wide" labelAbove>
+    <ul class="founders-cards">
+      {founders.map((p) => (
+        <Founder person={p} />
+      ))}
+    </ul>
+  </Section>
+
+  <Section divider label="Research team" id="research">
+    <ul class="people">
+      {research.map((p) => (
+        <Person person={p} />
+      ))}
+    </ul>
+  </Section>
+
+  <Section divider label="Operations" id="operations">
+    <ul class="people">
+      {operations.map((p) => (
+        <Person person={p} />
+      ))}
+    </ul>
+  </Section>
+
+  <Section divider label="Visiting researchers" id="visitors">
+    <p>
+      Our visitor program keeps RESI researchers connected to frontier laboratories and the wider safety research community.
+    </p>
+    <span id="past-visitors" aria-hidden="true"></span>
+    <ul class="compact two names">
+      <li id="adam-chlipala">
+        <span id="additional-leadership" aria-hidden="true"></span>
+        <a href="https://adam.chlipala.net/" {...external('https://adam.chlipala.net/')}>Adam Chlipala</a>, <span class="aff">MIT</span>
+        <div class="visitor-role">Leading RESI’s Formal verification working group.</div>
+        <div class="visitor-agenda">
+          <a href="https://www.lesswrong.com/posts/NDBbatEejiAtTAr3z/announcing-formal-verification-at-resi-the-institute-for" {...external('https://www.lesswrong.com/posts/NDBbatEejiAtTAr3z/announcing-formal-verification-at-resi-the-institute-for')}>Read the announced agenda <span aria-hidden="true">→</span></a>
+        </div>
+      </li>
+      {visitors.map((v) => (
+          <li>
+            {v.data.url ? (
+              <a href={v.data.url} {...external(v.data.url)}>
+                {v.data.name}
+              </a>
+            ) : (
+              v.data.name
+            )}
+            , <span class="aff">{v.data.affiliation}</span>
+          </li>
+        ))}
+    </ul>
+  </Section>
+
+  <Section divider label="Affiliated groups" id="affiliated">
+    <ul class="compact">
+      {affiliated.map((g) => (
+        <li>
+          {g.data.url ? (
+            <a href={g.data.url} {...external(g.data.url)}>
+              {g.data.name}
+            </a>
+          ) : (
+            g.data.name
+          )}
+        </li>
+      ))}
+    </ul>
+  </Section>
+
+  <Section divider label="Join us" id="get-involved">
+    {/* Culture led its own section until 2026-09-20. It opens this one
+        instead: what it is like to work at RESI is the reason to join, so it
+        comes before the invitation. `culture` stays as an id so a link
+        already shared into the draft still lands on the paragraph. */}
+    <p id="culture">
+      RESI’s culture is mission-first: open collaboration and early sharing of ideas. To protect
+      junior researchers, we will actively support their credit and careers.
+    </p>
+    <p>
+      RESI hosts a small number of researchers and visitors and welcomes inquiries from researchers
+      whose expertise could contribute to <a href="/research">RESI’s research</a>, whether or not
+      they have previously worked on AI safety.
+    </p>
+    <p>
+      Scientists interested in participating can contact{' '}
+      <a href="mailto:hello@resi.org">hello@resi.org</a>.
+    </p>
+    <p>
+      The{' '}
+      <a
+        href="https://resi-ai-safety.github.io/reading-group/"
+        {...external('https://resi-ai-safety.github.io/reading-group/')}
+      >AI safety reading group</a>{' '}
+      offers weekly discussions and welcomes a limited number of outside guests. See the schedule
+      and participation details, or complete the{' '}
+      <a href="https://forms.gle/CZeYq6bm1YGoGQE18" {...external('https://forms.gle/CZeYq6bm1YGoGQE18')}>interest form</a>.
+    </p>
+    <p class="actions">
+      <a href={institute.announcements} {...external(institute.announcements)}>
+        Join the RESI announcements mailing list
+      </a>
+    </p>
+    <p>
+      Local students interested in AI safety may also want to explore the{' '}
+      <a href="https://www.cbai.ai/" {...external('https://www.cbai.ai/')}>
+        Cambridge Boston Alignment Initiative
+      </a>
+      .
+    </p>
+  </Section>
+
+  <p class="after-list">
+    <a href={institute.talks} {...external(institute.talks)}>
+      Join announcements + weekly talks
+    </a>
+  </p>
+
+</Base>
+
+<style>
+  #adam-chlipala { margin-bottom: 20px; break-inside: avoid; }
+  .visitor-role { margin-top: 6px; }
+  .visitor-agenda { margin-top: 3px; }
+  .visitor-role, .visitor-agenda {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+</style>

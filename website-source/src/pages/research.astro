@@ -1,0 +1,458 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import IntroActions from '../components/IntroActions.astro';
+import Section from '../components/Section.astro';
+import Papers from '../components/Papers.astro';
+import ResearchAreas from '../components/ResearchAreas.astro';
+import Disclosure from '../components/Disclosure.astro';
+import Arrow from '../components/Arrow.astro';
+import { researchAgenda } from '../data/institute';
+import { groups } from '../data/groups';
+import { external } from '../lib/external';
+const featuredGroupId = 'game-theoretic-foundations';
+const orderedGroups = [...groups.filter((g) => g.id === featuredGroupId), ...groups.filter((g) => g.id !== featuredGroupId)];
+const papers = (await getCollection('selectedResearch')).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Base
+  title="Research"
+  description="RESI's research outputs, research questions, AI-assisted methods, working groups, and prior research by its community."
+>
+  <Section id="thesis" class="landing">
+    <h1 class="page-title">How can we formally define and implement AI safety?</h1>
+    <p>
+      RESI focuses on the formal and design-oriented foundations of AI safety: precise safety
+      objectives, explicit assumptions, mechanisms with analyzable guarantees, composition, and
+      impossibility results.
+    </p>
+    <p>
+      The goal is to develop approaches that remain meaningful as systems become superintelligent.
+    </p>
+    <p>
+      Guarantees depend on stated assumptions about the system and adversary. They do not establish
+      the safety of an entire AI system.
+    </p>
+    <p id="ai-assisted">
+      Research at RESI is AI-assisted from the start. We will develop and continually improve
+      harnesses that use frontier agents throughout the research process.
+      AI-generated suggestions are candidates for investigation that require independent checking.
+    </p>
+    <IntroActions
+      items={[
+        { label: 'Meet the team', href: '/people' },
+        { label: 'Support our work', href: '/support' },
+      ]}
+    />
+  </Section>
+
+
+  <Section label="Research outputs" id="approach" divider>
+    <p>Across our <a href="#areas">research areas</a>, we pursue three kinds of research output:</p>
+    <ul class="research-outputs">
+      <li class="research-output" id="define">
+        <h3>Models, definitions, and impossibility results</h3>
+        <div class="research-output-description">
+          <p>Develop models and precise definitions for AI safety.</p>
+          <p id="establish-limits">
+            Establish where guarantees are impossible under stated assumptions.
+          </p>
+        </div>
+      </li>
+      <li class="research-output" id="build">
+        <h3>Mechanisms and composition</h3>
+        <div class="research-output-description">
+          <p>
+            Develop mechanisms, protocols, and architectures that provide useful guarantees, and study
+            whether those guarantees survive composition into larger systems involving models, tools,
+            people, and institutions.
+          </p>
+        </div>
+      </li>
+      <li class="research-output" id="implement">
+        <h3>Implementations and proofs of concept</h3>
+        <div class="research-output-description">
+          <p>
+            Build implementations and proofs of concept. Where implementation requires resources
+            beyond RESI’s capacity, share proofs of concept that frontier AI developers can evaluate
+            and adopt.
+          </p>
+        </div>
+      </li>
+    </ul>
+    <p class="research-outputs-note">
+      Definitions and constructions develop together: a new protocol may reveal the right concept,
+      and an impossibility result may show that a problem must be reformulated.
+    </p>
+  </Section>
+
+  <Section id="areas" divider>
+    <div id="priorities">
+      <h2 class="section-title">{researchAgenda.title}</h2>
+      {researchAgenda.intro && <p>{researchAgenda.intro}</p>}
+    </div>
+    <p>
+      These questions describe our key focus areas. For each one we pursue definitions, mechanisms,
+      working demonstrations, and results on what can and cannot be guaranteed.
+    </p>
+    <ResearchAreas expanded />
+  </Section>
+
+  <Section label="Working groups" id="concentration" divider>
+    <p>
+      RESI’s working groups open new directions and revisit classical questions in light of
+      superintelligence. Each group is organized by one or more leaders who decide on its structure.
+    </p>
+    <ul class="group-list research-group-cards">
+      {orderedGroups.map((g) => (
+        <li class:list={["working-group", { "working-group-featured": g.id === featuredGroupId }]}>
+          <h3 id={g.id}>{g.name}</h3>
+          <div class="working-group-body">
+          {g.lead && (
+            <p class="wg-lead">
+              Led by{' '}
+              {g.leadHref ? (
+                <a href={g.leadHref} {...external(g.leadHref)}>
+                  {g.lead}
+                </a>
+              ) : (
+                g.lead
+              )}
+            </p>
+          )}
+          <Disclosure summary="details" class="working-group-details" compactControl accessibleLabel={`${g.name}: details`}>
+            {g.description && <p class="wg-description">{g.description}</p>}
+            {g.source && (
+              <p class="wg-source">
+                <a href={g.source} {...external(g.source)}>
+                  Read the announcement on LessWrong
+                </a>
+              </p>
+            )}
+            {g.placement && (
+              <p class="wg-source">
+                Foundational research:{' '}
+                {papers
+                  .filter((p) => p.data.placement === g.placement)
+                  .map((p, i) => (
+                    <Fragment>
+                      {i > 0 && ' · '}
+                      <a href={'#' + p.data.anchor}>{p.data.title}</a>
+                    </Fragment>
+                  ))}
+              </p>
+            )}
+          </Disclosure>
+          </div>
+        </li>
+      ))}
+      <li class="working-group-onward">
+        <a class="button secondary" href="/people">Meet our researchers <Arrow /></a>
+      </li>
+    </ul>
+  </Section>
+
+  <Section
+    label="Foundational research by the RESI team"
+    id="evidence"
+    class="research-publications"
+    divider
+  >
+    <p class="caption provenance">
+      The papers below are prior work by researchers now associated with RESI.
+    </p>
+    <Papers
+      showAttribution={false}
+      placement={[
+        'verification',
+        'control',
+        'limits',
+        'cryptography',
+        'wg-game-theoretic-foundations',
+        'wg-legal-alignment',
+        'wg-data-attribution',
+      ]}
+    />
+  </Section>
+
+  <script>
+    // Keep the authored row-wise order for keyboard users and mobile while
+    // letting each desktop column grow independently. Without JS, use the grid.
+    const roster = document.querySelector<HTMLElement>('.research-group-cards');
+    if (roster) {
+      const allCards = [...roster.querySelectorAll<HTMLElement>(':scope > .working-group')];
+      const featured = roster.querySelector<HTMLElement>(':scope > .working-group-featured');
+      const cards = allCards.filter((card) => card !== featured);
+      const onward = roster.querySelector<HTMLElement>('.working-group-onward');
+      const desktop = matchMedia('(min-width: 701px)');
+      let scheduled = false;
+      const layout = () => {
+        scheduled = false;
+        roster.style.removeProperty('--group-title-height');
+        roster.style.removeProperty('--group-lead-height');
+        if (!desktop.matches) {
+          roster.classList.remove('independent-columns');
+          [...allCards, ...(onward ? [onward] : [])].forEach((card) => {
+            card.style.removeProperty('grid-row');
+            card.style.removeProperty('grid-column');
+          });
+          return;
+        }
+        roster.classList.add('independent-columns');
+        // Match the closed-card headers at the current width, even while a
+        // description is open. Expanded bodies still grow independently.
+        const tallest = (selector: string) => Math.ceil(Math.max(...cards.map((card) =>
+          card.querySelector<HTMLElement>(selector)?.getBoundingClientRect().height ?? 0
+        )));
+        const titleHeight = tallest(':scope > h3');
+        const leadHeight = tallest(':scope > .working-group-body > .wg-lead');
+        roster.style.setProperty('--group-title-height', `${titleHeight}px`);
+        roster.style.setProperty('--group-lead-height', `${leadHeight}px`);
+        const gap = parseFloat(getComputedStyle(roster).columnGap);
+        let firstRow = 1;
+        if (featured) {
+          featured.style.gridColumn = '1 / -1';
+          const rows = Math.ceil(featured.getBoundingClientRect().height);
+          featured.style.gridRow = `1 / span ${rows}`;
+          firstRow += rows + gap;
+        }
+        const nextRow = [firstRow, firstRow];
+        cards.forEach((card, index) => {
+          const column = index % 2;
+          const rows = Math.ceil(card.getBoundingClientRect().height);
+          card.style.gridColumn = String(column + 1);
+          card.style.gridRow = `${nextRow[column]} / span ${rows}`;
+          nextRow[column] += rows + gap;
+        });
+        if (onward) {
+          const rows = Math.ceil(onward.getBoundingClientRect().height);
+          onward.style.gridColumn = '1 / -1';
+          onward.style.gridRow = `${Math.max(...nextRow)} / span ${rows}`;
+        }
+      };
+      const schedule = () => {
+        if (!scheduled) {
+          scheduled = true;
+          requestAnimationFrame(layout);
+        }
+      };
+      const observer = new ResizeObserver(schedule);
+      allCards.forEach((card) => observer.observe(card));
+      if (onward) observer.observe(onward);
+      desktop.addEventListener('change', schedule);
+      document.fonts.ready.then(schedule);
+      layout();
+    }
+  </script>
+</Base>
+
+<style is:global>
+  /* Three complementary outputs, presented as one editorial list. */
+  #approach .research-outputs {
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0;
+  }
+  #approach .research-output {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+    gap: 36px;
+    padding: 26px 0;
+    margin: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  #approach .research-output:first-child {
+    padding-top: 0;
+  }
+  #approach .research-output h3 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+  #approach .research-output-description p {
+    margin: 0;
+  }
+  #approach .research-output-description p + p {
+    margin-top: 8px;
+  }
+  #approach .research-output:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+  #approach .research-outputs-note {
+    margin: 40px 0 0;
+  }
+  @media (max-width: 700px) {
+    #approach .research-output {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      padding-block: 24px;
+    }
+  }
+
+  .research-group-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .research-group-cards > .working-group-featured,
+  .research-group-cards > .working-group-onward {
+    grid-column: 1 / -1;
+  }
+  @media screen and (min-width: 701px) {
+    .research-group-cards > .working-group:not(.working-group-featured) > h3 {
+      min-height: var(--group-title-height, 0px);
+    }
+    .research-group-cards > .working-group:not(.working-group-featured) > .working-group-body > .wg-lead {
+      min-height: var(--group-lead-height, 0px);
+    }
+    .research-group-cards.independent-columns {
+      grid-auto-rows: 1px;
+      row-gap: 0;
+    }
+  }
+  .research-group-cards > .working-group,
+  .research-publications .papers > li {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: transparent;
+    break-inside: avoid;
+  }
+  .research-group-cards > .working-group {
+    display: block;
+    margin: 0;
+    padding: 18px 18px 10px;
+  }
+  .research-group-cards > .working-group > h3 {
+    margin: 0;
+  }
+  .research-group-cards > .working-group > :last-child {
+    margin-bottom: 0;
+  }
+  .research-group-cards {
+    align-items: start;
+  }
+  .research-group-cards > .working-group-onward {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: start;
+    padding: 0;
+    margin: 0;
+    min-width: 0;
+    text-align: right;
+    font: 400 17px/1.55 var(--sans);
+  }
+  .working-group-onward a {
+    max-width: 100%;
+    text-align: left;
+  }
+  .working-group-body {
+    position: relative;
+    min-height: 44px;
+    padding-top: 8px;
+  }
+  .research-group-cards .wg-lead {
+    margin: 0;
+    padding-right: 104px;
+  }
+  .working-group-details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    position: absolute;
+    top: -2px;
+    right: 0;
+    width: fit-content;
+    min-width: 44px;
+    min-height: 44px;
+    margin-left: auto;
+    color: var(--accent);
+    font: 400 15px/1.5 var(--sans);
+    cursor: pointer;
+    list-style: none;
+  }
+  .working-group-details > summary::-webkit-details-marker {
+    display: none;
+  }
+  .working-group-details .disclosure-control-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    font: 400 28px/1 var(--sans);
+  }
+  .working-group-details .disclosure-control-icon::before {
+    content: '+';
+  }
+  .working-group-details[open] .disclosure-control-icon::before {
+    content: '−';
+  }
+  @media (min-width: 701px) and (hover: hover) and (pointer: fine) {
+    .working-group-details .disclosure-control-label {
+      position: absolute;
+      right: calc(100% - 4px);
+      top: 50%;
+      transform: translateY(-50%);
+      font: 400 11px/1 var(--sans);
+      color: var(--muted);
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .working-group-details > summary:focus-visible .disclosure-control-label {
+      right: calc(100% + 10px);
+    }
+    .working-group-details > summary:hover .disclosure-control-label,
+    .working-group-details > summary:focus-visible .disclosure-control-label {
+      opacity: 1;
+    }
+  }
+  .working-group-details > summary:hover {
+    color: var(--ink);
+  }
+  .working-group-details > :last-child {
+    margin-bottom: 0;
+  }
+  @media print {
+    .print-disclosure.working-group-details > h3 {
+      display: none;
+    }
+  }
+  .research-publications .papers {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 700px) {
+    .research-group-cards > .working-group-onward {
+      align-items: flex-start;
+      text-align: left;
+      padding: 8px 0 0;
+    }
+    .research-group-cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .research-publications .papers > li {
+      padding: 20px;
+    }
+  }
+  @media print {
+    .research-group-cards,
+    .research-publications .papers {
+      display: block;
+    }
+    .research-group-cards > .working-group + .working-group,
+    .research-publications .papers > li + li {
+      margin-top: 14pt;
+    }
+  }
+</style>

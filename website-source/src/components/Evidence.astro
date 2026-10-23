@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import { external } from '../lib/external';
+import { linkAuthors } from '../lib/researchers';
+const { limit } = Astro.props;
+const papers = (await getCollection('selectedResearch'))
+  .filter((p) => p.data.featured && p.data.highlight)
+  .sort((a, b) => a.data.featured! - b.data.featured!)
+  .slice(0, limit);
+const rows = await Promise.all(
+  papers.map(async (p) => ({
+    ...p.data,
+    highlight: p.data.highlight!,
+    authorParts: await linkAuthors(p.data.authors),
+  })),
+);
+---
+
+<div class="evidence-grid">
+  {rows.map((p) => (
+    <article class="evidence-item" id={p.highlight.id}>
+      <div class="evidence-summary">
+        <h3>{p.highlight.title}</h3>
+        <p>{p.highlight.summary}</p>
+        {p.highlight.caveat && <p class="limitation">{p.highlight.caveat}</p>}
+      </div>
+      <div class="paper-reference">
+        <p class="citation-authors">
+          {p.authorParts.map((part) =>
+            typeof part === 'string' ? part : <a href={part.href}>{part.text}</a>,
+          )}
+        </p>
+        <a class="text-link" href={p.url} {...external(p.url)}>
+          Read the paper
+          <span class="visually-hidden">: {p.title} (opens in a new tab)</span>
+        </a>
+      </div>
+    </article>
+  ))}
+</div>
+
+<style>
+  .evidence-item .evidence-summary h3 {
+    font-weight: 500;
+  }
+  .evidence-item .paper-reference {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+  }
+  .evidence-item .citation-authors {
+    color: var(--muted);
+    font-weight: 400;
+  }
+  .evidence-item .citation-authors a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .evidence-item .citation-authors a:hover {
+    color: var(--accent);
+  }
+  .evidence-item .paper-reference > .text-link {
+    align-self: flex-end;
+    text-align: right;
+  }
+</style>

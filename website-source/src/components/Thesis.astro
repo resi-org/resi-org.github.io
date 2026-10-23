@@ -1,0 +1,27 @@
+---
+const { prefix = '' } = Astro.props;
+---
+
+<section class="thesis argument-block" aria-labelledby={`${prefix}thesis-heading`}>
+  <p class="eyebrow">Our approach</p>
+  <h2 id={`${prefix}thesis-heading`}>What is the role of testing?</h2>
+  <p class="intro">
+    Testing, benchmarking, and red-teaming are crucial for finding failures, but tests cannot
+    establish that important classes of problems are absent.
+  </p>
+  <ul class="three-questions" role="list">
+    <li>Which properties can we guarantee?</li>
+    <li>Under which assumptions?</li>
+    <li>Where do guarantees end?</li>
+  </ul>
+  <div class="scope-note">
+    <h3>Scope and limits</h3>
+    <p>
+      We seek analyzable guarantees for specified properties under stated assumptions—not proof that
+      an entire AI system is safe. A proof can establish that a mechanism meets an objective. It
+      cannot, by itself, tell us that we chose the right objective or that its assumptions hold in
+      deployment.
+    </p>
+    <p>Formal analysis complements empirical evaluation and alignment research.</p>
+  </div>
+</section>
