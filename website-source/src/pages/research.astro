@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import IntroActions from '../components/IntroActions.astro';
+import PageShortcuts from '../components/PageShortcuts.astro';
 import Section from '../components/Section.astro';
 import Papers from '../components/Papers.astro';
 import ResearchAreas from '../components/ResearchAreas.astro';
@@ -44,6 +45,15 @@ const papers = (await getCollection('selectedResearch')).sort(
       items={[
         { label: 'Meet the team', href: '/people' },
         { label: 'Support our work', href: '/support' },
+      ]}
+    />
+    <PageShortcuts
+      id="research-shortcuts"
+      items={[
+        { label: 'Research outputs', href: '#approach' },
+        { label: 'Research areas', href: '#areas' },
+        { label: 'Working groups', href: '#concentration' },
+        { label: 'Foundational research', href: '#evidence' },
       ]}
     />
   </Section>
@@ -131,11 +141,13 @@ const papers = (await getCollection('selectedResearch')).sort(
                 </a>
               </p>
             )}
-            {g.placement && (
+            {(g.placement || g.relatedPaperAnchors) && (
               <p class="wg-source">
-                Foundational research:{' '}
+                {g.relatedPaperAnchors ? 'Related foundational research:' : 'Foundational research:'}{' '}
                 {papers
-                  .filter((p) => p.data.placement === g.placement)
+                  .filter((p) => g.relatedPaperAnchors
+                    ? g.relatedPaperAnchors.includes(p.data.anchor ?? '')
+                    : p.data.placement === g.placement)
                   .map((p, i) => (
                     <Fragment>
                       {i > 0 && ' · '}

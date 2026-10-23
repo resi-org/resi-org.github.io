@@ -8,7 +8,7 @@ publications:
   - title: "A Cryptographic Perspective on Mitigation vs. Detection in Machine Learning"
     authors: "G. Gluch, S. Goldwasser"
     venue: "Preprint, 2025"
-    url: "https://arxiv.org/abs/2504.20310"
+    url: "https://arxiv.org/abs/2504.20310v2"
   - title: "The Good, the Bad and the Ugly: Meta-Analysis of Watermarks, Transferable Attacks and Adversarial Defenses"
     authors: "G. Gluch, B. Turan, S. G. Nagarajan, S. Pokutta"
     venue: "NeurIPS 2025"

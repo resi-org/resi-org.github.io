@@ -1,0 +1,82 @@
+---
+interface Props {
+  id: string;
+  items: { label: string; href: string }[];
+}
+const { id, items } = Astro.props;
+---
+
+<nav class="page-shortcuts" aria-label="On this page">
+  <button type="button" aria-expanded="true" aria-controls={id}>
+    On this page <span class="shortcut-mark" aria-hidden="true">−</span>
+  </button>
+  <ul id={id} role="list">
+    {items.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+  </ul>
+</nav>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.page-shortcuts').forEach((nav) => {
+    const toggle = nav.querySelector('button')!;
+    const links = nav.querySelector('ul')!;
+    const mark = nav.querySelector('.shortcut-mark')!;
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      links.hidden = !open;
+      mark.textContent = open ? '−' : '+';
+    };
+    setOpen(false);
+    nav.dataset.ready = '';
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    nav.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !links.hidden) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+  });
+</script>
+
+<style>
+  .page-shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 22px;
+    margin: 28px 0 0;
+    color: var(--accent);
+    font: 500 12px/1.5 var(--sans);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+  .page-shortcuts button,
+  .page-shortcuts a {
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: inherit;
+  }
+  .page-shortcuts button {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    cursor: pointer;
+  }
+  .page-shortcuts ul { display: contents; list-style: none; }
+  .page-shortcuts ul[hidden] { display: none; }
+  .page-shortcuts li { margin: 0; padding: 0; }
+  .page-shortcuts a { text-decoration: none; }
+  .page-shortcuts a:hover,
+  .page-shortcuts button:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .page-shortcuts:not([data-ready]) button { display: none; }
+  @media (pointer: coarse) {
+    .page-shortcuts button, .page-shortcuts a { padding-block: 12px; }
+    .page-shortcuts a { display: inline-block; }
+    .page-shortcuts { row-gap: 0; }
+  }
+  @media print { .page-shortcuts { display: none; } }
+</style>

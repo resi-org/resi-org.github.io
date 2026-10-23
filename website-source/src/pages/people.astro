@@ -5,6 +5,7 @@ import { institute } from '../data/institute';
 import { groups } from '../data/groups';
 import Base from '../layouts/Base.astro';
 import IntroActions from '../components/IntroActions.astro';
+import PageShortcuts from '../components/PageShortcuts.astro';
 import Section from '../components/Section.astro';
 import Person from '../components/Person.astro';
 import Founder from '../components/Founder.astro';
@@ -50,6 +51,15 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
         { label: 'Announcements', href: '/news' },
       ]}
     />
+    <PageShortcuts
+      id="people-shortcuts"
+      items={[
+        { label: 'Founding scientists', href: '#founders' },
+        { label: 'Research team', href: '#research' },
+        { label: 'Visiting researchers', href: '#visitors' },
+        { label: 'Join us', href: '#get-involved' },
+      ]}
+    />
   </header>
 
 
@@ -86,7 +96,7 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
       <li id="adam-chlipala">
         <span id="additional-leadership" aria-hidden="true"></span>
         <a href="https://adam.chlipala.net/" {...external('https://adam.chlipala.net/')}>Adam Chlipala</a>, <span class="aff">MIT</span>
-        <div class="visitor-role">Leading RESI’s Formal verification working group.</div>
+        <div class="visitor-role">Leading RESI’s <a href="/research#formal-verification">Formal verification</a> working group.</div>
         <div class="visitor-agenda">
           <a href="https://www.lesswrong.com/posts/NDBbatEejiAtTAr3z/announcing-formal-verification-at-resi-the-institute-for" {...external('https://www.lesswrong.com/posts/NDBbatEejiAtTAr3z/announcing-formal-verification-at-resi-the-institute-for')}>Read the announced agenda <span aria-hidden="true">→</span></a>
         </div>

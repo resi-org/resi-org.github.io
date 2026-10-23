@@ -93,12 +93,22 @@ const {
         }
         const target = id && document.getElementById(id);
         if (!target) return;
+        // Group anchors sit on headings, outside their supplementary disclosure.
+        const groupDetails = target.closest('.working-group')
+          ?.querySelector<HTMLDetailsElement>('details.working-group-details');
+        if (groupDetails) groupDetails.open = true;
         let parent: HTMLElement | null = target;
         while (parent) {
           if (parent instanceof HTMLDetailsElement) parent.open = true;
           parent = parent.parentElement;
         }
-        target.scrollIntoView({ behavior: 'instant' });
+        const scrollToTarget = () => target.scrollIntoView({ behavior: 'instant' });
+        if (groupDetails) {
+          // Let the independently sized group columns settle before scrolling.
+          requestAnimationFrame(() => requestAnimationFrame(scrollToTarget));
+        } else {
+          scrollToTarget();
+        }
       }
       if (location.hash) revealHash();
       addEventListener('hashchange', revealHash);

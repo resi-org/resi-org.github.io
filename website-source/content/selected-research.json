@@ -113,7 +113,7 @@
     "title": "A Cryptographic Perspective on Mitigation vs. Detection in Machine Learning",
     "authors": "G. Gluch, S. Goldwasser",
     "venue": "Preprint, 2025",
-    "url": "https://arxiv.org/abs/2504.20310",
+    "url": "https://arxiv.org/abs/2504.20310v2",
     "note": "Shows that, for certain tasks involving generated outputs, a defense can limit harmful behavior even when the harmful inputs cannot be efficiently identified.",
     "placement": "limits",
     "relationship": "Prior work by researchers now associated with RESI",

@@ -8,6 +8,7 @@ export const groups = [
       'Develops methods that enable AI systems to provide convincing evidence that their answers meet appropriate standards of correctness. Mathematical claims may admit independently checked proofs; other domains require task-appropriate standards of correctness.',
     lead: 'Shafi Goldwasser',
     leadHref: '/people#shafi-goldwasser',
+    relatedPaperAnchors: ['models-that-prove-their-own-correctness'],
   },
   {
     id: 'modular-architectures',
@@ -16,6 +17,7 @@ export const groups = [
       'Studies how restricted modules, used alone or in structured interactions, can make AI systems safer by limiting what each component can do. Could a constrained component control spending while a more capable model proposes actions without direct access to payment credentials?',
     lead: 'Adam Tauman Kalai',
     leadHref: '/people#adam-tauman-kalai',
+    relatedPaperAnchors: ['consensus-sampling-for-safer-generative-ai'],
   },
   {
     id: 'monitoring-and-control',
@@ -59,7 +61,7 @@ export const groups = [
     source:
       'https://www.lesswrong.com/posts/NDBbatEejiAtTAr3z/announcing-formal-verification-at-resi-the-institute-for',
     lead: 'Adam Chlipala',
-    leadHref: 'https://adam.chlipala.net/',
+    leadHref: '/people#adam-chlipala',
   },
   {
     id: 'cryptography-and-cybersecurity',
