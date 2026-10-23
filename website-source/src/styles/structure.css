@@ -2,9 +2,9 @@
    established print layout alone. Content-specific cards retain their sizing. */
 @media screen {
   :root {
-    --section-space-before: 48px;
-    --section-space-after: 40px;
-    --page-opening: 80px;
+    --section-space-before: 43.2px;
+    --section-space-after: 36px;
+    --page-opening: 72px;
   }
 
   /* A section owns the space after its content. The following section owns
@@ -13,7 +13,7 @@
     padding-block: 0 var(--section-space-before);
   }
   .section.section-divided {
-    border-top: 1px solid var(--line);
+    border-top: 0.9px solid var(--line);
     padding-top: var(--section-space-after);
   }
   .page-hero,
@@ -74,7 +74,7 @@
     top: 0;
   }
   .faq-item:first-child .faq-permalink {
-    top: -7px;
+    top: -6.3px;
   }
 
   /* Equivalent heading roles use the same scale, regardless of HTML level. */
@@ -82,23 +82,23 @@
     line-height: 1.25;
   }
   .section-body .entry-title {
-    font-size: 22px;
+    font-size: 19.8px;
     line-height: 1.4;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 576px) {
   :root {
-    --section-space-before: 36px;
-    --section-space-after: 28px;
-    --page-opening: 48px;
+    --section-space-before: 32.4px;
+    --section-space-after: 25.2px;
+    --page-opening: 43.2px;
   }
 }
 
 /* Page titles: a step between section headings and the homepage display title. */
 @media screen {
   :root {
-    --page-title-size: clamp(34px, calc(18px + 2.5vw), 44px);
+    --page-title-size: clamp(30.6px, calc(16.2px + 2.5vw), 39.6px);
   }
   .page-content h1,
   .page-content h1.page-title {

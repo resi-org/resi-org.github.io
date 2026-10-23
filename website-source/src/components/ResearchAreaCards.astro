@@ -32,7 +32,7 @@ const homepageAreas = homepageOrder.map((id) => areas.find((area) => area.id ===
   .research-area-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 16.2px;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -44,11 +44,11 @@ const homepageAreas = homepageOrder.map((id) => areas.find((area) => area.id ===
   .research-area-card {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12.6px;
     height: 100%;
-    padding: 22px;
-    border: 1px solid var(--line);
-    border-radius: 3px;
+    padding: 19.8px;
+    border: 0.9px solid var(--line);
+    border-radius: 2.7px;
     color: var(--ink);
     background: transparent;
     text-decoration: none;
@@ -57,21 +57,21 @@ const homepageAreas = homepageOrder.map((id) => areas.find((area) => area.id ===
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 14px;
+    gap: 12.6px;
     color: var(--accent);
   }
   .research-area-card h3 {
     margin: 0;
-    font: 700 22px/1.35 var(--serif);
+    font: 700 19.8px/1.35 var(--serif);
     letter-spacing: -0.005em;
     text-wrap: balance;
   }
   .research-area-card-heading :global(.action-arrow) {
-    margin-top: 5px;
+    margin-top: 4.5px;
   }
   .research-area-card p {
     margin: 0;
-    font: 400 16px/1.55 var(--sans);
+    font: 400 14.4px/1.55 var(--sans);
     color: var(--ink);
   }
   .research-area-card:hover,
@@ -83,10 +83,10 @@ const homepageAreas = homepageOrder.map((id) => areas.find((area) => area.id ===
   .research-area-card:hover h3,
   .research-area-card:focus-visible h3 {
     text-decoration: underline;
-    text-decoration-thickness: 1px;
+    text-decoration-thickness: 0.9px;
     text-underline-offset: 0.16em;
   }
-  @media (min-width: 560px) {
+  @media (min-width: 504px) {
     .research-area-cards > li {
       display: grid;
       grid-template-rows: subgrid;
@@ -101,22 +101,22 @@ const homepageAreas = homepageOrder.map((id) => areas.find((area) => area.id ===
       align-self: start;
     }
   }
-  @media (max-width: 640px) {
+  @media (max-width: 576px) {
     .research-area-cards {
-      gap: 14px;
+      gap: 12.6px;
     }
     .research-area-card {
-      padding: 16px;
-      gap: 12px;
+      padding: 14.4px;
+      gap: 10.8px;
     }
     .research-area-card-heading {
-      gap: 8px;
+      gap: 7.2px;
     }
     .research-area-card h3 {
-      font-size: 20px;
+      font-size: 18px;
     }
   }
-  @media (max-width: 559px) {
+  @media (max-width: 503.1px) {
     .research-area-cards {
       grid-template-columns: 1fr;
     }

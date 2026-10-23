@@ -113,7 +113,7 @@ import { faq } from '../data/institute';
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.5"
+                stroke-width="1.35"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 aria-hidden="true"
@@ -131,25 +131,25 @@ import { faq } from '../data/institute';
 
 <style>
   :global(.section.institute-overview) {
-    width: min(1080px, calc(100vw - 48px));
+    width: min(972px, calc(100vw - 43.2px));
     max-width: none;
-    margin-inline: calc((100% - min(1080px, calc(100vw - 48px))) / 2);
-    padding-block: 0 var(--section-space-before, 48px);
+    margin-inline: calc((100% - min(972px, calc(100vw - 43.2px))) / 2);
+    padding-block: 0 var(--section-space-before, 43.2px);
   }
 
   .institute-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 21.6px;
   }
 
   .institute-card {
     display: flex;
     flex-direction: column;
     min-width: 0;
-    padding: 28px;
-    border: 1px solid var(--line);
-    border-radius: 3px;
+    padding: 25.2px;
+    border: 0.9px solid var(--line);
+    border-radius: 2.7px;
     break-inside: avoid;
   }
 
@@ -159,10 +159,10 @@ import { faq } from '../data/institute';
 
   .institute-card .card-link {
     margin-top: auto;
-    padding-top: 28px;
+    padding-top: 25.2px;
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 684px) {
     :global(.section.institute-overview) {
       width: auto;
       margin-inline: auto;
@@ -173,7 +173,7 @@ import { faq } from '../data/institute';
     }
 
     .institute-card {
-      padding: 22px;
+      padding: 19.8px;
     }
   }
 

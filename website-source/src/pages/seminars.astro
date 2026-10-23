@@ -27,49 +27,49 @@ import seminars from '../data/seminars.json';
 <style>
   .seminar-list :global(article) {
     padding: 0;
-    scroll-margin-top: 110px;
+    scroll-margin-top: 99px;
   }
   .seminar-list :global(article + article) {
-    margin-top: 32px;
-    padding-top: 32px;
-    border-top: 1px solid var(--line);
+    margin-top: 28.8px;
+    padding-top: 28.8px;
+    border-top: 0.9px solid var(--line);
   }
   .seminar-list :global(h3) {
-    margin: 12px 0 16px;
-    font: 700 22px/1.35 var(--serif);
+    margin: 10.8px 0 14.4px;
+    font: 700 19.8px/1.35 var(--serif);
   }
   .seminar-list :global(.date) {
-    margin: 0 0 8px;
+    margin: 0 0 7.2px;
     color: var(--muted);
-    font-size: 14px;
+    font-size: 12.6px;
   }
   .seminar-list :global(.speaker) { margin: 0; }
   .seminar-list :global(.location) { color: var(--muted); }
-  .seminar-list :global(details) { margin-top: 20px; }
+  .seminar-list :global(details) { margin-top: 18px; }
   .seminar-list :global(summary) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
-    min-height: 44px;
+    gap: 14.4px;
+    min-height: 39.6px;
     color: var(--accent);
     cursor: pointer;
     list-style: none;
   }
-  .seminar-list :global(summary::after) { content: '+'; font-size: 22px; }
+  .seminar-list :global(summary::after) { content: '+'; font-size: 19.8px; }
   .seminar-list :global(details[open] > summary::after) { content: '−'; }
   .seminar-list :global(h4) {
-    margin: 20px 0 10px;
-    font: 600 17px/1.5 var(--sans);
+    margin: 18px 0 9px;
+    font: 600 15.3px/1.5 var(--sans);
   }
   .seminar-list :global(details p:last-child) { margin-bottom: 0; }
-  .seminar-index { margin-bottom: 28px; }
+  .seminar-index { margin-bottom: 25.2px; }
   .seminar-index :global(ul) {
     list-style: none;
     padding: 0;
     margin: 0;
     display: grid;
-    gap: 8px;
+    gap: 7.2px;
   }
   @media print {
     .seminar-list :global(h3),
