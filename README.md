@@ -28,7 +28,7 @@ Merge that pull request to republish the old site. No domain changes are needed.
 
 ## Source and future updates
 
-The production-ready source snapshot is in `website-source/` on branch `codex/c2-source-2026-10-23`. Use Node 22.12+ (or a supported newer release): `npm ci`, `npm run check`, then `npm run build`. Copy the resulting `dist/` contents into a clean publishing checkout, preserving `CNAME`, `.nojekyll`, `seminar-zoom/`, `reading-group/` and the retained legacy paths. Review and publish via a pull request to `main`. This source snapshot is separate from the continuing Cloudflare c.2 draft; carry over later approved draft changes deliberately.
+The production-ready source snapshot is in `website-source/` on branch `codex/default-size-90-source`. Use Node 22.12+ (or a supported newer release): `npm ci`, `npm run check`, then `npm run build`. Copy the resulting `dist/` contents into a clean publishing checkout, preserving `CNAME`, `.nojekyll`, `seminar-zoom/`, `reading-group/` and the retained legacy paths. Review and publish via a pull request to `main`. This source snapshot is separate from the continuing Cloudflare c.2 draft; carry over later approved draft changes deliberately.
 
 ## Seminar Zoom short URL
 
@@ -37,3 +37,9 @@ To change the seminar Zoom destination, edit `seminar-zoom/destination.json`. Ke
 ## Launch checks
 
 Astro diagnostics and build; internal page/asset/anchor validation; Chromium and WebKit at desktop and phone sizes; image loading, horizontal overflow, search, theme switching, disclosures, mobile navigation, old-address redirects, and comparison with the c.2 preview. Detailed launch evidence is retained in Rachel's local launch workspace.
+
+## Smaller default design — October 23, 2026
+
+The website now uses the smaller appearance Rachel approved from the 90% zoom reference as its normal design at 100% browser zoom. Typography, column widths, spacing, icons, and responsive breakpoints were reduced in the CSS itself. No browser-specific zoom, local preference, or forced viewport scale is used. This applies to all pages of the c.2 website.
+
+The previous c.2 sizing is preserved at tag `pre-default-size-90-2026-10-23`. The original pre-c.2 website remains preserved under its separate pre-launch tag.
