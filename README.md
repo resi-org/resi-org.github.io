@@ -1,43 +1,39 @@
-# RESI website
+# RESI website — c.2 launch
 
-The public website is [resi.org](https://resi.org/). The September 18 redesign is available at [resi.org/test/](https://resi.org/test/). GitHub Pages serves the repository root from the `main` branch. Keep `CNAME` set to `resi.org` and retain `.nojekyll` so the generated `_next` assets are served.
+The public website is https://resi.org/. GitHub Pages continues to publish the root of `main`; the domain, DNS, HTTPS, and hosting settings are unchanged.
 
-## Public homepage
+## What changed on October 23, 2026
 
-The root `index.html` is the public homepage, restored exactly from commit `258a44d` (September 17, 2026), immediately before the September 18 publication. Edit this HTML directly for homepage changes; its portraits are in `assets/people/`.
+Published Rachel's c.2 design as static Astro output. Production uses directory-based page addresses, permits search indexing, identifies GitHub as the host on the privacy page, and excludes the internal design-review page. Fonts, portraits, styles, content and browser interactions come from c.2.
 
-## Seminars and visitors
+The seminar Zoom short URL and its destination JSON, reading-group page, older assets, and `/test/` preview are preserved. The Seminars page is now the c.2 version, retaining the existing talk anchors. Old `/mission`, `/announcements`, and `/home-announcements` addresses redirect to their replacements. The former homepage's team anchors forward to People.
 
-The seminar page is in `seminars/index.html`, linked from the homepage. Add confirmed upcoming talks above the archive. After a talk takes place, move its entry to the top of Past seminars and add it to the archive navigation, preserving earlier entries and stable links. Include the speaker and affiliation, date, time, title, abstract, biography, and confirmed location from the seminar announcement. Keep biographies as they appeared at the time of the talk. Also add visiting seminar speakers to the homepage’s Past Visitors list, without duplicating existing names. Add visitors only after their visits have taken place.
+## Restore the complete previous site
 
-Working-group or reading-group attendance alone does not qualify someone for the Past Visitors list.
+The exact pre-launch site is saved at tag `pre-c2-launch-2026-10-23` and branch `codex/pre-c2-backup-2026-10-23`, commit `1d3ad09984ee5797b555535da996a954e91c454b`.
 
-The initial archive covers the September 16, September 23, and October 7, 2026 seminars, using their RESI announcement emails. There was no seminar on September 30. The October 12 visitor update was checked against Emily’s October 11 email, the October 12–16 “This Week at RESI” update, and the visit correspondence.
+In a **clean, fresh checkout** of this repository:
+
+```sh
+git switch main
+git pull --ff-only
+git switch -c restore-pre-c2
+git restore --source=pre-c2-launch-2026-10-23 --staged --worktree -- .
+git commit -m "Restore website from before c.2 launch"
+git push -u origin restore-pre-c2
+gh pr create --base main --head restore-pre-c2 --title "Restore pre-c.2 website" --body "Restore the exact saved pre-launch website."
+```
+
+Merge that pull request to republish the old site. No domain changes are needed. This creates a new commit and preserves the launch history. Wait for the GitHub Pages deployment to succeed, then check resi.org; cached pages may take several minutes to refresh. The full snapshot also restores the older seminar Zoom destination, so review any changes made after launch before restoring.
+
+## Source and future updates
+
+The production-ready source snapshot is in `website-source/` on branch `codex/c2-source-2026-10-23`. Use Node 22.12+ (or a supported newer release): `npm ci`, `npm run check`, then `npm run build`. Copy the resulting `dist/` contents into a clean publishing checkout, preserving `CNAME`, `.nojekyll`, `seminar-zoom/`, `reading-group/` and the retained legacy paths. Review and publish via a pull request to `main`. This source snapshot is separate from the continuing Cloudflare c.2 draft; carry over later approved draft changes deliberately.
 
 ## Seminar Zoom short URL
 
-[resi.org/seminar-zoom](https://resi.org/seminar-zoom) forwards to the current seminar’s Zoom meeting. To update the destination, set `url` in `seminar-zoom/destination.json` to the complete HTTPS Zoom invitation URL, including any meeting passcode in its query string, and publish the change. Set it to `null` to display “Will be added soon”. This destination is public, so use a link intended for seminar attendees to share.
+To change the seminar Zoom destination, edit `seminar-zoom/destination.json`. Keep its existing format and use the complete HTTPS invitation URL; `null` displays “Will be added soon”. The redirect checks the JSON with cache bypassing so future meetings do not require replacing the page shell.
 
-GitHub Pages currently serves HTML with `Cache-Control: max-age=600`. The short URL therefore keeps its destination in a separate JSON file. On each visit, history restoration, and return to a background tab, it fetches that file with `cache: "no-store"` and a unique query string to avoid reusing browser or CDN cache entries. The HTML shell can be cached without freezing the destination. Forwarding uses `location.replace`, not a permanent HTTP redirect to the meeting. JavaScript is required for forwarding; network or configuration errors show a retry button instead of using a stale destination.
+## Launch checks
 
-## Editing and publishing the preview
-
-The editable Next.js/React preview source is in `site/app/`; images are in `site/public/`. The files under `test/` are generated publishing files. The preview uses the `/test` base path, including its image and icon URLs.
-
-With Node.js 22.13 or newer and pnpm installed:
-
-```sh
-cd site
-pnpm install --frozen-lockfile
-pnpm build
-cd ..
-git add .
-git commit -m "Update RESI website"
-git push origin main
-```
-
-The build statically exports the preview and replaces only the generated `test/` directory. It preserves the root homepage, domain, and legacy `assets/` files. Commit both the source changes and the generated files. GitHub Pages then publishes that commit.
-
-No server, Cloudflare bindings, API keys, or Sites credentials are needed. Existing image assets under `assets/` remain available for compatibility with older links.
-
-This version preserves the approved website design and content, including the corrected WHAT WE DO / WHY WE EXIST introductions, the three WHAT WE DO slides, and the five HOW WE DO IT slides.
+Astro diagnostics and build; internal page/asset/anchor validation; Chromium and WebKit at desktop and phone sizes; image loading, horizontal overflow, search, theme switching, disclosures, mobile navigation, old-address redirects, and comparison with the c.2 preview. Detailed launch evidence is retained in Rachel's local launch workspace.

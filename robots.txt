@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /test/
+Disallow: /site/
+Disallow: /seminar-zoom/
+
+Sitemap: https://resi.org/sitemap.xml
