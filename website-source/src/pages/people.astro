@@ -104,7 +104,7 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
       Our visitor program keeps RESI researchers connected to frontier laboratories and the wider safety research community.
     </p>
     <span id="past-visitors" aria-hidden="true"></span>
-    <ul class="compact two names">
+    <ul class="compact two names visitor-list" style={`--visitor-rows: ${Math.ceil((visitors.length + 1) / 2)}`}>
       <li id="adam-chlipala">
         <span id="additional-leadership" aria-hidden="true"></span>
         <a href="https://adam.chlipala.net/" {...external('https://adam.chlipala.net/')}>Adam Chlipala</a>, <span class="aff">MIT</span>
@@ -229,6 +229,22 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
   }
 
   #adam-chlipala { margin-bottom: 15px; break-inside: avoid; }
+  @media (min-width: 480.75px) {
+    .visitor-list {
+      columns: auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(var(--visitor-rows), auto);
+      grid-auto-flow: column;
+      gap: 7.5px 31.5px;
+    }
+    .visitor-list > li {
+      margin: 0;
+    }
+    .visitor-list > #adam-chlipala {
+      margin-bottom: 7.5px;
+    }
+  }
   .visitor-role { margin-top: 4.5px; }
   .visitor-agenda { margin-top: 2.25px; }
   .visitor-role, .visitor-agenda {
