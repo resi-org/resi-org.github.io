@@ -6,6 +6,7 @@
     --section-space-after: 30px;
     --page-opening: 60px;
     --shortcut-divider-gap: 10.5px;
+    --contents-section-space: calc((var(--section-space-after) + 21px + var(--section-space-before) - var(--shortcut-divider-gap)) / 2);
   }
 
   /* A section owns the space after its content. The following section owns
@@ -21,15 +22,15 @@
   .section.landing {
     padding-block: var(--page-opening) var(--section-space-before);
   }
-  /* Swap the former gaps above the contents and below the first divider.
+  /* Split the difference between the original and swapped contents spacing.
      The contents-to-divider gap and subsequent section rhythm stay the same. */
   .page-hero:has(+ .page-shortcuts-bar),
   .section.landing:has(+ .page-shortcuts-bar) {
-    padding-bottom: var(--section-space-after);
+    padding-bottom: var(--contents-section-space);
   }
   /* Astro may insert a script between the menu and its first section. */
   .page-shortcuts-bar ~ .section.section-divided:not(.section-divided ~ .section-divided) {
-    padding-top: calc(21px + var(--section-space-before) - var(--shortcut-divider-gap));
+    padding-top: var(--contents-section-space);
   }
   .section#latest {
     padding-top: var(--page-opening);
