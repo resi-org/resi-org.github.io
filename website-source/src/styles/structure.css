@@ -21,10 +21,15 @@
   .section.landing {
     padding-block: var(--page-opening) var(--section-space-before);
   }
-  /* Keep contents controls just above the existing first divider. */
+  /* Swap the former gaps above the contents and below the first divider.
+     The contents-to-divider gap and subsequent section rhythm stay the same. */
   .page-hero:has(+ .page-shortcuts-bar),
   .section.landing:has(+ .page-shortcuts-bar) {
-    padding-bottom: calc(21px + var(--section-space-before) - var(--shortcut-divider-gap));
+    padding-bottom: var(--section-space-after);
+  }
+  /* Astro may insert a script between the menu and its first section. */
+  .page-shortcuts-bar ~ .section.section-divided:not(.section-divided ~ .section-divided) {
+    padding-top: calc(21px + var(--section-space-before) - var(--shortcut-divider-gap));
   }
   .section#latest {
     padding-top: var(--page-opening);
