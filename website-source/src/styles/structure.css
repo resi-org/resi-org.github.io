@@ -6,14 +6,7 @@
     --section-space-after: 30px;
     --page-opening: 60px;
     --shortcut-divider-gap: 10.5px;
-    --intro-action-padding: 11.25px;
-    --intro-action-border: 0.75px;
     --contents-section-space: calc((var(--section-space-after) + 21px + var(--section-space-before) - var(--shortcut-divider-gap)) / 2);
-  }
-
-  .intro-actions .button {
-    padding-inline: var(--intro-action-padding);
-    border-inline-width: var(--intro-action-border);
   }
 
   /* A section owns the space after its content. The following section owns

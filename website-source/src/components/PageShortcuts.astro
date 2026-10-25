@@ -103,12 +103,12 @@ const { id, items } = Astro.props;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 7.5px 13.5px;
+    gap: 7.5px 16.5px;
     max-width: var(--content-width);
     margin: 0 auto;
-    /* Match the first intro button's text inset, including border rounding. */
-    padding-inline-start: var(--intro-action-padding);
-    border-inline-start: var(--intro-action-border) solid transparent;
+    /* Align every contents menu with the intro button outer edge. */
+    padding-inline: 0;
+    border-inline: 0;
     color: var(--accent);
     font: 500 9px/1.5 var(--sans);
     letter-spacing: 0.13em;
