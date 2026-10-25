@@ -195,6 +195,20 @@ const founders = people
   #founders .community-heading {
     margin-bottom: 0;
   }
+  @media (min-width: 525.75px) {
+    /* This compact panel aligns its links with the two portrait rows. */
+    .community-invite :global(.section-links) {
+      margin-top: 6px;
+      gap: 6px;
+    }
+    .community :global(.team-mosaic) {
+      align-self: stretch;
+    }
+    .community :global(.research-team-mosaic.is-rotating) {
+      height: 100%;
+      align-content: space-between;
+    }
+  }
   #support-heading {
     font-size: 26.25px;
     line-height: 1.25;
