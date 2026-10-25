@@ -25,8 +25,8 @@ import { faq } from '../data/institute';
     </p>
     <IntroActions
       items={[
-        { label: 'Support our work', href: '/support' },
         { label: 'Explore our research program', href: '/research' },
+        { label: 'Support our work', href: '/support' },
       ]}
     />
   </Section>
@@ -100,7 +100,7 @@ import { faq } from '../data/institute';
       <p>
         Success also means influencing policy and regulation in ways that support human flourishing.
       </p>
-      <p><a href="/support">Support this research</a></p>
+      <p class="success-support"><a href="/support"><strong>Help make this possible</strong></a></p>
     </div>
   </Section>
 
@@ -142,6 +142,10 @@ import { faq } from '../data/institute';
 </Base>
 
 <style>
+  .about-band-content .success-support {
+    margin-top: 21px;
+  }
+
   :global(.section.institute-overview) {
     max-width: var(--content-width);
     margin-inline: auto;
