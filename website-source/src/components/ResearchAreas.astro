@@ -76,40 +76,40 @@ const { expanded = false } = Astro.props;
   /* Card content uses its own rhythm rather than prose-section heading margins. */
   @media screen {
     .research-map-expanded > .map-item {
-      padding: 21.6px;
+      padding: 18px;
     }
     .research-map-expanded > .map-item > h3 {
-      margin: 0 0 14.4px;
+      margin: 0 0 12px;
       /* Cardo tops out at 700; lightly strengthen the existing bold face. */
-      -webkit-text-stroke: 0.225px currentColor;
+      -webkit-text-stroke: 0.1875px currentColor;
     }
     .research-map-expanded .research-detail-body > p {
       margin: 0;
       line-height: 1.65;
     }
     .research-map-expanded .research-detail-body > p + p {
-      margin-top: 16.2px;
+      margin-top: 13.5px;
     }
     .research-map-expanded > .map-item > .research-area-group {
-      margin-top: 18px;
+      margin-top: 15px;
     }
   }
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 480px) {
     .research-map-expanded > .map-item {
-      padding: 18px;
+      padding: 15px;
     }
   }
   .research-map-expanded .research-area-question {
     font-weight: 500;
   }
   .research-area-group {
-    margin-top: 9px;
-    font: 400 13.5px/1.55 var(--sans);
+    margin-top: 7.5px;
+    font: 400 11.25px/1.55 var(--sans);
     color: var(--muted);
   }
   .research-question-list {
     display: grid;
-    gap: 27px;
+    gap: 22.5px;
   }
   .research-question-item {
     min-width: 0;
@@ -119,10 +119,10 @@ const { expanded = false } = Astro.props;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 18px;
+    gap: 15px;
     margin: 0;
-    padding: 3.6px 0;
-    font: 700 19.8px/1.4 var(--serif);
+    padding: 3px 0;
+    font: 700 16.5px/1.4 var(--serif);
     color: var(--ink);
     list-style: none;
   }
@@ -134,14 +134,14 @@ const { expanded = false } = Astro.props;
   }
   .research-question-title {
     display: block;
-    font: 700 19.8px/1.4 var(--serif);
+    font: 700 16.5px/1.4 var(--serif);
     margin: 0;
   }
   .research-question-lead {
     display: block;
-    font: 400 15.3px/1.65 var(--sans);
+    font: 400 12.75px/1.65 var(--sans);
     color: var(--ink);
-    margin: 10.8px 0 0;
+    margin: 9px 0 0;
     max-width: 70ch;
   }
   .research-question-dropdown > summary {
@@ -162,19 +162,19 @@ const { expanded = false } = Astro.props;
     color: var(--accent);
   }
   .research-question-dropdown .research-detail-body {
-    padding: 10.8px 32.4px 0 0;
+    padding: 9px 27px 0 0;
     max-width: 70ch;
   }
   .research-question-dropdown .research-detail-body p {
-    font-size: 15.3px;
+    font-size: 12.75px;
   }
-  @media (max-width: 576px) {
+  @media (max-width: 480px) {
     .research-question-list {
-      gap: 21.6px;
+      gap: 18px;
     }
     .research-question-dropdown > summary,
     .research-question-static {
-      font-size: 19.8px;
+      font-size: 16.5px;
     }
   }
   @media print {

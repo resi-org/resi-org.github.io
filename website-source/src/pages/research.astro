@@ -199,7 +199,7 @@ const papers = (await getCollection('selectedResearch')).sort(
       const featured = roster.querySelector<HTMLElement>(':scope > .working-group-featured');
       const cards = allCards.filter((card) => card !== featured);
       const onward = roster.querySelector<HTMLElement>('.working-group-onward');
-      const desktop = matchMedia('(min-width: 630.9px)');
+      const desktop = matchMedia('(min-width: 525.75px)');
       let scheduled = false;
       const layout = () => {
         scheduled = false;
@@ -267,22 +267,22 @@ const papers = (await getCollection('selectedResearch')).sort(
     display: block;
     list-style: none;
     padding: 0;
-    margin: 36px 0 0;
+    margin: 30px 0 0;
   }
   #approach .research-output {
     display: grid;
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
-    gap: 32.4px;
-    padding: 23.4px 0;
+    gap: 27px;
+    padding: 19.5px 0;
     margin: 0;
-    border-bottom: 0.9px solid var(--line);
+    border-bottom: 0.75px solid var(--line);
   }
   #approach .research-output:first-child {
     padding-top: 0;
   }
   #approach .research-output h3 {
     margin: 0;
-    font-size: 19.8px;
+    font-size: 16.5px;
     line-height: 1.35;
     text-wrap: balance;
   }
@@ -290,33 +290,33 @@ const papers = (await getCollection('selectedResearch')).sort(
     margin: 0;
   }
   #approach .research-output-description p + p {
-    margin-top: 7.2px;
+    margin-top: 6px;
   }
   #approach .research-output:last-child {
     border-bottom: 0;
     padding-bottom: 0;
   }
   #approach .research-outputs-note {
-    margin: 36px 0 0;
+    margin: 30px 0 0;
   }
-  @media (max-width: 630px) {
+  @media (max-width: 525px) {
     #approach .research-output {
       grid-template-columns: minmax(0, 1fr);
-      gap: 9px;
-      padding-block: 21.6px;
+      gap: 7.5px;
+      padding-block: 18px;
     }
   }
 
   .research-group-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14.4px;
+    gap: 12px;
   }
   .research-group-cards > .working-group-featured,
   .research-group-cards > .working-group-onward {
     grid-column: 1 / -1;
   }
-  @media screen and (min-width: 630.9px) {
+  @media screen and (min-width: 525.75px) {
     .research-group-cards > .working-group:not(.working-group-featured) > h3 {
       min-height: var(--group-title-height, 0px);
     }
@@ -332,16 +332,16 @@ const papers = (await getCollection('selectedResearch')).sort(
   .research-group-cards > .working-group,
   .research-publications .papers > li {
     min-width: 0;
-    padding: 19.8px;
-    border: 0.9px solid var(--line);
-    border-radius: 2.7px;
+    padding: 16.5px;
+    border: 0.75px solid var(--line);
+    border-radius: 2.25px;
     background: transparent;
     break-inside: avoid;
   }
   .research-group-cards > .working-group {
     display: block;
     margin: 0;
-    padding: 16.2px 16.2px 9px;
+    padding: 13.5px 13.5px 7.5px;
   }
   .research-group-cards > .working-group > h3 {
     margin: 0;
@@ -361,7 +361,7 @@ const papers = (await getCollection('selectedResearch')).sort(
     margin: 0;
     min-width: 0;
     text-align: right;
-    font: 400 15.3px/1.55 var(--sans);
+    font: 400 12.75px/1.55 var(--sans);
   }
   .working-group-onward a {
     max-width: 100%;
@@ -369,27 +369,27 @@ const papers = (await getCollection('selectedResearch')).sort(
   }
   .working-group-body {
     position: relative;
-    min-height: 39.6px;
-    padding-top: 7.2px;
+    min-height: 33px;
+    padding-top: 6px;
   }
   .research-group-cards .wg-lead {
     margin: 0;
-    padding-right: 93.6px;
+    padding-right: 78px;
   }
   .working-group-details > summary {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 9px;
+    gap: 7.5px;
     position: absolute;
-    top: -1.8px;
+    top: -1.5px;
     right: 0;
     width: fit-content;
-    min-width: 39.6px;
-    min-height: 39.6px;
+    min-width: 33px;
+    min-height: 33px;
     margin-left: auto;
     color: var(--accent);
-    font: 400 13.5px/1.5 var(--sans);
+    font: 400 11.25px/1.5 var(--sans);
     cursor: pointer;
     list-style: none;
   }
@@ -400,9 +400,9 @@ const papers = (await getCollection('selectedResearch')).sort(
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 39.6px;
-    height: 39.6px;
-    font: 400 25.2px/1 var(--sans);
+    width: 33px;
+    height: 33px;
+    font: 400 21px/1 var(--sans);
   }
   .working-group-details .disclosure-control-icon::before {
     content: '+';
@@ -410,20 +410,20 @@ const papers = (await getCollection('selectedResearch')).sort(
   .working-group-details[open] .disclosure-control-icon::before {
     content: '−';
   }
-  @media (min-width: 630.9px) and (hover: hover) and (pointer: fine) {
+  @media (min-width: 525.75px) and (hover: hover) and (pointer: fine) {
     .working-group-details .disclosure-control-label {
       position: absolute;
-      right: calc(100% - 3.6px);
+      right: calc(100% - 3px);
       top: 50%;
       transform: translateY(-50%);
-      font: 400 9.9px/1 var(--sans);
+      font: 400 8.25px/1 var(--sans);
       color: var(--muted);
       white-space: nowrap;
       opacity: 0;
       pointer-events: none;
     }
     .working-group-details > summary:focus-visible .disclosure-control-label {
-      right: calc(100% + 9px);
+      right: calc(100% + 7.5px);
     }
     .working-group-details > summary:hover .disclosure-control-label,
     .working-group-details > summary:focus-visible .disclosure-control-label {
@@ -444,19 +444,19 @@ const papers = (await getCollection('selectedResearch')).sort(
   .research-publications .papers {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+    gap: 15px;
   }
-  @media (max-width: 630px) {
+  @media (max-width: 525px) {
     .research-group-cards > .working-group-onward {
       align-items: flex-start;
       text-align: left;
-      padding: 7.2px 0 0;
+      padding: 6px 0 0;
     }
     .research-group-cards {
       grid-template-columns: minmax(0, 1fr);
     }
     .research-publications .papers > li {
-      padding: 18px;
+      padding: 15px;
     }
   }
   @media print {

@@ -22,7 +22,7 @@ const { id, items } = Astro.props;
     const bar = nav.closest<HTMLElement>('.page-shortcuts-bar')!;
     const header = document.querySelector<HTMLElement>('.site-header')!;
     const root = document.documentElement;
-    const compact = matchMedia('(max-width: 576px), (pointer: coarse)');
+    const compact = matchMedia('(max-width: 480px), (pointer: coarse)');
     const enoughHeight = matchMedia('(min-height: 480px)');
     const measure = () => {
       root.style.setProperty('--contents-header-height', `${header.getBoundingClientRect().height}px`);
@@ -76,13 +76,13 @@ const { id, items } = Astro.props;
 <style>
   .page-shortcuts-bar {
     position: sticky;
-    top: var(--contents-header-height, 81.9px);
+    top: var(--contents-header-height, 68.25px);
     z-index: 95;
-    padding: 9px 0 var(--shortcut-divider-gap);
+    padding: 7.5px 0 var(--shortcut-divider-gap);
     background: var(--paper);
   }
   :global(html[data-page-shortcuts]) {
-    scroll-padding-top: calc(var(--contents-header-height) + var(--contents-height) + 12px);
+    scroll-padding-top: calc(var(--contents-header-height) + var(--contents-height) + 10px);
   }
   :global(html[data-page-shortcuts] main [id]) {
     scroll-margin-top: 0;
@@ -91,11 +91,11 @@ const { id, items } = Astro.props;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 9px 19.8px;
+    gap: 7.5px 16.5px;
     max-width: var(--content-width);
     margin: 0 auto;
     color: var(--accent);
-    font: 500 10.8px/1.5 var(--sans);
+    font: 500 9px/1.5 var(--sans);
     letter-spacing: 0.13em;
     text-transform: uppercase;
   }
@@ -109,7 +109,7 @@ const { id, items } = Astro.props;
   .page-shortcuts button {
     display: inline-flex;
     align-items: baseline;
-    gap: 6.3px;
+    gap: 5.25px;
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -121,14 +121,14 @@ const { id, items } = Astro.props;
   .page-shortcuts li { margin: 0; padding: 0; }
   .page-shortcuts a { text-decoration: none; }
   .page-shortcuts a:hover,
-  .page-shortcuts button:hover { text-decoration: underline; text-underline-offset: 3.6px; }
+  .page-shortcuts button:hover { text-decoration: underline; text-underline-offset: 3px; }
   .page-shortcuts:not([data-ready]) button { display: none; }
-  @media (max-width: 576px), (pointer: coarse) {
+  @media (max-width: 480px), (pointer: coarse) {
     .page-shortcuts-bar { padding-top: 0; }
     .page-shortcuts button, .page-shortcuts a { min-height: 44px; }
     .page-shortcuts button { align-items: center; }
     .page-shortcuts a { display: flex; align-items: center; }
-    .page-shortcuts ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; width: 100%; padding: 0; margin: 0; }
+    .page-shortcuts ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 15px; width: 100%; padding: 0; margin: 0; }
     .page-shortcuts ul[hidden] { display: none; }
     .page-shortcuts { row-gap: 0; }
   }

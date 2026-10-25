@@ -2,10 +2,10 @@
    established print layout alone. Content-specific cards retain their sizing. */
 @media screen {
   :root {
-    --section-space-before: 43.2px;
-    --section-space-after: 36px;
-    --page-opening: 72px;
-    --shortcut-divider-gap: 12.6px;
+    --section-space-before: 36px;
+    --section-space-after: 30px;
+    --page-opening: 60px;
+    --shortcut-divider-gap: 10.5px;
   }
 
   /* A section owns the space after its content. The following section owns
@@ -14,7 +14,7 @@
     padding-block: 0 var(--section-space-before);
   }
   .section.section-divided {
-    border-top: 0.9px solid var(--line);
+    border-top: 0.75px solid var(--line);
     padding-top: var(--section-space-after);
   }
   .page-hero,
@@ -24,7 +24,7 @@
   /* Keep contents controls just above the existing first divider. */
   .page-hero:has(+ .page-shortcuts-bar),
   .section.landing:has(+ .page-shortcuts-bar) {
-    padding-bottom: calc(25.2px + var(--section-space-before) - var(--shortcut-divider-gap) - 9px);
+    padding-bottom: calc(21px + var(--section-space-before) - var(--shortcut-divider-gap) - 7.5px);
   }
   .section#latest {
     padding-top: var(--page-opening);
@@ -80,7 +80,7 @@
     top: 0;
   }
   .faq-item:first-child .faq-permalink {
-    top: -6.3px;
+    top: -5.25px;
   }
 
   /* Equivalent heading roles use the same scale, regardless of HTML level. */
@@ -88,23 +88,23 @@
     line-height: 1.25;
   }
   .section-body .entry-title {
-    font-size: 19.8px;
+    font-size: 16.5px;
     line-height: 1.4;
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 480px) {
   :root {
-    --section-space-before: 32.4px;
-    --section-space-after: 25.2px;
-    --page-opening: 43.2px;
+    --section-space-before: 27px;
+    --section-space-after: 21px;
+    --page-opening: 36px;
   }
 }
 
 /* Page titles: a step between section headings and the homepage display title. */
 @media screen {
   :root {
-    --page-title-size: clamp(30.6px, calc(16.2px + 2.5vw), 39.6px);
+    --page-title-size: clamp(25.5px, calc(13.5px + 2.5vw), 33px);
   }
   .page-content h1,
   .page-content h1.page-title {
