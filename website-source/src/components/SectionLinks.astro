@@ -6,11 +6,12 @@ interface Props {
   items: { label: string; href: string; id?: string }[];
   align?: 'start' | 'end';
   card?: boolean;
+  emphasis?: boolean;
 }
-const { items, align = 'start', card = false } = Astro.props;
+const { items, align = 'start', card = false, emphasis = false } = Astro.props;
 ---
 
-<div class:list={['section-links', { 'section-links-end': align === 'end', 'section-links-card': card }]}>
+<div class:list={['section-links', { 'section-links-end': align === 'end', 'section-links-card': card, 'section-links-emphasis': emphasis }]}>
   {items.map(({ label, href, id }) => (
     <a id={id} href={href} {...external(href)}>
       <span>{label}</span><Arrow />
@@ -34,7 +35,7 @@ const { items, align = 'start', card = false } = Astro.props;
     max-width: 100%;
     font-size: 12.75px;
     line-height: 1.65;
-    font-weight: 700;
+    font-weight: 400;
     text-decoration: none;
   }
   .section-links a span {
@@ -42,6 +43,9 @@ const { items, align = 'start', card = false } = Astro.props;
     text-decoration: underline;
     text-decoration-thickness: 0.75px;
     text-underline-offset: 0.2em;
+  }
+  .section-links-emphasis a {
+    font-weight: 700;
   }
   .section-links :global(.action-arrow) {
     flex-shrink: 0;
