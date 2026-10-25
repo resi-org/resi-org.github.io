@@ -40,6 +40,6 @@ Astro diagnostics and build; internal page/asset/anchor validation; Chromium and
 
 ## Smaller default design — October 23, 2026
 
-The website now uses the smaller appearance Rachel approved from the 90% zoom reference as its normal design at 100% browser zoom. Typography, column widths, spacing, icons, and responsive breakpoints were reduced in the CSS itself. No browser-specific zoom, local preference, or forced viewport scale is used. This applies to all pages of the c.2 website.
+The website now matches Rachel’s C.2 screenshot reference at normal 100% browser zoom. Safari settings verified on October 25 showed that the draft reference was displayed at 75%, not 90%; the native design dimensions have been corrected accordingly. Typography, column widths, spacing, icons, and responsive breakpoints were reduced in the CSS itself. No browser-specific zoom, local preference, or forced viewport scale is used. This applies to all pages of the c.2 website.
 
 The previous c.2 sizing is preserved at tag `pre-smaller-default-2026-10-23`. The original pre-c.2 website remains preserved under its separate pre-launch tag.
