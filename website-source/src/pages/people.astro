@@ -40,7 +40,8 @@ for (const [personId, beforeId] of [
 const operations = people.filter((p) => p.data.group === 'operations').sort(byOrder);
 const visitors = (await getCollection('visitors')).sort(byOrder);
 const affiliated = (await getCollection('affiliated')).sort(byOrder);
-const visitorSplit = Math.ceil((visitors.length + 1) / 2);
+// Adam occupies two extra rows, so balance column height rather than name count.
+const visitorSplit = Math.ceil((visitors.length - 1) / 2);
 ---
 
 <Base
