@@ -1,7 +1,7 @@
 {
   "source": "https://resi.org/seminars/",
   "copiedOn": "2026-10-22",
-  "intro": "<p>Research talks on the foundations of AI safety, hosted by RESI and MIT. Find upcoming seminars and past talks below, including each speaker’s title, abstract, and biography.</p>\n    <p>The <a href=\"https://resi.org/seminar-zoom/\">seminar Zoom link</a> is updated for each talk. All times are Eastern Time.</p>\n    <p><a href=\"#upcoming-seminars\">Upcoming seminars</a> · <a href=\"#past-seminars\">Past seminars</a></p>",
+  "intro": "<p>Research talks on the foundations of AI safety, hosted by RESI and MIT. Find upcoming seminars and past talks below, including each speaker’s title, abstract, and biography.</p>\n    <p>The <a href=\"https://resi.org/seminar-zoom/\">seminar Zoom link</a> is updated for each talk. All times are Eastern Time.</p>",
   "pastNav": "<nav aria-label=\"Past seminars\">\n      <ul>\n        <li><a href=\"#anat-perry-2026-10-21\">October 21, 2026: Anat Perry</a></li>\n        <li><a href=\"#natalie-collina-2026-10-14\">October 14, 2026: Natalie Collina</a></li>\n        <li><a href=\"#aaron-roth-2026-10-07\">October 7, 2026: Aaron Roth</a></li>\n        <li><a href=\"#or-zamir-2026-09-23\">September 23, 2026: Or Zamir</a></li>\n        <li><a href=\"#avrim-blum-2026-09-16\">September 16, 2026: Avrim Blum</a></li>\n      </ul>\n    </nav>",
   "talks": [
     {

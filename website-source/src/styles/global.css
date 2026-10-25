@@ -3104,135 +3104,6 @@ article.map-item:hover {
     scroll-margin-top: 0;
   }
 }
-/* Plain contents links on small screens; a native hover disclosure in the desktop margin. */
-.section-index {
-  color: var(--muted);
-  font: 400 12.6px/1.45 var(--sans);
-}
-.home-index {
-  margin-top: 21.6px;
-}
-.page-index {
-  max-width: var(--content-width);
-  margin: 0 auto 13.5px;
-}
-.section-index-disclosure {
-  margin: 0;
-  border: 0;
-  padding: 0;
-}
-.section-index summary {
-  display: none;
-  align-items: center;
-  gap: 10.8px;
-  min-height: 39.6px;
-  padding: 0;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  list-style: none;
-}
-.section-index summary::-webkit-details-marker {
-  display: none;
-}
-.section-index summary::after {
-  content: none;
-}
-.section-index summary:hover,
-.section-index summary:focus-visible {
-  color: var(--accent);
-}
-.section-index-mark {
-  flex: none;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1;
-}
-.section-index-mark .is-current {
-  stroke: var(--accent);
-  stroke-width: 2;
-}
-.section-index ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 18px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.section-index li {
-  margin: 0;
-}
-.section-index a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32.4px;
-  padding: 5.4px 0;
-  color: var(--accent);
-  text-decoration: underline;
-}
-.section-index a:hover {
-  color: var(--accent);
-  text-decoration: underline;
-}
-.section-index a[aria-current='location'] {
-  color: var(--muted);
-  font-weight: 500;
-}
-@media screen and (min-width: 1152px) and (min-height: 558px) {
-  .section-index {
-    --section-links-height: min(
-      calc(var(--section-count) * 43.2px + 5.4px),
-      calc(100svh - var(--home-header-height, 68.4px) - 140.4px - env(safe-area-inset-bottom))
-    );
-    display: block;
-    position: fixed;
-    left: max(9px, env(safe-area-inset-left));
-    /* Reserve the list's space so the trigger stays still when the menu opens. */
-    bottom: calc(max(9px, env(safe-area-inset-bottom)) + 52.2px + var(--section-links-height));
-    width: 39.6px;
-    margin: 0;
-    z-index: 80;
-    font-size: 10.8px;
-    color: color-mix(in srgb, var(--muted) 85%, var(--paper));
-  }
-  .section-index:has(details[open]) {
-    width: 156.6px;
-  }
-  .section-index summary {
-    display: flex;
-    width: 39.6px;
-    justify-content: center;
-  }
-  .section-index-label {
-    display: none;
-  }
-  .section-index ul {
-    display: block;
-    position: absolute;
-    top: 39.6px;
-    left: 0;
-    width: 156.6px;
-    height: var(--section-links-height);
-    margin: 0;
-    padding: 2.7px;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-  }
-  .section-index a {
-    display: flex;
-    height: 43.2px;
-    padding: 5.4px 9px;
-    color: inherit;
-    text-decoration: none;
-  }
-}
-@media print {
-  .section-index {
-    display: none !important;
-  }
-}
-
 @media screen and (max-width: 576px) {
   .hero.shell {
     min-height: 0;
@@ -3479,24 +3350,6 @@ article.map-item:hover {
     display: none;
   }
 }
-@media screen and (max-width: 1151.1px), screen and (max-height: 557.1px) {
-  .section-index {
-    font-size: 10.8px;
-    color: var(--muted);
-  }
-  .section-index a {
-    color: inherit;
-    font-weight: 400;
-    text-decoration: none;
-  }
-  .section-index a:hover,
-  .section-index a[aria-current='location'] {
-    color: var(--accent);
-    font-weight: 400;
-    text-decoration: none;
-  }
-}
-
 .home-founder .founder-name-line {
   display: inline;
   white-space: nowrap;
@@ -3757,8 +3610,7 @@ article.map-item:hover {
   .paper-relationship,
   .section-credit,
   .support-acknowledgment,
-  .expander,
-  .section-index {
+  .expander {
     font-size: 13.5px;
     font-weight: 400;
     line-height: 1.55;

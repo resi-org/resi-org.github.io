@@ -43,7 +43,7 @@ const { id, items } = Astro.props;
     flex-wrap: wrap;
     align-items: baseline;
     gap: 9px 19.8px;
-    margin: 25.2px 0 0;
+    margin: calc(25.2px + var(--section-space-before) - var(--shortcut-divider-gap)) 0 0;
     color: var(--accent);
     font: 500 10.8px/1.5 var(--sans);
     letter-spacing: 0.13em;

@@ -5,6 +5,7 @@
     --section-space-before: 43.2px;
     --section-space-after: 36px;
     --page-opening: 72px;
+    --shortcut-divider-gap: 12.6px;
   }
 
   /* A section owns the space after its content. The following section owns
@@ -19,6 +20,11 @@
   .page-hero,
   .section.landing {
     padding-block: var(--page-opening) var(--section-space-before);
+  }
+  /* Keep contents controls just above the existing first divider. */
+  .page-hero:has(.page-shortcuts),
+  .section.landing:has(.page-shortcuts) {
+    padding-bottom: var(--shortcut-divider-gap);
   }
   .section#latest {
     padding-top: var(--page-opening);

@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
-import PageNav from '../components/PageNav.astro';
+import PageShortcuts from '../components/PageShortcuts.astro';
 import seminars from '../data/seminars.json';
 // Source copy is preserved; Rachel moved the October 21 talk into the archive.
 ---
@@ -10,11 +10,14 @@ import seminars from '../data/seminars.json';
   <header class="page-hero">
     <h1>RESI-MIT Seminars</h1>
     <Fragment set:html={seminars.intro} />
+    <PageShortcuts
+      id="seminar-shortcuts"
+      items={[
+        { label: 'Upcoming', href: '#upcoming-seminars' },
+        { label: 'Past', href: '#past-seminars' },
+      ]}
+    />
   </header>
-  <PageNav items={[
-    ['#upcoming-seminars', 'Upcoming seminars'],
-    ['#past-seminars', 'Past seminars'],
-  ]} />
   <Section id="upcoming-seminars" label="Upcoming seminars" divider>
     <p>No upcoming seminars are currently listed.</p>
   </Section>
