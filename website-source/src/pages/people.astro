@@ -14,8 +14,8 @@ import Founder from '../components/Founder.astro';
 // Ordering follows Rachel's instructions of 2026-09-14: founding scientific
 // team, research team, operations, visiting researchers,
 // affiliated groups, and how to get involved. Research-team leaders come first,
-// with Chloé directly before Sam (Rachel, 2026-10-25). Preserve the existing
-// order within the remaining groups.
+// with Chloé directly before Sam and Miranda directly before Ran
+// (Rachel, 2026-10-25). Preserve the existing order within the remaining groups.
 // Every group uses the same treatment, so seniority shows only in the order.
 const people = await getCollection('people');
 const byOrder = (a: any, b: any) => a.data.order - b.data.order;
@@ -26,11 +26,16 @@ const leadershipRank = (p: (typeof people)[number]) =>
 const research = people
   .filter((p) => p.data.group === 'research')
   .sort((a, b) => leadershipRank(a) - leadershipRank(b) || byOrder(a, b));
-const chloe = research.find((p) => p.id === 'chloe-bakalar');
-const sam = research.find((p) => p.id === 'sam-gunn');
-if (chloe && sam) {
-  research.splice(research.indexOf(chloe), 1);
-  research.splice(research.indexOf(sam), 0, chloe);
+for (const [personId, beforeId] of [
+  ['chloe-bakalar', 'sam-gunn'],
+  ['miranda-christ', 'ran-canetti'],
+]) {
+  const person = research.find((p) => p.id === personId);
+  const before = research.find((p) => p.id === beforeId);
+  if (person && before) {
+    research.splice(research.indexOf(person), 1);
+    research.splice(research.indexOf(before), 0, person);
+  }
 }
 const operations = people.filter((p) => p.data.group === 'operations').sort(byOrder);
 const visitors = (await getCollection('visitors')).sort(byOrder);
