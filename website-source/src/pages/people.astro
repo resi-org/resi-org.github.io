@@ -51,16 +51,17 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
         { label: 'Announcements', href: '/news' },
       ]}
     />
-    <PageShortcuts
-      id="people-shortcuts"
-      items={[
-        { label: 'Founding scientists', href: '#founders' },
-        { label: 'Research team', href: '#research' },
-        { label: 'Visiting researchers', href: '#visitors' },
-        { label: 'Join us', href: '#get-involved' },
-      ]}
-    />
   </header>
+  <PageShortcuts
+    id="people-shortcuts"
+    items={[
+      { label: 'Founding scientists', href: '#founders' },
+      { label: 'Research team', href: '#research' },
+      { label: 'Visiting researchers', href: '#visitors' },
+      { label: 'Join us', href: '#get-involved' },
+    ]}
+  />
+
 
 
   <Section divider label="Founding scientists" id="founders" class="wide" labelAbove>

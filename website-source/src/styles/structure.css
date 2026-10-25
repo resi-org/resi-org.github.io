@@ -22,9 +22,9 @@
     padding-block: var(--page-opening) var(--section-space-before);
   }
   /* Keep contents controls just above the existing first divider. */
-  .page-hero:has(.page-shortcuts),
-  .section.landing:has(.page-shortcuts) {
-    padding-bottom: var(--shortcut-divider-gap);
+  .page-hero:has(+ .page-shortcuts-bar),
+  .section.landing:has(+ .page-shortcuts-bar) {
+    padding-bottom: calc(25.2px + var(--section-space-before) - var(--shortcut-divider-gap) - 9px);
   }
   .section#latest {
     padding-top: var(--page-opening);

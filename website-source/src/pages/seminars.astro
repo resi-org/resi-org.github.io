@@ -10,18 +10,19 @@ import seminars from '../data/seminars.json';
   <header class="page-hero">
     <h1>RESI-MIT Seminars</h1>
     <Fragment set:html={seminars.intro} />
-    <PageShortcuts
-      id="seminar-shortcuts"
-      items={[
-        { label: 'Upcoming', href: '#upcoming-seminars' },
-        { label: 'Past', href: '#past-seminars' },
-      ]}
-    />
   </header>
-  <Section id="upcoming-seminars" label="Upcoming seminars" divider>
+  <PageShortcuts
+    id="seminar-shortcuts"
+    items={[
+      { label: 'Upcoming', href: '#upcoming-seminars' },
+      { label: 'Past', href: '#past-seminars' },
+    ]}
+  />
+
+  <Section id="upcoming-seminars" label="Upcoming" divider>
     <p>No upcoming seminars are currently listed.</p>
   </Section>
-  <Section id="past-seminars" label="Past seminars" divider>
+  <Section id="past-seminars" label="Past" divider>
     <div class="seminar-index" set:html={seminars.pastNav} />
     <div class="seminar-list" set:html={seminars.talks.map((talk) => talk.html).join('\n')} />
   </Section>

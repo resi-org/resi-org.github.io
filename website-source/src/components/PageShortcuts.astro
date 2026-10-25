@@ -6,6 +6,7 @@ interface Props {
 const { id, items } = Astro.props;
 ---
 
+<div class="page-shortcuts-bar">
 <nav class="page-shortcuts" aria-label="On this page">
   <button type="button" aria-expanded="true" aria-controls={id}>
     On this page <span class="shortcut-mark" aria-hidden="true">−</span>
@@ -14,9 +15,19 @@ const { id, items } = Astro.props;
     {items.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
   </ul>
 </nav>
+</div>
 
 <script>
   document.querySelectorAll<HTMLElement>('.page-shortcuts').forEach((nav) => {
+    const bar = nav.closest<HTMLElement>('.page-shortcuts-bar')!;
+    const header = document.querySelector<HTMLElement>('.site-header')!;
+    const root = document.documentElement;
+    const compact = matchMedia('(max-width: 576px), (pointer: coarse)');
+    const enoughHeight = matchMedia('(min-height: 480px)');
+    const measure = () => {
+      root.style.setProperty('--contents-header-height', `${header.getBoundingClientRect().height}px`);
+      root.style.setProperty('--contents-height', `${enoughHeight.matches ? bar.getBoundingClientRect().height : 0}px`);
+    };
     const toggle = nav.querySelector('button')!;
     const links = nav.querySelector('ul')!;
     const mark = nav.querySelector('.shortcut-mark')!;
@@ -24,9 +35,16 @@ const { id, items } = Astro.props;
       toggle.setAttribute('aria-expanded', String(open));
       links.hidden = !open;
       mark.textContent = open ? '−' : '+';
+      measure();
     };
     setOpen(false);
     nav.dataset.ready = '';
+    root.dataset.pageShortcuts = '';
+    const observer = new ResizeObserver(measure);
+    observer.observe(header);
+    observer.observe(bar);
+    enoughHeight.addEventListener('change', measure);
+    document.fonts.ready.then(measure);
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
     nav.addEventListener('keydown', (event) => {
       if (event.key === 'Escape' && !links.hidden) {
@@ -34,16 +52,48 @@ const { id, items } = Astro.props;
         toggle.focus();
       }
     });
+    links.addEventListener('click', (event) => {
+      const link = event.target instanceof Element ? event.target.closest('a') : null;
+      if (!link || !compact.matches) return;
+      setOpen(false);
+      // Move keyboard focus out of the collapsed menu to the chosen section.
+      const target = document.getElementById(link.hash.slice(1));
+      if (target) requestAnimationFrame(() => {
+        const previous = target.getAttribute('tabindex');
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+        target.addEventListener('blur', () => {
+          if (previous === null) target.removeAttribute('tabindex');
+          else target.setAttribute('tabindex', previous);
+        }, { once: true });
+      });
+    });
+    const mainMenu = document.querySelector<HTMLDetailsElement>('.mobile-menu');
+    mainMenu?.addEventListener('toggle', () => { if (mainMenu.open) setOpen(false); });
   });
 </script>
 
 <style>
+  .page-shortcuts-bar {
+    position: sticky;
+    top: var(--contents-header-height, 81.9px);
+    z-index: 95;
+    padding: 9px 0 var(--shortcut-divider-gap);
+    background: var(--paper);
+  }
+  :global(html[data-page-shortcuts]) {
+    scroll-padding-top: calc(var(--contents-header-height) + var(--contents-height) + 12px);
+  }
+  :global(html[data-page-shortcuts] main [id]) {
+    scroll-margin-top: 0;
+  }
   .page-shortcuts {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     gap: 9px 19.8px;
-    margin: calc(25.2px + var(--section-space-before) - var(--shortcut-divider-gap)) 0 0;
+    max-width: var(--content-width);
+    margin: 0 auto;
     color: var(--accent);
     font: 500 10.8px/1.5 var(--sans);
     letter-spacing: 0.13em;
@@ -73,10 +123,15 @@ const { id, items } = Astro.props;
   .page-shortcuts a:hover,
   .page-shortcuts button:hover { text-decoration: underline; text-underline-offset: 3.6px; }
   .page-shortcuts:not([data-ready]) button { display: none; }
-  @media (pointer: coarse) {
-    .page-shortcuts button, .page-shortcuts a { padding-block: 10.8px; }
-    .page-shortcuts a { display: inline-block; }
+  @media (max-width: 576px), (pointer: coarse) {
+    .page-shortcuts-bar { padding-top: 0; }
+    .page-shortcuts button, .page-shortcuts a { min-height: 44px; }
+    .page-shortcuts button { align-items: center; }
+    .page-shortcuts a { display: flex; align-items: center; }
+    .page-shortcuts ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; width: 100%; padding: 0; margin: 0; }
+    .page-shortcuts ul[hidden] { display: none; }
     .page-shortcuts { row-gap: 0; }
   }
-  @media print { .page-shortcuts { display: none; } }
+  @media (max-height: 479px) { .page-shortcuts-bar { position: static; } }
+  @media print { .page-shortcuts-bar { display: none; } }
 </style>

@@ -47,16 +47,17 @@ const papers = (await getCollection('selectedResearch')).sort(
         { label: 'Support our work', href: '/support' },
       ]}
     />
-    <PageShortcuts
-      id="research-shortcuts"
-      items={[
-        { label: 'Research outputs', href: '#approach' },
-        { label: 'Research areas', href: '#areas' },
-        { label: 'Working groups', href: '#concentration' },
-        { label: 'Foundational research', href: '#evidence' },
-      ]}
-    />
   </Section>
+  <PageShortcuts
+    id="research-shortcuts"
+    items={[
+      { label: 'Research outputs', href: '#approach' },
+      { label: 'Research areas', href: '#areas' },
+      { label: 'Working groups', href: '#concentration' },
+      { label: 'Foundational research', href: '#evidence' },
+    ]}
+  />
+
 
 
   <Section label="Research outputs" id="approach" divider>
