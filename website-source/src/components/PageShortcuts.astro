@@ -122,6 +122,9 @@ const { id, items } = Astro.props;
     color: inherit;
   }
   .page-shortcuts button {
+    /* Shared 2px optical adjustment from the first intro button's outer edge. */
+    position: relative;
+    left: 2px;
     display: inline-flex;
     align-items: baseline;
     gap: 5.25px;
