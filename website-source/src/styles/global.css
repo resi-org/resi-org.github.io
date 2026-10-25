@@ -3771,40 +3771,56 @@ article.map-item:hover {
   transform-origin: var(--portrait-origin, 50% 50%);
 }
 
-/* Use the About page’s 900px column as the shared utility-control reference. */
-@media screen and (min-width: 750.75px) {
+/* The footer and utility controls share one right-edge reference on every page. */
+@media screen {
+  .site-footer {
+    --footer-width: 735px;
+    --footer-gutter: 24px;
+  }
+  .site-footer > .shell {
+    width: min(var(--footer-width), calc(100% - 2 * var(--footer-gutter)));
+  }
   .site-footer .footer-controls {
     display: flex;
-    align-items: center;
-    gap: 6px;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 0;
   }
   .site-footer .theme-toggle,
   .site-footer .footer-list .back-to-top {
     position: relative;
     left: auto;
+    right: auto;
     bottom: auto;
-    height: 33px;
-  }
-}
-@media screen and (min-width: 915px) {
-  .site-footer .footer-controls {
-    display: contents;
-  }
-  .site-footer .theme-toggle,
-  .site-footer .footer-list .back-to-top {
-    position: fixed;
-    left: calc((100vw - 810px) / 2 - 45px);
-    height: 18px;
-  }
-  .site-footer .theme-toggle {
-    bottom: calc(max(7.5px, env(safe-area-inset-bottom)) + 7.5px);
-  }
-  .site-footer .footer-list .back-to-top {
-    bottom: calc(max(7.5px, env(safe-area-inset-bottom)) + 25.5px);
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    padding: 0;
+    justify-content: flex-end;
   }
   .site-footer .theme-toggle::after,
   .site-footer .back-to-top::after {
     left: auto;
-    right: calc(100% - 3px);
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@media screen and (max-width: 480px) {
+  .site-footer { --footer-gutter: 13.5px; }
+}
+@media screen and (min-width: 915px) {
+  .site-footer .footer-controls {
+    position: fixed;
+    right: max(var(--footer-gutter), calc((100% - var(--footer-width)) / 2));
+    /* Keep both icons above the copyright and footer links at page end. */
+    bottom: calc(54px + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+  }
+  .site-footer .theme-toggle,
+  .site-footer .footer-list .back-to-top {
+    width: 33px;
+    height: 18px;
+    flex-basis: 18px;
   }
 }
