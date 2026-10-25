@@ -44,19 +44,6 @@ const entries = await getAnnouncements();
               ) : (
                 <p class="announcement-summary">{e.summary}</p>
               ))}
-            {e.url?.startsWith('https://www.lesswrong.com/') && (
-              <p class="page-foot">
-                <a href={e.url} {...external(e.url)}>
-                  Read on LessWrong
-                </a>
-                {e.id === 'update-2026-09-18-formal-verification' && (
-                  <Fragment>
-                    {' '}
-                    · <a href="/research#formal-verification">Explore the on-site agenda</a>
-                  </Fragment>
-                )}
-              </p>
-            )}
             {e.body && e.body.map((para) => <p class="entry-body">{para}</p>)}
           </li>
         ))}
