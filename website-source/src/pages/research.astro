@@ -7,7 +7,7 @@ import Section from '../components/Section.astro';
 import Papers from '../components/Papers.astro';
 import ResearchAreas from '../components/ResearchAreas.astro';
 import Disclosure from '../components/Disclosure.astro';
-import Arrow from '../components/Arrow.astro';
+import SectionLinks from '../components/SectionLinks.astro';
 import { researchAgenda } from '../data/institute';
 import { groups } from '../data/groups';
 import { external } from '../lib/external';
@@ -161,10 +161,10 @@ const papers = (await getCollection('selectedResearch')).sort(
           </div>
         </li>
       ))}
-      <li class="working-group-onward">
-        <a class="button secondary" href="/people">Meet our researchers <Arrow /></a>
-      </li>
     </ul>
+    <div class="working-group-onward">
+      <SectionLinks align="end" emphasis items={[{ label: 'Meet the team', href: '/people' }]} />
+    </div>
   </Section>
 
   <Section
@@ -198,7 +198,6 @@ const papers = (await getCollection('selectedResearch')).sort(
       const allCards = [...roster.querySelectorAll<HTMLElement>(':scope > .working-group')];
       const featured = roster.querySelector<HTMLElement>(':scope > .working-group-featured');
       const cards = allCards.filter((card) => card !== featured);
-      const onward = roster.querySelector<HTMLElement>('.working-group-onward');
       const desktop = matchMedia('(min-width: 525.75px)');
       let scheduled = false;
       const layout = () => {
@@ -207,7 +206,7 @@ const papers = (await getCollection('selectedResearch')).sort(
         roster.style.removeProperty('--group-lead-height');
         if (!desktop.matches) {
           roster.classList.remove('independent-columns');
-          [...allCards, ...(onward ? [onward] : [])].forEach((card) => {
+          allCards.forEach((card) => {
             card.style.removeProperty('grid-row');
             card.style.removeProperty('grid-column');
           });
@@ -239,11 +238,6 @@ const papers = (await getCollection('selectedResearch')).sort(
           card.style.gridRow = `${nextRow[column]} / span ${rows}`;
           nextRow[column] += rows + gap;
         });
-        if (onward) {
-          const rows = Math.ceil(onward.getBoundingClientRect().height);
-          onward.style.gridColumn = '1 / -1';
-          onward.style.gridRow = `${Math.max(...nextRow)} / span ${rows}`;
-        }
       };
       const schedule = () => {
         if (!scheduled) {
@@ -253,7 +247,6 @@ const papers = (await getCollection('selectedResearch')).sort(
       };
       const observer = new ResizeObserver(schedule);
       allCards.forEach((card) => observer.observe(card));
-      if (onward) observer.observe(onward);
       desktop.addEventListener('change', schedule);
       document.fonts.ready.then(schedule);
       layout();
@@ -312,8 +305,7 @@ const papers = (await getCollection('selectedResearch')).sort(
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
-  .research-group-cards > .working-group-featured,
-  .research-group-cards > .working-group-onward {
+  .research-group-cards > .working-group-featured {
     grid-column: 1 / -1;
   }
   @media screen and (min-width: 525.75px) {
@@ -351,21 +343,7 @@ const papers = (await getCollection('selectedResearch')).sort(
   }
   .research-group-cards {
     align-items: start;
-  }
-  .research-group-cards > .working-group-onward {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    align-self: start;
-    padding: 0;
-    margin: 0;
-    min-width: 0;
-    text-align: right;
-    font: 400 12.75px/1.55 var(--sans);
-  }
-  .working-group-onward a {
-    max-width: 100%;
-    text-align: left;
+    margin-bottom: 0;
   }
   .working-group-body {
     position: relative;
@@ -447,10 +425,9 @@ const papers = (await getCollection('selectedResearch')).sort(
     gap: 15px;
   }
   @media (max-width: 525px) {
-    .research-group-cards > .working-group-onward {
+    .working-group-onward .section-links.section-links-end {
       align-items: flex-start;
       text-align: left;
-      padding: 6px 0 0;
     }
     .research-group-cards {
       grid-template-columns: minmax(0, 1fr);
