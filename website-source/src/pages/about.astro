@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import IntroActions from '../components/IntroActions.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
 import Section from '../components/Section.astro';
+import SectionLinks from '../components/SectionLinks.astro';
 import Disclosure from '../components/Disclosure.astro';
 import { faq } from '../data/institute';
 ---
@@ -56,9 +57,7 @@ import { faq } from '../data/institute';
           publish.
         </p>
         <p>Our sole goal is the responsible and safe use of AI to the betterment of humanity.</p>
-        <p class="card-link">
-          <a href="/people">Meet the team</a>
-        </p>
+        <SectionLinks card items={[{ label: 'Meet the team', href: '/people' }]} />
       </article>
 
       <article id="adoption" class="institute-card" aria-labelledby="adoption-heading">
@@ -74,11 +73,7 @@ import { faq } from '../data/institute';
           systems. Where implementation requires resources beyond RESI’s capacity, we will share
           proofs of concept so that frontier AI developers can evaluate and adopt them.
         </p>
-        <p class="card-link">
-          <a id="priorities" href="/research#areas">
-            Explore research areas
-          </a>
-        </p>
+        <SectionLinks card items={[{ id: 'priorities', label: 'Explore research areas', href: '/research#areas' }]} />
       </article>
     </div>
   </Section>
@@ -100,7 +95,7 @@ import { faq } from '../data/institute';
       <p>
         Success also means influencing policy and regulation in ways that support human flourishing.
       </p>
-      <p class="success-support"><a href="/support"><strong>Help make this possible</strong></a></p>
+      <SectionLinks items={[{ label: 'Help make this possible', href: '/support' }]} />
     </div>
   </Section>
 
@@ -142,10 +137,6 @@ import { faq } from '../data/institute';
 </Base>
 
 <style>
-  .about-band-content .success-support {
-    margin-top: 21px;
-  }
-
   :global(.section.institute-overview) {
     max-width: var(--content-width);
     margin-inline: auto;
@@ -173,11 +164,6 @@ import { faq } from '../data/institute';
 
   .institute-card .section-title span {
     display: block;
-  }
-
-  .institute-card .card-link {
-    margin-top: auto;
-    padding-top: 21px;
   }
 
   @media (max-width: 570px) {

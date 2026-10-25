@@ -1,5 +1,6 @@
 ---
 import { external } from '../lib/external';
+import SectionLinks from '../components/SectionLinks.astro';
 import Base from '../layouts/Base.astro';
 import IntroActions from '../components/IntroActions.astro';
 import Section from '../components/Section.astro';
@@ -109,10 +110,10 @@ import Section from '../components/Section.astro';
       subject matter experts. RESI focuses on bringing senior experts into superintelligence safety,
       as our work is built on their research and the knowledge they’ve gained throughout their careers.
     </p>
-    <p class="page-foot">
-      <a href="/research#areas">Explore our research areas</a> or{' '}
-      <a href="/research#evidence">read foundational research by our team</a>.
-    </p>
+    <SectionLinks items={[
+      { label: 'Explore our research areas', href: '/research#areas' },
+      { label: 'Read foundational research by our team', href: '/research#evidence' },
+    ]} />
   </Section>
 </Base>
 

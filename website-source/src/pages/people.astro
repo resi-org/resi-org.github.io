@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { external } from '../lib/external';
+import SectionLinks from '../components/SectionLinks.astro';
 import { institute } from '../data/institute';
 import { groups } from '../data/groups';
 import Base from '../layouts/Base.astro';
@@ -161,11 +162,6 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
       and participation details, or complete the{' '}
       <a href="https://forms.gle/CZeYq6bm1YGoGQE18" {...external('https://forms.gle/CZeYq6bm1YGoGQE18')}>interest form</a>.
     </p>
-    <p class="actions">
-      <a href={institute.announcements} {...external(institute.announcements)}>
-        Join the RESI announcements mailing list
-      </a>
-    </p>
     <p>
       Local students interested in AI safety may also want to explore the{' '}
       <a href="https://www.cbai.ai/" {...external('https://www.cbai.ai/')}>
@@ -173,13 +169,11 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
       </a>
       .
     </p>
+    <SectionLinks items={[
+      { label: 'Join the RESI announcements mailing list', href: institute.announcements },
+      { label: 'Join announcements + weekly talks', href: institute.talks },
+    ]} />
   </Section>
-
-  <p class="after-list">
-    <a href={institute.talks} {...external(institute.talks)}>
-      Join announcements + weekly talks
-    </a>
-  </p>
 
 </Base>
 

@@ -1,0 +1,58 @@
+---
+import Arrow from './Arrow.astro';
+import { external } from '../lib/external';
+
+interface Props {
+  items: { label: string; href: string; id?: string }[];
+  align?: 'start' | 'end';
+  card?: boolean;
+}
+const { items, align = 'start', card = false } = Astro.props;
+---
+
+<div class:list={['section-links', { 'section-links-end': align === 'end', 'section-links-card': card }]}>
+  {items.map(({ label, href, id }) => (
+    <a id={id} href={href} {...external(href)}>
+      <span>{label}</span><Arrow />
+    </a>
+  ))}
+</div>
+
+<style>
+  /* One shared rhythm for onward links, matching the About success section. */
+  .section-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 21px 0 0;
+  }
+  .section-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10.5px;
+    max-width: 100%;
+    font-size: 12.75px;
+    line-height: 1.65;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .section-links a span {
+    min-width: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 0.75px;
+    text-underline-offset: 0.2em;
+  }
+  .section-links :global(.action-arrow) {
+    flex-shrink: 0;
+  }
+  .section-links-end {
+    align-items: flex-end;
+    text-align: right;
+  }
+  /* Equal-height cards keep their links aligned, with at least the shared gap. */
+  .section-links-card {
+    margin-top: auto;
+    padding-top: 21px;
+  }
+</style>

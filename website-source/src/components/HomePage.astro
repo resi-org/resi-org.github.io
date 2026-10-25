@@ -7,6 +7,7 @@ import ResearchTeamMosaic from '../components/ResearchTeamMosaic.astro';
 import Arrow from '../components/Arrow.astro';
 import { getAnnouncements, fmtDay } from '../lib/announcements';
 import { external } from '../lib/external';
+import SectionLinks from './SectionLinks.astro';
 import { institute, researchAgenda } from '../data/institute';
 const entries = (await getAnnouncements()).slice(0, 3);
 const people = await getCollection('people');
@@ -101,12 +102,10 @@ const founders = people
         <ResearchTeamMosaic people={researchTeam} />
         <div class="community-invite">
           <h3 class="community-heading">Research community</h3>
-          <a class="text-link" href="/people#research">
-            Meet the team <Arrow />
-          </a>
-          <a class="text-link" href="/research#evidence">
-            Explore foundational work <Arrow />
-          </a>
+          <SectionLinks items={[
+            { label: 'Meet the team', href: '/people#research' },
+            { label: 'Explore foundational work', href: '/research#evidence' },
+          ]} />
         </div>
       </div>
     </div>
@@ -135,9 +134,7 @@ const founders = people
           );
         })}
       </ul>
-      <div class="home-section-links">
-        <a class="text-link" href="/news">See all our news and updates <Arrow /></a>
-      </div>
+      <SectionLinks align="end" items={[{ label: 'See all our news and updates', href: '/news' }]} />
     </div>
   </section>
   <section class="home-band tint" id="research" aria-labelledby="research-heading">
@@ -149,10 +146,10 @@ const founders = people
         {researchAgenda.intro && <p>{researchAgenda.intro}</p>}
       </div>
       <ResearchAreaCards />
-      <div class="home-section-links">
-        <a class="text-link" href="/research#areas">See all our research areas <Arrow /></a>
-        <a class="text-link" href="/research">See our full research program <Arrow /></a>
-      </div>
+      <SectionLinks align="end" items={[
+        { label: 'See all our research areas', href: '/research#areas' },
+        { label: 'See our full research program', href: '/research' },
+      ]} />
     </div>
   </section>
   <section class="home-band" id="support" aria-labelledby="support-heading">
@@ -195,16 +192,8 @@ const founders = people
 </Base>
 
 <style>
-  .home-section-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 9px;
-    margin-top: 18px;
-    text-align: right;
-  }
-  .home-section-links .text-link {
-    margin: 0;
+  #founders .community-heading {
+    margin-bottom: 0;
   }
   #support-heading {
     font-size: 26.25px;
