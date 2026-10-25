@@ -35,19 +35,19 @@ import { faq } from '../data/institute';
   <PageShortcuts
     id="about-shortcuts"
     items={[
-      { label: 'Independence', href: '#institution' },
-      { label: 'Shaping systems & policy', href: '#adoption' },
+      { label: 'How we work', href: '#how-we-work' },
       { label: 'Measures of success', href: '#progress' },
       { label: 'FAQ', href: '#questions' },
     ]}
   />
 
-  <Section class="institute-overview" divider>
+  <Section id="how-we-work" class="institute-overview" divider>
+    <h2 class="section-title">How we work</h2>
     <div class="institute-cards">
       <article id="institution" class="institute-card" aria-labelledby="institution-heading">
-        <h2 id="institution-heading" class="section-title">
+        <h3 id="institution-heading" class="section-title">
           <span>Research excellence</span>{' '}<span>and independence</span>
-        </h2>
+        </h3>
         <p>
           RESI combines research excellence with independence of industry and profit incentives.
         </p>
@@ -61,9 +61,9 @@ import { faq } from '../data/institute';
       </article>
 
       <article id="adoption" class="institute-card" aria-labelledby="adoption-heading">
-        <h2 id="adoption-heading" class="section-title">
-          <span>How research shapes</span>{' '}<span>AI systems and policy</span>
-        </h2>
+        <h3 id="adoption-heading" class="section-title">
+          <span>Shaping AI systems and</span>{' '}<span>policy through research</span>
+        </h3>
         <p>
           Our long-term goal is for safe by design approaches to be adopted in advanced AI systems
           and for research to inform policy and regulation.
@@ -160,6 +160,7 @@ import { faq } from '../data/institute';
 
   .institute-card .section-title {
     margin-top: 0;
+    letter-spacing: -0.035em;
   }
 
   .institute-card .section-title span {
