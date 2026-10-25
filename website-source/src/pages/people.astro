@@ -144,31 +144,37 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
       RESI’s culture is mission-first: open collaboration and early sharing of ideas. To protect
       junior researchers, we will actively support their credit and careers.
     </p>
-    <p>
-      RESI hosts a small number of researchers and visitors and welcomes inquiries from researchers
-      whose expertise could contribute to <a href="/research">RESI’s research</a>, whether or not
-      they have previously worked on AI safety.
-    </p>
-    <p>
-      Scientists interested in participating can contact{' '}
-      <a href="mailto:hello@resi.org">hello@resi.org</a>.
-    </p>
-    <p>
-      The{' '}
-      <a
-        href="https://resi-ai-safety.github.io/reading-group/"
-        {...external('https://resi-ai-safety.github.io/reading-group/')}
-      >AI safety reading group</a>{' '}
-      offers weekly discussions and welcomes a limited number of outside guests. See the schedule
-      and participation details, or complete the{' '}
-      <a href="https://forms.gle/CZeYq6bm1YGoGQE18" {...external('https://forms.gle/CZeYq6bm1YGoGQE18')}>interest form</a>.
-    </p>
-    <p>
+    <div class="join-cards">
+      <article class="join-card" aria-labelledby="visit-heading">
+        <h3 id="visit-heading">Visit</h3>
+        <p>
+          RESI hosts a small number of researchers and visitors and welcomes inquiries from researchers
+          whose expertise could contribute to <a href="/research">RESI’s research</a>, whether or not
+          they have previously worked on AI safety.
+        </p>
+        <p>
+          Scientists interested in participating can contact{' '}
+          <a href="mailto:hello@resi.org">hello@resi.org</a>.
+        </p>
+      </article>
+      <article class="join-card" aria-labelledby="reading-group-heading">
+        <h3 id="reading-group-heading">AI Safety Reading Group</h3>
+        <p>
+          The{' '}
+          <a
+            href="https://resi-ai-safety.github.io/reading-group/"
+            {...external('https://resi-ai-safety.github.io/reading-group/')}
+          >AI safety reading group</a>{' '}
+          offers weekly discussions and welcomes a limited number of outside guests. See the schedule
+          and participation details, or complete the{' '}
+          <a href="https://forms.gle/CZeYq6bm1YGoGQE18" {...external('https://forms.gle/CZeYq6bm1YGoGQE18')}>interest form</a>.
+        </p>
+      </article>
+    </div>
+    <p class="local-students">
       Local students interested in AI safety may also want to explore the{' '}
       <a href="https://www.cbai.ai/" {...external('https://www.cbai.ai/')}>
-        Cambridge Boston Alignment Initiative
-      </a>
-      .
+        Cambridge Boston Alignment Initiative</a>.
     </p>
     <SectionLinks items={[
       { label: 'Join the RESI announcements mailing list', href: institute.announcements },
@@ -179,6 +185,36 @@ const affiliated = (await getCollection('affiliated')).sort(byOrder);
 </Base>
 
 <style>
+  .join-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 21px;
+  }
+  .join-card {
+    min-width: 0;
+    padding: 21px;
+    border: 0.75px solid var(--line);
+    border-radius: 2.25px;
+  }
+  .join-card h3 {
+    margin: 0 0 15px;
+  }
+  .join-card > :last-child {
+    margin-bottom: 0;
+  }
+  .local-students {
+    margin-top: 21px;
+  }
+  @media (max-width: 570px) {
+    .join-cards {
+      grid-template-columns: 1fr;
+    }
+    .join-card {
+      padding: 16.5px;
+    }
+  }
+
   #adam-chlipala { margin-bottom: 15px; break-inside: avoid; }
   .visitor-role { margin-top: 4.5px; }
   .visitor-agenda { margin-top: 2.25px; }
