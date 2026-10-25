@@ -11,6 +11,8 @@ const portraitFraming: Record<string, { position?: string; scale?: number; origi
   },
   'chloe-bakalar': {
     position: '50% 0%',
+    scale: 1.07,
+    origin: '50% 0%',
   },
   'mirac-suzgun': {
     src: '/people/mirac-suzgun-extended.png',
