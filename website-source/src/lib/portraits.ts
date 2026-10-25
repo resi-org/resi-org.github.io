@@ -15,7 +15,7 @@ const portraitFraming: Record<string, { position?: string; scale?: number; origi
     origin: '50% 0%',
   },
   'daniela-rus': {
-    src: '/people/daniela-rus-extended.svg',
+    src: '/people/daniela-rus-headroom-v2.svg',
     position: '50% 0%',
     scale: 1.04,
     origin: '100% 0%',
