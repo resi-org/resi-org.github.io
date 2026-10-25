@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import IntroActions from '../components/IntroActions.astro';
+import PageShortcuts from '../components/PageShortcuts.astro';
 import Section from '../components/Section.astro';
 import Disclosure from '../components/Disclosure.astro';
 import { faq } from '../data/institute';
@@ -24,17 +25,26 @@ import { faq } from '../data/institute';
     </p>
     <IntroActions
       items={[
-        { label: 'Support our work', href: '/support' },
         { label: 'Explore our research program', href: '/research' },
       ]}
     />
   </Section>
 
-  <Section class="wide institute-overview">
+  <PageShortcuts
+    id="about-shortcuts"
+    items={[
+      { label: 'Independence', href: '#institution' },
+      { label: 'Shaping systems & policy', href: '#adoption' },
+      { label: 'Measures of success', href: '#progress' },
+      { label: 'FAQ', href: '#questions' },
+    ]}
+  />
+
+  <Section class="institute-overview" divider>
     <div class="institute-cards">
       <article id="institution" class="institute-card" aria-labelledby="institution-heading">
         <h2 id="institution-heading" class="section-title">
-          Research excellence and independence
+          <span>Research excellence</span>{' '}<span>and independence</span>
         </h2>
         <p>
           RESI combines research excellence with independence of industry and profit incentives.
@@ -52,7 +62,7 @@ import { faq } from '../data/institute';
 
       <article id="adoption" class="institute-card" aria-labelledby="adoption-heading">
         <h2 id="adoption-heading" class="section-title">
-          How research shapes AI systems and policy
+          <span>How research shapes</span>{' '}<span>AI systems and policy</span>
         </h2>
         <p>
           Our long-term goal is for safe by design approaches to be adopted in advanced AI systems
@@ -64,8 +74,8 @@ import { faq } from '../data/institute';
           proofs of concept so that frontier AI developers can evaluate and adopt them.
         </p>
         <p class="card-link">
-          <a id="priorities" href="/research#concentration">
-            Explore the working groups
+          <a id="priorities" href="/research#areas">
+            Explore research areas
           </a>
         </p>
       </article>
@@ -89,6 +99,7 @@ import { faq } from '../data/institute';
       <p>
         Success also means influencing policy and regulation in ways that support human flourishing.
       </p>
+      <p><a href="/support">Support this research</a></p>
     </div>
   </Section>
 
@@ -131,10 +142,8 @@ import { faq } from '../data/institute';
 
 <style>
   :global(.section.institute-overview) {
-    width: min(810px, calc(100vw - 36px));
-    max-width: none;
-    margin-inline: calc((100% - min(810px, calc(100vw - 36px))) / 2);
-    padding-block: 0 var(--section-space-before, 36px);
+    max-width: var(--content-width);
+    margin-inline: auto;
   }
 
   .institute-cards {
@@ -155,6 +164,10 @@ import { faq } from '../data/institute';
 
   .institute-card .section-title {
     margin-top: 0;
+  }
+
+  .institute-card .section-title span {
+    display: block;
   }
 
   .institute-card .card-link {

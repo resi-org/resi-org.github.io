@@ -76,10 +76,22 @@ const { id, items } = Astro.props;
 <style>
   .page-shortcuts-bar {
     position: sticky;
-    top: var(--contents-header-height, 68.25px);
+    /* A slight overlap prevents subpixel seams beneath the sticky header. */
+    top: calc(var(--contents-header-height, 68.25px) - 1px);
     z-index: 95;
-    padding: 7.5px 0 var(--shortcut-divider-gap);
+    padding: 0 0 var(--shortcut-divider-gap);
     background: var(--paper);
+  }
+  .page-shortcuts-bar::before {
+    content: '';
+    position: absolute;
+    inset: -1px 0 0;
+    z-index: -1;
+    background: var(--paper);
+    /* Cover wider sections too, without adding horizontal scroll width. */
+    box-shadow: 0 0 0 100vw var(--paper);
+    clip-path: inset(0 -100vw);
+    pointer-events: none;
   }
   :global(html[data-page-shortcuts]) {
     scroll-padding-top: calc(var(--contents-header-height) + var(--contents-height) + 10px);

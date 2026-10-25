@@ -24,7 +24,7 @@
   /* Keep contents controls just above the existing first divider. */
   .page-hero:has(+ .page-shortcuts-bar),
   .section.landing:has(+ .page-shortcuts-bar) {
-    padding-bottom: calc(21px + var(--section-space-before) - var(--shortcut-divider-gap) - 7.5px);
+    padding-bottom: calc(21px + var(--section-space-before) - var(--shortcut-divider-gap));
   }
   .section#latest {
     padding-top: var(--page-opening);
