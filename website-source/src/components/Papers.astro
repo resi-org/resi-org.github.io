@@ -45,43 +45,45 @@ const rows = await Promise.all(
               {p.data.title}
             </a>
           </h3>
-          <div class="paper-bibliography">
-            {p.data.venue && <div class="row-meta paper-venue">{publicationVenue(p.data.venue)}</div>}
-            <div class="row-meta paper-authors">
-              {authors.map((part) => typeof part === 'string' ? part : <a href={part.href}>{part.text}</a>)}
+          <div class="paper-information">
+            <div class="paper-bibliography">
+              {p.data.venue && <div class="row-meta paper-venue">{publicationVenue(p.data.venue)}</div>}
+              <div class="row-meta paper-authors">
+                {authors.map((part) => typeof part === 'string' ? part : <a href={part.href}>{part.text}</a>)}
+              </div>
             </div>
+            <details class="paper-details">
+              <summary aria-label={`Details for ${p.data.title}`}>
+                Details <span class="paper-details-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="paper-details-body">
+                {p.data.conferenceNote && <div class="row-meta paper-conference-note">{p.data.conferenceNote}</div>}
+                {p.data.anchor === 'data-attribution-paper' && (
+                  <span class="paper-code-line"><a
+                    class="text-link"
+                    href="https://github.com/samuel-gunn/microgpt-sketch"
+                    {...external('https://github.com/samuel-gunn/microgpt-sketch')}
+                  >
+                    Experimental code
+                  </a></span>
+                )}
+                {p.data.highlight && (
+                  <Fragment>
+                    {p.data.highlight.id !== p.data.anchor && <span id={p.data.highlight.id} />}
+                    <span class="evidence-topic">{p.data.highlight.title}</span>
+                    <span class="row-note">{p.data.highlight.summary}</span>
+                    {p.data.highlight.caveat && <span class="row-note">{p.data.highlight.caveat}</span>}
+                  </Fragment>
+                )}
+                {showNote && <span class="row-note">{p.data.note}</span>}
+                {showLimitation && (
+                  <span class="row-note">
+                    <strong>Scope.</strong> {p.data.limitation}
+                  </span>
+                )}
+              </div>
+            </details>
           </div>
-          <details class="paper-details">
-            <summary aria-label={`Details for ${p.data.title}`}>
-              Details <span class="paper-details-icon" aria-hidden="true"></span>
-            </summary>
-            <div class="paper-details-body">
-              {p.data.conferenceNote && <div class="row-meta paper-conference-note">{p.data.conferenceNote}</div>}
-              {p.data.anchor === 'data-attribution-paper' && (
-                <span class="paper-code-line"><a
-                  class="text-link"
-                  href="https://github.com/samuel-gunn/microgpt-sketch"
-                  {...external('https://github.com/samuel-gunn/microgpt-sketch')}
-                >
-                  Experimental code
-                </a></span>
-              )}
-              {p.data.highlight && (
-                <Fragment>
-                  {p.data.highlight.id !== p.data.anchor && <span id={p.data.highlight.id} />}
-                  <span class="evidence-topic">{p.data.highlight.title}</span>
-                  <span class="row-note">{p.data.highlight.summary}</span>
-                  {p.data.highlight.caveat && <span class="row-note">{p.data.highlight.caveat}</span>}
-                </Fragment>
-              )}
-              {showNote && <span class="row-note">{p.data.note}</span>}
-              {showLimitation && (
-                <span class="row-note">
-                  <strong>Scope.</strong> {p.data.limitation}
-                </span>
-              )}
-            </div>
-          </details>
         </div>
       </li>
     ))}
@@ -89,19 +91,26 @@ const rows = await Promise.all(
 )}
 
 <style>
+  .row-link { gap: 6px; }
   .paper-title-line { margin: 0; }
-  .paper-bibliography { margin-top: -3.75px; }
+  .paper-information { position: relative; }
+  .paper-bibliography { padding-right: 75px; min-height: 33px; }
   .paper-venue { font-weight: 500; }
   .paper-authors, .paper-conference-note { margin-top: 3.75px; line-height: 1.5; }
   .paper-authors a { color: inherit; text-decoration: none; }
   .paper-authors a:hover, .paper-authors a:focus-visible { color: var(--accent); text-decoration: underline; }
-  .paper-details { margin-top: -3px; }
+  .paper-details { margin: 0; }
   .paper-details > summary {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 7.5px;
     width: fit-content;
     min-height: 33px;
+    min-width: 60px;
+    justify-content: flex-end;
     color: var(--accent);
     font: 400 11.25px/1.5 var(--sans);
     cursor: pointer;
@@ -121,7 +130,7 @@ const rows = await Promise.all(
     display: flex;
     flex-direction: column;
     gap: 9px;
-    padding: 7.5px 0 3px;
+    padding: 15px 0 3px;
     max-width: 66ch;
   }
   @media print {

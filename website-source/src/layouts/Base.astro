@@ -101,6 +101,9 @@ const {
         const paperDetails = target.closest('.paper-entry')
           ?.querySelector<HTMLDetailsElement>('details.paper-details');
         if (paperDetails) paperDetails.open = true;
+        const seminarDetails = target.closest('.seminar-list article')
+          ?.querySelector<HTMLDetailsElement>('details.seminar-details');
+        if (seminarDetails) seminarDetails.open = true;
         let parent: HTMLElement | null = target;
         while (parent) {
           if (parent instanceof HTMLDetailsElement) parent.open = true;
