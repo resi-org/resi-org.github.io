@@ -22,10 +22,10 @@
     }
   },
   {
-    "title": "Models That Prove Their Own Correctness",
+    "title": "A Theory for Worst-Case vs. Average-Case Guarantees for LLMs",
     "authors": "Noga Amit, Shafi Goldwasser, Orr Paradise, Guy N. Rothblum",
-    "venue": "Preprint, May 2024; revised December 2025 · Conference version: NeurIPS 2025",
-    "url": "https://arxiv.org/abs/2405.15722",
+    "venue": "NeurIPS 2025",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/d7a2222b8d41014e060cfeb0995501d0-Abstract-Conference.html",
     "note": "A framework for learning models that supply interactive proofs of their outputs.",
     "placement": "verification",
     "relationship": "Prior work by researchers now associated with RESI",
@@ -34,7 +34,6 @@
     "topic": "Verification",
     "problem": "How can an overseer obtain meaningful assurance without reproducing all of the system’s work?",
     "limitation": "Demonstrated on greatest-common-divisor computation, not unrestricted natural-language answers.",
-    "conferenceNote": "The NeurIPS 2025 version appeared as “A Theory for Worst-Case vs. Average-Case Guarantees for LLMs.”",
     "highlight": {
       "id": "self-proving-paper",
       "title": "Models that can prove their answers",
