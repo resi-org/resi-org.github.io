@@ -46,15 +46,17 @@ const rows = await Promise.all(
             </a>
           </h3>
           <div class="paper-information">
-            <div class="paper-bibliography">
-              {p.data.venue && <div class="row-meta paper-venue">{publicationVenue(p.data.venue)}</div>}
-              <div class="row-meta paper-authors">
-                {authors.map((part) => typeof part === 'string' ? part : <a href={part.href}>{part.text}</a>)}
-              </div>
-            </div>
             <details class="paper-details">
               <summary aria-label={`Details for ${p.data.title}`}>
-                Details <span class="paper-details-icon" aria-hidden="true"></span>
+                <span class="paper-citation-line">
+                  {p.data.venue && <span class="row-meta paper-venue">{publicationVenue(p.data.venue)}</span>}
+                  <span class="paper-details-label">
+                    Details <span class="paper-details-icon" aria-hidden="true"></span>
+                  </span>
+                </span>
+                <span class="row-meta paper-authors">
+                  {authors.map((part) => typeof part === 'string' ? part : <a href={part.href}>{part.text}</a>)}
+                </span>
               </summary>
               <div class="paper-details-body">
                 {p.data.conferenceNote && <div class="row-meta paper-conference-note">{p.data.conferenceNote}</div>}
@@ -93,31 +95,33 @@ const rows = await Promise.all(
 <style>
   .row-link { gap: 6px; }
   .paper-title-line { margin: 0; }
-  .paper-information { position: relative; }
-  .paper-bibliography { padding-right: 75px; min-height: 33px; }
   .paper-venue { font-weight: 500; }
+  .paper-authors { display: block; }
   .paper-authors, .paper-conference-note { margin-top: 3.75px; line-height: 1.5; }
   .paper-authors a { color: inherit; text-decoration: none; }
   .paper-authors a:hover, .paper-authors a:focus-visible { color: var(--accent); text-decoration: underline; }
   .paper-details { margin: 0; }
   .paper-details > summary {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    align-items: baseline;
-    gap: 7.5px;
-    width: fit-content;
-    min-height: 33px;
-    min-width: 60px;
-    justify-content: flex-end;
-    color: var(--accent);
-    font: 400 11.25px/1.5 var(--sans);
     cursor: pointer;
     list-style: none;
   }
+  .paper-citation-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: 18px;
+    row-gap: 3px;
+  }
+  .paper-details-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent);
+    font: 400 11.25px/1.55 var(--sans);
+    white-space: nowrap;
+  }
   .paper-details > summary::-webkit-details-marker { display: none; }
-  .paper-details > summary:hover { color: var(--ink); }
+  .paper-details > summary:hover .paper-details-label { color: var(--ink); }
   .paper-details > summary:focus-visible {
     outline: 1.5px solid var(--accent);
     outline-offset: 3px;
@@ -125,7 +129,7 @@ const rows = await Promise.all(
   }
   .paper-details-icon::before { content: '+'; }
   .paper-details[open] .paper-details-icon::before { content: '−'; }
-  .paper-details-icon { font-size: 16.5px; }
+  .paper-details-icon { font-size: 16.5px; line-height: 0; }
   .paper-details-body {
     display: flex;
     flex-direction: column;
@@ -134,6 +138,6 @@ const rows = await Promise.all(
     max-width: 66ch;
   }
   @media print {
-    .paper-details > summary { display: none; }
+    .paper-details-label { display: none; }
   }
 </style>
