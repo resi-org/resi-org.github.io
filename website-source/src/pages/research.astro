@@ -322,8 +322,7 @@ const papers = (await getCollection('selectedResearch')).sort(
       row-gap: 0;
     }
   }
-  .research-group-cards > .working-group,
-  .research-publications .papers > li {
+  .research-group-cards > .working-group {
     min-width: 0;
     padding: 16.5px;
     border: 0.75px solid var(--line);
@@ -421,9 +420,17 @@ const papers = (await getCollection('selectedResearch')).sort(
     }
   }
   .research-publications .papers {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 15px;
+    display: block;
+  }
+  .research-publications .papers > li {
+    min-width: 0;
+    margin: 0;
+    padding: 21px 12px 15px;
+    border-top: 0.75px solid var(--line);
+    break-inside: avoid;
+  }
+  .research-publications .papers > li:last-child {
+    border-bottom: 0.75px solid var(--line);
   }
   @media (max-width: 525px) {
     .working-group-onward .section-links.section-links-end {
@@ -434,7 +441,7 @@ const papers = (await getCollection('selectedResearch')).sort(
       grid-template-columns: minmax(0, 1fr);
     }
     .research-publications .papers > li {
-      padding: 15px;
+      padding-inline: 6px;
     }
   }
   @media print {

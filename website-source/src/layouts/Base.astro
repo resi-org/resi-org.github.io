@@ -97,6 +97,10 @@ const {
         const groupDetails = target.closest('.working-group')
           ?.querySelector<HTMLDetailsElement>('details.working-group-details');
         if (groupDetails) groupDetails.open = true;
+        // Paper links from People and working groups reveal the explanation too.
+        const paperDetails = target.closest('.paper-entry')
+          ?.querySelector<HTMLDetailsElement>('details.paper-details');
+        if (paperDetails) paperDetails.open = true;
         let parent: HTMLElement | null = target;
         while (parent) {
           if (parent instanceof HTMLDetailsElement) parent.open = true;
