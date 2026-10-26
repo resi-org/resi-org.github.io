@@ -57,7 +57,10 @@ import { faq } from '../data/institute';
           publish.
         </p>
         <p>Our sole goal is the responsible and safe use of AI to the betterment of humanity.</p>
-        <SectionLinks card items={[{ label: 'Meet the team', href: '/people' }]} />
+        <SectionLinks card items={[
+          { label: 'Meet the team', href: '/people' },
+          { id: 'priorities', label: 'Explore research areas', href: '/research#areas' },
+        ]} />
       </article>
 
       <article id="adoption" class="institute-card" aria-labelledby="adoption-heading">
@@ -73,7 +76,10 @@ import { faq } from '../data/institute';
           systems. Where implementation requires resources beyond RESI’s capacity, we will share
           proofs of concept so that frontier AI developers can evaluate and adopt them.
         </p>
-        <SectionLinks card items={[{ id: 'priorities', label: 'Explore research areas', href: '/research#areas' }]} />
+        <SectionLinks card items={[
+          { label: 'Working groups', href: '/research#concentration' },
+          { label: 'Seminars', href: '/seminars/' },
+        ]} />
       </article>
     </div>
   </Section>
