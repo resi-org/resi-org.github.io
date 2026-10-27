@@ -111,7 +111,8 @@ const papers = (await getCollection('selectedResearch')).sort(
     <ResearchAreas expanded />
   </Section>
 
-  <Section label="Working groups" id="concentration" divider>
+  <!-- Keep #concentration for existing links and support #working on the heading. -->
+  <Section label="Working groups" labelId="working" id="concentration" divider>
     <p>
       Working groups bring RESI researchers together to develop <a href="#approach">research outputs</a> across our <a href="#areas">key research areas</a>. They open new directions and revisit classical questions in light of
       superintelligence. Each group is organized by one or more leaders who decide on its structure.

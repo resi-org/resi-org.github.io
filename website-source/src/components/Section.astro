@@ -3,18 +3,19 @@
 // starting a new topic after the page introduction; card clusters can omit it.
 interface Props {
   label?: string;
+  labelId?: string;
   id?: string;
   class?: string;
   labelAbove?: boolean;
   divider?: boolean;
 }
-const { label, id, class: extra, labelAbove = false, divider = false } = Astro.props;
+const { label, labelId, id, class: extra, labelAbove = false, divider = false } = Astro.props;
 ---
 
 <section class:list={['section', extra, { 'label-above': labelAbove, 'section-divided': divider }]} id={id}>
   {
     label && (
-      <h2 class="section-label">{label}</h2>
+      <h2 class="section-label" id={labelId}>{label}</h2>
     )
   }
   <div class="section-body">
