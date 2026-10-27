@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
 import seminars from '../data/seminars.json';
-// Source copy is preserved; Rachel moved the October 21 talk into the archive.
+// Move completed entries from upcoming to talks in seminars.json, preserving their IDs.
 ---
 
 <Base title="Seminars" description="Upcoming RESI-MIT seminars and past talks on the foundations of AI safety, with speakers, dates, titles, abstracts, and biographies.">
@@ -20,7 +20,11 @@ import seminars from '../data/seminars.json';
   />
 
   <Section id="upcoming-seminars" label="Upcoming" divider>
-    <p>No upcoming seminars are currently listed.</p>
+    {seminars.upcoming.length > 0 ? (
+      <div class="seminar-list" set:html={seminars.upcoming.map((talk) => talk.html).join('\n')} />
+    ) : (
+      <p>No upcoming seminars are currently listed.</p>
+    )}
   </Section>
   <Section id="past-seminars" label="Past" divider>
     <div class="seminar-list" set:html={seminars.talks.map((talk) => talk.html).join('\n')} />

@@ -156,7 +156,7 @@ const entries = [
     category: 'Question and answer',
     text: f.answer,
   })),
-  ...seminars.talks.map((talk) => ({
+  ...[...seminars.upcoming, ...seminars.talks].map((talk) => ({
     title: talk.title,
     url: `/seminars#${talk.id}`,
     category: 'Seminar',
