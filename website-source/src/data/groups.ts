@@ -1,5 +1,7 @@
 // Roster retained from Draft B. Descriptions condensed from the user-supplied
 // RESI Candidate Working Groups document (October 1, 2026); internal meeting details omitted.
+import { showVisitingResearchers } from './visibility';
+
 export const groups = [
   {
     id: 'cryptographic-verification',
@@ -61,7 +63,7 @@ export const groups = [
     source:
       'https://www.lesswrong.com/posts/NDBbatEejiAtTAr3z/announcing-formal-verification-at-resi-the-institute-for',
     lead: 'Adam Chlipala',
-    leadHref: '/people#adam-chlipala',
+    leadHref: showVisitingResearchers ? '/people#adam-chlipala' : 'https://adam.chlipala.net/',
   },
   {
     id: 'cryptography-and-cybersecurity',

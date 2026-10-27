@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { showVisitingResearchers } from '../data/visibility';
 import seminars from '../data/seminars.json';
 import { getCollection } from 'astro:content';
 import { areas, faq } from '../data/institute';
@@ -114,7 +115,7 @@ const sections = [
   },
 ];
 const entries = [
-  ...sections,
+  ...sections.filter((section) => showVisitingResearchers || section.url !== '/people#visitors'),
   ...areas.map((a) => ({
     title: a.title,
     url: `/research#${a.id}`,
@@ -131,7 +132,7 @@ const entries = [
       category: 'People',
       text: [p.data.role, p.body || p.data.summary || ''].filter(Boolean).join('. '),
     })),
-  ...(await getCollection('visitors')).map((v) => ({
+  ...(showVisitingResearchers ? await getCollection('visitors') : []).map((v) => ({
     title: v.data.name,
     url: '/people#visitors',
     category: 'Visiting researcher',

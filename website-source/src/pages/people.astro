@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { external } from '../lib/external';
+import { showVisitingResearchers } from '../data/visibility';
 import SectionLinks from '../components/SectionLinks.astro';
 import { institute } from '../data/institute';
 import { groups } from '../data/groups';
@@ -46,7 +47,7 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
 
 <Base
   title="People"
-  description="The people at RESI: the founding scientific team, the research team, operations, visiting researchers, affiliated groups, and how to get involved."
+  description={`The people at RESI: the founding scientific team, the research team, operations, ${showVisitingResearchers ? 'visiting researchers, ' : ''}affiliated groups, and how to get involved.`}
 >
   <header class="page-hero" id="intro">
     <p class="eyebrow">People</p>
@@ -69,7 +70,7 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
     items={[
       { label: 'Founders', href: '#founders' },
       { label: 'Team', href: '#research' },
-      { label: 'Visitors', href: '#visitors' },
+      ...(showVisitingResearchers ? [{ label: 'Visitors', href: '#visitors' }] : []),
       { label: 'Affiliated groups', href: '#affiliated' },
       { label: 'Join us', href: '#get-involved' },
     ]}
@@ -101,6 +102,7 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
     </ul>
   </Section>
 
+  {showVisitingResearchers && (
   <Section divider label="Visiting researchers" id="visitors">
     <p>
       Our visitor program keeps RESI researchers connected to frontier laboratories and the wider safety research community.
@@ -129,6 +131,8 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
         ))}
     </ul>
   </Section>
+
+  )}
 
   <Section divider label="Affiliated groups" id="affiliated">
     <ul class="compact">
