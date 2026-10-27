@@ -30,6 +30,10 @@ Merge that pull request to republish the old site. No domain changes are needed.
 
 The production-ready source snapshot is in `website-source/` on branch `codex/default-size-90-source`. Use Node 22.12+ (or a supported newer release): `npm ci`, `npm run check`, then `npm run build`. Copy the resulting `dist/` contents into a clean publishing checkout, preserving `CNAME`, `.nojekyll`, `seminar-zoom/`, `reading-group/` and the retained legacy paths. Review and publish via a pull request to `main`. This source snapshot is separate from the continuing Cloudflare c.2 draft; carry over later approved draft changes deliberately.
 
+## Temporarily hidden visitor roster
+
+The Visiting researchers section and its search entries are hidden as of October 27, 2026. The roster and markup remain in the source branch. To restore them, set `showVisitingResearchers` to `true` in `website-source/src/data/visibility.ts` on `codex/default-size-90-source`, rebuild, and republish the changed pages. The same setting restores the section navigation and links to the roster.
+
 ## Seminar Zoom short URL
 
 To change the seminar Zoom destination, edit `seminar-zoom/destination.json`. Keep its existing format and use the complete HTTPS invitation URL; `null` displays “Will be added soon”. The redirect checks the JSON with cache bypassing so future meetings do not require replacing the page shell.
