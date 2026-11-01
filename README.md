@@ -36,7 +36,7 @@ The Visiting researchers section and its search entries are hidden as of October
 
 ## Seminar Zoom short URL
 
-To change the seminar Zoom destination, edit `seminar-zoom/destination.json`. Keep its existing format and use the complete HTTPS invitation URL; `null` displays “Will be added soon”. The redirect checks the JSON with cache bypassing so future meetings do not require replacing the page shell.
+To change the seminar Zoom destination, edit `seminar-zoom/destination.json`. Keep its existing format and use the complete HTTPS invitation URL; `null` displays “Coming soon”. The redirect checks the JSON with cache bypassing so future meetings do not require replacing the page shell.
 
 ## Chat questions short URL
 
