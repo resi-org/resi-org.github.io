@@ -3,12 +3,14 @@ import Base from '../layouts/Base.astro';
 import Section from '../components/Section.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
 import seminars from '../data/seminars.json';
+import { institute } from '../data/institute';
 // Move completed entries from upcoming to talks in seminars.json, preserving their IDs.
 ---
 
 <Base title="Seminars" description="Upcoming RESI-MIT seminars and past talks on the foundations of AI safety, with speakers, dates, titles, abstracts, and biographies.">
   <header class="page-hero">
     <h1>RESI-MIT Seminars</h1>
+    <p><a href={institute.talks}>Sign up for seminar announcements</a></p>
     <Fragment set:html={seminars.intro} />
   </header>
   <PageShortcuts
