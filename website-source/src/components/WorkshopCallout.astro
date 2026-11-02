@@ -1,8 +1,13 @@
 ---
 import Arrow from './Arrow.astro';
+interface Props {
+  integrated?: boolean;
+}
+const { integrated = false } = Astro.props;
+const Heading = integrated ? 'h3' : 'h2';
 ---
 
-<aside class="workshop-card" aria-labelledby="workshop-heading">
+<aside class:list={["workshop-card", { integrated }]} aria-labelledby="workshop-heading">
   <time class="workshop-date" datetime="2026-12-04" aria-label="December 4, 2026">
     <span>DEC</span>
     <strong>4</strong>
@@ -10,7 +15,7 @@ import Arrow from './Arrow.astro';
   </time>
   <div>
     <p class="workshop-kicker">Save the date · Opening workshop</p>
-    <h2 id="workshop-heading">Safe-by-Design Superintelligence</h2>
+    <Heading id="workshop-heading">Safe-by-Design Superintelligence</Heading>
     <p class="workshop-detail">Friday, December 4 · Cambridge, MA</p>
   </div>
   <a
@@ -63,7 +68,7 @@ import Arrow from './Arrow.astro';
     color: var(--accent);
   }
 
-  h2 {
+  :is(h2, h3) {
     font: 700 23px/1.23 var(--serif);
     letter-spacing: -.01em;
     margin: 0;
@@ -123,7 +128,7 @@ import Arrow from './Arrow.astro';
       align-self: start;
     }
 
-    h2 {
+    :is(h2, h3) {
       font-size: 21px;
     }
 
@@ -146,6 +151,22 @@ import Arrow from './Arrow.astro';
 
     .workshop-detail {
       font-size: 11px;
+    }
+  }
+  /* Inside Announcements, follow the same content column and heading hierarchy. */
+  .workshop-card.integrated {
+    width: 100%;
+    margin: 0;
+    padding: 18px;
+    gap: 18px;
+  }
+  .integrated :is(h2, h3) {
+    font-size: 21px;
+  }
+  @media (max-width: 480px) {
+    .workshop-card.integrated {
+      padding: 17px 14px;
+      gap: 15px 18px;
     }
   }
 </style>

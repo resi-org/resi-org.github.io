@@ -21,7 +21,6 @@ const founders = people
 ---
 
 <Base wide>
-  <WorkshopCallout />
   <section class="hero shell" aria-labelledby="hero-title">
     <div class="hero-grid">
       <div>
@@ -55,6 +54,34 @@ const founders = people
           </a>
         </div>
       </div>
+    </div>
+  </section>
+  <section class="home-band" id="announcements" aria-labelledby="announcements-heading">
+    <div class="shell home-announcements">
+      <h2 id="announcements-heading">Announcements</h2>
+      <WorkshopCallout integrated />
+      <ul class="announcement-list">
+        {entries.map((entry) => {
+          const href = entry.outlet && entry.url ? entry.url : `/news#${entry.id}`;
+          return (
+            <li class="announcement-item">
+              <p class="announcement-meta">
+                <time datetime={entry.date.toISOString().slice(0, 10)}>{fmtDay(entry.date)}</time>
+                {entry.source && <span>{entry.source}</span>}
+              </p>
+              <h3>
+                <a href={href} {...external(href)}>
+                  {entry.homepageTitle || entry.title}
+                </a>
+              </h3>
+              {(entry.homepageSummary || entry.summary) && (
+                <p class="announcement-summary">{entry.homepageSummary || entry.summary}</p>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+      <SectionLinks align="end" items={[{ label: 'See all our news and updates', href: '/news' }]} />
     </div>
   </section>
   <section class="home-band tint" id="argument" aria-labelledby="precedent-heading">
@@ -110,33 +137,6 @@ const founders = people
           ]} />
         </div>
       </div>
-    </div>
-  </section>
-  <section class="home-band" id="announcements" aria-labelledby="announcements-heading">
-    <div class="shell home-announcements">
-      <h2 id="announcements-heading">Announcements</h2>
-      <ul class="announcement-list">
-        {entries.map((entry) => {
-          const href = entry.outlet && entry.url ? entry.url : `/news#${entry.id}`;
-          return (
-            <li class="announcement-item">
-              <p class="announcement-meta">
-                <time datetime={entry.date.toISOString().slice(0, 10)}>{fmtDay(entry.date)}</time>
-                {entry.source && <span>{entry.source}</span>}
-              </p>
-              <h3>
-                <a href={href} {...external(href)}>
-                  {entry.homepageTitle || entry.title}
-                </a>
-              </h3>
-              {(entry.homepageSummary || entry.summary) && (
-                <p class="announcement-summary">{entry.homepageSummary || entry.summary}</p>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-      <SectionLinks align="end" items={[{ label: 'See all our news and updates', href: '/news' }]} />
     </div>
   </section>
   <section class="home-band tint" id="research" aria-labelledby="research-heading">
@@ -196,6 +196,9 @@ const founders = people
 <style>
   .hero.shell {
     padding-top: 44px;
+  }
+  .home-announcements .announcement-list {
+    margin-top: 18px;
   }
   #founders .community-heading {
     margin-bottom: 0;
