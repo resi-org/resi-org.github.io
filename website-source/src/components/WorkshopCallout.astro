@@ -29,13 +29,13 @@ const Heading = integrated ? 'h3' : 'h2';
 </aside>
 
 <style>
-  /* Share the news cards' shape and padding, with a slightly stronger tint
-     and a narrow accent to identify the upcoming event. */
+  /* Share the news cards' shape and padding; use the site's established
+     card outline with a slightly stronger fill for the upcoming event. */
   .workshop-card {
     width: 100%;
     margin: 0;
     background: color-mix(in srgb, var(--accent) 14%, var(--paper));
-    box-shadow: inset 2px 0 var(--accent);
+    border: 0.75px solid var(--line);
     display: grid;
     grid-template-columns: 54px minmax(0, 1fr) auto;
     align-items: center;
