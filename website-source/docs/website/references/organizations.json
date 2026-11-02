@@ -1,0 +1,602 @@
+[
+  {
+    "id": "mirendil",
+    "name": "Mirendil",
+    "url": "https://mirendil.com/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "resolution",
+    "name": "Resolution",
+    "url": "https://resolution.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic",
+    "url": "https://www.anthropic.com/news",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "miri",
+    "name": "MIRI",
+    "url": "https://intelligence.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "redwood-research",
+    "name": "Redwood Research",
+    "url": "https://redwoodresearch.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "apollo-research",
+    "name": "Apollo Research",
+    "url": "https://www.apolloresearch.ai/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "metr",
+    "name": "METR",
+    "url": "https://metr.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "epoch-ai",
+    "name": "Epoch AI",
+    "url": "https://epoch.ai/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "alignment-research-center",
+    "name": "Alignment Research Center",
+    "url": "https://www.alignment.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "transluce",
+    "name": "Transluce",
+    "url": "https://transluce.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "govai",
+    "name": "GovAI (Centre for the Governance of AI)",
+    "url": "https://www.governance.ai/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "forethought",
+    "name": "Forethought",
+    "url": "https://www.forethought.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "ai-futures-project",
+    "name": "AI Futures Project",
+    "url": "https://ai-futures.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "far-ai",
+    "name": "FAR.AI",
+    "url": "https://far.ai/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "center-for-ai-safety",
+    "name": "Center for AI Safety",
+    "url": "https://safe.ai/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "eleutherai",
+    "name": "EleutherAI",
+    "url": "https://www.eleuther.ai/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "timaeus",
+    "name": "Timaeus",
+    "url": "https://timaeus.co/",
+    "audit_scope": "Legacy site \u2014 included with Resolution, not separately counted"
+  },
+  {
+    "id": "simon-institute-for-longterm-governance",
+    "name": "Simon Institute for Longterm Governance",
+    "url": "https://www.simoninstitute.ch/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "institute-for-ai-policy-and-strategy",
+    "name": "Institute for AI Policy and Strategy (IAPS)",
+    "url": "https://www.iaps.ai/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "institute-for-law-ai",
+    "name": "Institute for Law & AI",
+    "url": "https://law-ai.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "cset",
+    "name": "CSET (Center for Security and Emerging Technology, Georgetown)",
+    "url": "https://cset.georgetown.edu/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "uk-ai-security-institute",
+    "name": "UK AI Security Institute",
+    "url": "https://www.aisi.gov.uk/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "frontier-model-forum",
+    "name": "Frontier Model Forum",
+    "url": "https://www.frontiermodelforum.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "convergence-analysis",
+    "name": "Convergence Analysis",
+    "url": "https://www.convergenceanalysis.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "coefficient-giving",
+    "name": "Coefficient Giving (formerly Open Philanthropy)",
+    "url": "https://www.openphilanthropy.org/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "rethink-priorities",
+    "name": "Rethink Priorities",
+    "url": "https://rethinkpriorities.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "goodfire",
+    "name": "Goodfire",
+    "url": "https://www.goodfire.ai/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "nist-center-for-ai-standards-and-innovation",
+    "name": "NIST Center for AI Standards and Innovation (CAISI)",
+    "url": "https://www.nist.gov/aisi",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "ai-alignment-forum",
+    "name": "AI Alignment Forum",
+    "url": "https://www.alignmentforum.org/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "kairos",
+    "name": "Kairos",
+    "url": "https://kairos-project.org",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "stanford-hai",
+    "name": "Stanford HAI",
+    "url": "https://hai.stanford.edu/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "chai",
+    "name": "CHAI (Center for Human-Compatible AI, Berkeley)",
+    "url": "https://humancompatible.ai/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "cser",
+    "name": "CSER (Centre for the Study of Existential Risk, Cambridge)",
+    "url": "https://www.cser.ac.uk/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "leverhulme-centre-for-the-future-of-intelligence",
+    "name": "Leverhulme Centre for the Future of Intelligence",
+    "url": "https://www.lcfi.ac.uk/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "oxford-internet-institute",
+    "name": "Oxford Internet Institute",
+    "url": "https://www.oii.ox.ac.uk/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "princeton-citp",
+    "name": "Princeton CITP",
+    "url": "https://citp.princeton.edu/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "stanford-crfm",
+    "name": "Stanford CRFM",
+    "url": "https://crfm.stanford.edu/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "perimeter-institute",
+    "name": "Perimeter Institute",
+    "url": "https://perimeterinstitute.ca/",
+    "audit_scope": "Selected institute comparator"
+  },
+  {
+    "id": "berkman-klein-center-harvard",
+    "name": "Berkman Klein Center, Harvard",
+    "url": "https://cyber.harvard.edu/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "flatiron-institute",
+    "name": "Flatiron Institute (Simons Foundation)",
+    "url": "https://www.simonsfoundation.org/flatiron/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "santa-fe-institute",
+    "name": "Santa Fe Institute",
+    "url": "https://www.santafe.edu/",
+    "audit_scope": "Selected institute comparator"
+  },
+  {
+    "id": "institute-for-advanced-study",
+    "name": "Institute for Advanced Study",
+    "url": "https://www.ias.edu/",
+    "audit_scope": "Selected institute comparator"
+  },
+  {
+    "id": "institute-for-progress",
+    "name": "Institute for Progress (IFP)",
+    "url": "https://ifp.org/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "works-in-progress",
+    "name": "Works in Progress",
+    "url": "https://worksinprogress.co/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "asterisk",
+    "name": "Asterisk",
+    "url": "https://asteriskmag.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "berggruen-institute",
+    "name": "Berggruen Institute",
+    "url": "https://berggruen.org/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "niskanen-center",
+    "name": "Niskanen Center",
+    "url": "https://www.niskanencenter.org/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "the-new-institute",
+    "name": "THE NEW INSTITUTE",
+    "url": "https://thenew.institute/en",
+    "audit_scope": "Selected institute comparator"
+  },
+  {
+    "id": "longview-philanthropy",
+    "name": "Longview Philanthropy",
+    "url": "https://www.longview.org/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "macroscience",
+    "name": "Macroscience",
+    "url": "https://www.macroscience.org/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "simons-institute-for-the-theory-of-computing",
+    "name": "Simons Institute for the Theory of Computing (Berkeley)",
+    "url": "https://simons.berkeley.edu/",
+    "audit_scope": "Selected institute comparator"
+  },
+  {
+    "id": "slmath",
+    "name": "SLMath (formerly MSRI)",
+    "url": "https://www.slmath.org/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "ihes",
+    "name": "IHES (Institut des Hautes \u00c9tudes Scientifiques)",
+    "url": "https://www.ihes.fr/en/",
+    "audit_scope": "Selected institute comparator"
+  },
+  {
+    "id": "isaac-newton-institute",
+    "name": "Isaac Newton Institute",
+    "url": "https://www.newton.ac.uk/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "clay-mathematics-institute",
+    "name": "Clay Mathematics Institute",
+    "url": "https://www.claymath.org/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "icerm",
+    "name": "ICERM (Brown)",
+    "url": "https://icerm.brown.edu/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "dimacs",
+    "name": "DIMACS (Rutgers)",
+    "url": "https://dimacs.rutgers.edu/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "distill",
+    "name": "Distill",
+    "url": "https://distill.pub/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "quanta-magazine",
+    "name": "Quanta Magazine",
+    "url": "https://www.quantamagazine.org/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "max-planck-institute-for-mathematics-in-the-sciences",
+    "name": "Max Planck Institute for Mathematics in the Sciences",
+    "url": "https://www.mis.mpg.de/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "astera-institute",
+    "name": "Astera Institute",
+    "url": "https://astera.org/",
+    "audit_scope": "Selected institute comparator"
+  },
+  {
+    "id": "constellation",
+    "name": "Constellation",
+    "url": "https://constellation.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "mats",
+    "name": "MATS",
+    "url": "https://www.matsprogram.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "apart-research",
+    "name": "Apart Research",
+    "url": "https://apartresearch.com/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "safe-ai-forum",
+    "name": "Safe AI Forum",
+    "url": "https://saif.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "cooperative-ai-foundation",
+    "name": "Cooperative AI Foundation",
+    "url": "https://www.cooperativeai.com/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "lesswrong",
+    "name": "LessWrong",
+    "url": "https://www.lesswrong.com/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "lightcone-infrastructure",
+    "name": "Lightcone Infrastructure",
+    "url": "https://www.lightconeinfrastructure.com/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "ai-impacts",
+    "name": "AI Impacts",
+    "url": "https://aiimpacts.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "palisade-research",
+    "name": "Palisade Research",
+    "url": "https://palisaderesearch.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "future-of-life-institute",
+    "name": "Future of Life Institute",
+    "url": "https://futureoflife.org/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "rand",
+    "name": "RAND",
+    "url": "https://www.rand.org/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "conjecture",
+    "name": "Conjecture",
+    "url": "https://www.conjecture.dev/",
+    "audit_scope": "AI safety / adjacent research and field-building"
+  },
+  {
+    "id": "attestable",
+    "name": "Attestable",
+    "url": "https://www.attestable.com/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "mercor",
+    "name": "Mercor",
+    "url": "https://www.mercor.com/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "schmidt-sciences",
+    "name": "Schmidt Sciences",
+    "url": "https://www.schmidtsciences.org/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "renaissance-philanthropy",
+    "name": "Renaissance Philanthropy",
+    "url": "https://www.renphil.org/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "founders-pledge",
+    "name": "Founders Pledge",
+    "url": "https://www.founderspledge.com/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "survival-and-flourishing-fund",
+    "name": "Survival and Flourishing Fund",
+    "url": "https://survivalandflourishing.fund/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "manifund",
+    "name": "Manifund",
+    "url": "https://manifund.org/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "ai-safety-fund",
+    "name": "AI Safety Fund",
+    "url": "https://www.aisafetyfund.org/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "frominside-ai",
+    "name": "frominside.ai",
+    "url": "https://frominside.ai/",
+    "audit_scope": "AI reference context \u2014 not institute denominator"
+  },
+  {
+    "id": "mistral-ai",
+    "name": "Mistral AI",
+    "url": "https://mistral.ai/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "hugging-face",
+    "name": "Hugging Face / BigScience",
+    "url": "https://huggingface.co/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "edge-impulse",
+    "name": "Edge Impulse",
+    "url": "https://www.edgeimpulse.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "auditae",
+    "name": "AuditAE",
+    "url": "https://auditae.app/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "bloomwise",
+    "name": "Bloomwise",
+    "url": "https://bloomwise.io/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "photoroom",
+    "name": "Photoroom",
+    "url": "https://www.photoroom.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "google",
+    "name": "Google / Google DeepMind",
+    "url": "https://sustainability.google/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "url": "https://www.microsoft.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "url": "https://openai.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "salesforce",
+    "name": "Salesforce",
+    "url": "https://www.salesforce.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "climate-change-ai",
+    "name": "Climate Change AI",
+    "url": "https://www.climatechange.ai/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "claude-blog",
+    "name": "Claude blog",
+    "url": "https://claude.com/blog",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "dario-amodei",
+    "name": "Dario Amodei",
+    "url": "https://darioamodei.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "typewolf",
+    "name": "Typewolf",
+    "url": "https://www.typewolf.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "siteinspire",
+    "name": "Siteinspire",
+    "url": "https://www.siteinspire.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "fonts-in-use",
+    "name": "Fonts In Use",
+    "url": "https://fontsinuse.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "land-book",
+    "name": "Land-book",
+    "url": "https://land-book.com/",
+    "audit_scope": "Outside focused scope"
+  },
+  {
+    "id": "are-na",
+    "name": "Are.na",
+    "url": "https://www.are.na/",
+    "audit_scope": "Outside focused scope"
+  }
+]
