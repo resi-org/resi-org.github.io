@@ -28,6 +28,7 @@ export type EventEntry = BaseEntry & {
   end?: Date;
   location: string;
   announcementLabel?: string;
+  description?: string;
   interestUrl?: string;
   interestLabel?: string;
   anchor?: string;
@@ -85,6 +86,7 @@ export async function getAnnouncements(): Promise<Entry[]> {
     end: e.data.end,
     location: e.data.location,
     announcementLabel: e.data.announcementLabel,
+    description: e.data.description,
     interestUrl: e.data.interestUrl,
     interestLabel: e.data.interestLabel,
     anchor: e.data.anchor,

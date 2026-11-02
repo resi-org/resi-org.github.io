@@ -7,6 +7,7 @@ Add a Markdown file with confirmed facts:
 ```yaml
 ---
 title: "Workshop title"
+description: "Approved short description of the event." # optional
 announced: 2026-11-02   # publication date; controls homepage recency
 start: 2026-12-04       # attendance date; shown in the calendar
 end: 2026-12-04         # optional

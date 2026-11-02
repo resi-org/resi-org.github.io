@@ -149,6 +149,7 @@ const events = defineCollection({
     // remain the attendance dates shown in the calendar block.
     announced: z.coerce.date().optional(),
     announcementLabel: z.string().optional(),
+    description: z.string().optional(),
     interestUrl: z.url().optional(),
     interestLabel: z.string().optional(),
     anchor: z.string().optional(),
