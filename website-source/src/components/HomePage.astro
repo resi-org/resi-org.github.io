@@ -8,6 +8,7 @@ import Arrow from '../components/Arrow.astro';
 import { getAnnouncements, fmtDay } from '../lib/announcements';
 import { external } from '../lib/external';
 import SectionLinks from './SectionLinks.astro';
+import WorkshopCallout from './WorkshopCallout.astro';
 import { institute, researchAgenda } from '../data/institute';
 const entries = (await getAnnouncements()).slice(0, 3);
 const people = await getCollection('people');
@@ -20,6 +21,7 @@ const founders = people
 ---
 
 <Base wide>
+  <WorkshopCallout />
   <section class="hero shell" aria-labelledby="hero-title">
     <div class="hero-grid">
       <div>
@@ -192,6 +194,9 @@ const founders = people
 </Base>
 
 <style>
+  .hero.shell {
+    padding-top: 44px;
+  }
   #founders .community-heading {
     margin-bottom: 0;
   }
@@ -219,6 +224,9 @@ const founders = people
     text-wrap: pretty;
   }
   @media (max-width: 480px) {
+    .hero.shell {
+      padding-top: 32px;
+    }
     #support-heading {
       font-size: 23.25px;
     }

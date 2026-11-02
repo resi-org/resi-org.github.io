@@ -1,0 +1,151 @@
+---
+import Arrow from './Arrow.astro';
+---
+
+<aside class="workshop-card" aria-labelledby="workshop-heading">
+  <time class="workshop-date" datetime="2026-12-04" aria-label="December 4, 2026">
+    <span>DEC</span>
+    <strong>4</strong>
+    <span>2026</span>
+  </time>
+  <div>
+    <p class="workshop-kicker">Save the date · Opening workshop</p>
+    <h2 id="workshop-heading">Safe-by-Design Superintelligence</h2>
+    <p class="workshop-detail">Friday, December 4 · One day only</p>
+  </div>
+  <a
+    class="workshop-link"
+    href="https://forms.gle/bepnqhw2Q8eGK2bB8"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Interest form <Arrow />
+  </a>
+</aside>
+
+<style>
+  .workshop-card {
+    width: min(735px, calc(100% - 48px));
+    margin: 26px auto 0;
+    padding: 22px 24px;
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--paper));
+    border-radius: 2px;
+    background: color-mix(in srgb, var(--accent) 4%, var(--paper));
+    display: grid;
+    grid-template-columns: 62px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 22px;
+    font-family: var(--sans);
+  }
+
+  .workshop-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--accent);
+    border-right: 1px solid color-mix(in srgb, var(--accent) 25%, var(--paper));
+    padding-right: 20px;
+  }
+
+  .workshop-date span {
+    font: 500 10px/1.4 var(--sans);
+    letter-spacing: .09em;
+  }
+
+  .workshop-date strong {
+    font: 400 43px/1.08 var(--serif);
+  }
+
+  .workshop-kicker {
+    margin: 0 0 5px;
+    font: 500 10.5px/1.5 var(--sans);
+    letter-spacing: .025em;
+    color: var(--accent);
+  }
+
+  h2 {
+    font: 700 23px/1.23 var(--serif);
+    letter-spacing: -.01em;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .workshop-detail {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  .workshop-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 40px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 1.4;
+    text-decoration: none;
+    background: var(--accent);
+    color: var(--paper);
+    padding: 10px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 1.5px;
+  }
+
+  .workshop-link :global(svg) {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+
+  .workshop-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 5px;
+  }
+
+  .workshop-link:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+
+  @media (max-width: 600px) {
+    .workshop-card {
+      grid-template-columns: 54px minmax(0, 1fr);
+      gap: 15px 18px;
+      padding: 18px;
+    }
+
+    .workshop-date {
+      padding-right: 16px;
+      align-self: start;
+    }
+
+    h2 {
+      font-size: 21px;
+    }
+
+    .workshop-link {
+      grid-column: 2;
+      justify-self: start;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .workshop-card {
+      width: calc(100% - 27px);
+      margin-top: 16px;
+      padding: 17px 14px;
+    }
+
+    .workshop-kicker {
+      font-size: 10px;
+    }
+
+    .workshop-detail {
+      font-size: 11px;
+    }
+  }
+</style>
