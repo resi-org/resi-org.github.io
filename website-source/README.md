@@ -19,7 +19,7 @@ Safari settings confirmed that the C.2 reference is viewed at 75% page zoom whil
 
 ## Upcoming events and homepage announcements — standing rule, November 2, 2026
 
-Every publicly announced upcoming event must appear both on the Events page and in the homepage Announcements section. The homepage announcement must link to the matching event's stable anchor or detail page; Dates, title, location, status, and action destination must agree. Flag a missing counterpart, broken link, or conflicting information before publishing an event update; do not silently publish only one side.
+Every publicly announced upcoming event must appear both on the Events page and in the homepage Announcements section. The homepage announcement must link to the matching event's stable anchor or detail page. Dates, title, location, status, and action destination must agree. Flag a missing counterpart, broken link, or conflicting information before publishing an event update; do not silently publish only one side.
 
 The planned Events page will replace Seminars, with workshops and a separate seminar section. That migration is explicitly deferred. The December 4 opening workshop currently appears only on the homepage: its missing Events-page counterpart is a known gap to resolve during that migration, not a reason to mislabel it as a weekly seminar now. The existing seminar listing remains unchanged.
 

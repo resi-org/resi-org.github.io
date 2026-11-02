@@ -7,16 +7,16 @@ const { integrated = false } = Astro.props;
 const Heading = integrated ? 'h3' : 'h2';
 ---
 
-<aside class:list={["workshop-card", { integrated }]} aria-labelledby="workshop-heading">
+<aside class="announcement-item workshop-card" aria-labelledby="workshop-heading">
+  <p class="workshop-kicker">Save the date · Inaugural community workshop</p>
   <time class="workshop-date" datetime="2026-12-04" aria-label="December 4, 2026">
     <span>DEC</span>
     <strong>4</strong>
     <span>2026</span>
   </time>
-  <div>
-    <p class="workshop-kicker">Save the date · Opening workshop</p>
+  <div class="workshop-description">
     <Heading id="workshop-heading">Safe-by-Design Superintelligence</Heading>
-    <p class="workshop-detail">Friday, December 4 · Cambridge, MA</p>
+    <p class="workshop-detail">Cambridge, MA</p>
   </div>
   <a
     class="workshop-link"
@@ -29,18 +29,27 @@ const Heading = integrated ? 'h3' : 'h2';
 </aside>
 
 <style>
+  /* Share the news cards' shape and padding, with a slightly stronger tint
+     and a narrow accent to identify the upcoming event. */
   .workshop-card {
-    width: min(735px, calc(100% - 48px));
-    margin: 26px auto 0;
-    padding: 22px 24px;
-    border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--paper));
-    border-radius: 2px;
-    background: color-mix(in srgb, var(--accent) 4%, var(--paper));
+    width: 100%;
+    margin: 0;
+    background: color-mix(in srgb, var(--accent) 14%, var(--paper));
+    box-shadow: inset 2px 0 var(--accent);
     display: grid;
-    grid-template-columns: 62px minmax(0, 1fr) auto;
+    grid-template-columns: 54px minmax(0, 1fr) auto;
     align-items: center;
-    gap: 22px;
+    gap: 12px 18px;
     font-family: var(--sans);
+  }
+
+  .workshop-kicker {
+    grid-column: 1 / -1;
+    margin: 0;
+    font-size: 11.25px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: var(--accent);
   }
 
   .workshop-date {
@@ -48,8 +57,8 @@ const Heading = integrated ? 'h3' : 'h2';
     flex-direction: column;
     align-items: center;
     color: var(--accent);
-    border-right: 1px solid color-mix(in srgb, var(--accent) 25%, var(--paper));
-    padding-right: 20px;
+    border-right: 0.75px solid var(--line);
+    padding-right: 16px;
   }
 
   .workshop-date span {
@@ -58,27 +67,20 @@ const Heading = integrated ? 'h3' : 'h2';
   }
 
   .workshop-date strong {
-    font: 400 43px/1.08 var(--serif);
+    font: 400 36px/1.08 var(--serif);
   }
 
-  .workshop-kicker {
-    margin: 0 0 5px;
-    font: 500 10.5px/1.5 var(--sans);
-    letter-spacing: .025em;
-    color: var(--accent);
-  }
-
-  :is(h2, h3) {
-    font: 700 23px/1.23 var(--serif);
+  .workshop-card :is(h2, h3) {
+    font: 700 20px/1.25 var(--serif);
     letter-spacing: -.01em;
     margin: 0;
     text-wrap: pretty;
   }
 
   .workshop-detail {
-    margin: 7px 0 0;
+    margin: 6px 0 0;
     color: var(--muted);
-    font-size: 11.5px;
+    font-size: 11.25px;
     line-height: 1.5;
   }
 
@@ -88,7 +90,6 @@ const Heading = integrated ? 'h3' : 'h2';
     justify-content: center;
     gap: 14px;
     min-height: 40px;
-    flex-shrink: 0;
     white-space: nowrap;
     font-size: 12px;
     line-height: 1.4;
@@ -107,8 +108,8 @@ const Heading = integrated ? 'h3' : 'h2';
   }
 
   .workshop-link:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 5px;
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
   }
 
   .workshop-link:hover {
@@ -118,55 +119,19 @@ const Heading = integrated ? 'h3' : 'h2';
 
   @media (max-width: 600px) {
     .workshop-card {
-      grid-template-columns: 54px minmax(0, 1fr);
-      gap: 15px 18px;
-      padding: 18px;
+      grid-template-columns: 48px minmax(0, 1fr);
+      column-gap: 16px;
     }
-
     .workshop-date {
-      padding-right: 16px;
+      padding-right: 12px;
       align-self: start;
     }
-
-    :is(h2, h3) {
-      font-size: 21px;
+    .workshop-card :is(h2, h3) {
+      font-size: 19px;
     }
-
     .workshop-link {
       grid-column: 2;
       justify-self: start;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .workshop-card {
-      width: calc(100% - 27px);
-      margin-top: 16px;
-      padding: 17px 14px;
-    }
-
-    .workshop-kicker {
-      font-size: 10px;
-    }
-
-    .workshop-detail {
-      font-size: 11px;
-    }
-  }
-  /* Inside Announcements, follow the same content column and heading hierarchy. */
-  .workshop-card.integrated {
-    width: 100%;
-    margin: 0;
-    padding: 18px;
-    gap: 18px;
-  }
-  .integrated :is(h2, h3) {
-    font-size: 21px;
-  }
-  @media (max-width: 480px) {
-    .workshop-card.integrated {
-      padding: 17px 14px;
-      gap: 15px 18px;
     }
   }
 </style>
