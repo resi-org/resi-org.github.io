@@ -1,9 +1,9 @@
 import { getCollection } from 'astro:content';
 
-// One dated list from both content collections: updates (news, publications,
-// talks) and events (the convening ledger). Used by the News page (all of
-// them) and the homepage (the three most recent). Newest first.
-export type Entry = {
+// Shared announcement records for Home and News. Home takes the three most
+// recent across news and community events; News filters to its own category.
+// Events sort by their announcement date, separately from their attendance date.
+type BaseEntry = {
   id: string;
   date: Date;
   kind?: string;
@@ -20,6 +20,19 @@ export type Entry = {
   outlet?: string;
   byline?: string;
 };
+
+export type NewsEntry = BaseEntry & { category: 'News' };
+export type EventEntry = BaseEntry & {
+  category: 'Events';
+  start: Date;
+  end?: Date;
+  location: string;
+  announcementLabel?: string;
+  interestUrl?: string;
+  interestLabel?: string;
+  anchor?: string;
+};
+export type Entry = NewsEntry | EventEntry;
 
 export const fmtDay = (d: Date) =>
   d.toLocaleDateString('en-US', {
@@ -47,6 +60,7 @@ const fmtSpan = (a: Date, b?: Date) => {
 export async function getAnnouncements(): Promise<Entry[]> {
   const updates: Entry[] = (await getCollection('updates')).map((u) => ({
     id: `update-${u.id}`,
+    category: 'News',
     date: u.data.date,
     kind: u.data.category,
     title: u.data.title,
@@ -63,9 +77,17 @@ export async function getAnnouncements(): Promise<Entry[]> {
       .map((p) => p.replace(/\s+/g, ' ').trim())
       .filter(Boolean),
   }));
-  const events: Entry[] = (await getCollection('events')).map((e) => ({
+  const events: EventEntry[] = (await getCollection('events')).map((e) => ({
     id: `event-${e.id}`,
-    date: e.data.start,
+    category: 'Events',
+    date: e.data.announced || e.data.start,
+    start: e.data.start,
+    end: e.data.end,
+    location: e.data.location,
+    announcementLabel: e.data.announcementLabel,
+    interestUrl: e.data.interestUrl,
+    interestLabel: e.data.interestLabel,
+    anchor: e.data.anchor,
     kind: 'From the institute',
     title: e.data.title,
     summary: [

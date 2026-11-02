@@ -145,6 +145,13 @@ const events = defineCollection({
     title: z.string(),
     start: z.coerce.date(),
     end: z.coerce.date().optional(),
+    // Announcement date controls recency in the shared Home feed; event dates
+    // remain the attendance dates shown in the calendar block.
+    announced: z.coerce.date().optional(),
+    announcementLabel: z.string().optional(),
+    interestUrl: z.url().optional(),
+    interestLabel: z.string().optional(),
+    anchor: z.string().optional(),
     location: z.string(),
     with: z.array(z.string()).optional().default([]),
     url: z.string().optional(),

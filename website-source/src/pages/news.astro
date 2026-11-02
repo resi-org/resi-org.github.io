@@ -6,7 +6,7 @@ import { institute } from '../data/institute';
 import Section from '../components/Section.astro';
 
 // Verified institute announcements and clearly attributed external reporting.
-const entries = await getAnnouncements();
+const entries = (await getAnnouncements()).filter((entry) => entry.category === 'News');
 ---
 
 <Base

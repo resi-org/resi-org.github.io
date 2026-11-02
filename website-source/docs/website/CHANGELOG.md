@@ -39,3 +39,16 @@ October 25 corrections established native display dimensions, shared menus/utili
 ## Future entry format
 
 Date; request/outcome; affected pages/shared data; status; source revision/PR; preview checks actually run; publication revision and deployment status when applicable; live evidence; recovery pointer; unresolved follow-up. Include only information needed to continue or assess the change.
+
+
+## November 2 — three-item announcement feed and event alignment (preview)
+
+Request: refine workshop spacing/alignment, show only three recent items across News and Events, prefix category labels, and provide separate See all news / See community events links. Supersedes the old standalone workshop plus three-news layout and the old generic onward label.
+
+Implementation: Home now takes three entries from one merged news/community-event collection, newest announcement/publication first. The workshop's reusable content/events record holds its November 2 announcement date, December 4 attendance date, location, approved label and interest form. News filters to News records; its generated output remains identical. Seminars and its generated output remain unchanged, with the future Events migration still deferred. The workshop's Events counterpart and cross-page audit remain open.
+
+Visuals: full-width Events metadata; News · outlet · date for the two news cards; shared metadata size/weight/color; top-aligned calendar/title/action; smaller date and title, tighter row spacing and no internal date divider. Full outline, restrained event fill, Interest form and stable workshop-heading anchor retained. Original news-card shape, summaries and article links retained. Launching RESI is displaced from Home but remains on News.
+
+Verification: Astro diagnostics (46 files, zero errors/warnings/hints), production build, three-card/category/order assertions, retained workshop anchor/date/form, 390px/320px no-overflow checks, desktop alignment measurements, dark/light UI checks (restored light), and byte comparisons showing News/Seminars unchanged. Only generated index.html and its scoped CSS differ from production baseline 20c5a45. Proof: original workspace docs/event-announcements-2026-11-02/three-item-feed-preview.jpg.
+
+Status: preview on source branch codex/announcements-feed-alignment-nov2, prepared for review. Not merged or published. This is distinct from the already-published PR 71 outlined card.
