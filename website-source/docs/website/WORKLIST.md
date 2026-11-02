@@ -6,13 +6,13 @@ Current queue for resi.org. Reconciled November 2, 2026 from Rachel's requests, 
 
 Use Proposed, Decision needed, Drafting, Preview, Ready to publish, Published, and Live verified. Completed, Deferred and Superseded close or park an item. A preview is not live. Include affected pages, factual source and verification as an item progresses. Carry forward existing authorization within its actual scope.
 
-Priority order: finish the active event review; hiring/Join us; Anat's working group and scoped group updates; unresolved must-fixes; donor-case improvements; optional polish. If a fact blocks one item, record it and continue useful work on the next authorized priority.
+Priority order: hiring/Join us; Anat's working group and scoped group updates; unresolved must-fixes; donor-case improvements; optional polish. If a fact blocks one item, record it and continue useful work on the next authorized priority.
 
 ## Active event work
 
 | ID | Status | Work and next step |
 | --- | --- | --- |
-| E1 | Preview; publication decision needed | Reviewed outline version of the homepage workshop card: Save the date · Inaugural community workshop; one calendar date; Cambridge retained; Interest form retained; thin full card outline replacing the rejected left bar. Source PR 70 and publication PR 71 are open. Rachel's earlier placement approval did not cover this later styling. Preserve the preview and obtain the decision for its publication scope. |
+| E1 | Live verified November 2 | Rachel explicitly approved the reviewed outlined workshop card in Review RESI website project guide. Publication PR 71 merged at 20c5a45; Pages run 41514555482 succeeded. Live desktop/390px phone review confirmed the full outline, invitation, single date, Cambridge, Interest form destination and no horizontal overflow. Source PR 70 carries source and records into the continuing source branch. Events migration remains deferred. |
 | E2 | Live verified November 2 | Placement: introduction → Announcements (workshop first, original other cards retained) → cryptography precedent → remaining sections. Published by PR 69, main 199a9eb. Do not requeue as unpublished. |
 | E3 | Deferred | Replace Seminars with Events, adding the workshop and a separate seminar section. Keep stable URLs/anchors, archive past events, and introduce shared event data plus a check that each public upcoming event has its homepage counterpart and matching facts. Current workshop has no Events counterpart. Do not invent one in News or misclassify it as a weekly seminar. |
 | E4 | Proposed | Further description, other-page notices and later program/venue updates. Only use confirmed audience, venue, hours, speakers and attendance facts. Preserve the existing interest form and access settings. |
@@ -101,6 +101,8 @@ Historical chat references, readable with the app's read-thread tool if their or
 - Create RESI draft c.2: `01a11db4-8de4-7f53-ba22-c9c143c7bf2e`, retained in the original RESI project.
 
 New work should start inside RESI Website - resi.org, with AGENTS.md and these records providing the starting context. A chat's old working directory does not automatically become the new project's primary directory.
+
+Review RESI website project guide (`01a19dc8-d5f6-7cb3-8601-d88b55b5e0db`) was moved into RESI Website - resi.org on November 2; the app confirmed project membership. Its working folder was already correct.
 
 The documents are local source-management records. Include them in ordinary source history; they are not generated public pages. Any future handoff must use the current project records rather than only a chat transcript.
 

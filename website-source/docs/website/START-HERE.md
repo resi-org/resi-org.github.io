@@ -22,11 +22,10 @@ This folder is a linked Git worktree nested inside the older RESI workspace. It 
 
 Verified through GitHub on November 2:
 
-- Production main: `199a9ebd8d3048ef7583e54c2ffb3ab614dd88c2`. Approved homepage placement is live.
-- Source preview branch: `codex/event-announcement-style-nov2`, application revision `5b08ffc5fd8aa8ab45e9e749c3cf92eeddeaf2d5` before project-documentation setup.
-- [Source PR 70](https://github.com/resi-org/resi-org.github.io/pull/70) is open against the continuing source branch.
-- [Publication PR 71](https://github.com/resi-org/resi-org.github.io/pull/71) is open against main; preview revision `157ff2625b7a3f5a12e1e9a8ea4783fcb90784b0`.
-- The outlined workshop-card styling awaits Rachel's publication decision. Setup does not change that status.
+- Production main: `20c5a453e1aa7d097d4c5827bee3c47d012ea3d3`, published through [PR 71](https://github.com/resi-org/resi-org.github.io/pull/71) after Rachel explicitly approved the outlined workshop-card styling in Review RESI website project guide.
+- Source branch: `codex/event-announcement-style-nov2`, application revision `5b08ffc5fd8aa8ab45e9e749c3cf92eeddeaf2d5`, plus the project records. [Source PR 70](https://github.com/resi-org/resi-org.github.io/pull/70) carries the source and records into the continuing source branch.
+- Publication deployment: [GitHub Pages run 41514555482](https://github.com/resi-org/resi-org.github.io/actions/runs/41514555482) succeeded. Live desktop and phone layouts verified; see CHANGELOG for evidence.
+- Homepage placement from PR 69 remains incorporated. The future Events migration remains deferred.
 
 Consult [WORKLIST](WORKLIST.md) before changing branches or publishing. Build output, a screenshot and an open PR do not establish live publication.
 

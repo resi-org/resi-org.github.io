@@ -2,6 +2,14 @@
 
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
+## November 2 outlined workshop card publication
+
+Rachel explicitly requested publication of the revised outlined card styling in Review RESI website project guide. Published the exact reviewed PR 71 head `157ff2625b7a3f5a12e1e9a8ea4783fcb90784b0`; production merge `20c5a453e1aa7d097d4c5827bee3c47d012ea3d3`. Only index.html and its new homepage stylesheet changed in publication. The invitation spans the card, the date appears once, Cambridge and Interest form remain, and the card uses the established full outline. Events migration remains deferred.
+
+Verification this chat: source diagnostics passed with zero errors/warnings/hints; static build passed (existing empty events/partners collection notices). Rebuilt index.html and its stylesheet match the publication checkout byte for byte. Pages run 41514555482 completed successfully. Live browser review at 1200px and 390px confirmed the revised invitation, one workshop/date, Cambridge and the unchanged Interest form destination. Full border present with no box shadow; no horizontal overflow at either width. Desktop/phone screenshots inspected. Source PR 70 includes the application changes and current project records.
+
+App organization: moved this chat into RESI Website - resi.org; tool returned the expected project ID. No folder relocation was needed.
+
 ## November 2 project setup
 
 Status: local organizational setup complete. Project RESI Website - resi.org, ID 00c48f57-79f5-43f6-8bbf-38fd6efc3edb, points to the existing production-source worktree and is pinned. Added root agent guidance, current README entry points, this five-record management set, archived old READMEs, and portable public reference research. Consolidated the current queue, approved conventions, page sources and handoff workflow. Site application files, endpoints and deployment configuration are outside this setup's changes.
