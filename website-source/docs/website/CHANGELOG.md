@@ -51,4 +51,4 @@ Visuals: full-width Events metadata; News · outlet · date for the two news car
 
 Verification: Astro diagnostics (46 files, zero errors/warnings/hints), production build, three-card/category/order assertions, retained workshop anchor/date/form, 390px/320px no-overflow checks, desktop alignment measurements, dark/light UI checks (restored light), and byte comparisons showing News/Seminars unchanged. Only generated index.html and its scoped CSS differ from production baseline 20c5a45. Proof: original workspace docs/event-announcements-2026-11-02/three-item-feed-preview.jpg.
 
-Status: preview on source branch codex/announcements-feed-alignment-nov2, prepared for review. Not merged or published. This is distinct from the already-published PR 71 outlined card.
+Status: preview on source branch codex/announcements-feed-alignment-nov2 (application commit 5cc27de), source PR 73. Generated publication branch codex/announcements-feed-alignment-publish-nov2 (bb706e3), publication PR 72. Not merged or published. This is distinct from the already-published PR 71 outlined card.
