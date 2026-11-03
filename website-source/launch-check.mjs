@@ -1,7 +1,7 @@
 import { chromium, webkit } from 'playwright';
 import fs from 'node:fs/promises';
 const base=process.env.TEST_URL || 'http://127.0.0.1:4387';
-const routes=['/','/about/','/research/','/people/','/news/','/seminars/','/support/','/search/','/privacy/'];
+const routes=['/','/about/','/research/','/people/','/news/','/events/','/support/','/search/','/privacy/'];
 const errors=[]; let renders=0;
 const out=process.env.TEST_OUTPUT || '/tmp/resi-launch-checks';
 await fs.mkdir(out,{recursive:true});
@@ -24,7 +24,7 @@ for(const [name,engine] of [['chromium',chromium],['webkit',webkit]]) {
     canonical:document.querySelector('link[rel=canonical]')?.href
    }));
    if(![200,304].includes(response.status()) || result.overflow || result.badImages.length || result.h1!==1 || result.noindex || !result.canonical?.startsWith('https://resi.org/')) errors.push({name,width,route,status:response.status(),...result});
-   if(name==='chromium' && ['/','/people/','/seminars/'].includes(route)) await page.screenshot({path:`${out}/${base.includes('127.')?'preview':'live'}-${width}-${route.replaceAll('/','_')}.png`,fullPage:true});
+   if(name==='chromium' && ['/','/people/','/events/'].includes(route)) await page.screenshot({path:`${out}/${base.includes('127.')?'preview':'live'}-${width}-${route.replaceAll('/','_')}.png`,fullPage:true});
    renders++;
   }
  }
@@ -40,7 +40,7 @@ for(const [name,engine] of [['chromium',chromium],['webkit',webkit]]) {
  await page.setViewportSize({width:390,height:844});
  await page.locator('.mobile-menu summary').click();
  if(!await page.locator('.mobile-menu nav').isVisible())errors.push(`${name}: mobile menu failed`);
- for(const [old,next] of [['/mission/','/about/'],['/announcements/','/news/'],['/home-announcements/','/']]){
+ for(const [old,next] of [['/mission/','/about/'],['/announcements/','/news/'],['/home-announcements/','/'],['/seminars/','/events/']]){
   await page.goto(base+old);await page.waitForURL(base+next);
  }
  await page.goto(base+'/#research-team');await page.waitForURL(base+'/people/#research');

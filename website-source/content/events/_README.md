@@ -1,6 +1,6 @@
 # Community events
 
-Conferences, workshops and convenings RESI runs. Event facts and homepage promotion now share these records. The future Events page will consume the same collection; its Seminars-to-Events migration is deferred.
+Conferences, workshops and convenings RESI runs. Event facts and homepage promotion now share these records. Events consumes the same collection and uses the same WorkshopCallout component as Home, above the existing seminar listings.
 
 Add a Markdown file with confirmed facts:
 
@@ -23,6 +23,6 @@ url: "https://example.org/event"                        # optional event site
 
 Home merges these records with `content/updates/`, sorts newest announcement first, and displays exactly three items in total. It does not append an extra event card outside that limit. For legacy events without `announced`, the start date is the fallback sorting date. News filters to news records; community events are not duplicated there.
 
-The December 4 workshop was first announced on the homepage November 2, 2026 (production commit bbb0372). Its approved facts and existing interest form are retained in `2026-12-04-inaugural-workshop.md`. Do not invent a description, speakers, venue or admission guarantees. Its future Events-page counterpart is still a known gap.
+The December 4 workshop was first announced on the homepage November 2, 2026 (production commit bbb0372). Its approved facts and existing interest form are retained in `2026-12-04-inaugural-workshop.md`. Do not invent a description, speakers, venue or admission guarantees. Its Events counterpart is /events#workshop, published through PR 72 on November 3.
 
-When the Events migration lands, render the same event record on Events, retain stable event links, and implement the missing-counterpart check. Eligible events can move off Home as newer news/events fill its three slots. Event status/expiry updates and archive promotion still need to be managed when dates pass; a static build does not schedule future changes.
+Keep Home and Events on this shared source and preserve stable anchors. The automatic missing-counterpart check remains deferred. Eligible events can move off Home as newer news/events fill its three slots. Event status/expiry updates and archive promotion still need to be managed when dates pass; a static build does not schedule future changes.

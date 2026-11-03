@@ -2,6 +2,20 @@
 
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
+## November 3 Events publication — live verified
+
+Rachel approved the Events preview and explicitly requested publication with one H1: “Community events, seminars, and workshops on the foundations of AI safety.” Removed the former Events heading and subtitle. Preserved the latest shared-card refinements through source 67f93bd and linked title; proposed additional cross-links were not implemented.
+
+Publication PR 72 merged at `14a20ea5128a38df0f20c59c4cb28ae4d4eb95c9`, from reviewed generated head `cc5fe19c3658e835c0d92bc1d4b34b2313b43a1e`. Source PR 74 is carried through PR 73 separately from production. Astro diagnostics/build passed. New heading/no subtitle and no overflow checked at 390px/320px. Publication Events links/anchors validated; all five domain/independent-endpoint files retained identical hashes. Existing historical assets preserved. Pages run [41655422743](https://github.com/resi-org/resi-org.github.io/actions/runs/41655422743) succeeded. Live checks confirmed the exact H1 with no subtitle, Events navigation, three homepage announcements, workshop Search results, and an old seminar deep link redirecting to Events with its details open. Desktop 1200px and phone 390px have no horizontal overflow. Live screenshot saved in the chat artifacts.
+
+## November 3 Events rename and cross-link review — preview
+
+Rachel requested Seminars → Events everywhere and a holistic review of opportunities to link to Events. She specified the December 4 card at the top using the exact Announcements component, with seminars below and later layout refinements. Implemented /events, Events navigation/page metadata/sitemap/Search, existing cross-page destinations, workshop title links and shared workshop content. /seminars preserves queries and fragments when forwarding; seminar article IDs and historical biographies are unchanged. Workshop card styles/content are shared with Home. This branch incorporates the concurrent card revision 027e359 without changing the original checkout.
+
+Source review: [draft PR 74](https://github.com/resi-org/resi-org.github.io/pull/74), branch codex/events-page-rename in the attached isolated worktree; application change 240eb04 plus shared-card integration 55af5e9. Depends on the pending source PR 73 announcement feed; publication PR 72 and production were not changed. This is a preview, not published. New link placements remain recommendations in WORKLIST E6.
+
+Verification: Astro diagnostics and build passed; browser checks confirmed Events navigation on every main page, correct canonical, workshop Search results, no old seminar-destination links, all 37 generated Events links resolving to the page/valid anchors, and all seven seminar anchors retained. Phone 390px/320px and desktop showed no horizontal overflow. Mobile menu shows Events as the current page. Old /seminars/?from=old-link#anat-perry-2026-10-21 redirects with query/hash intact and opens the talk details. Final review includes the latest card revision at 1200px, 390px and 320px, light/dark inspection, and identical rendered card text/style on Home and Events. Existing empty partner-collection notice remains. Forms were not submitted.
+
 ## November 2 outlined workshop card publication
 
 Rachel explicitly requested publication of the revised outlined card styling in Review RESI website project guide. Published the exact reviewed PR 71 head `157ff2625b7a3f5a12e1e9a8ea4783fcb90784b0`; production merge `20c5a453e1aa7d097d4c5827bee3c47d012ea3d3`. Only index.html and its new homepage stylesheet changed in publication. The invitation spans the card, the date appears once, Cambridge and Interest form remain, and the card uses the established full outline. Events migration remains deferred.

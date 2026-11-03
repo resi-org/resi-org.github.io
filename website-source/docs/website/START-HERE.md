@@ -20,12 +20,12 @@ This folder is a linked Git worktree nested inside the older RESI workspace. It 
 
 ## Current preview and production
 
-Verified through GitHub on November 2:
+Verified through GitHub on November 3:
 
-- Production main: `20c5a453e1aa7d097d4c5827bee3c47d012ea3d3`, published through [PR 71](https://github.com/resi-org/resi-org.github.io/pull/71) after Rachel explicitly approved the outlined workshop-card styling in Review RESI website project guide.
-- Source branch: `codex/event-announcement-style-nov2`, application revision `5b08ffc5fd8aa8ab45e9e749c3cf92eeddeaf2d5`, plus the project records. [Source PR 70](https://github.com/resi-org/resi-org.github.io/pull/70) carries the source and records into the continuing source branch.
-- Publication deployment: [GitHub Pages run 41514555482](https://github.com/resi-org/resi-org.github.io/actions/runs/41514555482) succeeded. Live desktop and phone layouts verified; see CHANGELOG for evidence.
-- Homepage placement from PR 69 remains incorporated. The future Events migration remains deferred.
+- Production main is `14a20ea5128a38df0f20c59c4cb28ae4d4eb95c9`, published through [PR 72](https://github.com/resi-org/resi-org.github.io/pull/72) after Rachel explicitly approved the Events preview and its final single-sentence heading. Pages run 41655422743 succeeded; live desktop/phone, search, navigation and old seminar links were verified. Evidence is recorded in CHANGELOG.
+- Events source: [PR 74](https://github.com/resi-org/resi-org.github.io/pull/74), branch `codex/events-page-rename` in `/Users/rachelsipser/.codex/worktrees/events-page-rename/resi-production-source-repo`, incorporates the latest shared-card source through `67f93bd`. It lands through [source PR 73](https://github.com/resi-org/resi-org.github.io/pull/73) into `codex/default-size-90-source`, separately from production.
+- Events now contains the shared December 4 workshop card above the existing seminar listings. Navigation, existing cross-page links, search and sitemap use /events; old seminar addresses preserve queries/fragments when forwarding. Further page refinements and proposed additional cross-links remain in WORKLIST E6. The automatic missing-counterpart check remains deferred.
+- Optional local preview in the attached Events worktree: http://127.0.0.1:4391/events/.
 
 Consult [WORKLIST](WORKLIST.md) before changing branches or publishing. Build output, a screenshot and an open PR do not establish live publication.
 

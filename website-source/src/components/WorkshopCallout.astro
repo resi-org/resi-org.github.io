@@ -21,7 +21,7 @@ const Heading = integrated ? 'h3' : 'h2';
     <span>{calendarDate.getUTCFullYear()}</span>
   </time>
   <div class="workshop-description">
-    <Heading id={headingId}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</Heading>
+    <Heading id={headingId}><a class="workshop-title-link" href={`/events#${event.anchor || event.id}`}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</a></Heading>
     <p class="workshop-detail">{event.location}</p>
   </div>
   {event.description && <p class="workshop-summary">{event.description}</p>}
@@ -92,6 +92,9 @@ const Heading = integrated ? 'h3' : 'h2';
   .workshop-card :is(h2, h3) span {
     white-space: nowrap;
   }
+
+  .workshop-title-link { color: inherit; text-decoration: none; }
+  .workshop-title-link:hover { text-decoration: underline; }
 
   .workshop-detail {
     margin: 0;
