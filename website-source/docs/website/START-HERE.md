@@ -75,4 +75,6 @@ Earlier extensive notes remain at `/Users/rachelsipser/Documents/GitHub/resi-web
 
 November 3 disclosure follow-up: Rachel approved publication of the working-group plus-to-dots control and responsive spacing fixes. This release uses isolated source/publication branches, preserving other chats' active previews. Consult WORKLIST D4/D5 and CHANGELOG for release evidence and the subsequent cross-site standardization task. The site-wide design chat is RESI — Master website design (`01a1a1de-5ea7-7c53-b2ee-bc43d87896ae`).
 
-November 3 disclosure release: source PR 77 merged at `fe575183b26e472c4337f3e0fafd8ff1911c384a`; publication PR 78 is live as recorded above. Other chats’ event-card and homepage-copy previews remain separate. Next: WORKLIST D5, standardize the active row-based expanders through a reviewed preview.
+November 3 disclosure release: source PR 77 merged at `fe575183b26e472c4337f3e0fafd8ff1911c384a`; publication PR 78 is live as recorded above. Other chats’ event-card previews remain separate. The homepage-copy release is recorded below. Next: WORKLIST D5, standardize the active row-based expanders through a reviewed preview.
+
+Homepage editorial source PR 80 merged at `216654d6c5ee2f276751104ddbc57f45e9a05181`; publication PR 81 is live as recorded above.
