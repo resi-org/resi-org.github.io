@@ -56,7 +56,7 @@ const Heading = integrated ? 'h3' : 'h2';
     font-size: 11.25px;
     line-height: 1.5;
     font-weight: 400;
-    color: var(--muted);
+    color: var(--accent);
   }
 
   .workshop-date {
@@ -77,18 +77,16 @@ const Heading = integrated ? 'h3' : 'h2';
   }
 
   .workshop-card :is(h2, h3) {
-    font: 700 18px/1.4 var(--serif);
+    font: 700 20px/1.4 var(--serif);
     letter-spacing: -.01em;
     margin: 0;
     text-wrap: pretty;
   }
 
   .workshop-description {
-    align-self: stretch;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 12px;
+    gap: 8px;
   }
 
   .workshop-detail {
@@ -150,9 +148,6 @@ const Heading = integrated ? 'h3' : 'h2';
     }
     .workshop-date {
       padding-right: 12px;
-    }
-    .workshop-card :is(h2, h3) {
-      font-size: 18px;
     }
     .workshop-summary {
       grid-row: 4;

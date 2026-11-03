@@ -77,3 +77,10 @@ Validation: source diagnostics (46 files, zero findings), production builds, des
 Rachel requested 2026 beneath Dec 4 rather than beside the location. Restored the calendar year and made the title/location column stretch to the calendar height, distributing space between the two text lines without fixed heights. The title and Interest form stay top aligned; Cambridge aligns with the bottom of the calendar on desktop. On narrow screens the title can wrap naturally and the action remains above the description.
 
 Validation: production build passed; desktop measurements confirmed matching calendar/text top and bottom coordinates and title/action top coordinates. Visual desktop/390px review passed; no horizontal overflow at 390px or 320px. Proof: original workspace docs/event-announcements-2026-11-02/nov3-full-date-preview.jpg. Extends source PR 73/publication PR 72; preview only.
+
+
+### November 3 — tighten the event title/location grouping (preview)
+
+Rachel found the stretched title/location spacing awkward and requested the green event heading again. Replaced distributed spacing with a natural 8px gap, increased the title from 18px to 20px, and restored the event metadata to the shared accent color. Calendar/year and title-row action retained.
+
+Validation: production build passed. Desktop title stays on one line with the action at the same top coordinate; phone title wraps naturally. Visual 390px review and 390px/320px overflow checks passed. Proof: original workspace docs/event-announcements-2026-11-02/nov3-title-spacing-preview.jpg. Source PR 73/publication PR 72 remain unmerged. Separately, Events migration PR 74 is open against the source preview branch; this refinement does not modify its files.
