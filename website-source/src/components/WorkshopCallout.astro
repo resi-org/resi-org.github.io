@@ -21,7 +21,7 @@ const Heading = integrated ? 'h3' : 'h2';
     <span>{calendarDate.getUTCFullYear()}</span>
   </time>
   <div class="workshop-description">
-    <Heading id={headingId}>{event.title}</Heading>
+    <Heading id={headingId}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</Heading>
     <p class="workshop-detail">{event.location}</p>
   </div>
   {event.description && <p class="workshop-summary">{event.description}</p>}
@@ -89,6 +89,10 @@ const Heading = integrated ? 'h3' : 'h2';
     gap: 8px;
   }
 
+  .workshop-card :is(h2, h3) span {
+    white-space: nowrap;
+  }
+
   .workshop-detail {
     margin: 0;
     color: var(--muted);
@@ -144,39 +148,36 @@ const Heading = integrated ? 'h3' : 'h2';
   @media (max-width: 600px) {
     .workshop-card {
       grid-template-columns: 36px minmax(0, 1fr) auto;
-      gap: 10px 12px;
+      column-gap: 12px;
     }
     .workshop-date {
-      grid-column: 1;
-      grid-row: 2 / 4;
-      align-self: stretch;
-      justify-content: space-between;
       padding-right: 0;
     }
-    .workshop-date strong {
-      font-size: 40px;
+    .workshop-link {
+      font-size: 11.5px;
+      gap: 8px;
+      padding: 8px;
     }
-    .workshop-description {
-      display: contents;
+    .workshop-link :global(svg) {
+      width: 14px;
+      height: 14px;
+      flex-basis: 14px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .workshop-card {
+      grid-template-columns: 28px minmax(0, 1fr) auto;
+      column-gap: 8px;
     }
     .workshop-card :is(h2, h3) {
-      grid-column: 2 / -1;
-      grid-row: 2;
-    }
-    .workshop-detail {
-      grid-column: 2;
-      grid-row: 3;
-      align-self: center;
-    }
-    .workshop-summary {
-      grid-row: 4;
-      margin-top: 2px;
+      font-size: 18px;
     }
     .workshop-link {
-      grid-column: 3;
-      grid-row: 3;
-      gap: 10px;
-      padding-inline: 10px;
+      font-size: 11px;
+    }
+    .workshop-link :global(svg) {
+      display: none;
     }
   }
 </style>
