@@ -2,6 +2,8 @@
 
 Current queue for resi.org. Reconciled November 2, 2026 from Rachel's requests, the earlier November 2 priority list, production records, source files and current GitHub PRs. This is the active queue; earlier draft checklists are historical evidence.
 
+Homepage introduction: live verified November 3 through source PR 80/publication PR 81; corrected comma and matching Home Search excerpt included. Other copy findings remain open.
+
 ## Status and priorities
 
 Use Proposed, Decision needed, Drafting, Preview, Ready to publish, Published, and Live verified. Completed, Deferred and Superseded close or park an item. A preview is not live. Include affected pages, factual source and verification as an item progresses. Carry forward existing authorization within its actual scope.
