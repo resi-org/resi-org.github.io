@@ -200,3 +200,8 @@ Validation: isolated Astro diagnostics (47 files, zero findings) and build passe
 Rachel requested removing the extra space around 4 so DEC meets the title's lowercase-height line. At 380px and below only, keep the day at 34px but set line-height to 1 and remove its 1px block margins. Move DEC down optically by 2px. All wider rules and the location/year baseline correction remain unchanged.
 
 Validation: build passed. A 320px screenshot pixel check found DEC and the title's lowercase a both starting at row 123, with the capital MA and year both ending at row 175. Checked 320/360/380/381/390/1280px with no overflow; 381px and up retain prior date metrics. Proof: original workspace docs/event-announcements-2026-11-02/nov3-tight-date-320.jpg. The extra scoped rules now emit a separate WorkshopCallout stylesheet; preview/publication files include that asset. Extends the pending one-line-label preview; not published.
+
+
+### November 3 — midpoint of narrowest date-spacing trials (preview)
+
+Rachel requested splitting the difference. At ≤380px, use line-height 1.04, 0.5px day margins and a 1px DEC offset: exact midpoints between the original and tightest trial. Day size and every wider rule remain unchanged. Build passed; 320px visual/no-overflow review passed and 390px retains its previous metrics. Proof: original workspace docs/event-announcements-2026-11-02/nov3-midpoint-date-320.jpg. Updates pending PRs 84/83; not published.
