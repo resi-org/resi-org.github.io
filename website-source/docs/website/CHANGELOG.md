@@ -114,6 +114,27 @@ Rachel rejected the location/action-row version. Restored the action to the far-
 Validation: Astro diagnostics passed with zero findings and production build passed. At 320, 360, 381, 390, 480, 600, 601 and 1280px, action/title top coordinates matched and no horizontal overflow occurred. Title words stay clear of the button, including a measured 7px gap at 320px. Desktop, 480px and 320px screenshots inspected; proofs in original workspace docs/event-announcements-2026-11-02/nov3-anchored-480.jpg, nov3-anchored-390.jpg and nov3-anchored-320.jpg. Existing PRs 73/72 updated; preview only.
 
 
+### November 3 — optical header alignment, without changing date spacing (preview)
+
+Rachel rejected matching line-box tops and prohibited spreading the date to force a match. Keep the calendar typography and natural 62.55px height unchanged. Center it on the compact title/location text group independently of the action height. Trim title/location font leading to visible cap/baseline edges, keep a 10px text gap, and use a slightly larger 22px desktop title with 12px location. Phone titles remain 20px/18px. The button starts at the title's visible cap edge and stays at the right; intact title words still wrap naturally. A font-leading offset supports browsers without text-box trimming.
+
+The shared card affects Home and Events, preserving the Events publication and stable title link brought in from the other chat. Production remains 14a20ea (PR 72); this further refinement is a new unpublished preview.
+
+Validation: Astro diagnostics passed (47 files, zero errors/warnings/hints); production build passed. Calendar height remained 62.55px across measured widths; date/text center coordinates agree within 0.004px and title/action top coordinates agree. Checked 320, 360, 381, 390, 480, 481, 600, 601 and 1280px with no overflow, plus the shared Events card on phone. Inspected actual desktop and phone screenshots, not just element boxes. Proofs: original workspace docs/event-announcements-2026-11-02/nov3-optical-desktop.jpg and nov3-optical-390.jpg. Generated publication diff contains only index.html and events/index.html.
+
+
+### November 3 — matching metadata and small narrow-screen refinements (preview)
+
+Rachel requested identical metadata formatting apart from event color/weight, plus tiny phone-only changes. Event metadata now uses announcement-meta and its same 7.5px separator gaps, 3px wrapping gap, 11.25px type and 1.65 line height; bold accent green is retained. Below 480px, increase the date number from 32px to 34px, add 1px above/below it, and increase the title/location gap from 10px to 13px. A 2px optical location offset aligns Cambridge's visible bottom with the year. Full-width date/type/text spacing remains unchanged.
+
+Validation: an isolated committed-source snapshot plus only WorkshopCallout.astro passed Astro diagnostics (47 files, zero findings) and build, excluding concurrent Research/Disclosure/Home/Search drafts. Checked Home at 320, 390, 480, 481 and 1280px and Events at 390px; no overflow and title/action alignment retained. Metadata computed size/line height/gaps match news. Full-width date remains 32px with no margins and 10px title/location gap. Pixel analysis of the 390px screenshot found both location and year ending at the same row (180). Proof: original workspace docs/event-announcements-2026-11-02/nov3-small-refinements-390.jpg. Continues source PR 76/publication PR 75, still preview only; generated changes limited to Home and Events HTML.
+
+
+### November 3 — align the location baseline, not its descender (preview)
+
+Rachel clarified that Cambridge's baseline must align with 2026, with the g below it. Changed only the narrow-screen location offset from -2px to +1px. All other typography, spacing and layout remain unchanged. Isolated production build passed; 390px screenshot analysis confirms the capital MA and year share bottom row 180, while the location descender reaches row 183. No overflow at 320px. Proof: original workspace docs/event-announcements-2026-11-02/nov3-baseline-correction-390.jpg. Source PR 76/publication PR 75 remain unpublished.
+
+
 ## November 3 — approved working-group disclosure release prepared
 
 Rachel approved the corner-aligned spinning plus-to-dots control and responsive fixes, then authorized publication with a slightly finer 1.1px stroke and slightly faster 370ms transition. The plus and four-dot square both occupy 14px. Details hover works at all fine-pointer viewport widths; keyboard focus and native disclosure behavior are retained. Natural 6px title/leader spacing replaces tallest-title synchronization; the two-column layout becomes one at 600px. Reduced-motion styling removes animation.
@@ -138,11 +159,26 @@ Verification: isolated Astro check (47 files, zero findings), build and diff che
 Standardization inventory: active expanders are 6 About FAQs, 16 Research paper details, 21 People selected-publication lists and 7 Events seminar details, besides the 11 now-published working-group controls. Research-area content currently renders fully expanded; homepage area cards are links. The alternate ResearchAreas disclosure code is unused and is not an active rollout target. Proposed next preview: About FAQ rows to establish the non-card variant, preserving FAQ permalinks; then paper/Events/People contexts. Same indicator/animation, with card-corner versus row-aligned placement. Existing visible titles/labels and navigation meanings stay intact. The broader rollout is not part of this publication.
 
 
+### November 3 — final desktop baseline and publication approval
+
+Rachel approved publishing the event-card refinements after aligning Cambridge's baseline with the Interest form button's bottom edge on the full-width card. The title/location gap now scales from 10px to 16.5px with the card's available width; phone overrides and year/location baseline alignment remain unchanged. Desktop computed baseline/button-bottom difference is 0.022px. Checks at 320, 390, 480, 481, 600, 610, 620, 640 and 1280px retain title/action top alignment and have no overflow. Source diagnostics/build passed in an isolated snapshot of current continuing source fe57518 plus this component, preserving the published disclosure changes and excluding unrelated working drafts. Desktop proof: original workspace docs/event-announcements-2026-11-02/nov3-final-desktop.jpg. Publication approval covers the shared Home/Events card and the preceding reviewed refinements in PRs 76/75. Deployment/live verification to follow.
+
+
 ## November 3 — approved homepage introduction publication
 
 Rachel requested and approved publication of the homepage sentence: “RESI is an independent nonprofit research institute based in Cambridge, Massachusetts, where we are building the scientific foundations for making superintelligence safe by design.” Preserved bold safe by design, added the grammatically appropriate comma before where at her request, and synchronized the manual Home Search excerpt. This is scoped first-person wording, not a global pronoun rule.
 
 Built from continuing source dbebb4f with only HomePage.astro/search.astro application edits. Astro check passed (47 files, zero findings); production build passed with the existing empty partners notice. Generated publication based on main a791347 changes only index.html and search/index.html. Other pages, event-card previews, current disclosure design, domain files and independent endpoints are preserved. Earlier local desktop/390px rendering was reviewed. Publication/deployment and fresh live verification will be recorded separately after completion.
+
+Publication preparation also incorporated the approved homepage introduction/Search publication (PRs 80/81) that landed concurrently; those contents are preserved.
+
+
+### November 3 — event-card release deployed and live verified
+
+Rachel explicitly approved publication after the final full-width baseline adjustment. Publication PR 75 merged at eff55bc561b8801c440efdcf43053a037aae6bca (reviewed head f299444cb66dcf4cdbf1b8235aab97a4b0b0cc6a); Pages run 41681598151 succeeded. Only Home and Events HTML changed relative to main, preserving the concurrent introduction/Search and disclosure publications.
+
+Live Home and Events checked on desktop and at 390px through release-tagged URLs to avoid cached prior HTML. Desktop location baseline/button bottom agree within 0.022px on both pages; title/action tops agree. Phone retains its approved 34px day, 13px gap and location/year baseline correction, with no overflow. Form and Events destinations retained. The ordinary homepage URL still returned a cached prior version during initial verification; the deliverable browser tab uses ?release=eff55bc. Live proofs: original workspace docs/event-announcements-2026-11-02/nov3-live-final-desktop.jpg and nov3-live-final-phone.jpg. Source PR 76 carries the final implementation and these records into continuing source.
+
 
 
 ## November 3 — homepage introduction live verified
