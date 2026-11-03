@@ -162,3 +162,12 @@ Standardization inventory: active expanders are 6 About FAQs, 16 Research paper 
 ### November 3 — final desktop baseline and publication approval
 
 Rachel approved publishing the event-card refinements after aligning Cambridge's baseline with the Interest form button's bottom edge on the full-width card. The title/location gap now scales from 10px to 16.5px with the card's available width; phone overrides and year/location baseline alignment remain unchanged. Desktop computed baseline/button-bottom difference is 0.022px. Checks at 320, 390, 480, 481, 600, 610, 620, 640 and 1280px retain title/action top alignment and have no overflow. Source diagnostics/build passed in an isolated snapshot of current continuing source fe57518 plus this component, preserving the published disclosure changes and excluding unrelated working drafts. Desktop proof: original workspace docs/event-announcements-2026-11-02/nov3-final-desktop.jpg. Publication approval covers the shared Home/Events card and the preceding reviewed refinements in PRs 76/75. Deployment/live verification to follow.
+
+
+## November 3 — approved homepage introduction publication
+
+Rachel requested and approved publication of the homepage sentence: “RESI is an independent nonprofit research institute based in Cambridge, Massachusetts, where we are building the scientific foundations for making superintelligence safe by design.” Preserved bold safe by design, added the grammatically appropriate comma before where at her request, and synchronized the manual Home Search excerpt. This is scoped first-person wording, not a global pronoun rule.
+
+Built from continuing source dbebb4f with only HomePage.astro/search.astro application edits. Astro check passed (47 files, zero findings); production build passed with the existing empty partners notice. Generated publication based on main a791347 changes only index.html and search/index.html. Other pages, event-card previews, current disclosure design, domain files and independent endpoints are preserved. Earlier local desktop/390px rendering was reviewed. Publication/deployment and fresh live verification will be recorded separately after completion.
+
+Publication preparation also incorporated the approved homepage introduction/Search publication (PRs 80/81) that landed concurrently; those contents are preserved.
