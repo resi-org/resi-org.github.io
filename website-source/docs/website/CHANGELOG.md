@@ -2,6 +2,14 @@
 
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
+## November 3 Events rename and cross-link review — preview
+
+Rachel requested Seminars → Events everywhere and a holistic review of opportunities to link to Events. She specified the December 4 card at the top using the exact Announcements component, with seminars below and later layout refinements. Implemented /events, Events navigation/page metadata/sitemap/Search, existing cross-page destinations, workshop title links and shared workshop content. /seminars preserves queries and fragments when forwarding; seminar article IDs and historical biographies are unchanged. Workshop card styles/content are shared with Home. This branch incorporates the concurrent card revision 027e359 without changing the original checkout.
+
+Source branch: codex/events-page-rename in the attached isolated worktree. Depends on the pending source PR 73 announcement feed; publication PR 72 and production were not changed. This is a preview, not published. New link placements remain recommendations in WORKLIST E6.
+
+Verification: Astro diagnostics and build passed; browser checks confirmed Events navigation on every main page, correct canonical, workshop Search results, no old seminar-destination links, all 37 generated Events links resolving to the page/valid anchors, and all seven seminar anchors retained. Phone 390px/320px and desktop showed no horizontal overflow. Mobile menu shows Events as the current page. Old /seminars/?from=old-link#anat-perry-2026-10-21 redirects with query/hash intact and opens the talk details. Final review includes the latest card revision at 1200px, 390px and 320px, light/dark inspection, and identical rendered card text/style on Home and Events. Existing empty partner-collection notice remains. Forms were not submitted.
+
 ## November 2 outlined workshop card publication
 
 Rachel explicitly requested publication of the revised outlined card styling in Review RESI website project guide. Published the exact reviewed PR 71 head `157ff2625b7a3f5a12e1e9a8ea4783fcb90784b0`; production merge `20c5a453e1aa7d097d4c5827bee3c47d012ea3d3`. Only index.html and its new homepage stylesheet changed in publication. The invitation spans the card, the date appears once, Cambridge and Interest form remain, and the card uses the established full outline. Events migration remains deferred.

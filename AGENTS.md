@@ -38,7 +38,7 @@ Before finishing substantive work, update only materially affected records. Disc
 - The visitor roster is deliberately hidden by `showVisitingResearchers = false`. Preserve this until Rachel supplies an approved replacement or requests restoration.
 - Describe prior papers as work by researchers associated with RESI. Retain limitations and stated assumptions; connect papers to areas/groups only when clearly justified.
 - Use confirmed event, opportunity, affiliation, funding and institutional facts. Do not invent openings, roles, policies, partnerships or commitments.
-- Public community events must have matching records on the future Events page and be eligible for the shared homepage announcement feed, with stable connections. Home displays only the three most recent announcements across News and Events (November 2 refinement); older events can be displaced. Shared event data is prepared; Events migration and the missing-counterpart check remain deferred, and the workshop lacks its Events counterpart.
+- Public community events must have matching records on Events and be eligible for the shared homepage announcement feed, with stable connections. Home displays only the three most recent announcements across News and Events (November 2 refinement); older events can be displaced. Shared event data drives the November 3 Events preview and its workshop counterpart; publication and the automatic missing-counterpart check remain separate stages.
 - Preserve legacy endpoints and stable anchors. Do not submit signup, application or donation forms during testing.
 - Keep private correspondence, raw transcripts, credentials and applicant/donor details out of public source/site files. Save necessary approved facts and sanitized decisions.
 

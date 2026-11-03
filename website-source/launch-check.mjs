@@ -40,7 +40,7 @@ for(const [name,engine] of [['chromium',chromium],['webkit',webkit]]) {
  await page.setViewportSize({width:390,height:844});
  await page.locator('.mobile-menu summary').click();
  if(!await page.locator('.mobile-menu nav').isVisible())errors.push(`${name}: mobile menu failed`);
- for(const [old,next] of [['/mission/','/about/'],['/announcements/','/news/'],['/home-announcements/','/']]){
+ for(const [old,next] of [['/mission/','/about/'],['/announcements/','/news/'],['/home-announcements/','/'],['/seminars/','/events/']]){
   await page.goto(base+old);await page.waitForURL(base+next);
  }
  await page.goto(base+'/#research-team');await page.waitForURL(base+'/people/#research');
