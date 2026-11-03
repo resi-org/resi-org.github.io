@@ -186,3 +186,29 @@ Live Home and Events checked on desktop and at 390px through release-tagged URLs
 Rachel explicitly requested publication. Source PR 80 merged at `216654d6c5ee2f276751104ddbc57f45e9a05181`; publication PR 81 merged at `43cf7d5c5a2ed927e909ba54500ad60958812ef0` from reviewed generated head `241a5daec615b4f9976992059fb80a1c73827a2e`. Pages run [41681348362](https://github.com/resi-org/resi-org.github.io/actions/runs/41681348362) succeeded. Published only index.html and search/index.html from current source dbebb4f, preserving the current disclosure release, pending event-card refinements, domain files and independent endpoints.
 
 Live browser checks confirmed the exact sentence with “Cambridge, Massachusetts, where we are building,” bold safe by design, no horizontal overflow at desktop/390px, and a Cambridge Search query returning the synchronized Home excerpt. Earlier local desktop/390px visual review passed; Astro check (47 files, zero findings), build and git diff --check passed. Live desktop proof: /Users/rachelsipser/.codex/visualizations/2026/11/03/01a1a236-adf2-7eb2-8d6f-129e61eb1ad3/home-intro-live.png. Other editorial findings and global first/third-person usage remain open; this release is scoped to the approved introduction.
+
+
+### November 3 — keep announcement metadata on one line (preview)
+
+Rachel asked to prevent metadata wrapping, preferring to drop Save the date if shrinking would hurt readability. Keep the existing 11.25px metadata size. Event metadata is nowrap and uses the card's existing inline-size container to hide only Save the date below 315px of content width. It remains Events · Inaugural community workshop on the narrowest phones and restores the full wording once space permits. Current News labels already fit one line at 320px, so their type and markup are unchanged. No other card layout changes.
+
+Validation: isolated Astro diagnostics (47 files, zero findings) and build passed. Home checked at 320, 360, 369, 370, 375, 390 and 1280px: all three metadata rows are exactly one line, with no horizontal overflow and unchanged font size. The full label returns at 370px viewport in the present layout. Shared component also serves Events. Proof: original workspace docs/event-announcements-2026-11-02/nov3-one-line-label-320.jpg. Preview only; previous event-card release remains live.
+
+
+### November 3 — tighten the date at the narrowest breakpoint (preview)
+
+Rachel requested removing the extra space around 4 so DEC meets the title's lowercase-height line. At 380px and below only, keep the day at 34px but set line-height to 1 and remove its 1px block margins. Move DEC down optically by 2px. All wider rules and the location/year baseline correction remain unchanged.
+
+Validation: build passed. A 320px screenshot pixel check found DEC and the title's lowercase a both starting at row 123, with the capital MA and year both ending at row 175. Checked 320/360/380/381/390/1280px with no overflow; 381px and up retain prior date metrics. Proof: original workspace docs/event-announcements-2026-11-02/nov3-tight-date-320.jpg. The extra scoped rules now emit a separate WorkshopCallout stylesheet; preview/publication files include that asset. Extends the pending one-line-label preview; not published.
+
+
+### November 3 — midpoint of narrowest date-spacing trials (preview)
+
+Rachel requested splitting the difference. At ≤380px, use line-height 1.04, 0.5px day margins and a 1px DEC offset: exact midpoints between the original and tightest trial. Day size and every wider rule remain unchanged. Build passed; 320px visual/no-overflow review passed and 390px retains its previous metrics. Proof: original workspace docs/event-announcements-2026-11-02/nov3-midpoint-date-320.jpg. Updates pending PRs 84/83; not published.
+
+
+### November 3 — compact metadata and midpoint spacing published
+
+Rachel explicitly requested publication. Publication PR 83 merged at 927570308c5855fb4f669b31dc5f442cbdc7c5e5 from reviewed head 51d3e537ee7ba4919335f664c18762431898360d. Pages run 41695253008 succeeded. Home/Events HTML and the emitted shared card stylesheet match the reviewed build.
+
+Live Home and Events at 320px show one-line metadata, Save the date hidden, 35.36px day line height, 0.5px margins and 1px month offset. At 390px the full label returns and wider date metrics are retained. Desktop location baseline/button edge difference remains 0.022px. No horizontal overflow; fonts loaded and the stylesheet renders correctly. Live proof: original workspace docs/event-announcements-2026-11-02/nov3-live-midpoint-320.jpg. Fresh release-tagged URLs used for verification and the delivered browser tab. Source PR 84 supplies implementation/records.

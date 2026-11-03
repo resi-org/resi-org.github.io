@@ -16,7 +16,7 @@ const Heading = integrated ? 'h3' : 'h2';
 <aside class="announcement-item workshop-card" aria-labelledby={headingId}>
   <p class="announcement-meta workshop-kicker">
     <span>Events</span>
-    {event.announcementLabel?.split(' · ').map(label => <span>{label}</span>)}
+    {event.announcementLabel?.split(' · ').map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
   </p>
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
     <span>{month}</span>
@@ -55,12 +55,20 @@ const Heading = integrated ? 'h3' : 'h2';
   }
 
   .workshop-kicker {
+    flex-wrap: nowrap;
+    white-space: nowrap;
     grid-column: 1 / -1;
     margin: 0;
     font-size: 11.25px;
     line-height: 1.65;
     font-weight: 700;
     color: var(--accent);
+  }
+
+  @container (width < 315px) {
+    .workshop-save-date {
+      display: none;
+    }
   }
 
   .workshop-kicker > span:first-child::before {
@@ -222,6 +230,13 @@ const Heading = integrated ? 'h3' : 'h2';
     }
     .workshop-main {
       column-gap: 8px;
+    }
+    .workshop-date strong {
+      line-height: 1.04;
+      margin-block: .5px;
+    }
+    .workshop-date span:first-child {
+      transform: translateY(1px);
     }
     .workshop-link {
       font-size: 11px;
