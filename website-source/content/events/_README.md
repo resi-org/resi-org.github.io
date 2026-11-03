@@ -21,8 +21,24 @@ url: "https://example.org/event"                        # optional event site
 ---
 ```
 
-Home merges these records with `content/updates/`, sorts newest announcement first, and displays exactly three items in total. It does not append an extra event card outside that limit. For legacy events without `announced`, the start date is the fallback sorting date. News filters to news records; community events are not duplicated there.
+Home merges eligible records with `content/updates/`, sorts newest announcement first, and displays exactly three items in total. It does not append an extra event card outside that limit. For legacy events without `announced`, the start date is the fallback sorting date. News filters to news records; community events are not duplicated there.
 
 The December 4 workshop was first announced on the homepage November 2, 2026 (production commit bbb0372). Its approved facts and existing interest form are retained in `2026-12-04-inaugural-workshop.md`. Do not invent a description, speakers, venue or admission guarantees. Its Events counterpart is /events#workshop, published through PR 72 on November 3.
 
-Keep Home and Events on this shared source and preserve stable anchors. The automatic missing-counterpart check remains deferred. Eligible events can move off Home as newer news/events fill its three slots. Event status/expiry updates and archive promotion still need to be managed when dates pass; a static build does not schedule future changes.
+Keep Home and Events on this shared source and preserve stable anchors. The automatic missing-counterpart check remains deferred. Eligible events can move off Home as newer news/events fill its three slots. Event timing is classified at build time in America/New_York, through the last date (end or start). Rebuild after an event ends; a static build does not schedule future changes.
+
+
+## Upcoming versus past announcements
+
+Every upcoming event automatically uses the approved emphasized workshop card. Once past, its Events card switches to the ordinary news-like treatment: same fill/type/colors, no outline or button, with the event calendar and aligned title/location retained. News cards stay unchanged. The same shared policy/component governs Home and Events.
+
+Past events are excluded from Home by default. Only when Rachel explicitly asks for a past-event announcement, add:
+
+```yaml
+pastAnnouncement:
+  date: 2027-01-08  # actual approved retrospective publication date; controls recency
+  label: "Past event" # optional; this is the default
+  description: "Approved retrospective text." # optional; never reuse an invitation
+```
+
+This is a schema example, not a scheduled announcement. Do not add this object preemptively. It makes a past event eligible for the same three-item limit; it does not pin it or alter the attendance date. A retained interestUrl is historical data and never produces a button on a past card.

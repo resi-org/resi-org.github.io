@@ -11,12 +11,16 @@ const calendarDate = event.start;
 const month = calendarDate.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }).toUpperCase();
 const dateLabel = calendarDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const Heading = integrated ? 'h3' : 'h2';
+const isUpcoming = event.timing === 'upcoming';
+const labels = isUpcoming
+  ? event.announcementLabel?.split(' · ') || []
+  : [event.pastAnnouncement?.label || 'Past event'];
 ---
 
-<aside class="announcement-item workshop-card" aria-labelledby={headingId}>
+<aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming }]} aria-labelledby={headingId}>
   <p class="announcement-meta workshop-kicker">
     <span>Events</span>
-    {event.announcementLabel?.split(' · ').map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
+    {labels.map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
   </p>
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
     <span>{month}</span>
@@ -28,7 +32,7 @@ const Heading = integrated ? 'h3' : 'h2';
       <Heading id={headingId}><a class="workshop-title-link" href={`/events#${event.anchor || event.id}`}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</a></Heading>
       <p class="workshop-detail">{event.location}</p>
     </div>
-    {event.interestUrl && <div class="workshop-action">
+    {isUpcoming && event.interestUrl && <div class="workshop-action">
       <a class="workshop-link" href={event.interestUrl} target="_blank" rel="noopener noreferrer">
         {event.interestLabel || 'Interest form'} <Arrow />
       </a>
@@ -244,5 +248,39 @@ const Heading = integrated ? 'h3' : 'h2';
     .workshop-link :global(svg) {
       display: none;
     }
+  }
+
+  /* Retrospectives share the ordinary News treatment. Only the event calendar
+     and the common date/title/location alignment distinguish their structure. */
+  .workshop-card.past-event {
+    --workshop-title-size: 16.5px;
+    border: 0;
+  }
+  .past-event .workshop-kicker {
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .past-event .workshop-date {
+    color: var(--muted);
+  }
+  .past-event .workshop-main {
+    grid-template-columns: minmax(0, 1fr);
+    align-self: center;
+    margin-bottom: 0;
+  }
+  .past-event :is(h2, h3) {
+    line-height: 1.4;
+  }
+  .past-event .workshop-description {
+    gap: 10px;
+  }
+  .past-event .workshop-detail {
+    font-size: 11.25px;
+    line-height: 1.65;
+    transform: none;
+  }
+  .past-event .workshop-title-link {
+    color: var(--accent);
+    text-decoration: underline;
   }
 </style>

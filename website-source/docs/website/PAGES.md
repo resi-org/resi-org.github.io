@@ -22,6 +22,7 @@ Paths are relative to website-source/. The implementation holds current copy; th
 | Layout/metadata/common scripts | src/layouts/Base.astro |
 | Header/footer | src/components/Header.astro, Footer.astro |
 | Sections, contents and onward actions | Section.astro, PageShortcuts.astro, SectionLinks.astro, IntroActions.astro |
+| Announcement lifecycle and treatments | src/lib/event-announcement-policy.ts, src/lib/announcements.ts, WorkshopCallout.astro, content/events/; explicit pastAnnouncement opt-in for retrospective Home promotion |
 | Type/color/spacing/layout | src/styles/global.css, structure.css, scoped component styles |
 | People/photos | content/people/, src/lib/portraits.ts, Person.astro, Founder.astro, ResearchTeamMosaic.astro |
 | Institutional facts/contacts/FAQ | src/data/institute.ts |
