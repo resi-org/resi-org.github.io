@@ -84,3 +84,10 @@ Validation: production build passed; desktop measurements confirmed matching cal
 Rachel found the stretched title/location spacing awkward and requested the green event heading again. Replaced distributed spacing with a natural 8px gap, increased the title from 18px to 20px, and restored the event metadata to the shared accent color. Calendar/year and title-row action retained.
 
 Validation: production build passed. Desktop title stays on one line with the action at the same top coordinate; phone title wraps naturally. Visual 390px review and 390px/320px overflow checks passed. Proof: original workspace docs/event-announcements-2026-11-02/nov3-title-spacing-preview.jpg. Source PR 73/publication PR 72 remain unmerged. Separately, Events migration PR 74 is open against the source preview branch; this refinement does not modify its files.
+
+
+### November 3 — compact responsive event header (preview)
+
+Rachel requested bold event metadata and removal of the empty area beneath the calendar on smaller screens. At 600px and below the title spans the right side, with Cambridge and Interest form sharing the next row. The calendar spans those two rows, placing its month at the title top and year at the action bottom; its day increases modestly to 40px. This follows Rachel's proposed action position beside the location and accommodates natural two-line titles on phones. The desktop title/action row remains unchanged. Event metadata is now bold (700) accent green.
+
+Validation: Astro diagnostics passed with zero findings; production build passed. At 480px and 320px, measured calendar/title top and calendar/button bottom coordinates match exactly. Cambridge remains on one line at 320px and the button retains a 40px target. Desktop title/action alignment retained. Visual review at desktop, 480px, 390px and 320px; no overflow at measured widths. Proofs: original workspace docs/event-announcements-2026-11-02/nov3-responsive-390.jpg, nov3-responsive-320.jpg and nov3-responsive-desktop.jpg. Existing PRs 73/72 updated, not published; Events migration PR 74 remains separate.
