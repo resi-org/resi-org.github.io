@@ -1,4 +1,15 @@
 export type EventTiming = 'upcoming' | 'past';
+export type EventType = 'community' | 'seminar' | 'reading-group' | 'working-group' | 'other';
+export type EventPlacement = {
+  eventType: EventType;
+  audience: 'public' | 'unspecified';
+  homepage: 'auto' | 'include' | 'exclude';
+};
+
+/** Series/group records belong in their canonical section, not Community events. */
+export function isSeriesEvent(eventType: EventType): boolean {
+  return ['seminar', 'reading-group', 'working-group'].includes(eventType);
+}
 
 export type PastAnnouncement = {
   date: Date;
@@ -18,10 +29,16 @@ export function eventTiming(event: { start: Date; end?: Date }, now = new Date()
   return lastDay < today ? 'past' : 'upcoming';
 }
 
-/** Past event promotion is an explicit editorial decision, never a default. */
+/** Explicit exclusions win; series require opt-in even when open to the public.
+ * A past event always needs a separately approved retrospective announcement. */
 export function isHomepageAnnouncement(entry:
   | { category: 'News' }
-  | { category: 'Events'; timing: EventTiming; pastAnnouncement?: PastAnnouncement },
+  | (EventPlacement & { category: 'Events'; timing: EventTiming; pastAnnouncement?: PastAnnouncement }),
 ): boolean {
-  return entry.category === 'News' || entry.timing === 'upcoming' || !!entry.pastAnnouncement;
+  if (entry.category === 'News') return true;
+  if (entry.homepage === 'exclude') return false;
+  if (entry.timing === 'past') return !!entry.pastAnnouncement;
+  if (entry.homepage === 'include') return true;
+  if (isSeriesEvent(entry.eventType)) return false;
+  return entry.eventType === 'community' || entry.audience === 'public';
 }

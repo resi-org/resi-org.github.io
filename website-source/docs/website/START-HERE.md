@@ -33,7 +33,7 @@ Consult [WORKLIST](WORKLIST.md) before changing branches or publishing. Build ou
 
 1. Read this guide, [design and editorial guidance](DESIGN-AND-EDITORIAL.md), the relevant [page reference](PAGES.md), and active work item.
 2. Check local changes, current source/production revisions and pending PRs. Preserve work from other people and chats.
-3. Edit shared source/data where appropriate. Review connected pages, search, metadata, anchors and mobile behavior.
+3. For event/seminar/group additions, apply [EVENT-ROUTING.md](EVENT-ROUTING.md) before selecting a content file or homepage placement. Edit shared source/data where appropriate. Review connected pages, search, metadata, anchors and mobile behavior.
 4. Record material decisions and evidence. Keep iterative work in its chat; use focused chats for distinct substantial outcomes. Capture tangents in the work list.
 5. Publish within Rachel's established authorization, then verify live behavior and update [CHANGELOG](CHANGELOG.md).
 

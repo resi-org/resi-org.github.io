@@ -35,3 +35,7 @@ Rachel is the editing contact. A change's factual source may be approved public 
 Review events/opportunities when facts change and after dates pass. Check people, affiliations, contacts, giving and forms during substantive updates and before handoff. A periodic site review is proposed in WORKLIST; no recurring automation is scheduled.
 
 For an edit, check related content, navigation, Search, metadata, stable IDs, accessibility and phone layout. Update this reference when structure or source ownership changes; do not copy every small wording edit here.
+
+## Event contribution routing
+
+Apply [EVENT-ROUTING.md](EVENT-ROUTING.md) to short event/seminar/group requests. Community/public events share Home/Events records; seminars stay in their seminar section by default, reading groups in their participation context, and working groups on Research. Explicit seminar/group Home promotions link to their canonical entry and do not appear a second time under Community events. `event-announcement-policy.ts` enforces homepage eligibility; `content.config.ts` requires classification.

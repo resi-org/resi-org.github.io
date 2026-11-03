@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob, file } from 'astro/loaders';
+import { isSeriesEvent } from './lib/event-announcement-policy';
 
 // People, visitors and affiliated groups are editable without touching markup.
 // Each person is one markdown file in content/people/: frontmatter holds the
@@ -143,6 +144,13 @@ const events = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './content/events' }),
   schema: z.object({
     title: z.string(),
+    // Required classification prevents a generic new record silently becoming
+    // a community announcement. See docs/website/EVENT-ROUTING.md.
+    eventType: z.enum(['community', 'seminar', 'reading-group', 'working-group', 'other']),
+    audience: z.enum(['public', 'unspecified']).default('unspecified'),
+    homepage: z.enum(['auto', 'include', 'exclude']).default('auto'),
+    // Exceptional series/group promotions point back to their canonical entry.
+    detailsHref: z.string().regex(/^(\/[^/]|https:\/\/)/).optional(),
     start: z.coerce.date(),
     end: z.coerce.date().optional(),
     // Announcement date controls recency in the shared Home feed; event dates
@@ -162,6 +170,14 @@ const events = defineCollection({
     location: z.string(),
     with: z.array(z.string()).optional().default([]),
     url: z.string().optional(),
+  }).superRefine((event, ctx) => {
+    if (isSeriesEvent(event.eventType) &&
+        (!event.detailsHref || (event.homepage === 'auto' && !event.pastAnnouncement))) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'Seminars/reading groups/working groups belong in their canonical section. An explicit homepage promotion record requires detailsHref and homepage: include (exclude to withdraw it), or an approved pastAnnouncement. See EVENT-ROUTING.md.',
+      });
+    }
   }),
 });
 

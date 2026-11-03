@@ -2,7 +2,8 @@
 import Base from '../layouts/Base.astro';
 import { getAnnouncements } from '../lib/announcements';
 import WorkshopCallout from '../components/WorkshopCallout.astro';
-const events = (await getAnnouncements()).filter((entry) => entry.category === 'Events').sort((a, b) => a.start.valueOf() - b.start.valueOf());
+import { isSeriesEvent } from '../lib/event-announcement-policy';
+const events = (await getAnnouncements()).filter((entry) => entry.category === 'Events').filter((entry) => !isSeriesEvent(entry.eventType)).sort((a, b) => a.start.valueOf() - b.start.valueOf());
 import Section from '../components/Section.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
 import seminars from '../data/seminars.json';

@@ -5,6 +5,7 @@ import seminars from '../data/seminars.json';
 import { getCollection } from 'astro:content';
 import { areas, faq } from '../data/institute';
 import { groups } from '../data/groups';
+import { isSeriesEvent } from '../lib/event-announcement-policy';
 const [people, papers, updates, events] = await Promise.all([
   getCollection('people'),
   getCollection('selectedResearch'),
@@ -163,7 +164,7 @@ const entries = [
     category: 'Seminar',
     text: talk.text,
   })),
-  ...events.map((event) => ({
+  ...events.filter((event) => !isSeriesEvent(event.data.eventType)).map((event) => ({
     title: event.data.title,
     url: `/events#${event.data.anchor || `event-${event.id}`}`,
     category: 'Events',

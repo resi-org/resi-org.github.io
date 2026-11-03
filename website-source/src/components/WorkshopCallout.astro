@@ -29,7 +29,7 @@ const labels = isUpcoming
   </time>
   <div class="workshop-main">
     <div class="workshop-description">
-      <Heading id={headingId}><a class="workshop-title-link" href={`/events#${event.anchor || event.id}`}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</a></Heading>
+      <Heading id={headingId}><a class="workshop-title-link" href={event.detailsHref || `/events#${event.anchor || event.id}`}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</a></Heading>
       <p class="workshop-detail">{event.location}</p>
     </div>
     {isUpcoming && event.interestUrl && <div class="workshop-action">
