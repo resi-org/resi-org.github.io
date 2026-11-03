@@ -61,3 +61,12 @@ Rachel supplied the description directly: “Join us for a day of talks from RES
 Rebalanced the event card into a date/title/location header, full-width description, and Interest form beneath (right aligned desktop; aligned with paragraph left on phones). Header title/location centers against the full calendar block. The year remains while Rachel assesses the fuller layout; its removal was discussed, not decided. Existing label, outline, three-item feed, news cards, links and form destination retained.
 
 Source diagnostics/build passed; desktop/phone content and layout checked. This extends source PR 73 and publication PR 72, still preview only.
+
+
+## November 3 — event outline and alignment comparison (preview)
+
+Rachel requested a darker hairline and actual comparison of several arrangements, with Interest form back above the description. Compared three built/rendered desktop variants: A, full calendar and title-row action; B, shorter calendar and top-aligned title/action; C, action in the top corner beside metadata. Chose B after review: the three-line calendar created uneven header heights, while the corner action enlarged the metadata row.
+
+Final refinement keeps the full year quietly beside Cambridge, MA, leaving month/day in the calendar; the full date remains available in the time element. Title and action share the same measured top coordinate on desktop. At phone sizes the action aligns with the title's left edge and remains above the full-width description. Use the same 10% accent fill as news cards and a 0.75px full outline mixed from existing accent/paper tokens at 60% accent. No shadows, left bar or new badge style. News cards, approved description, single event date, form destination, three-item feed and closing links retained.
+
+Validation: source diagnostics (46 files, zero findings), production builds, desktop geometry, 390px/320px no-overflow and action-order checks, dark/light visual checks restored to light. Comparison proofs: original workspace docs/event-announcements-2026-11-02/nov3-option-a.jpg, nov3-option-b.jpg, nov3-option-c.jpg; chosen preview nov3-final-preview.jpg. Only the existing event component changes application behavior; source PR 73/publication PR 72 remain the review route. Not published.
