@@ -2,6 +2,20 @@
 
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
+## November 3 Events publication — live verified
+
+Rachel approved the Events preview and explicitly requested publication with one H1: “Community events, seminars, and workshops on the foundations of AI safety.” Removed the former Events heading and subtitle. Preserved the latest shared-card refinements through source 67f93bd and linked title; proposed additional cross-links were not implemented.
+
+Publication PR 72 merged at `14a20ea5128a38df0f20c59c4cb28ae4d4eb95c9`, from reviewed generated head `cc5fe19c3658e835c0d92bc1d4b34b2313b43a1e`. Source PR 74 merged at `ddaf39a59d80d4cbfd57aad9d30c77fdffe8eb31` into the shared source branch; PR 73 carries that source into the continuing source line separately from production. Astro diagnostics/build passed. New heading/no subtitle and no overflow checked at 390px/320px. Publication Events links/anchors validated; all five domain/independent-endpoint files retained identical hashes. Existing historical assets preserved. Pages run [41655422743](https://github.com/resi-org/resi-org.github.io/actions/runs/41655422743) succeeded. Live checks confirmed the exact H1 with no subtitle, Events navigation, three homepage announcements, workshop Search results, and an old seminar deep link redirecting to Events with its details open. Desktop 1200px and phone 390px have no horizontal overflow. Live screenshot saved in the chat artifacts.
+
+## November 3 Events rename and cross-link review — preview
+
+Rachel requested Seminars → Events everywhere and a holistic review of opportunities to link to Events. She specified the December 4 card at the top using the exact Announcements component, with seminars below and later layout refinements. Implemented /events, Events navigation/page metadata/sitemap/Search, existing cross-page destinations, workshop title links and shared workshop content. /seminars preserves queries and fragments when forwarding; seminar article IDs and historical biographies are unchanged. Workshop card styles/content are shared with Home. This branch incorporates the concurrent card revision 027e359 without changing the original checkout.
+
+Source review: [draft PR 74](https://github.com/resi-org/resi-org.github.io/pull/74), branch codex/events-page-rename in the attached isolated worktree; application change 240eb04 plus shared-card integration 55af5e9. Depends on the pending source PR 73 announcement feed; publication PR 72 and production were not changed. This is a preview, not published. New link placements remain recommendations in WORKLIST E6.
+
+Verification: Astro diagnostics and build passed; browser checks confirmed Events navigation on every main page, correct canonical, workshop Search results, no old seminar-destination links, all 37 generated Events links resolving to the page/valid anchors, and all seven seminar anchors retained. Phone 390px/320px and desktop showed no horizontal overflow. Mobile menu shows Events as the current page. Old /seminars/?from=old-link#anat-perry-2026-10-21 redirects with query/hash intact and opens the talk details. Final review includes the latest card revision at 1200px, 390px and 320px, light/dark inspection, and identical rendered card text/style on Home and Events. Existing empty partner-collection notice remains. Forms were not submitted.
+
 ## November 2 outlined workshop card publication
 
 Rachel explicitly requested publication of the revised outlined card styling in Review RESI website project guide. Published the exact reviewed PR 71 head `157ff2625b7a3f5a12e1e9a8ea4783fcb90784b0`; production merge `20c5a453e1aa7d097d4c5827bee3c47d012ea3d3`. Only index.html and its new homepage stylesheet changed in publication. The invitation spans the card, the date appears once, Cambridge and Interest form remain, and the card uses the established full outline. Events migration remains deferred.
@@ -39,3 +53,62 @@ October 25 corrections established native display dimensions, shared menus/utili
 ## Future entry format
 
 Date; request/outcome; affected pages/shared data; status; source revision/PR; preview checks actually run; publication revision and deployment status when applicable; live evidence; recovery pointer; unresolved follow-up. Include only information needed to continue or assess the change.
+
+
+## November 2 — three-item announcement feed and event alignment (preview)
+
+Request: refine workshop spacing/alignment, show only three recent items across News and Events, prefix category labels, and provide separate See all news / See community events links. Supersedes the old standalone workshop plus three-news layout and the old generic onward label.
+
+Implementation: Home now takes three entries from one merged news/community-event collection, newest announcement/publication first. The workshop's reusable content/events record holds its November 2 announcement date, December 4 attendance date, location, approved label and interest form. News filters to News records; its generated output remains identical. Seminars and its generated output remain unchanged, with the future Events migration still deferred. The workshop's Events counterpart and cross-page audit remain open.
+
+Visuals: full-width Events metadata; News · outlet · date for the two news cards; shared metadata size/weight/color; top-aligned calendar/title/action; smaller date and title, tighter row spacing and no internal date divider. Full outline, restrained event fill, Interest form and stable workshop-heading anchor retained. Original news-card shape, summaries and article links retained. Launching RESI is displaced from Home but remains on News.
+
+Verification: Astro diagnostics (46 files, zero errors/warnings/hints), production build, three-card/category/order assertions, retained workshop anchor/date/form, 390px/320px no-overflow checks, desktop alignment measurements, dark/light UI checks (restored light), and byte comparisons showing News/Seminars unchanged. Only generated index.html and its scoped CSS differ from production baseline 20c5a45. Proof: original workspace docs/event-announcements-2026-11-02/three-item-feed-preview.jpg.
+
+Status: preview on source branch codex/announcements-feed-alignment-nov2 (application commit 5cc27de), source PR 73. Generated publication branch codex/announcements-feed-alignment-publish-nov2 (bb706e3), publication PR 72. Not merged or published. This is distinct from the already-published PR 71 outlined card.
+
+
+### November 2 — workshop description added to the feed preview
+
+Rachel supplied the description directly: “Join us for a day of talks from RESI researchers and visiting scholars on what it means to build more safety into the foundations of increasingly capable AI and how we're approaching research on this topic.” Stored verbatim in the shared event record and rendered visibly, with no disclosure required.
+
+Rebalanced the event card into a date/title/location header, full-width description, and Interest form beneath (right aligned desktop; aligned with paragraph left on phones). Header title/location centers against the full calendar block. The year remains while Rachel assesses the fuller layout; its removal was discussed, not decided. Existing label, outline, three-item feed, news cards, links and form destination retained.
+
+Source diagnostics/build passed; desktop/phone content and layout checked. This extends source PR 73 and publication PR 72, still preview only.
+
+
+## November 3 — event outline and alignment comparison (preview)
+
+Rachel requested a darker hairline and actual comparison of several arrangements, with Interest form back above the description. Compared three built/rendered desktop variants: A, full calendar and title-row action; B, shorter calendar and top-aligned title/action; C, action in the top corner beside metadata. Chose B after review: the three-line calendar created uneven header heights, while the corner action enlarged the metadata row.
+
+Final refinement keeps the full year quietly beside Cambridge, MA, leaving month/day in the calendar; the full date remains available in the time element. Title and action share the same measured top coordinate on desktop. At phone sizes the action aligns with the title's left edge and remains above the full-width description. Use the same 10% accent fill as news cards and a 0.75px full outline mixed from existing accent/paper tokens at 60% accent. No shadows, left bar or new badge style. News cards, approved description, single event date, form destination, three-item feed and closing links retained.
+
+Validation: source diagnostics (46 files, zero findings), production builds, desktop geometry, 390px/320px no-overflow and action-order checks, dark/light visual checks restored to light. Comparison proofs: original workspace docs/event-announcements-2026-11-02/nov3-option-a.jpg, nov3-option-b.jpg, nov3-option-c.jpg; chosen preview nov3-final-preview.jpg. Only the existing event component changes application behavior; source PR 73/publication PR 72 remain the review route. Not published.
+
+
+### November 3 — restore the year to the calendar (preview)
+
+Rachel requested 2026 beneath Dec 4 rather than beside the location. Restored the calendar year and made the title/location column stretch to the calendar height, distributing space between the two text lines without fixed heights. The title and Interest form stay top aligned; Cambridge aligns with the bottom of the calendar on desktop. On narrow screens the title can wrap naturally and the action remains above the description.
+
+Validation: production build passed; desktop measurements confirmed matching calendar/text top and bottom coordinates and title/action top coordinates. Visual desktop/390px review passed; no horizontal overflow at 390px or 320px. Proof: original workspace docs/event-announcements-2026-11-02/nov3-full-date-preview.jpg. Extends source PR 73/publication PR 72; preview only.
+
+
+### November 3 — tighten the event title/location grouping (preview)
+
+Rachel found the stretched title/location spacing awkward and requested the green event heading again. Replaced distributed spacing with a natural 8px gap, increased the title from 18px to 20px, and restored the event metadata to the shared accent color. Calendar/year and title-row action retained.
+
+Validation: production build passed. Desktop title stays on one line with the action at the same top coordinate; phone title wraps naturally. Visual 390px review and 390px/320px overflow checks passed. Proof: original workspace docs/event-announcements-2026-11-02/nov3-title-spacing-preview.jpg. Source PR 73/publication PR 72 remain unmerged. Separately, Events migration PR 74 is open against the source preview branch; this refinement does not modify its files.
+
+
+### November 3 — compact responsive event header (preview)
+
+Rachel requested bold event metadata and removal of the empty area beneath the calendar on smaller screens. At 600px and below the title spans the right side, with Cambridge and Interest form sharing the next row. The calendar spans those two rows, placing its month at the title top and year at the action bottom; its day increases modestly to 40px. This follows Rachel's proposed action position beside the location and accommodates natural two-line titles on phones. The desktop title/action row remains unchanged. Event metadata is now bold (700) accent green.
+
+Validation: Astro diagnostics passed with zero findings; production build passed. At 480px and 320px, measured calendar/title top and calendar/button bottom coordinates match exactly. Cambridge remains on one line at 320px and the button retains a 40px target. Desktop title/action alignment retained. Visual review at desktop, 480px, 390px and 320px; no overflow at measured widths. Proofs: original workspace docs/event-announcements-2026-11-02/nov3-responsive-390.jpg, nov3-responsive-320.jpg and nov3-responsive-desktop.jpg. Existing PRs 73/72 updated, not published; Events migration PR 74 remains separate.
+
+
+### November 3 — keep Interest form anchored beside the title (preview)
+
+Rachel rejected the location/action-row version. Restored the action to the far-right column at the title's top at every width, with natural title wrapping between intact words. Removed the stretched mobile calendar and lower action row. At smaller widths the button has slightly tighter padding/type; below 380px the title is 18px and the decorative arrow is omitted so the complete label and title remain side by side. Bold green metadata and the date/year remain.
+
+Validation: Astro diagnostics passed with zero findings and production build passed. At 320, 360, 381, 390, 480, 600, 601 and 1280px, action/title top coordinates matched and no horizontal overflow occurred. Title words stay clear of the button, including a measured 7px gap at 320px. Desktop, 480px and 320px screenshots inspected; proofs in original workspace docs/event-announcements-2026-11-02/nov3-anchored-480.jpg, nov3-anchored-390.jpg and nov3-anchored-320.jpg. Existing PRs 73/72 updated; preview only.

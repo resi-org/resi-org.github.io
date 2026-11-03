@@ -5,17 +5,18 @@ import seminars from '../data/seminars.json';
 import { getCollection } from 'astro:content';
 import { areas, faq } from '../data/institute';
 import { groups } from '../data/groups';
-const [people, papers, updates] = await Promise.all([
+const [people, papers, updates, events] = await Promise.all([
   getCollection('people'),
   getCollection('selectedResearch'),
   getCollection('updates'),
+  getCollection('events'),
 ]);
 const sections = [
   {
-    title: 'RESI-MIT Seminars',
-    url: '/seminars',
-    category: 'Seminars',
-    text: 'Research talks on the foundations of AI safety, hosted by RESI and MIT.',
+    title: 'Events',
+    url: '/events',
+    category: 'Events',
+    text: 'Workshops, community events, and RESI-MIT seminars on the foundations of AI safety, with event details and past talks.',
   },
   {
     title: 'Making superintelligence safe by design',
@@ -158,9 +159,16 @@ const entries = [
   })),
   ...[...seminars.upcoming, ...seminars.talks].map((talk) => ({
     title: talk.title,
-    url: `/seminars#${talk.id}`,
+    url: `/events#${talk.id}`,
     category: 'Seminar',
     text: talk.text,
+  })),
+  ...events.map((event) => ({
+    title: event.data.title,
+    url: `/events#${event.data.anchor || `event-${event.id}`}`,
+    category: 'Events',
+    text: [event.data.description, event.data.location, event.data.announcementLabel,
+      event.data.start.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })].filter(Boolean).join(' '),
   })),
   ...updates.map((u) => ({
     title: u.data.title,

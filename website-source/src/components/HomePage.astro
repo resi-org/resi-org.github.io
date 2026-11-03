@@ -59,15 +59,18 @@ const founders = people
   <section class="home-band" id="announcements" aria-labelledby="announcements-heading">
     <div class="shell home-announcements">
       <h2 id="announcements-heading">Announcements</h2>
-      <WorkshopCallout integrated />
       <ul class="announcement-list">
         {entries.map((entry) => {
+          if (entry.category === 'Events') {
+            return <li class="event-announcement"><WorkshopCallout event={entry} integrated /></li>;
+          }
           const href = entry.outlet && entry.url ? entry.url : `/news#${entry.id}`;
           return (
             <li class="announcement-item">
               <p class="announcement-meta">
-                <time datetime={entry.date.toISOString().slice(0, 10)}>{fmtDay(entry.date)}</time>
+                <span>News</span>
                 {entry.source && <span>{entry.source}</span>}
+                <time datetime={entry.date.toISOString().slice(0, 10)}>{fmtDay(entry.date)}</time>
               </p>
               <h3>
                 <a href={href} {...external(href)}>
@@ -81,7 +84,10 @@ const founders = people
           );
         })}
       </ul>
-      <SectionLinks align="end" items={[{ label: 'See all our news and updates', href: '/news' }]} />
+      <SectionLinks align="end" items={[
+        { label: 'See all news', href: '/news' },
+        { label: 'See community events', href: '/events' },
+      ]} />
     </div>
   </section>
   <section class="home-band tint" id="argument" aria-labelledby="precedent-heading">
@@ -198,7 +204,18 @@ const founders = people
     padding-top: 44px;
   }
   .home-announcements .announcement-list {
-    margin-top: 9px;
+    margin-top: 0;
+  }
+  .event-announcement {
+    margin: 0;
+    min-width: 0;
+  }
+  .home-announcements .announcement-meta > span:first-child::before {
+    content: none;
+  }
+  .home-announcements .announcement-meta > time::before {
+    content: '·';
+    margin-right: 7.5px;
   }
   #founders .community-heading {
     margin-bottom: 0;
