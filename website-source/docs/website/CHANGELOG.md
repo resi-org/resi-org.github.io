@@ -205,3 +205,10 @@ Validation: build passed. A 320px screenshot pixel check found DEC and the title
 ### November 3 — midpoint of narrowest date-spacing trials (preview)
 
 Rachel requested splitting the difference. At ≤380px, use line-height 1.04, 0.5px day margins and a 1px DEC offset: exact midpoints between the original and tightest trial. Day size and every wider rule remain unchanged. Build passed; 320px visual/no-overflow review passed and 390px retains its previous metrics. Proof: original workspace docs/event-announcements-2026-11-02/nov3-midpoint-date-320.jpg. Updates pending PRs 84/83; not published.
+
+
+### November 3 — compact metadata and midpoint spacing published
+
+Rachel explicitly requested publication. Publication PR 83 merged at 927570308c5855fb4f669b31dc5f442cbdc7c5e5 from reviewed head 51d3e537ee7ba4919335f664c18762431898360d. Pages run 41695253008 succeeded. Home/Events HTML and the emitted shared card stylesheet match the reviewed build.
+
+Live Home and Events at 320px show one-line metadata, Save the date hidden, 35.36px day line height, 0.5px margins and 1px month offset. At 390px the full label returns and wider date metrics are retained. Desktop location baseline/button edge difference remains 0.022px. No horizontal overflow; fonts loaded and the stylesheet renders correctly. Live proof: original workspace docs/event-announcements-2026-11-02/nov3-live-midpoint-320.jpg. Fresh release-tagged URLs used for verification and the delivered browser tab. Source PR 84 supplies implementation/records.
