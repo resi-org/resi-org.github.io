@@ -43,3 +43,12 @@ November 3 Events request: reuse the exact shared homepage event card at the top
 ## Shared changes
 
 Find the common component/data first, review dependencies in PAGES, implement the scoped edit and inspect affected contexts. Record a newly approved convention here only when it changes future work, with a short reason/date. Keep proposals and rejected trials in WORKLIST rather than promoting them to rules.
+
+
+## Approved compact disclosure control — November 3
+
+Rachel approved the working-group card control and authorized publication. Use a fine 14px plus/minus, 1.1px stroke, token-derived quieter accent color, and a 370ms rotating morph into four 3px dots whose outer bounds form the same 14px square. Preserve lowercase details, revealed on fine-pointer hover and keyboard focus at every viewport width; non-hover devices retain a visible hint. Expanded resting state is a minus. Reduced-motion preferences disable transitions.
+
+On working-group cards, position the control as a card feature toward the lower-right corner, retain the compact 6px title/leader gap and natural text heights, and switch to one column at 600px before the current titles/leaders become cramped. Independently expanding desktop columns retain authored keyboard order. Do not restore synchronized tallest-title heights or the earlier narrow-width label exception.
+
+The master design chat is RESI — Master website design (`01a1a1de-5ea7-7c53-b2ee-bc43d87896ae`). Keep broad design choices and consistency findings there and durable approvals here. Other card and inline disclosure contexts remain the next design task; publication of this approved control does not replace their existing labels or navigation semantics.

@@ -13,7 +13,7 @@ const { id, summary, summaryLead, compactControl = false, accessibleLabel, class
 const body = await Astro.slots.render('default');
 ---
 
-<details id={id} class={className} data-print-copy>
+<details id={id} class:list={[className, { 'compact-disclosure': compactControl }]} data-print-copy>
   <summary aria-label={accessibleLabel}>
     {summaryLead ? (
       <span class="research-summary">
@@ -23,7 +23,11 @@ const body = await Astro.slots.render('default');
     ) : compactControl ? (
       <Fragment>
         <span class="disclosure-control-label">{summary}</span>
-        <span class="disclosure-control-icon" aria-hidden="true"></span>
+        <span class="disclosure-control-icon" aria-hidden="true">
+          <span class="disclosure-control-mark">
+            <span></span><span></span><span></span><span></span>
+          </span>
+        </span>
       </Fragment>
     ) : (
       summary
@@ -36,3 +40,70 @@ const body = await Astro.slots.render('default');
   {summaryLead && <p>{summaryLead}</p>}
   <Fragment set:html={body} />
 </div>
+
+
+<style>
+  /* One reusable compact indicator; the host controls its placement. */
+  .compact-disclosure .disclosure-control-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 33px;
+    width: 33px;
+    height: 33px;
+    color: color-mix(in srgb, var(--accent) 72%, var(--paper));
+  }
+  .disclosure-control-mark {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: transform 370ms cubic-bezier(.22, .61, .36, 1);
+  }
+  .disclosure-control-mark > span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 7px;
+    height: 1.1px;
+    border-radius: 0;
+    background: currentColor;
+    transform: translate(-50%, -50%) rotate(var(--arm)) translateX(3.5px);
+    transition: transform 370ms cubic-bezier(.22, .61, .36, 1),
+      width 370ms ease, height 370ms ease, border-radius 370ms ease;
+  }
+  .disclosure-control-mark > span:nth-child(1) { --arm: 0deg; --dot-x: 5.5px; --dot-y: -5.5px; }
+  .disclosure-control-mark > span:nth-child(2) { --arm: 90deg; --dot-x: 5.5px; --dot-y: 5.5px; }
+  .disclosure-control-mark > span:nth-child(3) { --arm: 180deg; --dot-x: -5.5px; --dot-y: 5.5px; }
+  .disclosure-control-mark > span:nth-child(4) { --arm: 270deg; --dot-x: -5.5px; --dot-y: -5.5px; }
+
+  /* Keep a recognizable minus when expanded and the pointer has left. */
+  .compact-disclosure[open] .disclosure-control-mark > span {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(0);
+    width: 14px;
+  }
+  .compact-disclosure > summary:focus-visible .disclosure-control-mark {
+    transform: rotate(180deg);
+  }
+  .compact-disclosure > summary:focus-visible .disclosure-control-mark > span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) translate(var(--dot-x), var(--dot-y));
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .compact-disclosure > summary:hover .disclosure-control-mark {
+      transform: rotate(180deg);
+    }
+    .compact-disclosure > summary:hover .disclosure-control-mark > span {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) translate(var(--dot-x), var(--dot-y));
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .disclosure-control-mark,
+    .disclosure-control-mark > span { transition: none; }
+  }
+</style>

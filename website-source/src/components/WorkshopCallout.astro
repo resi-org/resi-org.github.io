@@ -42,6 +42,7 @@ const Heading = integrated ? 'h3' : 'h2';
      the existing hairline outline treatment and its compact calendar. */
   .workshop-card {
     --workshop-title-size: 22px;
+    container-type: inline-size;
     width: 100%;
     margin: 0;
     background: color-mix(in srgb, var(--accent) 10%, var(--paper));
@@ -109,7 +110,7 @@ const Heading = integrated ? 'h3' : 'h2';
   .workshop-description {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: clamp(10px, calc(10px + (100cqi - 540px) * .3), 16.5px);
   }
 
   .workshop-card :is(h2, h3) span {
