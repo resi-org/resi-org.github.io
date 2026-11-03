@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content';
+import { eventTiming, type EventTiming, type PastAnnouncement } from './event-announcement-policy';
 
-// Shared announcement records for Home and News. Home takes the three most
+// Shared announcement records for Home, News and Events. Home takes the three most
 // recent across news and community events; News filters to its own category.
 // Events sort by their announcement date, separately from their attendance date.
 type BaseEntry = {
@@ -26,6 +27,8 @@ export type EventEntry = BaseEntry & {
   category: 'Events';
   start: Date;
   end?: Date;
+  timing: EventTiming;
+  pastAnnouncement?: PastAnnouncement;
   location: string;
   announcementLabel?: string;
   description?: string;
@@ -78,28 +81,34 @@ export async function getAnnouncements(): Promise<Entry[]> {
       .map((p) => p.replace(/\s+/g, ' ').trim())
       .filter(Boolean),
   }));
-  const events: EventEntry[] = (await getCollection('events')).map((e) => ({
-    id: `event-${e.id}`,
-    category: 'Events',
-    date: e.data.announced || e.data.start,
-    start: e.data.start,
-    end: e.data.end,
-    location: e.data.location,
-    announcementLabel: e.data.announcementLabel,
-    description: e.data.description,
-    interestUrl: e.data.interestUrl,
-    interestLabel: e.data.interestLabel,
-    anchor: e.data.anchor,
-    kind: 'From the institute',
-    title: e.data.title,
-    summary: [
-      fmtSpan(e.data.start, e.data.end),
-      e.data.location,
-      e.data.with.length ? `with ${e.data.with.join(', ')}` : '',
-    ]
-      .filter(Boolean)
-      .join(', '),
-    url: e.data.url,
-  }));
+  const events: EventEntry[] = (await getCollection('events')).map((e) => {
+    const timing = eventTiming(e.data);
+    return {
+      id: `event-${e.id}`,
+      category: 'Events',
+      date: timing === 'past' && e.data.pastAnnouncement
+        ? e.data.pastAnnouncement.date : e.data.announced || e.data.start,
+      start: e.data.start,
+      end: e.data.end,
+      timing,
+      pastAnnouncement: e.data.pastAnnouncement,
+      location: e.data.location,
+      announcementLabel: e.data.announcementLabel,
+      description: timing === 'upcoming' ? e.data.description : e.data.pastAnnouncement?.description,
+      interestUrl: e.data.interestUrl,
+      interestLabel: e.data.interestLabel,
+      anchor: e.data.anchor,
+      kind: 'From the institute',
+      title: e.data.title,
+      summary: [
+        fmtSpan(e.data.start, e.data.end),
+        e.data.location,
+        e.data.with.length ? `with ${e.data.with.join(', ')}` : '',
+      ]
+        .filter(Boolean)
+        .join(', '),
+      url: e.data.url,
+    };
+  });
   return [...updates, ...events].sort((a, b) => b.date.valueOf() - a.date.valueOf());
 }

@@ -52,3 +52,20 @@ Rachel approved the working-group card control and authorized publication. Use a
 On working-group cards, position the control as a card feature toward the lower-right corner, retain the compact 6px title/leader gap and natural text heights, and switch to one column at 600px before the current titles/leaders become cramped. Independently expanding desktop columns retain authored keyboard order. Do not restore synchronized tallest-title heights or the earlier narrow-width label exception.
 
 The master design chat is RESI — Master website design (`01a1a1de-5ea7-7c53-b2ee-bc43d87896ae`). Keep broad design choices and consistency findings there and durable approvals here. Other card and inline disclosure contexts remain the next design task; publication of this approved control does not replace their existing labels or navigation semantics.
+
+
+## Announcement card treatments — approved November 3
+
+These are the shared defaults for every community event; do not create a separate workshop-only design. `WorkshopCallout.astro` is the historical component name and serves every event card on Home and Events.
+
+| Kind | Visual treatment | Calendar/header | Action | Homepage eligibility |
+| --- | --- | --- | --- | --- |
+| Upcoming event | Current approved workshop treatment: full hairline, bold accent metadata, larger title, shared fill and the approved responsive spacing | Current calendar/date/title/location alignment, with the action anchored at the visible title top | Show the approved interest action when provided | Eligible for the latest-three feed |
+| Past event | Standard news-card fill, no outline, regular muted metadata, news-sized linked heading and ordinary text colors | Keep the calendar and shared aligned title/location header, centered naturally with quieter type | Never show a promotional button, even if its old URL remains in the record | Only after Rachel explicitly requests a retrospective announcement |
+| News | Preserve the current News card design | Existing source/date metadata, title and summary | Existing article/title link; no event-style treatment | Normal latest-three eligibility |
+
+Only upcoming event cards receive the extra emphasis. Past-event promotion requires an explicit `pastAnnouncement` object on its shared content record; it includes a retrospective publication date and optional approved label/description. Do not insert one speculatively, change an event's real attendance date, or move a past event into News to obtain a homepage slot. Past events without this opt-in remain in the Events archive but do not enter Home. All eligible items still compete for three slots by announcement/publication date.
+
+`src/lib/event-announcement-policy.ts` classifies date-only records through the end of their last Cambridge (America/New_York) day, using end or start when end is absent. This is evaluated at build time; rebuild after an event finishes. Do not retain Save the date copy, a future invitation, or an interest button on a past card. A retrospective uses separately approved copy rather than recycling its invitation.
+
+Keep metadata at its readable shared size. The current upcoming label omits only Save the date when its card becomes too narrow for one line. Preserve the approved full-width baseline/button alignment and narrow-date spacing. New styling must not change current News cards. Run `npm run test:announcements`, diagnostics/build and affected desktop/mobile checks when changing the policy.

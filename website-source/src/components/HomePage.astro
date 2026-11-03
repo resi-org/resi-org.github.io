@@ -6,11 +6,12 @@ import ResearchAreaCards from '../components/ResearchAreaCards.astro';
 import ResearchTeamMosaic from '../components/ResearchTeamMosaic.astro';
 import Arrow from '../components/Arrow.astro';
 import { getAnnouncements, fmtDay } from '../lib/announcements';
+import { isHomepageAnnouncement } from '../lib/event-announcement-policy';
 import { external } from '../lib/external';
 import SectionLinks from './SectionLinks.astro';
 import WorkshopCallout from './WorkshopCallout.astro';
 import { institute, researchAgenda } from '../data/institute';
-const entries = (await getAnnouncements()).slice(0, 3);
+const entries = (await getAnnouncements()).filter(isHomepageAnnouncement).slice(0, 3);
 const people = await getCollection('people');
 const researchTeam = people
   .filter((p) => p.data.group === 'research' && p.data.photo)

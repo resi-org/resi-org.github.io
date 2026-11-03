@@ -39,6 +39,7 @@ Before finishing substantive work, update only materially affected records. Disc
 - Describe prior papers as work by researchers associated with RESI. Retain limitations and stated assumptions; connect papers to areas/groups only when clearly justified.
 - Use confirmed event, opportunity, affiliation, funding and institutional facts. Do not invent openings, roles, policies, partnerships or commitments.
 - Public community events must have matching records on Events and be eligible for the shared homepage announcement feed, with stable connections. Home displays only the three most recent announcements across News and Events (November 2 refinement); older events can be displaced. Shared event data drives Home and Events, including the workshop counterpart published November 3. The automatic missing-counterpart check remains deferred.
+- Announcement treatments are fixed: upcoming events alone get the emphasized workshop treatment; past events keep the calendar/aligned header but use news-card type/colors, no outline and no button. Past events need Rachel’s explicit retrospective opt-in before entering Home. News keeps its current style. See DESIGN-AND-EDITORIAL and the shared event-announcement policy.
 - Preserve legacy endpoints and stable anchors. Do not submit signup, application or donation forms during testing.
 - Keep private correspondence, raw transcripts, credentials and applicant/donor details out of public source/site files. Save necessary approved facts and sanitized decisions.
 
