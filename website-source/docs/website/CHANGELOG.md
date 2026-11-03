@@ -278,4 +278,3 @@ Inspected the live page’s macOS accessibility tree. All 11 working-group summa
 At 375px, a QA-only fixture of the published output forced its touch CSS branch. The visual hint computed to display:none while all 11 buttons retained their accessible names/collapsed states. Accessibility Expand still reported expanded and exposed the first description exactly once. The in-app browser has no touch emulation, so this tests the actual touch CSS declarations and browser accessibility mapping, not physical iOS. It is not a VoiceOver, TalkBack or NVDA speech-session test, nor a whole-site accessibility certification.
 
 Evidence saved in this chat’s visualization directory: disclosure-a11y-closed.txt, disclosure-a11y-open.txt, disclosure-a11y-all-cards.json, disclosure-a11y-touch-closed.txt and disclosure-a11y-touch-open.txt. No forms submitted. Documentation-only work: path/status review and git diff --check; no rebuild required.
-
