@@ -70,3 +70,10 @@ Rachel requested a darker hairline and actual comparison of several arrangements
 Final refinement keeps the full year quietly beside Cambridge, MA, leaving month/day in the calendar; the full date remains available in the time element. Title and action share the same measured top coordinate on desktop. At phone sizes the action aligns with the title's left edge and remains above the full-width description. Use the same 10% accent fill as news cards and a 0.75px full outline mixed from existing accent/paper tokens at 60% accent. No shadows, left bar or new badge style. News cards, approved description, single event date, form destination, three-item feed and closing links retained.
 
 Validation: source diagnostics (46 files, zero findings), production builds, desktop geometry, 390px/320px no-overflow and action-order checks, dark/light visual checks restored to light. Comparison proofs: original workspace docs/event-announcements-2026-11-02/nov3-option-a.jpg, nov3-option-b.jpg, nov3-option-c.jpg; chosen preview nov3-final-preview.jpg. Only the existing event component changes application behavior; source PR 73/publication PR 72 remain the review route. Not published.
+
+
+### November 3 — restore the year to the calendar (preview)
+
+Rachel requested 2026 beneath Dec 4 rather than beside the location. Restored the calendar year and made the title/location column stretch to the calendar height, distributing space between the two text lines without fixed heights. The title and Interest form stay top aligned; Cambridge aligns with the bottom of the calendar on desktop. On narrow screens the title can wrap naturally and the action remains above the description.
+
+Validation: production build passed; desktop measurements confirmed matching calendar/text top and bottom coordinates and title/action top coordinates. Visual desktop/390px review passed; no horizontal overflow at 390px or 320px. Proof: original workspace docs/event-announcements-2026-11-02/nov3-full-date-preview.jpg. Extends source PR 73/publication PR 72; preview only.

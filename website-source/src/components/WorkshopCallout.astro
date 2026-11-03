@@ -18,10 +18,11 @@ const Heading = integrated ? 'h3' : 'h2';
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
     <span>{month}</span>
     <strong>{calendarDate.getUTCDate()}</strong>
+    <span>{calendarDate.getUTCFullYear()}</span>
   </time>
   <div class="workshop-description">
     <Heading id={headingId}>{event.title}</Heading>
-    <p class="workshop-detail">{event.location} · {calendarDate.getUTCFullYear()}</p>
+    <p class="workshop-detail">{event.location}</p>
   </div>
   {event.description && <p class="workshop-summary">{event.description}</p>}
   {event.interestUrl && <a
@@ -82,8 +83,16 @@ const Heading = integrated ? 'h3' : 'h2';
     text-wrap: pretty;
   }
 
+  .workshop-description {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
   .workshop-detail {
-    margin: 6px 0 0;
+    margin: 0;
     color: var(--muted);
     font-size: 11.25px;
     line-height: 1.5;
