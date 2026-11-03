@@ -193,3 +193,10 @@ Live browser checks confirmed the exact sentence with “Cambridge, Massachusett
 Rachel asked to prevent metadata wrapping, preferring to drop Save the date if shrinking would hurt readability. Keep the existing 11.25px metadata size. Event metadata is nowrap and uses the card's existing inline-size container to hide only Save the date below 315px of content width. It remains Events · Inaugural community workshop on the narrowest phones and restores the full wording once space permits. Current News labels already fit one line at 320px, so their type and markup are unchanged. No other card layout changes.
 
 Validation: isolated Astro diagnostics (47 files, zero findings) and build passed. Home checked at 320, 360, 369, 370, 375, 390 and 1280px: all three metadata rows are exactly one line, with no horizontal overflow and unchanged font size. The full label returns at 370px viewport in the present layout. Shared component also serves Events. Proof: original workspace docs/event-announcements-2026-11-02/nov3-one-line-label-320.jpg. Preview only; previous event-card release remains live.
+
+
+### November 3 — tighten the date at the narrowest breakpoint (preview)
+
+Rachel requested removing the extra space around 4 so DEC meets the title's lowercase-height line. At 380px and below only, keep the day at 34px but set line-height to 1 and remove its 1px block margins. Move DEC down optically by 2px. All wider rules and the location/year baseline correction remain unchanged.
+
+Validation: build passed. A 320px screenshot pixel check found DEC and the title's lowercase a both starting at row 123, with the capital MA and year both ending at row 175. Checked 320/360/380/381/390/1280px with no overflow; 381px and up retain prior date metrics. Proof: original workspace docs/event-announcements-2026-11-02/nov3-tight-date-320.jpg. The extra scoped rules now emit a separate WorkshopCallout stylesheet; preview/publication files include that asset. Extends the pending one-line-label preview; not published.
