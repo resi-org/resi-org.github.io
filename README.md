@@ -28,6 +28,8 @@ Merge that pull request to republish the old site. No domain changes are needed.
 
 ## Source and future updates
 
+For content edits, start with [AGENTS.md](AGENTS.md). Shared event/seminar/group placement rules live in `website-source/docs/website/EVENT-ROUTING.md` on the continuing source branch; they apply to short requests such as “add X seminar” as well as detailed briefs.
+
 The production-ready source snapshot is in `website-source/` on branch `codex/default-size-90-source`. Use Node 22.12+ (or a supported newer release): `npm ci`, `npm run check`, then `npm run build`. Copy the resulting `dist/` contents into a clean publishing checkout, preserving `CNAME`, `.nojekyll`, `seminar-zoom/`, `ask/`, `reading-group/` and the retained legacy paths. Review and publish via a pull request to `main`. This source snapshot is separate from the continuing Cloudflare c.2 draft; carry over later approved draft changes deliberately.
 
 ## Temporarily hidden visitor roster
