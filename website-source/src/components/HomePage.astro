@@ -165,18 +165,18 @@ const founders = people
     <div class="shell">
       <span id="progress-heading" aria-hidden="true"></span>
       <div class="support-invite">
-        <h2 id="support-heading">Support independent research on safe superintelligence</h2>
+        <div class="support-heading-row">
+          <h2 id="support-heading">Support independent research on safe superintelligence</h2>
+          <a class="support-learn-more" href="/support">
+            Learn more <Arrow />
+          </a>
+        </div>
         <div>
           <p>
             Donations will enable us to bring in more researchers, especially postdocs and junior
             researchers, and further accelerate our research using AI. We also welcome support
             through compute credits and infrastructure.
           </p>
-          <div class="actions">
-            <a class="button secondary" href="/support">
-              Support RESI <Arrow />
-            </a>
-          </div>
         </div>
       </div>
       <p class="support-acknowledgment" id="fiscal-sponsor">
@@ -233,6 +233,52 @@ const founders = people
     .community :global(.research-team-mosaic.is-rotating) {
       height: 100%;
       align-content: space-between;
+    }
+  }
+  .support-heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .support-heading-row #support-heading {
+    margin: 0;
+  }
+  .support-learn-more {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 40px;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 1.4;
+    text-decoration: none;
+    background: var(--accent);
+    color: var(--paper);
+    padding: 10px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 1.5px;
+  }
+  .support-learn-more :global(svg) {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+  .support-learn-more:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+  .support-learn-more:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+  @media (max-width: 525px) {
+    .support-heading-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
     }
   }
   #support-heading {
