@@ -18,10 +18,11 @@ const Heading = integrated ? 'h3' : 'h2';
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
     <span>{month}</span>
     <strong>{calendarDate.getUTCDate()}</strong>
+    <span>{calendarDate.getUTCFullYear()}</span>
   </time>
   <div class="workshop-description">
-    <Heading id={headingId}><a class="workshop-title-link" href={`/events#${event.anchor || event.id}`}>{event.title}</a></Heading>
-    <p class="workshop-detail">{event.location} · {calendarDate.getUTCFullYear()}</p>
+    <Heading id={headingId}><a class="workshop-title-link" href={`/events#${event.anchor || event.id}`}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</a></Heading>
+    <p class="workshop-detail">{event.location}</p>
   </div>
   {event.description && <p class="workshop-summary">{event.description}</p>}
   {event.interestUrl && <a
@@ -54,8 +55,8 @@ const Heading = integrated ? 'h3' : 'h2';
     margin: 0;
     font-size: 11.25px;
     line-height: 1.5;
-    font-weight: 400;
-    color: var(--muted);
+    font-weight: 700;
+    color: var(--accent);
   }
 
   .workshop-date {
@@ -76,17 +77,27 @@ const Heading = integrated ? 'h3' : 'h2';
   }
 
   .workshop-card :is(h2, h3) {
-    font: 700 18px/1.4 var(--serif);
+    font: 700 20px/1.4 var(--serif);
     letter-spacing: -.01em;
     margin: 0;
     text-wrap: pretty;
+  }
+
+  .workshop-description {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .workshop-card :is(h2, h3) span {
+    white-space: nowrap;
   }
 
   .workshop-title-link { color: inherit; text-decoration: none; }
   .workshop-title-link:hover { text-decoration: underline; }
 
   .workshop-detail {
-    margin: 6px 0 0;
+    margin: 0;
     color: var(--muted);
     font-size: 11.25px;
     line-height: 1.5;
@@ -139,22 +150,37 @@ const Heading = integrated ? 'h3' : 'h2';
 
   @media (max-width: 600px) {
     .workshop-card {
-      grid-template-columns: 48px minmax(0, 1fr);
-      column-gap: 16px;
+      grid-template-columns: 36px minmax(0, 1fr) auto;
+      column-gap: 12px;
     }
     .workshop-date {
-      padding-right: 12px;
+      padding-right: 0;
+    }
+    .workshop-link {
+      font-size: 11.5px;
+      gap: 8px;
+      padding: 8px;
+    }
+    .workshop-link :global(svg) {
+      width: 14px;
+      height: 14px;
+      flex-basis: 14px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .workshop-card {
+      grid-template-columns: 28px minmax(0, 1fr) auto;
+      column-gap: 8px;
     }
     .workshop-card :is(h2, h3) {
       font-size: 18px;
     }
-    .workshop-summary {
-      grid-row: 4;
-    }
     .workshop-link {
-      grid-column: 2;
-      grid-row: 3;
-      justify-self: start;
+      font-size: 11px;
+    }
+    .workshop-link :global(svg) {
+      display: none;
     }
   }
 </style>
