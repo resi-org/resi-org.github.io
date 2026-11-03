@@ -22,10 +22,10 @@ This folder is a linked Git worktree nested inside the older RESI workspace. It 
 
 Verified through GitHub on November 3:
 
-- Production main remains `20c5a453e1aa7d097d4c5827bee3c47d012ea3d3`, the outlined-card publication from [PR 71](https://github.com/resi-org/resi-org.github.io/pull/71). Its Pages deployment and live verification are recorded in CHANGELOG.
-- Continuing source is `015378da398998d9e098a0c8dd0438c73d7a9b9a`, including merged [source PR 70](https://github.com/resi-org/resi-org.github.io/pull/70).
-- Pending announcement refinement: [source PR 73](https://github.com/resi-org/resi-org.github.io/pull/73), branch `codex/announcements-feed-alignment-nov2` (latest local revision `027e359`), and [publication PR 72](https://github.com/resi-org/resi-org.github.io/pull/72). These are separate from the published outlined card.
-- November 3 isolated Events preview: [draft PR 74](https://github.com/resi-org/resi-org.github.io/pull/74), branch `codex/events-page-rename` in `/Users/rachelsipser/.codex/worktrees/events-page-rename/resi-production-source-repo`, based on source PR 73 through `027e359`. It renames Seminars to Events across the site and reuses the exact shared workshop card above seminars. Local preview: http://127.0.0.1:4391/events/. Not published; see WORKLIST E3/E6 and CHANGELOG. The original source checkout and publication PR 72 remain separate. Review/land the pending source dependency before promoting Events to the continuing source branch.
+- Production main is `14a20ea5128a38df0f20c59c4cb28ae4d4eb95c9`, published through [PR 72](https://github.com/resi-org/resi-org.github.io/pull/72) after Rachel explicitly approved the Events preview and its final single-sentence heading. Pages run 41655422743 succeeded; live desktop/phone, search, navigation and old seminar links were verified. Evidence is recorded in CHANGELOG.
+- Events source: [PR 74](https://github.com/resi-org/resi-org.github.io/pull/74), branch `codex/events-page-rename` in `/Users/rachelsipser/.codex/worktrees/events-page-rename/resi-production-source-repo`, incorporates the latest shared-card source through `67f93bd`. It lands through [source PR 73](https://github.com/resi-org/resi-org.github.io/pull/73) into `codex/default-size-90-source`, separately from production.
+- Events now contains the shared December 4 workshop card above the existing seminar listings. Navigation, existing cross-page links, search and sitemap use /events; old seminar addresses preserve queries/fragments when forwarding. Further page refinements and proposed additional cross-links remain in WORKLIST E6. The automatic missing-counterpart check remains deferred.
+- Optional local preview in the attached Events worktree: http://127.0.0.1:4391/events/.
 
 Consult [WORKLIST](WORKLIST.md) before changing branches or publishing. Build output, a screenshot and an open PR do not establish live publication.
 
