@@ -74,3 +74,6 @@ November 3 placement refinement: [EVENT-ROUTING.md](EVENT-ROUTING.md) defines de
 
 
 November 3 mobile disclosure correction: on devices matching `(hover: none) and (pointer: coarse)`, hide the working-group details label completely; closed cards show the plus and open cards spin into the four-dot square, with no minus. Closing returns to the plus, including retained keyboard focus. Preserve accessible summary names and reduced-motion behavior. Fine-pointer/hover desktop behavior remains unchanged at every viewport width. This supersedes the earlier visible touch hint and mobile minus.
+
+
+Disclosure accessibility verification (November 3): retain native details/summary semantics and a unique accessible summary name containing the group name plus details. The accessible name must survive hiding the visual mobile hint. Keep decorative plus/minus/dot marks aria-hidden and print-only duplicate bodies aria-hidden/hidden on screen. Verify platform accessibility expanded/collapsed states, body exposure only while open, keyboard operation and focus order when reusing the pattern. Native semantics supply state; no redundant manual ARIA state was needed in the reviewed implementation.
