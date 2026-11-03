@@ -22,7 +22,7 @@ This folder is a linked Git worktree nested inside the older RESI workspace. It 
 
 Verified through GitHub on November 3:
 
-- Production main is `a791347a69114a65a7ad876c5ffe37aa5f7cfb2c`, published through [PR 78](https://github.com/resi-org/resi-org.github.io/pull/78) after Rachel approved the working-group disclosure controls and responsive fixes. Pages run 41680296354 succeeded; live desktop/phone hover, keyboard expansion, compact spacing and the 600px transition were verified. This follows the Events publication through PR 72. Evidence is in CHANGELOG.
+- Production main is `43cf7d5c5a2ed927e909ba54500ad60958812ef0`, published through [PR 81](https://github.com/resi-org/resi-org.github.io/pull/81) after Rachel approved the homepage introductory wording and matching Search excerpt. Pages run 41681348362 succeeded; live sentence/comma/bold emphasis and Search were verified. This preserves the disclosure release in PR 78 and Events publication in PR 72. Evidence is in CHANGELOG.
 - Events source: [PR 74](https://github.com/resi-org/resi-org.github.io/pull/74), branch `codex/events-page-rename` in `/Users/rachelsipser/.codex/worktrees/events-page-rename/resi-production-source-repo`, incorporates the latest shared-card source through `67f93bd`. PR 74 merged at `ddaf39a59d80d4cbfd57aad9d30c77fdffe8eb31`; it is carried through [source PR 73](https://github.com/resi-org/resi-org.github.io/pull/73) into `codex/default-size-90-source`, separately from production.
 - Events now contains the shared December 4 workshop card above the existing seminar listings. Navigation, existing cross-page links, search and sitemap use /events; old seminar addresses preserve queries/fragments when forwarding. Further page refinements and proposed additional cross-links remain in WORKLIST E6. The automatic missing-counterpart check remains deferred.
 - Optional local preview in the attached Events worktree: http://127.0.0.1:4391/events/.
@@ -75,4 +75,6 @@ Earlier extensive notes remain at `/Users/rachelsipser/Documents/GitHub/resi-web
 
 November 3 disclosure follow-up: Rachel approved publication of the working-group plus-to-dots control and responsive spacing fixes. This release uses isolated source/publication branches, preserving other chats' active previews. Consult WORKLIST D4/D5 and CHANGELOG for release evidence and the subsequent cross-site standardization task. The site-wide design chat is RESI — Master website design (`01a1a1de-5ea7-7c53-b2ee-bc43d87896ae`).
 
-November 3 disclosure release: source PR 77 merged at `fe575183b26e472c4337f3e0fafd8ff1911c384a`; publication PR 78 is live as recorded above. Other chats’ event-card and homepage-copy previews remain separate. Next: WORKLIST D5, standardize the active row-based expanders through a reviewed preview.
+November 3 disclosure release: source PR 77 merged at `fe575183b26e472c4337f3e0fafd8ff1911c384a`; publication PR 78 is live as recorded above. Other chats’ event-card previews remain separate. The homepage-copy release is recorded below. Next: WORKLIST D5, standardize the active row-based expanders through a reviewed preview.
+
+Homepage editorial source PR 80 merged at `216654d6c5ee2f276751104ddbc57f45e9a05181`; publication PR 81 is live as recorded above.
