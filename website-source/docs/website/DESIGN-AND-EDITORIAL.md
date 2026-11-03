@@ -47,7 +47,7 @@ Find the common component/data first, review dependencies in PAGES, implement th
 
 ## Approved compact disclosure control — November 3
 
-Rachel approved the working-group card control and authorized publication. Use a fine 14px plus/minus, 1.1px stroke, token-derived quieter accent color, and a 370ms rotating morph into four 3px dots whose outer bounds form the same 14px square. Preserve lowercase details, revealed on fine-pointer hover and keyboard focus at every viewport width; non-hover devices retain a visible hint. Expanded resting state is a minus. Reduced-motion preferences disable transitions.
+Rachel approved the working-group card control and authorized publication. Use a fine 14px plus/minus, 1.1px stroke, token-derived quieter accent color, and a 370ms rotating morph into four 3px dots whose outer bounds form the same 14px square. Preserve lowercase details, revealed on fine-pointer hover and keyboard focus at every viewport width; touch devices with no hover hide the details hint entirely. Expanded resting state is a minus. Reduced-motion preferences disable transitions.
 
 On working-group cards, position the control as a card feature toward the lower-right corner, retain the compact 6px title/leader gap and natural text heights, and switch to one column at 600px before the current titles/leaders become cramped. Independently expanding desktop columns retain authored keyboard order. Do not restore synchronized tallest-title heights or the earlier narrow-width label exception.
 
@@ -71,3 +71,6 @@ Only upcoming event cards receive the extra emphasis. Past-event promotion requi
 Keep metadata at its readable shared size. The current upcoming label omits only Save the date when its card becomes too narrow for one line. Preserve the approved full-width baseline/button alignment and narrow-date spacing. New styling must not change current News cards. Run `npm run test:announcements`, diagnostics/build and affected desktop/mobile checks when changing the policy.
 
 November 3 placement refinement: [EVENT-ROUTING.md](EVENT-ROUTING.md) defines defaults and explicit overrides for all contributors. Being upcoming alone never promotes a seminar/reading group/working group. The emphasized treatment applies when an upcoming event is intentionally included, not as a reason to include it.
+
+
+November 3 mobile disclosure correction: on devices matching `(hover: none) and (pointer: coarse)`, hide the working-group details label completely; closed cards show the plus and open cards spin into the four-dot square, with no minus. Closing returns to the plus, including retained keyboard focus. Preserve accessible summary names and reduced-motion behavior. Fine-pointer/hover desktop behavior remains unchanged at every viewport width. This supersedes the earlier visible touch hint and mobile minus.
