@@ -18,11 +18,10 @@ const Heading = integrated ? 'h3' : 'h2';
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
     <span>{month}</span>
     <strong>{calendarDate.getUTCDate()}</strong>
-    <span>{calendarDate.getUTCFullYear()}</span>
   </time>
   <div class="workshop-description">
     <Heading id={headingId}><a class="workshop-title-link" href={`/events#${event.anchor || event.id}`}>{event.title}</a></Heading>
-    <p class="workshop-detail">{event.location}</p>
+    <p class="workshop-detail">{event.location} · {calendarDate.getUTCFullYear()}</p>
   </div>
   {event.description && <p class="workshop-summary">{event.description}</p>}
   {event.interestUrl && <a
@@ -36,16 +35,16 @@ const Heading = integrated ? 'h3' : 'h2';
 </aside>
 
 <style>
-  /* Share the news cards' shape and padding; use the site's established
-     card outline with a slightly stronger fill for the upcoming event. */
+  /* Keep the news-card fill, radius and padding; emphasize the event through
+     the existing hairline outline treatment and its compact calendar. */
   .workshop-card {
     width: 100%;
     margin: 0;
-    background: color-mix(in srgb, var(--accent) 14%, var(--paper));
-    border: 0.75px solid var(--line);
+    background: color-mix(in srgb, var(--accent) 10%, var(--paper));
+    border: 0.75px solid color-mix(in srgb, var(--accent) 60%, var(--paper));
     display: grid;
-    grid-template-columns: 48px minmax(0, 1fr);
-    align-items: center;
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+    align-items: start;
     gap: 12px 18px;
     font-family: var(--sans);
   }
@@ -95,6 +94,7 @@ const Heading = integrated ? 'h3' : 'h2';
 
   .workshop-summary {
     grid-column: 1 / -1;
+    grid-row: 3;
     margin: 0;
     color: var(--muted);
     font-size: 12.75px;
@@ -102,7 +102,8 @@ const Heading = integrated ? 'h3' : 'h2';
   }
 
   .workshop-link {
-    grid-column: 2;
+    grid-column: 3;
+    grid-row: 2;
     justify-self: end;
     display: inline-flex;
     align-items: center;
@@ -147,8 +148,12 @@ const Heading = integrated ? 'h3' : 'h2';
     .workshop-card :is(h2, h3) {
       font-size: 18px;
     }
+    .workshop-summary {
+      grid-row: 4;
+    }
     .workshop-link {
-      grid-column: 1 / -1;
+      grid-column: 2;
+      grid-row: 3;
       justify-self: start;
     }
   }
