@@ -21,7 +21,7 @@ const Heading = integrated ? 'h3' : 'h2';
     <span>{calendarDate.getUTCFullYear()}</span>
   </time>
   <div class="workshop-description">
-    <Heading id={headingId}>{event.title}</Heading>
+    <Heading id={headingId}><a class="workshop-title-link" href={`/events#${event.anchor || event.id}`}>{event.title}</a></Heading>
     <p class="workshop-detail">{event.location}</p>
   </div>
   {event.description && <p class="workshop-summary">{event.description}</p>}
@@ -82,6 +82,9 @@ const Heading = integrated ? 'h3' : 'h2';
     margin: 0;
     text-wrap: pretty;
   }
+
+  .workshop-title-link { color: inherit; text-decoration: none; }
+  .workshop-title-link:hover { text-decoration: underline; }
 
   .workshop-detail {
     margin: 6px 0 0;

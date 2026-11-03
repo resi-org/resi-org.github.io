@@ -1,104 +1,16 @@
----
-import Base from '../layouts/Base.astro';
-import Section from '../components/Section.astro';
-import PageShortcuts from '../components/PageShortcuts.astro';
-import seminars from '../data/seminars.json';
-import { institute } from '../data/institute';
-// Move completed entries from upcoming to talks in seminars.json, preserving their IDs.
----
-
-<Base title="Seminars" description="Upcoming RESI-MIT seminars and past talks on the foundations of AI safety, with speakers, dates, titles, abstracts, and biographies.">
-  <header class="page-hero">
-    <h1>RESI-MIT Seminars</h1>
-    <p><a href={institute.talks}>Sign up for seminar announcements</a></p>
-    <Fragment set:html={seminars.intro} />
-  </header>
-  <PageShortcuts
-    id="seminar-shortcuts"
-    items={[
-      { label: 'Upcoming', href: '#upcoming-seminars' },
-      { label: 'Past', href: '#past-seminars' },
-    ]}
-  />
-
-  <Section id="upcoming-seminars" label="Upcoming" divider>
-    {seminars.upcoming.length > 0 ? (
-      <div class="seminar-list" set:html={seminars.upcoming.map((talk) => talk.html).join('\n')} />
-    ) : (
-      <p>No upcoming seminars are currently listed.</p>
-    )}
-  </Section>
-  <Section id="past-seminars" label="Past" divider>
-    <div class="seminar-list" set:html={seminars.talks.map((talk) => talk.html).join('\n')} />
-  </Section>
-</Base>
-
-<style>
-  .seminar-list :global(article) {
-    padding: 15px 12px;
-    scroll-margin-top: 82.5px;
-    border-top: 0.75px solid var(--line);
-  }
-  .seminar-list :global(article + article) {
-    margin-top: 0;
-  }
-  .seminar-list :global(article:last-child) {
-    border-bottom: 0.75px solid var(--line);
-  }
-  .seminar-list :global(h3) {
-    margin: 0 0 6px;
-    font: 700 16.5px/1.35 var(--serif);
-  }
-  .seminar-list :global(.date) {
-    margin: 3.75px 0 0;
-    color: var(--muted);
-    font-size: 11.25px;
-  }
-  .seminar-list :global(.seminar-meta) { position: relative; min-height: 33px; }
-  .seminar-list :global(.speaker) { margin: 0; font-size: 11.25px; line-height: 1.55; }
-  .seminar-list :global(.seminar-meta > .speaker),
-  .seminar-list :global(.seminar-meta > .date) { padding-right: 75px; }
-  .seminar-list :global(.location) { color: var(--muted); }
-  .seminar-list :global(details) { margin: 0; }
-  .seminar-list :global(summary) {
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    gap: 7.5px;
-    min-width: 60px;
-    min-height: 33px;
-    font: 400 11.25px/1.5 var(--sans);
-    color: var(--accent);
-    cursor: pointer;
-    list-style: none;
-  }
-  .seminar-list :global(summary::-webkit-details-marker) { display: none; }
-  .seminar-list :global(summary:focus-visible) {
-    outline: 1.5px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 1.5px;
-  }
-  .seminar-list :global(summary::after) { content: '+'; font-size: 16.5px; }
-  .seminar-list :global(details[open] > summary::after) { content: '−'; }
-  .seminar-list :global(h4) {
-    margin: 15px 0 7.5px;
-    font: 600 12.75px/1.5 var(--sans);
-  }
-  .seminar-list :global(details p:last-child) { margin-bottom: 0; }
-  .seminar-list :global(.seminar-details-body) { padding-top: 3px; }
-  .seminar-list :global(.seminar-logistics) { margin-top: 18px; }
-  .seminar-list :global(.seminar-logistics .location) { margin-top: 6px; font-size: 11.25px; }
-  @media (max-width: 525px) {
-    .seminar-list :global(article) { padding-inline: 6px; }
-  }
-  @media print {
-    .seminar-list :global(h3),
-    .seminar-list :global(h4),
-    .seminar-list :global(.date),
-    .seminar-list :global(.speaker) { break-after: avoid; }
-    .seminar-list :global(summary) { display: none; }
-  }
-</style>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://resi.org/events/" />
+    <title>Events · RESI</title>
+    <script is:inline>
+      location.replace('/events/' + location.search + location.hash);
+    </script>
+  </head>
+  <body>
+    <p>Seminars are now listed on <a href="/events/">Events</a>.</p>
+  </body>
+</html>

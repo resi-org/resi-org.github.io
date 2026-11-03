@@ -1,0 +1,121 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAnnouncements } from '../lib/announcements';
+import WorkshopCallout from '../components/WorkshopCallout.astro';
+const events = (await getAnnouncements()).filter((entry) => entry.category === 'Events').sort((a, b) => a.start.valueOf() - b.start.valueOf());
+import Section from '../components/Section.astro';
+import PageShortcuts from '../components/PageShortcuts.astro';
+import seminars from '../data/seminars.json';
+import { institute } from '../data/institute';
+// Move completed entries from upcoming to talks in seminars.json, preserving their IDs.
+---
+
+<Base title="Events" description="RESI workshops, community events, and RESI-MIT seminars on the foundations of AI safety, with event details and past talks.">
+  <header class="page-hero">
+    <h1>Events</h1>
+    <p>Workshops, community events, and RESI-MIT seminars on the foundations of AI safety.</p>
+  </header>
+  <PageShortcuts
+    id="events-shortcuts"
+    items={[
+      { label: 'Community events', href: '#community-events' },
+      { label: 'Upcoming seminars', href: '#upcoming-seminars' },
+      { label: 'Past seminars', href: '#past-seminars' },
+    ]}
+  />
+
+  <Section id="community-events" label="Community events" divider>
+    <div class="event-list">
+      {events.map((event) => (
+        <div class="event-entry" id={event.anchor || event.id}>
+          <WorkshopCallout event={event} integrated />
+        </div>
+      ))}
+    </div>
+  </Section>
+  <Section id="upcoming-seminars" label="RESI-MIT Seminars" divider>
+    <span id="seminars" aria-hidden="true"></span>
+    <Fragment set:html={seminars.intro} />
+    <p><a href={institute.talks}>Sign up for seminar announcements</a></p>
+    {seminars.upcoming.length > 0 ? (
+      <div class="seminar-list" set:html={seminars.upcoming.map((talk) => talk.html).join('\n')} />
+    ) : (
+      <p>No upcoming seminars are currently listed.</p>
+    )}
+  </Section>
+  <Section id="past-seminars" label="Past seminars" divider>
+    <div class="seminar-list" set:html={seminars.talks.map((talk) => talk.html).join('\n')} />
+  </Section>
+</Base>
+
+<style>
+  .event-entry { scroll-margin-top: 82.5px; }
+  .event-entry + .event-entry { margin-top: 12px; }
+  .seminar-list :global(article) {
+    padding: 15px 12px;
+    scroll-margin-top: 82.5px;
+    border-top: 0.75px solid var(--line);
+  }
+  .seminar-list :global(article + article) {
+    margin-top: 0;
+  }
+  .seminar-list :global(article:last-child) {
+    border-bottom: 0.75px solid var(--line);
+  }
+  .seminar-list :global(h3) {
+    margin: 0 0 6px;
+    font: 700 16.5px/1.35 var(--serif);
+  }
+  .seminar-list :global(.date) {
+    margin: 3.75px 0 0;
+    color: var(--muted);
+    font-size: 11.25px;
+  }
+  .seminar-list :global(.seminar-meta) { position: relative; min-height: 33px; }
+  .seminar-list :global(.speaker) { margin: 0; font-size: 11.25px; line-height: 1.55; }
+  .seminar-list :global(.seminar-meta > .speaker),
+  .seminar-list :global(.seminar-meta > .date) { padding-right: 75px; }
+  .seminar-list :global(.location) { color: var(--muted); }
+  .seminar-list :global(details) { margin: 0; }
+  .seminar-list :global(summary) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 7.5px;
+    min-width: 60px;
+    min-height: 33px;
+    font: 400 11.25px/1.5 var(--sans);
+    color: var(--accent);
+    cursor: pointer;
+    list-style: none;
+  }
+  .seminar-list :global(summary::-webkit-details-marker) { display: none; }
+  .seminar-list :global(summary:focus-visible) {
+    outline: 1.5px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1.5px;
+  }
+  .seminar-list :global(summary::after) { content: '+'; font-size: 16.5px; }
+  .seminar-list :global(details[open] > summary::after) { content: '−'; }
+  .seminar-list :global(h4) {
+    margin: 15px 0 7.5px;
+    font: 600 12.75px/1.5 var(--sans);
+  }
+  .seminar-list :global(details p:last-child) { margin-bottom: 0; }
+  .seminar-list :global(.seminar-details-body) { padding-top: 3px; }
+  .seminar-list :global(.seminar-logistics) { margin-top: 18px; }
+  .seminar-list :global(.seminar-logistics .location) { margin-top: 6px; font-size: 11.25px; }
+  @media (max-width: 525px) {
+    .seminar-list :global(article) { padding-inline: 6px; }
+  }
+  @media print {
+    .seminar-list :global(h3),
+    .seminar-list :global(h4),
+    .seminar-list :global(.date),
+    .seminar-list :global(.speaker) { break-after: avoid; }
+    .seminar-list :global(summary) { display: none; }
+  }
+</style>
