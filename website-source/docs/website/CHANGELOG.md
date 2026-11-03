@@ -171,3 +171,10 @@ Rachel requested and approved publication of the homepage sentence: “RESI is a
 Built from continuing source dbebb4f with only HomePage.astro/search.astro application edits. Astro check passed (47 files, zero findings); production build passed with the existing empty partners notice. Generated publication based on main a791347 changes only index.html and search/index.html. Other pages, event-card previews, current disclosure design, domain files and independent endpoints are preserved. Earlier local desktop/390px rendering was reviewed. Publication/deployment and fresh live verification will be recorded separately after completion.
 
 Publication preparation also incorporated the approved homepage introduction/Search publication (PRs 80/81) that landed concurrently; those contents are preserved.
+
+
+### November 3 — event-card release deployed and live verified
+
+Rachel explicitly approved publication after the final full-width baseline adjustment. Publication PR 75 merged at eff55bc561b8801c440efdcf43053a037aae6bca (reviewed head f299444cb66dcf4cdbf1b8235aab97a4b0b0cc6a); Pages run 41681598151 succeeded. Only Home and Events HTML changed relative to main, preserving the concurrent introduction/Search and disclosure publications.
+
+Live Home and Events checked on desktop and at 390px through release-tagged URLs to avoid cached prior HTML. Desktop location baseline/button bottom agree within 0.022px on both pages; title/action tops agree. Phone retains its approved 34px day, 13px gap and location/year baseline correction, with no overflow. Form and Events destinations retained. The ordinary homepage URL still returned a cached prior version during initial verification; the deliverable browser tab uses ?release=eff55bc. Live proofs: original workspace docs/event-announcements-2026-11-02/nov3-live-final-desktop.jpg and nov3-live-final-phone.jpg. Source PR 76 carries the final implementation and these records into continuing source.
