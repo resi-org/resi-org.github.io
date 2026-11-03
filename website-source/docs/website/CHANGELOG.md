@@ -246,3 +246,8 @@ Rachel explicitly requested publication of the reviewed button preview. Generate
 ## November 3 — funding acknowledgment wording
 
 Rachel explicitly requested and authorized publication of “RESI is supported by grants from Coefficient Giving, Schmidt Sciences, and AISTOF.” Added only “RESI is” to the homepage acknowledgment, preserving the shared supporter data and fiscal-sponsorship sentence. Built from source 4a7c731 against production 6eae113. Astro check passed (48 files, zero findings), build passed with the existing empty partners notice, and generated index.html was verified byte-identical to production after reversing this text replacement. No other generated page, domain file or endpoint changes. Deployment/live verification to be recorded after publication.
+
+
+## November 3 — funding acknowledgment live verified
+
+Published Rachel’s exact requested sentence: “RESI is supported by grants from Coefficient Giving, Schmidt Sciences, and AISTOF.” Source PR 91 merged at `19d44fa07b0d4ab6d987df6ac79d2c225fc1dcac`; publication PR 92 merged at `12d7c2e7e93eb8a5fee5c773803dcb4c02153bd4`. Pages run [41707718879](https://github.com/resi-org/resi-org.github.io/actions/runs/41707718879) succeeded. Generated publication changes only index.html and differs from prior production solely by the requested text replacement. Supporter names remain in shared data and the fiscal-sponsorship sentence is unchanged. Astro diagnostics/build passed; live browser confirmed the exact acknowledgment and no horizontal overflow at 1280px/390px. Other local previews were preserved.
