@@ -200,12 +200,10 @@ const papers = (await getCollection('selectedResearch')).sort(
       const allCards = [...roster.querySelectorAll<HTMLElement>(':scope > .working-group')];
       const featured = roster.querySelector<HTMLElement>(':scope > .working-group-featured');
       const cards = allCards.filter((card) => card !== featured);
-      const desktop = matchMedia('(min-width: 525.75px)');
+      const desktop = matchMedia('(width > 600px)');
       let scheduled = false;
       const layout = () => {
         scheduled = false;
-        roster.style.removeProperty('--group-title-height');
-        roster.style.removeProperty('--group-lead-height');
         if (!desktop.matches) {
           roster.classList.remove('independent-columns');
           allCards.forEach((card) => {
@@ -215,15 +213,8 @@ const papers = (await getCollection('selectedResearch')).sort(
           return;
         }
         roster.classList.add('independent-columns');
-        // Match the closed-card headers at the current width, even while a
-        // description is open. Expanded bodies still grow independently.
-        const tallest = (selector: string) => Math.ceil(Math.max(...cards.map((card) =>
-          card.querySelector<HTMLElement>(selector)?.getBoundingClientRect().height ?? 0
-        )));
-        const titleHeight = tallest(':scope > h3');
-        const leadHeight = tallest(':scope > .working-group-body > .wg-lead');
-        roster.style.setProperty('--group-title-height', `${titleHeight}px`);
-        roster.style.setProperty('--group-lead-height', `${leadHeight}px`);
+        // Keep each title/leader pair at its natural height. Matching the
+        // tallest title adds empty space to every short heading as cards narrow.
         const gap = Math.ceil(parseFloat(getComputedStyle(roster).columnGap));
         let firstRow = 1;
         if (featured) {
@@ -310,13 +301,7 @@ const papers = (await getCollection('selectedResearch')).sort(
   .research-group-cards > .working-group-featured {
     grid-column: 1 / -1;
   }
-  @media screen and (min-width: 525.75px) {
-    .research-group-cards > .working-group:not(.working-group-featured) > h3 {
-      min-height: var(--group-title-height, 0px);
-    }
-    .research-group-cards > .working-group:not(.working-group-featured) > .working-group-body > .wg-lead {
-      min-height: var(--group-lead-height, 0px);
-    }
+  @media screen and (width > 600px) {
     .research-group-cards.independent-columns {
       /* The layout script measures row spans in whole CSS pixels. */
       grid-auto-rows: 1px;
@@ -361,8 +346,8 @@ const papers = (await getCollection('selectedResearch')).sort(
     justify-content: flex-end;
     gap: 7.5px;
     position: absolute;
-    top: -1.5px;
-    right: 0;
+    top: 6px;
+    right: -13.5px;
     width: fit-content;
     min-width: 33px;
     min-height: 33px;
@@ -375,21 +360,7 @@ const papers = (await getCollection('selectedResearch')).sort(
   .working-group-details > summary::-webkit-details-marker {
     display: none;
   }
-  .working-group-details .disclosure-control-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 33px;
-    height: 33px;
-    font: 400 21px/1 var(--sans);
-  }
-  .working-group-details .disclosure-control-icon::before {
-    content: '+';
-  }
-  .working-group-details[open] .disclosure-control-icon::before {
-    content: '−';
-  }
-  @media (min-width: 525.75px) and (hover: hover) and (pointer: fine) {
+  @media (hover: hover) and (pointer: fine) {
     .working-group-details .disclosure-control-label {
       position: absolute;
       right: calc(100% - 3px);
@@ -433,13 +404,16 @@ const papers = (await getCollection('selectedResearch')).sort(
   .research-publications .papers > li:last-child {
     border-bottom: 0.75px solid var(--line);
   }
+  /* Switch before the narrow columns force uneven title/leader blocks. */
+  @media (max-width: 600px) {
+    .research-group-cards {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
   @media (max-width: 525px) {
     .working-group-onward .section-links.section-links-end {
       align-items: flex-start;
       text-align: left;
-    }
-    .research-group-cards {
-      grid-template-columns: minmax(0, 1fr);
     }
     .research-publications .papers > li {
       padding-inline: 6px;

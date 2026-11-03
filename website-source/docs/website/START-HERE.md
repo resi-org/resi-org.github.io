@@ -71,3 +71,6 @@ A new maintainer needs current source history, these records, relevant account a
 - [Archived root README](archive/legacy-root-readme-2026-11-02.md) and [source README](archive/source-readme-before-setup-2026-11-02.md)
 
 Earlier extensive notes remain at `/Users/rachelsipser/Documents/GitHub/resi-website/docs/` and output/RESI-LAUNCH-AND-ROLLBACK.txt in that original workspace. They are historical evidence, not a second current queue. Current priorities and later preview status have been reconciled here. Retrieve original evidence when needed rather than making routine chats reread the archive.
+
+
+November 3 disclosure follow-up: Rachel approved publication of the working-group plus-to-dots control and responsive spacing fixes. This release uses isolated source/publication branches, preserving other chats' active previews. Consult WORKLIST D4/D5 and CHANGELOG for release evidence and the subsequent cross-site standardization task. The site-wide design chat is RESI — Master website design (`01a1a1de-5ea7-7c53-b2ee-bc43d87896ae`).

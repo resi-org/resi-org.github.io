@@ -111,3 +111,10 @@ The documents are local source-management records. Include them in ordinary sour
 ## Parking lot
 
 Add new tangents here with the originating request, affected pages, status and next useful action. Move them into the ordered queue when prioritized. Record newly completed work in CHANGELOG and close its item here.
+
+
+## Master design — disclosure controls
+
+- D4 Ready to publish November 3: Rachel approved working-group corner placement, spinning plus-to-dot interaction, compact responsive spacing and label hover at every mouse viewport width, then requested the final 1.1px stroke/370ms animation and live publication. Isolated source includes only Disclosure.astro and research.astro application changes. Publication prepared separately from production main, excluding the event-card and homepage-copy drafts. Source/build and isolated 320/600/601/1280px checks passed; publication/live evidence will follow in CHANGELOG.
+- D5 Inventory and standardization proposal: reuse the approved indicator in Research-area cards next; then use an inline variant for About FAQ rows, Research foundational-paper metadata, People selected-publication expanders and Events abstract/bio disclosures. Keep existing visible titles/labels and native keyboard semantics; decide placement and hint behavior in each context through a local preview. The On this page control is a navigation menu and keeps its label/function. This inventory is not publication approval for the broader rollout.
+- Coordination: RESI — Master website design (`01a1a1de-5ea7-7c53-b2ee-bc43d87896ae`) holds broad visual decisions; consult focused chats and preserve overlapping work. The separate event-card PRs 75/76 remain pending and are not included in D4.
