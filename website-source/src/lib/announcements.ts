@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { eventTiming, type EventTiming, type PastAnnouncement } from './event-announcement-policy';
+import { eventTiming, type EventPlacement, type EventTiming, type PastAnnouncement } from './event-announcement-policy';
 
 // Shared announcement records for Home, News and Events. Home takes the three most
 // recent across news and community events; News filters to its own category.
@@ -23,7 +23,7 @@ type BaseEntry = {
 };
 
 export type NewsEntry = BaseEntry & { category: 'News' };
-export type EventEntry = BaseEntry & {
+export type EventEntry = BaseEntry & EventPlacement & {
   category: 'Events';
   start: Date;
   end?: Date;
@@ -35,6 +35,7 @@ export type EventEntry = BaseEntry & {
   interestUrl?: string;
   interestLabel?: string;
   anchor?: string;
+  detailsHref?: string;
 };
 export type Entry = NewsEntry | EventEntry;
 
@@ -91,6 +92,10 @@ export async function getAnnouncements(): Promise<Entry[]> {
       start: e.data.start,
       end: e.data.end,
       timing,
+      eventType: e.data.eventType,
+      audience: e.data.audience,
+      homepage: e.data.homepage,
+      detailsHref: e.data.detailsHref,
       pastAnnouncement: e.data.pastAnnouncement,
       location: e.data.location,
       announcementLabel: e.data.announcementLabel,

@@ -2,11 +2,16 @@
 
 Conferences, workshops and convenings RESI runs. Event facts and homepage promotion now share these records. Events consumes the same collection and uses the same WorkshopCallout component as Home, above the existing seminar listings.
 
+First follow [EVENT-ROUTING.md](../../docs/website/EVENT-ROUTING.md). Routine seminars/reading groups/working groups belong in their existing sections, not this collection. Only explicit Home promotions of those activities get a secondary record here, with a canonical details link.
+
 Add a Markdown file with confirmed facts:
 
 ```yaml
 ---
 title: "Workshop title"
+eventType: community   # required: community / seminar / reading-group / working-group / other
+audience: unspecified  # default; public only when confirmed
+homepage: auto         # default; include/exclude only for an explicit instruction
 description: "Approved short description of the event." # optional
 announced: 2026-11-02   # publication date; controls homepage recency
 start: 2026-12-04       # attendance date; shown in the calendar
@@ -30,7 +35,7 @@ Keep Home and Events on this shared source and preserve stable anchors. The auto
 
 ## Upcoming versus past announcements
 
-Every upcoming event automatically uses the approved emphasized workshop card. Once past, its Events card switches to the ordinary news-like treatment: same fill/type/colors, no outline or button, with the event calendar and aligned title/location retained. News cards stay unchanged. The same shared policy/component governs Home and Events.
+Every eligible upcoming announcement uses the approved emphasized workshop card. Classification, public audience and explicit overrides determine eligibility; a seminar/group is never promoted just because it is upcoming or public. Once past, its Events card switches to the ordinary news-like treatment: same fill/type/colors, no outline or button, with the event calendar and aligned title/location retained. News cards stay unchanged. The same shared policy/component governs Home and Events.
 
 Past events are excluded from Home by default. Only when Rachel explicitly asks for a past-event announcement, add:
 
