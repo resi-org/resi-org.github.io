@@ -308,3 +308,15 @@ Generated publication [PR 100](https://github.com/resi-org/resi-org.github.io/pu
 GitHub Pages [run 41897008167](https://github.com/resi-org/resi-org.github.io/actions/runs/41897008167) succeeded, including deploy, November 4 at 19:27 UTC. Ordinary public URLs (no cache-busting query) verified: Home shows workshop → Anthropic → September 18 LessWrong, exactly three; Home summary matches Rachel's exact copy and links to the new News anchor. News shows all four entries, exact approved report description without quotation marks, original headline/date, correct Anthropic URL; Globe quote/byline and original dates remain. Live Search for FlashProve returns the report and correct stable anchor. Desktop and 390px Home reviewed with no horizontal overflow. Local checks covered 320px, light/dark, publisher search, expiry/exclusion/review/fallback cases. Screenshot evidence: `/Users/rachelsipser/Documents/GitHub/resi-website/output/news-nov4/live-home.jpg`; other local QA in `/private/tmp/resi-news-nov4-qa/`. No forms submitted.
 
 Local static preview server was temporary; use live URLs for review. Future date-driven expiry still requires a new source build and separate deployment after the final Cambridge event day; no automatic rebuild/deployment was configured.
+
+
+## November 4 — revised workshop description and standing text-edit authorization
+
+Rachel supplied the shorter December 4 description ending “increasingly capable AI.” and requested publication. Updated the shared event record for Home, Events and Search. Recorded her standing instruction in AGENTS.md and START-HERE: implement, check, publish and verify simple text edits she supplies/approves without a separate publication question; preserve unrelated previews and honor draft-only instructions.
+
+Built from source a680589. Astro diagnostics passed (48 files, zero findings); build passed with the existing empty partners notice. Only index.html, events/index.html and search/index.html differ from production a6b8c0f, solely by the approved description replacement in visible text and Search attributes. Prior local desktop/390px preview checks passed. Deployment and live verification follow.
+
+
+## November 4 — shortened workshop description live verified
+
+Publication PR 103 merged at `12748f8b615825189b63ad7c4f72d37255195252`; Pages run [41909953431](https://github.com/resi-org/resi-org.github.io/actions/runs/41909953431) succeeded. Live Home and Events display Rachel’s exact shorter sentence, and Search returns the same description. Only those three generated pages changed, preserving the November 4 News release and other site content. Source PR 102 carries the shared description, validation evidence and Rachel’s standing simple-text publication instruction in AGENTS.md/START-HERE.
