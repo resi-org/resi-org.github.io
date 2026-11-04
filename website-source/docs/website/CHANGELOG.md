@@ -315,3 +315,8 @@ Local static preview server was temporary; use live URLs for review. Future date
 Rachel supplied the shorter December 4 description ending “increasingly capable AI.” and requested publication. Updated the shared event record for Home, Events and Search. Recorded her standing instruction in AGENTS.md and START-HERE: implement, check, publish and verify simple text edits she supplies/approves without a separate publication question; preserve unrelated previews and honor draft-only instructions.
 
 Built from source a680589. Astro diagnostics passed (48 files, zero findings); build passed with the existing empty partners notice. Only index.html, events/index.html and search/index.html differ from production a6b8c0f, solely by the approved description replacement in visible text and Search attributes. Prior local desktop/390px preview checks passed. Deployment and live verification follow.
+
+
+## November 4 — shortened workshop description live verified
+
+Publication PR 103 merged at `12748f8b615825189b63ad7c4f72d37255195252`; Pages run [41909953431](https://github.com/resi-org/resi-org.github.io/actions/runs/41909953431) succeeded. Live Home and Events display Rachel’s exact shorter sentence, and Search returns the same description. Only those three generated pages changed, preserving the November 4 News release and other site content. Source PR 102 carries the shared description, validation evidence and Rachel’s standing simple-text publication instruction in AGENTS.md/START-HERE.
