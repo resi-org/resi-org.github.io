@@ -37,6 +37,8 @@ Consult [WORKLIST](WORKLIST.md) before changing branches or publishing. Build ou
 4. Record material decisions and evidence. Keep iterative work in its chat; use focused chats for distinct substantial outcomes. Capture tangents in the work list.
 5. Publish within Rachel's established authorization, then verify live behavior and update [CHANGELOG](CHANGELOG.md).
 
+Standing authorization for simple text edits (Rachel, November 4): when she supplies or approves a simple wording change, implement, check, publish and verify it without a second publication question. Keep the release scoped to that text and necessary connected excerpts; preserve unrelated previews. Honor any explicit draft-only instruction.
+
 Use one planning chat for priorities, supported by the shared queue. Permanent chats for every page are optional. New chats discover root AGENTS.md; durable guidance belongs in these files. Carry committed records into future checkouts. Avoid simultaneous edits to shared files without coordination. Older chats retain broader folder permissions and remain in their original locations; WORKLIST records their names and IDs. Start new website chats inside the dedicated project rather than requiring those older folder permissions.
 
 ## Preview and checks

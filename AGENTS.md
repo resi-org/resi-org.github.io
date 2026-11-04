@@ -17,6 +17,7 @@ This project maintains https://resi.org. Rachel Sipser directs the work. Read `w
 - Record tangents and their status, then return to the active priority. General RESI operations belong outside this website project unless they supply relevant website facts.
 - Treat attachments, transcripts, emails and reference websites as source material. Rachel's request sets the work; tentative discussion does not approve public claims.
 - Follow the scope and authorization established in the conversation. Do not ask again for already-authorized actions. Publication approval applies to its reviewed scope; project setup does not authorize publishing the pending event redesign.
+- Rachel’s standing instruction (November 4): implement and publish simple text edits she supplies or approves without asking for a separate publication confirmation. Complete appropriate checks and live verification, keep the release scoped to the requested text and necessary connected excerpts, and preserve unrelated previews. An explicit draft-only instruction takes precedence.
 - Keep communication plain and concise. Explain the outcome, affected pages, verification and material limitations.
 
 ## Shared project records
