@@ -26,11 +26,11 @@ url: "https://example.org/event"                        # optional event site
 ---
 ```
 
-Home merges eligible records with `content/updates/`, sorts newest announcement first, and displays exactly three items in total. It does not append an extra event card outside that limit. For legacy events without `announced`, the start date is the fallback sorting date. News filters to news records; community events are not duplicated there.
+Home merges eligible records with `content/updates/` and displays at most three items total. Eligible upcoming events come first, newest announcement first; newest eligible News and approved retrospectives fill remaining slots. Equal dates use stable ID ascending. It does not append an extra event card outside that limit. For legacy events without `announced`, the start date is the fallback sorting date. News filters to news records; community events are not duplicated there.
 
 The December 4 workshop was first announced on the homepage November 2, 2026 (production commit bbb0372). Its approved facts and existing interest form are retained in `2026-12-04-inaugural-workshop.md`. Do not invent a description, speakers, venue or admission guarantees. Its Events counterpart is /events#workshop, published through PR 72 on November 3.
 
-Keep Home and Events on this shared source and preserve stable anchors. The automatic missing-counterpart check remains deferred. Eligible events can move off Home as newer news/events fill its three slots. Event timing is classified at build time in America/New_York, through the last date (end or start). Rebuild after an event ends; a static build does not schedule future changes.
+Keep Home and Events on this shared source and preserve stable anchors. The automatic missing-counterpart check remains deferred. Eligible upcoming events can move off Home when three newer eligible upcoming event announcements fill the slots; News never outranks them. Approved retrospectives compete with News by announcement/publication date. Event timing is classified at build time in America/New_York, through the last date (end or start). Rebuild and deploy after an event ends; a static build does not schedule future changes.
 
 
 ## Upcoming versus past announcements

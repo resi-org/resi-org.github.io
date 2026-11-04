@@ -1,3 +1,5 @@
+export type NewsPlacement = { homepage?: 'auto' | 'exclude' | 'review' };
+
 export type EventTiming = 'upcoming' | 'past';
 export type EventType = 'community' | 'seminar' | 'reading-group' | 'working-group' | 'other';
 export type EventPlacement = {
@@ -32,13 +34,34 @@ export function eventTiming(event: { start: Date; end?: Date }, now = new Date()
 /** Explicit exclusions win; series require opt-in even when open to the public.
  * A past event always needs a separately approved retrospective announcement. */
 export function isHomepageAnnouncement(entry:
-  | { category: 'News' }
+  | (NewsPlacement & { category: 'News' })
   | (EventPlacement & { category: 'Events'; timing: EventTiming; pastAnnouncement?: PastAnnouncement }),
 ): boolean {
-  if (entry.category === 'News') return true;
+  if (entry.category === 'News') return !entry.homepage || entry.homepage === 'auto';
   if (entry.homepage === 'exclude') return false;
   if (entry.timing === 'past') return !!entry.pastAnnouncement;
   if (entry.homepage === 'include') return true;
   if (isSeriesEvent(entry.eventType)) return false;
   return entry.eventType === 'community' || entry.audience === 'public';
+}
+
+type SelectableAnnouncement = Parameters<typeof isHomepageAnnouncement>[0] & {
+  id: string;
+  date: Date;
+};
+
+/** Stable date ordering also keeps News archive ties independent of loader order. */
+export function compareAnnouncementDates(
+  a: { id: string; date: Date }, b: { id: string; date: Date },
+): number {
+  return b.date.valueOf() - a.date.valueOf() || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
+}
+
+/** Upcoming eligible events lead; newest news/approved retrospectives fill three slots.
+ * Sorting a copy preserves the full shared records for News and Events archives. */
+export function selectHomepageAnnouncements<T extends SelectableAnnouncement>(entries: T[]): T[] {
+  const priority = (entry: T) => entry.category === 'Events' && entry.timing === 'upcoming' ? 0 : 1;
+  return entries.filter(isHomepageAnnouncement)
+    .sort((a, b) => priority(a) - priority(b) || compareAnnouncementDates(a, b))
+    .slice(0, 3);
 }

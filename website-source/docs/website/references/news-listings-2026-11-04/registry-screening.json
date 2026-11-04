@@ -1,0 +1,909 @@
+{
+  "review_date": "2026-11-04",
+  "method": "Full registry role/relevance screening; fresh_web_attempt distinguishes attempted retrieval from conceptual screening. Attempted is not the same as accessible. Limits and sample counts are in audit.md.",
+  "registry_count": 100,
+  "core_count": 37,
+  "institute_count": 7,
+  "entries": [
+    {
+      "id": "mirendil",
+      "name": "Mirendil",
+      "url": "https://mirendil.com/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Additional example",
+      "rationale": "Included: one of the original four design references, with a directly relevant dedicated News index. Commercial frontier lab kept outside the peer denominator.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "resolution",
+      "name": "Resolution",
+      "url": "https://resolution.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "url": "https://www.anthropic.com/news",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Additional example",
+      "rationale": "Included: the proposed item’s publisher; compare newsroom metadata and research-page authorship.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "miri",
+      "name": "MIRI",
+      "url": "https://intelligence.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "redwood-research",
+      "name": "Redwood Research",
+      "url": "https://redwoodresearch.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "apollo-research",
+      "name": "Apollo Research",
+      "url": "https://www.apolloresearch.ai/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "metr",
+      "name": "METR",
+      "url": "https://metr.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "epoch-ai",
+      "name": "Epoch AI",
+      "url": "https://epoch.ai/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "alignment-research-center",
+      "name": "Alignment Research Center",
+      "url": "https://www.alignment.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "transluce",
+      "name": "Transluce",
+      "url": "https://transluce.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "govai",
+      "name": "GovAI (Centre for the Governance of AI)",
+      "url": "https://www.governance.ai/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "forethought",
+      "name": "Forethought",
+      "url": "https://www.forethought.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "ai-futures-project",
+      "name": "AI Futures Project",
+      "url": "https://ai-futures.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "far-ai",
+      "name": "FAR.AI",
+      "url": "https://far.ai/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "center-for-ai-safety",
+      "name": "Center for AI Safety",
+      "url": "https://safe.ai/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "eleutherai",
+      "name": "EleutherAI",
+      "url": "https://www.eleuther.ai/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "timaeus",
+      "name": "Timaeus",
+      "url": "https://timaeus.co/",
+      "audit_scope": "Legacy site — included with Resolution, not separately counted",
+      "news_review_decision": "Context only",
+      "rationale": "Legacy site grouped with Resolution; not separately counted.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "simon-institute-for-longterm-governance",
+      "name": "Simon Institute for Longterm Governance",
+      "url": "https://www.simoninstitute.ch/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "institute-for-ai-policy-and-strategy",
+      "name": "Institute for AI Policy and Strategy (IAPS)",
+      "url": "https://www.iaps.ai/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "institute-for-law-ai",
+      "name": "Institute for Law & AI",
+      "url": "https://law-ai.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "cset",
+      "name": "CSET (Center for Security and Emerging Technology, Georgetown)",
+      "url": "https://cset.georgetown.edu/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "uk-ai-security-institute",
+      "name": "UK AI Security Institute",
+      "url": "https://www.aisi.gov.uk/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "frontier-model-forum",
+      "name": "Frontier Model Forum",
+      "url": "https://www.frontiermodelforum.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "convergence-analysis",
+      "name": "Convergence Analysis",
+      "url": "https://www.convergenceanalysis.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "coefficient-giving",
+      "name": "Coefficient Giving (formerly Open Philanthropy)",
+      "url": "https://www.openphilanthropy.org/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Grantmaker/funding-platform updates could inform grant announcements; less direct for a researcher’s technical publication than selected research organizations. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "rethink-priorities",
+      "name": "Rethink Priorities",
+      "url": "https://rethinkpriorities.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "goodfire",
+      "name": "Goodfire",
+      "url": "https://www.goodfire.ai/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Additional example",
+      "rationale": "Included: technical research versus organizational blog and differences from Home.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "nist-center-for-ai-standards-and-innovation",
+      "name": "NIST Center for AI Standards and Innovation (CAISI)",
+      "url": "https://www.nist.gov/aisi",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "ai-alignment-forum",
+      "name": "AI Alignment Forum",
+      "url": "https://www.alignmentforum.org/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Context only",
+      "rationale": "Platform context; not an independent organizational News comparator.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "kairos",
+      "name": "Kairos",
+      "url": "https://kairos-project.org",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "stanford-hai",
+      "name": "Stanford HAI",
+      "url": "https://hai.stanford.edu/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Additional example",
+      "rationale": "Included: institutional researcher news and writer-versus-researcher bylines.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "chai",
+      "name": "CHAI (Center for Human-Compatible AI, Berkeley)",
+      "url": "https://humancompatible.ai/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "cser",
+      "name": "CSER (Centre for the Study of Existential Risk, Cambridge)",
+      "url": "https://www.cser.ac.uk/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "leverhulme-centre-for-the-future-of-intelligence",
+      "name": "Leverhulme Centre for the Future of Intelligence",
+      "url": "https://www.lcfi.ac.uk/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "oxford-internet-institute",
+      "name": "Oxford Internet Institute",
+      "url": "https://www.oii.ox.ac.uk/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "princeton-citp",
+      "name": "Princeton CITP",
+      "url": "https://citp.princeton.edu/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "stanford-crfm",
+      "name": "Stanford CRFM",
+      "url": "https://crfm.stanford.edu/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "perimeter-institute",
+      "name": "Perimeter Institute",
+      "url": "https://perimeterinstitute.ca/",
+      "audit_scope": "Selected institute comparator",
+      "news_review_decision": "Secondary comparison",
+      "rationale": "One of the seven established institute comparators; site attempted. See audit.md.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "berkman-klein-center-harvard",
+      "name": "Berkman Klein Center, Harvard",
+      "url": "https://cyber.harvard.edu/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "flatiron-institute",
+      "name": "Flatiron Institute (Simons Foundation)",
+      "url": "https://www.simonsfoundation.org/flatiron/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "santa-fe-institute",
+      "name": "Santa Fe Institute",
+      "url": "https://www.santafe.edu/",
+      "audit_scope": "Selected institute comparator",
+      "news_review_decision": "Secondary comparison",
+      "rationale": "One of the seven established institute comparators; site attempted. See audit.md.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "institute-for-advanced-study",
+      "name": "Institute for Advanced Study",
+      "url": "https://www.ias.edu/",
+      "audit_scope": "Selected institute comparator",
+      "news_review_decision": "Secondary comparison",
+      "rationale": "One of the seven established institute comparators; site attempted. See audit.md.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "institute-for-progress",
+      "name": "Institute for Progress (IFP)",
+      "url": "https://ifp.org/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "works-in-progress",
+      "name": "Works in Progress",
+      "url": "https://worksinprogress.co/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Publication or individual author platform, rather than a matching organizational News archive. Editorial examples remain possible future references. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "asterisk",
+      "name": "Asterisk",
+      "url": "https://asteriskmag.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Publication or individual author platform, rather than a matching organizational News archive. Editorial examples remain possible future references. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "berggruen-institute",
+      "name": "Berggruen Institute",
+      "url": "https://berggruen.org/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "niskanen-center",
+      "name": "Niskanen Center",
+      "url": "https://www.niskanencenter.org/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "the-new-institute",
+      "name": "THE NEW INSTITUTE",
+      "url": "https://thenew.institute/en",
+      "audit_scope": "Selected institute comparator",
+      "news_review_decision": "Secondary comparison",
+      "rationale": "One of the seven established institute comparators; site attempted. See audit.md.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "longview-philanthropy",
+      "name": "Longview Philanthropy",
+      "url": "https://www.longview.org/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Grantmaker/funding-platform updates could inform grant announcements; less direct for a researcher’s technical publication than selected research organizations. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "macroscience",
+      "name": "Macroscience",
+      "url": "https://www.macroscience.org/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "simons-institute-for-the-theory-of-computing",
+      "name": "Simons Institute for the Theory of Computing (Berkeley)",
+      "url": "https://simons.berkeley.edu/",
+      "audit_scope": "Selected institute comparator",
+      "news_review_decision": "Secondary comparison",
+      "rationale": "One of the seven established institute comparators; site attempted. See audit.md.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "slmath",
+      "name": "SLMath (formerly MSRI)",
+      "url": "https://www.slmath.org/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Relevant potential technical-institute example; comparison role already covered by Simons, IHES and the selected institutes. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "ihes",
+      "name": "IHES (Institut des Hautes Études Scientifiques)",
+      "url": "https://www.ihes.fr/en/",
+      "audit_scope": "Selected institute comparator",
+      "news_review_decision": "Secondary comparison",
+      "rationale": "One of the seven established institute comparators; site attempted. See audit.md.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "isaac-newton-institute",
+      "name": "Isaac Newton Institute",
+      "url": "https://www.newton.ac.uk/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Relevant potential technical-institute example; comparison role already covered by Simons, IHES and the selected institutes. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "clay-mathematics-institute",
+      "name": "Clay Mathematics Institute",
+      "url": "https://www.claymath.org/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Relevant potential technical-institute example; comparison role already covered by Simons, IHES and the selected institutes. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "icerm",
+      "name": "ICERM (Brown)",
+      "url": "https://icerm.brown.edu/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Relevant potential technical-institute example; comparison role already covered by Simons, IHES and the selected institutes. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "dimacs",
+      "name": "DIMACS (Rutgers)",
+      "url": "https://dimacs.rutgers.edu/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Relevant potential technical-institute example; comparison role already covered by Simons, IHES and the selected institutes. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "distill",
+      "name": "Distill",
+      "url": "https://distill.pub/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Publication or individual author platform, rather than a matching organizational News archive. Editorial examples remain possible future references. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "quanta-magazine",
+      "name": "Quanta Magazine",
+      "url": "https://www.quantamagazine.org/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Publication or individual author platform, rather than a matching organizational News archive. Editorial examples remain possible future references. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "max-planck-institute-for-mathematics-in-the-sciences",
+      "name": "Max Planck Institute for Mathematics in the Sciences",
+      "url": "https://www.mis.mpg.de/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Relevant potential technical-institute example; comparison role already covered by Simons, IHES and the selected institutes. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "astera-institute",
+      "name": "Astera Institute",
+      "url": "https://astera.org/",
+      "audit_scope": "Selected institute comparator",
+      "news_review_decision": "Secondary comparison",
+      "rationale": "One of the seven established institute comparators; site attempted. See audit.md.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "constellation",
+      "name": "Constellation",
+      "url": "https://constellation.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "mats",
+      "name": "MATS",
+      "url": "https://www.matsprogram.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "apart-research",
+      "name": "Apart Research",
+      "url": "https://apartresearch.com/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "safe-ai-forum",
+      "name": "Safe AI Forum",
+      "url": "https://saif.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "cooperative-ai-foundation",
+      "name": "Cooperative AI Foundation",
+      "url": "https://www.cooperativeai.com/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "lesswrong",
+      "name": "LessWrong",
+      "url": "https://www.lesswrong.com/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Context only",
+      "rationale": "Platform context for Lightcone only; not another core organization.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "lightcone-infrastructure",
+      "name": "Lightcone Infrastructure",
+      "url": "https://www.lightconeinfrastructure.com/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "ai-impacts",
+      "name": "AI Impacts",
+      "url": "https://aiimpacts.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "palisade-research",
+      "name": "Palisade Research",
+      "url": "https://palisaderesearch.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "future-of-life-institute",
+      "name": "Future of Life Institute",
+      "url": "https://futureoflife.org/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "rand",
+      "name": "RAND",
+      "url": "https://www.rand.org/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "conjecture",
+      "name": "Conjecture",
+      "url": "https://www.conjecture.dev/",
+      "audit_scope": "AI safety / adjacent research and field-building",
+      "news_review_decision": "Core comparison",
+      "rationale": "Established companion group; organizational site attempted. See audit.md for sample and access limits.",
+      "fresh_web_attempt": true
+    },
+    {
+      "id": "attestable",
+      "name": "Attestable",
+      "url": "https://www.attestable.com/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "mercor",
+      "name": "Mercor",
+      "url": "https://www.mercor.com/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "schmidt-sciences",
+      "name": "Schmidt Sciences",
+      "url": "https://www.schmidtsciences.org/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Grantmaker/funding-platform updates could inform grant announcements; less direct for a researcher’s technical publication than selected research organizations. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "renaissance-philanthropy",
+      "name": "Renaissance Philanthropy",
+      "url": "https://www.renphil.org/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Grantmaker/funding-platform updates could inform grant announcements; less direct for a researcher’s technical publication than selected research organizations. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "founders-pledge",
+      "name": "Founders Pledge",
+      "url": "https://www.founderspledge.com/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Grantmaker/funding-platform updates could inform grant announcements; less direct for a researcher’s technical publication than selected research organizations. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "survival-and-flourishing-fund",
+      "name": "Survival and Flourishing Fund",
+      "url": "https://survivalandflourishing.fund/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Grantmaker/funding-platform updates could inform grant announcements; less direct for a researcher’s technical publication than selected research organizations. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "manifund",
+      "name": "Manifund",
+      "url": "https://manifund.org/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Grantmaker/funding-platform updates could inform grant announcements; less direct for a researcher’s technical publication than selected research organizations. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "ai-safety-fund",
+      "name": "AI Safety Fund",
+      "url": "https://www.aisafetyfund.org/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Grantmaker/funding-platform updates could inform grant announcements; less direct for a researcher’s technical publication than selected research organizations. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "frominside-ai",
+      "name": "frominside.ai",
+      "url": "https://frominside.ai/",
+      "audit_scope": "AI reference context — not institute denominator",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "mistral-ai",
+      "name": "Mistral AI",
+      "url": "https://mistral.ai/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "hugging-face",
+      "name": "Hugging Face / BigScience",
+      "url": "https://huggingface.co/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "edge-impulse",
+      "name": "Edge Impulse",
+      "url": "https://www.edgeimpulse.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "auditae",
+      "name": "AuditAE",
+      "url": "https://auditae.app/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "bloomwise",
+      "name": "Bloomwise",
+      "url": "https://bloomwise.io/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "photoroom",
+      "name": "Photoroom",
+      "url": "https://www.photoroom.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "google",
+      "name": "Google / Google DeepMind",
+      "url": "https://sustainability.google/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "url": "https://www.microsoft.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "url": "https://openai.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "salesforce",
+      "name": "Salesforce",
+      "url": "https://www.salesforce.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Commercial/product/service or broader contextual reference; did not expand the comparison beyond actual publisher Anthropic and technical lab Goodfire. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "climate-change-ai",
+      "name": "Climate Change AI",
+      "url": "https://www.climatechange.ai/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Plausible institutional-news comparator; avoid expanding beyond 44 established organizations plus HAI for the member-news question. No fresh live News audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "claude-blog",
+      "name": "Claude blog",
+      "url": "https://claude.com/blog",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Publication or individual author platform, rather than a matching organizational News archive. Editorial examples remain possible future references. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "dario-amodei",
+      "name": "Dario Amodei",
+      "url": "https://darioamodei.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Screened, not expanded",
+      "rationale": "Publication or individual author platform, rather than a matching organizational News archive. Editorial examples remain possible future references. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "typewolf",
+      "name": "Typewolf",
+      "url": "https://www.typewolf.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Outside focused comparison",
+      "rationale": "Design/font/gallery inspiration rather than organizational news-description evidence. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "siteinspire",
+      "name": "Siteinspire",
+      "url": "https://www.siteinspire.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Outside focused comparison",
+      "rationale": "Design/font/gallery inspiration rather than organizational news-description evidence. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "fonts-in-use",
+      "name": "Fonts In Use",
+      "url": "https://fontsinuse.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Outside focused comparison",
+      "rationale": "Design/font/gallery inspiration rather than organizational news-description evidence. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "land-book",
+      "name": "Land-book",
+      "url": "https://land-book.com/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Outside focused comparison",
+      "rationale": "Design/font/gallery inspiration rather than organizational news-description evidence. No fresh live audit.",
+      "fresh_web_attempt": false
+    },
+    {
+      "id": "are-na",
+      "name": "Are.na",
+      "url": "https://www.are.na/",
+      "audit_scope": "Outside focused scope",
+      "news_review_decision": "Outside focused comparison",
+      "rationale": "Design/font/gallery inspiration rather than organizational news-description evidence. No fresh live audit.",
+      "fresh_web_attempt": false
+    }
+  ]
+}

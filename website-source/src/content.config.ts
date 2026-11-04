@@ -125,18 +125,28 @@ const selectedResearch = defineCollection({
 const updates = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './content/updates' }),
   schema: z.object({
-    title: z.string(),
-    homepageTitle: z.string().optional(),
-    homepageSummary: z.string().optional(),
+    title: z.string().trim().min(1),
+    homepageTitle: z.string().trim().min(1).optional(),
+    homepageSummary: z.string().trim().min(1).optional(),
     date: z.coerce.date(),
-    summary: z.string().optional(),
-    category: z.enum(['From the institute', 'Press']).optional(),
-    url: z.string().optional(),
-    // Press coverage: the publication that ran it, and the reporter. When
-    // `outlet` is set the title is somebody else's headline, and the page
-    // presents it as a quotation rather than as RESI's own words.
+    summary: z.string().trim().min(1),
+    category: z.enum(['From the institute', 'Press', 'Research']),
+    url: z.url(),
+    source: z.string().trim().min(1),
+    // Publisher attribution does not turn RESI's paraphrase into a quotation.
+    summaryFormat: z.enum(['plain', 'quote']).default('plain'),
+    homepage: z.enum(['auto', 'exclude', 'review']).default('auto'),
+    homepageReviewReason: z.string().trim().min(1).optional(),
     outlet: z.string().optional(),
     byline: z.string().optional(),
+  }).superRefine((update, ctx) => {
+    if (update.homepage === 'review' && !update.homepageReviewReason) {
+      ctx.addIssue({
+        code: 'custom',
+        path: ['homepageReviewReason'],
+        message: 'Record the specific promotion uncertainty for Rachel when homepage is review.',
+      });
+    }
   }),
 });
 

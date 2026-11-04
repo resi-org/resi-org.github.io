@@ -1,8 +1,11 @@
 import { getCollection } from 'astro:content';
-import { eventTiming, type EventPlacement, type EventTiming, type PastAnnouncement } from './event-announcement-policy';
+import {
+  eventTiming, compareAnnouncementDates,
+  type NewsPlacement, type EventPlacement, type EventTiming, type PastAnnouncement,
+} from './event-announcement-policy';
 
-// Shared announcement records for Home, News and Events. Home takes the three most
-// recent across news and community events; News filters to its own category.
+// Shared records remain complete for News and Events. Home applies its separate
+// eligibility, upcoming-event priority and three-slot selection policy.
 // Events sort by their announcement date, separately from their attendance date.
 type BaseEntry = {
   id: string;
@@ -22,7 +25,11 @@ type BaseEntry = {
   byline?: string;
 };
 
-export type NewsEntry = BaseEntry & { category: 'News' };
+export type NewsEntry = BaseEntry & NewsPlacement & {
+  category: 'News';
+  summaryFormat: 'plain' | 'quote';
+  homepageReviewReason?: string;
+};
 export type EventEntry = BaseEntry & EventPlacement & {
   category: 'Events';
   start: Date;
@@ -62,7 +69,7 @@ const fmtSpan = (a: Date, b?: Date) => {
     : `${start} – ${fmtDay(b)}`;
 };
 
-export async function getAnnouncements(): Promise<Entry[]> {
+export async function getAnnouncements(now = new Date()): Promise<Entry[]> {
   const updates: Entry[] = (await getCollection('updates')).map((u) => ({
     id: `update-${u.id}`,
     category: 'News',
@@ -73,7 +80,10 @@ export async function getAnnouncements(): Promise<Entry[]> {
     homepageSummary: u.data.homepageSummary,
     summary: u.data.summary,
     url: u.data.url,
-    source: u.data.outlet || (u.data.url?.startsWith('https://www.lesswrong.com/') ? 'LessWrong' : undefined),
+    source: u.data.source,
+    summaryFormat: u.data.summaryFormat,
+    homepage: u.data.homepage,
+    homepageReviewReason: u.data.homepageReviewReason,
     outlet: u.data.outlet,
     byline: u.data.byline,
     body: (u.body || '')
@@ -83,7 +93,7 @@ export async function getAnnouncements(): Promise<Entry[]> {
       .filter(Boolean),
   }));
   const events: EventEntry[] = (await getCollection('events')).map((e) => {
-    const timing = eventTiming(e.data);
+    const timing = eventTiming(e.data, now);
     return {
       id: `event-${e.id}`,
       category: 'Events',
@@ -115,5 +125,5 @@ export async function getAnnouncements(): Promise<Entry[]> {
       url: e.data.url,
     };
   });
-  return [...updates, ...events].sort((a, b) => b.date.valueOf() - a.date.valueOf());
+  return [...updates, ...events].sort(compareAnnouncementDates);
 }

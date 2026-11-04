@@ -2,6 +2,8 @@
 title: "Can the Institute for Responsible Superintelligence save us from rogue AI?"
 homepageSummary: "A profile of RESI and its approach to AI safety."
 date: 2026-09-16
+source: "Boston Globe"
+summaryFormat: quote
 category: "Press"
 outlet: "Boston Globe"
 byline: "Aaron Pressman"

@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "astro check",
-    "test:announcements": "node --experimental-strip-types --test tests/event-announcement-policy.test.mjs",
+    "test:announcements": "node --experimental-strip-types --test tests/*.test.mjs",
     "preview": "astro preview"
   },
   "dependencies": {
