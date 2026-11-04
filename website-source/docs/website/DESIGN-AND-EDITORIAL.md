@@ -12,7 +12,7 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 - Cards use restrained full outlines and shared padding. Avoid empty height merely to equalize text. Working-group plus controls sit near the Led by line; retain top text spacing when changing height. Featured-group expansion pushes following cards down.
 - Use SectionLinks.astro for section-ending links: regular weight, underline and arrow by default; explicit emphasis only where chosen. Homepage area links stack right-aligned. Homepage Announcements ends with separate See all news (/news) and See community events (/events) links.
 - Inline links occupy text, without blank clickable row space. Full-card actions, buttons, navigation and portrait tiles retain intentional larger hit areas. Preserve visible keyboard focus and usable touch targets.
-- Native disclosures have plus/minus cues. Working-group tooltip text is lowercase details. Essential institutional meaning remains visible; provide accessible names and keyboard operation.
+- Classify disclosures by the content they reveal: publication lists retain the small caret/triangle; explanatory details use a plus with card/non-card placement as defined below. Working-group tooltip text is lowercase details. Essential institutional meaning remains visible; provide accessible names and keyboard operation.
 - Header, footer, contents menus and utility controls are shared. Later approved utility alignment follows the footer's right edge, superseding earlier content-column positioning trials. Preserve mobile in-flow controls.
 - Review affected desktop/mobile layouts and light/dark interactions. Preserve reduced-motion behavior and stable focus/hover on the homepage portrait mosaic.
 
@@ -77,3 +77,19 @@ November 3 mobile disclosure correction: on devices matching `(hover: none) and 
 
 
 Disclosure accessibility verification (November 3): retain native details/summary semantics and a unique accessible summary name containing the group name plus details. The accessible name must survive hiding the visual mobile hint. Keep decorative plus/minus/dot marks aria-hidden and print-only duplicate bodies aria-hidden/hidden on screen. Verify platform accessibility expanded/collapsed states, body exposure only while open, keyboard operation and focus order when reusing the pattern. Native semantics supply state; no redundant manual ARIA state was needed in the reviewed implementation.
+
+## Disclosure categories — approved November 4
+
+Choose the cue by what is revealed, then choose placement by whether it is inside a card. Publication-list content takes precedence over the container.
+
+| Revealed content and context | Shared cue | Current examples/status |
+| --- | --- | --- |
+| More explanatory details inside a card | Approved corner-aligned plus/dot control | Working groups; preserve the published desktop and touch behaviors |
+| More explanatory details outside a card | Non-card plus variant; exact styling to review next | About FAQ answers and explanations/scope for individual foundational papers on Research |
+| A list of selected work, publications, reports, papers or published research | Existing small caret/triangle beside the section label, even inside a card | People Selected publications, including the founder cards; preserve current style |
+
+A disclosure about one paper’s meaning, findings, scope or limitations is explanatory detail, not a publication list. Rachel explicitly placed Research’s individual foundational-paper details in the non-card plus category. A working-group description can include related-paper links without becoming a publication-list expander. For genuinely mixed or unclear cases, flag the component and agree its category case by case; do not classify solely by the word research or the presence of a paper link.
+
+People currently has no plus-based content controls inside its cards: the three founder cards and other publication expanders use Selected publications with a native triangle. Preserve those controls rather than replacing them with pluses. Events seminar abstracts/biographies are another explanatory non-card context to review later. On this page is navigation and keeps its own label/behavior; it is not a content disclosure.
+
+This approves the taxonomy and supersedes the earlier broad proposal to convert People publication lists. It does not approve new non-card styling or a visual rollout yet. Preserve native keyboard/accessibility semantics, meaningful accessible names, hidden decorative marks and reduced-motion support across both cue families.
