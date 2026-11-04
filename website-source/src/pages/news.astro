@@ -35,7 +35,7 @@ const entries = (await getAnnouncements()).filter((entry) => entry.category === 
             </h2>
             {e.byline && <p class="entry-source">By {e.byline}</p>}
             {e.summary &&
-              (e.outlet ? (
+              (e.summaryFormat === 'quote' ? (
                 <p class="announcement-summary quoted">
                   <span class="quote-open">{'\u201C'}</span>
                   {e.summary}

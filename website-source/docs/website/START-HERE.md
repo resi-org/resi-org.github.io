@@ -33,7 +33,7 @@ Consult [WORKLIST](WORKLIST.md) before changing branches or publishing. Build ou
 
 1. Read this guide, [design and editorial guidance](DESIGN-AND-EDITORIAL.md), the relevant [page reference](PAGES.md), and active work item.
 2. Check local changes, current source/production revisions and pending PRs. Preserve work from other people and chats.
-3. For event/seminar/group additions, apply [EVENT-ROUTING.md](EVENT-ROUTING.md) before selecting a content file or homepage placement. Edit shared source/data where appropriate. Review connected pages, search, metadata, anchors and mobile behavior.
+3. For News additions, use [shared News guidance](../../content/updates/_README.md): automatic Home eligibility with event priority and a three-slot cap; explicit exclusion/review policy. For event/seminar/group additions, apply [EVENT-ROUTING.md](EVENT-ROUTING.md) before selecting a content file or homepage placement. Edit shared source/data where appropriate. Review connected pages, search, metadata, anchors and mobile behavior.
 4. Record material decisions and evidence. Keep iterative work in its chat; use focused chats for distinct substantial outcomes. Capture tangents in the work list.
 5. Publish within Rachel's established authorization, then verify live behavior and update [CHANGELOG](CHANGELOG.md).
 
@@ -78,3 +78,5 @@ November 3 disclosure follow-up: Rachel approved publication of the working-grou
 November 3 disclosure release: source PR 77 merged at `fe575183b26e472c4337f3e0fafd8ff1911c384a`; publication PR 78 is live as recorded above. Other chats’ event-card previews remain separate. The homepage-copy release is recorded below. Next: WORKLIST D5, standardize the active row-based expanders through a reviewed preview.
 
 Homepage editorial source PR 80 merged at `216654d6c5ee2f276751104ddbc57f45e9a05181`; publication PR 81 is live as recorded above.
+
+November 4 News preview: WORKLIST NEWS1/E10 tracks the approved Anthropic report and shared announcement-selection configuration in isolated branch `codex/news-provable-inference-nov4` at `/private/tmp/resi-news-nov4`, based on current continuing source `74a9371`. The original dirty checkout and unrelated previews remain untouched. No production publication is included. Research evidence is indexed in [references](references/news-listings-2026-11-04/report.md). Source incorporation and deployment status must be updated from actual evidence, not inferred from this preview.

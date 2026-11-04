@@ -6,12 +6,12 @@ import ResearchAreaCards from '../components/ResearchAreaCards.astro';
 import ResearchTeamMosaic from '../components/ResearchTeamMosaic.astro';
 import Arrow from '../components/Arrow.astro';
 import { getAnnouncements, fmtDay } from '../lib/announcements';
-import { isHomepageAnnouncement } from '../lib/event-announcement-policy';
+import { selectHomepageAnnouncements } from '../lib/event-announcement-policy';
 import { external } from '../lib/external';
 import SectionLinks from './SectionLinks.astro';
 import WorkshopCallout from './WorkshopCallout.astro';
 import { institute, researchAgenda } from '../data/institute';
-const entries = (await getAnnouncements()).filter(isHomepageAnnouncement).slice(0, 3);
+const entries = selectHomepageAnnouncements(await getAnnouncements());
 const people = await getCollection('people');
 const researchTeam = people
   .filter((p) => p.data.group === 'research' && p.data.photo)
@@ -65,7 +65,7 @@ const founders = people
           if (entry.category === 'Events') {
             return <li class="event-announcement"><WorkshopCallout event={entry} integrated /></li>;
           }
-          const href = entry.outlet && entry.url ? entry.url : `/news#${entry.id}`;
+          const href = entry.kind === 'Press' && entry.url ? entry.url : `/news#${entry.id}`;
           return (
             <li class="announcement-item">
               <p class="announcement-meta">
