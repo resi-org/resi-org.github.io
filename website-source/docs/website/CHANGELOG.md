@@ -4,6 +4,14 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+
+## November 5 preview refinement — shared heading above two columns
+
+Rachel requested the institute heading above both columns, then introduction left and Save the date/event right. In the isolated preview, H1 now spans the full existing 600px width; the introduction and Save the date section start at the same vertical position beneath it. Event content, Announcements copy, 521px minimum two-column width and mobile heading → event → introduction order are preserved.
+
+Astro diagnostics: zero errors/warnings/hints; build and diff checks passed. Desktop 1280px verified a 600px title/hero width and matching column tops; 390px phone checked the retained order and no overflow. Screenshots saved in `output/home-workshop-nov5/preview-heading-above-columns.png` and `preview-heading-above-columns-phone.png` under the original RESI workspace. Preview branch only; production remains PR 110 at `3386c21`, with the workshop in both positions.
+
+
 ## November 5 workshop restored in both positions; center-width preview revised
 
 Rachel explicitly requested keeping the unchanged workshop above the main heading AND restoring it as the first Announcements card. Source application commit `4d03166` is carried in [PR 109](https://github.com/resi-org/resi-org.github.io/pull/109). Publication [PR 110](https://github.com/resi-org/resi-org.github.io/pull/110) merged at `3386c21fe0b2cdb7f8f9057af76d2543d47e20f9`; Pages [run 42047395072](https://github.com/resi-org/resi-org.github.io/actions/runs/42047395072) succeeded. Ordinary live https://resi.org/ verified at desktop and 320px: two workshop cards, the full three selected Announcements entries, separate valid heading IDs, top card before H1 and no horizontal overflow. Published diff is index.html only; event wording/styling, all other pages, Events-heading correction, domain files and independent endpoints preserved. Source diagnostic/build checks passed with zero diagnostics; local release desktop/390px checks passed. This explicitly supersedes the earlier single-card placement.
