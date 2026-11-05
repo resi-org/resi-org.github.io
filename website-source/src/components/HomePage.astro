@@ -24,11 +24,6 @@ const founders = people
 ---
 
 <Base wide>
-  {featuredWorkshop && (
-    <div class="shell home-featured-workshop">
-      <WorkshopCallout event={featuredWorkshop} />
-    </div>
-  )}
   <section class="hero shell" aria-labelledby="hero-title">
     <div class="hero-grid">
       <div>
@@ -62,6 +57,12 @@ const founders = people
           </a>
         </div>
       </div>
+      {featuredWorkshop && (
+        <section class="home-featured-workshop" aria-labelledby="save-date-heading">
+          <h2 id="save-date-heading">Save the date</h2>
+          <WorkshopCallout event={featuredWorkshop} integrated featured />
+        </section>
+      )}
     </div>
   </section>
   <section class="home-band" id="announcements" aria-labelledby="announcements-heading">
@@ -208,12 +209,38 @@ const founders = people
 </Base>
 
 <style>
-  .home-featured-workshop {
-    max-width: var(--content-width);
+  .hero.shell {
+    width: min(1008px, calc(100% - 48px));
     padding-top: 44px;
   }
-  .hero.shell {
-    padding-top: 44px;
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 48px;
+  }
+  .hero-grid > * {
+    min-width: 0;
+  }
+  .home-featured-workshop #save-date-heading {
+    font: 700 30px/1.18 var(--serif);
+    letter-spacing: -.01em;
+    margin: 4px 0 24px;
+    color: var(--accent);
+  }
+  @media (max-width: 900px) {
+    .hero.shell {
+      width: min(var(--content-width), calc(100% - 48px));
+    }
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+    .home-featured-workshop #save-date-heading {
+      font-size: 26.25px;
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
   }
   .home-announcements .announcement-list {
     margin-top: 0;
@@ -302,10 +329,8 @@ const founders = people
     text-wrap: pretty;
   }
   @media (max-width: 480px) {
-    .home-featured-workshop {
-      padding-top: 32px;
-    }
     .hero.shell {
+      width: calc(100% - 27px);
       padding-top: 32px;
     }
     #support-heading {

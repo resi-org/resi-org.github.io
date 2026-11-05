@@ -2,6 +2,14 @@
 
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
+
+## November 5 homepage release and separate column preview — verified
+
+Rachel explicitly authorized immediate publication of the unchanged December 4 workshop card above the institute heading. Source PR [104](https://github.com/resi-org/resi-org.github.io/pull/104) merged at `ce356776b8cef3484a717b6a798c599eb460e45a`; publication PR [105](https://github.com/resi-org/resi-org.github.io/pull/105) merged at `6812a32c526d0a92c4cfd22d73e77b782d4c73fd`. Pages run [42043181942](https://github.com/resi-org/resi-org.github.io/actions/runs/42043181942) succeeded. Ordinary live https://resi.org/ verified at desktop and 390px: one workshop above H1, unchanged description/date/location/title/interest link and card dimensions/style, the same two selected News cards below the introduction, no horizontal overflow. Only generated Home HTML and its scoped stylesheet were published; Events/News/Search, shared event data/style, domain/independent endpoints and legacy assets preserved. Astro diagnostics/build and diff checks passed. Later independent production PR 107 changes only the Events heading; it was observed and left intact.
+
+Separate preview at http://127.0.0.1:4406/ on `codex/home-save-date-columns-preview-nov5` in `/private/tmp/resi-home-save-date-preview-nov5`: current complete introduction/actions left; Save the date heading and shared workshop card right. Removed only the duplicate Save the date metadata in this variant, kept approved event content, and moved the interest button into its own natural row for the narrower card. Top-aligned headings, 1008px maximum opening width, stacking below 901px; other section widths unchanged. Desktop/920px/390px/320px and dark-theme visual review passed; one Save the date label, H1/H2/H3 hierarchy, stable event/interest URLs and no overflow checked. Astro check returned zero diagnostics and build passed (existing empty partner-data notice). An isolated temporary Vite cache avoided shared dependency-cache contention; no dependency/configuration change is part of the preview. No form submitted. Preview is not merged or deployed. Screenshots: `/Users/rachelsipser/Documents/GitHub/resi-website/output/home-workshop-nov5/`. Shared dirty application checkout preserved.
+
+
 ## November 3 Events publication — live verified
 
 Rachel approved the Events preview and explicitly requested publication with one H1: “Community events, seminars, and workshops on the foundations of AI safety.” Removed the former Events heading and subtitle. Preserved the latest shared-card refinements through source 67f93bd and linked title; proposed additional cross-links were not implemented.
