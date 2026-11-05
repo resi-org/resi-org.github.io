@@ -32,8 +32,9 @@ const founders = people
       </h1>
       {featuredWorkshop && (
         <section class="home-featured-workshop" aria-labelledby="save-date-heading">
-          <h2 id="save-date-heading">Save the date</h2>
-          <WorkshopCallout headingId="featured-workshop-heading" event={featuredWorkshop} integrated featured />
+          <WorkshopCallout headingId="featured-workshop-heading" event={featuredWorkshop} integrated featured>
+            <h2 slot="heading" id="save-date-heading">Save the date</h2>
+          </WorkshopCallout>
         </section>
       )}
       <div class="hero-copy">
@@ -234,7 +235,9 @@ const founders = people
   .home-featured-workshop #save-date-heading {
     font: 700 26.25px/1.18 var(--serif);
     letter-spacing: -.01em;
-    margin: 0 0 18px;
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin: 0;
     color: var(--accent);
   }
   @media (max-width: 520px) {
@@ -245,10 +248,6 @@ const founders = people
     }
     .home-featured-workshop {
       margin-bottom: 27px;
-    }
-    .home-featured-workshop #save-date-heading {
-      margin-top: 0;
-      margin-bottom: 18px;
     }
   }
   .home-announcements .announcement-list {

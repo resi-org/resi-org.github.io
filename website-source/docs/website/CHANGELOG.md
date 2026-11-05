@@ -5,6 +5,14 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+
+## November 5 preview refinement — Save the date inside the intro card
+
+Rachel requested moving Save the date inside the event box in the introduction. The heading is now the first row within the featured card, followed by the existing workshop metadata, date/title/location, description and interest action. It appears once in that card; Events remains omitted there. The full-width institute H1, 600px opening width, two-column breakpoint, mobile order and ordinary Announcements copy are preserved.
+
+Astro check returned zero diagnostics; build and diff checks passed. Desktop 1280px, narrow two-column 521px and phone 390px visual checks passed, with no heading or page overflow; DOM check confirms the heading is inside the featured card exactly once. Screenshot: original workspace `output/home-workshop-nov5/preview-save-date-inside.png`. Preview only, not published.
+
+
 ## November 5 preview refinement — shared heading above two columns
 
 Rachel requested the institute heading above both columns, then introduction left and Save the date/event right. In the isolated preview, H1 now spans the full existing 600px width; the introduction and Save the date section start at the same vertical position beneath it. Event content, Announcements copy, 521px minimum two-column width and mobile heading → event → introduction order are preserved.

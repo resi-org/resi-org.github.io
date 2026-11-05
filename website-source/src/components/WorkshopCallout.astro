@@ -20,6 +20,7 @@ const labels = isUpcoming
 ---
 
 <aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming, 'featured-event': featured }]} aria-labelledby={headingId}>
+  <slot name="heading" />
   <p class="announcement-meta workshop-kicker">
     {!featured && <span>Events</span>}
     {labels.filter(label => !featured || label !== 'Save the date').map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
@@ -259,6 +260,7 @@ const labels = isUpcoming
     padding: 20px 16px;
   }
   .featured-event .workshop-kicker {
+    grid-row: 2;
     gap: 0;
     white-space: normal;
     flex-wrap: wrap;
@@ -267,21 +269,25 @@ const labels = isUpcoming
     display: contents;
   }
   .featured-event .workshop-description {
+    grid-row: 3;
+    grid-column: 2;
     --workshop-title-size: 20px;
     align-self: center;
     gap: 12px;
   }
   .featured-event .workshop-action {
     grid-column: 1 / -1;
-    grid-row: 4;
+    grid-row: 5;
     block-size: auto;
     inline-size: auto;
     padding: 0;
   }
   .featured-event .workshop-summary {
-    grid-row: 3;
+    grid-row: 4;
   }
   .featured-event .workshop-date {
+    grid-row: 3;
+    grid-column: 1;
     padding-right: 0;
   }
   .featured-event .workshop-link {
