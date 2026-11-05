@@ -4,6 +4,13 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+## November 5 — careers publication corrected; preview retained
+
+Rachel clarified that publication of the whole careers-section change was not authorized; the simple-text standing instruction had been applied too broadly to the pending section. She explicitly requested restoration of the previous live People/Search pages. [Rollback PR 114](https://github.com/resi-org/resi-org.github.io/pull/114), generated commit aefd2e3, merged at `7efabab0df2406e82b1a7a9b29da4879bf7d38c0`; Pages [run 42121616797](https://github.com/resi-org/resi-org.github.io/actions/runs/42121616797) succeeded. Ordinary live HTML for People and Search was fetched and exactly matches revision 3386c21 byte for byte. Only those two files changed; other live pages, assets, domain/independent endpoints and concurrent previews are preserved.
+
+The careers cards, exact hiring update and spacing refinements remain in source/local preview. Corrected the CBAI entry to **CBAI — Mentored AI safety research.** and synchronized its Search excerpt. No new public content was deployed with this correction. Shared Astro diagnostics/build passed; desktop/390px preview and no overflow checked. The complete careers section requires Rachel’s explicit publication approval before being released again. Prior release entries below are historical deployment evidence, not current authorization or live status.
+
+
 ## November 5 — Join us cards and hiring outlook — scoped release
 
 Added the approved Work at RESI and research-fellowship cards beside unchanged Visit/Reading Group. Work order is culture (#culture), unlinked **Current opportunities — details coming soon.**, then **Hiring update · November 2026** and Rachel's exact wording: **We anticipate application review and hiring to unfold over the coming year.** Status is role-neutral; application details remain coming soon and Jobs is next. Shortened fellowship entries to CBAI — Cambridge, MA; MATS — AI alignment research; Pivotal — Funded, full-time; London; SPAR — Remote, part-time (unpaid). Kept the chosen heading/introduction and all four provider URLs. Removed the old local-students paragraph. Standardized local paragraph/list gaps and aligned lower-row heading space at desktop widths; phone headings retain natural height. Added matching Search entries with full program names.
