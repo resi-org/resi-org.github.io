@@ -38,7 +38,7 @@ Founders precede researchers and operations. Research group leaders are prioriti
 - The AI Safety Reading Group participation route includes its interest form. Jobs/fellowships must describe actual opportunities; planning discussion does not establish an opening.
 - Verify affiliations, supporters, regional claims, budgets, IP policy and hiring commitments. Pronoun conventions and several clarity edits remain open in WORKLIST.
 
-November 3 Events request: reuse the exact shared homepage event card at the top of Events, with seminars beneath. Broader page layout and new cross-link placements await review. The approved Events H1 is “Community events, seminars, and workshops on the foundations of AI safety.” There is no subtitle. Preserve seminar-specific names when they describe the actual series; the page/navigation name is Events.
+November 3 Events request: reuse the exact shared homepage event card at the top of Events, with seminars beneath. Broader page layout and new cross-link placements await review. The approved Events H1 is “Community events, seminars, and workshops on the foundations of AI safety” (terminal period removed November 5). There is no subtitle. Preserve seminar-specific names when they describe the actual series; the page/navigation name is Events.
 
 ## Shared changes
 
@@ -103,3 +103,6 @@ Current report copy approved by Rachel November 4: the Anthropic/FlashProve News
 ## Homepage workshop placement — November 5
 
 Rachel authorized moving the existing December 4 workshop card unchanged above the institute H1, with no second copy in Announcements. It still occupies one of the shared three selected slots; the two selected News cards remain below the introduction. This is a scoped placement exception for the current workshop. A two-column introduction/Save the date design is separately requested for preview only; it is not an approved shared card redesign.
+
+
+November 5 editorial correction: the Events H1 is “Community events, seminars, and workshops on the foundations of AI safety” with no terminal period. This supersedes the punctuation in the November 3 approved heading; its wording and no-subtitle decision are unchanged.
