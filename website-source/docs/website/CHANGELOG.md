@@ -331,3 +331,8 @@ Astro diagnostics: zero errors/warnings/hints; build and diff checks passed. Des
 ## November 5 — remove Events heading period
 
 Rachel requested removal of the terminal period from the Events H1 and publication. Changed only that punctuation in events.astro and recorded the updated heading convention. Astro diagnostics/build passed. Generated events/index.html matches production 6812a32 byte for byte after removing that one period; no other generated page, metadata, link, domain file or independent endpoint changes. Source base ce35677. Publication/live evidence follows.
+
+
+## November 5 — Events heading punctuation live verified
+
+Publication PR 107 merged at `04b15bc364b60139a795632adfeb56e6e34ffc97`; Pages run [42043869681](https://github.com/resi-org/resi-org.github.io/actions/runs/42043869681) succeeded. Live H1 is “Community events, seminars, and workshops on the foundations of AI safety” without a period. Desktop and 390px screenshots reviewed; phone has no horizontal overflow. The only generated change is removal of that period in events/index.html; metadata, links and other pages are unchanged. Source PR 106 carries the application change, updated heading convention and verification record.

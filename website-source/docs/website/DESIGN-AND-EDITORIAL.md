@@ -38,7 +38,7 @@ Founders precede researchers and operations. Research group leaders are prioriti
 - The AI Safety Reading Group participation route includes its interest form. Jobs/fellowships must describe actual opportunities; planning discussion does not establish an opening.
 - Verify affiliations, supporters, regional claims, budgets, IP policy and hiring commitments. Pronoun conventions and several clarity edits remain open in WORKLIST.
 
-November 3 Events request: reuse the exact shared homepage event card at the top of Events, with seminars beneath. Broader page layout and new cross-link placements await review. The approved Events H1 is “Community events, seminars, and workshops on the foundations of AI safety.” There is no subtitle. Preserve seminar-specific names when they describe the actual series; the page/navigation name is Events.
+November 3 Events request: reuse the exact shared homepage event card at the top of Events, with seminars beneath. Broader page layout and new cross-link placements await review. The approved Events H1 is “Community events, seminars, and workshops on the foundations of AI safety” (terminal period removed November 5). There is no subtitle. Preserve seminar-specific names when they describe the actual series; the page/navigation name is Events.
 
 ## Shared changes
 
