@@ -4,6 +4,17 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+## November 5 — Join us cards and hiring outlook — scoped release
+
+Added the approved Work at RESI and research-fellowship cards beside unchanged Visit/Reading Group. Work order is culture (#culture), unlinked **Current opportunities — details coming soon.**, then **Hiring update · November 2026** and Rachel's exact wording: **We anticipate application review and hiring to unfold over the coming year.** Status is role-neutral; application details remain coming soon and Jobs is next. Shortened fellowship entries to CBAI — Cambridge, MA; MATS — AI alignment research; Pivotal — Funded, full-time; London; SPAR — Remote, part-time (unpaid). Kept the chosen heading/introduction and all four provider URLs. Removed the old local-students paragraph. Standardized local paragraph/list gaps and aligned lower-row heading space at desktop widths; phone headings retain natural height. Added matching Search entries with full program names.
+
+Rechecked Resolution, ARC, Epoch and Forethought public hiring pages; follow-up notes distinguish hiring outlook from active review and expressions of interest. Saved the prior completed 44-organization research, evidence and sanitized planning records in source history. No raw correspondence or private access information added.
+
+Verification: shared and isolated Astro diagnostics/build passed with zero diagnostic errors/warnings/hints (existing empty partner-data notice). Desktop 1280px, 571/570px breakpoint, 390px and 320px checks found no horizontal overflow; body text aligns within each desktop row. Reviewed light/dark, correct order/exact sentence, preserved #culture, zero Work links/buttons, four external program destinations and keyboard traversal. Release Search queries Pivotal and application review return the corresponding cards. Existing Visit/Reading Group text/form routes, mailing lists, portraits and hidden visitors preserved. Generated publication diff is only people/index.html and search/index.html; five protected domain/independent-endpoint files unchanged. Record links and git diff --check pass.
+
+Release stage: prepared in isolated source `/private/tmp/resi-people-join-us-nov5` from fd03d22 and publication `/private/tmp/resi-publish-people-join-us-nov5` from production 3386c21. Shared dirty checkout and unrelated homepage/design previews preserved. No source merge or publication yet.
+
+
 ## November 5 workshop restored in both positions; center-width preview revised
 
 Rachel explicitly requested keeping the unchanged workshop above the main heading AND restoring it as the first Announcements card. Source application commit `4d03166` is carried in [PR 109](https://github.com/resi-org/resi-org.github.io/pull/109). Publication [PR 110](https://github.com/resi-org/resi-org.github.io/pull/110) merged at `3386c21fe0b2cdb7f8f9057af76d2543d47e20f9`; Pages [run 42047395072](https://github.com/resi-org/resi-org.github.io/actions/runs/42047395072) succeeded. Ordinary live https://resi.org/ verified at desktop and 320px: two workshop cards, the full three selected Announcements entries, separate valid heading IDs, top card before H1 and no horizontal overflow. Published diff is index.html only; event wording/styling, all other pages, Events-heading correction, domain files and independent endpoints preserved. Source diagnostic/build checks passed with zero diagnostics; local release desktop/390px checks passed. This explicitly supersedes the earlier single-card placement.
