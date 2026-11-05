@@ -370,3 +370,12 @@ Rachel requested removal of the terminal period from the Events H1 and publicati
 ## November 5 — Events heading punctuation live verified
 
 Publication PR 107 merged at `04b15bc364b60139a795632adfeb56e6e34ffc97`; Pages run [42043869681](https://github.com/resi-org/resi-org.github.io/actions/runs/42043869681) succeeded. Live H1 is “Community events, seminars, and workshops on the foundations of AI safety” without a period. Desktop and 390px screenshots reviewed; phone has no horizontal overflow. The only generated change is removal of that period in events/index.html; metadata, links and other pages are unchanged. Source PR 106 carries the application change, updated heading convention and verification record.
+
+
+## November 5 — People section reorder, publication prepared
+
+Rachel requested Join us above Affiliated groups and explicit publication. Moved the complete section without rewriting it; updated shortcut order, the source ordering comment and metadata sequence. Applied the reorder both to current continuing-source preview and to the restored live baseline. The careers preview remains intact and is not authorized by this reorder.
+
+Production baseline 7efabab0df2406e82b1a7a9b29da4879bf7d38c0 retains the reverted pre-careers People/Search. Publication build uses pre-careers Astro source fd03d22 with only this reorder, in /private/tmp/resi-people-order-live-build-nov5; output is copied only to people/index.html. Search, Home, endpoints and unrelated previews are excluded. Continuing-source branch codex/people-section-order-nov5, based on f43bc949, retains its pending careers content with the same new section order.
+
+Verification: both source variants passed Astro diagnostics (48 files, zero errors/warnings/hints); live-baseline static build passed (existing empty partners notice). Every section’s HTML token content and all IDs match the live baseline after ignoring generated scope attributes; Join us precedes Affiliated groups. Preview browser at 1280/390/320px showed no overflow and no careers cards. On this page order matches. git diff --check passed. Publication/live evidence follows.
