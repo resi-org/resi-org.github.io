@@ -1,5 +1,7 @@
 # Hiring and Join us: consolidated plan and draft handoff
 
+**Current status November 5: PREVIEW ONLY.** Rachel requested rollback of the careers publication; PR 114 restored live People/Search. CBAI is corrected to **Mentored AI safety research.** in preview. Keep all proposed careers changes for review; do not publish the section without explicit approval. Historical release notes below do not establish current authorization.
+
 **November 5 refinement:** Work card order is culture → unlinked opportunities placeholder → dated role-neutral hiring update, **We anticipate application review and hiring to unfold over the coming year.** Application details remain coming soon. Fellowship entries and spacing are compacted; all four provider links, existing cards and stable anchors remain. Published through source PR 111 / publication PR 112; Pages run 42120656509 and ordinary live People/Search verified. See WORKLIST H1-H4 and CHANGELOG for evidence.
 
 **Implementation update November 3:** Rachel approved the four-program fellowship copy and Work at RESI with only the existing culture paragraph plus an unlinked coming-soon opportunities note. Implemented locally in People and Search, preserving Visit/Reading Group and #culture. Current note: **Current opportunities — details coming soon.** No Jobs page/link, hiring status or additional Work copy. Jobs is next; status awaits Rachel's facts. See WORKLIST H1/H4 and CHANGELOG for preview/verification. This approval is narrower than the historical build prompt below; no publication was performed.
