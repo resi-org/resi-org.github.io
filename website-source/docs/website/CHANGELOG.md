@@ -326,3 +326,8 @@ Publication PR 103 merged at `12748f8b615825189b63ad7c4f72d37255195252`; Pages r
 Rachel requested immediate publication of the existing December 4 workshop card above the homepage institute heading, followed by a separate, unpublished two-column preview. Built from continuing source `75a37b1` and production `12748f8` in isolated worktrees, preserving the shared dirty checkout. Only Home placement and its scoped stylesheet change; shared event content/component, Events, Search, News, selection policy and the total three announcements remain unchanged.
 
 Astro diagnostics: zero errors/warnings/hints; build and diff checks passed. Desktop and 390px phone visual checks passed; one workshop card, same 600px desktop width/content/style, correct event/interest links and no phone horizontal overflow. Generated diff is Home HTML plus its new scoped stylesheet; domain/independent endpoints and all other generated pages remain untouched. Publication/live verification pending.
+
+
+## November 5 — remove Events heading period
+
+Rachel requested removal of the terminal period from the Events H1 and publication. Changed only that punctuation in events.astro and recorded the updated heading convention. Astro diagnostics/build passed. Generated events/index.html matches production 6812a32 byte for byte after removing that one period; no other generated page, metadata, link, domain file or independent endpoint changes. Source base ce35677. Publication/live evidence follows.
