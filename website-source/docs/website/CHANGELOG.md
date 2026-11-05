@@ -320,3 +320,9 @@ Built from source a680589. Astro diagnostics passed (48 files, zero findings); b
 ## November 4 — shortened workshop description live verified
 
 Publication PR 103 merged at `12748f8b615825189b63ad7c4f72d37255195252`; Pages run [41909953431](https://github.com/resi-org/resi-org.github.io/actions/runs/41909953431) succeeded. Live Home and Events display Rachel’s exact shorter sentence, and Search returns the same description. Only those three generated pages changed, preserving the November 4 News release and other site content. Source PR 102 carries the shared description, validation evidence and Rachel’s standing simple-text publication instruction in AGENTS.md/START-HERE.
+
+## November 5 workshop prominence — authorized placement release
+
+Rachel requested immediate publication of the existing December 4 workshop card above the homepage institute heading, followed by a separate, unpublished two-column preview. Built from continuing source `75a37b1` and production `12748f8` in isolated worktrees, preserving the shared dirty checkout. Only Home placement and its scoped stylesheet change; shared event content/component, Events, Search, News, selection policy and the total three announcements remain unchanged.
+
+Astro diagnostics: zero errors/warnings/hints; build and diff checks passed. Desktop and 390px phone visual checks passed; one workshop card, same 600px desktop width/content/style, correct event/interest links and no phone horizontal overflow. Generated diff is Home HTML plus its new scoped stylesheet; domain/independent endpoints and all other generated pages remain untouched. Publication/live verification pending.
