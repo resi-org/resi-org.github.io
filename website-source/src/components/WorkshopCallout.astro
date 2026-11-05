@@ -4,9 +4,10 @@ import type { EventEntry } from '../lib/announcements';
 interface Props {
   integrated?: boolean;
   headingId?: string;
+  featured?: boolean;
   event: EventEntry;
 }
-const { integrated = false, event, headingId: customHeadingId } = Astro.props;
+const { integrated = false, featured = false, event, headingId: customHeadingId } = Astro.props;
 const headingId = customHeadingId || `${event.anchor || event.id}-heading`;
 const calendarDate = event.start;
 const month = calendarDate.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }).toUpperCase();
@@ -18,10 +19,11 @@ const labels = isUpcoming
   : [event.pastAnnouncement?.label || 'Past event'];
 ---
 
-<aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming }]} aria-labelledby={headingId}>
+<aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming, 'featured-event': featured }]} aria-labelledby={headingId}>
+  <slot name="heading" />
   <p class="announcement-meta workshop-kicker">
-    <span>Events</span>
-    {labels.map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
+    {!featured && <span>Events</span>}
+    {labels.filter(label => !featured || label !== 'Save the date').map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
   </p>
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
     <span>{month}</span>
@@ -248,6 +250,75 @@ const labels = isUpcoming
     }
     .workshop-link :global(svg) {
       display: none;
+    }
+  }
+
+  /* The preview's side column gives the action its own natural row. */
+  .workshop-card.featured-event {
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 18px 12px;
+    padding: 20px 16px;
+  }
+  .featured-event .workshop-kicker {
+    grid-row: 2;
+    gap: 0;
+    white-space: normal;
+    flex-wrap: wrap;
+  }
+  .featured-event .workshop-main {
+    display: contents;
+  }
+  .featured-event .workshop-description {
+    grid-row: 3;
+    grid-column: 2;
+    --workshop-title-size: 20px;
+    align-self: center;
+    gap: 12px;
+  }
+  .featured-event .workshop-action {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    block-size: auto;
+    inline-size: auto;
+    padding: 0;
+  }
+  .featured-event .workshop-summary {
+    grid-row: 4;
+  }
+  .featured-event .workshop-date {
+    grid-row: 3;
+    grid-column: 1;
+    padding-right: 0;
+  }
+  .featured-event .workshop-link {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+  @media (max-width: 480px) {
+    .workshop-card.featured-event {
+      padding: 20px 18px;
+      gap: 18px 14px;
+      grid-template-columns: 36px minmax(0, 1fr);
+    }
+  }
+
+  @container (width < 220px) {
+    .workshop-card.featured-event {
+      grid-template-columns: 28px minmax(0, 1fr);
+      column-gap: 10px;
+      padding: 18px 14px;
+    }
+    .featured-event .workshop-description {
+      --workshop-title-size: 18px;
+    }
+  }
+
+  @media (min-width: 521px) {
+    .workshop-card.featured-event {
+      padding-block: 16px;
+      row-gap: 12px;
+      grid-template-rows: repeat(5, max-content);
+      align-content: space-between;
     }
   }
 
