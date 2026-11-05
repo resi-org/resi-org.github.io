@@ -54,14 +54,17 @@ const founders = people
             cryptography.
           </p>
         </div>
-        <div class="actions">
-          <a class="button" href="/research">
-            Explore our research program <Arrow />
-          </a>
-          <a class="button secondary" href="/support">
-            Support our work <Arrow />
-          </a>
-        </div>
+      </div>
+      <div class="actions hero-actions">
+        <a class="button" href="/research">
+          Explore our research program <Arrow />
+        </a>
+        <a class="button secondary" href="/support">
+          Support our work <Arrow />
+        </a>
+        <a class="button secondary" href="/events">
+          See all events and seminars <Arrow />
+        </a>
       </div>
     </div>
   </section>
@@ -216,7 +219,7 @@ const founders = people
   .hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
-    grid-template-areas: "title title" "copy event";
+    grid-template-areas: "title title" "copy event" "actions actions";
     align-items: start;
     gap: 0 20px;
   }
@@ -228,6 +231,31 @@ const founders = people
     font-size: clamp(31px, 6vw, 40px);
   }
   .hero-copy { grid-area: copy; }
+  .hero-actions {
+    grid-area: actions;
+    flex-wrap: wrap;
+  }
+  @media (min-width: 521px) {
+    /* Distribute the few remaining pixels through existing paragraph gaps. */
+    .hero-copy {
+      align-self: stretch;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      row-gap: 24px;
+    }
+    .hero-copy .hero-mission {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 0;
+    }
+    .hero-copy .safe-definition { margin-top: 0; }
+    .hero-copy .mission-bridge { margin-top: 17px; }
+    .home-featured-workshop {
+      align-self: stretch;
+      display: flex;
+    }
+  }
   .home-featured-workshop {
     grid-area: event;
     container-type: inline-size;
@@ -244,7 +272,7 @@ const founders = people
     #hero-title { font-size: clamp(27px, 6.25vw, 33px); }
     .hero-grid {
       grid-template-columns: minmax(0, 1fr);
-      grid-template-areas: "title" "event" "copy";
+      grid-template-areas: "title" "event" "copy" "actions";
     }
     .home-featured-workshop {
       margin-bottom: 27px;

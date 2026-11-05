@@ -313,6 +313,15 @@ const labels = isUpcoming
     }
   }
 
+  @media (min-width: 521px) {
+    .workshop-card.featured-event {
+      padding-block: 16px;
+      row-gap: 12px;
+      grid-template-rows: repeat(5, max-content);
+      align-content: space-between;
+    }
+  }
+
   /* Retrospectives share the ordinary News treatment. Only the event calendar
      and the common date/title/location alignment distinguish their structure. */
   .workshop-card.past-event {

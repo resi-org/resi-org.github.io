@@ -6,6 +6,14 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+
+## November 5 preview refinement — balanced columns and shared action row
+
+Rachel requested nearly invisible spacing adjustments to align the left introduction text with the event box, then requested the buttons across the full center width plus See all events and seminars linking to /events. The prose and card share the natural content row; the card uses 16px vertical padding and 12px minimum row gaps, with remaining space distributed between existing rows. Left paragraph separation increases by about six pixels at the full 600px content width. Type sizes, line spacing and wording are unchanged. No fixed heights, blank spacer or script-based sizing. The #mission container retains its real layout box.
+
+All three action links are now in a separate full-width row below the two columns. They fit one row at 600px and wrap naturally at narrower widths. Existing mobile order remains heading → event → introduction → actions; the original Announcements card stays unchanged. Desktop 1280px and narrow 584/521px measurements confirmed equal prose/card bottoms; phone 390px, dark theme, link destinations and no-overflow checks passed. Astro check returned zero diagnostics; build and diff checks passed. Screenshot: original workspace `output/home-workshop-nov5/preview-balanced-columns-buttons.png`. Preview only; production unchanged at PR 110 / `3386c21`.
+
+
 ## November 5 preview refinement — Save the date inside the intro card
 
 Rachel requested moving Save the date inside the event box in the introduction. The heading is now the first row within the featured card, followed by the existing workshop metadata, date/title/location, description and interest action. It appears once in that card; Events remains omitted there. The full-width institute H1, 600px opening width, two-column breakpoint, mobile order and ordinary Announcements copy are preserved.
