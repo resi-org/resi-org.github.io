@@ -102,4 +102,6 @@ Current report copy approved by Rachel November 4: the Anthropic/FlashProve News
 
 ## Homepage workshop placement — November 5
 
-Rachel authorized moving the existing December 4 workshop card unchanged above the institute H1, with no second copy in Announcements. It still occupies one of the shared three selected slots; the two selected News cards remain below the introduction. This is a scoped placement exception for the current workshop. A two-column introduction/Save the date design is separately requested for preview only; it is not an approved shared card redesign.
+Rachel’s follow-up explicitly supersedes the first top-only placement: the current December 4 workshop appears both above the institute H1 and first in the ordinary three-entry Announcements feed. Use the same selected event record and shared card treatment, with distinct accessible heading IDs. This intentional repeat is a scoped exception for the workshop, not a fourth feed slot.
+
+The two-column design remains preview-only. Latest requested trial keeps the usual 600px central width, drops Events from the featured box, keeps Save the date once above that box, and preserves two columns down to 521px. When stacked, place the event directly below the main heading and before the institutional introduction/actions. The normal Announcements card keeps its existing labels and treatment. These preview layout details are not an approved shared-card redesign.

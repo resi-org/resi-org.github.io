@@ -3,11 +3,12 @@ import Arrow from './Arrow.astro';
 import type { EventEntry } from '../lib/announcements';
 interface Props {
   integrated?: boolean;
+  headingId?: string;
   featured?: boolean;
   event: EventEntry;
 }
-const { integrated = false, featured = false, event } = Astro.props;
-const headingId = `${event.anchor || event.id}-heading`;
+const { integrated = false, featured = false, event, headingId: customHeadingId } = Astro.props;
+const headingId = customHeadingId || `${event.anchor || event.id}-heading`;
 const calendarDate = event.start;
 const month = calendarDate.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }).toUpperCase();
 const dateLabel = calendarDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
@@ -20,7 +21,7 @@ const labels = isUpcoming
 
 <aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming, 'featured-event': featured }]} aria-labelledby={headingId}>
   <p class="announcement-meta workshop-kicker">
-    <span>Events</span>
+    {!featured && <span>Events</span>}
     {labels.filter(label => !featured || label !== 'Save the date').map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
   </p>
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
@@ -253,11 +254,12 @@ const labels = isUpcoming
 
   /* The preview's side column gives the action its own natural row. */
   .workshop-card.featured-event {
-    grid-template-columns: 48px minmax(0, 1fr);
-    gap: 20px 18px;
-    padding: 24px;
+    grid-template-columns: 32px minmax(0, 1fr);
+    gap: 18px 12px;
+    padding: 20px 16px;
   }
   .featured-event .workshop-kicker {
+    gap: 0;
     white-space: normal;
     flex-wrap: wrap;
   }
@@ -265,6 +267,7 @@ const labels = isUpcoming
     display: contents;
   }
   .featured-event .workshop-description {
+    --workshop-title-size: 20px;
     align-self: center;
     gap: 12px;
   }
@@ -290,6 +293,17 @@ const labels = isUpcoming
       padding: 20px 18px;
       gap: 18px 14px;
       grid-template-columns: 36px minmax(0, 1fr);
+    }
+  }
+
+  @container (width < 220px) {
+    .workshop-card.featured-event {
+      grid-template-columns: 28px minmax(0, 1fr);
+      column-gap: 10px;
+      padding: 18px 14px;
+    }
+    .featured-event .workshop-description {
+      --workshop-title-size: 18px;
     }
   }
 
