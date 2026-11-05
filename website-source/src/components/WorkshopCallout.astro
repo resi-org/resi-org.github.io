@@ -3,10 +3,11 @@ import Arrow from './Arrow.astro';
 import type { EventEntry } from '../lib/announcements';
 interface Props {
   integrated?: boolean;
+  headingId?: string;
   event: EventEntry;
 }
-const { integrated = false, event } = Astro.props;
-const headingId = `${event.anchor || event.id}-heading`;
+const { integrated = false, event, headingId: customHeadingId } = Astro.props;
+const headingId = customHeadingId || `${event.anchor || event.id}-heading`;
 const calendarDate = event.start;
 const month = calendarDate.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }).toUpperCase();
 const dateLabel = calendarDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });

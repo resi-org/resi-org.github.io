@@ -13,7 +13,6 @@ import WorkshopCallout from './WorkshopCallout.astro';
 import { institute, researchAgenda } from '../data/institute';
 const entries = selectHomepageAnnouncements(await getAnnouncements());
 const featuredWorkshop = entries.find((entry): entry is EventEntry => entry.category === 'Events' && entry.anchor === 'workshop');
-const remainingEntries = entries.filter((entry) => entry !== featuredWorkshop);
 const people = await getCollection('people');
 const researchTeam = people
   .filter((p) => p.data.group === 'research' && p.data.photo)
@@ -26,7 +25,7 @@ const founders = people
 <Base wide>
   {featuredWorkshop && (
     <div class="shell home-featured-workshop">
-      <WorkshopCallout event={featuredWorkshop} />
+      <WorkshopCallout headingId="featured-workshop-heading" event={featuredWorkshop} />
     </div>
   )}
   <section class="hero shell" aria-labelledby="hero-title">
@@ -68,7 +67,7 @@ const founders = people
     <div class="shell home-announcements">
       <h2 id="announcements-heading">Announcements</h2>
       <ul class="announcement-list">
-        {remainingEntries.map((entry) => {
+        {entries.map((entry) => {
           if (entry.category === 'Events') {
             return <li class="event-announcement"><WorkshopCallout event={entry} integrated /></li>;
           }
