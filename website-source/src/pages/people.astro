@@ -14,7 +14,7 @@ import Founder from '../components/Founder.astro';
 
 // Ordering follows Rachel's instructions of 2026-09-14: founding scientific
 // team, research team, operations, visiting researchers,
-// affiliated groups, and how to get involved. Research-team leaders come first,
+// how to get involved, and affiliated groups (Rachel, November 5). Research-team leaders come first,
 // with Chloé directly before Sam and Miranda directly before Ran
 // (Rachel, 2026-10-25). Preserve the existing order within the remaining groups.
 // Every group uses the same treatment, so seniority shows only in the order.
@@ -47,7 +47,7 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
 
 <Base
   title="People"
-  description={`The people at RESI: the founding scientific team, the research team, operations, ${showVisitingResearchers ? 'visiting researchers, ' : ''}affiliated groups, and how to get involved.`}
+  description={`The people at RESI: the founding scientific team, the research team, operations, ${showVisitingResearchers ? 'visiting researchers, ' : ''}how to get involved, and affiliated groups.`}
 >
   <header class="page-hero" id="intro">
     <p class="eyebrow">People</p>
@@ -71,8 +71,8 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
       { label: 'Founders', href: '#founders' },
       { label: 'Team', href: '#research' },
       ...(showVisitingResearchers ? [{ label: 'Visitors', href: '#visitors' }] : []),
-      { label: 'Affiliated groups', href: '#affiliated' },
       { label: 'Join us', href: '#get-involved' },
+      { label: 'Affiliated groups', href: '#affiliated' },
     ]}
   />
 
@@ -134,22 +134,6 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
 
   )}
 
-  <Section divider label="Affiliated groups" id="affiliated">
-    <ul class="compact">
-      {affiliated.map((g) => (
-        <li>
-          {g.data.url ? (
-            <a href={g.data.url} {...external(g.data.url)}>
-              {g.data.name}
-            </a>
-          ) : (
-            g.data.name
-          )}
-        </li>
-      ))}
-    </ul>
-  </Section>
-
   <Section divider label="Join us" id="get-involved">
     {/* Culture led its own section until 2026-09-20. It opens this one
         instead: what it is like to work at RESI is the reason to join, so it
@@ -200,6 +184,23 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
       { label: 'Join announcements + weekly talks', href: institute.talks },
     ]} />
   </Section>
+
+  <Section divider label="Affiliated groups" id="affiliated">
+    <ul class="compact">
+      {affiliated.map((g) => (
+        <li>
+          {g.data.url ? (
+            <a href={g.data.url} {...external(g.data.url)}>
+              {g.data.name}
+            </a>
+          ) : (
+            g.data.name
+          )}
+        </li>
+      ))}
+    </ul>
+  </Section>
+
 
 </Base>
 
