@@ -20,6 +20,8 @@ This folder is a linked Git worktree nested inside the older RESI workspace. It 
 
 ## Current preview and production
 
+November 5 homepage update: source PR 104 (`ce35677`) and publication PR 105 (`6812a32`) move the existing December 4 workshop card unchanged above the institute H1, without a duplicate. Pages run 42043181942 succeeded; ordinary live desktop/390px verified. The separate two-column Save the date design is **preview only**, in `/private/tmp/resi-home-save-date-preview-nov5` on `codex/home-save-date-columns-preview-nov5`, served at http://127.0.0.1:4406/. Do not publish that preview without Rachel’s approval. The original dirty shared application checkout remains untouched. See WORKLIST E11/E12 and CHANGELOG. Later independent production PR 107 (`04b15bc`) changes only the Events heading and must be preserved.
+
 Verified through GitHub on November 4:
 
 - Production main is `12748f8b615825189b63ad7c4f72d37255195252`, published through [PR 103](https://github.com/resi-org/resi-org.github.io/pull/103) for Rachel’s shortened December 4 workshop description. Pages run 41909953431 succeeded; exact live Home/Events/Search wording verified. The November 4 News release and prior changes are preserved. Evidence is in CHANGELOG.
