@@ -151,15 +151,20 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
   </Section>
 
   <Section divider label="Join us" id="get-involved">
-    {/* Culture led its own section until 2026-09-20. It opens this one
-        instead: what it is like to work at RESI is the reason to join, so it
-        comes before the invitation. `culture` stays as an id so a link
-        already shared into the draft still lands on the paragraph. */}
-    <p id="culture">
-      RESI’s culture is mission-first: open collaboration and early sharing of ideas. To protect
-      junior researchers, we will actively support their credit and careers.
-    </p>
     <div class="join-cards">
+      <article class="join-card" id="work-at-resi" aria-labelledby="work-heading">
+        <h3 id="work-heading">Work at RESI</h3>
+        {/* Preserve the previously shared culture anchor when relocating this paragraph. */}
+        <p id="culture">
+          RESI’s culture is mission-first: open collaboration and early sharing of ideas. To protect
+          junior researchers, we will actively support their credit and careers.
+        </p>
+        <p class="opportunities-note">Current opportunities — details coming soon.</p>
+        <p class="hiring-update">
+          <strong>Hiring update · <time datetime="2026-11-05">November 2026</time></strong>
+          We anticipate application review and hiring to unfold over the coming year.
+        </p>
+      </article>
       <article class="join-card" aria-labelledby="visit-heading">
         <h3 id="visit-heading">Visit</h3>
         <p>
@@ -171,6 +176,28 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
           Scientists interested in visiting can contact{' '}
           <a href="mailto:hello@resi.org">hello@resi.org</a>.
         </p>
+      </article>
+      <article class="join-card" id="research-fellowships" aria-labelledby="fellowships-heading">
+        <h3 id="fellowships-heading">Research fellowships across the AI safety network</h3>
+        <p>Interested students may also want to explore the following programs:</p>
+        <ul class="fellowship-programs">
+          <li>
+            <a href="https://www.cbai.ai/ais-research-fellowship" {...external('https://www.cbai.ai/ais-research-fellowship')}>CBAI</a>{' '}
+            — Cambridge, MA.
+          </li>
+          <li>
+            <a href="https://www.matsprogram.org/apply" {...external('https://www.matsprogram.org/apply')}>MATS</a>{' '}
+            — AI alignment research.
+          </li>
+          <li>
+            <a href="https://www.pivotal-research.org/fellowships/ai-safety-fellowship" {...external('https://www.pivotal-research.org/fellowships/ai-safety-fellowship')}>Pivotal</a>{' '}
+            — Funded, full-time; London.
+          </li>
+          <li>
+            <a href="https://sparai.org/" {...external('https://sparai.org/')}>SPAR</a>{' '}
+            — Remote, part-time (unpaid).
+          </li>
+        </ul>
       </article>
       <article class="join-card" aria-labelledby="reading-group-heading">
         <h3 id="reading-group-heading">AI Safety Reading Group</h3>
@@ -190,11 +217,6 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
         </p>
       </article>
     </div>
-    <p class="local-students">
-      Local students interested in AI safety may also want to explore the{' '}
-      <a href="https://www.cbai.ai/" {...external('https://www.cbai.ai/')}>
-        Cambridge Boston Alignment Initiative</a>.
-    </p>
     <SectionLinks items={[
       { label: 'Join the RESI announcements mailing list', href: institute.announcements },
       { label: 'Join announcements + weekly talks', href: institute.talks },
@@ -217,13 +239,33 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
     border-radius: 2.25px;
   }
   .join-card h3 {
-    margin: 0 0 15px;
+    margin: 0 0 12px;
+  }
+  .join-card p + p {
+    margin-top: 12px;
   }
   .join-card > :last-child {
     margin-bottom: 0;
   }
-  .local-students {
-    margin-top: 21px;
+  .hiring-update strong {
+    display: block;
+    margin-bottom: 4.5px;
+    font-weight: 500;
+  }
+  .opportunities-note {
+    color: var(--muted);
+  }
+  .fellowship-programs {
+    margin-top: 12px;
+    padding-left: 18px;
+  }
+  .fellowship-programs li + li {
+    margin-top: 7.5px;
+  }
+  @media (min-width: 570.01px) {
+    .join-card:nth-child(n + 3) h3 {
+      min-height: 2lh;
+    }
   }
   @media (max-width: 570px) {
     .join-cards {

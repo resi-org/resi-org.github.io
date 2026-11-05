@@ -2,6 +2,7 @@
 
 These references support website decisions and can travel with the project without copying private correspondence or raw meeting transcripts.
 
+- [November 3 careers and external fellowship research](careers-fellowships-2026-11-03/report.md): two-track research across the confirmed 44 organizations, a [complete coverage matrix](careers-fellowships-2026-11-03/audit.md), Resolution-focused careers analysis, provider/relationship distinctions and seven comparison screenshots. The [follow-up](careers-fellowships-2026-11-03/follow-up.md) records Rachel's chosen heading/intro, six affiliated-group checks, selective Pivotal/SPAR recommendations, an eighth screenshot for the new Simons postdoc, Resolution/Lightcone copy analysis and the AcademicJobsOnline full-service/eDelivery distinction. Access limits are explicit; proposed additions and Work copy remain under review. No website implementation.
 - [Organization inventory](organizations.json): 100 unique entries from the earlier research collection, carrying names, URLs and audit scope. The visitor question's primary comparison included 37 AI safety/adjacent organizations and seven selected institutes; all 100 are not the denominator. Categories describe that dated audit.
 - [October 27 visitor audit](visitor-list-review-2026-10-27.html): earlier roster survey with public source links. Subsequent deeper findings below refine its interpretation, particularly CAIS. Treat website observations as dated and verify before current claims.
 
