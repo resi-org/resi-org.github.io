@@ -5,6 +5,16 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+
+## November 5 mobile feature-card spacing correction — published and live verified
+
+Rachel confirmed the current mobile placement and requested tighter spacing, especially above Inaugural community workshop, with standard site line spacing. At 520px and below, the intro card now uses the ordinary 12px card row rhythm and a 4px upward optical adjustment for the metadata row, yielding an 8px gap beneath Save the date instead of 18px. Body font size/line height, copy, links and heading → event → introduction order are unchanged. Desktop balance and ordinary Home/Events cards are unaffected.
+
+Source application commit `e1fb4da38ab4589474d4e3f2c418ec175bbf2249` is in [PR 120](https://github.com/resi-org/resi-org.github.io/pull/120). Publication [PR 121](https://github.com/resi-org/resi-org.github.io/pull/121) merged at `2f9c948f504e0ffa7bfefa13c4c39f88cc7c445e`; Pages [run 42129287517](https://github.com/resi-org/resi-org.github.io/actions/runs/42129287517) succeeded. Git pushes failed with GitHub commit_refs_rules errors; the same reviewed changes were saved via GitHub’s standard Git-data API, then published through the normal separate source/publication pull requests. No force updates or direct main commit were used. Generated scope is Home’s event-CSS reference and one new stylesheet; every other production file is preserved.
+
+Astro check: zero diagnostics; build and diff checks passed. Local 320/390/520px review showed an 8px heading/label gap with no overflow; 1280px retained equal prose/card bottoms. Ordinary live https://resi.org/ at 390px confirmed the 8px gap, unchanged below-heading placement, no overflow, and identical 21.0375px body leading in the featured and standard event cards. Screenshot: original workspace `output/home-workshop-nov5/live-mobile-spacing-fixed.jpg`. No forms submitted. Current mobile placement is confirmed; after-definition option remains an unpublished earlier trial. Comparison option 1 now points at the corrected release server, http://127.0.0.1:4413/.
+
+
 ## November 5 approved homepage intro/event design — published and live verified
 
 Rachel explicitly requested publication of the reviewed balanced layout from preview `c98f027`, then asked for two mobile-order previews. Release source was isolated from current continuing source `4f4fba1`; only HomePage.astro and WorkshopCallout.astro were copied from the reviewed preview. Source application `a8245fe` is carried in [PR 118](https://github.com/resi-org/resi-org.github.io/pull/118). Generated publication [PR 119](https://github.com/resi-org/resi-org.github.io/pull/119) merged at `6a42686dd0cc220287d6c74db88bb8d0aec2122a` from current production `5176391`; Pages [run 42126278029](https://github.com/resi-org/resi-org.github.io/actions/runs/42126278029) succeeded.
