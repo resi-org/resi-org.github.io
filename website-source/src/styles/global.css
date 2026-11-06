@@ -3829,5 +3829,6 @@ article.map-item:hover {
 @media screen {
   .desktop-nav a[aria-current='page'] {
     font-weight: 700;
+    text-decoration: none;
   }
 }

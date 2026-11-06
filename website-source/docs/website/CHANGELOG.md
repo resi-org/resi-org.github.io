@@ -6,6 +6,11 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+## November 6 navigation underline correction — published and live verified
+
+Rachel clarified that the current-page label should be bold without an underline. Added `text-decoration: none` to the same desktop current-page rule, retaining weight 700, Home exclusion, mobile styling and keyboard focus. Source PR 125; publication PR 126 at `fc6a5b17d156430bb384e7ae8f84b5095fa25e98`, Pages run 42306880896. Astro diagnostics returned zero errors/warnings/hints; build passed. Local checks across all six main routes show weight 700 and decoration none; Home has no current menu label. The generated stylesheet is identical to the previous version apart from this declaration; page HTML changes only its stylesheet URL. Public content and pending previews are preserved. Pages run 42306880896 succeeded. Live Research with release query `?release=fc6a5b1` confirmed the new stylesheet, weight 700 and decoration none; ordinary URL initially retained the preceding stylesheet in cache. Screenshot: original workspace `output/live-navigation-bold-only-nov6.jpg`.
+
+
 ## November 6 desktop current-page navigation — published and live verified
 
 Rachel requested bold current-page labels whenever the full header navigation is visible, with Home excluded. Added one screen-only `.desktop-nav a[aria-current='page']` rule at weight 700. Existing current-page semantics, mobile menu, hover/focus treatments and links remain unchanged.
