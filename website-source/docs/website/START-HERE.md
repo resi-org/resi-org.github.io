@@ -20,6 +20,8 @@ This folder is a linked Git worktree nested inside the older RESI workspace. It 
 
 ## Current preview and production
 
+November 6 underline follow-up — **PUBLISHED AND LIVE VERIFIED**: Rachel clarified bold only. Source PR 125; publication PR 126 at `fc6a5b17d156430bb384e7ae8f84b5095fa25e98`; successful Pages run 42306880896. Release-tagged live Research verified bold without underline; ordinary URL initially cached the prior version. This is the current production revision.
+
 November 6 desktop navigation — **PUBLISHED AND LIVE VERIFIED**: full-menu current-page labels are bold; Home has no emphasized label and mobile styling is unchanged. Source PR 122 / `5c3c66e`; publication PR 123 / `c826b016d75909f5cf897ba8735bde121e216600`; successful Pages run 42302275646. Live six-page/Home checks passed. Only the Base stylesheet and its references changed; current public page content and pending previews are preserved. See CHANGELOG.
 
 November 5 mobile spacing — **PUBLISHED**: Rachel confirmed the current event-below-heading mobile placement and requested tighter spacing. Source app e1fb4da / PR 120; publication PR 121 at `2f9c948f504e0ffa7bfefa13c4c39f88cc7c445e`, successful Pages run 42129287517. The intro card uses the standard 12px row rhythm and an 8px gap under Save the date on stacked layouts; body line height is unchanged and matches the standard event card. Live 390px verified. Active correction checkout: `/private/tmp/resi-home-mobile-spacing-nov5`, preview http://127.0.0.1:4413/. Other pages/previews remain preserved. See WORKLIST E12/E13 and CHANGELOG.
