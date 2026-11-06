@@ -4,6 +4,10 @@ Current queue for resi.org. Reconciled November 2, 2026 from Rachel's requests, 
 
 Homepage introduction: live verified November 3 through source PR 80/publication PR 81; corrected comma and matching Home Search excerpt included. Other copy findings remain open.
 
+## Desktop current-page navigation — November 6
+
+Ready to publish: Rachel requested bold current-page text in the full header menu, excluding Home. One shared desktop-only CSS rule; all six main routes and Home checked at 1280px, longest label fits at 915px, and 390px mobile menu opens with unchanged weight and no overflow. Astro check/build passed. Scoped publication preserves current public HTML/content, including the careers rollback, by changing only shared stylesheet references and adding the verified stylesheet.
+
 ## Status and priorities
 
 Use Proposed, Decision needed, Drafting, Preview, Ready to publish, Published, and Live verified. Completed, Deferred and Superseded close or park an item. A preview is not live. Include affected pages, factual source and verification as an item progresses. Carry forward existing authorization within its actual scope.

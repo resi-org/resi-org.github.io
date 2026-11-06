@@ -3824,3 +3824,10 @@ article.map-item:hover {
     flex-basis: 18px;
   }
 }
+
+/* Identify the current page when the full header navigation is visible. */
+@media screen {
+  .desktop-nav a[aria-current='page'] {
+    font-weight: 700;
+  }
+}

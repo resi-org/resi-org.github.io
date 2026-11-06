@@ -6,6 +6,13 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+## November 6 desktop current-page navigation — ready to publish
+
+Rachel requested bold current-page labels whenever the full header navigation is visible, with Home excluded. Added one screen-only `.desktop-nav a[aria-current='page']` rule at weight 700. Existing current-page semantics, mobile menu, hover/focus treatments and links remain unchanged.
+
+Source baseline bea4d1e; production baseline 2f9c948; no open PRs at start. Isolated source `/private/tmp/resi-desktop-nav-nov6` preserves the dirty shared checkout and pending careers/Home previews. Astro diagnostics: zero errors/warnings/hints; build passed. Browser checks confirmed exactly one bold label on About/Research/People/Events/News/Support and none on Home, all others weight 400; 915px longest-label header fits, and 390px mobile navigation opens with unchanged weight and no overflow. Publication stylesheet is byte-identical to the current Base CSS after removing the single new declaration. Existing production HTML changes only its Base CSS URL; no preview page contents, domain settings or independent endpoints are copied from the build. Live verification follows deployment.
+
+
 ## November 5 mobile feature-card spacing correction — published and live verified
 
 Rachel confirmed the current mobile placement and requested tighter spacing, especially above Inaugural community workshop, with standard site line spacing. At 520px and below, the intro card now uses the ordinary 12px card row rhythm and a 4px upward optical adjustment for the metadata row, yielding an 8px gap beneath Save the date instead of 18px. Body font size/line height, copy, links and heading → event → introduction order are unchanged. Desktop balance and ordinary Home/Events cards are unaffected.
