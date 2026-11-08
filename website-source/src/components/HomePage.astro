@@ -68,40 +68,6 @@ const founders = people
       </div>
     </div>
   </section>
-  <section class="home-band" id="announcements" aria-labelledby="announcements-heading">
-    <div class="shell home-announcements">
-      <h2 id="announcements-heading">Announcements</h2>
-      <ul class="announcement-list">
-        {entries.map((entry) => {
-          if (entry.category === 'Events') {
-            return <li class="event-announcement"><WorkshopCallout event={entry} integrated /></li>;
-          }
-          const href = entry.kind === 'Press' && entry.url ? entry.url : `/news#${entry.id}`;
-          return (
-            <li class="announcement-item">
-              <p class="announcement-meta">
-                <span>News</span>
-                {entry.source && <span>{entry.source}</span>}
-                <time datetime={entry.date.toISOString().slice(0, 10)}>{fmtDay(entry.date)}</time>
-              </p>
-              <h3>
-                <a href={href} {...external(href)}>
-                  {entry.homepageTitle || entry.title}
-                </a>
-              </h3>
-              {(entry.homepageSummary || entry.summary) && (
-                <p class="announcement-summary">{entry.homepageSummary || entry.summary}</p>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-      <SectionLinks align="end" items={[
-        { label: 'See all news', href: '/news' },
-        { label: 'See community events', href: '/events' },
-      ]} />
-    </div>
-  </section>
   <section class="home-band tint" id="argument" aria-labelledby="precedent-heading">
     <div class="shell home-rationale">
       <h2 id="precedent-heading">The modern cryptography precedent</h2>
@@ -155,6 +121,40 @@ const founders = people
           ]} />
         </div>
       </div>
+    </div>
+  </section>
+  <section class="home-band" id="announcements" aria-labelledby="announcements-heading">
+    <div class="shell home-announcements">
+      <h2 id="announcements-heading">Announcements</h2>
+      <ul class="announcement-list">
+        {entries.map((entry) => {
+          if (entry.category === 'Events') {
+            return <li class="event-announcement"><WorkshopCallout event={entry} integrated /></li>;
+          }
+          const href = entry.kind === 'Press' && entry.url ? entry.url : `/news#${entry.id}`;
+          return (
+            <li class="announcement-item">
+              <p class="announcement-meta">
+                <span>News</span>
+                {entry.source && <span>{entry.source}</span>}
+                <time datetime={entry.date.toISOString().slice(0, 10)}>{fmtDay(entry.date)}</time>
+              </p>
+              <h3>
+                <a href={href} {...external(href)}>
+                  {entry.homepageTitle || entry.title}
+                </a>
+              </h3>
+              {(entry.homepageSummary || entry.summary) && (
+                <p class="announcement-summary">{entry.homepageSummary || entry.summary}</p>
+              )}
+            </li>
+          );
+        })}
+      </ul>
+      <SectionLinks align="end" items={[
+        { label: 'See all news', href: '/news' },
+        { label: 'See community events', href: '/events' },
+      ]} />
     </div>
   </section>
   <section class="home-band tint" id="research" aria-labelledby="research-heading">

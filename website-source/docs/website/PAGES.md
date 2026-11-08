@@ -41,3 +41,5 @@ For an edit, check related content, navigation, Search, metadata, stable IDs, ac
 Apply [EVENT-ROUTING.md](EVENT-ROUTING.md) to short event/seminar/group requests. Community/public events share Home/Events records; seminars stay in their seminar section by default, reading groups in their participation context, and working groups on Research. Explicit seminar/group Home promotions link to their canonical entry and do not appear a second time under Community events. `event-announcement-policy.ts` enforces homepage eligibility; `content.config.ts` requires classification.
 
 November 5 People order: Join us (#get-involved) precedes Affiliated groups (#affiliated), including the On this page links. Preserve the separate preview-only careers content; the reorder release uses the restored live section.
+
+November 8 Home placement published (E14, PR 131): Announcements returns after Founders/research community, before Key research areas, using its unchanged shared cards/feed and anchor. The intro/featured workshop stays in place. Live desktop/mobile verified.
