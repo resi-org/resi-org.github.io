@@ -20,6 +20,8 @@ This folder is a linked Git worktree nested inside the older RESI workspace. It 
 
 ## Current preview and production
 
+November 8 Join us — **PUBLICATION APPROVED, IN PROGRESS**: Rachel explicitly requested publishing the reviewed section. This supersedes the November 5 preview-only restriction for this section. The release uses the final “Current opportunities — details coming.” placeholder and inline “Hiring update, Nov 2026:” sentence, CBAI/MATS/Pivotal/SPAR and natural Reading Group heading spacing. Isolated release: `/private/tmp/resi-join-us-source-nov8`; preserve the later People section order, current navigation and all unrelated previews. No Jobs page or application link is included.
+
 November 6 underline follow-up — **PUBLISHED AND LIVE VERIFIED**: Rachel clarified bold only. Source PR 125; publication PR 126 at `fc6a5b17d156430bb384e7ae8f84b5095fa25e98`; successful Pages run 42306880896. Release-tagged live Research verified bold without underline; ordinary URL initially cached the prior version. This is the current production revision.
 
 November 6 desktop navigation — **PUBLISHED AND LIVE VERIFIED**: full-menu current-page labels are bold; Home has no emphasized label and mobile styling is unchanged. Source PR 122 / `5c3c66e`; publication PR 123 / `c826b016d75909f5cf897ba8735bde121e216600`; successful Pages run 42302275646. Live six-page/Home checks passed. Only the Base stylesheet and its references changed; current public page content and pending previews are preserved. See CHANGELOG.

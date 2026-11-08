@@ -143,10 +143,10 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
           RESI’s culture is mission-first: open collaboration and early sharing of ideas. To protect
           junior researchers, we will actively support their credit and careers.
         </p>
-        <p class="opportunities-note">Current opportunities — details coming soon.</p>
+        <p class="opportunities-note">Current opportunities — details coming.</p>
         <p class="hiring-update">
-          <strong>Hiring update · <time datetime="2026-11-05">November 2026</time></strong>
-          We anticipate application review and hiring to unfold over the coming year.
+          <strong>Hiring update, <time datetime="2026-11">Nov 2026</time>:</strong>{' '}
+          We anticipate application review and hiring to take place over the coming year.
         </p>
       </article>
       <article class="join-card" aria-labelledby="visit-heading">
@@ -249,8 +249,8 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
     margin-bottom: 0;
   }
   .hiring-update strong {
-    display: block;
-    margin-bottom: 4.5px;
+    display: inline;
+    margin: 0;
     font-weight: 500;
   }
   .opportunities-note {
@@ -262,11 +262,6 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
   }
   .fellowship-programs li + li {
     margin-top: 7.5px;
-  }
-  @media (min-width: 570.01px) {
-    .join-card:nth-child(n + 3) h3 {
-      min-height: 2lh;
-    }
   }
   @media (max-width: 570px) {
     .join-cards {
