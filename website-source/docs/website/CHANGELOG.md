@@ -8,6 +8,15 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+## November 8 explanatory controls/mobile headings — published and live verified
+
+Source [PR 135](https://github.com/resi-org/resi-org.github.io/pull/135), application 9291220, merged at ebea79238daaa3184202521d95c68fbd4a80e5cc. Generated publication [PR 136](https://github.com/resi-org/resi-org.github.io/pull/136), application f5e8543, merged at 1a5e9a0d387cb2d40ef71efc6d50e9dcf18c635b. [Pages run 42492297032](https://github.com/resi-org/resi-org.github.io/actions/runs/42492297032) succeeded. Scope exactly ten HTML files and three immutable CSS files; existing domain/endpoint/legacy files and recent Home/People changes preserved.
+
+Ordinary live URLs verified: About has six inline click-only FAQ controls and no hint markup. Under an actually hovered pointer a closed mark stays 7×1.1px; clicking opens into 3px dots that remain after the pointer leaves. Research has 27 explanatory controls; foundational-paper closed hover produces 3px dots and details hint, with correct click open/close. All 16 rendered paper-author strings exactly equal the baseline source/publication values. Ten modern pages at 375/1280px all serve the new Base stylesheet, have no horizontal overflow and show expected mobile/desktop H1 sizes (Home 29.7/40px, other pages 28.05/33px). People retains all 21 publication-list triangles. Native FAQ Enter/Space names/state checks passed locally; earlier accessibility/touch/reduced-motion verification limits still apply (browser accessibility data/forced CSS rules, not spoken screen readers or physical-phone testing).
+
+Author research is saved in [the comparison](references/foundational-author-style-comparison-2026-11-08.md): no single shared convention in the sampled primary pages. Recommended compact full-name treatment with a three-author cutoff is a proposal only. Existing public author lines and Search metadata were deliberately held. The full-name trial is not merged or published. Proof/audit files are in the master design visualization folder: published-faq-click-only-nov8.png and published-disclosures-audit-nov8.json.
+
+
 ## November 8 explanatory controls and mobile H1s — release prepared
 
 Rachel authorized publishing the complete reviewed explanatory-control and mobile-heading work, added FAQ click-only animation and explicitly held author-name changes. Prepared clean source codex/disclosure-release-nov8 from continuing source 107b688 (production 41ca6d8, no open PRs at start). Copied the approved application changes from the isolated design preview; did not copy author data, researchers helper comment, collection README or the proposed full-name rule. Current author strings and Search text remain unchanged.

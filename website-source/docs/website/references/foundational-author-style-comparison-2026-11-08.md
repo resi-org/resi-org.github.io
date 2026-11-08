@@ -1,0 +1,20 @@
+# Foundational-research author presentation — comparison, November 8, 2026
+
+Rachel asked to hold author-name publication, compare Simons/RAND and similar research pages, and assess full names versus initials and a first-three-plus-et-al display. This is a focused primary-site comparison, not a census or a formal citation-style mandate. No author presentation change is implemented or published from these findings.
+
+| Site / page type | Observed pattern | Relevance to RESI |
+| --- | --- | --- |
+| [Simons Foundation / Flatiron publications](https://www.simonsfoundation.org/flatiron/publications/) | Sampled listings include full given names, retained middle initials and et al. after several authors. Other imported entries use given-name initials. Examples include six names before et al. in biological work and four before et al. in astronomy. | Full names plus truncation is an established publication-list pattern. The samples do not establish a uniform three-author cutoff. |
+| [RAND report page, June 2026 biosecurity assessment](https://www.rand.org/pubs/research_reports/RRA4741-1.html) | Full names in the byline, with ten displayed before et al.; full credits appear in the citation below. [A November report](https://www.rand.org/pubs/research_reports/RRA4736-1.html) displays all six full names. | Supports full-name bylines and a separate complete-credit layer. These are report detail pages, so their much longer bylines are less comparable to RESI’s compact paper overview. RAND’s general research index did not expose author bylines in the retrieved listings. |
+| [Ai2 papers](https://allenai.org/papers) | Sampled current entries show three leading authors, an additional-author count and the final author. Many given names are full; some names arrive abbreviated from the source metadata. | Closest compact AI-paper-list comparison: a short leading set of recognizable author names with a clear indication of omitted authors. Ai2’s current pattern is not literally first-three-plus-et-al. |
+| [Alan Turing Institute research-engineering publications](https://www.turing.ac.uk/research/research-engineering/reg-publications) | Both full given-name lists and bibliography-style surname/initial lists; long entries can use et al. | Both name treatments occur at a comparable research institution. The mixture appears to follow imported reference formats rather than one compact overview convention; RESI should choose its own consistent treatment. |
+
+## Recommendation for Rachel — proposed, not an approved rule
+
+Use full given names (retaining published/preferred middle initials), listing every author for papers with one to three authors. For four or more, show the first three in published order followed by plain et al. Keep the complete verified list, including People links, inside the existing explanatory details. Retain the complete names for Search/indexing if this proposal is implemented.
+
+This keeps recognizable names on the page without long all-author blocks; initials alone shorten individual names but do not solve very long coauthor lists. The first-three threshold is a RESI house-style recommendation, not a universal scholarly requirement. Full names with et al. is supported by the observed sites; the exact three-name cutoff is our design choice. Do not describe Ai2 as an exact et-al implementation or RAND’s ten-name detail-page example as a publication-index rule.
+
+Preserve the publication’s author order. A RESI researcher can fall after the cutoff (Daniela Rus is seventh on the existing BarrierNet record); do not move them to the front to make them visible. Their complete linked credit should remain in the expansion. If Rachel wants every RESI contributor visible in the collapsed view, resolve that presentation explicitly rather than silently changing order or mixing rules.
+
+The all-full-name trial and the newly suggested truncation are both held from publication. The November 8 control/mobile-H1 release preserves all 16 existing live author strings exactly. The earlier full-name-only proposal is reopened and is not the current public convention.
