@@ -161,6 +161,23 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
           <a href="mailto:hello@resi.org">hello@resi.org</a>.
         </p>
       </article>
+      <article class="join-card" aria-labelledby="reading-group-heading">
+        <h3 id="reading-group-heading">AI Safety Reading Group</h3>
+        <p>
+          The{' '}
+          <a
+            href="https://resi-ai-safety.github.io/reading-group/"
+            {...external('https://resi-ai-safety.github.io/reading-group/')}
+          >AI safety reading group</a>{' '}
+          offers an entry point into the RESI community through weekly discussions of technical
+          and non-technical work on AI safety. No particular background is required.
+        </p>
+        <p>
+          A limited number of outside guests can join each session. Complete the{' '}
+          <a href="https://forms.gle/CZeYq6bm1YGoGQE18" {...external('https://forms.gle/CZeYq6bm1YGoGQE18')}>interest form</a>{' '}
+          to participate.
+        </p>
+      </article>
       <article class="join-card" id="research-fellowships" aria-labelledby="fellowships-heading">
         <h3 id="fellowships-heading">Research fellowships across the AI safety network</h3>
         <p>Interested students may also want to explore the following programs:</p>
@@ -182,23 +199,6 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
             — Remote, part-time (unpaid).
           </li>
         </ul>
-      </article>
-      <article class="join-card" aria-labelledby="reading-group-heading">
-        <h3 id="reading-group-heading">AI Safety Reading Group</h3>
-        <p>
-          The{' '}
-          <a
-            href="https://resi-ai-safety.github.io/reading-group/"
-            {...external('https://resi-ai-safety.github.io/reading-group/')}
-          >AI safety reading group</a>{' '}
-          offers an entry point into the RESI community through weekly discussions of technical
-          and non-technical work on AI safety. No particular background is required.
-        </p>
-        <p>
-          A limited number of outside guests can join each session. Complete the{' '}
-          <a href="https://forms.gle/CZeYq6bm1YGoGQE18" {...external('https://forms.gle/CZeYq6bm1YGoGQE18')}>interest form</a>{' '}
-          to participate.
-        </p>
       </article>
     </div>
     <SectionLinks items={[
@@ -262,6 +262,16 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
   }
   .fellowship-programs li + li {
     margin-top: 7.5px;
+  }
+  @media (min-width: 570.01px) {
+    #research-fellowships {
+      grid-column: 1;
+      grid-row: 2;
+    }
+    .join-card[aria-labelledby="reading-group-heading"] {
+      grid-column: 2;
+      grid-row: 2;
+    }
   }
   @media (max-width: 570px) {
     .join-cards {
