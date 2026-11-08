@@ -20,6 +20,8 @@ This folder is a linked Git worktree nested inside the older RESI workspace. It 
 
 ## Current preview and production
 
+November 8 Announcements placement — **PREVIEW ONLY**: Rachel requested restoring the pre-November-2 section position. Order: introduction/featured workshop → cryptography precedent → Founders/research community → Announcements → Key research areas → Support. Preview http://127.0.0.1:8767/#announcements in `/private/tmp/resi-announcements-position-nov8`, branch `codex/restore-announcements-position-nov8`. Exact section relocation only; newer introduction/workshop treatment and feed/card content preserved. See WORKLIST E14. No publication requested in this turn.
+
 November 6 underline follow-up — **PUBLISHED AND LIVE VERIFIED**: Rachel clarified bold only. Source PR 125; publication PR 126 at `fc6a5b17d156430bb384e7ae8f84b5095fa25e98`; successful Pages run 42306880896. Release-tagged live Research verified bold without underline; ordinary URL initially cached the prior version. This is the current production revision.
 
 November 6 desktop navigation — **PUBLISHED AND LIVE VERIFIED**: full-menu current-page labels are bold; Home has no emphasized label and mobile styling is unchanged. Source PR 122 / `5c3c66e`; publication PR 123 / `c826b016d75909f5cf897ba8735bde121e216600`; successful Pages run 42302275646. Live six-page/Home checks passed. Only the Base stylesheet and its references changed; current public page content and pending previews are preserved. See CHANGELOG.
