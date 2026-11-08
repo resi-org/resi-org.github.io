@@ -23,3 +23,5 @@ Research purposes can be brief, accurately described discussions or participatio
 The full research survey, original design-direction notes, donor materials and detailed historical checklists remain in the original RESI workspace and connected private sources. Retain distinctions between tentative ideas and approved decisions. Bring forward relevant approved facts with provenance rather than copying private material wholesale.
 
 - [News presentation comparison, November 4](news-listings-2026-11-04/report.md): all 37 companion organizations and seven institute comparators attempted; 100-entry registry screened. [Comparison table](news-listings-2026-11-04/audit.md), [registry screening](news-listings-2026-11-04/registry-screening.json), and [authorship wording follow-up](news-listings-2026-11-04/authorship-wording.md). Access limits and wider examples are distinguished from core peer findings.
+
+- [Foundational author-name evidence, November 8](foundational-authors-2026-11-08.md): verified full canonical credits; compact first-three display approved separately.

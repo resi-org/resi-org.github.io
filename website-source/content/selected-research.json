@@ -43,7 +43,7 @@
   },
   {
     "title": "How to Avoid Debate: Scalable AI Safety via Doubly-Efficient Interactive Proofs",
-    "authors": "L. Chen, Y. Tauman Kalai, Z. Xi",
+    "authors": "Liyan Chen, Yael Tauman Kalai, Zoe Xi",
     "venue": "ICML 2026",
     "url": "https://arxiv.org/abs/2607.03561",
     "note": "Develops methods for checking certain computations that use external information, such as database records or human judgments. The guarantees require specific structure in that information or computations that tolerate a limited number of errors.",
@@ -53,7 +53,7 @@
   },
   {
     "title": "BarrierNet: Differentiable Control Barrier Functions for Learning of Safe Robot Control",
-    "authors": "W. Xiao, T.-H. Wang, R. Hasani, M. Chahine, A. Amini, X. Li, D. Rus",
+    "authors": "Wei Xiao, Tsun-Hsuan Wang, Ramin Hasani, Makram Chahine, Alexander Amini, Xiao Li, Daniela Rus",
     "venue": "IEEE Transactions on Robotics 2023",
     "url": "https://ieeexplore.ieee.org/document/10077790",
     "note": "Introduces a trainable safety layer that constrains a robot’s actions to satisfy specified requirements, with guarantees that depend on the model of the robot and its environment.",
@@ -63,7 +63,7 @@
   },
   {
     "title": "Consensus Sampling for Safer Generative AI",
-    "authors": "A. Kalai, Y. Tauman Kalai, O. Zamir",
+    "authors": "Adam Tauman Kalai, Yael Tauman Kalai, Or Zamir",
     "venue": "Preprint, 2025 (revised 2026) · Presented at IASEAI 2026",
     "url": "https://arxiv.org/abs/2511.09493",
     "note": "Selects an output from several models, or declines to answer, with a provable limit on the risk of harmful output relative to the more reliable models. The method requires access to each model’s output probabilities. Producing useful answers also depends on sufficient overlap among the reliable models’ output distributions.",
@@ -73,7 +73,7 @@
   },
   {
     "title": "Governing AI Agents",
-    "authors": "N. Kolt",
+    "authors": "Noam Kolt",
     "venue": "Notre Dame Law Review, 2026",
     "url": "https://ndlawreview.org/governing-ai-agents/",
     "note": "Examines the responsibilities and limits of authority that arise when AI agents act for people, and explains why existing approaches to monitoring and accountability may be insufficient.",
@@ -83,7 +83,7 @@
   },
   {
     "title": "On the Impossibility of Separating Intelligence from Judgment: The Computational Intractability of Filtering for AI Alignment",
-    "authors": "S. Ball, G. Gluch, S. Goldwasser, F. Kreuter, O. Reingold, G. Rothblum",
+    "authors": "Sarah Ball, Greg Gluch, Shafi Goldwasser, Frauke Kreuter, Omer Reingold, Guy N. Rothblum",
     "venue": "Preprint, July 2025 · ICLR 2026",
     "url": "https://arxiv.org/abs/2507.07341",
     "note": "Establishes computational barriers to external prompt and output filtering under cryptographic hardness assumptions and specified relationships between the model and filter. These worst-case results do not say that filtering has no practical value.",
@@ -100,7 +100,7 @@
   },
   {
     "title": "Planting Undetectable Backdoors in Machine Learning Models",
-    "authors": "S. Goldwasser, M. Kim, V. Vaikuntanathan, O. Zamir",
+    "authors": "Shafi Goldwasser, Michael P. Kim, Vinod Vaikuntanathan, Or Zamir",
     "venue": "FOCS 2022",
     "url": "https://arxiv.org/abs/2204.06974",
     "note": "Shows how a model can appear to function normally while containing a hidden trigger that changes its behavior. Under cryptographic assumptions, such backdoors can evade inspection within feasible computing limits.",
@@ -110,7 +110,7 @@
   },
   {
     "title": "A Cryptographic Perspective on Mitigation vs. Detection in Machine Learning",
-    "authors": "G. Gluch, S. Goldwasser",
+    "authors": "Greg Gluch, Shafi Goldwasser",
     "venue": "Preprint, 2025",
     "url": "https://arxiv.org/abs/2504.20310v2",
     "note": "Shows that, for certain tasks involving generated outputs, a defense can limit harmful behavior even when the harmful inputs cannot be efficiently identified.",
@@ -120,7 +120,7 @@
   },
   {
     "title": "Pseudorandom Error-Correcting Codes",
-    "authors": "M. Christ, S. Gunn",
+    "authors": "Miranda Christ, Sam Gunn",
     "venue": "CRYPTO 2024",
     "url": "https://arxiv.org/abs/2402.09370",
     "note": "Introduces a way to hide information in apparently random data while allowing a key holder to recover it after specified alterations. This underpins methods for watermarking AI-generated content and hiding communication.",
@@ -171,7 +171,7 @@
   },
   {
     "title": "Algorithmic Collusion by Large Language Models",
-    "authors": "S. Fish, Y. A. Gonczarowski, R. I. Shorrer",
+    "authors": "Sara Fish, Yannai A. Gonczarowski, Ran I. Shorrer",
     "venue": "EC 2026",
     "url": "https://arxiv.org/abs/2404.00806",
     "note": "Experiments show that pricing agents based on large language models can reach prices above competitive levels, with outcomes sensitive to changes in their instructions.",
@@ -181,7 +181,7 @@
   },
   {
     "title": "Superintelligence and Law",
-    "authors": "N. Kolt",
+    "authors": "Noam Kolt",
     "venue": "Preprint, 2026 · Harvard Journal of Law & Technology, forthcoming",
     "url": "https://arxiv.org/abs/2603.28669",
     "note": "Sets out how AI agents acting autonomously become subjects of law, users of legal instruments such as contracts and courts, and in time writers and enforcers of law, and which assumptions in legal theory and doctrine that calls into question.",
@@ -191,7 +191,7 @@
   },
   {
     "title": "Legal Alignment for Safe and Ethical AI",
-    "authors": "N. Kolt et al",
+    "authors": "Noam Kolt, Nicholas Caputo, Jack Boeglin, Cullen O'Keefe, Rishi Bommasani, Stephen Casper, Mariano-Florentino Cuéllar, Noah Feldman, Iason Gabriel, Gillian K. Hadfield, Lewis Hammond, Peter Henderson, Atoosa Kasirzadeh, Seth Lazar, Anka Reuel, Kevin L. Wei, Jonathan Zittrain",
     "venue": "TMLR 2026",
     "url": "https://arxiv.org/abs/2601.04175",
     "note": "Surveys how legal rules, principles and methods can be used to specify how AI systems should act and to inform their design, and sets out three research pathways for doing so.",

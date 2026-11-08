@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 // Link a RESI researcher's name to their entry on the People page, wherever
 // it appears — including inside a paper's author line (Rachel, 2026-09-20).
 //
-// Author lines use initials ("S. Goldwasser", "A. Kalai"), so a surname alone
+// Author lines can use full names or initials, so a surname alone
 // is not enough to identify anyone: Adam Tauman Kalai and Yael Tauman Kalai
 // share one. A name is matched on its first initial AND its surname, and only
 // on an exact match of both, so a coauthor who is not at RESI is never linked

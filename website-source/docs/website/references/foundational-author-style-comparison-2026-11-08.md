@@ -1,6 +1,6 @@
 # Foundational-research author presentation — comparison, November 8, 2026
 
-Rachel asked to hold author-name publication, compare Simons/RAND and similar research pages, and assess full names versus initials and a first-three-plus-et-al display. This is a focused primary-site comparison, not a census or a formal citation-style mandate. No author presentation change is implemented or published from these findings.
+Rachel asked to hold author-name publication, compare Simons/RAND and similar research pages, and assess full names versus initials and a first-three-plus-et-al display. This is a focused primary-site comparison, not a census or a formal citation-style mandate. Rachel subsequently approved full names and first-three-plus-et-al for longer lists; the final implementation is tracked in WORKLIST D10.
 
 | Site / page type | Observed pattern | Relevance to RESI |
 | --- | --- | --- |
@@ -9,7 +9,7 @@ Rachel asked to hold author-name publication, compare Simons/RAND and similar re
 | [Ai2 papers](https://allenai.org/papers) | Sampled current entries show three leading authors, an additional-author count and the final author. Many given names are full; some names arrive abbreviated from the source metadata. | Closest compact AI-paper-list comparison: a short leading set of recognizable author names with a clear indication of omitted authors. Ai2’s current pattern is not literally first-three-plus-et-al. |
 | [Alan Turing Institute research-engineering publications](https://www.turing.ac.uk/research/research-engineering/reg-publications) | Both full given-name lists and bibliography-style surname/initial lists; long entries can use et al. | Both name treatments occur at a comparable research institution. The mixture appears to follow imported reference formats rather than one compact overview convention; RESI should choose its own consistent treatment. |
 
-## Recommendation for Rachel — proposed, not an approved rule
+## Recommendation — subsequently approved by Rachel, November 8
 
 Use full given names (retaining published/preferred middle initials), listing every author for papers with one to three authors. For four or more, show the first three in published order followed by plain et al. Keep the complete verified list, including People links, inside the existing explanatory details. Retain the complete names for Search/indexing if this proposal is implemented.
 
@@ -17,4 +17,4 @@ This keeps recognizable names on the page without long all-author blocks; initia
 
 Preserve the publication’s author order. A RESI researcher can fall after the cutoff (Daniela Rus is seventh on the existing BarrierNet record); do not move them to the front to make them visible. Their complete linked credit should remain in the expansion. If Rachel wants every RESI contributor visible in the collapsed view, resolve that presentation explicitly rather than silently changing order or mixing rules.
 
-The all-full-name trial and the newly suggested truncation are both held from publication. The November 8 control/mobile-H1 release preserves all 16 existing live author strings exactly. The earlier full-name-only proposal is reopened and is not the current public convention.
+Rachel’s subsequent decision approves the compact full-name treatment above. The all-full-name trial is superseded. The earlier control/mobile-H1 release preserved the old author strings; this follow-up changes the author presentation separately.

@@ -82,9 +82,6 @@
   .faq-item:first-child summary {
     padding-top: 0;
   }
-  .faq-item:first-child .faq-permalink {
-    top: -5.25px;
-  }
 
   /* Equivalent heading roles use the same scale, regardless of HTML level. */
   .page-hero h1 {

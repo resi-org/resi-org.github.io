@@ -56,7 +56,7 @@
 }
 /* The FAQ mark follows the final word without changing the text's line height.
    Its visible 14px square ends at the text baseline plus the font descent. */
-.faq-list .explanatory-disclosure > summary { padding-right: 39px; }
+.faq-list .explanatory-disclosure > summary { padding-right: 0; }
 .faq-list .disclosure-summary-end { white-space: nowrap; }
 .faq-list .disclosure-control {
   display: inline-block;
@@ -64,7 +64,29 @@
   vertical-align: -.15em;
 }
 .faq-list .disclosure-control-icon { position: absolute; top: -23.5px; left: 0; }
-.faq-list .faq-permalink { right: 0; }
+/* Continuous bars avoid center seams from rotated half-arms beside inline text.
+   Preserve the shared 14px footprint and rotating four-dot destination. */
+.faq-list .disclosure-control-mark::before,
+.faq-list .disclosure-control-mark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 1.1px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  transition: opacity 185ms ease;
+}
+.faq-list .disclosure-control-mark::after { width: 1.1px; height: 14px; }
+.faq-list .disclosure-control-mark > span {
+  opacity: 0;
+  transition: transform 370ms cubic-bezier(.22, .61, .36, 1), width 370ms ease,
+    height 370ms ease, border-radius 370ms ease, opacity 185ms ease;
+}
+.faq-list .explanatory-disclosure[open] > summary .disclosure-control-mark::before,
+.faq-list .explanatory-disclosure[open] > summary .disclosure-control-mark::after { opacity: 0; }
+.faq-list .explanatory-disclosure[open] > summary .disclosure-control-mark > span { opacity: 1; }
 .explanatory-disclosure > summary:focus-visible .disclosure-control-label {
   right: calc(100% + 7.5px);
   opacity: 1;
@@ -96,7 +118,10 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .disclosure-control-mark,
-  .disclosure-control-mark > span { transition: none; }
+  .disclosure-control-mark > span,
+  .faq-list .disclosure-control-mark > span,
+  .faq-list .disclosure-control-mark::before,
+  .faq-list .disclosure-control-mark::after { transition: none; }
 }
 @media print {
   .disclosure-control { display: none; }

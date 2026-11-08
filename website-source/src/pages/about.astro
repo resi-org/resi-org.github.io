@@ -117,25 +117,6 @@ import { faq } from '../data/institute';
                 <p>{f.answer}</p>
               </div>
             </Disclosure>
-            <a
-              class="faq-permalink"
-              href={`#faq-${f.id}`}
-              aria-label={`Link to answer: ${f.question}`}
-              title="Link to this answer"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.35"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M10 13a5 5 0 0 0 7.1 0l3-3a5 5 0 0 0-7.1-7.1l-1.7 1.7" />
-                <path d="M14 11a5 5 0 0 0-7.1 0l-3 3a5 5 0 0 0 7.1 7.1l1.7-1.7" />
-              </svg>
-            </a>
           </div>
         ))}
       </div>
