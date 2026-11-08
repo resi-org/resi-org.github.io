@@ -47,14 +47,23 @@ November 3 Events request: reuse the exact shared homepage event card at the top
 Find the common component/data first, review dependencies in PAGES, implement the scoped edit and inspect affected contexts. Record a newly approved convention here only when it changes future work, with a short reason/date. Keep proposals and rejected trials in WORKLIST rather than promoting them to rules.
 
 
-## Approved compact disclosure control — November 3
+## Shared explanatory disclosure control — approved for publication November 8
 
-Rachel approved the working-group card control and authorized publication. Use a fine 14px plus/minus, 1.1px stroke, token-derived quieter accent color, and a 370ms rotating morph into four 3px dots whose outer bounds form the same 14px square. Preserve lowercase details, revealed on fine-pointer hover and keyboard focus at every viewport width; touch devices with no hover hide the details hint entirely. Expanded resting state is a minus. Reduced-motion preferences disable transitions.
+Explanatory content uses the shared 14px plus (1.1px stroke) when closed and four 3px dots forming the same 14px square while open. Never use a minus. Clicking the dots collapses the content and restores the plus, including retained pointer/focus. Preserve the 370ms rotating morph, quieter token-derived accent and reduced-motion support.
 
-On working-group cards, position the control as a card feature toward the lower-right corner, retain the compact 6px title/leader gap and natural text heights, and switch to one column at 600px before the current titles/leaders become cramped. Independently expanding desktop columns retain authored keyboard order. Do not restore synchronized tallest-title heights or the earlier narrow-width label exception.
+**FAQ exception:** the mark sits immediately after the question and aligns optically with its final text line. Keep the final word and indicator together when wrapping. No hint and no animation/change on hover or focus alone: animate only on open/close activation. Retain full-question activation, native accessible question/state and an independent permalink at the right edge.
 
-The master design chat is RESI — Master website design (`01a1a1de-5ea7-7c53-b2ee-bc43d87896ae`). Keep broad design choices and consistency findings there and durable approvals here. Other card and inline disclosure contexts remain the next design task; publication of this approved control does not replace their existing labels or navigation semantics.
+**Other explanatory controls:** retain the hover animation and lowercase details hint for fine pointers, including foundational-paper details. No-hover devices hide the hint. A closed control restores its plus after collapse while the pointer remains; a new pointer entry permits the hover preview again. Expanded controls remain dots after the pointer leaves. Card placement is unchanged at the lower-right corner, with natural 6px title/leader rhythm and one column at 600px. Non-card marks align to the bottom of the final associated text line: author line for papers, visible metadata/logistics for seminars. Opening the body must not shift the control below that text.
 
+Use DisclosureControl.astro / lib/disclosure.ts / styles/disclosures.css and native details/summary; Base.astro manages resting hover after close. Preserve unique accessible names, 33px targets, visible focus, hidden decorative marks and hidden print duplicates. People’s publication lists retain their triangles; navigation is separate. All 40 active explanatory controls are included (11 groups, 16 papers, 6 FAQs, 7 seminars); the unused ResearchAreas collapsed variant shares the indicator without changing active expanded areas.
+
+## Mobile main headings — approved for publication November 8
+
+Opening H1s only are 10% larger up to 600px, including Home’s separate display title. Keep H1 sizes above 600px, section headings, body copy and card titles unchanged; allow natural wrapping. Verify long Events/Home titles and the 600/601px boundary.
+
+## Foundational-author typography — decision reopened November 8
+
+Rachel asked for comparison research before publishing author-name changes. Preserve existing live author strings in this release. The full-given-name trial is retained privately in codex/disclosure-standardization-nov8; its all-author presentation is not approved for publication. A consistent compact full-name format, such as first three authors plus et al. with full linked credits inside details, is a proposal pending Rachel’s decision. Do not promote a proposed cutoff or expand initials without verified names. Publication order must remain intact.
 
 ## Announcement card treatments — approved November 3
 

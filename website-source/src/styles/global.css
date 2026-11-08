@@ -989,17 +989,6 @@ blockquote cite {
 summary::-webkit-details-marker {
   display: none;
 }
-.faq-list summary::after {
-  position: absolute;
-  top: 15px;
-  right: 0;
-  content: '+';
-  font: 400 18px/1.2 var(--sans);
-  color: var(--accent);
-}
-.faq-list details[open] > summary::after {
-  content: '−';
-}
 .faq-answer {
   padding: 0 22.5px 17.25px 0;
   font-size: 12.75px;
@@ -2861,12 +2850,6 @@ article.map-item:hover {
   color: var(--accent);
   padding-block: 7.5px;
   min-height: 33px;
-}
-.research-detail summary::after {
-  content: '+';
-}
-.research-detail[open] summary::after {
-  content: '−';
 }
 .research-detail-body h4 {
   font: 500 12.75px/1.65 var(--sans);

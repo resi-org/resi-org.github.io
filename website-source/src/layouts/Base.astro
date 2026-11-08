@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/structure.css';
+import '../styles/disclosures.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 interface Props {
@@ -82,6 +83,16 @@ const {
       });
       document.addEventListener('click', (e) => {
         if (menu?.open && e.target instanceof Node && !menu.contains(e.target)) menu.open = false;
+      });
+      // Native details supplies the accessible state. Suppress the resting hover
+      // morph after a close, so a pointer left on the control sees the plus again.
+      document.querySelectorAll<HTMLDetailsElement>('details.explanatory-disclosure').forEach((details) => {
+        const summary = details.querySelector('summary');
+        details.addEventListener('toggle', () => {
+          details.toggleAttribute('data-resting-plus', !details.open);
+        });
+        summary?.addEventListener('pointerleave', () => details.removeAttribute('data-resting-plus'));
+        summary?.addEventListener('pointerenter', () => details.removeAttribute('data-resting-plus'));
       });
       // A direct link into supplementary content opens every enclosing disclosure.
       function revealHash() {

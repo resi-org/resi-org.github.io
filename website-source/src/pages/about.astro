@@ -112,7 +112,7 @@ import { faq } from '../data/institute';
       <div class="faq-list">
         {faq.map((f) => (
           <div class="faq-item">
-            <Disclosure id={`faq-${f.id}`} summary={f.question}>
+            <Disclosure id={`faq-${f.id}`} summary={f.question} explanatory inlineControl>
               <div class="faq-answer">
                 <p>{f.answer}</p>
               </div>
