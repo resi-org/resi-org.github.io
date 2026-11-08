@@ -1,6 +1,6 @@
 # selected-research.json
 
-**November 8 author-presentation hold:** Rachel reopened the author-name decision. Preserve existing public author strings until she chooses a consistent convention; do not publish the full-name trial. [Comparison and proposed compact treatment](../docs/website/references/foundational-author-style-comparison-2026-11-08.md) is a recommendation only. The older initial-based guidance below does not authorize changing current author credits during the controls/mobile-heading release.
+**Approved November 8:** canonical author strings contain every verified full name in published order, comma-separated. `Papers.astro` displays all names for one to three authors; for four or more it displays the first three plus “et al.” and supplies the complete linked credits inside details. Search indexes every canonical author. Preserve middle initials and spelling; never reorder coauthors. See [shared design guidance](../docs/website/DESIGN-AND-EDITORIAL.md) and [verified names](../docs/website/references/foundational-authors-2026-11-08.md).
 
 The papers shown on the Research page, with the one-line description of what
 each does. Order in this file is the order on the page.
@@ -10,7 +10,7 @@ Each entry:
 ```
 {
   "title":   "Paper title as published",
-  "authors": "Initials and surnames, as on the paper, comma-separated",
+  "authors": "All verified full names, in published order, comma-separated",
   "venue":   "Venue and year, e.g. ICML 2026",
   "url":     "https://…  (the title links here)",
   "note":    "One or two sentences saying what the paper does.",
@@ -46,8 +46,7 @@ Citation style, settled 2026-09-19 with the foundational review
 - Spell the title as the record spells it, including "Modeling" vs
   "Modelling".
 - An unverified proceedings line is written as a preprint: "Preprint, 2025".
-- Authors are initials and surnames in the published order, separated by
-  commas with no "and", and no author is moved ahead of their coauthors.
+- Author-name presentation is superseded by the November 8 full-name/first-three rule above. Canonical credits retain every author in published order.
 
 `featured` orders the six homepage examples. `highlight` preserves the short heading, topic/status tag, byline where supplied, and explanation from Shafi’s HTML. A supplementary `caveat` stays beside the claim. Full citation fields remain canonical and shared with Research and biography references. Do not replace verified publication metadata with an older preprint label.
 

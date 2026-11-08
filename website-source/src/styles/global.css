@@ -993,40 +993,6 @@ summary::-webkit-details-marker {
   padding: 0 22.5px 17.25px 0;
   font-size: 12.75px;
 }
-/* Separate link and disclosure controls remain independently keyboard-accessible. */
-.faq-permalink {
-  position: absolute;
-  top: 9.75px;
-  right: 18px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 33px;
-  height: 33px;
-  color: var(--muted);
-  text-decoration: none;
-  opacity: 0;
-  pointer-events: none;
-}
-.faq-permalink svg {
-  width: 11.25px;
-  height: 11.25px;
-}
-.faq-item:hover .faq-permalink,
-.faq-item:focus-within .faq-permalink {
-  opacity: 1;
-  pointer-events: auto;
-}
-.faq-permalink:hover,
-.faq-permalink:focus-visible {
-  color: var(--accent);
-}
-@media (hover: none) {
-  .faq-permalink {
-    opacity: 1;
-    pointer-events: auto;
-  }
-}
 .expander {
   margin-top: 12px;
   font-size: 11.25px;
@@ -2124,8 +2090,7 @@ summary::-webkit-details-marker {
   .print-disclosure .faq-answer {
     padding: 0 0 12pt;
   }
-  .print-disclosure .text-link,
-  .faq-permalink {
+  .print-disclosure .text-link {
     display: none;
   }
 }
