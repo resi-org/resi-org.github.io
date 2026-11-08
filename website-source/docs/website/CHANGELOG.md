@@ -7,6 +7,16 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+
+## November 8, 2026 — Reading Group before fellowships on mobile
+
+Rachel requested the Reading Group before external fellowships when the Join us cards stack. DOM/keyboard sequence is Work → Visit → Reading Group → Fellowships; desktop grid explicitly retains Fellowships left / Reading Group right. No card copy or links changed.
+
+Source application 401b441, [PR 132](https://github.com/resi-org/resi-org.github.io/pull/132) merged ee187225e5d8693752af1b90b820b83fa11c8e83. Publication d026b7a, [PR 133](https://github.com/resi-org/resi-org.github.io/pull/133) merged 41ca6d8aa8087f6ae03c843d169f0558ab4a798e. Pages run 42486937680 succeeded. Exactly People HTML changed; other pages, shared assets and endpoints were preserved.
+
+Diagnostics/build/diff checks passed. Local and ordinary live 1280px desktop positions and 390px stacked order verified, with no horizontal overflow. Card content was compared unchanged and People outside Join us/styles matched preceding production after normalizing scoped attributes. Live mobile screenshot: `Join-us-mobile-order-live-Nov8.jpg` in this chat’s visualization artifacts.
+
+
 ## November 8, 2026 — Join us published and live verified
 
 - Rachel explicitly requested publishing the reviewed Join us section. Source [PR 128](https://github.com/resi-org/resi-org.github.io/pull/128), application c625f77, merged at c976a1887246cb270bb10a9ab91a933c6f46d969. Publication [PR 129](https://github.com/resi-org/resi-org.github.io/pull/129), generated commit 819a926, merged at f2944a80a1f4f78264161135e92c4eff34d07177. [Pages run 42484929951](https://github.com/resi-org/resi-org.github.io/actions/runs/42484929951) completed successfully.
