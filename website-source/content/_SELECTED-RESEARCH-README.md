@@ -1,5 +1,7 @@
 # selected-research.json
 
+**November 8 author-presentation hold:** Rachel reopened the author-name decision. Preserve existing public author strings until she chooses a consistent convention; do not publish the full-name trial. [Comparison and proposed compact treatment](../docs/website/references/foundational-author-style-comparison-2026-11-08.md) is a recommendation only. The older initial-based guidance below does not authorize changing current author credits during the controls/mobile-heading release.
+
 The papers shown on the Research page, with the one-line description of what
 each does. Order in this file is the order on the page.
 

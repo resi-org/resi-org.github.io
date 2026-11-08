@@ -47,7 +47,7 @@ November 3 Events request: reuse the exact shared homepage event card at the top
 Find the common component/data first, review dependencies in PAGES, implement the scoped edit and inspect affected contexts. Record a newly approved convention here only when it changes future work, with a short reason/date. Keep proposals and rejected trials in WORKLIST rather than promoting them to rules.
 
 
-## Shared explanatory disclosure control — approved for publication November 8
+## Shared explanatory disclosure control — published November 8
 
 Explanatory content uses the shared 14px plus (1.1px stroke) when closed and four 3px dots forming the same 14px square while open. Never use a minus. Clicking the dots collapses the content and restores the plus, including retained pointer/focus. Preserve the 370ms rotating morph, quieter token-derived accent and reduced-motion support.
 
@@ -57,13 +57,13 @@ Explanatory content uses the shared 14px plus (1.1px stroke) when closed and fou
 
 Use DisclosureControl.astro / lib/disclosure.ts / styles/disclosures.css and native details/summary; Base.astro manages resting hover after close. Preserve unique accessible names, 33px targets, visible focus, hidden decorative marks and hidden print duplicates. People’s publication lists retain their triangles; navigation is separate. All 40 active explanatory controls are included (11 groups, 16 papers, 6 FAQs, 7 seminars); the unused ResearchAreas collapsed variant shares the indicator without changing active expanded areas.
 
-## Mobile main headings — approved for publication November 8
+## Mobile main headings — published November 8
 
 Opening H1s only are 10% larger up to 600px, including Home’s separate display title. Keep H1 sizes above 600px, section headings, body copy and card titles unchanged; allow natural wrapping. Verify long Events/Home titles and the 600/601px boundary.
 
 ## Foundational-author typography — decision reopened November 8
 
-Rachel asked for comparison research before publishing author-name changes. Preserve existing live author strings in this release. The full-given-name trial is retained privately in codex/disclosure-standardization-nov8; its all-author presentation is not approved for publication. A consistent compact full-name format, such as first three authors plus et al. with full linked credits inside details, is a proposal pending Rachel’s decision. Do not promote a proposed cutoff or expand initials without verified names. Publication order must remain intact.
+Rachel asked for comparison research before publishing author-name changes. Preserve existing live author strings in this release. The full-given-name trial is retained privately in codex/disclosure-standardization-nov8; its all-author presentation is not approved for publication. The [comparison](references/foundational-author-style-comparison-2026-11-08.md) supports both name forms on comparable sites. Recommended proposal: full given names for up to three authors; first three plus et al. for four or more; complete linked credits inside details. This is a proposed RESI house style pending Rachel’s decision, not a universal academic rule. Do not promote a proposed cutoff or expand initials without verified names. Publication order must remain intact.
 
 ## Announcement card treatments — approved November 3
 
