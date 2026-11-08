@@ -6,6 +6,15 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+
+## November 8, 2026 — Join us published and live verified
+
+- Rachel explicitly requested publishing the reviewed Join us section. Source [PR 128](https://github.com/resi-org/resi-org.github.io/pull/128), application c625f77, merged at c976a1887246cb270bb10a9ab91a933c6f46d969. Publication [PR 129](https://github.com/resi-org/resi-org.github.io/pull/129), generated commit 819a926, merged at f2944a80a1f4f78264161135e92c4eff34d07177. [Pages run 42484929951](https://github.com/resi-org/resi-org.github.io/actions/runs/42484929951) completed successfully.
+- Live People now includes Work at RESI with unchanged culture, unlinked “Current opportunities — details coming.”, and the inline **Hiring update, Nov 2026:** We anticipate application review and hiring to take place over the coming year. Visit, CBAI/MATS/Pivotal/SPAR, Reading Group and mailing lists retain their reviewed text/links. Reading Group heading uses natural height.
+- Astro check/build and diff checks passed. Ordinary live People verified at 1280px (paired card heights 270.34375px and 261.875px) and 390px (one column, no overflow). Inline hiring label, all four fellowship destinations, preserved anchors and CBAI Search result verified. Screenshot: `Join-us-live-Nov8.jpg` in this chat’s visualization artifacts.
+- Publication changes exactly People/Search HTML. People outside Join us/styles matches preceding production after scoped-attribute normalization; shared Base CSS is byte-identical. Existing People order, navigation, Home and independent endpoints are preserved. No Jobs page or application link added. November 5 preview-only restriction is superseded for this approved section; other previews remain separate.
+
+
 ## November 8, 2026 — Join us publication approved; release prepared
 
 Rachel explicitly requested publication of the reviewed section. Prepared latest final wording and natural Reading Group heading spacing on source a9f35cd, preserving the later People order and desktop navigation. Diagnostics passed with zero errors/warnings/hints and build passed (existing empty partners-data notice). Generated People matches current production outside Join us/styles after normalizing scoped attributes; Search adds exactly the two corresponding entries. Existing Base asset is byte-identical. Publication diff contains only People/Search HTML. No Jobs or application link added. Source merge, deployment and live verification are pending at this stage.
