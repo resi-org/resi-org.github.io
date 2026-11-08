@@ -20,6 +20,7 @@ Paths are relative to website-source/. The implementation holds current copy; th
 | Concern | Files |
 | --- | --- |
 | Layout/metadata/common scripts | src/layouts/Base.astro |
+| Explanatory controls and mobile H1s | Disclosure.astro / DisclosureControl.astro, lib/disclosure.ts, styles/disclosures.css; Base.astro hover lifecycle. FAQ click-only with no hint; papers retain hover. Host controls bottom alignment; structure.css / HomePage.astro scale opening H1s +10% up to 600px. Author-name redesign held separately. |
 | Header/footer | src/components/Header.astro, Footer.astro |
 | Sections, contents and onward actions | Section.astro, PageShortcuts.astro, SectionLinks.astro, IntroActions.astro |
 | Announcement lifecycle and treatments | src/lib/event-announcement-policy.ts, src/lib/announcements.ts, WorkshopCallout.astro, content/events/; explicit pastAnnouncement opt-in for retrospective Home promotion |

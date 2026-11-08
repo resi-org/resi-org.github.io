@@ -268,8 +268,11 @@ const founders = people
     margin: 0;
     color: var(--accent);
   }
+  @media (max-width: 600px) {
+    #hero-title { font-size: clamp(34.1px, 6.6vw, 44px); }
+  }
   @media (max-width: 520px) {
-    #hero-title { font-size: clamp(27px, 6.25vw, 33px); }
+    #hero-title { font-size: clamp(29.7px, 6.875vw, 36.3px); }
     .hero-grid {
       grid-template-columns: minmax(0, 1fr);
       grid-template-areas: "title" "event" "copy" "actions";

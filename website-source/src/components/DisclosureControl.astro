@@ -1,0 +1,6 @@
+---
+import { disclosureControl } from '../lib/disclosure';
+interface Props { showHint?: boolean; }
+const { showHint = true } = Astro.props;
+---
+<Fragment set:html={disclosureControl(showHint)} />

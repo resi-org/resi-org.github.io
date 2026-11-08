@@ -44,7 +44,7 @@ const { expanded = false } = Astro.props;
             </div>
           </Fragment>
         ) : hasDetails ? (
-          <Disclosure summary={area.title} summaryLead={lead} class="research-question-dropdown">
+          <Disclosure summary={area.title} summaryLead={lead} explanatory class="research-question-dropdown">
             <div class="research-detail-body">
               {area.detailTitle && <h4>{area.detailTitle}</h4>}
               {area.description && <p>{area.description}</p>}
@@ -145,19 +145,13 @@ const { expanded = false } = Astro.props;
     max-width: 70ch;
   }
   .research-question-dropdown > summary {
+    gap: 45px;
     cursor: pointer;
   }
   .research-question-dropdown > summary::-webkit-details-marker {
     display: none;
   }
-  .research-question-dropdown > summary::after {
-    content: '+';
-    flex: 0 0 auto;
-    color: var(--accent);
-  }
-  .research-question-dropdown[open] > summary::after {
-    content: '−';
-  }
+  .research-question-dropdown > summary > .disclosure-control { align-self: flex-end; transform: translateY(7.25px); }
   .research-question-dropdown > summary:hover {
     color: var(--accent);
   }

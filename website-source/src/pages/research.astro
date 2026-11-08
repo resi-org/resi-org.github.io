@@ -360,26 +360,6 @@ const papers = (await getCollection('selectedResearch')).sort(
   .working-group-details > summary::-webkit-details-marker {
     display: none;
   }
-  @media (hover: hover) and (pointer: fine) {
-    .working-group-details .disclosure-control-label {
-      position: absolute;
-      right: calc(100% - 3px);
-      top: 50%;
-      transform: translateY(-50%);
-      font: 400 8.25px/1 var(--sans);
-      color: var(--muted);
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-    }
-    .working-group-details > summary:focus-visible .disclosure-control-label {
-      right: calc(100% + 7.5px);
-    }
-    .working-group-details > summary:hover .disclosure-control-label,
-    .working-group-details > summary:focus-visible .disclosure-control-label {
-      opacity: 1;
-    }
-  }
   .working-group-details > summary:hover {
     color: var(--ink);
   }

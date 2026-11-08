@@ -82,9 +82,6 @@
   .faq-item:first-child summary {
     padding-top: 0;
   }
-  .faq-item:first-child summary::after {
-    top: 0;
-  }
   .faq-item:first-child .faq-permalink {
     top: -5.25px;
   }
@@ -118,4 +115,10 @@
     line-height: 1.2;
     text-wrap: balance;
   }
+}
+
+/* Mobile page openings: +10%, preserving all section and desktop type sizes. */
+@media screen and (max-width: 600px) {
+  .page-content h1,
+  .page-content h1.page-title { font-size: calc(var(--page-title-size) * 1.1); }
 }

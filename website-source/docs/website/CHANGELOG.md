@@ -8,6 +8,15 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+## November 8 explanatory controls and mobile H1s — release prepared
+
+Rachel authorized publishing the complete reviewed explanatory-control and mobile-heading work, added FAQ click-only animation and explicitly held author-name changes. Prepared clean source codex/disclosure-release-nov8 from continuing source 107b688 (production 41ca6d8, no open PRs at start). Copied the approved application changes from the isolated design preview; did not copy author data, researchers helper comment, collection README or the proposed full-name rule. Current author strings and Search text remain unchanged.
+
+All 40 explanatory controls use the shared 14px/1.1px/370ms plus-to-four-dots treatment and native state. Expanded controls stay dots, collapse restores plus. FAQ moves the control after the question, aligns it with the final line, has no hint and excludes closed-state hover morphing; foundational papers keep hover animation/hint. Paper/seminar marks follow the final author/visible metadata line. Publication-list carets and navigation remain separate. Opening H1s scale exactly +10% up to 600px, including Home; other type and desktop sizes are unchanged.
+
+Diagnostics: 0 errors/warnings/hints; build and diff check passed. Generated comparison against current production on all 14 HTML routes found equal visible content/order (excluding control labels), all 16 author strings exactly preserved. Publication output only updates 10 HTML files and adds three CSS files; domain and independent endpoints are untouched. Prior 90-case responsive/keyboard/accessibility/touch-rule/reduced-motion evidence is in the master design chat; Final release checks: all 40 controls open/close with no minus; FAQ under an actual hovered pointer stays 7×1.1px when closed, becomes 3px dots on click and stays dots after the pointer leaves. Foundational-paper closed hover shows 3px dots and details hint. Enter/Space and the native FAQ expanded state passed. Fifty release page/width checks across 320/375/600/601/1280px show no overflow or clipped 33px indicators. Source merge, publication/deployment and live verification are separate pending stages.
+
+
 ## November 8, 2026 — Reading Group before fellowships on mobile
 
 Rachel requested the Reading Group before external fellowships when the Join us cards stack. DOM/keyboard sequence is Work → Visit → Reading Group → Fellowships; desktop grid explicitly retains Fellowships left / Reading Group right. No card copy or links changed.

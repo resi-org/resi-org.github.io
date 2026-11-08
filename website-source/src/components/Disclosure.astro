@@ -1,4 +1,5 @@
 ---
+import DisclosureControl from './DisclosureControl.astro';
 // Render one authored body into native disclosure and print-only fallback.
 // WebKit cannot expose a closed native disclosure using print CSS alone.
 interface Props {
@@ -6,32 +7,29 @@ interface Props {
   summary: string;
   summaryLead?: string;
   compactControl?: boolean;
+  explanatory?: boolean;
+  inlineControl?: boolean;
   accessibleLabel?: string;
   class?: string;
 }
-const { id, summary, summaryLead, compactControl = false, accessibleLabel, class: className } = Astro.props;
+const { id, summary, summaryLead, compactControl = false, explanatory = compactControl, inlineControl = false, accessibleLabel, class: className } = Astro.props;
+const lastSpace = summary.lastIndexOf(' ');
+const summaryStart = summary.slice(0, lastSpace + 1);
+const summaryEnd = summary.slice(lastSpace + 1);
 const body = await Astro.slots.render('default');
 ---
 
-<details id={id} class:list={[className, { 'compact-disclosure': compactControl }]} data-print-copy>
+<details id={id} class:list={[className, { 'compact-disclosure': compactControl, 'explanatory-disclosure': explanatory, 'inline-disclosure': inlineControl }]} data-print-copy>
   <summary aria-label={accessibleLabel}>
     {summaryLead ? (
       <span class="research-summary">
         <span class="research-question-title">{summary}</span>
         <span class="research-question-lead">{summaryLead}</span>
       </span>
-    ) : compactControl ? (
-      <Fragment>
-        <span class="disclosure-control-label">{summary}</span>
-        <span class="disclosure-control-icon" aria-hidden="true">
-          <span class="disclosure-control-mark">
-            <span></span><span></span><span></span><span></span>
-          </span>
-        </span>
-      </Fragment>
-    ) : (
-      summary
-    )}
+    ) : inlineControl ? (
+      <span class="disclosure-summary-text">{summaryStart}<span class="disclosure-summary-end">{summaryEnd}<DisclosureControl showHint={false} /></span></span>
+    ) : !compactControl ? (explanatory ? <span>{summary}</span> : summary) : null}
+    {explanatory && !inlineControl && <DisclosureControl />}
   </summary>
   <Fragment set:html={body} />
 </details>
@@ -40,95 +38,3 @@ const body = await Astro.slots.render('default');
   {summaryLead && <p>{summaryLead}</p>}
   <Fragment set:html={body} />
 </div>
-
-
-<style>
-  /* One reusable compact indicator; the host controls its placement. */
-  .compact-disclosure .disclosure-control-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 0 33px;
-    width: 33px;
-    height: 33px;
-    color: color-mix(in srgb, var(--accent) 72%, var(--paper));
-  }
-  .disclosure-control-mark {
-    position: relative;
-    display: block;
-    width: 24px;
-    height: 24px;
-    transition: transform 370ms cubic-bezier(.22, .61, .36, 1);
-  }
-  .disclosure-control-mark > span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 7px;
-    height: 1.1px;
-    border-radius: 0;
-    background: currentColor;
-    transform: translate(-50%, -50%) rotate(var(--arm)) translateX(3.5px);
-    transition: transform 370ms cubic-bezier(.22, .61, .36, 1),
-      width 370ms ease, height 370ms ease, border-radius 370ms ease;
-  }
-  .disclosure-control-mark > span:nth-child(1) { --arm: 0deg; --dot-x: 5.5px; --dot-y: -5.5px; }
-  .disclosure-control-mark > span:nth-child(2) { --arm: 90deg; --dot-x: 5.5px; --dot-y: 5.5px; }
-  .disclosure-control-mark > span:nth-child(3) { --arm: 180deg; --dot-x: -5.5px; --dot-y: 5.5px; }
-  .disclosure-control-mark > span:nth-child(4) { --arm: 270deg; --dot-x: -5.5px; --dot-y: -5.5px; }
-
-  /* Keep a recognizable minus when expanded and the pointer has left. */
-  .compact-disclosure[open] .disclosure-control-mark > span {
-    transform: translate(-50%, -50%) rotate(0deg) translateX(0);
-    width: 14px;
-  }
-  .compact-disclosure > summary:focus-visible .disclosure-control-mark {
-    transform: rotate(180deg);
-  }
-  .compact-disclosure > summary:focus-visible .disclosure-control-mark > span {
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    transform: translate(-50%, -50%) translate(var(--dot-x), var(--dot-y));
-  }
-  @media (hover: hover) and (pointer: fine) {
-    .compact-disclosure > summary:hover .disclosure-control-mark {
-      transform: rotate(180deg);
-    }
-    .compact-disclosure > summary:hover .disclosure-control-mark > span {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      transform: translate(-50%, -50%) translate(var(--dot-x), var(--dot-y));
-    }
-  }
-  /* Touch devices have no persistent hover hint. Open cards keep four dots;
-     closing restores the plus, even when the summary retains keyboard focus. */
-  @media (hover: none) and (pointer: coarse) {
-    .compact-disclosure .disclosure-control-label {
-      display: none;
-    }
-    .compact-disclosure[open] .disclosure-control-mark {
-      transform: rotate(180deg);
-    }
-    .compact-disclosure[open] .disclosure-control-mark > span {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      transform: translate(-50%, -50%) translate(var(--dot-x), var(--dot-y));
-    }
-    .compact-disclosure:not([open]) > summary:focus-visible .disclosure-control-mark {
-      transform: none;
-    }
-    .compact-disclosure:not([open]) > summary:focus-visible .disclosure-control-mark > span {
-      width: 7px;
-      height: 1.1px;
-      border-radius: 0;
-      transform: translate(-50%, -50%) rotate(var(--arm)) translateX(3.5px);
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .disclosure-control-mark,
-    .disclosure-control-mark > span { transition: none; }
-  }
-</style>
