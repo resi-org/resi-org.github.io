@@ -6,6 +6,10 @@ Record material source and public changes with their scope and evidence. Keep Pr
 
 
 
+## November 8, 2026 — Join us publication approved; release prepared
+
+Rachel explicitly requested publication of the reviewed section. Prepared latest final wording and natural Reading Group heading spacing on source a9f35cd, preserving the later People order and desktop navigation. Diagnostics passed with zero errors/warnings/hints and build passed (existing empty partners-data notice). Generated People matches current production outside Join us/styles after normalizing scoped attributes; Search adds exactly the two corresponding entries. Existing Base asset is byte-identical. Publication diff contains only People/Search HTML. No Jobs or application link added. Source merge, deployment and live verification are pending at this stage.
+
 ## November 6 navigation underline correction — published and live verified
 
 Rachel clarified that the current-page label should be bold without an underline. Added `text-decoration: none` to the same desktop current-page rule, retaining weight 700, Home exclusion, mobile styling and keyboard focus. Source PR 125; publication PR 126 at `fc6a5b17d156430bb384e7ae8f84b5095fa25e98`, Pages run 42306880896. Astro diagnostics returned zero errors/warnings/hints; build passed. Local checks across all six main routes show weight 700 and decoration none; Home has no current menu label. The generated stylesheet is identical to the previous version apart from this declaration; page HTML changes only its stylesheet URL. Public content and pending previews are preserved. Pages run 42306880896 succeeded. Live Research with release query `?release=fc6a5b1` confirmed the new stylesheet, weight 700 and decoration none; ordinary URL initially retained the preceding stylesheet in cache. Screenshot: original workspace `output/live-navigation-bold-only-nov6.jpg`.
