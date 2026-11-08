@@ -42,4 +42,4 @@ Apply [EVENT-ROUTING.md](EVENT-ROUTING.md) to short event/seminar/group requests
 
 November 5 People order: Join us (#get-involved) precedes Affiliated groups (#affiliated), including the On this page links. Preserve the separate preview-only careers content; the reorder release uses the restored live section.
 
-November 8 Home placement preview (E14): Announcements returns after Founders/research community, before Key research areas, using its unchanged shared cards/feed and anchor. The intro/featured workshop stays in place. Not published.
+November 8 Home placement published (E14, PR 131): Announcements returns after Founders/research community, before Key research areas, using its unchanged shared cards/feed and anchor. The intro/featured workshop stays in place. Live desktop/mobile verified.

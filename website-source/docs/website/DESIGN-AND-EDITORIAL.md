@@ -110,6 +110,8 @@ The reviewed layout keeps two columns down to 521px. Current published stacked o
 
 November 5 mobile refinement: Rachel confirmed the current below-heading mobile placement. The featured intro card uses the ordinary 12px row rhythm at 520px and below, with an 8px Save the date/metadata gap; retain the site-standard body line height. Do not reintroduce the larger mobile-only gap or publish the earlier after-definition placement without a new request. Desktop balance and normal event-card treatments remain unchanged.
 
-## Homepage Announcements position — November 8 request; preview only
+## Homepage Announcements position — November 8; published
 
 Restore the original section position: after Founders/research community and before Key research areas. Introduction/featured workshop and cryptography precedent remain above it. This reverses the November 2 move directly under the introduction; it does not revert later approved card styling, feed selection/content, or the November 5 intro/workshop layout. Keep #announcements and its existing link destinations.
+
+Publication confirmed November 8: original Announcements placement is live through PR 131 (34e02f5). Current card treatments, feed rules and the separate introductory workshop feature are unchanged.
