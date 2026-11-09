@@ -306,6 +306,11 @@ const papers = (await getCollection('selectedResearch')).sort(
     gap: 12px;
   }
   @media screen and (width > 600px) {
+    .research-group-cards {
+      /* Reduce each card by 10%, retaining the existing 12px column gap. */
+      width: calc(90% + 1.2px);
+      margin-inline: auto;
+    }
     .research-group-cards.independent-columns {
       /* The layout script measures row spans in whole CSS pixels. */
       grid-auto-rows: 1px;
@@ -347,6 +352,11 @@ const papers = (await getCollection('selectedResearch')).sort(
   .research-group-cards .wg-lead {
     margin: 0;
     padding-right: 78px;
+  }
+  @media screen and (width > 600px) {
+    .research-group-cards .wg-lead {
+      padding-right: 60px;
+    }
   }
   .working-group-details > summary {
     display: flex;
