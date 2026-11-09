@@ -11,10 +11,21 @@ import SectionLinks from '../components/SectionLinks.astro';
 import { researchAgenda } from '../data/institute';
 import { groups } from '../data/groups';
 import { external } from '../lib/external';
-const firstGroupId = 'game-theoretic-foundations';
-const orderedGroups = [...groups.filter((g) => g.id === firstGroupId), ...groups.filter((g) => g.id !== firstGroupId)];
+// Research-only order: preserve the first three rows and pair title lengths below.
+const groupOrder = new Map([
+  'game-theoretic-foundations', 'cryptographic-verification',
+  'modular-architectures', 'monitoring-and-control',
+  'ai-harnesses', 'legal-alignment',
+  'formal-verification', 'data-attribution',
+  'ethics-and-superintelligence', 'cryptography-and-cybersecurity',
+  'ai-safety-using-quantum-effects', 'ai-and-the-human-experience',
+].map((id, index) => [id, index]));
+const orderedGroups = [...groups].sort(
+  (a, b) => (groupOrder.get(a.id) ?? groupOrder.size) - (groupOrder.get(b.id) ?? groupOrder.size),
+);
 // Presentation-only breaks; shared names stay intact in People and Search.
 const titleBreakAfter: Record<string, number> = {
+  'cryptographic-verification': 1,
   'cryptography-and-cybersecurity': 2,
   'ethics-and-superintelligence': 2,
   'ai-safety-using-quantum-effects': 3,
