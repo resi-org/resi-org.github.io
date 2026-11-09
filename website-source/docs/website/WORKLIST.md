@@ -50,8 +50,8 @@ Sources: Rachel's November 2 request, supplied hiring discussion and Emily's add
 
 | ID | Status | Work and dependencies |
 | --- | --- | --- |
-| W1 | Facts needed; high priority | Add Anat's group from its current confirmed title, description, status and appropriate participation route. Update Research, her People links and Search together. Current materials do not supply final group facts. |
-| W2 | Proposed scoped updates | Clarify group participation and intake from individual leads' actual preferences. Do not assume all groups are open or use one attendance policy. Reassess the featured full-width card when the roster changes, if chosen. |
+| W1 | Published and live verified November 9 | Rachel approved AI and the Human Experience, led by Anat Perry, the 53-word description, twelve equal closed cards/six per desktop column, and four deliberate two-line titles. Source [PR 146](https://github.com/resi-org/resi-org.github.io/pull/146), application 76f7ef2; publication [PR 147](https://github.com/resi-org/resi-org.github.io/pull/147), merge 21dc43fe8f5ab1fc8dda62676adf1121be60aff7. Successful Pages retry 42674678007. Ordinary live 1280/390px roster, approved expanded description, keyboard, People leadership link and Search navigation verified. Source /private/tmp/resi-anat-group-nov9, preview :4423. Participation/intake remains W2; no policy or Home promotion added. |
+| W2 | Proposed scoped updates | Clarify group participation and intake from individual leads' actual preferences. Do not assume all groups are open or use one attendance policy. The twelve-card roster now uses equal-width cards (W1). |
 | R1 | Review pending | Full paper collection/shortlist and credible area/group mappings. Rachel will review the existing [paper-review spreadsheet](https://docs.google.com/spreadsheets/d/15-4qm94pZ6n3VLrvTtPRsqNYhosgSnVaMJrmuIHFjF4/edit). Inspect its current contents through the connected tools before treating it as approved. Prefer 2018 onward, with older exceptions only when exceptionally important; verify titles, authors, venue/status, claims and limitations. |
 
 ## Outstanding editorial must-fixes

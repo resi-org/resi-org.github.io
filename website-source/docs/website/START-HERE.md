@@ -1,5 +1,7 @@
 # RESI website editing and handoff guide
 
+**Research update, November 9 — PUBLISHED AND LIVE VERIFIED:** Rachel approved Anat Perry’s **AI and the Human Experience** description and balanced twelve-card layout, including four deliberate two-line titles. Source [PR 146](https://github.com/resi-org/resi-org.github.io/pull/146), application 76f7ef2; publication [PR 147](https://github.com/resi-org/resi-org.github.io/pull/147) merged at 21dc43fe8f5ab1fc8dda62676adf1121be60aff7. Pages retry run 42674678007 succeeded after the first worker abandoned its run. Ordinary live Research checked at 1280/390px: twelve equal closed cards, six per desktop column, approved description and native keyboard expansion; People leadership and Search navigation verified. No Home promotion or meeting/intake policy. Current source /private/tmp/resi-anat-group-nov9; shared dirty previews remain untouched. See WORKLIST W1 and CHANGELOG.
+
 This project maintains https://resi.org. Continue work from current source and these shared records. Baseline: November 2, 2026; recheck remote/live state before later implementation.
 
 ## Current source

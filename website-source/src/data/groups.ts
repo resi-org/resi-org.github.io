@@ -98,4 +98,12 @@ export const groups = [
     lead: 'Greg Gluch',
     leadHref: '/people#greg-gluch',
   },
+  {
+    id: 'ai-and-the-human-experience',
+    name: 'AI and the Human Experience',
+    description:
+      'Examines how interactions with AI affect human relationships, thinking, creativity, and culture. Topics include empathy and sycophancy, social and moral development, perceptions of AI consciousness, and polarization and common ground. The group draws on psychological research to explore which roles AI should play in human life and how their effects can be studied.',
+    lead: 'Anat Perry',
+    leadHref: '/people#anat-perry',
+  },
 ];

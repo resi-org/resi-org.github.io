@@ -11,8 +11,15 @@ import SectionLinks from '../components/SectionLinks.astro';
 import { researchAgenda } from '../data/institute';
 import { groups } from '../data/groups';
 import { external } from '../lib/external';
-const featuredGroupId = 'game-theoretic-foundations';
-const orderedGroups = [...groups.filter((g) => g.id === featuredGroupId), ...groups.filter((g) => g.id !== featuredGroupId)];
+const firstGroupId = 'game-theoretic-foundations';
+const orderedGroups = [...groups.filter((g) => g.id === firstGroupId), ...groups.filter((g) => g.id !== firstGroupId)];
+// Presentation-only breaks; shared names stay intact in People and Search.
+const titleBreakAfter: Record<string, number> = {
+  'cryptography-and-cybersecurity': 2,
+  'ethics-and-superintelligence': 2,
+  'ai-safety-using-quantum-effects': 3,
+  'ai-and-the-human-experience': 3,
+};
 const papers = (await getCollection('selectedResearch')).sort(
   (a, b) => a.data.order - b.data.order,
 );
@@ -120,8 +127,8 @@ const papers = (await getCollection('selectedResearch')).sort(
     </p>
     <ul class="group-list research-group-cards">
       {orderedGroups.map((g) => (
-        <li class:list={["working-group", { "working-group-featured": g.id === featuredGroupId }]}>
-          <h3 id={g.id}>{g.name}</h3>
+        <li class="working-group">
+          <h3 id={g.id}>{g.name.split(' ').map((word, index) => <Fragment>{index > 0 && ' '}{index === titleBreakAfter[g.id] && <br />}{word}</Fragment>)}</h3>
           <div class="working-group-body">
           {g.lead && (
             <p class="wg-lead">
@@ -198,8 +205,6 @@ const papers = (await getCollection('selectedResearch')).sort(
     const roster = document.querySelector<HTMLElement>('.research-group-cards');
     if (roster) {
       const allCards = [...roster.querySelectorAll<HTMLElement>(':scope > .working-group')];
-      const featured = roster.querySelector<HTMLElement>(':scope > .working-group-featured');
-      const cards = allCards.filter((card) => card !== featured);
       const desktop = matchMedia('(width > 600px)');
       let scheduled = false;
       const layout = () => {
@@ -213,18 +218,9 @@ const papers = (await getCollection('selectedResearch')).sort(
           return;
         }
         roster.classList.add('independent-columns');
-        // Keep each title/leader pair at its natural height. Matching the
-        // tallest title adds empty space to every short heading as cards narrow.
         const gap = Math.ceil(parseFloat(getComputedStyle(roster).columnGap));
-        let firstRow = 1;
-        if (featured) {
-          featured.style.gridColumn = '1 / -1';
-          const rows = Math.ceil(featured.getBoundingClientRect().height);
-          featured.style.gridRow = `1 / span ${rows}`;
-          firstRow += rows + gap;
-        }
-        const nextRow = [firstRow, firstRow];
-        cards.forEach((card, index) => {
+        const nextRow = [1, 1];
+        allCards.forEach((card, index) => {
           const column = index % 2;
           const rows = Math.ceil(card.getBoundingClientRect().height);
           card.style.gridColumn = String(column + 1);
@@ -298,9 +294,6 @@ const papers = (await getCollection('selectedResearch')).sort(
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
   }
-  .research-group-cards > .working-group-featured {
-    grid-column: 1 / -1;
-  }
   @media screen and (width > 600px) {
     .research-group-cards.independent-columns {
       /* The layout script measures row spans in whole CSS pixels. */
@@ -323,6 +316,10 @@ const papers = (await getCollection('selectedResearch')).sort(
   }
   .research-group-cards > .working-group > h3 {
     margin: 0;
+    /* One common two-line title slot aligns closed cards and their leaders.
+       Keep the existing type size, card padding and independent expansion. */
+    line-height: 1.25;
+    min-height: 2.5em;
   }
   .research-group-cards > .working-group > :last-child {
     margin-bottom: 0;
