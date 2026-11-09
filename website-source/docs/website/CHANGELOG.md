@@ -2,6 +2,12 @@
 
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
+## November 9, 2026: restore “AI safety”, published and live verified
+
+Adam rejected the expanded acronym in About. Restored “AI safety” in its opening paragraph and matching Search excerpt, without adding the expanded phrase elsewhere. Recorded the audience-specific wording preference in DESIGN-AND-EDITORIAL. The homepage wording, SEO title, descriptions, organization data and share metadata from the preceding release remain unchanged.
+
+Source [PR 144](https://github.com/resi-org/resi-org.github.io/pull/144), application bd21aec. Publication [PR 145](https://github.com/resi-org/resi-org.github.io/pull/145), application 0fe3aa2, merged at dc5999fd64c432ede283356fb8780d52029a57bc. [Pages run 42619123314](https://github.com/resi-org/resi-org.github.io/actions/runs/42619123314) succeeded. Astro check passed for 51 files with zero diagnostics; build and diff check passed. About/Search generated HTML differ from the prior release only by the exact phrase replacement; all 12 other generated HTML files match production. Verified the corrected paragraph and Search excerpt at ordinary live URLs. Screenshot: seo-release-2026-11-09/live-about-ai-safety.png in Adam's local release folder.
+
 ## November 9, 2026: minimal SEO refinements, published and live verified
 
 Adam requested minimal SEO improvements and explicitly authorized publication. Pulled continuing source aa8d17f and production 1597909, with no open PRs. A clean baseline build matched all 14 production HTML routes exactly before editing.
