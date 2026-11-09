@@ -538,3 +538,12 @@ Validation: Astro check 51 files, zero findings; build passed with existing empt
 Source PR 148 carries application d3e3a8c and the display-order decision. Publication PR 149 merged at c815e6dc57f2067ea36bad6f9cfb2139affc48bc, changing only research/index.html. Pages run 42676240936 completed successfully. Ordinary live Research at 1280px confirms six paired rows (title line counts 2/2, 1/1, 1/1, 1/1, 2/2, 2/2), twelve 96.25px closed cards and 61.25px leader offsets. At 390px, row-wise mobile order is correct, all twelve heights match and there is no horizontal overflow. Enter/Space opened/closed moved Data attribution with its original description and paper link. The cybersecurity details had also passed the local keyboard check. Shared group data, People/Search, all card styling/assets and independent endpoints are unchanged. No physical-device or spoken-screen-reader test.
 
 Live proof: /Users/rachelsipser/.codex/visualizations/2026/11/03/01a1a236-adf2-7eb2-8d6f-129e61eb1ad3/working-group-paired-rows-live.png.
+
+
+## November 9 — Formal verification announcement inline (implementation)
+
+Rachel requested that “announced agenda” link to the announcement inside the Formal verification paragraph, replacing the separate “Read the announcement on LessWrong” link. Added sourceText metadata alongside the existing verified source URL; Research renders that phrase as the link while retaining the plain shared description for Search. No wording, title/order, card dimensions or URL change. Print-only disclosure content inherits the same inline link; the on-screen card has one visible announcement link.
+
+Isolated source from 3849e2c7915d798814b887d3dcb100fbf295c565; production baseline c815e6dc57f2067ea36bad6f9cfb2139affc48bc. Draft PR 150 for narrower cards is preserved, with the same inline change also applied in its local preview. Simple text publication is covered by Rachel’s standing instruction; the width trial remains unpublished.
+
+Astro check (51 files, zero findings) and build passed with the existing empty partners notice; generated comparison changes only research/index.html, excluding the build-only .assetsignore. At desktop and 390px the expanded paragraph/link display correctly, no bottom source paragraph remains, and there is no horizontal overflow. Enter opens the card; Tab reaches the uniquely visible “announced agenda” link with the unchanged LessWrong target and external-link attributes. Deployment/live evidence pending.

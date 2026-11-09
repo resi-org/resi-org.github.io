@@ -62,6 +62,7 @@ export const groups = [
       "Adam Chlipala's announced agenda asks how formal verification could support powerful AI in software development while reducing security risks. It distinguishes general software infrastructure, AI-specific infrastructure, and recursively self-improving systems. The agenda addresses both technical questions and how to organize the work, including which directions are ready to pursue.",
     source:
       'https://www.lesswrong.com/posts/NDBbatEejiAtTAr3z/announcing-formal-verification-at-resi-the-institute-for',
+    sourceText: 'announced agenda',
     lead: 'Adam Chlipala',
     leadHref: showVisitingResearchers ? '/people#adam-chlipala' : 'https://adam.chlipala.net/',
   },
