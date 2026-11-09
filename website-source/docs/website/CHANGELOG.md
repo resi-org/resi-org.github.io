@@ -2,6 +2,16 @@
 
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
+## November 9, 2026: minimal SEO refinements, prepared for publication
+
+Adam requested minimal SEO improvements and explicitly authorized publication. Pulled continuing source aa8d17f and production 1597909, with no open PRs. A clean baseline build matched all 14 production HTML routes exactly before editing.
+
+Homepage title now includes RESI, the full institute name and AI Safety. Home/About descriptions are clearer. Shared Open Graph and X metadata use each page's title, description and canonical URL, plus the existing logo. Homepage-only ResearchOrganization JSON-LD records the public name, acronym, founders, Cambridge location and verified identity links (the existing LinkedIn/X profiles and the live Wikipedia article). No founding date or unverified institutional claims added.
+
+Visible edits: add “AI safety” to the homepage's “independent nonprofit research institute”; expand About's “AI safety” to “artificial intelligence (AI) safety” once. Matching local Search excerpts are synchronized. Headings, layout, navigation, existing content, canonical URLs, robots/sitemap and independent endpoints are preserved. Larger content/URL changes and Search Console setup are outside this release.
+
+Verification: Astro check passed for 51 files with zero diagnostics; production build and diff check passed. Compared all 14 generated HTML bodies with the baseline: only the two requested wording refinements and their Search excerpts differ. Validated matching descriptions/titles/social tags, unchanged canonicals and homepage-only parseable JSON-LD. Independent review found no blocking issues. Home/About desktop and 390px mobile visual checks passed, with no horizontal overflow, and local Search finds About for “artificial intelligence”. Publication and live verification are pending.
+
 
 
 

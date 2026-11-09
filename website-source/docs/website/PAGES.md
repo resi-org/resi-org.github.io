@@ -19,7 +19,7 @@ Paths are relative to website-source/. The implementation holds current copy; th
 
 | Concern | Files |
 | --- | --- |
-| Layout/metadata/common scripts | src/layouts/Base.astro |
+| Layout/metadata/common scripts | src/layouts/Base.astro; src/data/seo.ts holds RESI's organization identity and homepage description. Base supplies page-specific Open Graph/X cards and homepage-only ResearchOrganization JSON-LD. |
 | Explanatory controls and mobile H1s | Disclosure.astro / DisclosureControl.astro, lib/disclosure.ts, styles/disclosures.css; Base.astro hover lifecycle. FAQ click-only with no hint; papers retain hover. Host controls bottom alignment; structure.css / HomePage.astro scale opening H1s +10% up to 600px. Author-name redesign held separately. |
 | Header/footer | src/components/Header.astro, Footer.astro |
 | Sections, contents and onward actions | Section.astro, PageShortcuts.astro, SectionLinks.astro, IntroActions.astro |
