@@ -154,12 +154,15 @@ const papers = (await getCollection('selectedResearch')).sort(
             </p>
           )}
           <Disclosure summary="details" class="working-group-details" compactControl accessibleLabel={`${g.name}: details`}>
-            {g.description && <p class="wg-description">{g.description}</p>}
-            {g.source && (
-              <p class="wg-source">
-                <a href={g.source} {...external(g.source)}>
-                  Read the announcement on LessWrong
-                </a>
+            {g.description && (
+              <p class="wg-description">
+                {g.source && g.sourceText && g.description.includes(g.sourceText) ? (
+                  <Fragment>
+                    {g.description.slice(0, g.description.indexOf(g.sourceText))}
+                    <a href={g.source} {...external(g.source)}>{g.sourceText}</a>
+                    {g.description.slice(g.description.indexOf(g.sourceText) + g.sourceText.length)}
+                  </Fragment>
+                ) : g.description}
               </p>
             )}
             {(g.placement || g.relatedPaperAnchors) && (
