@@ -13,6 +13,13 @@ import { groups } from '../data/groups';
 import { external } from '../lib/external';
 const firstGroupId = 'game-theoretic-foundations';
 const orderedGroups = [...groups.filter((g) => g.id === firstGroupId), ...groups.filter((g) => g.id !== firstGroupId)];
+// Presentation-only breaks; shared names stay intact in People and Search.
+const titleBreakAfter: Record<string, number> = {
+  'cryptography-and-cybersecurity': 2,
+  'ethics-and-superintelligence': 2,
+  'ai-safety-using-quantum-effects': 3,
+  'ai-and-the-human-experience': 3,
+};
 const papers = (await getCollection('selectedResearch')).sort(
   (a, b) => a.data.order - b.data.order,
 );
@@ -121,7 +128,7 @@ const papers = (await getCollection('selectedResearch')).sort(
     <ul class="group-list research-group-cards">
       {orderedGroups.map((g) => (
         <li class="working-group">
-          <h3 id={g.id}>{g.name}</h3>
+          <h3 id={g.id}>{g.name.split(' ').map((word, index) => <Fragment>{index > 0 && ' '}{index === titleBreakAfter[g.id] && <br />}{word}</Fragment>)}</h3>
           <div class="working-group-body">
           {g.lead && (
             <p class="wg-lead">
