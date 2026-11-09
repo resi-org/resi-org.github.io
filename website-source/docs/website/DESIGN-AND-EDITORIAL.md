@@ -28,6 +28,7 @@ Founders precede researchers and operations. Research group leaders are prioriti
 ## Editorial conventions
 
 - Exact legal name: The Institute for Responsible Superintelligence. RESI is accepted shorthand.
+- Adam's November 9 SEO follow-up: use “AI safety” in the About introduction and matching Search excerpt. Do not expand it to “artificial intelligence (AI) safety” for keywords; the intended audience already knows the acronym.
 - Cambridge, Massachusetts appears early in the homepage institutional introduction. Its repeated footer sentence was removed.
 - Use precise plain copy and purposeful cross-links. Avoid repeating whole technical summaries/invitations across pages. Preserve scientific meaning and limitations.
 - Safe by design is an aim supported by specified properties and assumptions. It does not establish a proof that an entire deployed system is safe. Retain empirical evaluation and independent checking.
