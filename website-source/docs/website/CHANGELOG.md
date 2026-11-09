@@ -549,3 +549,20 @@ A first check at 601px found Yannai’s and Vinod’s leader lines wrapping beca
 Baseline continuing source 3849e2c7915d798814b887d3dcb100fbf295c565, production c815e6dc57f2067ea36bad6f9cfb2139affc48bc; no open PRs at start. Isolated source /private/tmp/resi-wg-narrow-preview-nov9, branch codex/working-group-narrow-preview-nov9, preview :4425/research/#working. Shared dirty app files and all other previews preserved. This is a trial, not publication or approval of a permanent design convention.
 
 Validation: final Astro diagnostics (51 files, zero findings), build and git diff check passed; existing empty partners notice remains. At 601/1280px all twelve closed heights match and leader lines fit; at 390px grid stays full text width with no overflow and matching heights. At 601px Enter/Space opens/closes the first card with its original description/paper link. Desktop visual review confirms the centered inset and paired titles. Browser verification recovered in a fresh in-app tab after the older tab stopped responding. Proof: /Users/rachelsipser/.codex/visualizations/2026/11/03/01a1a236-adf2-7eb2-8d6f-129e61eb1ad3/working-groups-10-percent-narrower-preview.png. Not a physical-device or spoken-screen-reader test.
+
+## November 9 — Formal verification announcement inline (implementation)
+
+Rachel requested that “announced agenda” link to the announcement inside the Formal verification paragraph, replacing the separate “Read the announcement on LessWrong” link. Added sourceText metadata alongside the existing verified source URL; Research renders that phrase as the link while retaining the plain shared description for Search. No wording, title/order, card dimensions or URL change. Print-only disclosure content inherits the same inline link; the on-screen card has one visible announcement link.
+
+Isolated source from 3849e2c7915d798814b887d3dcb100fbf295c565; production baseline c815e6dc57f2067ea36bad6f9cfb2139affc48bc. Draft PR 150 for narrower cards is preserved, with the same inline change also applied in its local preview. Simple text publication is covered by Rachel’s standing instruction; the width trial remains unpublished.
+
+Astro check (51 files, zero findings) and build passed with the existing empty partners notice; generated comparison changes only research/index.html, excluding the build-only .assetsignore. At desktop and 390px the expanded paragraph/link display correctly, no bottom source paragraph remains, and there is no horizontal overflow. Enter opens the card; Tab reaches the uniquely visible “announced agenda” link with the unchanged LessWrong target and external-link attributes. Deployment/live evidence pending.
+
+
+## November 9 — Formal verification inline link published and live verified
+
+Source PR 151 carries application 1e9e270. Publication PR 152 merged at c1c5c9a54275fcbb0c60f708f25723de8a67866b, changing only research/index.html. Pages run 42683035927 succeeded. Ordinary live Research at desktop/390px shows the unchanged paragraph with one visible “announced agenda” link to the original LessWrong URL, target _blank / noopener noreferrer, and no separate bottom source paragraph. Enter opens the native card and Tab reaches the inline link; no horizontal overflow. Current published closed cards remain 294px wide, preserving the narrower-card trial separately. The :4425 preview has the same inline change and retains its 264.6px desktop cards.
+
+Live proof: /Users/rachelsipser/.codex/visualizations/2026/11/03/01a1a236-adf2-7eb2-8d6f-129e61eb1ad3/formal-verification-inline-link-live.png. No production width change or unrelated preview publication.
+
+Narrower-card draft synchronization: merged continuing-source 8c714fe738abbee24060fb3c1f21c6d8af244872 after the inline-link release. Resolved only the three shared-record insertions by preserving both the preview and publication evidence. The remaining application diff from current source is solely the trial’s 10% desktop width/leader spacing CSS. PR 150 remains draft; its running :4425 preview shows the inline link and 264.6px desktop card.
