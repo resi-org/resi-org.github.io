@@ -531,3 +531,10 @@ Rachel requested pairing two-line working-group titles in the same rows, minimal
 Source isolated from continuing-source 993a7a8479e0c704d76548055c48f5e8db55e4ee at /private/tmp/resi-wg-rows-nov9; publication based on main 21dc43fe8f5ab1fc8dda62676adf1121be60aff7. No open PRs at start; shared dirty previews preserved. Shared groups data, People order, Search output, descriptions, links, anchors, sizing and independent expansion code unchanged. Generated comparison changes only research/index.html (excluding the unpublished build helper .assetsignore).
 
 Validation: Astro check 51 files, zero findings; build passed with existing empty partners notice. Actual title-line counts match within all six rows at 601/1280px. All twelve closed cards remain 96.25px with 61.25px leader offsets on desktop. At 320px cards stack in row-wise DOM order, same heights, no horizontal overflow. Enter/Space opened/closed the moved cybersecurity card with its original description. Publication/deployment/live verification will be recorded separately.
+
+
+## November 9 — working-group row pairing published and live verified
+
+Source PR 148 carries application d3e3a8c and the display-order decision. Publication PR 149 merged at c815e6dc57f2067ea36bad6f9cfb2139affc48bc, changing only research/index.html. Pages run 42676240936 completed successfully. Ordinary live Research at 1280px confirms six paired rows (title line counts 2/2, 1/1, 1/1, 1/1, 2/2, 2/2), twelve 96.25px closed cards and 61.25px leader offsets. At 390px, row-wise mobile order is correct, all twelve heights match and there is no horizontal overflow. Enter/Space opened/closed moved Data attribution with its original description and paper link. The cybersecurity details had also passed the local keyboard check. Shared group data, People/Search, all card styling/assets and independent endpoints are unchanged. No physical-device or spoken-screen-reader test.
+
+Live proof: /Users/rachelsipser/.codex/visualizations/2026/11/03/01a1a236-adf2-7eb2-8d6f-129e61eb1ad3/working-group-paired-rows-live.png.
