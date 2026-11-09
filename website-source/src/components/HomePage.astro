@@ -11,6 +11,7 @@ import { external } from '../lib/external';
 import SectionLinks from './SectionLinks.astro';
 import WorkshopCallout from './WorkshopCallout.astro';
 import { institute, researchAgenda } from '../data/institute';
+import { organization } from '../data/seo';
 const entries = selectHomepageAnnouncements(await getAnnouncements());
 const featuredWorkshop = entries.find((entry): entry is EventEntry => entry.category === 'Events' && entry.anchor === 'workshop');
 const people = await getCollection('people');
@@ -22,7 +23,7 @@ const founders = people
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<Base wide>
+<Base wide description={organization.description}>
   <section class="hero shell" aria-labelledby="hero-title">
     <div class="hero-grid">
       <h1 id="hero-title">
@@ -39,7 +40,7 @@ const founders = people
       )}
       <div class="hero-copy">
         <p class="hero-description">
-          RESI is an independent nonprofit research institute based in Cambridge, Massachusetts, where
+          RESI is an independent nonprofit AI safety research institute based in Cambridge, Massachusetts, where
           we are building the scientific foundations for making superintelligence <strong>safe by design</strong>.
         </p>
         <div class="hero-mission" id="mission">

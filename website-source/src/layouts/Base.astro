@@ -4,6 +4,7 @@ import '../styles/structure.css';
 import '../styles/disclosures.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { organization } from '../data/seo';
 interface Props {
   title?: string;
   description?: string;
@@ -14,6 +15,11 @@ const {
   description = 'The Institute for Responsible Superintelligence is an independent nonprofit research institute working on the scientific foundations of safe by design AI.',
   wide = false,
 } = Astro.props;
+const pageTitle = title
+  ? `${title} · RESI`
+  : 'RESI | Institute for Responsible Superintelligence | AI Safety';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const isHome = Astro.url.pathname === '/';
 ---
 
 <!doctype html>
@@ -21,9 +27,32 @@ const {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title ? `${title} · RESI` : 'RESI · Making superintelligence safe by design'}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RESI" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={organization.logo} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1416" />
+    <meta property="og:image:height" content="1111" />
+    <meta property="og:image:alt" content="RESI's human and circuit logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@RESI_org" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={organization.logo} />
+    <meta name="twitter:image:alt" content="RESI's human and circuit logo" />
+    {isHome && (
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify(organization).replace(/</g, '\\u003c')}
+      />
+    )}
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="/mark-resi-human-circuit.png" type="image/png" />
     <link
