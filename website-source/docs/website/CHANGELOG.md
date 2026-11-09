@@ -2,7 +2,7 @@
 
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
-## November 9, 2026: minimal SEO refinements, prepared for publication
+## November 9, 2026: minimal SEO refinements, published and live verified
 
 Adam requested minimal SEO improvements and explicitly authorized publication. Pulled continuing source aa8d17f and production 1597909, with no open PRs. A clean baseline build matched all 14 production HTML routes exactly before editing.
 
@@ -10,7 +10,9 @@ Homepage title now includes RESI, the full institute name and AI Safety. Home/Ab
 
 Visible edits: add “AI safety” to the homepage's “independent nonprofit research institute”; expand About's “AI safety” to “artificial intelligence (AI) safety” once. Matching local Search excerpts are synchronized. Headings, layout, navigation, existing content, canonical URLs, robots/sitemap and independent endpoints are preserved. Larger content/URL changes and Search Console setup are outside this release.
 
-Verification: Astro check passed for 51 files with zero diagnostics; production build and diff check passed. Compared all 14 generated HTML bodies with the baseline: only the two requested wording refinements and their Search excerpts differ. Validated matching descriptions/titles/social tags, unchanged canonicals and homepage-only parseable JSON-LD. Independent review found no blocking issues. Home/About desktop and 390px mobile visual checks passed, with no horizontal overflow, and local Search finds About for “artificial intelligence”. Publication and live verification are pending.
+Verification: Astro check passed for 51 files with zero diagnostics; production build and diff check passed. Compared all 14 generated HTML bodies with the baseline: only the two requested wording refinements and their Search excerpts differ. Validated matching descriptions/titles/social tags, unchanged canonicals and homepage-only parseable JSON-LD. Independent review found no blocking issues. Home/About desktop and 390px mobile visual checks passed, with no horizontal overflow, and local Search finds About for “artificial intelligence”.
+
+Source [PR 141](https://github.com/resi-org/resi-org.github.io/pull/141), application 0fdeeb6, merged at c6a05776115443b2753ac5acef8f741d4ec858f0. Publication [PR 142](https://github.com/resi-org/resi-org.github.io/pull/142), application d56b2ff, merged at dd069cbc2f7ffb044fabc4da7ff1671357997952. [Pages run 42616333116](https://github.com/resi-org/resi-org.github.io/actions/runs/42616333116) succeeded. Only ten generated HTML files changed; every referenced CSS/JS asset remained byte-identical. Ordinary live Home/About verified the new copy, titles, descriptions, share tags and homepage organization data. Live Search finds the updated About excerpt for “artificial intelligence”. Screenshot retained in Adam's local seo-release-2026-11-09/live-homepage.png release folder. No claim of changed Google rankings or a newly generated knowledge panel.
 
 
 
