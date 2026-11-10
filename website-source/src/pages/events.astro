@@ -81,7 +81,7 @@ import { institute } from '../data/institute';
   .seminar-list :global(details) { margin: 0; }
   .seminar-list :global(summary) {
     position: absolute;
-    top: -25.75px;
+    top: calc(-18.75px - var(--disclosure-mark-size) / 2);
     right: 0;
     display: flex;
     justify-content: flex-end;
