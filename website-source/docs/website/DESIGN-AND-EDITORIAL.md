@@ -87,26 +87,25 @@ Keep metadata at its readable shared size. The current upcoming label omits only
 November 3 placement refinement: [EVENT-ROUTING.md](EVENT-ROUTING.md) defines defaults and explicit overrides for all contributors. Being upcoming alone never promotes a seminar/reading group/working group. The emphasized treatment applies when an upcoming event is intentionally included, not as a reason to include it.
 
 
-November 3 mobile disclosure correction: on devices matching `(hover: none) and (pointer: coarse)`, hide the working-group details label completely; closed cards show the plus and open cards spin into the four-dot square, with no minus. Closing returns to the plus, including retained keyboard focus. Preserve accessible summary names and reduced-motion behavior. Fine-pointer/hover desktop behavior remains unchanged at every viewport width. This supersedes the earlier visible touch hint and mobile minus.
+Historical note: the November 3 mobile-only plus/dots exception was superseded by the November 8 site-wide no-minus rule and November 10 shared sizing above. Do not restore the earlier desktop minus or independent mobile sizing; see CHANGELOG for historical release evidence.
 
+Disclosure accessibility verification (November 3): retain native details/summary semantics and a unique accessible summary name containing the group name plus details. The accessible name must survive hiding the visual mobile hint. Keep decorative plus/dot marks aria-hidden and print-only duplicate bodies aria-hidden/hidden on screen. Verify platform accessibility expanded/collapsed states, body exposure only while open, keyboard operation and focus order when reusing the pattern. Native semantics supply state; no redundant manual ARIA state was needed in the reviewed implementation.
 
-Disclosure accessibility verification (November 3): retain native details/summary semantics and a unique accessible summary name containing the group name plus details. The accessible name must survive hiding the visual mobile hint. Keep decorative plus/minus/dot marks aria-hidden and print-only duplicate bodies aria-hidden/hidden on screen. Verify platform accessibility expanded/collapsed states, body exposure only while open, keyboard operation and focus order when reusing the pattern. Native semantics supply state; no redundant manual ARIA state was needed in the reviewed implementation.
-
-## Disclosure categories — approved November 4
+## Disclosure categories — approved November 4; rollout current through November 10
 
 Choose the cue by what is revealed, then choose placement by whether it is inside a card. Publication-list content takes precedence over the container.
 
 | Revealed content and context | Shared cue | Current examples/status |
 | --- | --- | --- |
-| More explanatory details inside a card | Approved corner-aligned plus/dot control | Working groups; preserve the published desktop and touch behaviors |
-| More explanatory details outside a card | Non-card plus variant; exact styling to review next | About FAQ answers and explanations/scope for individual foundational papers on Research |
+| More explanatory details inside a card | Shared 11px plus/dots with corner placement | Working groups; shared hover/touch behavior above |
+| More explanatory details outside a card | The same 11px plus/dots with text-bottom alignment | FAQ inline and click-only/no hint; paper/seminar details keep hover and details hint |
 | A list of selected work, publications, reports, papers or published research | Existing small caret/triangle beside the section label, even inside a card | People Selected publications, including the founder cards; preserve current style |
 
 A disclosure about one paper’s meaning, findings, scope or limitations is explanatory detail, not a publication list. Rachel explicitly placed Research’s individual foundational-paper details in the non-card plus category. A working-group description can include related-paper links without becoming a publication-list expander. For genuinely mixed or unclear cases, flag the component and agree its category case by case; do not classify solely by the word research or the presence of a paper link.
 
-People currently has no plus-based content controls inside its cards: the three founder cards and other publication expanders use Selected publications with a native triangle. Preserve those controls rather than replacing them with pluses. Events seminar abstracts/biographies are another explanatory non-card context to review later. On this page is navigation and keeps its own label/behavior; it is not a content disclosure.
+People currently has no plus-based content controls inside its cards: the three founder cards and other publication expanders use Selected publications with a native triangle. Preserve those controls rather than replacing them with pluses. Events seminar abstracts/biographies also use the shared explanatory non-card control. On this page is navigation and keeps its own label/behavior; it is not a content disclosure.
 
-This approves the taxonomy and supersedes the earlier broad proposal to convert People publication lists. It does not approve new non-card styling or a visual rollout yet. Preserve native keyboard/accessibility semantics, meaningful accessible names, hidden decorative marks and reduced-motion support across both cue families.
+This approves the taxonomy and supersedes the earlier broad proposal to convert People publication lists. The non-card visual rollout was approved/published November 8 and its shared size refined November 10; use the current shared-control configuration above. Preserve native keyboard/accessibility semantics, meaningful accessible names, hidden decorative marks and reduced-motion support across both cue families.
 
 ## News/Home contribution policy — November 4
 
