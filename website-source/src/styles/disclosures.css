@@ -1,4 +1,11 @@
-/* Explanatory content only. Publication-list carets and navigation stay separate. */
+/* Explanatory content only. Publication-list carets and navigation stay separate.
+   Shared geometry: change the footprint here, not in individual page variants. */
+:root {
+  --disclosure-mark-size: 11px;
+  --disclosure-stroke-width: 1.1px;
+  --disclosure-dot-size: 3px;
+  --disclosure-dot-offset: calc((var(--disclosure-mark-size) - var(--disclosure-dot-size)) / 2);
+}
 .explanatory-disclosure > summary {
   position: relative;
   list-style: none;
@@ -32,17 +39,17 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 7px;
-  height: 1.1px;
+  width: calc(var(--disclosure-mark-size) / 2);
+  height: var(--disclosure-stroke-width);
   background: currentColor;
-  transform: translate(-50%, -50%) rotate(var(--arm)) translateX(3.5px);
+  transform: translate(-50%, -50%) rotate(var(--arm)) translateX(calc(var(--disclosure-mark-size) / 4));
   transition: transform 370ms cubic-bezier(.22, .61, .36, 1),
     width 370ms ease, height 370ms ease, border-radius 370ms ease;
 }
-.disclosure-control-mark > span:nth-child(1) { --arm: 0deg; --dot-x: 5.5px; --dot-y: -5.5px; }
-.disclosure-control-mark > span:nth-child(2) { --arm: 90deg; --dot-x: 5.5px; --dot-y: 5.5px; }
-.disclosure-control-mark > span:nth-child(3) { --arm: 180deg; --dot-x: -5.5px; --dot-y: 5.5px; }
-.disclosure-control-mark > span:nth-child(4) { --arm: 270deg; --dot-x: -5.5px; --dot-y: -5.5px; }
+.disclosure-control-mark > span:nth-child(1) { --arm: 0deg; --dot-x: var(--disclosure-dot-offset); --dot-y: calc(-1 * var(--disclosure-dot-offset)); }
+.disclosure-control-mark > span:nth-child(2) { --arm: 90deg; --dot-x: var(--disclosure-dot-offset); --dot-y: var(--disclosure-dot-offset); }
+.disclosure-control-mark > span:nth-child(3) { --arm: 180deg; --dot-x: calc(-1 * var(--disclosure-dot-offset)); --dot-y: var(--disclosure-dot-offset); }
+.disclosure-control-mark > span:nth-child(4) { --arm: 270deg; --dot-x: calc(-1 * var(--disclosure-dot-offset)); --dot-y: calc(-1 * var(--disclosure-dot-offset)); }
 .disclosure-control-label {
   position: absolute;
   right: calc(100% - 3px);
@@ -55,7 +62,7 @@
   pointer-events: none;
 }
 /* The FAQ mark follows the final word without changing the text's line height.
-   Its visible 14px square ends at the text baseline plus the font descent. */
+   Its configured visible square ends at the text baseline plus the font descent. */
 .faq-list .explanatory-disclosure > summary { padding-right: 0; }
 .faq-list .disclosure-summary-end { white-space: nowrap; }
 .faq-list .disclosure-control {
@@ -63,22 +70,22 @@
   height: 0;
   vertical-align: -.15em;
 }
-.faq-list .disclosure-control-icon { position: absolute; top: -23.5px; left: 0; }
+.faq-list .disclosure-control-icon { position: absolute; top: calc(-16.5px - var(--disclosure-mark-size) / 2); left: 0; }
 /* Continuous bars avoid center seams from rotated half-arms beside inline text.
-   Preserve the shared 14px footprint and rotating four-dot destination. */
+   Preserve the shared configured footprint and rotating four-dot destination. */
 .faq-list .disclosure-control-mark::before,
 .faq-list .disclosure-control-mark::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 14px;
-  height: 1.1px;
+  width: var(--disclosure-mark-size);
+  height: var(--disclosure-stroke-width);
   background: currentColor;
   transform: translate(-50%, -50%);
   transition: opacity 185ms ease;
 }
-.faq-list .disclosure-control-mark::after { width: 1.1px; height: 14px; }
+.faq-list .disclosure-control-mark::after { width: var(--disclosure-stroke-width); height: var(--disclosure-mark-size); }
 .faq-list .disclosure-control-mark > span {
   opacity: 0;
   transition: transform 370ms cubic-bezier(.22, .61, .36, 1), width 370ms ease,
@@ -95,8 +102,8 @@
   transform: rotate(180deg);
 }
 .explanatory-disclosure[open] > summary .disclosure-control-mark > span {
-  width: 3px;
-  height: 3px;
+  width: var(--disclosure-dot-size);
+  height: var(--disclosure-dot-size);
   border-radius: 50%;
   transform: translate(-50%, -50%) translate(var(--dot-x), var(--dot-y));
 }
@@ -106,8 +113,8 @@
     transform: rotate(180deg);
   }
   .explanatory-disclosure:not(.inline-disclosure):not([data-resting-plus]) > summary:hover .disclosure-control-mark > span {
-    width: 3px;
-    height: 3px;
+    width: var(--disclosure-dot-size);
+    height: var(--disclosure-dot-size);
     border-radius: 50%;
     transform: translate(-50%, -50%) translate(var(--dot-x), var(--dot-y));
   }
