@@ -21,7 +21,7 @@ Recommendation: open the short RESI bio with “An institution builder” rather
 
 Recommendation: **Operations, Strategy & Special Projects** is a credible descriptive website title. The comma separates operations and strategy; without it, Operations Strategy reads as one specialization. The examples establish related title patterns, not a universally standardized exact title or comparable seniority. Do not add Director, Head, Chief of Staff, or Manager unless Rachel chooses that designation.
 
-## Drafts in the preview
+## Approved published bios
 
 Emily — Chief Operating Officer:
 

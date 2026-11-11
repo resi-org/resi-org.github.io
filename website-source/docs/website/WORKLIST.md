@@ -1,8 +1,8 @@
 # RESI website current work
 
-## Operations profiles — November 11 approved release
+## Operations profiles — November 11 published release
 
-**Current status: approved for publication.** Rachel explicitly approved the final wording with “advancing new initiatives” and “rigorous research.” This resolves the wording hold below. Publish the reviewed Operations section, both role labels and bios, side-by-side desktop layout, approved unchanged portrait and matching Search entries. Source branch codex/operations-profiles-nov11; publication branch codex/publish-operations-profiles-nov11 in /private/tmp/resi-operations-publish-nov11. Earlier preview/hold notes below are historical; release evidence follows in CHANGELOG.
+**OP1 current status: published and live verified.** Rachel explicitly approved the final wording with “advancing new initiatives” and “rigorous research.” Source PR 162 / bfc0839; publication PR 163 / efbad1e05cac5ad93de32e23df01096e5bead52d; successful Pages run 43041933135. Ordinary live People at 390/1280px confirmed exact bios/roles, Emily left/Rachel right on desktop and stacked phones, loaded portraits and no overflow. Search-to-Rachel anchor and Emily role search passed; approved photo hash unchanged. Only People/Search and the new image changed; all 39 original People IDs, Home, independent endpoints and unrelated previews preserved. Release/source and final-records work are in /private/tmp/resi-operations-rachel-nov11; publication checkout /private/tmp/resi-operations-publish-nov11. Earlier preview/hold notes below are historical, not current restrictions.
 
 Latest November 11 revision — **Preview; publication held for wording review.** Before any source commit or publication, Rachel requested removing the echo of Emily's “turning ambitious ideas” and repeated “ambitious.” Proposed replacement: “advancing new initiatives” and “rigorous research.” Updated People/Search preview; no publication occurred. Earlier publication authorization remains applicable to the section, with this revised wording awaiting review.
 
