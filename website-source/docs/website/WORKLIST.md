@@ -1,5 +1,10 @@
 # RESI website current work
 
+## E17 — Andrew Lo November 4 seminar archive correction
+
+Rachel explicitly requested moving the completed November 4 seminar into past events, matching other past-seminar formatting, and publishing. Prepared from current continuing source `37e0bde` and production `71792b1` in `/private/tmp/resi-andrew-lo-archive-nov11` and `/private/tmp/resi-publish-andrew-lo-nov11`. Moved to the first Past seminars row, compact date/title/speaker and closed shared plus/dots details; retained original time/location inside Event details. Abstract/biography/anchor preserved. Removed expired special-time notice/current Zoom join link from this archived record; Search follows the cleaned record. Other six seminars exactly unchanged. Page gains a necessary explicit type for an empty upcoming list. Diagnostics/build and 1280/390px layout/keyboard checks passed. Generated release changes only Events/Search HTML; all other output matches production apart from build-only .assetsignore. Source PR/merge, production PR/merge, deployment and live verification still pending. Broader Events redesign stays preview-only at :4431.
+
+
 ## About navigation label — November 11
 
 Published and live verified. Rachel requested About instead of Who we are throughout the menu, including mobile. Updated the shared Header label, About browser/social title, four Search category labels and page/design references. `/about`, descriptive H1, anchors and current-page bold/no-underline behavior remain. Source PR 165; publication PR 166 at `4e7a56716973de92b20bfeb9b64ffd41b44f3084`. Astro check/build and desktop/390px mobile link/no-overflow checks passed. Generated scope is only the exact label replacement in ten modern HTML pages; all other production content/endpoints and narrower-card PR 150 preserved. Pages run 43047462798 succeeded; ordinary live About at 1280px/390px, mobile menu open, current-page style and Search name verified.

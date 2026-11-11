@@ -1,5 +1,12 @@
 # RESI website change log
 
+## November 11, 2026 — Andrew Lo archive correction prepared for authorized publication
+
+Rachel requested publication of the November 4 seminar archive correction alone. Starting source `37e0bde`, production `71792b1`; no overlapping open PR (unrelated #150 preserved). Moved Andrew Lo’s record from upcoming to the start of talks, added its archive navigation link, and adopted the compact archived date/title/speaker layout with collapsed shared explanatory details. Abstract and biography remain byte-identical; original time/location now appear inside Event details. Removed stale “special time this week” notice and current seminar Zoom link from the archived entry; cleaned Search text. All other six records and stable IDs preserved. Explicit typing permits an empty upcoming list without an Astro diagnostic.
+
+Check/build and diff whitespace checks passed. Actual desktop 1280px/phone 390px review verified archived placement, closed default state, keyboard open/close, full text and compact layout; desktop no overflow. Build output differs from production only in Events/Search plus build-only .assetsignore. Publication checkout copies only the two reviewed HTML files. Domain files, endpoints, assets, newer Home/team changes and broad :4431 redesign remain preserved. Release not yet merged/deployed/live verified; final evidence follows.
+
+
 ## November 11 homepage team-photo rule — published and live verified
 
 Rachel approved automatic Home mini-photo eligibility for every non-founder People profile with a photo, including Operations. Home now derives this roster directly from the people collection instead of limiting it to Research. Research order is retained, followed by other eligible profiles in configured order. Current additions are Emily Uyeda Kantrim and Rachel Sipser; founders retain the larger portraits above the grid. The shared list label is RESI team. Normal builds pick up future profiles/photos without a second Home roster; People/photo releases must publish the rebuilt Home output too.
