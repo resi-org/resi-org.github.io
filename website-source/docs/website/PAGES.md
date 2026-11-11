@@ -1,6 +1,6 @@
 # RESI page references
 
-November 11 Operations update (WORKLIST OP1), published and live verified through PR 163: People uses the shared Person component in an Operations-only two-column desktop grid, Emily left and Rachel right; phones retain stacked rows. Both role labels and approved no-name-repeat bios come from content/people. Rachel's approved photo is public/people/rachel-sipser.png with default shared portrait framing, unchanged pixels. Search inherits both profiles; no Home promotion. Rachel's final bio uses communications, community-building and organizational development, with “advancing new initiatives” and “rigorous research,” rather than naming individual channels.
+November 11 Operations update (WORKLIST OP1), published and live verified through PR 163: People uses the shared Person component in an Operations-only two-column desktop grid, Emily left and Rachel right; phones retain stacked rows. Both role labels and approved no-name-repeat bios come from content/people. Rachel's approved photo is public/people/rachel-sipser.png with default shared portrait framing, unchanged pixels. Search inherits both profiles. That Operations release did not change Home; the subsequent November 11 team-photo rule below now includes Operations automatically. Rachel's final bio uses communications, community-building and organizational development, with “advancing new initiatives” and “rigorous research,” rather than naming individual channels.
 
 Paths are relative to website-source/. The implementation holds current copy; this reference records purpose, sources and dependencies without duplicating each paragraph. Reconciled November 2, 2026.
 
@@ -46,3 +46,5 @@ Apply [EVENT-ROUTING.md](EVENT-ROUTING.md) to short event/seminar/group requests
 November 5 People order: Join us (#get-involved) precedes Affiliated groups (#affiliated), including the On this page links. Preserve the separate preview-only careers content; the reorder release uses the restored live section.
 
 November 8 Home placement published (E14, PR 131): Announcements returns after Founders/research community, before Key research areas, using its unchanged shared cards/feed and anchor. The intro/featured workshop stays in place. Live desktop/mobile verified.
+
+November 11 Home/People portrait dependency: HomePage.astro derives every non-founder profile with a photo from content/people (Research and Operations included), and ResearchTeamMosaic.astro rotates that full roster through 18 slots. New profiles/photos enter on the next normal build/publication with no homepage edit. Founders retain their separate larger treatment; hidden visitors stay hidden. portraits.ts remains the shared framing/asset source. See DESIGN-AND-EDITORIAL’s homepage team-photo rule.

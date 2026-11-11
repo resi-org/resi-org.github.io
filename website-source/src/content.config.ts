@@ -4,6 +4,7 @@ import { glob, file } from 'astro/loaders';
 import { isSeriesEvent } from './lib/event-announcement-policy';
 
 // People, visitors and affiliated groups are editable without touching markup.
+// Non-founder People profiles with photos also feed Home’s rotating team grid.
 // Each person is one markdown file in content/people/: frontmatter holds the
 // facts (name, group, order, photo, link, publications); the body is the bio.
 // `summary` is the one-line credential used where a person is named outside

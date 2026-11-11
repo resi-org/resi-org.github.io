@@ -15,9 +15,14 @@ import { organization } from '../data/seo';
 const entries = selectHomepageAnnouncements(await getAnnouncements());
 const featuredWorkshop = entries.find((entry): entry is EventEntry => entry.category === 'Events' && entry.anchor === 'workshop');
 const people = await getCollection('people');
-const researchTeam = people
-  .filter((p) => p.data.group === 'research' && p.data.photo)
-  .sort((a, b) => a.data.order - b.data.order);
+// Every non-founder People profile with a photo joins automatically on rebuild.
+// Preserve the current research-first order; Operations follows in the rotation.
+const teamWithPhotos = people
+  .filter((p) => p.data.group !== 'founders' && p.data.photo)
+  .sort((a, b) =>
+    Number(a.data.group !== 'research') - Number(b.data.group !== 'research')
+    || a.data.order - b.data.order,
+  );
 const founders = people
   .filter((p) => p.data.group === 'founders')
   .sort((a, b) => a.data.order - b.data.order);
@@ -113,7 +118,7 @@ const founders = people
         ))}
       </ul>
       <div class="community">
-        <ResearchTeamMosaic people={researchTeam} />
+        <ResearchTeamMosaic people={teamWithPhotos} />
         <div class="community-invite">
           <h3 class="community-heading">Research community</h3>
           <SectionLinks items={[

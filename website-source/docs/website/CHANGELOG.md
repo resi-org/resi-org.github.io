@@ -1,5 +1,11 @@
 # RESI website change log
 
+## November 11 homepage team-photo rule — verified preview, publication pending
+
+Rachel approved automatic Home mini-photo eligibility for every non-founder People profile with a photo, including Operations. Home now derives this roster directly from the people collection instead of limiting it to Research. Research order is retained, followed by other eligible profiles in configured order. Current additions are Emily Uyeda Kantrim and Rachel Sipser; founders retain the larger portraits above the grid. The shared list label is RESI team. Normal builds pick up future profiles/photos without a second Home roster; People/photo releases must publish the rebuilt Home output too.
+
+Shared portrait framing, 18 rotating slots, existing hover/focus pause, reduced-motion/print full roster, profile links and hidden visitor flag are preserved. Source /private/tmp/resi-home-team-roster-nov11 from 3ed744a; latest source subsequently 333429f, production 61408d0 (About Working groups link preserved by Home-only publication). Astro check: 51 files, zero diagnostics; build and diff check passed. Generated roster exactly matches all 21 eligible profiles (19 Research, 2 Operations), no duplicates or founders. Desktop/390px browser checks confirmed rotation shows both Operations portraits, correct profile-anchor navigation and no overflow; keyboard focus pauses rotation. New Home outside the mosaic is byte-identical to production; only index.html will be published, with no asset changes. Preview screenshot: /Users/rachelsipser/.codex/visualizations/2026/11/03/01a1a1de-5ea7-7c53-b2ee-bc43d87896ae/homepage-team-with-operations-nov11.png. Source merge, production merge and live verification remain separate next stages.
+
 ## November 11 About navigation rename — published and live verified
 
 Rachel requested renaming Who we are to About throughout navigation, including mobile. Changed the single shared Header link label, About page browser/social title and four corresponding Search categories. Updated shared page/design references. Descriptive H1, route/anchors, other content and bold-without-underline current-page styling remain unchanged.
