@@ -1,5 +1,12 @@
 # RESI website change log
 
+## Events heading — November 11 published and live verified
+
+Rachel approved the exact H1 **Seminars, workshops, and discussions on building the foundations of superintelligence safety** (no terminal period). Source PR 175 merged at `efb0edcc82022f97b1e37036e9d3c35c4ec04495` (application `5272274`); publication PR 176 at `631a4ec8a3c708fb112961529bd50c47fd5b134d`; successful Pages run `43107091561`. Only Events heading/metadata and its Search excerpt changed. Ordinary live Events after refresh verified at 1280/390px: exact text/metadata, natural wrapping, no horizontal overflow, Andrew Lo still archived, draft intro absent. Ordinary live Search returns the new excerpt. Initial browser cache showed the prior heading until reload; final proof uses the ordinary live URL. Build/check and 320px preview checks passed. Proof: `/private/tmp/resi-events-heading-proof-nov11/live-1280.png`, `live-390.png`, `live-checks.json`, `preview-checks.json`.
+
+The :4431 Master EVENTS preview also uses the approved heading (preview commit `cd26aed`), retaining the unapproved introductory text, category sections and layout. Rachel likes the overall direction but finds its visual presentation unsatisfactory; introductory wording and visual refinement remain open under E16. This release approves/publishes the heading only and necessary matching metadata/Search, with no typography, spacing or layout change. Preserve all other previews and live pages/endpoints.
+
+
 ## November 11, 2026 — Exact Events heading prepared for authorized publication
 
 Rachel supplied and authorized publication of the exact H1 “Seminars, workshops, and discussions on building the foundations of superintelligence safety.” Updated only that heading and its matching page metadata/Search excerpt. Built from continuing source `65addfd`; publication based on `17ae97a`. Preserves the published page structure, Andrew Lo archive, all event records and other pages/endpoints. Separate :4431 preview gets the same heading, retaining its unapproved introduction/layout.

@@ -1,6 +1,13 @@
 # RESI website editing and handoff guide
 
-## Events heading — November 11 approved release in progress
+## Events heading — November 11 published and live verified
+
+Rachel approved the exact H1 **Seminars, workshops, and discussions on building the foundations of superintelligence safety** (no terminal period). Source PR 175 merged at `efb0edcc82022f97b1e37036e9d3c35c4ec04495` (application `5272274`); publication PR 176 at `631a4ec8a3c708fb112961529bd50c47fd5b134d`; successful Pages run `43107091561`. Only Events heading/metadata and its Search excerpt changed. Ordinary live Events after refresh verified at 1280/390px: exact text/metadata, natural wrapping, no horizontal overflow, Andrew Lo still archived, draft intro absent. Ordinary live Search returns the new excerpt. Initial browser cache showed the prior heading until reload; final proof uses the ordinary live URL. Build/check and 320px preview checks passed. Proof: `/private/tmp/resi-events-heading-proof-nov11/live-1280.png`, `live-390.png`, `live-checks.json`, `preview-checks.json`.
+
+The :4431 Master EVENTS preview also uses the approved heading (preview commit `cd26aed`), retaining the unapproved introductory text, category sections and layout. Rachel likes the overall direction but finds its visual presentation unsatisfactory; introductory wording and visual refinement remain open under E16. This release approves/publishes the heading only and necessary matching metadata/Search, with no typography, spacing or layout change. Preserve all other previews and live pages/endpoints.
+
+
+## Events heading — earlier release preparation (historical)
 
 Rachel explicitly approved publication of the exact heading “Seminars, workshops, and discussions on building the foundations of superintelligence safety.” This is the H1 without a terminal period; matching metadata/Search are included. Introduction, extra category sections and visual layout remain in the separate :4431 preview. Release source `/private/tmp/resi-events-heading-nov11`; publication `/private/tmp/resi-publish-events-heading-nov11`. See WORKLIST E18 and CHANGELOG; deployment/live verification still pending.
 

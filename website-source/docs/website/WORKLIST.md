@@ -1,5 +1,12 @@
 # RESI website current work
 
+## Events heading — November 11 published and live verified
+
+Rachel approved the exact H1 **Seminars, workshops, and discussions on building the foundations of superintelligence safety** (no terminal period). Source PR 175 merged at `efb0edcc82022f97b1e37036e9d3c35c4ec04495` (application `5272274`); publication PR 176 at `631a4ec8a3c708fb112961529bd50c47fd5b134d`; successful Pages run `43107091561`. Only Events heading/metadata and its Search excerpt changed. Ordinary live Events after refresh verified at 1280/390px: exact text/metadata, natural wrapping, no horizontal overflow, Andrew Lo still archived, draft intro absent. Ordinary live Search returns the new excerpt. Initial browser cache showed the prior heading until reload; final proof uses the ordinary live URL. Build/check and 320px preview checks passed. Proof: `/private/tmp/resi-events-heading-proof-nov11/live-1280.png`, `live-390.png`, `live-checks.json`, `preview-checks.json`.
+
+The :4431 Master EVENTS preview also uses the approved heading (preview commit `cd26aed`), retaining the unapproved introductory text, category sections and layout. Rachel likes the overall direction but finds its visual presentation unsatisfactory; introductory wording and visual refinement remain open under E16. This release approves/publishes the heading only and necessary matching metadata/Search, with no typography, spacing or layout change. Preserve all other previews and live pages/endpoints.
+
+
 ## E18 — Exact Events heading approved November 11
 
 Rachel requested publishing “Seminars, workshops, and discussions on building the foundations of superintelligence safety” now. H1 and matching metadata/Search updated from current source `65addfd` / production `17ae97a`; original published layout and Andrew Lo archive preserved. Diagnostics/build passed; built page reviewed at 320/390/1280px, exact text and no overflow, no draft introduction. Source/publication merge and live verification pending. Introduction is still being refined. Rachel broadly likes its direction but finds the preview visually unsatisfactory; keep visual refinement open, with no new design experiment or broader publication in this release. The :4431 preview also uses the approved heading while retaining its draft text/layout.
