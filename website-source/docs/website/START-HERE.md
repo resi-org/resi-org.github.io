@@ -1,6 +1,11 @@
 # RESI website editing and handoff guide
 
-## Andrew Lo archive — November 11 release in progress
+## Andrew Lo archive — November 11 published and live verified
+
+Rachel authorized the scoped November 4 seminar archive correction. Source PR 172 merged at `48f4e6c0780aa17883a4401e187e4ebd03ebb954` (application `2424040`); publication PR 173 merged at `17ae97aad098e5f099f148ca739eb1174401dc26`. Fresh Pages run `43106284554` succeeded. Ordinary live Events verified at 1280/390px: first under Past seminars, absent from upcoming, closed by default, no overflow, original time/location revealed, native keyboard open/close works; Search returns the preserved stable talk link. Initial run `43105119645` queued for about eight minutes, then was superseded/cancelled when a fresh build of the same exact revision was requested. Only Events/Search HTML changed, preserving all other production files. Andrew is first in Past seminars with compact date/speaker metadata and closed shared details; original abstract/biography and event time/location retained, stale time-change/join notice removed. Broader Master EVENTS redesign remains preview-only at :4431 and now contains the same archive formatting (preview commit `aa098da`). Release source `/private/tmp/resi-andrew-lo-archive-nov11`, publication `/private/tmp/resi-publish-andrew-lo-nov11`; proof `/private/tmp/resi-andrew-lo-archive-proof-nov11`. Final proof: `/private/tmp/resi-andrew-lo-archive-proof-nov11/live-desktop.png`, `live-layout.json` and `preview-layout.json`. No forms submitted. No physical-phone or spoken-screen-reader test.
+
+
+## Andrew Lo archive — earlier November 11 release preparation (historical)
 
 Rachel explicitly requested publication of only the November 4 Andrew Lo archive correction. Isolated current-source checkout `/private/tmp/resi-andrew-lo-archive-nov11`, branch `codex/archive-andrew-lo-nov11`; scoped publication `/private/tmp/resi-publish-andrew-lo-nov11`, branch `codex/publish-andrew-lo-nov11`. This release preserves the published Events layout. The separate Master EVENTS redesign at :4431 remains unpublished. See WORKLIST E17 and CHANGELOG.
 
