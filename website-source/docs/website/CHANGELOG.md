@@ -1,5 +1,18 @@
 # RESI website change log
 
+## November 11, 2026: Operations profiles published and live verified
+
+Completed the explicitly approved release with Rachel's final wording: “Works across communications, community-building, and organizational development, advancing new initiatives and keeping RESI a connected, welcoming place to do rigorous research.” Emily's approved institution-builder bio and Chief Operating Officer title appear on the left; Rachel's Operations, Strategy & Special Projects title and unchanged approved portrait appear on the right. Phones retain stacked rows with Emily first. Search inherits both records; Home remains unchanged.
+
+- Source application e4f609de938ea16dd62584b94bbc6bffada31f6c; [source PR 162](https://github.com/resi-org/resi-org.github.io/pull/162) merged at bfc08392e4b808389caf61c03e0aa28742e4a3cc.
+- Generated application 5b9077d64b9cb1ddd6502715189aa62931ef0108; [publication PR 163](https://github.com/resi-org/resi-org.github.io/pull/163) merged at efbad1e05cac5ad93de32e23df01096e5bead52d.
+- [Pages run 43041933135](https://github.com/resi-org/resi-org.github.io/actions/runs/43041933135) completed successfully.
+- Release scope: people/index.html, search/index.html and people/rachel-sipser.png. All 39 prior People IDs retained; other People markup unchanged apart from scoped-style identifiers. Domain files, latest seminar Zoom endpoint, other public pages and unpublished narrower-card PR 150 preserved.
+- Final preview: Astro check/build and diff check passed; six widths (320, 390, 569, 571, 768, 1280px), exact bios/roles, Search/anchors, no overflow and light/dark review passed. The final text-only refinement was rebuilt and checked in People/Search.
+- Ordinary live https://resi.org/people/#operations verified at 390/1280px with exact final bios/roles, correct desktop/phone placement, loaded portraits, no overflow and visual screenshots. Search for Rachel navigated to her stable anchor through the site's ordinary trailing-slash redirect; Chief Operating Officer finds Emily. No Operations portrait was added to Home. Public image SHA-256 matches the approved asset: 44fcb7a9f7cc3d3073d2a3e9510b4292dbc5d7c57cffe9be996ef3157060d232.
+
+Live screenshots and results: /Users/rachelsipser/.codex/visualizations/2026/11/10/01a1c793-1b2e-72b3-933a-34845bb78b00/operations-live-390.png, operations-live-1280.png, operations-live-dark.png and operations-live-verification.json. Browser verification waits for lazy portraits to decode and accepts the public site's trailing-slash redirect; initial timing/URL assertions were corrected without changing the application. No physical-phone or spoken screen-reader session. Source /private/tmp/resi-operations-rachel-nov11; publication /private/tmp/resi-operations-publish-nov11. Earlier preview and wording holds below are superseded. Institutional research remains available in the local source note for the shared-library handoff.
+
 ## November 11, 2026: final Operations wording approved for publication
 
 Rachel explicitly approved the final bio with “advancing new initiatives” and “rigorous research.” The prior wording hold is resolved. The release retains the reviewed Emily bio, both role labels, approved portrait and responsive Operations layout. Scope: generated people/index.html, search/index.html and new people/rachel-sipser.png only. All 39 prior People IDs remain and there are no duplicate IDs; People markup outside Operations is unchanged apart from generated scoped-style identifiers. The original photo and site copy have identical SHA-256 44fcb7a9f7cc3d3073d2a3e9510b4292dbc5d7c57cffe9be996ef3157060d232. Source commit/merge, production merge and live verification are the next distinct stages.
