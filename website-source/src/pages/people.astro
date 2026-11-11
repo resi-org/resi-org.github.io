@@ -95,7 +95,7 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
   </Section>
 
   <Section divider label="Operations" id="operations">
-    <ul class="people">
+    <ul class="people operations-people">
       {operations.map((p) => (
         <Person person={p} />
       ))}
@@ -227,6 +227,21 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
 </Base>
 
 <style>
+  @media (min-width: 570.01px) {
+    .operations-people {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 31.5px;
+    }
+    .operations-people > :global(.person) {
+      grid-template-columns: minmax(0, 1fr);
+      align-content: start;
+      gap: 13.5px;
+      border-bottom: 0;
+      padding: 0;
+    }
+  }
+
   .join-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

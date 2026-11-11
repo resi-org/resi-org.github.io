@@ -1,5 +1,27 @@
 # RESI website change log
 
+## November 11, 2026: final Operations wording approved for publication
+
+Rachel explicitly approved the final bio with “advancing new initiatives” and “rigorous research.” The prior wording hold is resolved. The release retains the reviewed Emily bio, both role labels, approved portrait and responsive Operations layout. Scope: generated people/index.html, search/index.html and new people/rachel-sipser.png only. All 39 prior People IDs remain and there are no duplicate IDs; People markup outside Operations is unchanged apart from generated scoped-style identifiers. The original photo and site copy have identical SHA-256 44fcb7a9f7cc3d3073d2a3e9510b4292dbc5d7c57cffe9be996ef3157060d232. Source commit/merge, production merge and live verification are the next distinct stages.
+
+## November 11, 2026: final bio refinement, preview
+
+Before source commit or publication, Rachel requested avoiding the shared “turn ideas into” construction and repeated adjective “ambitious.” Updated the preview to propose “advancing new initiatives” and “rigorous research”; all other profile content and layout remain unchanged. Publication held for review of this wording. The prepared publication checkout still contains the earlier approved bio and must be refreshed from the selected final build before any release.
+
+## November 11, 2026: Operations publication approved; release in preparation
+
+Rachel approved publication of the reviewed Operations section after choosing the broader description: “Works across communications, community-building, and organizational development, helping turn new ideas into practice and keeping RESI a connected, welcoming place to do ambitious research.” This supersedes the earlier draft naming the website/newsletters. Retain Emily's reviewed institution-builder bio and Chief Operating Officer role, Rachel's Operations, Strategy & Special Projects title, the approved photo and Emily-left/Rachel-right desktop layout. Source/production rechecked unchanged at 64831b5 / 584e1e5; unrelated open PR 150 remains separate. Final checks and scoped publication are in progress; the preview entry below is historical.
+
+## November 11, 2026: Operations profiles, preview only
+
+Rachel approved `rachel-focus-background-restored.png` and requested an Operations entry to Emily's right, role labels for both, and draft bios of comparable length. Implemented in isolated detached checkout `/private/tmp/resi-operations-rachel-nov11`, source baseline `64831b517d5a5b9a5b5b108cf8657c396f018d2c`; production observed `584e1e5c33ecb6a1ef6586179512f6e3c4e6cd0d`. Only open PR was unrelated narrower-card preview #150.
+
+Added `content/people/rachel-sipser.md` and `public/people/rachel-sipser.png`; added Emily's Chief Operating Officer role and proposed no-name-repeat bio. Draft Rachel title: Operations, Strategy & Special Projects. Shared Person markup renders both roles; scoped People CSS makes two columns with Emily left/Rachel right on wider layouts, preserving the original stacked person rows on phones. Shared Search automatically includes Rachel, both roles and both bios. Home's research-only mosaic is unchanged; visitors remain hidden. [Research and wording rationale](references/operations-bios-2026-11-11.md).
+
+Approved portrait SHA-256 and copied site asset both equal `44fcb7a9f7cc3d3073d2a3e9510b4292dbc5d7c57cffe9be996ef3157060d232`; no pixel edits or new framing override. Astro check: 51 files, zero diagnostics. Build passed; existing empty partners collection warning remains. Browser checks passed at 320, 390, 569, 571, 768 and 1280px: correct order and role labels, same-row desktop positions, stacked phones, loaded photos, no horizontal overflow, Rachel search-to-anchor navigation and Emily role search. Light/dark desktop and phone views inspected. Screenshots and verification JSON are in `/Users/rachelsipser/.codex/visualizations/2026/11/10/01a1c793-1b2e-72b3-933a-34845bb78b00/operations-preview-*`. Preview http://127.0.0.1:4430/people/#operations.
+
+The new descriptions and title punctuation are proposals for Rachel's review, not approved public copy. No source commit/PR, production merge, deployment or live verification performed. Unrelated shared-checkout work remains intact. The institutional research note is a local handoff; the shared research library still needs its update.
+
 Record material source and public changes with their scope and evidence. Keep Proposed, Preview, Published and Live verified distinct. Baseline reconciled November 2, 2026; do not treat it as a fresh verification on future dates.
 
 ## November 9, 2026: restore “AI safety”, published and live verified
