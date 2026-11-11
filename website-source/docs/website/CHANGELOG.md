@@ -1,5 +1,11 @@
 # RESI website change log
 
+## November 11 About navigation rename — published and live verified
+
+Rachel requested renaming Who we are to About throughout navigation, including mobile. Changed the single shared Header link label, About page browser/social title and four corresponding Search categories. Updated shared page/design references. Descriptive H1, route/anchors, other content and bold-without-underline current-page styling remain unchanged.
+
+Started from source `2730ae8` / production `efbad1e`; only open PR was the unrelated narrower-card preview 150. Isolated source `/private/tmp/resi-nav-about-nov11`, publication `/private/tmp/resi-publish-nav-about-nov11`. Astro check: zero diagnostics; build passed. All ten modern generated HTML pages exactly match current production after the requested text replacement; no other generated assets or endpoints changed. Browser desktop checks confirmed About · RESI, shared label, current weight 700/decoration none and no old label; 390px mobile menu showed About and successfully navigated to `/about/`, without overflow. Source application `7c2b658` / PR 165; publication PR 166 merged at `4e7a56716973de92b20bfeb9b64ffd41b44f3084`. Pages [run 43047462798](https://github.com/resi-org/resi-org.github.io/actions/runs/43047462798) succeeded. Ordinary live About at 1280px confirmed About · RESI, label About, weight 700/decoration none; 390px mobile menu opened with About and no overflow. Live Search has no old label. Screenshot: original workspace `output/live-about-navigation-nov11.jpg`. No forms submitted.
+
 ## November 11, 2026: Operations profiles published and live verified
 
 Completed the explicitly approved release with Rachel's final wording: “Works across communications, community-building, and organizational development, advancing new initiatives and keeping RESI a connected, welcoming place to do rigorous research.” Emily's approved institution-builder bio and Chief Operating Officer title appear on the left; Rachel's Operations, Strategy & Special Projects title and unchanged approved portrait appear on the right. Phones retain stacked rows with Emily first. Search inherits both records; Home remains unchanged.
