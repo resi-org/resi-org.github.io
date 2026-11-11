@@ -1,5 +1,9 @@
 # RESI website change log
 
+## November 11 About introduction Working groups link — published and live verified
+
+Rachel requested linking Working groups in About’s introduction. It now points to `/research#concentration`, matching the existing section-ending link. Visible copy, route/anchors and other pages are unchanged. Source application `1affbec` / PR 167; publication PR 168 at `61408d0f417fc3e743cc0e9b29dd5c52afa1dd42`. Source/production baselines were `3ed744a` / `4e7a567`; unrelated preview PR 150 and dirty shared checkout preserved. Astro diagnostics: zero errors/warnings/hints; build passed. Exact generated diff adds only this anchor in about/index.html. Local desktop click reached the Research Working groups section; 390px About link/layout passed with no overflow. Pages run 43051939658 succeeded. Ordinary live About showed the link; clicking it reached Research’s Working groups section at #concentration. Screenshot: original workspace `output/live-about-working-groups-link-nov11.jpg`. No forms submitted.
+
 ## November 11 About navigation rename — published and live verified
 
 Rachel requested renaming Who we are to About throughout navigation, including mobile. Changed the single shared Header link label, About page browser/social title and four corresponding Search categories. Updated shared page/design references. Descriptive H1, route/anchors, other content and bold-without-underline current-page styling remain unchanged.
