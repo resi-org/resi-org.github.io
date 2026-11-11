@@ -1,5 +1,7 @@
 # RESI page references
 
+November 11 Operations update (WORKLIST OP1): People uses the shared Person component in an Operations-only two-column desktop grid, Emily left and Rachel right; phones retain stacked rows. Both role labels and approved no-name-repeat bios come from content/people. Rachel's approved photo is public/people/rachel-sipser.png with default shared portrait framing, unchanged pixels. Search inherits both profiles; no Home promotion. Publication approved, release in progress; preview at http://127.0.0.1:4430/people/#operations. Rachel's final bio uses communications, community-building and organizational development rather than naming individual channels.
+
 Paths are relative to website-source/. The implementation holds current copy; this reference records purpose, sources and dependencies without duplicating each paragraph. Reconciled November 2, 2026.
 
 | Page | Purpose and source | Connections and open work |

@@ -19,6 +19,8 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 
 ## Shared content and imagery
 
+November 11 Operations approval: Emily Uyeda Kantrim appears left and Rachel Sipser right in two desktop columns, retaining stacked person rows on phones. Keep the shared Person component, established type/photo sizes, role under each name, and no-name-repeat bios. Emily's role is Chief Operating Officer; Rachel's is Operations, Strategy & Special Projects. Rachel approved the final photo without further edits; its asset is rachel-sipser.png with default shared framing. Her final bio describes communications, community-building and organizational development, with “advancing new initiatives” and “rigorous research”; do not restore the earlier website/newsletter-specific draft. This does not add Operations to Home's research mosaic.
+
 Research areas share src/data/research-agenda.json. The homepage highlights four under Key research areas; the full Research page retains the larger collection. Preserve current scientific order unless Rachel revisits it.
 
 People records live in content/people/. Shared src/lib/portraits.ts supplies People and the homepage mosaic. Inspect both sizes after a framing change. Current settings supersede earlier successive zoom requests. Preserve face pixels; existing background extensions are intentional assets. New AI editing requires a requested image edit and careful visual review.
