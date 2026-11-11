@@ -29,6 +29,8 @@ Founders precede researchers and operations. Research group leaders are prioriti
 
 ## Editorial conventions
 
+- November 11: the `/about` page is named About in desktop/mobile navigation, browser/social titles and Search categories. Preserve its descriptive H1 and stable route/anchors.
+
 - Exact legal name: The Institute for Responsible Superintelligence. RESI is accepted shorthand.
 - Adam's November 9 SEO follow-up: use “AI safety” in the About introduction and matching Search excerpt. Do not expand it to “artificial intelligence (AI) safety” for keywords; the intended audience already knows the acronym.
 - Cambridge, Massachusetts appears early in the homepage institutional introduction. Its repeated footer sentence was removed.
