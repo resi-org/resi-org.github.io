@@ -6,9 +6,13 @@ interface Props {
   integrated?: boolean;
   headingId?: string;
   featured?: boolean;
+  /** Confirmed lineup: 'full' lists speakers with affiliations plus hosts below the
+   *  summary (Events); 'names' shows speaker names in place of the summary (Home).
+   *  Omit to show none. An event without speakers renders exactly as before. */
+  lineup?: 'full' | 'names';
   event: EventEntry;
 }
-const { integrated = false, featured = false, event, headingId: customHeadingId } = Astro.props;
+const { integrated = false, featured = false, lineup, event, headingId: customHeadingId } = Astro.props;
 const headingId = customHeadingId || `${event.anchor || event.id}-heading`;
 const calendarDate = event.start;
 const month = calendarDate.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' }).toUpperCase();
@@ -18,6 +22,14 @@ const isUpcoming = event.timing === 'upcoming';
 const labels = isUpcoming
   ? event.announcementLabel?.split(' · ') || []
   : [event.pastAnnouncement?.label || 'Past event'];
+// The lineup is part of the upcoming invitation; past cards keep their approved quiet treatment.
+const lineupGroups = lineup === 'full' && isUpcoming
+  ? [
+      { key: 'speakers', label: event.speakersLabel || 'Speakers', people: event.speakers },
+      { key: 'hosts', label: event.hostsLabel || 'Hosted by', people: event.hosts.map((name) => ({ name, affiliation: undefined })) },
+    ].filter((group) => group.people.length > 0)
+  : [];
+const speakerNames = lineup === 'names' && isUpcoming ? event.speakers.map((speaker) => speaker.name) : [];
 ---
 
 <aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming, 'featured-event': featured }]} aria-labelledby={headingId}>
@@ -42,7 +54,21 @@ const labels = isUpcoming
       </a>
     </div>}
   </div>
-  {event.description && <p class="workshop-summary">{event.description}</p>}
+  {event.description && speakerNames.length === 0 && <p class="workshop-summary">{event.description}</p>}
+  {lineupGroups.length > 0 && <div class="workshop-lineup">
+    {lineupGroups.map((group) => (
+      <div class="workshop-lineup-group" data-group={group.key}>
+        <p class="workshop-lineup-label" id={`${headingId}-${group.key}`}>{group.label}</p>
+        <ul class="workshop-lineup-list" aria-labelledby={`${headingId}-${group.key}`}>
+          {group.people.map((person) => <li><span class="workshop-lineup-name">{person.name}</span>{person.affiliation && <span>, {person.affiliation}</span>}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>}
+  {speakerNames.length > 0 && <p class="workshop-lineup workshop-lineup-names">
+    <span class="workshop-lineup-label">{event.speakersLabel || 'Speakers'}</span>
+    {speakerNames.map((name, index) => <><span class="workshop-lineup-name">{name}</span>{index < speakerNames.length - 1 && ', '}</>)}
+  </p>}
   {!isUpcoming && <details class="past-event-details explanatory-disclosure">
     <summary aria-label={`Event details for ${event.title}`}><DisclosureControl /></summary>
     <div class="past-event-logistics">
@@ -159,6 +185,72 @@ const labels = isUpcoming
     color: var(--muted);
     font-size: 12.75px;
     line-height: 1.65;
+  }
+
+  /* Confirmed lineup below the summary, in the card's existing type scale. */
+  .workshop-lineup {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    display: grid;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 0.75px solid color-mix(in srgb, var(--accent) 30%, var(--paper));
+    color: var(--muted);
+    font-size: 12.75px;
+    line-height: 1.65;
+  }
+
+  .workshop-lineup-label {
+    margin: 0 0 3px;
+    font-size: 11.25px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .workshop-lineup-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+    gap: 2px 18px;
+  }
+
+  .workshop-lineup-list li {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hosts carry no affiliation, so three fit across where speakers take two. */
+  .workshop-lineup-group[data-group="hosts"] .workshop-lineup-list {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
+  }
+
+  .workshop-lineup-name {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Home's compact form: one label and a run of names in place of the
+     summary, so the card keeps its approved height and row structure. */
+  .workshop-lineup-names {
+    display: block;
+    grid-row: 3;
+    margin: 0;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .workshop-lineup-names .workshop-lineup-label {
+    display: block;
+  }
+
+  .workshop-lineup-names .workshop-lineup-name {
+    white-space: nowrap;
+  }
+
+  .featured-event .workshop-lineup-names {
+    grid-row: 4;
   }
 
   .workshop-link {

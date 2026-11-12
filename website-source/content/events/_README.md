@@ -22,13 +22,19 @@ interestUrl: "https://example.org/form"                 # optional
 interestLabel: "Interest form"                          # optional
 anchor: "stable-event-name"                            # optional; preserves heading links
 with: []                                               # optional cohosts
+speakersLabel: "Confirmed speakers"                    # optional; defaults to "Speakers"
+speakers:                                              # optional; confirmed people only, in display order
+  - name: "Full Name"
+    affiliation: "Institution"                         # optional
+hostsLabel: "Hosted by RESI co-founders"               # optional; defaults to "Hosted by"
+hosts: ["Full Name"]                                   # optional; shown on Events only
 url: "https://example.org/event"                        # optional event site
 ---
 ```
 
 Home merges eligible records with `content/updates/` and displays at most three items total. Eligible upcoming events come first, newest announcement first; newest eligible News and approved retrospectives fill remaining slots. Equal dates use stable ID ascending. It does not append an extra event card outside that limit. For legacy events without `announced`, the start date is the fallback sorting date. News filters to news records; community events are not duplicated there.
 
-The December 4 workshop was first announced on the homepage November 2, 2026 (production commit bbb0372). Its approved facts and existing interest form are retained in `2026-12-04-inaugural-workshop.md`. Do not invent a description, speakers, venue or admission guarantees. Its Events counterpart is /events#workshop, published through PR 72 on November 3.
+The December 4 workshop was first announced on the homepage November 2, 2026 (production commit bbb0372). Its approved facts and existing interest form are retained in `2026-12-04-inaugural-workshop.md`. Do not invent a description, speakers, venue or admission guarantees. Its `speakers` list holds only people Adam confirmed as speakers on November 12; panelists and unconfirmed or RESI-session speakers stay off until he confirms them. Its Events counterpart is /events#workshop, published through PR 72 on November 3.
 
 Keep Home and Events on this shared source and preserve stable anchors. The automatic missing-counterpart check remains deferred. Eligible upcoming events can move off Home when three newer eligible upcoming event announcements fill the slots; News never outranks them. Approved retrospectives compete with News by announcement/publication date. Event timing is classified at build time in America/New_York, through the last date (end or start). Rebuild and deploy after an event ends; a static build does not schedule future changes.
 
@@ -47,3 +53,10 @@ pastAnnouncement:
 ```
 
 This is a schema example, not a scheduled announcement. Do not add this object preemptively. It makes a past event eligible for the same three-item limit; it does not pin it or alter the attendance date. A retained interestUrl is historical data and never produces a button on a past card.
+
+
+## Confirmed speakers and hosts
+
+Added November 12 at Adam's request. `speakers` and `hosts` are optional. An event without them renders exactly as before. List only confirmed people, with the affiliation each person uses publicly, and keep the order you want displayed (the workshop uses last-name order).
+
+The shared card shows them in two forms while the event is upcoming. Events shows the full list with affiliations and the hosts line below the summary. Home shows the speaker names alone in place of the summary, with no affiliations and no hosts, so the Home cards keep their height. Past cards show neither. Search indexes speaker and host names with the event entry.

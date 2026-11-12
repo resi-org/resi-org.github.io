@@ -98,6 +98,8 @@ Only upcoming event cards receive the extra emphasis. Past-event promotion requi
 
 Keep metadata at its readable shared size. The current upcoming label omits only Save the date when its card becomes too narrow for one line. Preserve the approved full-width baseline/button alignment and narrow-date spacing. New styling must not change current News cards. Run `npm run test:announcements`, diagnostics/build and affected desktop/mobile checks when changing the policy.
 
+**Confirmed lineup on upcoming event cards (Adam, November 12):** an event record may list confirmed `speakers` and `hosts`. Events shows the full list under the summary: a small accent label, names in ink with muted affiliations in a two-column grid that becomes one column on phones, then the hosts in the same style, separated from the summary by a hairline. Home (hero card and Announcements) shows the label and speaker names only, in place of the summary sentence, with no affiliations and no hosts, so both Home cards keep their approved height and row structure. Past cards show no lineup. Events without these fields are unchanged. See content/events/_README.md.
+
 November 3 placement refinement: [EVENT-ROUTING.md](EVENT-ROUTING.md) defines defaults and explicit overrides for all contributors. Being upcoming alone never promotes a seminar/reading group/working group. The emphasized treatment applies when an upcoming event is intentionally included, not as a reason to include it.
 
 
