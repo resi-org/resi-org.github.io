@@ -4,6 +4,8 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 
 ## Shared visual system
 
+- November 12 Home intro actions: Research Program, Seminars and Workshops, Join our reading group, Support our work, in that order. Four compact buttons fill one desktop row with outer edges aligned to the introduction/workshop. Keep 11.25px text, 7px horizontal padding and 7.5px arrow gap; distribute remaining row space evenly. At 650px and below use two columns; at 380px and below stack. Reading group temporarily links to https://resi-ai-safety.github.io/reading-group/ until its Events section is approved.
+
 - Cardo is the current heading serif; IBM Plex Sans is running text. Earlier Literata guidance predates this version. Fonts are self-hosted.
 - Use shared paper, ink, accent and line tokens in light/dark themes and existing components. Avoid isolated colors, shadows and decorative accent bars. Rachel rejected the November 2 event preview's left bar and requested the established full outline.
 - October 25 native dimensions are approved: regular desktop content width 600px, with intentional wider shared elements. Browser zoom remains 100%. Do not recover earlier draft sizes by changing browser settings.
