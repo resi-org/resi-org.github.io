@@ -1,5 +1,9 @@
 # RESI website current work
 
+## Rachel bio opening — November 12
+
+OP2 — Approved for publication; release preparation in progress. Rachel selected the two-sentence bio beginning “Generalist with a knack for making things happen” and ending “rigorous research.” Only her People bio and automatic Search text change. Title, photo, framing, Emily's profile, Operations layout and Home roster remain unchanged. Isolated source /private/tmp/resi-rachel-bio-nov12 from 38507bd; publication /private/tmp/resi-publish-rachel-bio-nov12 from 0e03277. Preserve recent Home/event releases and unrelated previews. Actual checks and release evidence are in CHANGELOG.
+
 ## WS1 — December 4 workshop lineup (Adam, November 12)
 
 Published: seven confirmed speakers on Events and Home (see CHANGELOG). Open, all waiting on Adam: adding panelists once the two panels are set; adding Yael Tauman Kalai and Anat Perry if confirmed; whether the event gets its own page with the program once the schedule is final. Rachel has not yet reviewed the lineup styling or the shortened “Inaugural workshop” label.

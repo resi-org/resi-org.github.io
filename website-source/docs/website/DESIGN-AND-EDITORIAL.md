@@ -25,6 +25,8 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 
 ## Shared content and imagery
 
+November 12 Rachel bio refinement: use the approved two-sentence Generalist opening from content/people/rachel-sipser.md. This supersedes the November 11 “Works across” opening without changing her scope, title, portrait, framing or profile layout. Search uses the same canonical text.
+
 November 11 Operations approval: Emily Uyeda Kantrim appears left and Rachel Sipser right in two desktop columns, retaining stacked person rows on phones. Keep the shared Person component, established type/photo sizes, role under each name, and no-name-repeat bios. Emily's role is Chief Operating Officer; Rachel's is Operations, Strategy & Special Projects. Rachel approved the final photo without further edits; its asset is rachel-sipser.png with default shared framing. Her final bio describes communications, community-building and organizational development, with “advancing new initiatives” and “rigorous research”; do not restore the earlier website/newsletter-specific draft. The original Operations-only release did not alter Home; Rachel’s subsequent November 11 mosaic rule below now includes Operations automatically.
 
 Research areas share src/data/research-agenda.json. The homepage highlights four under Key research areas; the full Research page retains the larger collection. Preserve current scientific order unless Rachel revisits it.
