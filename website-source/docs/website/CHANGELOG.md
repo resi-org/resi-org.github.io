@@ -1,5 +1,11 @@
 # RESI website change log
 
+## November 12 homepage foundational-work and Join us links — published and live verified
+
+Rachel requested moving Explore foundational work into The modern cryptography precedent and replacing its Research community position with Join us, linked to People’s Join us section. Shared SectionLinks places the foundational link after the precedent text, retaining /research#evidence; Research community retains Meet the team and now has Join us → /people#get-involved. No other content or style changes.
+
+Source application a6bd927 / PR208, baseline a46e42b. Publication PR209 at `7994456df0245759825232454273248e451e2bfe`, baseline80a7e97; Pages run43304093447. Check51 files: zero diagnostics; build/diff checks passed. Generated diff confined to the two requested sections in index.html; no CSS/assets or other pages changed. Browser desktop activations reached the correct target headings and390px layout has no overflow. Unrelated previews, Or’s publications, approved button styles and independent endpoints preserved.
+
 ## November 12 Or Zamir selected publications — published and live verified
 
 Rachel approved three papers from the researched shortlist: Undetectable Conversations Between AI Agents via Pseudorandom Noise-Resilient Key Exchange; Consensus Sampling for Safer Generative AI; Proofs of Ownership for Machine Learning Models. The layerwise approximate-verification note is explicitly excluded for now. Reused existing coauthor citation data and the shared native publication-list expander; Or’s bio, photo and order are unchanged.
@@ -721,3 +727,5 @@ November 12 final four-action release verification: Pages run 43247183115 succee
 November 12 spacing preview follow-up: Rachel requested a little tighter. Desktop intro gaps now20px / minimum15px; feature card row gap10px. Stacked-phone intro gaps16/12px. At1280px actual gaps20/16.34px and card309.74px tall (4px shorter than first preview); at600px gaps20/15px, prose/card bottoms exactly aligned. 390/320px no overflow; build and unchanged-content comparison passed. Same :4440 preview, no publication. Proof: original workspace output/home-spacing-tighter-preview-nov12.jpg.
 
 November12 Or release live evidence: Pages run43266740053 succeeded. Ordinary live People/#or-zamir shows exactly the three approved papers with correct arXiv destinations; excluded note absent. Keyboard expansion and390px mobile open list pass with no overflow. Proof: original workspace output/live-or-zamir-publications-nov12.jpg.
+
+November12 homepage link verification: Pages run43304093447 succeeded. Ordinary live Home shows Explore foundational work only in the precedent section and Meet the team / Join us in Research community. Activations reached /research/#evidence and /people/#get-involved (Join us heading).390px no overflow. Proof: original workspace output/live-home-foundational-link-nov12.jpg. No forms submitted.
