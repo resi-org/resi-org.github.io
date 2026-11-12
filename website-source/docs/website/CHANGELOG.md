@@ -1,5 +1,11 @@
 # RESI website change log
 
+## November 12, 2026: Rachel's two-sentence bio, approved for publication
+
+Rachel selected and explicitly requested publication of: “Generalist with a knack for making things happen across communications, community-building, and organizational development. Advances new initiatives and keeps RESI a connected, welcoming place to do rigorous research.” Replaces only her prior bio starting “Works across”; her title, approved portrait, Emily's profile, side-by-side layout, shared framing and homepage roster are unchanged. Search inherits the same canonical bio. Source baseline 38507bd, production 0e03277; unrelated open narrower-card PR 150 preserved. Release preparation is in /private/tmp/resi-rachel-bio-nov12 and /private/tmp/resi-publish-rachel-bio-nov12. Verification and release stages are recorded below when complete.
+
+Prepublication verification: Astro check passes all 51 files with zero diagnostics; build passes (existing empty-partners warning only). Browser checks at 320, 390 and 1280px confirm exact copy, preserved titles/Emily bio, loaded portraits, stacked-phone/side-by-side-desktop layout and no horizontal overflow. Search finds Rachel's new excerpt and navigates to her stable anchor. Portrait SHA256 remains `44fcb7a9f7cc3d3073d2a3e9510b4292dbc5d7c57cffe9be996ef3157060d232`. Proof: `/private/tmp/resi-bio-nov12-proof/preview.json` and matching screenshots. Preview uses assigned port 4442. People/Search HTML each equal production after exactly replacing the old bio with the new text; only those two files are selected for publication. Build-only Events stylesheet-reference drift and `.assetsignore` are excluded; Home and all other production files remain untouched.
+
 ## November 12 homepage spacing refinement — published and live verified
 
 Rachel approved the tighter :4440 preview and explicitly requested publication. Source application 2c8af1c / design record1c2049d, PR189. Publication PR190 merged at `0e032774d1e11c54544a5c05070018a1647af82c`; successful Pages run43254280233. Only Home HTML and two scoped CSS files changed. All copy, links, type sizes, speaker roster, ordinary announcement treatments and other pages/endpoints remain unchanged; normalized Home HTML matches baseline after removing scoped CSS IDs/URLs. Final Astro check51 files: zero diagnostics; build passed.

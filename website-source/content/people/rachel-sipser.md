@@ -6,4 +6,4 @@ order: 2
 photo: /people/rachel-sipser.png
 ---
 
-Works across communications, community-building, and organizational development, advancing new initiatives and keeping RESI a connected, welcoming place to do rigorous research.
+Generalist with a knack for making things happen across communications, community-building, and organizational development. Advances new initiatives and keeps RESI a connected, welcoming place to do rigorous research.
