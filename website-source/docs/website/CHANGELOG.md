@@ -1,5 +1,15 @@
 # RESI website change log
 
+## November 12 workshop confirmed speakers — published and live verified
+
+Adam confirmed seven speakers for the December 4 workshop and asked for them on the site: Boaz Barak (OpenAI), Adam Gleave (FAR.AI), Mitchell Gordon (MIT and OpenAI), Elad Hazan (Google DeepMind and Princeton), Orr Paradise (Resolution), Roy Rinberg (Anthropic) and Nickolai Zeldovich (MIT). He asked that panelists, Yael Tauman Kalai and Anat Perry stay off the public pages until he confirms them. He left the presentation to the assistant's judgment and authorized publication in the same conversation.
+
+Event records gain optional `speakers`, `speakersLabel`, `hosts` and `hostsLabel`. Events shows the full list with affiliations under the summary, then “Hosted by RESI co-founders” (Shafi Goldwasser, Adam Tauman Kalai, Vinod Vaikuntanathan). Home's hero card and Announcements card show the speaker names only, in place of the summary sentence, so both keep their height. No affiliations or hosts appear on Home. Search indexes the names as sentences. The label changes from “Inaugural community workshop” to “Inaugural workshop” at Adam's request; Rachel chose the earlier wording on November 2, so tell her. Orr Paradise's affiliation in the hidden visitor roster is corrected from EPFL to Resolution; the roster stays hidden. Events without the new fields and all past cards are unchanged.
+
+Source PR 182 merged at `ba1a30212274f0ef8cd7294dc112bfbbc5783d6c` (application `841cb2b`), rebased onto the past-event archive release (PR 181) before building. Publication PR 183 merged at `3d13c71fe651d1ccb14ee1efcde5511b063dd166`; Pages run `43244959411` succeeded. Four files published: Events, Home, Search and the event card stylesheet. CNAME, .nojekyll and independent endpoints untouched.
+
+Astro check (51 files, zero diagnostics), build and all 18 announcement tests passed. Built Events and Home reviewed at 320, 390, 768, 1024 and 1280px with no horizontal overflow, and Events in dark mode. After deployment the live Events, Home and Search HTML were byte-identical to the published files, the new stylesheet returned 200, and live Events and Home were reviewed at 1280 and 390px. An audit of the live workshop cards found only the seven speakers and three hosts. The interest form was not submitted. No physical-phone or screen-reader test.
+
 ## November 12 past-event archive standard — published and live verified
 
 Rachel requested all past seminars use consistent compact summaries, with location at the bottom of expanded details. Chloé alone still exposed full time and venue while closed; she now shows the same date-only metadata as the other six. Full original time/location move to a final Event details block after her description and Biography. Rachel explicitly chose to retain About the conversation, use Biography for her bio, and extend the hidden-location rule to every past event type. Historical abstracts, affiliations, speaker links, time/venue facts and stable anchors are preserved. Canonical Chloé Search text follows the reordered content.

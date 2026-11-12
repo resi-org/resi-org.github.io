@@ -1,5 +1,9 @@
 # RESI website current work
 
+## WS1 — December 4 workshop lineup (Adam, November 12)
+
+Published: seven confirmed speakers on Events and Home (see CHANGELOG). Open, all waiting on Adam: adding panelists once the two panels are set; adding Yael Tauman Kalai and Anat Perry if confirmed; whether the event gets its own page with the program once the schedule is final. Rachel has not yet reviewed the lineup styling or the shortened “Inaugural workshop” label.
+
 ## Events heading — November 11 published and live verified
 
 Rachel approved the exact H1 **Seminars, workshops, and discussions on building the foundations of superintelligence safety** (no terminal period). Source PR 175 merged at `efb0edcc82022f97b1e37036e9d3c35c4ec04495` (application `5272274`); publication PR 176 at `631a4ec8a3c708fb112961529bd50c47fd5b134d`; successful Pages run `43107091561`. Only Events heading/metadata and its Search excerpt changed. Ordinary live Events after refresh verified at 1280/390px: exact text/metadata, natural wrapping, no horizontal overflow, Andrew Lo still archived, draft intro absent. Ordinary live Search returns the new excerpt. Initial browser cache showed the prior heading until reload; final proof uses the ordinary live URL. Build/check and 320px preview checks passed. Proof: `/private/tmp/resi-events-heading-proof-nov11/live-1280.png`, `live-390.png`, `live-checks.json`, `preview-checks.json`.
