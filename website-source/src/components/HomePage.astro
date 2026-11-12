@@ -246,10 +246,20 @@ const founders = people
     flex-wrap: wrap;
     gap: 9px;
   }
+  /* Rachel's 01b homepage-only trial; shared site buttons stay unchanged. */
   .hero-actions .button {
     gap: 7.5px;
-    padding-inline: 7px;
+    padding-inline: 6px;
     white-space: nowrap;
+    font-weight: 500;
+    border: 1.25px solid color-mix(in srgb, var(--accent) 80%, var(--paper));
+    background: transparent;
+    color: var(--accent);
+  }
+  .hero-actions .button:hover {
+    border-color: var(--accent-hover);
+    background: color-mix(in srgb, var(--accent) 5%, var(--paper));
+    color: var(--accent-hover);
   }
   @media (max-width: 650px) {
     .hero-actions {
