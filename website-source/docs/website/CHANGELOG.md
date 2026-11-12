@@ -1,5 +1,9 @@
 # RESI website change log
 
+## November 12: Emily bio opening — published and live verified
+
+Rachel requested removing the opening “An”; Emily's bio now starts “Institution builder whose work spans…” with the rest unchanged. Source PR197 / `57958790f645dd6ad2ff40836a8bc8ea35f17f62`; production PR198 / `cb7cebbdd77217a7921b405476cd5793c736863f`; Pages run43257728822 succeeded. Only People/Search HTML changed, each byte-identical to the previous production file after the exact approved replacement. Rachel's bio, roles, portraits, layout, Home buttons and independent endpoints are preserved. Astro check51 files has zero diagnostics; build passes (existing empty-partners warning). Preview and ordinary live checks at320/390/1280px confirm exact bios/roles, responsive arrangement, no overflow, Emily Search result and stable anchor; Rachel portrait checksum remains approved. Evidence: `/private/tmp/resi-emily-bio-nov12-proof/live.json` and preview/live screenshots. Isolated source `/private/tmp/resi-emily-bio-nov12`, publication `/private/tmp/resi-publish-emily-bio-nov12`; unrelated shared previews and PR150 remain untouched.
+
 ## November 12 homepage-only 01b button trial — published and live verified
 
 Rachel selected option01b (stronger outline with medium-weight labels) for the homepage only and explicitly authorized publication. Four intro actions use 1.25px/80%-accent outlines, transparent fill, weight500 and unchanged 11.25px type/Arrow. Horizontal padding6px keeps the desktop row intact; hover uses accent-hover border/text and a 5% accent wash. Changes are scoped to HomePage.astro; shared button CSS/IntroActions, other pages, header support and workshop/lower-Home actions are untouched. The actual Home exception is recorded without establishing a site-wide standard.
