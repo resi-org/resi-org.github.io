@@ -22,7 +22,7 @@ speakers:
   - name: "Orr Paradise"
     affiliation: "Resolution"
   - name: "Anat Perry"
-    affiliation: "Hebrew University and RESI"
+    affiliation: "Hebrew University"
   - name: "Roy Rinberg"
     affiliation: "Anthropic"
   - name: "Nickolai Zeldovich"
