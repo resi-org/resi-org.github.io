@@ -3780,3 +3780,12 @@ article.map-item:hover {
     text-decoration: none;
   }
 }
+
+/* Keep the header support action prominent at every navigation size. */
+@media screen {
+  .desktop-nav .nav-support,
+  .site-header .mobile-support,
+  .mobile-menu nav .menu-support {
+    font-weight: 700;
+  }
+}

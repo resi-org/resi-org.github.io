@@ -4,6 +4,8 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 
 ## Shared visual system
 
+- November 12 header support action: Support RESI is always bold (700) in desktop navigation, the mobile header button and mobile menu, while retaining its existing quiet filled treatment.
+
 - November 12 Home intro actions: Research Program, Seminars and Workshops, Join our reading group, Support our work, in that order. Four compact buttons fill one desktop row with outer edges aligned to the introduction/workshop. Keep 11.25px text, 7px horizontal padding and 7.5px arrow gap; distribute remaining row space evenly. At 650px and below use two columns; at 380px and below stack. Reading group temporarily links to https://resi-ai-safety.github.io/reading-group/ until its Events section is approved.
 
 - Cardo is the current heading serif; IBM Plex Sans is running text. Earlier Literata guidance predates this version. Fonts are self-hosted.
