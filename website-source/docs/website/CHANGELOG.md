@@ -1,5 +1,11 @@
 # RESI website change log
 
+## November 12 Mitchell Gordon affiliation — published and live verified
+
+Adam requested that Mitchell Gordon’s workshop affiliation read “MIT” rather than “MIT and OpenAI.” Updated the shared event record, rebuilding the full Events lineup and connected Search entry. Both Home speaker lists contain names only and remain byte-identical; no other content, styles, links, endpoints or pending previews changed.
+
+Source application `5037029` and PR 220; generated publication PR 221 merged at `798f645dbeba84d46b394961389757bd796b1eca`. Pages run `43322034058` succeeded. Astro check (51 files, no diagnostics), build and all 18 announcement tests passed. Events at 390px and 1280px renders “Mitchell Gordon, MIT” without horizontal overflow. Live Events and Search return HTTP 200 and are byte-identical to the reviewed output, each differing from prior production only by the affiliation phrase. The ordinary live Events page also passed the same desktop/mobile checks.
+
 ## November 12 Anat Perry and Home “Learn more” — published and live verified
 
 Two further requests from Adam the same day. Anat Perry confirmed as a workshop speaker, so she joins the confirmed speakers on Events (“Hebrew University and RESI”), both Home cards and Search, between Orr Paradise and Roy Rinberg. Adam also asked for a visible path from Home to the event entry so visitors can see affiliations: Home's two workshop cards gain a “Learn more” link to /events#workshop, in the shared underlined-label and arrow style. The Interest form button stays so sign-ups keep their direct route. On the hero card the link sits beside the button and adds no height, dropping to its own line when the card is too narrow; on the Announcements card it sits under the names. Panelists and Yael Tauman Kalai remain off the site.
