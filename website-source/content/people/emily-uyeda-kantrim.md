@@ -7,4 +7,4 @@ photo: /people/emily-uyeda-kantrim.jpg
 url: "https://www.emilyuk.com"
 ---
 
-An institution builder whose work spans nonprofits, government, research, and social innovation, turning ambitious ideas into durable organizations, scalable systems, and measurable public impact.
+Institution builder whose work spans nonprofits, government, research, and social innovation, turning ambitious ideas into durable organizations, scalable systems, and measurable public impact.
