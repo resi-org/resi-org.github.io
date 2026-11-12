@@ -1,5 +1,6 @@
 ---
 import Arrow from './Arrow.astro';
+import DisclosureControl from './DisclosureControl.astro';
 import type { EventEntry } from '../lib/announcements';
 interface Props {
   integrated?: boolean;
@@ -33,7 +34,7 @@ const labels = isUpcoming
   <div class="workshop-main">
     <div class="workshop-description">
       <Heading id={headingId}><a class="workshop-title-link" href={event.detailsHref || `/events#${event.anchor || event.id}`}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</a></Heading>
-      <p class="workshop-detail">{event.location}</p>
+      {isUpcoming && <p class="workshop-detail">{event.location}</p>}
     </div>
     {isUpcoming && event.interestUrl && <div class="workshop-action">
       <a class="workshop-link" href={event.interestUrl} target="_blank" rel="noopener noreferrer">
@@ -42,6 +43,13 @@ const labels = isUpcoming
     </div>}
   </div>
   {event.description && <p class="workshop-summary">{event.description}</p>}
+  {!isUpcoming && <details class="past-event-details explanatory-disclosure">
+    <summary aria-label={`Event details for ${event.title}`}><DisclosureControl /></summary>
+    <div class="past-event-logistics">
+      <h4>Event details</h4>
+      <p class="workshop-detail">{event.location}</p>
+    </div>
+  </details>}
 </aside>
 
 <style>
@@ -328,8 +336,8 @@ const labels = isUpcoming
     }
   }
 
-  /* Retrospectives share the ordinary News treatment. Only the event calendar
-     and the common date/title/location alignment distinguish their structure. */
+  /* Past events keep their calendar/title treatment; logistics are revealed
+     only at the bottom, consistently with the past-seminar archive. */
   .workshop-card.past-event {
     --workshop-title-size: 16.5px;
     border: 0;
@@ -356,6 +364,26 @@ const labels = isUpcoming
     font-size: 11.25px;
     line-height: 1.65;
     transform: none;
+  }
+  .past-event-details {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .past-event-details > summary {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 33px;
+    color: var(--accent);
+    cursor: pointer;
+  }
+  .past-event-details > summary:focus-visible {
+    outline: 1.5px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1.5px;
+  }
+  .past-event-logistics h4 {
+    margin: 15px 0 7.5px;
+    font: 600 12.75px/1.5 var(--sans);
   }
   .past-event .workshop-title-link {
     color: var(--accent);

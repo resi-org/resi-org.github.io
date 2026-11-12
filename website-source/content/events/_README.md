@@ -35,7 +35,7 @@ Keep Home and Events on this shared source and preserve stable anchors. The auto
 
 ## Upcoming versus past announcements
 
-Every eligible upcoming announcement uses the approved emphasized workshop card. Classification, public audience and explicit overrides determine eligibility; a seminar/group is never promoted just because it is upcoming or public. Once past, its Events card switches to the ordinary news-like treatment: same fill/type/colors, no outline or button, with the event calendar and aligned title/location retained. News cards stay unchanged. The same shared policy/component governs Home and Events.
+Every eligible upcoming announcement uses the approved emphasized workshop card. Classification, public audience and explicit overrides determine eligibility; a seminar/group is never promoted just because it is upcoming or public. Once past, its Events card switches to the ordinary news-like treatment: same fill/type/colors, no outline or button, with the event calendar/title retained. The November 12 past-event design rule puts the location at the bottom of a closed Event details disclosure using the shared plus/dots, on Events and any approved Home retrospective. Upcoming event locations remain visible. News cards stay unchanged. The same shared policy/component governs Home and Events.
 
 Past events are excluded from Home by default. Only when Rachel explicitly asks for a past-event announcement, add:
 
