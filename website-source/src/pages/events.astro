@@ -8,7 +8,7 @@ import Section from '../components/Section.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
 import seminars from '../data/seminars.json';
 const upcomingSeminars: (typeof seminars.talks)[number][] = seminars.upcoming;
-import { seminarDisclosure } from '../lib/disclosure';
+import { seminarDisclosure, pastSeminarDisclosure } from '../lib/disclosure';
 import { institute } from '../data/institute';
 // Move completed entries from upcoming to talks in seminars.json, preserving their IDs.
 ---
@@ -46,7 +46,7 @@ import { institute } from '../data/institute';
     )}
   </Section>
   <Section id="past-seminars" label="Past seminars" divider>
-    <div class="seminar-list" set:html={seminars.talks.map((talk) => seminarDisclosure(talk.html)).join('\n')} />
+    <div class="seminar-list" set:html={seminars.talks.map((talk) => pastSeminarDisclosure(talk.html)).join('\n')} />
   </Section>
 </Base>
 
