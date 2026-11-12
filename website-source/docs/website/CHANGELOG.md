@@ -1,5 +1,9 @@
 # RESI website change log
 
+## November12 support acknowledgment wording — published and live verified
+
+Rachel supplied the exact replacement: RESI is generously supported by grants from Coefficient Giving, Schmidt Sciences, and AISTOF and is fiscally sponsored by Edward Charles Foundation. Home uses this as one sentence, retaining institutional data for the supporter/sponsor names. Source application000bf29 / PR212, baselineb2fcf99; publication PR213 at `8ebe2cacc368ff7ee62e49e3b2ad478031c83ada`, baseline92f72ef; Pages run43308108360. Astro check51 files zero diagnostics; build/diff checks passed. Generated Home HTML matches production everywhere outside the acknowledgment paragraph; no styling, other page content, anchors or endpoints changed.
+
 ## November12 foundational-work link refinement — published and live verified
 
 Rachel requested right alignment, tighter space above and exact wording Explore foundational work by RESI researchers. Used shared SectionLinks align=end and a Home-rationale-only top margin12px (formerly21px); destination /research#evidence retained. Source application758ba27 / PR210, baselineee096b9; publication PR211 at `92f72efd8c74afb82468cad2f86523079b754d7c`, baseline7994456; Pages run43307532039. Check51 files zero diagnostics; build/diff checks pass. Desktop exact right-edge match and12px gap measured;390px has no overflow. Generated scope is Home argument section and its scoped CSS; all other content/pages preserved.
@@ -735,3 +739,5 @@ November12 Or release live evidence: Pages run43266740053 succeeded. Ordinary li
 November12 homepage link verification: Pages run43304093447 succeeded. Ordinary live Home shows Explore foundational work only in the precedent section and Meet the team / Join us in Research community. Activations reached /research/#evidence and /people/#get-involved (Join us heading).390px no overflow. Proof: original workspace output/live-home-foundational-link-nov12.jpg. No forms submitted.
 
 November12 refinement live evidence: Pages run43307532039 succeeded. Ordinary live Home/#argument verified exact label, unchanged /research#evidence, right-edge difference0px and12px gap;390px remains right-aligned with no overflow. Proof: original workspace output/live-foundational-link-right-nov12.jpg.
+
+November12 acknowledgment live verification: Pages run43308108360 succeeded. Ordinary Home after reload shows Rachel’s exact sentence at desktop/390px without overflow. Initial browser request cached the preceding wording; reload confirmed the release. Proof: original workspace output/live-support-acknowledgment-nov12.jpg.
