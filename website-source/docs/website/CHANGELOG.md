@@ -1,5 +1,9 @@
 # RESI website change log
 
+## Homepage four intro actions — November 12 preview only
+
+Rachel requested Research Program → /research; Seminars and Workshops → /events; Join our reading group → https://resi-ai-safety.github.io/reading-group/ (temporary until the Events reading-group section is approved); Support our work → /support, in that order. Isolated preview `/private/tmp/resi-home-four-actions-nov12`, branch `codex/home-intro-four-actions-nov12`, http://127.0.0.1:4436/. All four fit within the existing 600px desktop width using unchanged 11.25px text, compact 7px horizontal padding/7.5px arrow gap and 9px button gaps. Up to 650px viewport: two columns; up to 380px: stacked. No publication or merge into continuing source. Source baseline 5bc8d63 / production 3d13c71; the latest confirmed-speaker Home cards remain. Diagnostics: zero errors/warnings/hints; build passed. Browser 1280/651/650/520/390/380/320px: no overflow; 1280px and 651px all four share the same top coordinate. Correct links and external new-tab attributes verified. Desktop/390px visuals reviewed. Proof: original workspace output/home-four-actions-preview-nov12.jpg. Broader Events preview and narrower-card PR 150 untouched.
+
 ## November 12 workshop confirmed speakers — published and live verified
 
 Adam confirmed seven speakers for the December 4 workshop and asked for them on the site: Boaz Barak (OpenAI), Adam Gleave (FAR.AI), Mitchell Gordon (MIT and OpenAI), Elad Hazan (Google DeepMind and Princeton), Orr Paradise (Resolution), Roy Rinberg (Anthropic) and Nickolai Zeldovich (MIT). He asked that panelists, Yael Tauman Kalai and Anat Perry stay off the public pages until he confirms them. He left the presentation to the assistant's judgment and authorized publication in the same conversation.

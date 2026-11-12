@@ -63,13 +63,16 @@ const founders = people
       </div>
       <div class="actions hero-actions">
         <a class="button" href="/research">
-          Explore our research program <Arrow />
+          Research Program <Arrow />
+        </a>
+        <a class="button secondary" href="/events">
+          Seminars and Workshops <Arrow />
+        </a>
+        <a class="button secondary" href="https://resi-ai-safety.github.io/reading-group/" {...external('https://resi-ai-safety.github.io/reading-group/')}>
+          Join our reading group <Arrow />
         </a>
         <a class="button secondary" href="/support">
           Support our work <Arrow />
-        </a>
-        <a class="button secondary" href="/events">
-          See all events and seminars <Arrow />
         </a>
       </div>
     </div>
@@ -240,6 +243,25 @@ const founders = people
   .hero-actions {
     grid-area: actions;
     flex-wrap: wrap;
+    gap: 9px;
+  }
+  .hero-actions .button {
+    gap: 7.5px;
+    padding-inline: 7px;
+    white-space: nowrap;
+  }
+  @media (max-width: 650px) {
+    .hero-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .hero-actions .button {
+      justify-content: space-between;
+      white-space: normal;
+    }
+  }
+  @media (max-width: 380px) {
+    .hero-actions { grid-template-columns: minmax(0, 1fr); }
   }
   @media (min-width: 521px) {
     /* Distribute the few remaining pixels through existing paragraph gaps. */
