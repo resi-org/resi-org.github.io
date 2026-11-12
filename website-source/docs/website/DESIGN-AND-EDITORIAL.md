@@ -4,6 +4,8 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 
 ## Shared visual system
 
+- November 12 approved intro/workshop spacing refinement: keep Home’s matched prose/card bottoms. Side-by-side prose uses a 20px first gap and 15px minimum bridge gap; phones use 16/12px. Featured card row gap 10px. Above 650px, featured speaker names may wrap naturally to use its full line width; narrower featured cards retain whole-name wrapping. This changes spacing only, preserving all content, type sizes, ordinary announcements and Events layout.
+
 - November 12 header support action: Support RESI is always bold (700) in desktop navigation, the mobile header button and mobile menu, while retaining its existing quiet filled treatment.
 
 - November 12 Home intro actions: Research Program, Seminars and Workshops, Join our reading group, Support our work, in that order. Four compact buttons fill one desktop row with outer edges aligned to the introduction/workshop. Keep 11.25px text, 7px horizontal padding and 7.5px arrow gap; distribute remaining row space evenly. At 650px and below use two columns; at 380px and below stack. Reading group temporarily links to https://resi-ai-safety.github.io/reading-group/ until its Events section is approved.
