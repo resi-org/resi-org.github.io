@@ -8,7 +8,7 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 
 - November 12 header support action: Support RESI is always bold (700) in desktop navigation, the mobile header button and mobile menu, while retaining its existing quiet filled treatment.
 
-- November 12 Home intro actions: Research Program, Seminars and Workshops, Join our reading group, Support our work, in that order. Four compact buttons fill one desktop row with outer edges aligned to the introduction/workshop. Keep 11.25px text and 7.5px arrow gap; distribute remaining row space evenly. Rachel’s November 12 **homepage-only 01b trial** uses weight 500, a 1.25px outline at 80% accent, transparent fill and 6px horizontal padding to keep all four on one desktop row. Hover uses the accent-hover border/text and a 5% accent wash. Other site buttons retain their current styling; a site-wide rule/rollout awaits her separate confirmation. At 650px and below use two columns; at 380px and below stack. Reading group temporarily links to https://resi-ai-safety.github.io/reading-group/ until its Events section is approved.
+- November 12 Home intro actions: Research Program, Seminars and Workshops, Join our reading group, Support our work, in that order. Four compact buttons fill one desktop row with outer edges aligned to the introduction/workshop. Keep 11.25px text and 7.5px arrow gap; distribute remaining row space evenly. The approved site-wide 01b outlined-action style below supplies the appearance; Home keeps 6px horizontal padding to retain its one-row desktop layout. At 650px and below use two columns; at 380px and below stack. Reading group temporarily links to https://resi-ai-safety.github.io/reading-group/ until its Events section is approved.
 
 - Cardo is the current heading serif; IBM Plex Sans is running text. Earlier Literata guidance predates this version. Fonts are self-hosted.
 - Use shared paper, ink, accent and line tokens in light/dark themes and existing components. Avoid isolated colors, shadows and decorative accent bars. Rachel rejected the November 2 event preview's left bar and requested the established full outline.
@@ -22,6 +22,14 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 - November 6 navigation refinement: in the full desktop header menu, render the current page’s label bold (700), without an underline (Rachel’s follow-up correction). Home has no highlighted menu label. Preserve existing mobile-menu styling and current-page accessibility semantics.
 - Header, footer, contents menus and utility controls are shared. Later approved utility alignment follows the footer's right edge, superseding earlier content-column positioning trials. Preserve mobile in-flow controls.
 - Review affected desktop/mobile layouts and light/dark interactions. Preserve reduced-motion behavior and stable focus/hover on the homepage portrait mosaic.
+
+## Outlined action buttons — 01b approved site-wide, November 12
+
+All outlined action buttons now use 01b: transparent fill; 1.25px full outline mixed from 80% accent / 20% paper; label weight 500; accent text; established 1.5px corners. Hover uses accent-hover for text/border and a 5% accent wash. Inherit the existing visible keyboard focus, type sizes, arrows, hit areas and responsive geometry. Home retains 6px horizontal padding so its four buttons fit between the existing outer edges. Use the shared theme tokens in light/dark; do not recreate separate page-specific border or weight values.
+
+`src/styles/buttons.css`, imported once by Base.astro, is the canonical appearance source for `.button:not(.donate-button)`. It covers Home, About, Research, People, Support’s introductory onward actions and 404 actions. The old quiet/thin outline and secondary outline treatment are retired for this family; existing secondary classes are compatibility markup, not a different visual variant. New outlined actions must reuse `.button` and this rule.
+
+Rachel explicitly clarified the scope: **preserve** header Support RESI, workshop Interest form, Donate online and lower-Home Learn more exactly in their existing treatments. The `.donate-button` exclusion is deliberate. Do not convert these filled/emphasized controls when maintaining the outlined family. Ordinary text/section links, icons, On this page/menu controls and plus/dots/publication expanders also retain their own patterns. This supersedes the earlier homepage-only hold for the outlined family, not those separate approved treatments.
 
 ## Shared content and imagery
 

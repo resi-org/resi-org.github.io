@@ -1,0 +1,23 @@
+/* Approved 01b style for outlined action links only. Filled support/donation/
+   workshop actions and icon/disclosure/navigation controls keep their own styles. */
+:root {
+  --outlined-button-border-width: 1.25px;
+  --outlined-button-border: color-mix(in srgb, var(--accent) 80%, var(--paper));
+  --outlined-button-weight: 500;
+  --outlined-button-hover-fill: color-mix(in srgb, var(--accent) 5%, var(--paper));
+}
+@media screen {
+  .button:not(.donate-button) {
+    border: var(--outlined-button-border-width) solid var(--outlined-button-border);
+    border-radius: 1.5px;
+    background: transparent;
+    color: var(--accent);
+    font-weight: var(--outlined-button-weight);
+    text-decoration: none;
+  }
+  .button:not(.donate-button):hover {
+    border-color: var(--accent-hover);
+    background: var(--outlined-button-hover-fill);
+    color: var(--accent-hover);
+  }
+}
