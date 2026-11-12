@@ -16,7 +16,7 @@ speakers:
   - name: "Adam Gleave"
     affiliation: "FAR.AI"
   - name: "Mitchell Gordon"
-    affiliation: "MIT and OpenAI"
+    affiliation: "MIT"
   - name: "Elad Hazan"
     affiliation: "Google DeepMind and Princeton"
   - name: "Orr Paradise"
