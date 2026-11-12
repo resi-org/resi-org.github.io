@@ -1,5 +1,13 @@
 # RESI website change log
 
+## November 12 Anat Perry and Home “Learn more” — published and live verified
+
+Two further requests from Adam the same day. Anat Perry confirmed as a workshop speaker, so she joins the confirmed speakers on Events (“Hebrew University and RESI”), both Home cards and Search, between Orr Paradise and Roy Rinberg. Adam also asked for a visible path from Home to the event entry so visitors can see affiliations: Home's two workshop cards gain a “Learn more” link to /events#workshop, in the shared underlined-label and arrow style. The Interest form button stays so sign-ups keep their direct route. On the hero card the link sits beside the button and adds no height, dropping to its own line when the card is too narrow; on the Announcements card it sits under the names. Panelists and Yael Tauman Kalai remain off the site.
+
+Source PR 214 merged at `6e735d41a016ec0e3891556aab3a6cb9e1876175` (application `6a2b4bd`), built on source `3daab09` with the day's Home link releases. Publication PR 215 merged at `8aa6b55158cd78975502d075bbc9a524ba4aa215`; Pages run `43309283691` succeeded. Four files published: Events, Home, Search and the event card stylesheet; the only differences from the previous production pages were these two items and the stylesheet link.
+
+Astro check, build and all 18 announcement tests passed. Built Home reviewed at 320, 390, 600 and 1280px and Events at 390 and 1280px with no overflow. Live Events, Home and Search were byte-identical to the published files; the new stylesheet returned 200. On live Home at 1280px, clicking “Learn more” landed on /events/#workshop with the card at the top and its Interest form button present. The form was not submitted. No physical-phone or screen-reader test.
+
 ## November12 support acknowledgment wording — published and live verified
 
 Rachel supplied the exact replacement: RESI is generously supported by grants from Coefficient Giving, Schmidt Sciences, and AISTOF and is fiscally sponsored by Edward Charles Foundation. Home uses this as one sentence, retaining institutional data for the supporter/sponsor names. Source application000bf29 / PR212, baselineb2fcf99; publication PR213 at `8ebe2cacc368ff7ee62e49e3b2ad478031c83ada`, baseline92f72ef; Pages run43308108360. Astro check51 files zero diagnostics; build/diff checks passed. Generated Home HTML matches production everywhere outside the acknowledgment paragraph; no styling, other page content, anchors or endpoints changed.
