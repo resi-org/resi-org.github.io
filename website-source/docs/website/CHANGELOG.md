@@ -1,5 +1,9 @@
 # RESI website change log
 
+## November12 foundational-work link refinement — published and live verified
+
+Rachel requested right alignment, tighter space above and exact wording Explore foundational work by RESI researchers. Used shared SectionLinks align=end and a Home-rationale-only top margin12px (formerly21px); destination /research#evidence retained. Source application758ba27 / PR210, baselineee096b9; publication PR211 at `92f72efd8c74afb82468cad2f86523079b754d7c`, baseline7994456; Pages run43307532039. Check51 files zero diagnostics; build/diff checks pass. Desktop exact right-edge match and12px gap measured;390px has no overflow. Generated scope is Home argument section and its scoped CSS; all other content/pages preserved.
+
 ## November 12 homepage foundational-work and Join us links — published and live verified
 
 Rachel requested moving Explore foundational work into The modern cryptography precedent and replacing its Research community position with Join us, linked to People’s Join us section. Shared SectionLinks places the foundational link after the precedent text, retaining /research#evidence; Research community retains Meet the team and now has Join us → /people#get-involved. No other content or style changes.
@@ -729,3 +733,5 @@ November 12 spacing preview follow-up: Rachel requested a little tighter. Deskto
 November12 Or release live evidence: Pages run43266740053 succeeded. Ordinary live People/#or-zamir shows exactly the three approved papers with correct arXiv destinations; excluded note absent. Keyboard expansion and390px mobile open list pass with no overflow. Proof: original workspace output/live-or-zamir-publications-nov12.jpg.
 
 November12 homepage link verification: Pages run43304093447 succeeded. Ordinary live Home shows Explore foundational work only in the precedent section and Meet the team / Join us in Research community. Activations reached /research/#evidence and /people/#get-involved (Join us heading).390px no overflow. Proof: original workspace output/live-home-foundational-link-nov12.jpg. No forms submitted.
+
+November12 refinement live evidence: Pages run43307532039 succeeded. Ordinary live Home/#argument verified exact label, unchanged /research#evidence, right-edge difference0px and12px gap;390px remains right-aligned with no overflow. Proof: original workspace output/live-foundational-link-right-nov12.jpg.

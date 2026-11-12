@@ -93,8 +93,8 @@ const founders = people
         will happen by bringing together researchers who aim their efforts at responsible
         superintelligence, using frontier AI tools.
       </p>
-      <SectionLinks items={[
-        { label: 'Explore foundational work', href: '/research#evidence' },
+      <SectionLinks align="end" items={[
+        { label: 'Explore foundational work by RESI researchers', href: '/research#evidence' },
       ]} />
     </div>
   </section>
@@ -224,6 +224,9 @@ const founders = people
 </Base>
 
 <style>
+  .home-rationale :global(.section-links) {
+    margin-top: 12px;
+  }
   .hero.shell {
     width: min(var(--content-width), calc(100% - 48px));
     padding-top: 44px;
