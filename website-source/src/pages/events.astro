@@ -30,7 +30,7 @@ import { institute } from '../data/institute';
     <div class="event-list">
       {events.map((event) => (
         <div class="event-entry" id={event.anchor || event.id}>
-          <WorkshopCallout event={event} integrated />
+          <WorkshopCallout event={event} integrated lineup="full" />
         </div>
       ))}
     </div>

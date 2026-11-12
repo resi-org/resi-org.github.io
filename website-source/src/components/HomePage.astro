@@ -38,7 +38,7 @@ const founders = people
       </h1>
       {featuredWorkshop && (
         <section class="home-featured-workshop" aria-labelledby="save-date-heading">
-          <WorkshopCallout headingId="featured-workshop-heading" event={featuredWorkshop} integrated featured>
+          <WorkshopCallout headingId="featured-workshop-heading" event={featuredWorkshop} integrated featured lineup="names">
             <h2 slot="heading" id="save-date-heading">Save the date</h2>
           </WorkshopCallout>
         </section>
@@ -135,7 +135,7 @@ const founders = people
       <ul class="announcement-list">
         {entries.map((entry) => {
           if (entry.category === 'Events') {
-            return <li class="event-announcement"><WorkshopCallout event={entry} integrated /></li>;
+            return <li class="event-announcement"><WorkshopCallout event={entry} integrated lineup="names" /></li>;
           }
           const href = entry.kind === 'Press' && entry.url ? entry.url : `/news#${entry.id}`;
           return (

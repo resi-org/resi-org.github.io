@@ -43,6 +43,11 @@ export type EventEntry = BaseEntry & EventPlacement & {
   interestLabel?: string;
   anchor?: string;
   detailsHref?: string;
+  /** Confirmed lineup. Rendered only where a card asks for it (Events). */
+  speakers: { name: string; affiliation?: string }[];
+  speakersLabel?: string;
+  hosts: string[];
+  hostsLabel?: string;
 };
 export type Entry = NewsEntry | EventEntry;
 
@@ -113,6 +118,10 @@ export async function getAnnouncements(now = new Date()): Promise<Entry[]> {
       interestUrl: e.data.interestUrl,
       interestLabel: e.data.interestLabel,
       anchor: e.data.anchor,
+      speakers: e.data.speakers,
+      speakersLabel: e.data.speakersLabel,
+      hosts: e.data.hosts,
+      hostsLabel: e.data.hostsLabel,
       kind: 'From the institute',
       title: e.data.title,
       summary: [

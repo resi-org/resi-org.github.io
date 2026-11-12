@@ -180,6 +180,15 @@ const events = defineCollection({
     anchor: z.string().optional(),
     location: z.string(),
     with: z.array(z.string()).optional().default([]),
+    // Confirmed participants only, in the order to display. Shown on the
+    // event's Events entry and indexed in Search; Home cards stay compact.
+    speakers: z.array(z.object({
+      name: z.string().trim().min(1),
+      affiliation: z.string().trim().min(1).optional(),
+    })).optional().default([]),
+    speakersLabel: z.string().trim().min(1).optional(),
+    hosts: z.array(z.string().trim().min(1)).optional().default([]),
+    hostsLabel: z.string().trim().min(1).optional(),
     url: z.string().optional(),
   }).superRefine((event, ctx) => {
     if (isSeriesEvent(event.eventType) &&
