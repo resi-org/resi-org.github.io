@@ -7,8 +7,8 @@ interface Props {
   headingId?: string;
   featured?: boolean;
   /** Confirmed lineup: 'full' lists speakers with affiliations plus hosts below the
-   *  summary (Events); 'names' shows speaker names in place of the summary (Home).
-   *  Omit to show none. An event without speakers renders exactly as before. */
+   *  summary (Events); 'names' is Home's compact form: speaker names in place of the
+   *  summary, plus a "Learn more" link to the full Events entry. Omit for neither. */
   lineup?: 'full' | 'names';
   event: EventEntry;
 }
@@ -30,6 +30,9 @@ const lineupGroups = lineup === 'full' && isUpcoming
     ].filter((group) => group.people.length > 0)
   : [];
 const speakerNames = lineup === 'names' && isUpcoming ? event.speakers.map((speaker) => speaker.name) : [];
+const detailsHref = event.detailsHref || `/events#${event.anchor || event.id}`;
+// Home cards are compact, so they offer a visible path to the full Events entry.
+const showMore = lineup === 'names' && isUpcoming;
 ---
 
 <aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming, 'featured-event': featured }]} aria-labelledby={headingId}>
@@ -45,7 +48,7 @@ const speakerNames = lineup === 'names' && isUpcoming ? event.speakers.map((spea
   </time>
   <div class="workshop-main">
     <div class="workshop-description">
-      <Heading id={headingId}><a class="workshop-title-link" href={event.detailsHref || `/events#${event.anchor || event.id}`}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</a></Heading>
+      <Heading id={headingId}><a class="workshop-title-link" href={detailsHref}>{event.title.split(/\s+/).map((word, index) => <>{index > 0 && ' '}<span>{word}</span></>)}</a></Heading>
       {isUpcoming && <p class="workshop-detail">{event.location}</p>}
     </div>
     {isUpcoming && event.interestUrl && <div class="workshop-action">
@@ -69,6 +72,7 @@ const speakerNames = lineup === 'names' && isUpcoming ? event.speakers.map((spea
     <span class="workshop-lineup-label">{event.speakersLabel || 'Speakers'}</span>
     {speakerNames.map((name, index) => <><span class="workshop-lineup-name">{name}</span>{index < speakerNames.length - 1 && ', '}</>)}
   </p>}
+  {showMore && <a class="workshop-more" href={detailsHref} aria-label={`Learn more about ${event.title}`}><span>Learn more</span><Arrow /></a>}
   {!isUpcoming && <details class="past-event-details explanatory-disclosure">
     <summary aria-label={`Event details for ${event.title}`}><DisclosureControl /></summary>
     <div class="past-event-logistics">
@@ -258,6 +262,41 @@ const speakerNames = lineup === 'names' && isUpcoming ? event.speakers.map((spea
     }
   }
 
+  /* Home's onward link to the full Events entry, in the shared underlined-label
+     and arrow style. Regular cards place it under the names; the featured card
+     sets it beside the action so the card gains no height. */
+  .workshop-more {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .workshop-more span {
+    text-decoration: underline;
+    text-decoration-thickness: 0.75px;
+    text-underline-offset: 0.2em;
+  }
+
+  .workshop-more :global(svg) {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+  }
+
+  .workshop-more:focus-visible {
+    outline: 1.5px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 1.5px;
+  }
+
   .workshop-link {
     justify-self: end;
     display: inline-flex;
@@ -386,6 +425,18 @@ const speakerNames = lineup === 'names' && isUpcoming ? event.speakers.map((spea
     block-size: auto;
     inline-size: auto;
     padding: 0;
+  }
+  .featured-event .workshop-more {
+    grid-row: 5;
+    justify-self: end;
+    align-self: center;
+  }
+  /* Too narrow for both on one line: the link takes its own row. */
+  @container (width < 232px) {
+    .featured-event .workshop-more {
+      grid-row: 6;
+      justify-self: start;
+    }
   }
   .featured-event .workshop-summary {
     grid-row: 4;

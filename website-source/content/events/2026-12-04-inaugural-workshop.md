@@ -21,6 +21,8 @@ speakers:
     affiliation: "Google DeepMind and Princeton"
   - name: "Orr Paradise"
     affiliation: "Resolution"
+  - name: "Anat Perry"
+    affiliation: "Hebrew University and RESI"
   - name: "Roy Rinberg"
     affiliation: "Anthropic"
   - name: "Nickolai Zeldovich"
