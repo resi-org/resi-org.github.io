@@ -1,5 +1,11 @@
 # RESI website change log
 
+## November 12 homepage spacing refinement — published and live verified
+
+Rachel approved the tighter :4440 preview and explicitly requested publication. Source application 2c8af1c / design record1c2049d, PR189. Publication PR190 merged at `0e032774d1e11c54544a5c05070018a1647af82c`; successful Pages run43254280233. Only Home HTML and two scoped CSS files changed. All copy, links, type sizes, speaker roster, ordinary announcement treatments and other pages/endpoints remain unchanged; normalized Home HTML matches baseline after removing scoped CSS IDs/URLs. Final Astro check51 files: zero diagnostics; build passed.
+
+Ordinary live Home at1280px uses20/16.34px prose gaps with matched prose/card bottoms; at600px20/15px gaps and matched bottoms; at390/320px16/12px gaps, no overflow. Correct new CSS loaded. Screenshot: original workspace output/live-home-spacing-refined-nov12.jpg. No forms submitted. Earlier preview-only notes below are historical. Shared dirty checkout, button-options preview, Master EVENTS and narrower-card PR150 preserved.
+
 ## Home intro/workshop spacing — November 12 preview only
 
 Rachel requested minor spacing adjustments after Adam’s speaker addition, with no content changes. Isolated `/private/tmp/resi-home-workshop-spacing-nov12`, branch `codex/home-workshop-spacing-nov12`, preview http://127.0.0.1:4440/. Baselines source75282a6/main343a9ca; unrelated PR150 and all other drafts preserved. Above 520px: intro row gap24→22px, minimum bridge gap17→16px; featured card row gap12→11px. At 520px and below: intro gaps18→17px /13.5→12.5px, card row gap12→11px. Above650px only, featured speaker names wrap naturally within the existing full-width lineup; narrower cards retain whole-name wrapping. Other Home announcement and Events card treatments unchanged.
