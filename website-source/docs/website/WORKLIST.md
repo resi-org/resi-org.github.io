@@ -2,7 +2,7 @@
 
 ## Rachel bio opening — November 12
 
-OP2 — Approved for publication; release preparation in progress. Rachel selected the two-sentence bio beginning “Generalist with a knack for making things happen” and ending “rigorous research.” Only her People bio and automatic Search text change. Title, photo, framing, Emily's profile, Operations layout and Home roster remain unchanged. Isolated source /private/tmp/resi-rachel-bio-nov12 from 38507bd; publication /private/tmp/resi-publish-rachel-bio-nov12 from 0e03277. Preserve recent Home/event releases and unrelated previews. Actual checks and release evidence are in CHANGELOG.
+OP2 — Published and live verified. Rachel selected the two-sentence bio beginning “Generalist with a knack for making things happen” and ending “rigorous research.” Source PR191 / `24b3f39`; publication PR192 / `7f8981b46fa1ec36c8575788e27f7993fbf5d7bd`; successful Pages run43255918278. Only her People bio and automatic Search text changed. Live320/390/1280px, Search navigation and approved portrait checksum pass. Title, photo, framing, Emily's profile, Operations layout and Home roster remain unchanged. Isolated source /private/tmp/resi-rachel-bio-nov12; publication /private/tmp/resi-publish-rachel-bio-nov12. Preserve recent Home/event releases and unrelated previews. Full evidence is in CHANGELOG.
 
 ## WS1 — December 4 workshop lineup (Adam, November 12)
 

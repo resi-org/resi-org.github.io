@@ -1,6 +1,8 @@
 # RESI website change log
 
-## November 12, 2026: Rachel's two-sentence bio, approved for publication
+## November 12, 2026: Rachel's two-sentence bio — published and live verified
+
+Source PR191 merged at `24b3f395beabc33e371b4cb85eeda638c3a09008` (application `7215021`). Generated publication PR192 merged at `7f8981b46fa1ec36c8575788e27f7993fbf5d7bd` (application `1190048`); Pages run `43255918278` succeeded. Ordinary live People at 320/390/1280px shows the exact approved two-sentence bio, unchanged titles and Emily copy, correct responsive arrangement and no overflow. Live Search displays the new excerpt and navigates to Rachel's stable anchor. Live portrait hash matches the approved original. Evidence: `/private/tmp/resi-bio-nov12-proof/live.json`, `live-320.png`, `live-390.png`, `live-1280.png`. Only People/Search HTML changed in production; other pages, endpoints and previews were preserved. Preparation history follows.
 
 Rachel selected and explicitly requested publication of: “Generalist with a knack for making things happen across communications, community-building, and organizational development. Advances new initiatives and keeps RESI a connected, welcoming place to do rigorous research.” Replaces only her prior bio starting “Works across”; her title, approved portrait, Emily's profile, side-by-side layout, shared framing and homepage roster are unchanged. Search inherits the same canonical bio. Source baseline 38507bd, production 0e03277; unrelated open narrower-card PR 150 preserved. Release preparation is in /private/tmp/resi-rachel-bio-nov12 and /private/tmp/resi-publish-rachel-bio-nov12. Verification and release stages are recorded below when complete.
 
