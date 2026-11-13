@@ -1,5 +1,11 @@
 # RESI website change log
 
+## November 13 Mitchell Gordon affiliation — published and live verified
+
+Adam requested “MIT, formerly OpenAI” throughout the opening-event materials, superseding the November 12 affiliation. The shared event record updates the Events lineup and connected Search entry. Both Home speaker lists contain names only and remain byte-identical. Only the requested phrase differs in the two generated production files; other pages, styles, links, independent endpoints and pending previews are preserved.
+
+Source application `7bb74d8` and PR 222; generated publication PR 223 merged at `09ad1b7dd131d4ec216ae7b3a3649c74c947ed67`. Pages run `43408112186` succeeded. Astro check (51 files, no diagnostics), build and all 18 announcement tests passed. Built and ordinary live Events at 390px and 1280px display “Mitchell Gordon, MIT, formerly OpenAI” without horizontal overflow. Ordinary live Events and Search return HTTP 200 and are byte-identical to the reviewed output. Proof is in `/private/tmp/resi-mitchell-former-openai-proof-nov13/`. No forms submitted.
+
 ## November 12 Mitchell Gordon affiliation — published and live verified
 
 Adam requested that Mitchell Gordon’s workshop affiliation read “MIT” rather than “MIT and OpenAI.” Updated the shared event record, rebuilding the full Events lineup and connected Search entry. Both Home speaker lists contain names only and remain byte-identical; no other content, styles, links, endpoints or pending previews changed.

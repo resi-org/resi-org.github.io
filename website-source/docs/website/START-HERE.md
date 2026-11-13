@@ -1,5 +1,7 @@
 # RESI website editing and handoff guide
 
+**Mitchell Gordon affiliation, November 13 — PUBLISHED AND LIVE VERIFIED:** Adam requested “MIT, formerly OpenAI,” superseding the November 12 wording. Shared event source PR 222; Events/Search publication PR 223 at `09ad1b7dd131d4ec216ae7b3a3649c74c947ed67`; Pages run `43408112186` succeeded. Home names-only lists are unchanged. See CHANGELOG.
+
 **Mitchell Gordon affiliation, November 12 — PUBLISHED AND LIVE VERIFIED:** Adam requested “MIT” only. Shared event source PR 220; Events/Search publication PR 221 at `798f645dbeba84d46b394961389757bd796b1eca`; Pages run `43322034058` succeeded. Home names-only lists are unchanged. See CHANGELOG.
 
 **Anat Perry and Home “Learn more”, November 12 — PUBLISHED AND LIVE VERIFIED:** Adam's requests. Anat Perry added to the workshop's confirmed speakers (eight now). Her affiliation reads “Hebrew University” at Adam's request (PRs 217/218). Home's two workshop cards link to /events#workshop with “Learn more”; the Interest form button is unchanged. Panelists and Yael Tauman Kalai stay off until Adam confirms them. Source PR 214 / `6e735d41a016ec0e3891556aab3a6cb9e1876175`; publication PR 215 / `8aa6b55158cd78975502d075bbc9a524ba4aa215`; Pages run 43309283691. See CHANGELOG.
