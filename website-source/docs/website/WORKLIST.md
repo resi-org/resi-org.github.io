@@ -6,7 +6,7 @@ OP2 — Published and live verified. Rachel selected the two-sentence bio beginn
 
 ## WS1 — December 4 workshop lineup (Adam, November 12)
 
-Published: eight confirmed speakers on Events and Home, including Anat Perry, and a Home “Learn more” link to the event entry (see CHANGELOG). Mitchell Gordon’s affiliation is now “MIT” only at Adam’s request (source PR 220, publication PR 221; live verified). Open, all waiting on Adam: adding panelists once the two panels are set; adding Yael Tauman Kalai if confirmed; whether the event gets its own page with the program once the schedule is final. Rachel has not yet reviewed the lineup styling, the “Learn more” link or the shortened “Inaugural workshop” label.
+Published: eight confirmed speakers on Events and Home, including Anat Perry, and a Home “Learn more” link to the event entry (see CHANGELOG). Mitchell Gordon’s affiliation is now “MIT, formerly OpenAI” at Adam’s November 13 request (source PR 222, publication PR 223; live verified), superseding the November 12 wording. Open, all waiting on Adam: adding panelists once the two panels are set; adding Yael Tauman Kalai if confirmed; whether the event gets its own page with the program once the schedule is final. Rachel has not yet reviewed the lineup styling, the “Learn more” link or the shortened “Inaugural workshop” label.
 
 ## Events heading — November 11 published and live verified
 
