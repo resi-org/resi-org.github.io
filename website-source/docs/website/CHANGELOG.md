@@ -1,12 +1,12 @@
 # RESI website change log
 
-## November 14, 2026: unlisted letterhead downloads — prepared for publication
+## November 14, 2026: unlisted letterhead downloads — published and live verified
 
 Adam requested matching Word, PDF and LaTeX letterhead templates at `/letterhead/`, reachable by a direct link and omitted from public discovery. The page provides a blank preview and the three downloads. All formats use US Letter paper and the approved RESI header with no footer. LaTeX includes `main.tex` and the header image in a portable ZIP. These generic files contain no recommendation letter or personal signature.
 
 `Base.astro` now supports an optional `noindex` prop. Only the new page enables it, emitting `noindex, nofollow`. Navigation, Search, the sitemap and other pages have no links to the route. `robots.txt` stays unchanged so crawlers can read the page's noindex directive. Direct-link access is unlisted, not authenticated.
 
-Checks: Astro check reported zero errors, warnings or hints across 52 files; build passed. Desktop (1280px) and phone (390px) layouts were visually reviewed. Download targets exist, package contents were inspected, Word/PDF and compiled LaTeX previews were reviewed, and all other generated HTML is unchanged. Publication scope is `letterhead/` only. Source and publication PRs, deployment and live verification will be recorded after release.
+Checks: Astro check reported zero errors, warnings or hints across 52 files; build passed. Desktop (1280px) and phone (390px) layouts were visually reviewed. Download targets exist, package contents were inspected, Word/PDF and compiled LaTeX previews were reviewed, and all other generated HTML is unchanged. Publication scope is `letterhead/` only. Source PR 224 merged at `3c5e47f2c590e5031c2b9d7a0b89694dfd44e971` (application `dbe3312`). Publication PR 225 merged at `9cd96e9659ed744df962820c5affb6284f3e6df7` (application `fbf6e42`). Pages run `43593559206` succeeded. Live `/letterhead` resolves to the new page, has `noindex, nofollow`, and serves all three downloads with bytes matching the reviewed local files. Live Home, Search and sitemap contain no link to it. The live page was visually verified on desktop; the identical generated page was also reviewed at 390px. Only `letterhead/` was added to production. Existing pages and independent endpoints were preserved.
 
 
 ## November 13 Mitchell Gordon affiliation — published and live verified
