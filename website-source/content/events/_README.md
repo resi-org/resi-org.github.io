@@ -64,6 +64,6 @@ The shared card shows them in two forms while the event is upcoming. Events show
 
 ## Standalone event pages
 
-When an approved event detail page exists, set detailsHref to its canonical local URL. Home's workshop Learn more links and event Search results use it. Upcoming full-lineup Events cards then retain only their descriptive announcement label, align their summary with the title, and offer Learn more beneath the interest action on desktop. Narrow layouts put the actions below the summary. The historical Events anchor remains available.
+When an approved event detail page exists, set detailsHref to its canonical local URL. Home's workshop Learn more links and event Search results use it. Upcoming full-lineup Events cards then omit the small announcement heading, align their summary with the title, and offer Learn more beneath the interest action on desktop. Narrow layouts put the actions below the summary. The historical Events anchor remains available.
 
 The December 4 workshop detail route reads optional overview, attendanceLabel, interestNote, panels and panelDescriptions from its canonical event record. panels supplies title order; panelDescriptions maps exact titles to approved descriptions. No panelists or timing are implied by a title. The selected speaker portraits and any photo-specific credits live in src/data/workshop-portraits.ts. Portrait alternatives/comparison controls are retired. Production pages have normal canonical metadata and indexing; a separate preview's noindex setting must not be copied into production.
