@@ -1,0 +1,216 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import Arrow from '../../components/Arrow.astro';
+import WorkshopPortrait from '../../components/WorkshopPortrait.astro';
+import { workshopPortraits } from '../../data/workshop-portraits';
+import { portraitFor } from '../../lib/portraits';
+
+// The workshop detail page shares confirmed facts with Home and Events.
+const entry = await getEntry('events', '2026-12-04-inaugural-workshop');
+if (!entry) throw new Error('The inaugural workshop record is missing.');
+const event = entry.data;
+const titleExtension = "RESI's inaugural workshop on developing scientific foundations for safer advanced AI";
+const pageTitle = `${event.title}: ${titleExtension}`;
+const photographyCredits = event.speakers.flatMap((speaker) => {
+  const credit = workshopPortraits[speaker.name].credit;
+  return credit ? [{ person: speaker.name, credit }] : [];
+});
+const hostIds = ['shafi-goldwasser', 'adam-tauman-kalai', 'vinod-vaikuntanathan'];
+const hosts = await Promise.all(hostIds.map(async (id) => {
+  const person = await getEntry('people', id);
+  if (!person) throw new Error(`Missing workshop host: ${id}`);
+  return { name: person.data.name, portrait: portraitFor(id, person.data.photo) };
+}));
+const date = event.start.toLocaleDateString('en-US', {
+  weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
+});
+---
+
+<Base
+  title={pageTitle}
+  description={event.overview || event.description}
+>
+  <article class="workshop-page">
+    <header class="page-hero workshop-hero">
+      <div class="workshop-heading">
+        <h1><span class="title-phrase">{event.title.split(' ')[0]}</span>{' '}{event.title.split(' ').slice(1).join(' ')}</h1>
+        <p class="workshop-subtitle">{titleExtension}</p>
+        <div class="workshop-facts" aria-label="Date, location and attendance">
+          <time datetime={event.start.toISOString().slice(0, 10)}>{date}</time>
+          <span>{event.location}{event.attendanceLabel && <> · {event.attendanceLabel}</>}</span>
+        </div>
+      </div>
+      {event.overview && <p class="workshop-overview">{event.overview}</p>}
+      {event.interestUrl && <div class="workshop-invitation">
+        <p class="workshop-join-label">Join us:</p>
+        <a class="workshop-interest" href={event.interestUrl} target="_blank" rel="noopener noreferrer">
+          {event.interestLabel || 'Interest form'}<Arrow />
+        </a>
+      </div>}
+      {event.interestNote && <p class="interest-note">{event.interestNote}</p>}
+    </header>
+
+    <Section id="speakers" label="Speakers" divider>
+      <ul class="speaker-list">
+        {event.speakers.map((speaker) => <li>
+          <WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} />
+          <h3>{speaker.name}</h3>
+          {speaker.affiliation && <p>{speaker.affiliation}</p>}
+        </li>)}
+      </ul>
+    </Section>
+
+    <Section id="program" label="Panels" divider>
+      {event.panels.length > 0 && <ul class="program-panels">
+        {event.panels.map((title) => <li>
+          <h3>{title}</h3>
+          {event.panelDescriptions[title] && <p class="panel-description">{event.panelDescriptions[title]}</p>}
+          <p class="panel-pending">Panelists will be announced soon.</p>
+        </li>)}
+      </ul>}
+    </Section>
+
+    <Section id="hosts" label={event.hostsLabel || 'Hosted by'} divider>
+      <ul class="host-list">
+        {hosts.map((host) => <li>
+          <span class="host-portrait founder-portrait" style={host.portrait.style}>
+            <img src={host.portrait.src} alt="" width="80" height="80" loading="lazy" decoding="async" />
+          </span>
+          <span>{host.name}</span>
+        </li>)}
+      </ul>
+    </Section>
+
+    <div class="workshop-closing-invitation" id="join-us">
+      {event.interestUrl && <div class="workshop-invitation">
+        <p class="workshop-join-label">Join us:</p>
+        <a class="workshop-interest" href={event.interestUrl} target="_blank" rel="noopener noreferrer">
+          {event.interestLabel || 'Interest form'}<Arrow />
+        </a>
+      </div>}
+      {event.interestNote && <p class="interest-note">{event.interestNote}</p>}
+    </div>
+
+  </article>
+  {photographyCredits.length > 0 && <section slot="before-footer" class="photography-credits shell" aria-labelledby="photography-credits-heading">
+    <h2 id="photography-credits-heading">Photography credits:</h2>
+    <ul>
+      {photographyCredits.map((entry) => <li>
+        {entry.person}: {entry.credit.href
+          ? <a href={entry.credit.href} target="_blank" rel="noopener noreferrer">{entry.credit.text}</a>
+          : entry.credit.text}
+      </li>)}
+    </ul>
+  </section>}
+</Base>
+
+<style>
+  .workshop-page { max-width: var(--content-width); margin-inline: auto; }
+  .workshop-hero { padding-bottom: var(--section-space-before, 36px); }
+  .workshop-hero h1 {
+    margin: 0;
+    max-width: 100%;
+    /* Reuse Home's existing display-title scale, including its mobile steps. */
+    font-size: clamp(31px, 6vw, 40px);
+    line-height: 1.18;
+    text-wrap: balance;
+  }
+  .title-phrase { white-space: nowrap; }
+  .workshop-subtitle, .workshop-join-label {
+    color: var(--muted);
+    font: 400 24px/1.4 var(--sans);
+  }
+  .workshop-subtitle {
+    margin: 18px 0 0;
+    max-width: 100%;
+    text-wrap: balance;
+  }
+  .workshop-closing-invitation { padding: 36px 0; }
+  .workshop-invitation { display: flex; align-items: center; gap: 18px; }
+  .workshop-join-label { margin: 0; }
+  .workshop-facts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 24px;
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 12.75px;
+    line-height: 1.65;
+  }
+  .workshop-facts time { color: var(--ink); font-weight: 500; }
+  .workshop-overview {
+    margin: 24px 0 18px;
+    max-width: 59ch;
+    font-size: 14.25px;
+    line-height: 1.65;
+  }
+  .interest-note { margin: 12px 0 0; max-width: 60ch; text-wrap: balance; color: var(--muted); font-size: 12px; line-height: 1.65; }
+  .workshop-interest {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 40px;
+    padding: 10px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 1.5px;
+    background: var(--accent);
+    color: var(--paper);
+    font-size: 12px;
+    line-height: 1.4;
+    text-decoration: none;
+  }
+  .workshop-interest:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .workshop-interest:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+  .workshop-interest :global(svg) { width: 16px; height: 16px; flex: 0 0 16px; }
+  .speaker-list, .host-list { list-style: none; padding: 0; margin: 0; }
+  .speaker-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px 24px;
+    padding-top: 3px;
+  }
+  .speaker-list li, .host-list li { margin: 0; padding: 0; }
+  .speaker-list h3 { margin: 0 0 3px; font: 500 15px/1.4 var(--sans); }
+  .speaker-list p { margin: 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
+  .host-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; font-weight: 500; }
+  .host-portrait { width: 80px; height: 80px; margin-bottom: 12px; }
+  .photography-credits {
+    max-width: var(--content-width); padding-bottom: 18px;
+    color: var(--muted); font: 400 8.25px/1.65 var(--sans);
+  }
+  .photography-credits h2 { margin: 0 0 3px; font: inherit; }
+  .photography-credits ul { margin: 0; padding: 0; list-style: none; }
+  .photography-credits li { margin: 0; }
+  .photography-credits a { color: inherit; }
+  @media (max-width: 600px) {
+    .workshop-hero h1 { font-size: clamp(34.1px, 6.6vw, 44px); }
+    .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 520px) {
+    .workshop-hero h1 { font-size: clamp(29.7px, 6.875vw, 36.3px); }
+  }
+  .panel-description { margin: 9px 0 0; font: 400 12.75px/1.65 var(--sans); }
+  .panel-pending { margin: 12px 0 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
+  .program-panels { list-style: none; padding: 0; margin: 0; display: grid; gap: 30px; }
+  .program-panels li { margin: 0; }
+  .program-panels h3 { margin: 0; font: 700 16.5px/1.4 var(--serif); letter-spacing: -0.005em; }
+  @media (max-width: 480px) {
+    .workshop-subtitle, .workshop-join-label { font-size: 21px; }
+    .workshop-subtitle { margin-top: 15px; }
+    .workshop-invitation { gap: 15px; }
+    .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
+    .workshop-overview { margin-top: 21px; }
+    .speaker-list { column-gap: 18px; row-gap: 21px; }
+    .speaker-list h3 { font-size: 14.25px; }
+    .host-list { gap: 18px; font-size: 12px; }
+    .host-portrait { width: 67.5px; height: 67.5px; }
+  }
+
+  @media print {
+    .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+</style>

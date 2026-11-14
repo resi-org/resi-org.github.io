@@ -1,0 +1,27 @@
+---
+import { getImage } from 'astro:assets';
+import type { WorkshopPhoto } from '../data/workshop-portraits';
+interface Props { name: string; photo: WorkshopPhoto; }
+const { name, photo } = Astro.props;
+const url = typeof photo.src === 'string' ? photo.src : (await getImage({
+  src: photo.src, width: Math.min(photo.src.width, 640), format: 'webp', quality: 85,
+})).src;
+---
+<span class="workshop-portrait" style={photo.style}>
+  <span class="photo-frame"><img src={url} alt={`Portrait of ${name}`} width="320" height="320" loading="lazy" decoding="async" /></span>
+</span>
+
+<style>
+  .workshop-portrait {
+    display: block; position: relative; width: 100%; aspect-ratio: 4 / 5;
+    padding: 0; margin: 0 0 12px; overflow: hidden; border: 0;
+    border-radius: 1.5px; background: var(--line); color: var(--ink);
+  }
+  .photo-frame { display: block; width: 100%; height: 100%; overflow: hidden; }
+  img {
+    display: block; width: 100%; height: 100%; object-fit: cover;
+    object-position: var(--portrait-position, 50% 50%);
+    transform: translateY(var(--portrait-shift-y, 0%)) scale(var(--portrait-scale, 1));
+    transform-origin: var(--portrait-origin, 50% 50%);
+  }
+</style>

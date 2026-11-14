@@ -175,10 +175,16 @@ const events = defineCollection({
       description: z.string().optional(),
     }).optional(),
     description: z.string().optional(),
+    // Approved detail-page copy; compact announcement cards keep description.
+    overview: z.string().trim().min(1).optional(),
+    interestNote: z.string().trim().min(1).optional(),
+    panels: z.array(z.string().trim().min(1)).optional().default([]),
+    panelDescriptions: z.record(z.string(), z.string().trim().min(1)).optional().default({}),
     interestUrl: z.url().optional(),
     interestLabel: z.string().optional(),
     anchor: z.string().optional(),
     location: z.string(),
+    attendanceLabel: z.string().trim().min(1).optional(),
     with: z.array(z.string()).optional().default([]),
     // Confirmed participants only, in the order to display. Shown on the
     // event's Events entry and indexed in Search; Home cards stay compact.

@@ -1,5 +1,7 @@
 # RESI website current work
 
+**Workshop launch, November14 — approved, implementation verified locally:** Rachel authorized production publication of preview38 and the connected Events-card edits. Selective source migration in /private/tmp/resi-workshop-launch-nov14; publication checkout /private/tmp/resi-publish-workshop-launch-nov14. Canonical /workshops/safe-by-design-superintelligence/; Home/Events Learn more, Search and sitemap connected. Wider Events redesign and PR150 remain unapproved. Publication/live verification pending. [Launch record](briefs/workshop-launch-2026-11-14.md).
+
 ## Rachel bio opening — November 12
 
 OP2 — Published and live verified. Rachel selected the two-sentence bio beginning “Generalist with a knack for making things happen” and ending “rigorous research.” Source PR191 / `24b3f39`; publication PR192 / `7f8981b46fa1ec36c8575788e27f7993fbf5d7bd`; successful Pages run43255918278. Only her People bio and automatic Search text changed. Live320/390/1280px, Search navigation and approved portrait checksum pass. Title, photo, framing, Emily's profile, Operations layout and Home roster remain unchanged. Isolated source /private/tmp/resi-rachel-bio-nov12; publication /private/tmp/resi-publish-rachel-bio-nov12. Preserve recent Home/event releases and unrelated previews. Full evidence is in CHANGELOG.

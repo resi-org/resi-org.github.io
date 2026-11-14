@@ -1,0 +1,52 @@
+[
+  {
+    "file": "boaz-portrait.jpg",
+    "source": "https://www.boazbarak.org/boaz_headshot_hunts.JPG",
+    "bytes": 3635540,
+    "sha256": "73f0a5d2094df7a304f9fb83124b0b738e003527fc11f879412df20a6d24b067",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "file": "adam-gleave.jpg",
+    "source": "https://www.gleave.me/authors/adamgleave/avatar_hu33cc56b38b00771f434c01f46ef075ca_278788_540x540_fill_q75_lanczos_center.jpg",
+    "bytes": 24216,
+    "sha256": "42fff355811601ea6b3f305ec4a7dfe32b2d7223c3858002c5a90a66988cfdef",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "file": "mitchell-gordon.png",
+    "source": "https://mitchellg.github.io/images/face_3.png",
+    "bytes": 483426,
+    "sha256": "f1929693fb4976fc2f7af4ee7fee4693d31c65c043249433527db502b13ca8f9",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "file": "elad-hazan.png",
+    "source": "https://www.ehazan.com/elad.png",
+    "bytes": 1978509,
+    "sha256": "887e74ed0dccc02e2181f7e1420ef2c34818180da2b601aeddf229d769a818ac",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "file": "orr-paradise.jpg",
+    "source": "https://orrp.net/assets/headshot.jpg",
+    "bytes": 1494615,
+    "sha256": "bc48ce42bf2887231a9627e19e4d20b1a00af5606113777b734ae53c39288a76",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "file": "nickolai-zeldovich.jpg",
+    "source": "https://cdn.amazon.science/dims4/default/25e96b9/2147483647/strip/true/crop/493x667+254+0/resize/340x460!/quality/90/?url=https%3A%2F%2Famzn-science-production-science.s3.us-east-1.amazonaws.com%2Fscience%2Fbb%2F92%2Fb0af5740465fb5c037bb39f23e58%2Fzeldovich-n-ara-autor-headshot.jpg",
+    "bytes": 37368,
+    "sha256": "d87fc523788f30202251d38bab86274e179c97bbe25297c0f05b5e67c4a34578",
+    "retrieved": "2026-11-13"
+  },
+  {
+    "file": "roy-rinberg-far-ai.webp",
+    "page": "https://www.far.ai/author/roy-rinberg",
+    "source": "https://cdn.prod.website-files.com/6a53dbc6fa4e1a57fd55a008/6a53dbc6fa4e1a57fd55a2b6_69e93cb3c60a9cc51da69337_roy.webp",
+    "bytes": 26054,
+    "sha256": "5d0ed6c21ea07ebecb281fc5c82dbc31721d3a97847df7bbffb313e256a3b7f2",
+    "retrieved": "2026-11-13"
+  }
+]
