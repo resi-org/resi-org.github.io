@@ -27,3 +27,8 @@ Current production source remains the continuing source line. The separate previ
 ## Follow-up — redundant card label removed
 
 Rachel removed the small Inaugural workshop heading from the Events card because the description already says this. This supersedes the initial launch's kicker treatment. The vacated grid row is collapsed; Home labels and all other card/page content remain. Source PR230 (application5b90a22), production PR231 /76e46b62454d78db674e2b4d72ab522d54a281bb, successful Pages43653220860. Check/build and local900/390/320px passed; ordinary live900/390px verifies no kicker and no overflow. Proof: output/workshop-launch-proof-nov14/live-events-no-kicker.png. No forms submitted.
+
+
+## November 14 — Events description extends beneath the date
+
+Rachel requested letting the Events-card description use the space beneath the date as well as the title. The summary now spans the first two grid columns; the interest and Learn more actions remain stacked in the third column. No copy, portrait, link or mobile layout changes. This supersedes the initial title-aligned summary convention. Source application02d6a7e / PR232; production PR233 merged at d9c4fe90204b0191463885a8fdcc198276a11ce1. Pages43653832292 succeeded. Astro check55 files/zero diagnostics and build passed. Local900/390/320px and ordinary live900/390px confirmed the wider summary, action placement, absent kicker and no overflow. Only Home/Events stylesheet references and the new component CSS changed; all other output is byte-identical. Proof: output/workshop-launch-proof-nov14/live-events-description-width.png and description-width-checks.json. No forms submitted.
