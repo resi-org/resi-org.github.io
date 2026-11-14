@@ -38,10 +38,10 @@ const showMore = lineup === 'names' && isUpcoming;
 
 <aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming, 'featured-event': featured, 'detail-event': detailCard }]} aria-labelledby={headingId}>
   <slot name="heading" />
-  <p class="announcement-meta workshop-kicker">
+  {!detailCard && <p class="announcement-meta workshop-kicker">
     {!featured && !detailCard && <span>Events</span>}
     {labels.filter(label => (!featured && !detailCard) || label !== 'Save the date').map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
-  </p>
+  </p>}
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
     <span>{month}</span>
     <strong>{calendarDate.getUTCDate()}</strong>
@@ -497,14 +497,15 @@ const showMore = lineup === 'names' && isUpcoming;
     grid-template-columns: 48px minmax(0, 1fr) auto;
   }
   .detail-event .workshop-main { display: contents; }
-  .detail-event .workshop-description { grid-column: 2; grid-row: 2; }
-  .detail-event .workshop-date { grid-column: 1; grid-row: 2; }
-  .detail-event .workshop-summary { grid-column: 2; grid-row: 3; }
+  .detail-event .workshop-description { grid-column: 2; grid-row: 1; }
+  .detail-event .workshop-date { grid-column: 1; grid-row: 1; }
+  .detail-event .workshop-summary { grid-column: 2; grid-row: 2; }
   .detail-event .workshop-action {
-    grid-column: 3; grid-row: 2 / 4;
+    grid-column: 3; grid-row: 1 / 3;
     display: flex; flex-direction: column; gap: 12px;
     block-size: auto; align-self: start;
   }
+  .detail-event .workshop-lineup { grid-row: 3; }
   .detail-event .workshop-action > a { width: 100%; }
   .workshop-details-link {
     min-height: 40px; justify-content: center; margin: 0;
@@ -515,11 +516,11 @@ const showMore = lineup === 'names' && isUpcoming;
     .workshop-card.detail-event { grid-template-columns: 36px minmax(0, 1fr); }
     .detail-event .workshop-summary { grid-column: 1 / -1; }
     .detail-event .workshop-action {
-      grid-column: 1 / -1; grid-row: 4; padding: 0;
+      grid-column: 1 / -1; grid-row: 3; padding: 0;
       flex-direction: row; flex-wrap: wrap; gap: 9px;
     }
     .detail-event .workshop-action > a { width: auto; }
-    .detail-event .workshop-lineup { grid-row: 5; }
+    .detail-event .workshop-lineup { grid-row: 4; }
   }
 
   /* Past events keep their calendar/title treatment; logistics are revealed
