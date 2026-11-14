@@ -10,11 +10,13 @@ interface Props {
   title?: string;
   description?: string;
   wide?: boolean;
+  noindex?: boolean;
 }
 const {
   title,
   description = 'The Institute for Responsible Superintelligence is an independent nonprofit research institute working on the scientific foundations of safe by design AI.',
   wide = false,
+  noindex = false,
 } = Astro.props;
 const pageTitle = title
   ? `${title} · RESI`
@@ -30,6 +32,7 @@ const isHome = Astro.url.pathname === '/';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="RESI" />

@@ -1,0 +1,36 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[
+  letterpaper,
+  left=1in,
+  right=1in,
+  top=1.4in,
+  bottom=0.8in
+]{geometry}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{9pt}
+
+% Match the Word letterhead: 296 x 42 PostScript points,
+% 81.05 PostScript points from the left edge and half an inch from the top.
+% The header repeats on every page. There is no footer.
+\AddToShipoutPictureBG{%
+  \AtPageUpperLeft{%
+    \put(\LenToUnit{81.05bp},-\LenToUnit{0.5in}){%
+      \raisebox{-\height}{%
+        \includegraphics[width=296bp,height=42bp]{images/resi-letterhead-lockup.png}%
+      }%
+    }%
+  }%
+}
+
+\begin{document}
+% Replace \null with your letter. It keeps this blank letterhead printable.
+\null
+\end{document}

@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Letterhead" description="Letterhead templates for RESI correspondence." noindex>
+  <header class="page-hero">
+    <h1>Letterhead</h1>
+    <p>Templates for RESI correspondence.</p>
+  </header>
+
+  <div class="letterhead-downloads">
+    <a href="/letterhead/resi-letterhead.pdf" class="letterhead-preview" rel="nofollow" aria-label="Preview the RESI letterhead PDF">
+      <img src="/letterhead/preview.png" alt="White letter paper with the RESI emblem and institute name at the upper left, with no footer." width="425" height="550" />
+    </a>
+
+    <div class="formats">
+      <section aria-labelledby="word-heading">
+        <h2 id="word-heading">Word</h2>
+        <p>Open the blank template and save a copy for your letter.</p>
+        <a href="/letterhead/resi-letterhead.docx" download rel="nofollow">Download Word template (.docx)</a>
+      </section>
+      <section aria-labelledby="pdf-heading">
+        <h2 id="pdf-heading">PDF</h2>
+        <p>Ready to print or use as stationery.</p>
+        <a href="/letterhead/resi-letterhead.pdf" download rel="nofollow">Download PDF (.pdf)</a>
+      </section>
+      <section aria-labelledby="latex-heading">
+        <h2 id="latex-heading">LaTeX</h2>
+        <p>Includes the source and logo. Upload the ZIP to Overleaf, or compile <code>main.tex</code> locally.</p>
+        <a href="/letterhead/resi-letterhead-latex.zip" download rel="nofollow">Download LaTeX project (.zip)</a>
+      </section>
+      <p class="format-note">All versions use US Letter paper (8.5 × 11 inches), a repeating header, and no footer.</p>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .letterhead-downloads { display: grid; grid-template-columns: minmax(0, 210px) minmax(0, 1fr); gap: 36px; align-items: start; }
+  .letterhead-preview { display: block; border: 1px solid var(--line); }
+  .letterhead-preview img { display: block; width: 100%; height: auto; }
+  .formats { min-width: 0; }
+  .formats section + section { margin-top: 24px; }
+  .formats h2 { font-size: 20px; margin-bottom: 6px; }
+  .formats p { margin-bottom: 8px; }
+  .format-note { margin-top: 28px; color: var(--muted); font-size: 12px; }
+  @media (max-width: 520px) {
+    .letterhead-downloads { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .letterhead-preview { width: min(100%, 180px); }
+  }
+</style>
