@@ -1,5 +1,7 @@
 # RESI website editing and handoff guide
 
+**Workshop launch, November14 — publication authorized:** Rachel explicitly approved publishing the finalized workshop detail page and connected Home/Events Learn more links, with revised Events-card copy/actions. This supersedes the workshop preview-only hold for the reviewed scope. Implementation is isolated from current continuing source0064559/main9cd96e9; wider Events and working-group previews remain separate. Publication/live verification pending. [Launch record](briefs/workshop-launch-2026-11-14.md).
+
 **Mitchell Gordon affiliation, November 13 — PUBLISHED AND LIVE VERIFIED:** Adam requested “MIT, formerly OpenAI,” superseding the November 12 wording. Shared event source PR 222; Events/Search publication PR 223 at `09ad1b7dd131d4ec216ae7b3a3649c74c947ed67`; Pages run `43408112186` succeeded. Home names-only lists are unchanged. See CHANGELOG.
 
 **Mitchell Gordon affiliation, November 12 — PUBLISHED AND LIVE VERIFIED:** Adam requested “MIT” only. Shared event source PR 220; Events/Search publication PR 221 at `798f645dbeba84d46b394961389757bd796b1eca`; Pages run `43322034058` succeeded. Home names-only lists are unchanged. See CHANGELOG.

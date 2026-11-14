@@ -8,7 +8,7 @@ interface Props {
   featured?: boolean;
   /** Confirmed lineup: 'full' lists speakers with affiliations plus hosts below the
    *  summary (Events); 'names' is Home's compact form: speaker names in place of the
-   *  summary, plus a "Learn more" link to the full Events entry. Omit for neither. */
+   *  summary, plus a "Learn more" link to the event detail page. Omit for neither. */
   lineup?: 'full' | 'names';
   event: EventEntry;
 }
@@ -19,6 +19,7 @@ const month = calendarDate.toLocaleDateString('en-US', { month: 'short', timeZon
 const dateLabel = calendarDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 const Heading = integrated ? 'h3' : 'h2';
 const isUpcoming = event.timing === 'upcoming';
+const detailCard = isUpcoming && lineup === 'full' && Boolean(event.detailsHref);
 const labels = isUpcoming
   ? event.announcementLabel?.split(' · ') || []
   : [event.pastAnnouncement?.label || 'Past event'];
@@ -31,15 +32,15 @@ const lineupGroups = lineup === 'full' && isUpcoming
   : [];
 const speakerNames = lineup === 'names' && isUpcoming ? event.speakers.map((speaker) => speaker.name) : [];
 const detailsHref = event.detailsHref || `/events#${event.anchor || event.id}`;
-// Home cards are compact, so they offer a visible path to the full Events entry.
+// Home cards link to the detail page, falling back to the Events entry.
 const showMore = lineup === 'names' && isUpcoming;
 ---
 
-<aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming, 'featured-event': featured }]} aria-labelledby={headingId}>
+<aside class:list={['announcement-item', 'workshop-card', { 'past-event': !isUpcoming, 'featured-event': featured, 'detail-event': detailCard }]} aria-labelledby={headingId}>
   <slot name="heading" />
   <p class="announcement-meta workshop-kicker">
-    {!featured && <span>Events</span>}
-    {labels.filter(label => !featured || label !== 'Save the date').map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
+    {!featured && !detailCard && <span>Events</span>}
+    {labels.filter(label => (!featured && !detailCard) || label !== 'Save the date').map(label => <span class:list={{ 'workshop-save-date': label === 'Save the date' }}>{label}</span>)}
   </p>
   <time class="workshop-date" datetime={calendarDate.toISOString().slice(0, 10)} aria-label={dateLabel}>
     <span>{month}</span>
@@ -55,9 +56,15 @@ const showMore = lineup === 'names' && isUpcoming;
       <a class="workshop-link" href={event.interestUrl} target="_blank" rel="noopener noreferrer">
         {event.interestLabel || 'Interest form'} <Arrow />
       </a>
+      {detailCard && <a class="button workshop-details-link" href={detailsHref} aria-label={`Learn more about ${event.title}`}>
+        <span>Learn more</span><Arrow />
+      </a>}
     </div>}
   </div>
   {event.description && speakerNames.length === 0 && <p class="workshop-summary">{event.description}</p>}
+  {detailCard && !event.interestUrl && <div class="workshop-action">
+    <a class="button workshop-details-link" href={detailsHref} aria-label={`Learn more about ${event.title}`}><span>Learn more</span><Arrow /></a>
+  </div>}
   {lineupGroups.length > 0 && <div class="workshop-lineup">
     {lineupGroups.map((group) => (
       <div class="workshop-lineup-group" data-group={group.key}>
@@ -482,6 +489,37 @@ const showMore = lineup === 'names' && isUpcoming;
       grid-template-rows: repeat(5, max-content);
       align-content: space-between;
     }
+  }
+
+  /* Detail-page invitations align their short summary with the title, with
+     a secondary onward action directly beneath the interest button. */
+  .workshop-card.detail-event {
+    grid-template-columns: 48px minmax(0, 1fr) auto;
+  }
+  .detail-event .workshop-main { display: contents; }
+  .detail-event .workshop-description { grid-column: 2; grid-row: 2; }
+  .detail-event .workshop-date { grid-column: 1; grid-row: 2; }
+  .detail-event .workshop-summary { grid-column: 2; grid-row: 3; }
+  .detail-event .workshop-action {
+    grid-column: 3; grid-row: 2 / 4;
+    display: flex; flex-direction: column; gap: 12px;
+    block-size: auto; align-self: start;
+  }
+  .detail-event .workshop-action > a { width: 100%; }
+  .workshop-details-link {
+    min-height: 40px; justify-content: center; margin: 0;
+    font-size: 12px; line-height: 1.4; padding: 10px 14px; gap: 14px;
+  }
+  .workshop-details-link :global(svg) { width: 16px; height: 16px; flex: 0 0 16px; }
+  @media (max-width: 600px) {
+    .workshop-card.detail-event { grid-template-columns: 36px minmax(0, 1fr); }
+    .detail-event .workshop-summary { grid-column: 1 / -1; }
+    .detail-event .workshop-action {
+      grid-column: 1 / -1; grid-row: 4; padding: 0;
+      flex-direction: row; flex-wrap: wrap; gap: 9px;
+    }
+    .detail-event .workshop-action > a { width: auto; }
+    .detail-event .workshop-lineup { grid-row: 5; }
   }
 
   /* Past events keep their calendar/title treatment; logistics are revealed

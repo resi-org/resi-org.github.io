@@ -1,5 +1,9 @@
 # RESI website change log
 
+## November 14 — workshop publication approved; implementation verified locally
+
+Rachel approved the reviewed standalone workshop for resi.org, new workshop Learn more destinations and the revised Events summary/action layout. Migrated the final preview selectively into current source0064559, preserving production9cd96e9 and other pending previews. Canonical workshop URL, shared detailsHref, approved copy/photos, Search and sitemap are prepared. Events has Inaugural workshop only in its kicker, exact new description aligned with its title, and outlined Learn more under Interest form. No new speakers, panel assignments or logistics. Check55 files/zero diagnostics,18 policy tests and build passed. Publication/live verification are pending; [launch record](briefs/workshop-launch-2026-11-14.md).
+
 ## November 14, 2026: unlisted letterhead downloads — published and live verified
 
 Adam requested matching Word, PDF and LaTeX letterhead templates at `/letterhead/`, reachable by a direct link and omitted from public discovery. The page provides a blank preview and the three downloads. All formats use US Letter paper and the approved RESI header with no footer. LaTeX includes `main.tex` and the header image in a portable ZIP. These generic files contain no recommendation letter or personal signature.

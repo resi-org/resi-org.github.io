@@ -158,3 +158,10 @@ November 5 mobile refinement: Rachel confirmed the current below-heading mobile 
 Restore the original section position: after Founders/research community and before Key research areas. Introduction/featured workshop and cryptography precedent remain above it. This reverses the November 2 move directly under the introduction; it does not revert later approved card styling, feed selection/content, or the November 5 intro/workshop layout. Keep #announcements and its existing link destinations.
 
 Publication confirmed November 8: original Announcements placement is live through PR 131 (34e02f5). Current card treatments, feed rules and the separate introductory workshop feature are unchanged.
+
+
+## Workshop detail and Events actions — November14
+
+Rachel approved the final standalone workshop: large canonical title, 24px desktop/21px phone sans-serif subtitle, established Cardo16.5px bold panel titles and Plex Sans12.75px/1.65 descriptions, static approved portraits and repeated interest invitation. Footer remains last; any selected-photo credits sit just above it.
+
+For upcoming full-lineup Events cards with an approved standalone detail page, the small heading retains the event's descriptive label and omits Events / Save the date. Align summary with title on desktop and put an outlined Learn more beneath the filled interest action. Mobile moves actions below the summary. The compact Home feature/announcement treatments retain their prior headings, names and visual layout, with Learn more pointing to the same detail page. Past-event policy is unchanged.

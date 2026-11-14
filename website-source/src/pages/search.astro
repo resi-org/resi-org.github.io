@@ -178,9 +178,10 @@ const entries = [
   })),
   ...events.filter((event) => !isSeriesEvent(event.data.eventType)).map((event) => ({
     title: event.data.title,
-    url: `/events#${event.data.anchor || `event-${event.id}`}`,
+    url: event.data.detailsHref || `/events#${event.data.anchor || `event-${event.id}`}`,
     category: 'Events',
-    text: [event.data.description, event.data.location, event.data.announcementLabel,
+    text: [event.data.description, event.data.overview, event.data.location, event.data.attendanceLabel, event.data.announcementLabel,
+      ...event.data.panels.flatMap((title) => [title, event.data.panelDescriptions[title]]),
       event.data.start.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }),
       // Lineup names make the event findable by speaker or host, as readable sentences in the excerpt.
       event.data.speakers.length > 0 && `${event.data.speakersLabel || 'Speakers'}: ${event.data.speakers.map((speaker) => speaker.affiliation ? `${speaker.name} (${speaker.affiliation})` : speaker.name).join(', ')}.`,

@@ -1,5 +1,7 @@
 # RESI page references
 
+**Workshop detail page, November14 — publication authorized:** /workshops/safe-by-design-superintelligence/ reads the canonical workshop event record; src/data/workshop-portraits.ts and WorkshopPortrait.astro supply final static portraits. detailsHref connects Home/Events links and Search; sitemap includes the route. #program is retained under Panels. Credits, when present, use Base's before-footer slot. Existing /events#workshop remains. [Launch record](briefs/workshop-launch-2026-11-14.md).
+
 November 11 Operations update (WORKLIST OP1), published and live verified through PR 163: People uses the shared Person component in an Operations-only two-column desktop grid, Emily left and Rachel right; phones retain stacked rows. Both role labels and approved no-name-repeat bios come from content/people. Rachel's approved photo is public/people/rachel-sipser.png with default shared portrait framing, unchanged pixels. Search inherits both profiles. That Operations release did not change Home; the subsequent November 11 team-photo rule below now includes Operations automatically. Rachel's final bio uses communications, community-building and organizational development, with “advancing new initiatives” and “rigorous research,” rather than naming individual channels.
 
 Paths are relative to website-source/. The implementation holds current copy; this reference records purpose, sources and dependencies without duplicating each paragraph. Reconciled November 2, 2026.

@@ -60,3 +60,10 @@ This is a schema example, not a scheduled announcement. Do not add this object p
 Added November 12 at Adam's request. `speakers` and `hosts` are optional. An event without them renders exactly as before. List only confirmed people, with the affiliation each person uses publicly, and keep the order you want displayed (the workshop uses last-name order).
 
 The shared card shows them in two forms while the event is upcoming. Events shows the full list with affiliations and the hosts line below the summary. Home shows the speaker names alone in place of the summary, with no affiliations and no hosts, so the Home cards keep their height. Past cards show neither. Search indexes speaker and host names with the event entry.
+
+
+## Standalone event pages
+
+When an approved event detail page exists, set detailsHref to its canonical local URL. Home's workshop Learn more links and event Search results use it. Upcoming full-lineup Events cards then retain only their descriptive announcement label, align their summary with the title, and offer Learn more beneath the interest action on desktop. Narrow layouts put the actions below the summary. The historical Events anchor remains available.
+
+The December 4 workshop detail route reads optional overview, attendanceLabel, interestNote, panels and panelDescriptions from its canonical event record. panels supplies title order; panelDescriptions maps exact titles to approved descriptions. No panelists or timing are implied by a title. The selected speaker portraits and any photo-specific credits live in src/data/workshop-portraits.ts. Portrait alternatives/comparison controls are retired. Production pages have normal canonical metadata and indexing; a separate preview's noindex setting must not be copied into production.
