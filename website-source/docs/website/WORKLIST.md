@@ -1,6 +1,6 @@
 # RESI website current work
 
-**Workshop launch, November14 — approved, implementation verified locally:** Rachel authorized production publication of preview38 and the connected Events-card edits. Selective source migration in /private/tmp/resi-workshop-launch-nov14; publication checkout /private/tmp/resi-publish-workshop-launch-nov14. Canonical /workshops/safe-by-design-superintelligence/; Home/Events Learn more, Search and sitemap connected. Wider Events redesign and PR150 remain unapproved. Publication/live verification pending. [Launch record](briefs/workshop-launch-2026-11-14.md).
+**Workshop launch, November14 — PUBLISHED AND LIVE VERIFIED:** Rachel authorized production publication of preview38 and the connected Events-card edits. Selective source migration in /private/tmp/resi-workshop-launch-nov14; publication checkout /private/tmp/resi-publish-workshop-launch-nov14. Canonical /workshops/safe-by-design-superintelligence/; Home/Events Learn more, Search and sitemap connected. Wider Events redesign and PR150 remain unapproved. Source PR227 /88502cf; production PR228 /4d90b47; Pages43652512678 succeeded. Ordinary live Home/Events/Search links, final portraits and900/390px layout verified. The separate preview38 stays unchanged; future production work starts from continuing source. [Launch record](briefs/workshop-launch-2026-11-14.md).
 
 ## Rachel bio opening — November 12
 
