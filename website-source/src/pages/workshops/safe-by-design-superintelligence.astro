@@ -50,7 +50,7 @@ const date = event.start.toLocaleDateString('en-US', {
         </a>
       </div>}
       {event.interestNote && <p class="interest-note">{event.interestNote}</p>}
-      <p class="interest-note">The program will be posted soon.</p>
+      <p class="program-notice">The program will be posted soon.</p>
     </header>
 
     <Section id="speakers" label="Speakers" divider>
@@ -149,6 +149,7 @@ const date = event.start.toLocaleDateString('en-US', {
     line-height: 1.65;
   }
   .interest-note { margin: 12px 0 0; max-width: 60ch; text-wrap: balance; color: var(--muted); font-size: 12px; line-height: 1.65; }
+  .program-notice { margin: 24px 0 0; color: var(--ink); font: 600 16.5px/1.5 var(--sans); }
   .workshop-interest {
     display: inline-flex;
     align-items: center;
