@@ -1,3 +1,7 @@
+# November 15, 2026 — workshop program notice and shorter panel listing
+
+Adam requested “The program will be posted soon.” immediately before the workshop Speakers section. It is a standalone paragraph after the attendance note, using the existing note typography and spacing. Adam also requested removing both panel descriptions. The description values are removed from the shared event record, which removes them from the workshop page and Search excerpt while retaining both panel titles and “Panelists will be announced soon.” notes. No styling changes. Astro check (55 files, zero diagnostics) and build passed; desktop/390px review verified exact paragraph placement, unchanged panel headings/pending notes, no descriptions in the page or Search excerpt and no horizontal overflow. Publication and live verification will be recorded after deployment.
+
 # November 15, 2026 — workshop speaker update
 
 Adam confirmed Vincent Conitzer; shared lineup now includes CMU, CoRe Safe AI. Elad Hazan is DeepMind, Princeton; Anat Perry is Hebrew University, RESI. The shared source updates Home, Events, workshop detail and Search. Source PR234 and publication PR235 merged; Pages43710330033 succeeded and ordinary live Home/Events/workshop/Search were verified. See [release record](briefs/workshop-speakers-2026-11-15.md) for portrait provenance and checks.
