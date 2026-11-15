@@ -1,5 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import boaz from '../assets/workshop-speakers/boaz-portrait.jpg';
+import vincent from '../assets/workshop-speakers/vincent-conitzer.jpg';
 import adam from '../assets/workshop-speakers/adam-gleave-headroom.png';
 import mitchell from '../assets/workshop-speakers/mitchell-gordon.png';
 import elad from '../assets/workshop-speakers/elad-hazan.png';
@@ -20,6 +21,7 @@ export interface WorkshopPhoto {
 const approvedAnat = portraitFor('anat-perry', '/people/anat-perry.jpg');
 export const workshopPortraits: Record<string, WorkshopPhoto> = {
   'Boaz Barak': { src: boaz, label: 'White polo portrait', style: '--portrait-position: 50% 38%; --portrait-scale: 1.25; --portrait-origin: 50% 30%;' },
+  'Vincent Conitzer': { src: vincent, label: 'CoRe Safe AI at CMU portrait', style: '--portrait-position: 50% 0%;' },
   // Serve the lossless asset directly: its entire original photo region is
   // pixel-identical; only 80px of matching background was added above it.
   // Bottom-anchored 29/27 scale splits the original square and extended framing.
