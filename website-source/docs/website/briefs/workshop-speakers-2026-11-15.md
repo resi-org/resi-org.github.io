@@ -1,0 +1,9 @@
+# Workshop speakers update — November 15, 2026
+
+Adam confirmed Vincent Conitzer as a workshop speaker and requested the affiliations CMU, CoRe Safe AI; Elad Hazan: DeepMind, Princeton; Anat Perry: Hebrew University, RESI. The shared event record supplies the workshop detail page, Events, Home names-only lists and Search. Mitchell Gordon remains MIT, formerly OpenAI. Historical seminars and People profiles are unchanged.
+
+Vincent’s unaltered portrait is from the official [CoRe Safe AI people page](https://www.cs.cmu.edu/~coresafeai/people.html), [image](https://www.cs.cmu.edu/~coresafeai/photos/conitzer.jpg), downloaded November 15. No photographer credit is shown on that source. Existing shared portrait rendering supplies the crop; no image editing or synthetic changes were applied.
+
+The public workshop page has panels and confirmed speakers but no timed agenda. Internal speaker timing and dinner attendance are not published in this change.
+
+Astro check (55 files, zero diagnostics), all 18 announcement-policy tests, and production build passed. Local Home, Events and workshop detail passed 1280/390/320px checks with nine loaded speaker portraits, exact affiliations and no horizontal overflow. Searching Vincent Conitzer returns the workshop. The generated publication is scoped to Home, Events, workshop detail, Search and Vincent’s portrait assets. Existing historical seminar content, metadata, endpoints and unrelated previews are preserved. Publication and live evidence will follow.
