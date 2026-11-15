@@ -1,6 +1,6 @@
 # November 15, 2026 — workshop speaker update
 
-Adam confirmed Vincent Conitzer; shared lineup now includes CMU, CoRe Safe AI. Elad Hazan is DeepMind, Princeton; Anat Perry is Hebrew University, RESI. The shared source updates Home, Events, workshop detail and Search. See [release record](briefs/workshop-speakers-2026-11-15.md) for portrait provenance, checks and publication.
+Adam confirmed Vincent Conitzer; shared lineup now includes CMU, CoRe Safe AI. Elad Hazan is DeepMind, Princeton; Anat Perry is Hebrew University, RESI. The shared source updates Home, Events, workshop detail and Search. Source PR234 and publication PR235 merged; Pages43710330033 succeeded and ordinary live Home/Events/workshop/Search were verified. See [release record](briefs/workshop-speakers-2026-11-15.md) for portrait provenance and checks.
 
 # RESI website change log
 
