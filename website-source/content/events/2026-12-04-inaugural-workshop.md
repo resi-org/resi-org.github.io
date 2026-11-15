@@ -7,11 +7,6 @@ interestNote: "Space is limited. Completing the interest form does not confirm a
 panels:
   - "Cryptography in the Age of AI"
   - "Academia and AI Safety"
-panelDescriptions:
-  "Cryptography in the Age of AI": >-
-    Cryptography was once dominated by schemes that were repeatedly broken and patched. Modern cryptography introduced precise security definitions and constructions with provable guarantees under explicit assumptions. What can this approach offer for advanced AI, from verifying work we cannot reproduce to constraining the actions of autonomous agents, and what are the limits of those guarantees?
-  "Academia and AI Safety": >-
-    Advancing AI safety as a field calls for a broad research community. What can academia contribute through fundamental research and collaboration across disciplines, and how can that work connect with frontier labs and AI safety organizations?
 detailsHref: "/workshops/safe-by-design-superintelligence/"
 announced: 2026-11-02
 start: 2026-12-04
