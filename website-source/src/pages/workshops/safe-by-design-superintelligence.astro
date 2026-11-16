@@ -79,7 +79,7 @@ const date = event.start.toLocaleDateString('en-US', {
           <span class="host-portrait founder-portrait" style={host.portrait.style}>
             <img src={host.portrait.src} alt="" width="80" height="80" loading="lazy" decoding="async" />
           </span>
-          <span>{host.name}</span>
+          <span class="host-name">{host.name.slice(0, host.name.lastIndexOf(' '))}{' '}<span class="host-surname">{host.name.slice(host.name.lastIndexOf(' ') + 1)}</span></span>
         </li>)}
       </ul>
     </Section>
@@ -175,6 +175,11 @@ const date = event.start.toLocaleDateString('en-US', {
   .speaker-list h3 { margin: 0 0 3px; font: 500 15px/1.4 var(--sans); }
   .speaker-list p { margin: 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
   .host-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; font-weight: 500; }
+  .host-list li { container-type: inline-size; }
+  .host-name { display: block; }
+  @container (max-width: 10.1em) {
+    .host-surname { display: block; }
+  }
   .host-portrait { width: 80px; height: 80px; margin-bottom: 12px; }
   .photography-credits {
     max-width: var(--content-width); padding-bottom: 18px;
