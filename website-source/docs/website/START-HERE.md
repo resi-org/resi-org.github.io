@@ -1,3 +1,7 @@
+## Responsive footer — November 16 approved; publication pending
+
+Current refinement: preserve the desktop-style links/copyright row and stacked utilities wherever they fit, including typical phones. Reserve utility space inside the footer below the fixed-control breakpoint. Switch to the compact two-row arrangement only below 311px of footer-shell width (about 338px viewport with current gutters). This supersedes the earlier blanket below-915px trial. Full desktop layout unchanged. Isolated `/private/tmp/resi-footer-preview-nov16`, branch `codex/footer-responsive-preview-nov16`, preview http://127.0.0.1:4452/workshops/safe-by-design-superintelligence/. See WORKLIST D17 for checks/evidence. Rachel approved this final layout and requested publication. Source incorporates current workshop releases through 23a4885; production baseline f0ea800. Publication/deployment/live verification pending. Preserve other active work.
+
 # RESI website editing and handoff guide
 
 ## Events alignment — November 16 published and live verified
