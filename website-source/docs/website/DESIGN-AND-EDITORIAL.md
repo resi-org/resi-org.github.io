@@ -171,12 +171,14 @@ Publication confirmed November 8: original Announcements placement is live throu
 
 ## Workshop detail and Events actions — November14
 
-Rachel approved the final standalone workshop: large canonical title, 24px desktop/21px phone sans-serif subtitle, established Cardo16.5px bold panel titles and Plex Sans12.75px/1.65 descriptions, static approved portraits and repeated interest invitation. Footer remains last; any selected-photo credits sit just above it.
+Rachel approved the final standalone workshop: large canonical title, 22px desktop/19.5px phone sans-serif subtitle (November16 refinement), established Cardo16.5px bold panel titles and Plex Sans12.75px/1.65 descriptions, static approved portraits and repeated interest invitation. Footer remains last; any selected-photo credits sit just above it.
 
 For upcoming full-lineup Events cards with an approved standalone detail page, omit the small announcement heading; the approved description already identifies the inaugural workshop (Rachel's November14 follow-up). Let the description span beneath the date and title on desktop, while keeping an outlined Learn more beneath the filled interest action in the right column. Mobile moves actions below the summary. The compact Home feature/announcement treatments retain their prior headings, names and visual layout, with Learn more pointing to the same detail page. Past-event policy is unchanged.
 
 November16 workshop roster: nine speakers use three equal desktop columns (three rows), retaining three columns on wider phones above480px. At480px and below use two columns and center a final odd speaker at the normal card width. Preserve speaker order, portrait framing and shared page width.
 
-November16 workshop facts: date/time/location/attendance share12.75px semibold ink text. Duration is Full day; exact start/end hours are unconfirmed (Rachel’s correction, November16). Put the duration before the date, separated by a middle dot. The opening overview has equal24px gaps above/below,21px at480px/below, separating the opening invitation accordingly.
+November16 workshop facts: date/time/location/attendance share12.75px semibold ink text. Duration is Full day; exact start/end hours are unconfirmed (Rachel’s correction, November16). Put the duration before the date, separated by a middle dot. The November16 combined subtitle replaces the opening overview; retain24px desktop/21px phone space from facts to the opening invitation.
 
 November16 workshop portrait refinement: Anat/Roy use40% horizontal object position to move their faces slightly right. Preserve existing zoom/vertical settings and shared People/Home framing. Photo assets stay untouched.
+
+November16 combined introduction: use the approved longer subtitle ending frontier labs, safety organizations, and academia. Omit the separate opening paragraph. Subtitle alone is22px desktop/19.5px at480px/below; Join us retains24/21px. Existing left alignment, page title, shared event overview/metadata and all other sections remain.
