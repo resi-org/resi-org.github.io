@@ -10,7 +10,7 @@ panels:
 detailsHref: "/workshops/safe-by-design-superintelligence/"
 announced: 2026-11-02
 start: 2026-12-04
-timeLabel: "9am–5pm"
+timeLabel: "Full day"
 location: "Cambridge, MA"
 attendanceLabel: "In person only"
 announcementLabel: "Save the date · Inaugural workshop"

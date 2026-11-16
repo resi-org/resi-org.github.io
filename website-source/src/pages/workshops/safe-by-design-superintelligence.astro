@@ -38,7 +38,7 @@ const date = event.start.toLocaleDateString('en-US', {
         <h1><span class="title-phrase">{event.title.split(' ')[0]}</span>{' '}{event.title.split(' ').slice(1).join(' ')}</h1>
         <p class="workshop-subtitle">{titleExtension}</p>
         <div class="workshop-facts" aria-label="Date, time, location and attendance">
-          <time datetime={event.start.toISOString().slice(0, 10)}>{date}{event.timeLabel && <> · {event.timeLabel}</>}</time>
+          <span>{event.timeLabel && <>{event.timeLabel} · </>}<time datetime={event.start.toISOString().slice(0, 10)}>{date}</time></span>
           <span>{event.location}{event.attendanceLabel && <> · {event.attendanceLabel}</>}</span>
         </div>
       </div>
