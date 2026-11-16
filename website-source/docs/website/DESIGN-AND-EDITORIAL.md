@@ -2,7 +2,7 @@
 
 ## Events lineup columns — approved November 16
 
-Hosts share the speakers’ two-to-one-column transition (240px minimum tracks with an 18px gap). Keep three host columns when all three 170px tracks and both gaps fit: the host-only override begins at 546px of card content width. Below that, inherit the shared speaker grid so the lists collapse together. Rachel approved publication of the reviewed responsive adjustment; release evidence belongs in WORKLIST/CHANGELOG.
+Hosts share the speakers’ two-to-one-column transition (240px minimum tracks with an 18px gap). Keep three host columns when all three 170px tracks and both gaps fit: the host-only override begins at 546px of card content width. Below that, inherit the shared speaker grid so the lists collapse together. Rachel approved publication; source PR250 and production PR251 are merged. Successful Pages43896543498 and ordinary live browser checks confirm the matching column transitions. See WORKLIST/CHANGELOG.
 
 ## Events title/date centering — approved November 16
 
