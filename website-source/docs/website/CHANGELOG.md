@@ -26,6 +26,13 @@ Adam confirmed Vincent Conitzer; shared lineup now includes CMU, CoRe Safe AI. E
 
 # RESI website change log
 
+## November 16 — People participation buttons
+
+Rachel requested matching Home’s Research Program, Seminars and Workshops, Join our reading group and Support our work actions at the top of People, replacing the earlier longer research label and Announcements action. Destinations match Home; reading group uses the temporary external site and established new-tab helper. Shared outlined appearance retained; People-only geometry gives one desktop row, two columns at650px/below and stacked actions at380px/below. Research is unchanged. Rachel prioritizes events/reading group over the current small announcements offering; the recommendation to retain News navigation/Home feed instead of another top action is recorded in WORKLIST, with no additional placement changes.
+
+Source baseline245aa19/mainbd997c0, isolated /private/tmp/resi-people-buttons-nov16. Application94c412e / [source PR247](https://github.com/resi-org/resi-org.github.io/pull/247). [Publication PR248](https://github.com/resi-org/resi-org.github.io/pull/248) merged504c6833c953fdaf84e40a7fb7f5d630047aeb85; Pages43895101051 succeeded. Only people/index.html published; all content outside the intro and related inline styles is identical after Astro scope IDs are normalized. Latest independent Events alignment release and records preserved and incorporated into source before its merge. Astro check55 files/zero diagnostics and build passed. Local1280/651/650/390/320px browser checks show correct labels, order, links, external new-tab attributes and no overflow; desktop/mobile visually reviewed. Ordinary live1280/390px confirms the four links, desktop row/mobile grid and no overflow after ordinary reload. Proof: /Users/rachelsipser/Documents/GitHub/resi-website/output/live-people-participation-buttons-nov16.jpg. Viewport restored; no forms submitted.
+
+
 ## November 16 — Research participation buttons
 
 Rachel requested Seminars and Workshops and Join our reading group between Meet the team and Support our work under the Research introduction. Added the shared outlined buttons with /events and the current external reading-group destination, matching Home. IntroActions uses the established external helper for the new-tab reading-group link. Research-only compact geometry keeps four actions on desktop, two columns at650px and below and one column at380px and below.
