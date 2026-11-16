@@ -186,3 +186,5 @@ November16 combined introduction: use the approved longer subtitle ending fronti
 ## Workshop-card actions — November 16
 
 Learn more precedes Interest form visually and in keyboard order. Home’s featured card keeps its existing text Learn more action on the left and filled Interest form on the right, wrapping in that order when necessary. Events keeps its outlined Learn more and filled Interest form, now stacked in that order. Home’s ordinary upcoming event announcement uses the same outlined/filled pair in the right-hand stacked column, with speaker names still spanning the card below. On phones, ordinary announcement/Events actions follow their existing content in a wrapping row. Labels, destinations and existing action treatments are preserved; past-event cards still have no buttons. This supersedes the earlier ordinary-announcement Learn more text link below the names.
+
+November16 workshop founders: synchronize one/two-line names using per-card inline-size containment and a10.1em surname-break threshold. Shafi / Goldwasser, Adam Tauman / Kalai, Vinod / Vaikuntanathan. Keep existing type, portrait sizes and three-column layout.
