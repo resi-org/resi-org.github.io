@@ -182,3 +182,5 @@ November16 workshop facts: date/time/location/attendance share12.75px semibold i
 November16 workshop portrait refinement: Anat/Roy use40% horizontal object position to move their faces slightly right. Preserve existing zoom/vertical settings and shared People/Home framing. Photo assets stay untouched.
 
 November16 combined introduction: use the approved longer subtitle ending frontier labs, safety organizations, and academia. Omit the separate opening paragraph. Subtitle alone is22px desktop/19.5px at480px/below; Join us retains24/21px. Existing left alignment, page title, shared event overview/metadata and all other sections remain.
+
+November16 workshop founders: synchronize one/two-line names using per-card inline-size containment and a10.1em surname-break threshold. Shafi / Goldwasser, Adam Tauman / Kalai, Vinod / Vaikuntanathan. Keep existing type, portrait sizes and three-column layout.
