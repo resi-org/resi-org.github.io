@@ -3771,10 +3771,12 @@ article.map-item:hover {
   .site-footer .footer-controls {
     flex-direction: row;
     align-items: center;
-    gap: 4px;
+    gap: 0;
   }
   .site-footer .theme-toggle,
   .site-footer .footer-list .back-to-top {
+    width: 28px;
+    flex-basis: 28px;
     justify-content: center;
   }
   .site-footer .theme-toggle::after,
