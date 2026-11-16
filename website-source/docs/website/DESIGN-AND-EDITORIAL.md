@@ -183,4 +183,8 @@ November16 workshop portrait refinement: Anat/Roy use40% horizontal object posit
 
 November16 combined introduction: use the approved longer subtitle ending frontier labs, safety organizations, and academia. Omit the separate opening paragraph. Subtitle alone is22px desktop/19.5px at480px/below; Join us retains24/21px. Existing left alignment, page title, shared event overview/metadata and all other sections remain.
 
+## Workshop-card actions — November 16
+
+Learn more precedes Interest form visually and in keyboard order. Home’s featured card keeps its existing text Learn more action on the left and filled Interest form on the right, wrapping in that order when necessary. Events keeps its outlined Learn more and filled Interest form, now stacked in that order. Home’s ordinary upcoming event announcement uses the same outlined/filled pair in the right-hand stacked column, with speaker names still spanning the card below. On phones, ordinary announcement/Events actions follow their existing content in a wrapping row. Labels, destinations and existing action treatments are preserved; past-event cards still have no buttons. This supersedes the earlier ordinary-announcement Learn more text link below the names.
+
 November16 workshop founders: synchronize one/two-line names using per-card inline-size containment and a10.1em surname-break threshold. Shafi / Goldwasser, Adam Tauman / Kalai, Vinod / Vaikuntanathan. Keep existing type, portrait sizes and three-column layout.
