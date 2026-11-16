@@ -3757,6 +3757,33 @@ article.map-item:hover {
 @media screen and (max-width: 480px) {
   .site-footer { --footer-gutter: 13.5px; }
 }
+/* Narrow layouts keep the utilities in a compact footer row, never over content. */
+@media screen and (max-width: 914.99px) {
+  .site-footer .footer-list {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px 13.5px;
+  }
+  .site-footer .footer-list .footer-copyright {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+  .site-footer .footer-controls {
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+  }
+  .site-footer .theme-toggle,
+  .site-footer .footer-list .back-to-top {
+    justify-content: center;
+  }
+  .site-footer .theme-toggle::after,
+  .site-footer .back-to-top::after {
+    right: 50%;
+    top: 0;
+    transform: translate(50%, -100%);
+  }
+}
 @media screen and (min-width: 915px) {
   .site-footer .footer-controls {
     position: fixed;

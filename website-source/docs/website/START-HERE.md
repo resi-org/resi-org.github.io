@@ -1,3 +1,7 @@
+## Responsive footer — November 16 preview only
+
+Neater two-row footer below 915px; controls remain together in flow beside the copyright. Full desktop layout unchanged. Isolated `/private/tmp/resi-footer-preview-nov16`, branch `codex/footer-responsive-preview-nov16`, preview http://127.0.0.1:4452/workshops/safe-by-design-superintelligence/. See WORKLIST D17 for checks/evidence. Not approved as a final rule and not published. Preserve other active work.
+
 # RESI website editing and handoff guide
 
 ## Events alignment — November 16 published and live verified
