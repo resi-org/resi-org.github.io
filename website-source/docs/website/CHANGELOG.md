@@ -1,6 +1,6 @@
 ## November 16 — full-day duration replaces unconfirmed hours
 
-Rachel clarified that9am–5pm is unconfirmed and approved communicating the full-day duration. The workshop facts now read Full-day workshop · Friday, December4,2026, followed by Cambridge, MA · In person only. Duration precedes the semantic date; uniform bold styling, spacing, portraits and responsive rules remain. Current event data/conventions no longer present precise hours as confirmed; prior release logs are historical. Astro check55 files/zero diagnostics and build passed. Local1100/550/390/320px confirms the exact duration/date order, absent precise hours and no overflow. Only workshop HTML differs; all other output/assets are byte-identical. Source/publication and live verification pending. No forms submitted.
+Rachel clarified that9am–5pm is unconfirmed and approved communicating the full-day duration. The workshop facts now read Full day · Friday, December4,2026, followed by Cambridge, MA · In person only. Duration precedes the semantic date; uniform bold styling, spacing, portraits and responsive rules remain. Current event data/conventions no longer present precise hours as confirmed; prior release logs are historical. Astro check55 files/zero diagnostics and build passed. Local1100/550/390/320px confirms the exact duration/date order, absent precise hours and no overflow. Only workshop HTML differs; all other output/assets are byte-identical. Source/publication and live verification pending. No forms submitted.
 
 ## November 16 — Anat/Roy workshop portrait centering
 

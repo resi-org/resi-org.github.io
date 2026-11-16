@@ -68,4 +68,4 @@ When an approved event detail page exists, set detailsHref to its canonical loca
 
 The December 4 workshop detail route reads optional overview, attendanceLabel, interestNote, panels and panelDescriptions from its canonical event record. panels supplies title order; panelDescriptions maps exact titles to approved descriptions. No panelists or timing are implied by a title. The selected speaker portraits and any photo-specific credits live in src/data/workshop-portraits.ts. Portrait alternatives/comparison controls are retired. Production pages have normal canonical metadata and indexing; a separate preview's noindex setting must not be copied into production.
 
-Optional `timeLabel` supplies approved duration or hours for a standalone event page; keep date-only `start`/`end` semantics intact. The inaugural workshop uses Full-day workshop before its date; exact start/end hours are unconfirmed.
+Optional `timeLabel` supplies approved duration or hours for a standalone event page; keep date-only `start`/`end` semantics intact. The inaugural workshop uses Full day before its date; exact start/end hours are unconfirmed.
