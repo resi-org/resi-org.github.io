@@ -232,9 +232,12 @@ const showMore = lineup === 'names' && isUpcoming;
     padding: 0;
   }
 
-  /* Hosts carry no affiliation, so three fit across where speakers take two. */
-  .workshop-lineup-group[data-group="hosts"] .workshop-lineup-list {
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
+  /* Share the speakers' two-to-one-column transition; use three hosts only
+     when all three 170px columns and both 18px gaps fit. */
+  @container (width >= 546px) {
+    .workshop-lineup-group[data-group="hosts"] .workshop-lineup-list {
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr));
+    }
   }
 
   .workshop-lineup-name {
