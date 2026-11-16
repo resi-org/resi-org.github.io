@@ -1,3 +1,7 @@
+## Workshop introduction — November16 approved release
+
+Standalone workshop uses the combined subtitle (frontier labs, safety organizations, and academia),22px desktop/19.5px phones; small opening paragraph removed. Shared event data, metadata, Home/Events/Search stay unchanged. Publication/live verification recorded in CHANGELOG/WORKLIST.
+
 # RESI page references
 
 **Workshop detail page, November14 — published/live verified:** /workshops/safe-by-design-superintelligence/ reads the canonical workshop event record; src/data/workshop-portraits.ts and WorkshopPortrait.astro supply final static portraits. detailsHref connects Home/Events links and Search; sitemap includes the route. #program is retained under Panels. Credits, when present, use Base's before-footer slot. Existing /events#workshop remains. Source PR227 and production PR228 are merged; live900/390px navigation/layout verified. [Launch record](briefs/workshop-launch-2026-11-14.md).
@@ -59,3 +63,5 @@ November 12 workshop lineup dependency: content/events records may carry confirm
 November 12 homepage-only 01b trial: HomePage.astro scopes the stronger outline/500-weight labels to its four hero-actions buttons, with 6px horizontal padding preserving the desktop row. Shared IntroActions/global button styles, header support, workshop interest and lower-Home Learn more remain unchanged. That homepage-only phase is superseded by the approved outlined-action standard below; the four explicitly preserved treatments remain separate.
 
 November 12 outlined-action standard: Base.astro imports styles/buttons.css for all modern pages. Home, About, Research, People, Support intro actions and 404 share 01b via .button, with Donate online explicitly excluded. Header support, workshop Interest form and lower-Home Learn more remain unchanged; no markup/link change. HomePage owns only its compact 6px row geometry, not a separate appearance rule. See DESIGN-AND-EDITORIAL.
+
+November16 workshop action order: shared WorkshopCallout renders Learn more before Interest form. Featured Home retains text/filled treatments in its bottom row; Events and ordinary Home announcement use an outlined Learn more above filled Interest form at the right, moving to a wrapping row on phones. Details routes and interest URLs remain canonical shared event fields.
