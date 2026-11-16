@@ -1,5 +1,10 @@
 # RESI design and editorial guidance
 
+## Events title/date centering — approved November 16
+
+The Events detail card centers the combined title/location block in the same grid row as the calendar date. Use `.detail-event .workshop-description { align-self: center; }`, retaining the existing leading, title/location gap, font sizes and action positions. This is about a 10px downward shift at the full 600px card width and adapts naturally when the title wraps. Home and past-card rules remain unchanged. Rachel approved the reviewed preview for publication; final release evidence belongs in CHANGELOG/WORKLIST.
+
+
 Current conventions for resi.org, incorporating C.2 and subsequent approved changes. Implemented shared styles are the visual reference. Earlier draft guidance does not automatically override later decisions.
 
 ## Shared visual system

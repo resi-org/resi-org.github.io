@@ -1,5 +1,10 @@
 # November 15, 2026 — more prominent program notice
 
+## November 16 — reviewed Events alignment approved for publication
+
+Rachel approved the small centering trial: align-self:center on the Events detail-card title/location block, with unchanged leading and button geometry. Existing check/build and six-width browser evidence apply to the unchanged application commit 7c0cb6a. Publication prepared from current main dd7ee6a by adding WorkshopCallout.DmEQpaBP.css and replacing only the shared stylesheet reference in Events/Home; no page content or other output is copied. Home has no matching detail-event selector. Pending unrelated Research PRs243/244 and narrower-card PR150 remain preserved. Merge/deployment/live verification pending.
+
+
 ## Events date/title alignment — November 16 local trial
 
 Rachel requested small adjustments to align the date’s center with the midpoint of the combined event title/location, preserving restrained line spacing and visually sound buttons. Current-source isolated preview: `/Users/rachelsipser/Documents/GitHub/resi-website/output/resi-events-alignment-nov16`, branch `codex/events-date-alignment-nov16`, http://127.0.0.1:4450/events/#workshop. Source baseline `7eebdf6`, production `dd7ee6a`; only open PR at setup was unrelated #150. The old :4431 preview is unavailable after temporary checkout loss; its saved history/other previews were not reset or overwritten. This fresh trial uses the current published workshop card/content rather than the older Events redesign.
