@@ -175,4 +175,4 @@ Rachel approved the final standalone workshop: large canonical title, 24px deskt
 
 For upcoming full-lineup Events cards with an approved standalone detail page, omit the small announcement heading; the approved description already identifies the inaugural workshop (Rachel's November14 follow-up). Let the description span beneath the date and title on desktop, while keeping an outlined Learn more beneath the filled interest action in the right column. Mobile moves actions below the summary. The compact Home feature/announcement treatments retain their prior headings, names and visual layout, with Learn more pointing to the same detail page. Past-event policy is unchanged.
 
-November16 workshop roster: nine speakers use three equal desktop columns (three rows), retaining two columns at600px and below. Preserve speaker order, portrait framing and shared page width.
+November16 workshop roster: nine speakers use three equal desktop columns (three rows), retaining three columns on wider phones above480px. At480px and below use two columns and center a final odd speaker at the normal card width. Preserve speaker order, portrait framing and shared page width.
