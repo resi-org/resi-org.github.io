@@ -57,13 +57,16 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
       including mathematics, economics and law, with an active visitor program.
     </p>
 
-    <IntroActions
-      items={[
-        { label: 'Explore our research program', href: '/research' },
-        { label: 'Support our work', href: '/support' },
-        { label: 'Announcements', href: '/news' },
-      ]}
-    />
+    <div class="people-intro-actions">
+      <IntroActions
+        items={[
+          { label: 'Research Program', href: '/research' },
+          { label: 'Seminars and Workshops', href: '/events' },
+          { label: 'Join our reading group', href: 'https://resi-ai-safety.github.io/reading-group/' },
+          { label: 'Support our work', href: '/support' },
+        ]}
+      />
+    </div>
   </header>
   <PageShortcuts
     id="people-shortcuts"
@@ -227,6 +230,29 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
 </Base>
 
 <style>
+  .people-intro-actions :global(.intro-actions) {
+    justify-content: space-between;
+    gap: 9px;
+  }
+  .people-intro-actions :global(.button) {
+    gap: 7.5px;
+    padding-inline: 6px;
+    white-space: nowrap;
+  }
+  @media (max-width: 650px) {
+    .people-intro-actions :global(.intro-actions) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .people-intro-actions :global(.button) {
+      justify-content: space-between;
+      white-space: normal;
+    }
+  }
+  @media (max-width: 380px) {
+    .people-intro-actions :global(.intro-actions) { grid-template-columns: minmax(0, 1fr); }
+  }
+
   @media (min-width: 570.01px) {
     .operations-people {
       display: grid;
