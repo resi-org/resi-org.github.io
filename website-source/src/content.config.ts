@@ -184,6 +184,7 @@ const events = defineCollection({
     interestLabel: z.string().optional(),
     anchor: z.string().optional(),
     location: z.string(),
+    timeLabel: z.string().trim().min(1).optional(),
     attendanceLabel: z.string().trim().min(1).optional(),
     with: z.array(z.string()).optional().default([]),
     // Confirmed participants only, in the order to display. Shown on the

@@ -37,8 +37,8 @@ const date = event.start.toLocaleDateString('en-US', {
       <div class="workshop-heading">
         <h1><span class="title-phrase">{event.title.split(' ')[0]}</span>{' '}{event.title.split(' ').slice(1).join(' ')}</h1>
         <p class="workshop-subtitle">{titleExtension}</p>
-        <div class="workshop-facts" aria-label="Date, location and attendance">
-          <time datetime={event.start.toISOString().slice(0, 10)}>{date}</time>
+        <div class="workshop-facts" aria-label="Date, time, location and attendance">
+          <time datetime={event.start.toISOString().slice(0, 10)}>{date}{event.timeLabel && <> · {event.timeLabel}</>}</time>
           <span>{event.location}{event.attendanceLabel && <> · {event.attendanceLabel}</>}</span>
         </div>
       </div>
@@ -137,13 +137,13 @@ const date = event.start.toLocaleDateString('en-US', {
     align-items: baseline;
     gap: 6px 24px;
     margin-top: 24px;
-    color: var(--muted);
+    color: var(--ink);
     font-size: 12.75px;
+    font-weight: 600;
     line-height: 1.65;
   }
-  .workshop-facts time { color: var(--ink); font-weight: 500; }
   .workshop-overview {
-    margin: 24px 0 18px;
+    margin: 24px 0;
     max-width: 59ch;
     font-size: 14.25px;
     line-height: 1.65;
@@ -204,7 +204,7 @@ const date = event.start.toLocaleDateString('en-US', {
     .workshop-subtitle { margin-top: 15px; }
     .workshop-invitation { gap: 15px; }
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
-    .workshop-overview { margin-top: 21px; }
+    .workshop-overview { margin-block: 21px; }
     .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; row-gap: 21px; }
     .speaker-list > li:last-child:nth-child(odd) {
       grid-column: 1 / -1;
