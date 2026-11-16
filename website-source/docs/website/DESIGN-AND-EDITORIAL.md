@@ -1,5 +1,9 @@
 # RESI design and editorial guidance
 
+## Events lineup columns — approved November 16
+
+Hosts share the speakers’ two-to-one-column transition (240px minimum tracks with an 18px gap). Keep three host columns when all three 170px tracks and both gaps fit: the host-only override begins at 546px of card content width. Below that, inherit the shared speaker grid so the lists collapse together. Rachel approved publication of the reviewed responsive adjustment; release evidence belongs in WORKLIST/CHANGELOG.
+
 ## Events title/date centering — approved November 16
 
 The Events detail card centers the combined title/location block in the same grid row as the calendar date. Use `.detail-event .workshop-description { align-self: center; }`, retaining the existing leading, title/location gap, font sizes and action positions. This is about a 10px downward shift at the full 600px card width and adapts naturally when the title wraps. Home and past-card rules remain unchanged. Rachel approved publication; source PR245 / production PR246 are merged, Pages43894731802 succeeded and ordinary live1280/390px review passed. See CHANGELOG/WORKLIST for evidence.
