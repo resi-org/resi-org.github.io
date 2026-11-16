@@ -1,3 +1,7 @@
+## Workshop introduction — November16 approved release
+
+Standalone workshop uses the combined subtitle (frontier labs, safety organizations, and academia),22px desktop/19.5px phones; small opening paragraph removed. Shared event data, metadata, Home/Events/Search stay unchanged. Publication/live verification recorded in CHANGELOG/WORKLIST.
+
 # RESI page references
 
 **Workshop detail page, November14 — published/live verified:** /workshops/safe-by-design-superintelligence/ reads the canonical workshop event record; src/data/workshop-portraits.ts and WorkshopPortrait.astro supply final static portraits. detailsHref connects Home/Events links and Search; sitemap includes the route. #program is retained under Panels. Credits, when present, use Base's before-footer slot. Existing /events#workshop remains. Source PR227 and production PR228 are merged; live900/390px navigation/layout verified. [Launch record](briefs/workshop-launch-2026-11-14.md).

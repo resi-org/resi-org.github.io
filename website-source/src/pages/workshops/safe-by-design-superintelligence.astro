@@ -13,6 +13,7 @@ if (!entry) throw new Error('The inaugural workshop record is missing.');
 const event = entry.data;
 const titleExtension = "RESI's inaugural workshop on developing scientific foundations for safer advanced AI";
 const pageTitle = `${event.title}: ${titleExtension}`;
+const subtitle = "RESI's inaugural workshop on developing scientific foundations for safer advanced AI, bringing together researchers from frontier labs, safety organizations, and academia.";
 const photographyCredits = event.speakers.flatMap((speaker) => {
   const credit = workshopPortraits[speaker.name].credit;
   return credit ? [{ person: speaker.name, credit }] : [];
@@ -36,13 +37,12 @@ const date = event.start.toLocaleDateString('en-US', {
     <header class="page-hero workshop-hero">
       <div class="workshop-heading">
         <h1><span class="title-phrase">{event.title.split(' ')[0]}</span>{' '}{event.title.split(' ').slice(1).join(' ')}</h1>
-        <p class="workshop-subtitle">{titleExtension}</p>
+        <p class="workshop-subtitle">{subtitle}</p>
         <div class="workshop-facts" aria-label="Date, time, location and attendance">
           <span>{event.timeLabel && <>{event.timeLabel} · </>}<time datetime={event.start.toISOString().slice(0, 10)}>{date}</time></span>
           <span>{event.location}{event.attendanceLabel && <> · {event.attendanceLabel}</>}</span>
         </div>
       </div>
-      {event.overview && <p class="workshop-overview">{event.overview}</p>}
       {event.interestUrl && <div class="workshop-invitation">
         <p class="workshop-join-label">Join us:</p>
         <a class="workshop-interest" href={event.interestUrl} target="_blank" rel="noopener noreferrer">
@@ -124,6 +124,7 @@ const date = event.start.toLocaleDateString('en-US', {
     font: 400 24px/1.4 var(--sans);
   }
   .workshop-subtitle {
+    font-size: 22px;
     margin: 18px 0 0;
     max-width: 100%;
     text-wrap: balance;
@@ -142,12 +143,7 @@ const date = event.start.toLocaleDateString('en-US', {
     font-weight: 600;
     line-height: 1.65;
   }
-  .workshop-overview {
-    margin: 24px 0;
-    max-width: 59ch;
-    font-size: 14.25px;
-    line-height: 1.65;
-  }
+  .workshop-hero > .workshop-invitation { margin-top: 24px; }
   .interest-note { margin: 12px 0 0; max-width: 60ch; text-wrap: balance; color: var(--muted); font-size: 12px; line-height: 1.65; }
   .program-notice { margin: 24px 0 0; color: var(--ink); font: 600 16.5px/1.5 var(--sans); }
   .workshop-interest {
@@ -201,10 +197,10 @@ const date = event.start.toLocaleDateString('en-US', {
   .program-panels h3 { margin: 0; font: 700 16.5px/1.4 var(--serif); letter-spacing: -0.005em; }
   @media (max-width: 480px) {
     .workshop-subtitle, .workshop-join-label { font-size: 21px; }
-    .workshop-subtitle { margin-top: 15px; }
+    .workshop-subtitle { font-size: 19.5px; margin-top: 15px; }
     .workshop-invitation { gap: 15px; }
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
-    .workshop-overview { margin-block: 21px; }
+    .workshop-hero > .workshop-invitation { margin-top: 21px; }
     .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; row-gap: 21px; }
     .speaker-list > li:last-child:nth-child(odd) {
       grid-column: 1 / -1;
