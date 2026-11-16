@@ -15,3 +15,5 @@ This workshop marks our opening, bringing together researchers from frontier AI 
 The local preview server remains available for Rachel’s review. Publishing or replacing the public page requires her subsequent approval. Browser viewport restored; no forms submitted.
 
 Follow-up: Rachel shortened the list to frontier labs, safety organizations, and academia. Preview rebuilt; exact wording, no opening overview, and no overflow verified at1100/390px. Remains unpublished; no remote push or live-site change.
+
+Typography follow-up: Rachel requested a slight reduction while retaining subheading hierarchy. Subtitle alone is22px desktop (from24) and19.5px on narrow phones (from21); Join us remains24/21px. Build and1100/390/320px checks pass, with no overflow. Preview remains unpublished. Proof: output/proof/preview-smaller-1100.png and checks-smaller.json.
