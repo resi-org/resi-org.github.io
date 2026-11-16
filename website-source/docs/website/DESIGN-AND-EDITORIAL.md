@@ -178,3 +178,5 @@ For upcoming full-lineup Events cards with an approved standalone detail page, o
 November16 workshop roster: nine speakers use three equal desktop columns (three rows), retaining three columns on wider phones above480px. At480px and below use two columns and center a final odd speaker at the normal card width. Preserve speaker order, portrait framing and shared page width.
 
 November16 workshop facts: date/time/location/attendance share12.75px semibold ink text. Approved hours are9am–5pm. The opening overview has equal24px gaps above/below,21px at480px/below, separating the opening invitation accordingly.
+
+November16 workshop portrait refinement: Anat/Roy use40% horizontal object position to move their faces slightly right. Preserve existing zoom/vertical settings and shared People/Home framing. Photo assets stay untouched.

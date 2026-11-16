@@ -29,7 +29,7 @@ export const workshopPortraits: Record<string, WorkshopPhoto> = {
   'Mitchell Gordon': { src: mitchell, label: 'Personal-site portrait', style: '--portrait-scale: 1.24; --portrait-origin: 50% 35%; --portrait-shift-y: -7%;' },
   'Elad Hazan': { src: elad, label: 'Personal-site portrait', style: '--portrait-scale: 1.15; --portrait-origin: 50% 10%;' },
   'Orr Paradise': { src: orr, label: 'Personal-site portrait' },
-  'Anat Perry': { src: approvedAnat.src!, label: 'Existing RESI portrait', style: approvedAnat.style },
-  'Roy Rinberg': { src: royFar, label: 'FAR.AI portrait' },
+  'Anat Perry': { src: approvedAnat.src!, label: 'Existing RESI portrait', style: `${approvedAnat.style} --portrait-position: 40% 0%;` },
+  'Roy Rinberg': { src: royFar, label: 'FAR.AI portrait', style: '--portrait-position: 40% 50%;' },
   'Nickolai Zeldovich': { src: nickolai, label: 'Amazon Science portrait', style: '--portrait-position: 50% 0%;' },
 };
