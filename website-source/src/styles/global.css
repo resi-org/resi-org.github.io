@@ -3757,6 +3757,68 @@ article.map-item:hover {
 @media screen and (max-width: 480px) {
   .site-footer { --footer-gutter: 13.5px; }
 }
+/* Retain the desktop composition whenever the complete footer row fits.
+   Below the fixed-control breakpoint, reserve its utility space in the footer. */
+@media screen and (max-width: 914.99px) {
+  .site-footer > .shell {
+    container-type: inline-size;
+  }
+  .site-footer .footer-list {
+    position: relative;
+    padding-top: 60px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .site-footer .footer-list .footer-copyright {
+    flex-basis: auto;
+    min-width: 0;
+  }
+  .site-footer .footer-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: auto;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 0;
+  }
+  .site-footer .theme-toggle,
+  .site-footer .footer-list .back-to-top {
+    width: 33px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+  /* The current six items require 310.1px including their standard gaps.
+     Allow 311px before using the compact arrangement; do not use a device tier. */
+  @container (width < 311px) {
+    .site-footer .footer-list {
+      justify-content: flex-start;
+      gap: 12px 13.5px;
+      padding-top: 0;
+    }
+    .site-footer .footer-list .footer-copyright {
+      flex-basis: 100%;
+    }
+    .site-footer .footer-controls {
+      position: static;
+      flex-direction: row;
+      align-items: center;
+    }
+    .site-footer .theme-toggle,
+    .site-footer .footer-list .back-to-top {
+      width: 28px;
+      height: 44px;
+      flex-basis: 28px;
+      justify-content: center;
+    }
+    .site-footer .theme-toggle::after,
+    .site-footer .back-to-top::after {
+      right: 50%;
+      top: 0;
+      transform: translate(50%, -100%);
+    }
+  }
+}
 @media screen and (min-width: 915px) {
   .site-footer .footer-controls {
     position: fixed;
