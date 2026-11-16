@@ -1,5 +1,10 @@
 # RESI website editing and handoff guide
 
+## Events alignment — November 16 publication approved
+
+Small current-card trial at http://127.0.0.1:4450/events/#workshop, source `/Users/rachelsipser/Documents/GitHub/resi-website/output/resi-events-alignment-nov16`, branch `codex/events-date-alignment-nov16`. Centers the combined title/location against the date (about 10px downward at full width), without changing leading or button layout. Rachel approved this reviewed trial for publication. Prepared from source `7eebdf6` / main `dd7ee6a`; merges, deployment and live verification pending. Old :4431 temporary preview is unavailable; current workshop facts/links and separate previews are preserved. See WORKLIST/CHANGELOG for measurements and checks.
+
+
 **Workshop launch, November14 — PUBLISHED AND LIVE VERIFIED:** Rachel explicitly approved publishing the finalized workshop detail page and connected Home/Events Learn more links, with revised Events-card copy/actions. This supersedes the workshop preview-only hold for the reviewed scope. Implementation is isolated from current continuing source0064559/main9cd96e9; wider Events and working-group previews remain separate. Canonical URL: https://resi.org/workshops/safe-by-design-superintelligence/. Source PR227 /88502cf; production PR228 /4d90b47; successful Pages43652512678 and ordinary live Home/Events/Search/detail verification. Separate preview38 remains available but its old whole-site build must not be published. Current release source: /private/tmp/resi-workshop-launch-nov14. [Launch record](briefs/workshop-launch-2026-11-14.md).
 
 **Mitchell Gordon affiliation, November 13 — PUBLISHED AND LIVE VERIFIED:** Adam requested “MIT, formerly OpenAI,” superseding the November 12 wording. Shared event source PR 222; Events/Search publication PR 223 at `09ad1b7dd131d4ec216ae7b3a3649c74c947ed67`; Pages run `43408112186` succeeded. Home names-only lists are unchanged. See CHANGELOG.

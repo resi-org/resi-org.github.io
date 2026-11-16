@@ -497,7 +497,8 @@ const showMore = lineup === 'names' && isUpcoming;
     grid-template-columns: 48px minmax(0, 1fr) auto;
   }
   .detail-event .workshop-main { display: contents; }
-  .detail-event .workshop-description { grid-column: 2; grid-row: 1; }
+  /* Match the date center to the title/location block without changing leading. */
+  .detail-event .workshop-description { grid-column: 2; grid-row: 1; align-self: center; }
   .detail-event .workshop-date { grid-column: 1; grid-row: 1; }
   .detail-event .workshop-summary { grid-column: 1 / 3; grid-row: 2; }
   .detail-event .workshop-action {
