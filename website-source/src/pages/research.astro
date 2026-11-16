@@ -59,12 +59,16 @@ const papers = (await getCollection('selectedResearch')).sort(
       examination and testing. We will develop and continually improve tools and workflows that use frontier
       AI agents at every stage, expanding the ideas and approaches our team can investigate.
     </p>
-    <IntroActions
-      items={[
-        { label: 'Meet the team', href: '/people' },
-        { label: 'Support our work', href: '/support' },
-      ]}
-    />
+    <div class="research-intro-actions">
+      <IntroActions
+        items={[
+          { label: 'Meet the team', href: '/people' },
+          { label: 'Seminars and Workshops', href: '/events' },
+          { label: 'Join our reading group', href: 'https://resi-ai-safety.github.io/reading-group/' },
+          { label: 'Support our work', href: '/support' },
+        ]}
+      />
+    </div>
   </Section>
   <PageShortcuts
     id="research-shortcuts"
@@ -258,6 +262,29 @@ const papers = (await getCollection('selectedResearch')).sort(
 </Base>
 
 <style is:global>
+  .research-intro-actions .intro-actions {
+    justify-content: space-between;
+    gap: 9px;
+  }
+  .research-intro-actions .button {
+    gap: 7.5px;
+    padding-inline: 6px;
+    white-space: nowrap;
+  }
+  @media (max-width: 650px) {
+    .research-intro-actions .intro-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .research-intro-actions .button {
+      justify-content: space-between;
+      white-space: normal;
+    }
+  }
+  @media (max-width: 380px) {
+    .research-intro-actions .intro-actions { grid-template-columns: minmax(0, 1fr); }
+  }
+
   /* Three complementary outputs, presented as one editorial list. */
   #approach .research-outputs {
     display: block;

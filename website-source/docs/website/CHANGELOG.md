@@ -12,6 +12,13 @@ Adam confirmed Vincent Conitzer; shared lineup now includes CMU, CoRe Safe AI. E
 
 # RESI website change log
 
+## November 16 — Research participation buttons
+
+Rachel requested Seminars and Workshops and Join our reading group between Meet the team and Support our work under the Research introduction. Added the shared outlined buttons with /events and the current external reading-group destination, matching Home. IntroActions uses the established external helper for the new-tab reading-group link. Research-only compact geometry keeps four actions on desktop, two columns at650px and below and one column at380px and below.
+
+Source baseline7eebdf6 / productiondd7ee6a; isolated /private/tmp/resi-research-buttons-nov16. Source application63fc78b / [PR243](https://github.com/resi-org/resi-org.github.io/pull/243). Generated [PR244](https://github.com/resi-org/resi-org.github.io/pull/244) merged at bd997c0166b8ddb1e4f885d62b02c09a515f27a0. Pages43894285608 succeeded. Only research/index.html and its new scoped stylesheet were published; Research outside the introduction is identical after scoped stylesheet references are normalized. Other pages, workshop releases, independent endpoints and previews preserved. Astro check55 files/zero diagnostics and build passed. Local1280/651/650/390/320px checks show no overflow; correct order, destinations, external attributes and Events navigation verified. Ordinary live1280/390px confirms one desktop row and mobile two-column layout, correct links and no overflow. Proof: /Users/rachelsipser/Documents/GitHub/resi-website/output/live-research-participation-buttons-nov16.jpg. Viewport restored; no forms submitted.
+
+
 ## November 14 — Events description extends beneath the date
 
 Rachel requested letting the Events-card description use the space beneath the date as well as the title. The summary now spans the first two grid columns; the interest and Learn more actions remain stacked in the third column. No copy, portrait, link or mobile layout changes. This supersedes the initial title-aligned summary convention. Source application02d6a7e / PR232; production PR233 merged at d9c4fe90204b0191463885a8fdcc198276a11ce1. Pages43653832292 succeeded. Astro check55 files/zero diagnostics and build passed. Local900/390/320px and ordinary live900/390px confirmed the wider summary, action placement, absent kicker and no overflow. Only Home/Events stylesheet references and the new component CSS changed; all other output is byte-identical. Proof: output/workshop-launch-proof-nov14/live-events-description-width.png and description-width-checks.json. No forms submitted.
