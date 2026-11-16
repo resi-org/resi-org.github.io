@@ -6,10 +6,12 @@ Rachel explicitly requested an unpublished version combining the subtitle with t
 
 Requested subtitle:
 
-RESI's inaugural workshop on developing scientific foundations for safer advanced AI, bringing together researchers from frontier AI labs, AI safety organizations, and academia.
+RESI's inaugural workshop on developing scientific foundations for safer advanced AI, bringing together researchers from frontier labs, safety organizations, and academia.
 
 Removed from rendered preview:
 
 This workshop marks our opening, bringing together researchers from frontier AI labs, AI safety organizations, and academia.
 
 The local preview server remains available for Rachel’s review. Publishing or replacing the public page requires her subsequent approval. Browser viewport restored; no forms submitted.
+
+Follow-up: Rachel shortened the list to frontier labs, safety organizations, and academia. Preview rebuilt; exact wording, no opening overview, and no overflow verified at1100/390px. Remains unpublished; no remote push or live-site change.

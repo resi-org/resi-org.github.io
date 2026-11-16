@@ -13,7 +13,7 @@ if (!entry) throw new Error('The inaugural workshop record is missing.');
 const event = entry.data;
 const titleExtension = "RESI's inaugural workshop on developing scientific foundations for safer advanced AI";
 const pageTitle = `${event.title}: ${titleExtension}`;
-const subtitle = "RESI's inaugural workshop on developing scientific foundations for safer advanced AI, bringing together researchers from frontier AI labs, AI safety organizations, and academia.";
+const subtitle = "RESI's inaugural workshop on developing scientific foundations for safer advanced AI, bringing together researchers from frontier labs, safety organizations, and academia.";
 const photographyCredits = event.speakers.flatMap((speaker) => {
   const credit = workshopPortraits[speaker.name].credit;
   return credit ? [{ person: speaker.name, credit }] : [];
