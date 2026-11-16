@@ -25,12 +25,16 @@ import { faq } from '../data/institute';
       and law. <a href="/research#concentration">Working groups</a>, <a href="/events#upcoming-seminars">seminars</a>, and an active <a href={showVisitingResearchers ? '/people#visitors' : '/people#get-involved'}>visitor program</a> connect senior and early-career
       scholars to collaborate on shared research problems.
     </p>
-    <IntroActions
-      items={[
-        { label: 'Explore our research program', href: '/research' },
-        { label: 'Support our work', href: '/support' },
-      ]}
-    />
+    <div class="about-intro-actions">
+      <IntroActions
+        items={[
+          { label: 'Meet the team', href: '/people' },
+          { label: 'Research Program', href: '/research' },
+          { label: 'Seminars and Workshops', href: '/events' },
+          { label: 'Support our work', href: '/support' },
+        ]}
+      />
+    </div>
   </Section>
 
   <PageShortcuts
@@ -125,6 +129,29 @@ import { faq } from '../data/institute';
 </Base>
 
 <style>
+  .about-intro-actions :global(.intro-actions) {
+    justify-content: space-between;
+    gap: 9px;
+  }
+  .about-intro-actions :global(.button) {
+    gap: 7.5px;
+    padding-inline: 6px;
+    white-space: nowrap;
+  }
+  @media (max-width: 650px) {
+    .about-intro-actions :global(.intro-actions) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .about-intro-actions :global(.button) {
+      justify-content: space-between;
+      white-space: normal;
+    }
+  }
+  @media (max-width: 380px) {
+    .about-intro-actions :global(.intro-actions) { grid-template-columns: minmax(0, 1fr); }
+  }
+
   :global(.section.institute-overview) {
     max-width: var(--content-width);
     margin-inline: auto;

@@ -32,6 +32,13 @@ Adam confirmed Vincent Conitzer; shared lineup now includes CMU, CoRe Safe AI. E
 
 # RESI website change log
 
+## November 16 — About participation buttons, team first
+
+Rachel approved the four proposed About actions with the first two reversed: Meet the team → /people, Research Program → /research, Seminars and Workshops → /events, Support our work → /support. Reuses shared outlined styling, compact desktop spacing, two columns at650px/below and stacked buttons at380px/below. All other About content, metadata and links remain unchanged. No reading-group or announcements action added here.
+
+Isolated /private/tmp/resi-about-buttons-nov16 from sourcefdaee84/main504c683. Application6c48403 / [source PR252](https://github.com/resi-org/resi-org.github.io/pull/252). Only about/index.html published through [PR253](https://github.com/resi-org/resi-org.github.io/pull/253), merged3cab6e3822f89451944fbe8cc62ef19e9832fb97. Pages43896543498 succeeded. Normalized comparison confirms no change outside introduction actions, related inline styles and Astro scope IDs. Astro check55 files/zero diagnostics and build passed. Local1280/651/650/390/320px confirms correct order/links, one desktop row, two mobile columns and narrow-phone stacking with no overflow; desktop/mobile visuals reviewed. Ordinary live1280/390px after reload confirms order/destinations and desktop/mobile layout without overflow. Separate Events follow-up release and source records preserved. Proof: /Users/rachelsipser/Documents/GitHub/resi-website/output/live-about-participation-buttons-nov16.jpg. Viewport restored; no forms submitted.
+
+
 ## November 16 — People participation buttons
 
 Rachel requested matching Home’s Research Program, Seminars and Workshops, Join our reading group and Support our work actions at the top of People, replacing the earlier longer research label and Announcements action. Destinations match Home; reading group uses the temporary external site and established new-tab helper. Shared outlined appearance retained; People-only geometry gives one desktop row, two columns at650px/below and stacked actions at380px/below. Research is unchanged. Rachel prioritizes events/reading group over the current small announcements offering; the recommendation to retain News navigation/Home feed instead of another top action is recorded in WORKLIST, with no additional placement changes.
