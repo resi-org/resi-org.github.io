@@ -48,5 +48,13 @@
     "bytes": 26054,
     "sha256": "5d0ed6c21ea07ebecb281fc5c82dbc31721d3a97847df7bbffb313e256a3b7f2",
     "retrieved": "2026-11-13"
+  },
+  {
+    "file": "zico-kolter.png",
+    "source": "Portrait supplied by Rachel for the workshop on 2026-11-17",
+    "bytes": 605499,
+    "sha256": "30eb0d36e36d0dad7feab6376d7a41009743886c9d7800024091a7bbfdd89bd6",
+    "received": "2026-11-17",
+    "notes": "Original supplied 800 x 800 PNG copied unchanged. No photographer credit supplied."
   }
 ]
