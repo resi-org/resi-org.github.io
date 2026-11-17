@@ -29,6 +29,8 @@ speakers:
     affiliation: "MIT, formerly OpenAI"
   - name: "Elad Hazan"
     affiliation: "DeepMind, Princeton"
+  - name: "Zico Kolter"
+    affiliation: "OpenAI"
   - name: "Orr Paradise"
     affiliation: "Resolution"
   - name: "Anat Perry"

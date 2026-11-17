@@ -4,6 +4,7 @@ import vincent from '../assets/workshop-speakers/vincent-conitzer.jpg';
 import adam from '../assets/workshop-speakers/adam-gleave-headroom.png';
 import mitchell from '../assets/workshop-speakers/mitchell-gordon.png';
 import elad from '../assets/workshop-speakers/elad-hazan.png';
+import zico from '../assets/workshop-speakers/zico-kolter.png';
 import orr from '../assets/workshop-speakers/orr-paradise.jpg';
 import royFar from '../assets/workshop-speakers/roy-rinberg-far-ai.webp';
 import nickolai from '../assets/workshop-speakers/nickolai-zeldovich.jpg';
@@ -28,6 +29,7 @@ export const workshopPortraits: Record<string, WorkshopPhoto> = {
   'Adam Gleave': { src: adam.src, label: 'Personal-site portrait with extended background', style: '--portrait-scale: 1.074074; --portrait-origin: 50% 100%;' },
   'Mitchell Gordon': { src: mitchell, label: 'Personal-site portrait', style: '--portrait-scale: 1.24; --portrait-origin: 50% 35%; --portrait-shift-y: -7%;' },
   'Elad Hazan': { src: elad, label: 'Personal-site portrait', style: '--portrait-scale: 1.15; --portrait-origin: 50% 10%;' },
+  'Zico Kolter': { src: zico, label: 'Supplied workshop portrait' },
   'Orr Paradise': { src: orr, label: 'Personal-site portrait' },
   'Anat Perry': { src: approvedAnat.src!, label: 'Existing RESI portrait', style: `${approvedAnat.style} --portrait-position: 40% 0%;` },
   'Roy Rinberg': { src: royFar, label: 'FAR.AI portrait', style: '--portrait-position: 40% 50%;' },
