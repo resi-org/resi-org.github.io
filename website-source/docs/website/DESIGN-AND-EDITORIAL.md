@@ -2,7 +2,7 @@
 
 ## Workshop speaker grid — November 17
 
-The ten-speaker standalone workshop roster uses two rows of five at full600px content width (viewport636px and wider), three columns at481–635px, and two columns at480px/below. Preserve the existing portrait aspect ratio/framing, surname order and caption typography. This supersedes the nine-speaker three-column desktop arrangement.
+The standalone workshop roster uses five columns at full600px content width (viewport636px and wider), three columns at481–635px, and two columns at480px/below. Preserve the existing portrait aspect ratio/framing, surname order and caption typography. This supersedes the nine-speaker three-column desktop arrangement. With11 speakers after Jacob’s November17 addition, full-width rows are5/5/1; the existing phone odd-card centering remains.
 
 ## Events lineup columns — approved November 16
 

@@ -37,6 +37,8 @@ speakers:
     affiliation: "Hebrew University, RESI"
   - name: "Roy Rinberg"
     affiliation: "Anthropic"
+  - name: "Jacob Tsimerman"
+    affiliation: "UToronto, MAISI"
   - name: "Nickolai Zeldovich"
     affiliation: "MIT"
 hostsLabel: "Hosted by RESI co-founders"

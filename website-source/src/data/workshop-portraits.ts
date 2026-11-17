@@ -7,6 +7,7 @@ import elad from '../assets/workshop-speakers/elad-hazan.png';
 import zico from '../assets/workshop-speakers/zico-kolter.png';
 import orr from '../assets/workshop-speakers/orr-paradise.jpg';
 import royFar from '../assets/workshop-speakers/roy-rinberg-far-ai.webp';
+import jacob from '../assets/workshop-speakers/jacob-tsimerman.jpg';
 import nickolai from '../assets/workshop-speakers/nickolai-zeldovich.jpg';
 import { portraitFor } from '../lib/portraits';
 
@@ -15,7 +16,7 @@ export interface WorkshopPhoto {
   label: string;
   style?: string;
   // Keep any attribution attached to its selected photo.
-  credit?: { id: string; text: string; href?: string };
+  credit?: { id: string; text: string; href?: string; licenseHref?: string; note?: string };
 }
 // Final workshop selections. Keep the approved People/Home framing unchanged.
 // Source/credit provenance is recorded alongside the research shortlist.
@@ -33,5 +34,6 @@ export const workshopPortraits: Record<string, WorkshopPhoto> = {
   'Orr Paradise': { src: orr, label: 'Personal-site portrait' },
   'Anat Perry': { src: approvedAnat.src!, label: 'Existing RESI portrait', style: `${approvedAnat.style} --portrait-position: 40% 0%;` },
   'Roy Rinberg': { src: royFar, label: 'FAR.AI portrait', style: '--portrait-position: 40% 50%;' },
+  'Jacob Tsimerman': { src: jacob, label: 'Simons Foundation portrait via Wikimedia Commons', style: '--portrait-position: 50% 0%;', credit: { id: 'jacob-tsimerman', text: 'Simons Foundation', href: 'https://commons.wikimedia.org/wiki/File:Jacob_Tsimerman2_c.Simons_Foundation.jpg', licenseHref: 'https://creativecommons.org/licenses/by/4.0/', note: 'cropped' } },
   'Nickolai Zeldovich': { src: nickolai, label: 'Amazon Science portrait', style: '--portrait-position: 50% 0%;' },
 };
