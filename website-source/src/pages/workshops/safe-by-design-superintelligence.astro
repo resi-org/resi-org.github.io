@@ -173,11 +173,17 @@ const date = event.start.toLocaleDateString('en-US', {
     gap: 30px 24px;
     padding-top: 3px;
   }
+  @media screen {
+    .speaker-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      --speaker-width: calc((100% - 48px) / 3);
+    }
+    .speaker-list > li { flex: 0 0 auto; width: var(--speaker-width); min-width: 0; }
+  }
   @media screen and (min-width: 636px) {
-    /* Half-card tracks center a final row of three without changing order. */
-    .speaker-list { grid-template-columns: repeat(8, minmax(0, 1fr)); }
-    .speaker-list > li { grid-column: span 2; }
-    .speaker-list > li:nth-child(4n + 1):nth-last-child(3) { grid-column: 2 / span 2; }
+    .speaker-list { --speaker-width: calc((100% - 72px) / 4); }
   }
   .speaker-list li, .host-list li { margin: 0; padding: 0; }
   .speaker-list h3 { margin: 0 0 3px; font: 500 15px/1.4 var(--sans); }
@@ -214,12 +220,7 @@ const date = event.start.toLocaleDateString('en-US', {
     .workshop-invitation { gap: 15px; }
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
     .workshop-hero > .workshop-invitation { margin-top: 21px; }
-    .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; row-gap: 21px; }
-    .speaker-list > li:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-      width: calc((100% - 18px) / 2);
-      justify-self: center;
-    }
+    .speaker-list { --speaker-width: calc((100% - 18px) / 2); column-gap: 18px; row-gap: 21px; }
     .speaker-list h3 { font-size: 14.25px; }
     .host-list { gap: 18px; font-size: 12px; }
     .host-portrait { width: 67.5px; height: 67.5px; }
