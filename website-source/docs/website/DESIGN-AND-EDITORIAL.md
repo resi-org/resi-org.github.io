@@ -2,7 +2,7 @@
 
 ## Workshop speaker grid — November 17
 
-The eleven-speaker standalone workshop roster uses two rows of four and a centered row of three at full600px content width (viewport636px and wider). Cards keep equal widths; eight half-card grid tracks allow the final group to be centered without changing surname order. Intermediate481–635px screens retain three columns; phones480px/below retain two columns with the last odd card centered. Preserve portrait aspect ratio/framing, caption typography and print layout. This supersedes the earlier five-column full-width arrangement.
+The standalone workshop roster uses four equal-width cards across at full600px content width (viewport636px and wider), three at481–635px and two at480px/below. Every incomplete final row is centered as a group, retaining the same card widths and left-aligned captions. Wrapping flex rows handle this consistently for any speaker count; eleven speakers yield4/4/3,3/3/3/2, and five pairs plus one. Preserve surname order, portrait aspect ratio/framing, typography, gaps and print grid. This supersedes special desktop half-track and phone odd-item placement rules.
 
 ## Events lineup columns — approved November 16
 
