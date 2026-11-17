@@ -1,3 +1,7 @@
+## November16 — announcement actions align with DEC
+
+Rachel clarified that the action stack should start at the top of DEC, matching Events. Changed only the announcement action align-self from center to start; restricted speaker width, two-row span, natural title height, styles/content/links and mobile placement retained. Sourceaf3cd53/main1fdec76; isolated /private/tmp/resi-announcement-top-nov16. Published/live verified: application79cf3f6 / source PR276; production PR277 merged46ac21f3d5f83cefeb502b5071e4fec9fdf5eb69; Pages44005659543 succeeded. Astro check55 files/zero diagnostics and build passed. Ordinary live1280px action/calendar tops both212.5625px;390px retains row4 actions with no overflow. Only new WorkshopCallout.C_wU2Cf7.css and Home/Events stylesheet references published; all HTML content byte-identical after URL normalization. Proof: original workspace output/live-announcement-top-aligned-nov16.jpg. Viewport restored; no forms submitted.
+
 ## November16 — announcement speaker width and lower buttons
 
 Rachel requested that ordinary Home announcement speaker names stop at the button column so the buttons can sit lower without stretching the event-title row. Names now span only the left date/title columns; the action column spans both title and speakers and centers vertically. The desktop date/title row returns to its natural height. Phone full-width names/action row and all other card treatments remain unchanged. Only three announcement-specific CSS declarations changed; no content, links, fonts or button treatments changed.
