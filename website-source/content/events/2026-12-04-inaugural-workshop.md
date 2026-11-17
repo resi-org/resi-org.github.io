@@ -30,7 +30,7 @@ speakers:
   - name: "Elad Hazan"
     affiliation: "DeepMind, Princeton"
   - name: "Zico Kolter"
-    affiliation: "OpenAI"
+    affiliation: "CMU, OpenAI"
   - name: "Orr Paradise"
     affiliation: "Resolution"
   - name: "Anat Perry"
