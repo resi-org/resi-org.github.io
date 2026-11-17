@@ -194,6 +194,6 @@ Learn more precedes Interest form visually and in keyboard order. Home’s featu
 
 November16 workshop founders: synchronize one/two-line names using per-card inline-size containment and a10.1em surname-break threshold. Shafi / Goldwasser, Adam Tauman / Kalai, Vinod / Vaikuntanathan. Keep existing type, portrait sizes and three-column layout.
 
-## Home feature width — approved November17
+## Home feature width and prose rhythm — approved November17
 
-Above650px, use1.035:1 intro columns with the existing20px gap, widening the featured workshop toward the left to match the reading-group action edge within the600px content width. Keep the right edge, text/type, minimum paragraph gaps and all650px/below layouts unchanged. Rachel approved the reviewed width trial for publication after the eleven-speaker addition; the new prose wrapping removes the oversized bridge gap. This supersedes the prior1.15:1 desktop split only.
+Use1.035:1 intro columns with the existing20px gap throughout the side-by-side layout above520px. At full width the card left matches the reading-group action edge; as the shell narrows both columns shrink without reverting to the old proportions. Rachel clarified that readable paragraph spacing takes precedence over exact matching column bottoms. Prose keeps20px then15px gaps and aligns to its natural height, instead of expanding gaps to match the card. At520px/below retain the stacked layout and16/12px paragraph gaps. Keep text, type, card treatments and right edge unchanged. This supersedes the prior1.15:1 split and the matched-bottoms rule when it would stretch prose gaps.
