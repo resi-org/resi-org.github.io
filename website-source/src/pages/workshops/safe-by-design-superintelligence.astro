@@ -173,8 +173,11 @@ const date = event.start.toLocaleDateString('en-US', {
     gap: 30px 24px;
     padding-top: 3px;
   }
-  @media (min-width: 636px) {
-    .speaker-list { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  @media screen and (min-width: 636px) {
+    /* Half-card tracks center a final row of three without changing order. */
+    .speaker-list { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+    .speaker-list > li { grid-column: span 2; }
+    .speaker-list > li:nth-child(4n + 1):nth-last-child(3) { grid-column: 2 / span 2; }
   }
   .speaker-list li, .host-list li { margin: 0; padding: 0; }
   .speaker-list h3 { margin: 0 0 3px; font: 500 15px/1.4 var(--sans); }
