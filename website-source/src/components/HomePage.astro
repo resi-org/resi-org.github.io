@@ -269,6 +269,10 @@ const founders = people
   @media (max-width: 380px) {
     .hero-actions { grid-template-columns: minmax(0, 1fr); }
   }
+  @media (min-width: 651px) {
+    /* Trial: widen the feature leftward to the reading-group action edge. */
+    .hero-grid { grid-template-columns: minmax(0, 1.035fr) minmax(0, 1fr); }
+  }
   @media (min-width: 521px) {
     /* Distribute the few remaining pixels through existing paragraph gaps. */
     .hero-copy {
