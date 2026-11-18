@@ -76,7 +76,7 @@ export const groups = [
   },
   {
     id: 'ethics-and-superintelligence',
-    name: 'Ethics and superintelligence',
+    name: 'ASI Ethics and Fairness',
     description:
       'Examines fairness, human control, and the distribution of resources in a world with superintelligent AI.',
     lead: 'Chlo\u00e9 Bakalar',
