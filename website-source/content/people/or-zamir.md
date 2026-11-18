@@ -13,10 +13,10 @@ publications:
     authors: "A. Kalai, Y. Tauman Kalai, and O. Zamir"
     venue: "Preprint, 2025 (revised 2026) · Presented at IASEAI 2026"
     url: "https://arxiv.org/abs/2511.09493"
-  - title: "Proofs of Ownership for Machine Learning Models"
-    authors: "R. Canetti, S. Goldwasser, O. Zamir"
-    venue: "arXiv 2026"
-    url: "https://arxiv.org/abs/2606.30423"
+  - title: "Distortion-Free Semantic Watermarks for Black-Box Generative Models"
+    authors: "A. Yossef, O. Patashnik, and O. Zamir"
+    venue: "Preprint, November 2026"
+    url: "https://arxiv.org/abs/2611.23208"
 ---
 
 Assistant professor of computer science at Tel Aviv University working on algorithms, data structures, combinatorics, graph theory, cryptography, and the foundations of provable AI safety. Previously a member at the Institute for Advanced Study and an associate research scholar at Princeton University, he earned his PhD at Tel Aviv University.

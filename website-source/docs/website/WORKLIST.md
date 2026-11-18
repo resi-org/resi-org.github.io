@@ -412,3 +412,8 @@ Rachel requested replacing Adam Gleave’s workshop photo with her attached1906�
 ## Ethics working-group title — November18
 
 Rachel supplied the new title ASI Ethics and Fairness. Shared groups.ts name changes Research, People leadership references and Search automatically. Preserve the existing ethics-and-superintelligence ID/anchor, description, leader and two-line card treatment (ASI Ethics / and Fairness). Source d0dacda/main2012b9d; isolated /private/tmp/resi-asi-ethics-nov18. Published/live verified: applicationaf1b53d / source PR299; production PR300 mergedbf5166c1c8d0394fc1060f518a654cca59c9f3e1; Pages44333537876 succeeded. Astro check55 files/zero diagnostics and build passed. Exact output comparison proves only title replacements in Research, People and Search; no styles/content beyond the supplied name changed. Ordinary live Research1280/390px, native disclosure and stable anchor verified; People and Search display the new linked name. Proof: original workspace output/live-asi-ethics-fairness-nov18.png. Viewport restored; no forms submitted.
+
+
+### Or Zamir selected publications — November 18
+
+Rachel conditionally authorized replacing a weaker-fit selection with the linked new semantic-watermark paper, maximum three. Evaluation favors replacing Proofs of Ownership while retaining covert conversations and consensus sampling. Canonical People record updated; no Research/Home promotion. See references/or-zamir-selected-publications-2026-11-12.md for current rationale and bounded guarantees. Published and live verified through production PR304 / fa3d639 and successful Pages44396388632. Exactly three selections at desktop/mobile; source PR303. Evidence: CHANGELOG.

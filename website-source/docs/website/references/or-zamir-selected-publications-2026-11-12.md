@@ -33,3 +33,21 @@ Undetectable Watermarks for Language Models (Miranda Christ, Sam Gunn, Or Zamir;
 - Primary arXiv records linked above establish authors, dates, abstracts and limitations.
 - Publication selection and relevance rankings are editorial judgments, not claims of RESI commissioning or institutional authorship. Preserve the site's prior-work attribution.
 - Existing foundational-review reading guide in the institutional research library corroborates earlier evaluations of Consensus Sampling, covert conversations and Proofs of Ownership. This is a website-specific profile-selection note; no new peer-institute landscape research was conducted.
+
+
+## November 18 update: semantic watermarking replaces model ownership
+
+Rachel requested evaluation of https://arxiv.org/abs/2611.23208 and authorized replacing a weaker-fit selection, with a strict maximum of three. The resulting selection retains Undetectable Conversations and Consensus Sampling and replaces Proofs of Ownership with **Distortion-Free Semantic Watermarks for Black-Box Generative Models** — Aviv Yossef, Or Patashnik, Or Zamir; submitted November 17, 2026, preprint. The November 12 recommendations above are historical.
+
+Editorial judgment: the new paper is the stronger third selection for RESI's stated emphasis on concrete mechanisms with explicit definitions, assumptions and analyzable guarantees. It constructs a watermark/provenance mechanism through black-box generation and semantic encoding, with formal distribution/detection analysis and image experiments. This complements the retained papers' oversight limits and constructive safety aggregation. Proofs of Ownership remains relevant foundational security work, but its owner/thief/judge framework and conditional classifier characterization focus more narrowly on model ownership. Recency alone is not the selection criterion. No claim that RESI commissioned either work, and no change to other researchers' bibliographies or the Research collection.
+
+Scope: distortion-freeness averages over the secret key under an ideal-PRF assumption; it is not a fixed-key guarantee of unchanged joint output distributions. Robustness depends on stability of the semantic representation and sufficient semantic entropy. Single-output detection is inherently limited in this black-box selection setting; aggregation strengthens detection, and the strongest image configuration incurs 32 candidate generations per released image. These are bounded provenance guarantees, not a proof of overall AI safety.
+
+Primary sources reviewed November 18:
+- New paper metadata/abstract: https://arxiv.org/abs/2611.23208
+- Full paper, especially introduction, Sections 6 and 9, and discussion of key reuse: https://arxiv.org/html/2611.23208v1
+- Existing selections: https://arxiv.org/abs/2604.04757 and https://arxiv.org/abs/2511.09493
+- Replaced selection: https://arxiv.org/abs/2606.30423
+- RESI priorities: https://resi.org/research/
+
+Implementation/publication evidence is recorded in CHANGELOG. Preserve the excluded layerwise note and the three-item limit.
