@@ -416,4 +416,4 @@ Rachel supplied the new title ASI Ethics and Fairness. Shared groups.ts name cha
 
 ### Or Zamir selected publications — November 18
 
-Rachel conditionally authorized replacing a weaker-fit selection with the linked new semantic-watermark paper, maximum three. Evaluation favors replacing Proofs of Ownership while retaining covert conversations and consensus sampling. Canonical People record updated; no Research/Home promotion. See references/or-zamir-selected-publications-2026-11-12.md for current rationale and bounded guarantees. Publication/verification stages: CHANGELOG.
+Rachel conditionally authorized replacing a weaker-fit selection with the linked new semantic-watermark paper, maximum three. Evaluation favors replacing Proofs of Ownership while retaining covert conversations and consensus sampling. Canonical People record updated; no Research/Home promotion. See references/or-zamir-selected-publications-2026-11-12.md for current rationale and bounded guarantees. Published and live verified through production PR304 / fa3d639 and successful Pages44396388632. Exactly three selections at desktop/mobile; source PR303. Evidence: CHANGELOG.
