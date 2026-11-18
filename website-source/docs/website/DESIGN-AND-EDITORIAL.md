@@ -2,7 +2,7 @@
 
 ## Workshop speaker grid — November 17
 
-The standalone workshop roster uses four equal-width cards across at full600px content width (viewport636px and wider), three at481–635px and two at480px/below. Every incomplete final row is centered as a group, retaining the same card widths and left-aligned captions. Wrapping flex rows handle this consistently for any speaker count; eleven speakers yield4/4/3,3/3/3/2, and five pairs plus one. Preserve surname order, portrait aspect ratio/framing, typography, gaps and print grid. This supersedes special desktop half-track and phone odd-item placement rules.
+The standalone workshop roster uses three equal-width cards across above480px, and two at480px/below. Every incomplete final row is centered as a group, retaining equal card widths and left-aligned captions. Wrapping flex rows handle any speaker count; the current ten confirmed speakers yield3/3/3/1 or five phone pairs. Preserve surname order, portrait aspect ratio/framing, typography, gaps and print grid. This November18 request supersedes the former four-column desktop arrangement. Jacob Tsimerman is not a confirmed speaker and must not be restored; his possible later panelist listing remains deferred until explicit instruction.
 
 ## Events lineup columns — approved November 16
 
