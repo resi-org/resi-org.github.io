@@ -67,3 +67,5 @@ November 12 outlined-action standard: Base.astro imports styles/buttons.css for 
 November16 workshop action order: shared WorkshopCallout renders Learn more before Interest form. Featured Home retains text/filled treatments in its bottom row; Events and ordinary Home announcement use an outlined Learn more above filled Interest form at the right, moving to a wrapping row on phones. Details routes and interest URLs remain canonical shared event fields.
 
 November 19 Events heading refinement: the published seminar section label is Upcoming seminars, matching Past seminars. RESI/MIT hosting remains in the introduction; #upcoming-seminars and #seminars are preserved. See CHANGELOG for publication/live evidence.
+
+November19 Events copy: community heading/contents label now Upcoming workshops and other community events; existing #community-events retained. Complete seminar Zoom/time notice is bold via canonical seminars.intro. Upcoming card styling remains a separate preview. See CHANGELOG/WORKLIST.

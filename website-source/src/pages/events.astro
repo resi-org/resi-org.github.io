@@ -20,13 +20,13 @@ import { institute } from '../data/institute';
   <PageShortcuts
     id="events-shortcuts"
     items={[
-      { label: 'Community events', href: '#community-events' },
+      { label: 'Upcoming workshops and other community events', href: '#community-events' },
       { label: 'Upcoming seminars', href: '#upcoming-seminars' },
       { label: 'Past seminars', href: '#past-seminars' },
     ]}
   />
 
-  <Section id="community-events" label="Community events" divider>
+  <Section id="community-events" label="Upcoming workshops and other community events" divider>
     <div class="event-list">
       {events.map((event) => (
         <div class="event-entry" id={event.anchor || event.id}>
