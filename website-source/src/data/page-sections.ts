@@ -20,7 +20,7 @@ export const pageSections: Record<string, PageSection[]> = {
   ],
   '/people': [
     { label: 'Founders', href: '#founders' },
-    { label: 'Team', href: '#research' },
+    { label: 'Research team', href: '#research' },
     ...(showVisitingResearchers ? [{ label: 'Visitors', href: '#visitors' }] : []),
     { label: 'Join us', href: '#get-involved' },
     { label: 'Affiliated groups', href: '#affiliated' },
