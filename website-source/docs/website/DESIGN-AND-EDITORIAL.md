@@ -2,7 +2,7 @@
 
 ## Workshop affiliation labels — Adam's November 19 correction
 
-Use **Zico Kolter — CMU**, **Aleksander Mądry — OpenAI** and **Yael Tauman Kalai — MIT, RESI** for this event. These are the explicitly selected public affiliation labels; do not expand them based on email domains, board memberships or other institutional connections. This supersedes the November 17 Zico label “CMU, OpenAI” and Yael's November 18 “MIT” label. Madry remains a panelist, not a talk speaker. Dylan Hadfield-Menell (MIT) is a confirmed talk speaker and is included in the shared roster as of November 19.
+Use **Zico Kolter — CMU**, **Aleksander Mądry — OpenAI** **Yael Tauman Kalai — MIT, RESI** and **Dylan Hadfield-Menell — MIT, RESI** for this event. These are the explicitly selected public affiliation labels; do not expand them based on email domains, board memberships or other institutional connections. This supersedes the November 17 Zico label “CMU, OpenAI” and Yael's November 18 “MIT” label. Madry remains a panelist, not a talk speaker. Dylan Hadfield-Menell (MIT, RESI) is a confirmed talk speaker and is included in the shared roster as of November 19.
 
 ## Workshop speaker grid — November 17
 
