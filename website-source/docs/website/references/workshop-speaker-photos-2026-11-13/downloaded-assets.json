@@ -77,5 +77,18 @@
     "sha256": "1ac6d9ff86d8822a9cdecdda2ce3371aa0767064242ce4354fdc4bc2becfe5ff",
     "received": "2026-11-18",
     "notes": "Original 1906 x 1906 JPEG copied unchanged; replaces the earlier portrait with extended headroom. No photographer credit supplied."
+  },
+  {
+    "file": "yael-tauman-kalai.jpg",
+    "page": "https://en.wikipedia.org/wiki/Yael_Tauman_Kalai",
+    "source": "https://upload.wikimedia.org/wikipedia/commons/2/28/Yael_Tauman_Kalai_portrait-public.jpg",
+    "credit": "Dana Quigley",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "attribution_page": "https://commons.wikimedia.org/wiki/File:Yael_Tauman_Kalai_portrait-public.jpg",
+    "bytes": 6575311,
+    "sha256": "9ec0557f6c80fa92ed5c821cd4e4ed16fabca069c8856a517fe7af8f846c0821",
+    "retrieved": "2026-11-18",
+    "notes": "Original 3584 x 4480 JPEG preserved. Adam selected the Wikipedia portrait (white cardigan). Existing component resizes to WebP; CSS crops the displayed portrait to match nearby head sizes. No synthesis or changes to original photo pixels."
   }
 ]

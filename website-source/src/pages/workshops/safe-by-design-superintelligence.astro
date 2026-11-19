@@ -102,7 +102,7 @@ const date = event.start.toLocaleDateString('en-US', {
         {entry.person}: {entry.credit.href
           ? <a href={entry.credit.href} target="_blank" rel="noopener noreferrer">{entry.credit.text}</a>
           : entry.credit.text}
-        {entry.credit.licenseHref && <> · <a href={entry.credit.licenseHref} target="_blank" rel="noopener noreferrer">CC BY 4.0</a></>}
+        {entry.credit.licenseHref && <> · <a href={entry.credit.licenseHref} target="_blank" rel="noopener noreferrer">{entry.credit.licenseLabel || 'CC BY 4.0'}</a></>}
         {entry.credit.note && <> ({entry.credit.note})</>}
       </li>)}
     </ul>
