@@ -169,8 +169,10 @@ const links = [
       panel.hidden = false;
       item.style.removeProperty('--section-panel-offset');
       const bounds = inner.getBoundingClientRect();
+      const right = nav.querySelector<HTMLElement>('.nav-support')!.getBoundingClientRect().right;
+      item.style.setProperty('--section-panel-max-width', `${right - bounds.left}px`);
       const rect = panel.getBoundingClientRect();
-      const offset = Math.max(bounds.left - rect.left, Math.min(0, bounds.right - rect.right));
+      const offset = right - rect.right;
       item.style.setProperty('--section-panel-offset', `${offset}px`);
       trigger.setAttribute('aria-expanded', 'true');
     };
