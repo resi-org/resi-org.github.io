@@ -1,0 +1,69 @@
+/* Preview: use the full header until its actual identity/labels no longer fit.
+   Legacy media rules remain the no-JavaScript fallback. */
+@media screen {
+  .header-nav-item { position: relative; flex: 0 0 auto; }
+  .header-nav-item > a { display: block; white-space: nowrap; }
+  .header-section-panel[hidden] { display: none; }
+  .header-section-panel {
+    position: absolute;
+    top: 100%;
+    left: var(--section-panel-offset, 0px);
+    display: flex;
+    align-items: baseline;
+    gap: 16.5px;
+    width: max-content;
+    max-width: min(735px, calc(100vw - 48px));
+    padding: 12px 14px;
+    background: var(--paper);
+    border: 0.75px solid var(--line);
+    color: var(--accent);
+    font: 500 9px/1.5 var(--sans);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+  .header-section-heading { margin: 0; font: inherit; white-space: nowrap; }
+  .header-section-panel ul { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7.5px 16.5px; margin: 0; padding: 0; list-style: none; }
+  .header-section-panel li { margin: 0; padding: 0; }
+  .desktop-nav .header-section-panel a {
+    display: block;
+    padding: 5px 0;
+    min-height: 24px;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .desktop-nav .header-section-panel a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  html[data-header-layout='desktop'] .header-inner { column-gap: 16.5px; }
+  html[data-header-layout='desktop'] .desktop-nav { display: flex; flex-shrink: 0; }
+  html[data-header-layout='desktop'] .header-tools { display: flex; margin-left: 0; flex-shrink: 0; }
+  html[data-header-layout='desktop'] .mobile-menu,
+  html[data-header-layout='desktop'] .mobile-support,
+  html[data-header-layout='desktop'] .page-shortcuts-bar { display: none; }
+
+  html[data-header-layout='collapsed'] .desktop-nav,
+  html[data-header-layout='collapsed'] .header-tools { display: none; }
+  html[data-header-layout='collapsed'] .mobile-menu { display: block; }
+  html[data-header-layout='collapsed'] .mobile-support { display: inline-flex; }
+
+  /* The intrinsic-width probe is synchronous and never painted. */
+  .site-header[data-nav-measuring] .desktop-nav,
+  .site-header[data-nav-measuring] .header-tools {
+    display: flex;
+    position: absolute;
+    width: max-content;
+    visibility: hidden;
+  }
+  .site-header[data-nav-measuring] .desktop-nav { margin-left: 0; }
+}
+@media screen and (max-width: 285.74px) {
+  html[data-header-layout='collapsed'] .mobile-support { display: none; }
+}
+@media print { .header-section-panel { display: none; } }
+/* Wide touch devices retain the existing in-page contents as a touch fallback. */
+@media screen and (hover: none), screen and (pointer: coarse) {
+  html[data-header-layout='desktop'] .page-shortcuts-bar { display: block; }
+}

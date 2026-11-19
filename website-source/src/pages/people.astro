@@ -8,6 +8,7 @@ import { groups } from '../data/groups';
 import Base from '../layouts/Base.astro';
 import IntroActions from '../components/IntroActions.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
+import { pageSections } from '../data/page-sections';
 import Section from '../components/Section.astro';
 import Person from '../components/Person.astro';
 import Founder from '../components/Founder.astro';
@@ -68,16 +69,7 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
       />
     </div>
   </header>
-  <PageShortcuts
-    id="people-shortcuts"
-    items={[
-      { label: 'Founders', href: '#founders' },
-      { label: 'Team', href: '#research' },
-      ...(showVisitingResearchers ? [{ label: 'Visitors', href: '#visitors' }] : []),
-      { label: 'Join us', href: '#get-involved' },
-      { label: 'Affiliated groups', href: '#affiliated' },
-    ]}
-  />
+  <PageShortcuts id="people-shortcuts" items={pageSections['/people']} />
 
 
 
