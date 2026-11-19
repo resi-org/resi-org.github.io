@@ -1,3 +1,9 @@
+## November 19 — complete workshop speaker roster and correct affiliations
+
+Adam identified an omitted confirmed speaker and specified the event labels Zico Kolter — CMU, Aleksander Mądry — OpenAI and Yael Tauman Kalai — MIT, RESI. Added Dylan Hadfield-Menell (MIT) in surname order to the shared workshop roster (12 main speakers now), reusing his existing RESI portrait and approved framing. Corrected Zico and Yael in the canonical event record; Home, Events, Search and the workshop page inherit the appropriate updates. Madry is not yet listed on the public panel placeholders; his required OpenAI-only event label is recorded in DESIGN-AND-EDITORIAL for future panel publication. These instructions supersede the earlier event affiliation labels, without rewriting historical logs. No other speaker affiliations, portraits, panel assignments, program times or unrelated site content changed.
+
+Validation passed: all 18 announcement tests, Astro check (55 files; zero errors/warnings/hints), production build and whitespace checks. Preview at 1280/550/390/320px confirms twelve loaded portraits, correct Dylan/Zico/Yael labels and no horizontal overflow. Home, Events and Search also include Dylan and have no phone overflow. Only four connected HTML pages differ from production (apart from the untracked build-only .assetsignore). Source baseline `41804a8`; production baseline `8269d1b`. Source merge, publication and live verification pending.
+
 ## November 19 — Michael Winer seminar street address
 
 Adam supplied the full venue: RESI, 145 Broadway, 12th floor, Cambridge, MA 02142. Updated only the upcoming `michael-winer-2026-11-23` HTML location and matching Search text in `src/data/seminars.json`. Date, title, abstract, biography, other talks, generic site addresses and the independent Zoom endpoint are unchanged; no talk-specific Zoom link was added.

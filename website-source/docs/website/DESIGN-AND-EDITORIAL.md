@@ -1,8 +1,12 @@
 # RESI design and editorial guidance
 
+## Workshop affiliation labels — Adam's November 19 correction
+
+Use **Zico Kolter — CMU**, **Aleksander Mądry — OpenAI** and **Yael Tauman Kalai — MIT, RESI** for this event. These are the explicitly selected public affiliation labels; do not expand them based on email domains, board memberships or other institutional connections. This supersedes the November 17 Zico label “CMU, OpenAI” and Yael's November 18 “MIT” label. Madry remains a panelist, not a talk speaker. Dylan Hadfield-Menell (MIT) is a confirmed talk speaker and is included in the shared roster as of November 19.
+
 ## Workshop speaker grid — November 17
 
-The standalone workshop roster uses four equal-width cards across at636px viewport and wider, three at481–635px, and two at480px/below. Every incomplete final row is centered as a group, retaining equal card widths and left-aligned captions. The current ten confirmed speakers yield4/4/2 on desktop,3/3/3/1 at intermediate widths and five phone pairs. Preserve surname order, portrait aspect ratio/framing, typography, gaps and print grid. This November18 count correction supersedes the temporary desktop three-column layout. Jacob Tsimerman must not be restored as a speaker; any future panelist listing remains deferred until explicit instruction.
+The standalone workshop roster uses four equal-width cards across at636px viewport and wider, three at481–635px, and two at480px/below. Every incomplete final row is centered as a group, retaining equal card widths and left-aligned captions. The current twelve confirmed speakers (November 19) yield4/4/4 on desktop,3/3/3/3 at intermediate widths and six phone pairs. Preserve surname order, portrait aspect ratio/framing, typography, gaps and print grid. This supersedes the temporary desktop three-column layout. Jacob Tsimerman must not be restored as a talk speaker; any future panelist listing remains deferred until explicit instruction.
 
 ## Events lineup columns — approved November 16
 
