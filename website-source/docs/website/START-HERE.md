@@ -1,6 +1,6 @@
 ## Desktop header section menus — November 19 preview only
 
-Horizontal hover/focus contents rows for About/Research/People/Events, using the same small uppercase type. Full navigation now collapses only when measured identity/label spacing requires it (about688px in current preview); collapsed/mobile appearance and contents remain unchanged. Editable source /private/tmp/resi-header-sections-nov19, branch codex/header-sections-preview-nov19; preview http://127.0.0.1:4454/about/. Source2f88cc1 / production495e078. Verified, not merged or published. See WORKLIST D18 for scope and evidence; preserve other active work.
+Compact 25px-high horizontal hover/focus contents rows for About/Research/People/Events, using the same small uppercase type and no desktop On this page heading. Mobile label unchanged. Full navigation now collapses only when measured identity/label spacing requires it (about688px in current preview); collapsed/mobile appearance and contents remain unchanged. Editable source /private/tmp/resi-header-sections-nov19, branch codex/header-sections-preview-nov19; preview http://127.0.0.1:4454/about/. Source2f88cc1 / production495e078. Verified, not merged or published. See WORKLIST D18 for scope and evidence; preserve other active work.
 
 ## Responsive footer — November 16 published and live verified
 

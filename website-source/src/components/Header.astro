@@ -44,7 +44,6 @@ const links = [
             </a>
             {sections.length > 0 && (
               <div class="header-section-panel" id={panelId} hidden>
-                <p class="header-section-heading">On this page</p>
                 <ul role="list" aria-label={`${label} sections`}>
                   {sections.map((section) => (
                     <li><a href={`${href}${section.href}`}>{section.label}</a></li>
