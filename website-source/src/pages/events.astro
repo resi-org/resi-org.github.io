@@ -40,7 +40,7 @@ import { institute } from '../data/institute';
     <Fragment set:html={seminars.intro} />
     <p><a href={institute.talks}>Sign up for seminar announcements</a></p>
     {upcomingSeminars.length > 0 ? (
-      <div class="seminar-list" set:html={upcomingSeminars.map((talk) => seminarDisclosure(talk.html)).join('\n')} />
+      <div class="seminar-list upcoming-seminar-cards" set:html={upcomingSeminars.map((talk) => seminarDisclosure(talk.html)).join('\n')} />
     ) : (
       <p>No upcoming seminars are currently listed.</p>
     )}
@@ -110,6 +110,20 @@ import { institute } from '../data/institute';
   .seminar-list :global(.seminar-logistics .location) { margin-top: 6px; font-size: 11.25px; }
   @media (max-width: 525px) {
     .seminar-list :global(article) { padding-inline: 6px; }
+  }
+  /* Preview: emphasize actual upcoming talks, preserving the series introduction. */
+  .upcoming-seminar-cards { margin-top: 18px; }
+  .upcoming-seminar-cards :global(article),
+  .upcoming-seminar-cards :global(article:last-child) {
+    padding: 20px 18px;
+    border: 0.75px solid color-mix(in srgb, var(--accent) 60%, var(--paper));
+    border-radius: 1.5px;
+    background: color-mix(in srgb, var(--accent) 10%, var(--paper));
+  }
+  .upcoming-seminar-cards :global(article + article) { margin-top: 15px; }
+  .upcoming-seminar-cards :global(h3) { font-size: 24px; line-height: 1.25; margin-bottom: 9px; }
+  @media (max-width: 525px) {
+    .upcoming-seminar-cards :global(article) { padding: 18px 14px; }
   }
   @media print {
     .seminar-list :global(h3),

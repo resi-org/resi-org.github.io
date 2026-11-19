@@ -1001,3 +1001,5 @@ Rachel requested an Upcoming seminars heading matching Past seminars. Renamed th
 ## November 19 — Events heading and Zoom notice; seminar box trial separate
 
 Rachel supplied “Upcoming workshops and other community events” and requested bold emphasis for the entire seminar Zoom/time notice. Updated Events heading and matching contents label; wrapped the canonical intro notice in strong. All anchors, words of the notice and listings preserved. From source3ac9673/main d091100. Check55 files/zero diagnostics and build pass. Exact generated assertion: only Events heading/shortcut and strong markup change; Search unchanged. Upcoming seminar box is a separate preview, not approved for publication. Release/live stages to follow.
+
+November19 seminar box preview: scoped upcoming-only wrapper/styling prepared and checked at :4470; see WORKLIST. Not published. The preceding supplied-copy release is separate.
