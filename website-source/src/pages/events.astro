@@ -123,7 +123,8 @@ import { institute } from '../data/institute';
   .upcoming-seminar-cards :global(article + article) { margin-top: 15px; }
   .upcoming-seminar-cards :global(h3) { font-size: 24px; line-height: 1.25; margin-bottom: 9px; }
   @media (max-width: 525px) {
-    .upcoming-seminar-cards :global(article) { padding: 18px 14px; }
+    .upcoming-seminar-cards :global(article),
+    .upcoming-seminar-cards :global(article:last-child) { padding: 18px 14px; }
   }
   @media print {
     .seminar-list :global(h3),
