@@ -28,7 +28,7 @@ speakers:
   - name: "Mitchell Gordon"
     affiliation: "MIT, formerly OpenAI"
   - name: "Dylan Hadfield-Menell"
-    affiliation: "MIT"
+    affiliation: "MIT, RESI"
   - name: "Elad Hazan"
     affiliation: "DeepMind, Princeton"
   - name: "Yael Tauman Kalai"
