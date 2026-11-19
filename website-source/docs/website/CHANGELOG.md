@@ -1,3 +1,9 @@
+## November 19 — Michael Winer seminar street address
+
+Adam supplied the full venue: RESI, 145 Broadway, 12th floor, Cambridge, MA 02142. Updated only the upcoming `michael-winer-2026-11-23` HTML location and matching Search text in `src/data/seminars.json`. Date, title, abstract, biography, other talks, generic site addresses and the independent Zoom endpoint are unchanged; no talk-specific Zoom link was added.
+
+Isolated source `codex/mike-location-nov19` from e0efc15 and publication `codex/publish-mike-location-nov19` from c71a3ca. All 18 announcement tests passed; Astro check 55 files with zero diagnostics and build passed. Generated comparison found only Events and Search HTML changed (plus build-only `.assetsignore`, not published). Preview desktop and 390px mobile verified the full address, readable wrapping and no horizontal overflow. Production PR316 merged at d09110002a7cf2911c3842dcad9d9a699a55b284; Pages run44585479292. Ordinary live Events confirms the full address. Source PR315 records the canonical change. Other content, style and independent endpoints remain unchanged.
+
 ## November 19 — upcoming Michael Winer seminar published and live verified
 
 Rachel supplied “Why ARC,” speaker Michael Winer / Alignment Research Center (ARC), the abstract and biography, and next Monday3–4pm at RESI. Resolved next Monday from November19 to November23,2026; Eastern datetime `2026-11-23T15:00:00-05:00`. Venue reads RESI only; no room/street address or individual Zoom availability was supplied or invented. The Monday/RESI exception fits the existing template without style changes. Name links to the supplied ARC author page (checked November19). Supplied abstract and “Mike Winer” biography remain verbatim; informal parenthetical context about Paul Christiano/Berkeley is not added as an affiliation or public claim.
