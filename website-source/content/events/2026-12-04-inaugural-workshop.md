@@ -29,6 +29,8 @@ speakers:
     affiliation: "MIT, formerly OpenAI"
   - name: "Elad Hazan"
     affiliation: "DeepMind, Princeton"
+  - name: "Yael Tauman Kalai"
+    affiliation: "MIT"
   - name: "Zico Kolter"
     affiliation: "CMU, OpenAI"
   - name: "Orr Paradise"

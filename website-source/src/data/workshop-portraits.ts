@@ -4,6 +4,7 @@ import vincent from '../assets/workshop-speakers/vincent-conitzer.jpg';
 import adam from '../assets/workshop-speakers/adam-gleave-supplied-nov18.jpg';
 import mitchell from '../assets/workshop-speakers/mitchell-gordon.png';
 import elad from '../assets/workshop-speakers/elad-hazan.png';
+import yael from '../assets/workshop-speakers/yael-tauman-kalai.jpg';
 import zico from '../assets/workshop-speakers/zico-kolter.png';
 import orr from '../assets/workshop-speakers/orr-paradise.jpg';
 import royFar from '../assets/workshop-speakers/roy-rinberg-far-ai.webp';
@@ -16,7 +17,7 @@ export interface WorkshopPhoto {
   label: string;
   style?: string;
   // Keep any attribution attached to its selected photo.
-  credit?: { id: string; text: string; href?: string; licenseHref?: string; note?: string };
+  credit?: { id: string; text: string; href?: string; licenseHref?: string; licenseLabel?: string; note?: string };
 }
 // Final workshop selections. Keep the approved People/Home framing unchanged.
 // Source/credit provenance is recorded alongside the research shortlist.
@@ -27,6 +28,7 @@ export const workshopPortraits: Record<string, WorkshopPhoto> = {
   'Adam Gleave': { src: adam, label: 'Supplied workshop portrait' },
   'Mitchell Gordon': { src: mitchell, label: 'Personal-site portrait', style: '--portrait-scale: 1.24; --portrait-origin: 50% 35%; --portrait-shift-y: -7%;' },
   'Elad Hazan': { src: elad, label: 'Personal-site portrait', style: '--portrait-scale: 1.15; --portrait-origin: 50% 10%;' },
+  'Yael Tauman Kalai': { src: yael, label: 'Dana Quigley portrait via Wikimedia Commons', style: '--portrait-scale: 1.35; --portrait-origin: 50% 25%;', credit: { id: 'yael-tauman-kalai', text: 'Dana Quigley', href: 'https://commons.wikimedia.org/wiki/File:Yael_Tauman_Kalai_portrait-public.jpg', licenseHref: 'https://creativecommons.org/licenses/by-sa/4.0/', licenseLabel: 'CC BY-SA 4.0', note: 'cropped and resized' } },
   'Zico Kolter': { src: zico, label: 'Supplied workshop portrait' },
   'Orr Paradise': { src: orr, label: 'Personal-site portrait' },
   'Anat Perry': { src: approvedAnat.src!, label: 'Existing RESI portrait', style: `${approvedAnat.style} --portrait-position: 40% 0%;` },
