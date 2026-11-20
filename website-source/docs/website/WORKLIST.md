@@ -468,3 +468,6 @@ November20 portrait refinement published/live verified: source application `8c1c
 
 
 November20 Dylan tiny crop follow-up: Rachel requested his face be just slightly smaller. Workshop CSS scale1.35 →1.30 (about3.7% smaller), origin35%0% retained. Source5cb1dca/mainaace56e baseline. Build passed; desktop visual review confirms the slight reduction. Exact generated diff changes only this inline scale in workshop HTML; original image, credit, roster and shared portraits preserved. Publication/live verification pending.
+
+
+November20 tiny Dylan crop follow-up published: source applicationbe91738/PR336; production PR337 merged6f32cad89dad9411f80503253790c508ec29e70b; Pages44810700607 succeeded. Ordinary live1280px after reload confirms scale1.30/origin35%0% and no overflow; local390px no-overflow/style check passed. Original image and other content unchanged. Viewport restored; no forms submitted. Proof: output/dylan-framing-proof-nov20/live-subtle-reduction.png in workshop working checkout.
