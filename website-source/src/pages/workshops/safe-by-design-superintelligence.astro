@@ -67,12 +67,22 @@ const date = event.start.toLocaleDateString('en-US', {
       </ul>
     </Section>
 
+    {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
+      <p class="program-participants">{event.spotlights.speakers.map((name, index) => <>{index > 0 && ', '}<strong>{name}</strong></>)}.</p>
+      {event.spotlights.moderator && <p class="program-moderator">Moderated by {event.spotlights.moderator}.</p>}
+    </Section>}
+
     <Section id="program" label="Panels" divider>
       {event.panels.length > 0 && <ul class="program-panels">
         {event.panels.map((title) => <li>
           <h3>{title}</h3>
           {event.panelDescriptions[title] && <p class="panel-description">{event.panelDescriptions[title]}</p>}
-          <p class="panel-pending">Panelists will be announced soon.</p>
+          {event.panelDetails[title] ? <>
+            <p class="program-participants">{event.panelDetails[title].participants.map((person, index) => <>
+              {index > 0 && ', '}<strong>{person.name}</strong>{person.affiliation && <> ({person.affiliation})</>}
+            </>)}.</p>
+            {event.panelDetails[title].moderator && <p class="program-moderator">Moderated by {event.panelDetails[title].moderator}.</p>}
+          </> : <p class="program-moderator">Panelists will be announced soon.</p>}
         </li>)}
       </ul>}
     </Section>
@@ -214,7 +224,10 @@ const date = event.start.toLocaleDateString('en-US', {
     .workshop-hero h1 { font-size: clamp(29.7px, 6.875vw, 36.3px); }
   }
   .panel-description { margin: 9px 0 0; font: 400 12.75px/1.65 var(--sans); }
-  .panel-pending { margin: 12px 0 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
+  .program-participants { margin: 0; font-size: 12.75px; line-height: 1.65; }
+  .program-participants strong { font-weight: 600; }
+  .program-panels .program-participants { margin-top: 12px; }
+  .program-moderator { margin: 9px 0 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
   .program-panels { list-style: none; padding: 0; margin: 0; display: grid; gap: 30px; }
   .program-panels li { margin: 0; }
   .program-panels h3 { margin: 0; font: 700 16.5px/1.4 var(--serif); letter-spacing: -0.005em; }

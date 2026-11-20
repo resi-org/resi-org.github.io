@@ -5,8 +5,41 @@ description: "Join us for RESI's inaugural workshop bringing together researcher
 overview: "This workshop marks our opening, bringing together researchers from frontier AI labs, AI safety organizations, and academia."
 interestNote: "Space is limited. Completing the interest form does not confirm attendance. We will follow up by email with further details."
 panels:
-  - "Cryptography in the Age of AI"
-  - "Academia and AI Safety"
+  - "Cryptographic Resilience in the AI World"
+  - "Academia and AI Safety (whose responsibility is it anyway?)"
+panelDetails:
+  "Cryptographic Resilience in the AI World":
+    participants:
+      - name: "Ran Canetti"
+        affiliation: "BU"
+      - name: "Nicola Greco"
+        affiliation: "Aria"
+      - name: "Yuval Ishai"
+        affiliation: "Technion"
+      - name: "Yael Tauman Kalai"
+        affiliation: "MIT, RESI"
+      - name: "Tal Rabin"
+        affiliation: "Amazon"
+    moderator: "Vinod Vaikuntanathan"
+  "Academia and AI Safety (whose responsibility is it anyway?)":
+    participants:
+      - name: "Martha Minow"
+        affiliation: "Harvard Law"
+      - name: "Aleksander Mądry"
+        affiliation: "OpenAI"
+      - name: "Jacob Tsimerman"
+        affiliation: "MAISI, University of Toronto"
+      - name: "Zico Kolter"
+        affiliation: "CMU"
+    moderator: "Shafi Goldwasser"
+spotlights:
+  speakers:
+    - "Miranda Christ"
+    - "Greg Gluch"
+    - "Sam Gunn"
+    - "Jonathan Shafer"
+    - "Neekon Vafa"
+  moderator: "Adam Tauman Kalai"
 detailsHref: "/workshops/safe-by-design-superintelligence/"
 announced: 2026-11-02
 start: 2026-12-04
