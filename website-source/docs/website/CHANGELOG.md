@@ -1048,3 +1048,9 @@ Rachel requested a closer Dylan Hadfield-Menell crop and removal of “cropped a
 
 
 November20 portrait refinement published/live verified: source application `8c1c426`, PR334; production PR335 merged at `aace56e7dfaef59005e867460d7734311a4b182d`. Pages run44810043990 succeeded. Ordinary live workshop after reload at1280/390px confirms Dylan’s scale1.35/origin35%0% framing, loaded photo, no overflow, and Yael credit without the parenthetical while retaining Dana Quigley and CC BY-SA4.0 links. Original photos, shared People/Home framing, all12 speakers and other content unchanged. Only workshop HTML published. No forms submitted; viewport restored. Screenshot: `output/dylan-framing-proof-nov20/live-desktop.png` in the workshop working checkout.
+
+
+November20 Dylan tiny crop follow-up: Rachel requested his face be just slightly smaller. Workshop CSS scale1.35 →1.30 (about3.7% smaller), origin35%0% retained. Source5cb1dca/mainaace56e baseline. Build passed; desktop visual review confirms the slight reduction. Exact generated diff changes only this inline scale in workshop HTML; original image, credit, roster and shared portraits preserved. Publication/live verification pending.
+
+
+November20 tiny Dylan crop follow-up published: source applicationbe91738/PR336; production PR337 merged6f32cad89dad9411f80503253790c508ec29e70b; Pages44810700607 succeeded. Ordinary live1280px after reload confirms scale1.30/origin35%0% and no overflow; local390px no-overflow/style check passed. Original image and other content unchanged. Viewport restored; no forms submitted. Proof: output/dylan-framing-proof-nov20/live-subtle-reduction.png in workshop working checkout.
