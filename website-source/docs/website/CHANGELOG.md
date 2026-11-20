@@ -1054,3 +1054,8 @@ November20 Dylan tiny crop follow-up: Rachel requested his face be just slightly
 
 
 November20 tiny Dylan crop follow-up published: source applicationbe91738/PR336; production PR337 merged6f32cad89dad9411f80503253790c508ec29e70b; Pages44810700607 succeeded. Ordinary live1280px after reload confirms scale1.30/origin35%0% and no overflow; local390px no-overflow/style check passed. Original image and other content unchanged. Viewport restored; no forms submitted. Proof: output/dylan-framing-proof-nov20/live-subtle-reduction.png in workshop working checkout.
+
+
+## Workshop selected-photo credit audit — November20, prepared
+
+Checked all12 selected speaker portraits and3 host portraits online and inspected available original metadata. Confirmed3 additional exact matches: Vincent Conitzer—Jared Lazarus / Duke Photography (source image EXIF), Shafi Goldwasser—Ronen Goldman (Simons caption), Vinod Vaikuntanathan—Lillie Paquette (MIT personal-page photo alt). Added all3 to existing fine-text credits above footer, with source links. Host credits depend on the matching selected asset. No reliable named attribution found for other10 selected photos; do not transfer Lou Jones’s Anat blackboard or David Kelly Crow’s different Elad portrait credit. Rachel separately requested cutting Yael’s visible CC BY-SA4.0 text; Dana Quigley/source link retained. Audit: references/workshop-speaker-photos-2026-11-13/photo-credit-audit-2026-11-20.md. Source baseline18d9e11/main6f32cad. Astro check55 files/zero diagnostics and build pass; exact output diff changes only workshop credit-list HTML. Desktop1280px reviewed; phone checks and publication/live evidence follow. No portraits, crops, roster or other page content changed.

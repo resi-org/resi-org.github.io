@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Section from '../../components/Section.astro';
 import Arrow from '../../components/Arrow.astro';
 import WorkshopPortrait from '../../components/WorkshopPortrait.astro';
-import { workshopPortraits } from '../../data/workshop-portraits';
+import { workshopPortraits, workshopHostPhotoCredits } from '../../data/workshop-portraits';
 import { portraitFor } from '../../lib/portraits';
 
 // The workshop detail page shares confirmed facts with Home and Events.
@@ -14,7 +14,7 @@ const event = entry.data;
 const titleExtension = "RESI's inaugural workshop on developing scientific foundations for safer advanced AI";
 const pageTitle = `${event.title}: ${titleExtension}`;
 const subtitle = "RESI's inaugural workshop on developing scientific foundations for safer advanced AI, bringing together researchers from frontier labs, safety organizations, and academia.";
-const photographyCredits = event.speakers.flatMap((speaker) => {
+const speakerPhotographyCredits = event.speakers.flatMap((speaker) => {
   const credit = workshopPortraits[speaker.name].credit;
   return credit ? [{ person: speaker.name, credit }] : [];
 });
@@ -24,6 +24,10 @@ const hosts = await Promise.all(hostIds.map(async (id) => {
   if (!person) throw new Error(`Missing workshop host: ${id}`);
   return { name: person.data.name, portrait: portraitFor(id, person.data.photo) };
 }));
+const photographyCredits = [...speakerPhotographyCredits, ...hosts.flatMap((host) => {
+  const credit = workshopHostPhotoCredits[host.portrait.src ?? ''];
+  return credit ? [{ person: host.name, credit }] : [];
+})];
 const date = event.start.toLocaleDateString('en-US', {
   weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
 });

@@ -217,3 +217,6 @@ Archiving a seminar into `talks` automatically removes the green box and uses th
 
 
 November20 workshop portrait refinement: Dylan’s supplied Katherine Taylor portrait uses CSS scale1.30 and origin35%0% (Rachel’s subsequent tiny zoom reduction) to align head size/centering with adjacent cards. Original image and shared People/Home framing remain unchanged. Yael’s visible credit retains Dana Quigley and CC BY-SA4.0 links without the parenthetical “cropped and resized”; asset provenance still records the crop. Both selected-photo credits remain above the footer.
+
+
+November20 photo-credit audit: include confirmed exact-photo credits for Vincent Conitzer (Jared Lazarus / Duke Photography), Shafi Goldwasser (Ronen Goldman), and Vinod Vaikuntanathan (Lillie Paquette), alongside Dylan and Yael. Link clear professional/institutional source pages; do not infer a photographer from another photo of the same person. Host credits are matched to selected asset URLs. Rachel requested removing the separate visible CC BY-SA4.0 text from Yael’s credit; keep Dana Quigley linked to the Commons source with license/provenance recorded in the asset inventory. This supersedes the earlier visible-license-link treatment for Yael.
