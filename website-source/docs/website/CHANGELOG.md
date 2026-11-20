@@ -1,3 +1,7 @@
+## November 20 — workshop program notice and arrival times
+
+Adam requested replacing “The program will be posted soon” with “The program will be posted here,” and adding the 9am–5pm workshop hours plus check-in and breakfast starting at 8:30am. Updated only the existing prominent notice on the workshop detail page; its styling is unchanged. Prepared from source `0b5f0ac` and production `b5ad497`. Astro check (55 files, zero diagnostics), build and whitespace checks passed. Native Chrome desktop and 390px responsive previews show readable wrapping. The generated workshop HTML differs from current production only by the requested text. Publication and live verification pending.
+
 ## November 20 — RESI-office event access wording published and live verified
 
 Rachel supplied the two-line replacement: “RESI Offices, Akami Building” / “Contact for access details,” with Contact alone linked to her RESI email. Confirmed `rachel@resi.org` from the connected account metadata; no email was sent. Preserve her supplied Akami spelling. Why ARC is the only current display record with the office address; updated its location HTML and canonical Search text. All eight past seminars are at MIT, so their locations and all other seminar fields remain unchanged. Source/content/public and production HTML audit found no other office-address displays. Generated HTML contains no office street/floor/postcode after the change.
