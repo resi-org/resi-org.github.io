@@ -1,4 +1,4 @@
-## November 23 — workshop talk-title layout, approved for publication
+## November 23 — workshop talk titles published and live verified
 
 Adam requested a screenshot preview adding regular-speaker talk titles from the
 event Google Doc, initially with no push. After reviewing it, he explicitly
@@ -26,9 +26,16 @@ checks passed. Desktop 1720px and phone 390px visually reviewed, including long
 titles and dark theme. 320px and 521px boundary checks show no overflow. Independent
 title and layout reviews passed. Screenshots and layout checks are in
 `/Users/adam/RESIST/output/workshop-talk-titles-preview-2026-11-23/`.
-Publication is in progress. Generated comparison against current production shows
-only the workshop HTML, its new route stylesheet, and Search HTML need publication.
-Independent endpoints and unrelated previews are preserved. No forms submitted.
+Published through source PR346 (merge `3e1f88b`) and production PR347 (merge
+`5d88989`). GitHub Pages run `45163748877` succeeded. Only workshop HTML, its new
+route stylesheet, and Search HTML were published; all other generated files matched
+production. Ordinary live HTTPS responses match the reviewed build byte-for-byte.
+Edge live desktop and 390px checks confirm 11 titles, one TBA placeholder, no
+tentative-title notice, Panels before RESI research spotlights, and no horizontal
+overflow. Live panel-order screenshot reviewed; viewport restored. Evidence is in
+the preview output folder (`live-release-checks.json`, `live-phone-checks.json`,
+`live-panels-spotlights.jpg`). Independent endpoints and unrelated previews are
+preserved. No forms submitted.
 
 ## November 20 — RESI-office event access wording published and live verified
 
