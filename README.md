@@ -30,7 +30,7 @@ Merge that pull request to republish the old site. No domain changes are needed.
 
 For content edits, start with [AGENTS.md](AGENTS.md). Shared event/seminar/group placement rules live in `website-source/docs/website/EVENT-ROUTING.md` on the continuing source branch; they apply to short requests such as “add X seminar” as well as detailed briefs.
 
-The production-ready source snapshot is in `website-source/` on branch `codex/default-size-90-source`. Use Node 22.12+ (or a supported newer release): `npm ci`, `npm run check`, then `npm run build`. Copy the resulting `dist/` contents into a clean publishing checkout, preserving `CNAME`, `.nojekyll`, `seminar-zoom/`, `ask/`, `dinner-rsvp/`, `reading-group/` and the retained legacy paths. Review and publish via a pull request to `main`. This source snapshot is separate from the continuing Cloudflare c.2 draft; carry over later approved draft changes deliberately.
+The production-ready source snapshot is in `website-source/` on branch `codex/default-size-90-source`. Use Node 22.12+ (or a supported newer release): `npm ci`, `npm run check`, then `npm run build`. Copy the resulting `dist/` contents into a clean publishing checkout, preserving `CNAME`, `.nojekyll`, `seminar-zoom/`, `ask/`, `dinner-rsvp/`, `inaug/`, `reading-group/` and the retained legacy paths. Review and publish via a pull request to `main`. This source snapshot is separate from the continuing Cloudflare c.2 draft; carry over later approved draft changes deliberately.
 
 ## Temporarily hidden visitor roster
 
@@ -47,6 +47,10 @@ To change the seminar Zoom destination, edit `seminar-zoom/destination.json`. Ke
 ## Dinner RSVP short URL
 
 [resi.org/dinner-rsvp](https://resi.org/dinner-rsvp) forwards to the invitation-only opening-event dinner RSVP form. To change the form, edit `dinner-rsvp/destination.json` and publish. The redirect bypasses browser/CDN caches for the destination lookup. Preserve `dinner-rsvp/` when publishing Astro builds. This endpoint is not listed in public navigation or the sitemap.
+
+## Inaugural workshop short URL
+
+[resi.org/inaug](https://resi.org/inaug) forwards to [Safe-by-Design Superintelligence](https://resi.org/workshops/safe-by-design-superintelligence/). This standalone redirect preserves query strings and fragments when JavaScript is enabled, with an immediate HTML redirect and a clickable link as fallbacks. Preserve `inaug/` when publishing Astro builds; its canonical URL is the workshop page, and the alias is excluded from indexing.
 
 ## Launch checks
 
