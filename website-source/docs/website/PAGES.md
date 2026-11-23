@@ -76,3 +76,5 @@ November19 desktop header preview (D18; not merged/published): src/data/page-sec
 
 
 November23: D18 desktop header menus approved for publication; DESIGN records the final centered 25px row and shared inventory. The earlier preview-only note is superseded for this reviewed scope. Collapsed/mobile layout remains unchanged. Publication/live evidence follows in CHANGELOG.
+
+November23 D18 is now published/live verified: sourcePR350 / productionPR351 / Pages45222886639. About/Research/People/Events use the shared header/in-page inventory; final geometry/behavior and preserved mobile checks are in CHANGELOG. Earlier preview-only status is superseded.
