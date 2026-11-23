@@ -181,10 +181,15 @@ const entries = [
     url: event.data.detailsHref || `/events#${event.data.anchor || `event-${event.id}`}`,
     category: 'Events',
     text: [event.data.description, event.data.overview, event.data.location, event.data.attendanceLabel, event.data.announcementLabel,
-      ...event.data.panels.flatMap((title) => [title, event.data.panelDescriptions[title]]),
+      ...event.data.panels.flatMap((title) => [title, event.data.panelDescriptions[title],
+        event.data.panelDetails[title] && `${event.data.panelDetails[title].participants.map((person) => person.affiliation ? `${person.name} (${person.affiliation})` : person.name).join(', ')}.`,
+        event.data.panelDetails[title]?.moderator && `Moderated by ${event.data.panelDetails[title].moderator}.`]),
+      event.data.spotlights && `RESI research spotlights: ${event.data.spotlights.speakers.join(', ')}.`,
+      event.data.spotlights?.moderator && `Moderated by ${event.data.spotlights.moderator}.`,
       event.data.start.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }),
       // Lineup names make the event findable by speaker or host, as readable sentences in the excerpt.
       event.data.speakers.length > 0 && `${event.data.speakersLabel || 'Speakers'}: ${event.data.speakers.map((speaker) => speaker.affiliation ? `${speaker.name} (${speaker.affiliation})` : speaker.name).join(', ')}.`,
+      ...event.data.speakers.filter((speaker) => speaker.talkTitle).map((speaker) => `${speaker.name}: ${speaker.talkTitle}.`),
       event.data.hosts.length > 0 && `${event.data.hostsLabel || 'Hosted by'}: ${event.data.hosts.join(', ')}.`].filter(Boolean).join(' '),
   })),
   ...updates.map((u) => ({

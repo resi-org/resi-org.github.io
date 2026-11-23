@@ -4,9 +4,13 @@
 
 Use **Zico Kolter — CMU**, **Aleksander Mądry — OpenAI** **Yael Tauman Kalai — MIT, RESI** and **Dylan Hadfield-Menell — MIT, RESI** for this event. These are the explicitly selected public affiliation labels; do not expand them based on email domains, board memberships or other institutional connections. This supersedes the November 17 Zico label “CMU, OpenAI” and Yael's November 18 “MIT” label. Madry remains a panelist, not a talk speaker. Dylan Hadfield-Menell (MIT, RESI) is a confirmed talk speaker and is included in the shared roster as of November 19.
 
-## Workshop speaker grid — November 17
+## Workshop speakers and talks — approved November 23
 
-The standalone workshop roster uses four equal-width cards across at636px viewport and wider, three at481–635px, and two at480px/below. Every incomplete final row is centered as a group, retaining equal card widths and left-aligned captions. The current twelve confirmed speakers (November 19) yield4/4/4 on desktop,3/3/3/3 at intermediate widths and six phone pairs. Preserve surname order, portrait aspect ratio/framing, typography, gaps and print grid. This supersedes the temporary desktop three-column layout. Jacob Tsimerman must not be restored as a talk speaker; any future panelist listing remains deferred until explicit instruction.
+Adam approved publication of the reviewed talk-title layout. The standalone workshop section uses two equal-width columns above 520px and one column at 520px/below. Each entry pairs a compact 64px-wide portrait with the name and affiliation, followed by the talk title across the entry's width. Keep the existing speaker order, original portraits and approved framing. Titles come from the event Google Doc and use canonical optional `speakers[].talkTitle` data; a missing title displays “Title to be announced.” At Adam's follow-up request, omit the general “Talk titles are tentative” sentence. Search includes available titles, while the compact Home/Events cards remain unchanged. Spotlight names remain a separate text list without talk titles.
+
+This supersedes the November 17 four/three/two-column portrait-only layout for the standalone workshop page. Jacob Tsimerman must not be restored as a talk speaker; his subsequently approved panelist listing remains separate.
+
+At Adam's November 23 request, section order is Speakers and talks → Panels → RESI research spotlights → Hosted by. Preserve the existing section anchors and participant/moderator text.
 
 ## Events lineup columns — approved November 16
 
@@ -40,6 +44,14 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 - November 16 footer direction: preserve the full desktop composition wherever its actual contents fit. Use the compact arrangement only when needed for space, not simply because a viewport is classified as mobile/tablet. On narrower screens, reserve utility space within the footer so the controls cannot cover main content. Published and live verified November 16 under WORKLIST D17. Shared global.css reserves an in-footer stacked utility area below 915px; the complete links/copyright row stays intact while the footer shell is at least 311px wide. Below that measured fit limit, use the compact two-row layout with adjacent theme/top controls. Recheck the intrinsic row width if footer text, type or gaps change; do not move this transition to a broad phone/tablet breakpoint. Preserve the existing desktop gutter/fixed treatment and all utility semantics.
 - Header, footer, contents menus and utility controls are shared. Later approved utility alignment follows the footer's right edge, superseding earlier content-column positioning trials. Preserve mobile in-flow controls.
 - Review affected desktop/mobile layouts and light/dark interactions. Preserve reduced-motion behavior and stable focus/hover on the homepage portrait mosaic.
+
+## Desktop navigation and section menus — approved November 23
+
+When the full header fits, About, Research, People and Events expose their existing section links on pointer hover and keyboard focus. Use a compact horizontal row centered beneath the affiliated navigation word, regardless of its right edge. Preserve the established 9px uppercase, 500-weight, 0.13em-tracked type; the bar is 25px high with 14px horizontal padding and no On this page heading. Keep native page links, visible focus, ArrowDown entry, Escape dismissal and correct hidden/expanded semantics. News and Support remain ordinary links without invented section inventories.
+
+`src/data/page-sections.ts` is the single inventory used by Header and PageShortcuts. Preserve stable anchors, Research team under People and the shared hidden-visitor flag. Hide the in-intro contents only with full desktop navigation; retain the existing collapsed/mobile placement, appearance and interaction. Wide coarse/no-hover devices retain in-page contents as a touch fallback. This does not approve a new mobile contents design.
+
+`src/components/Header.astro` measures the brand, actual navigation labels (including current-page bold), Search and gaps after font loading and resize. Keep full navigation until the About-to-identity gap would be smaller than the spacing between menu words. Do not restore an arbitrary early tablet breakpoint. `src/styles/navigation.css`, imported by Base, owns these shared rules. Recheck popup centers, fit boundaries, focus transfer and mobile contents whenever header text or section inventories change.
 
 ## Outlined action buttons — 01b approved site-wide, November 12
 
@@ -107,6 +119,10 @@ Opening H1s only are 10% larger up to 600px, including Home’s separate display
 ## Foundational-author typography — approved November 8
 
 Use full given names, retaining verified published/preferred middle initials and surname spelling. For one to three authors, show everyone; for four or more, show the first three in published order followed by “et al.” Keep complete linked credits inside the explanatory details for truncated entries, and the complete canonical names in Search. Never move a RESI researcher ahead of coauthors to place them before the cutoff. This is Rachel’s approved RESI house style, not a universal citation requirement. Verify expanded names rather than guessing initials. See the [comparison](references/foundational-author-style-comparison-2026-11-08.md) and [name evidence](references/foundational-authors-2026-11-08.md). The earlier all-author trial is superseded by this compact presentation.
+
+## RESI office event access wording — November 20
+
+For every event or seminar at the RESI offices, including past events, display two lines: **RESI Offices, Akami Building** and **[Contact](mailto:rachel@resi.org) for access details**. “Contact” alone is linked to Rachel’s RESI email. Do not display the office street address, floor or postal code while building access arrangements are being decided. Preserve the supplied “Akami” spelling unless Rachel changes it. Keep Search text consistent. This venue-specific rule supersedes preserving the original office address when archiving; other venues retain their historical locations and the standard upcoming/past placement rules.
 
 ## Past-event archive layout — approved November 12
 
@@ -210,3 +226,9 @@ All records in `src/data/seminars.json` → `upcoming` render automatically insi
 Approved format: workshop-family pale fill mixing 10% accent with paper; a 0.75px outline mixing 60% accent with paper; 1.5px corners; 20px vertical/18px horizontal padding, reduced to 18px/14px at 525px and below. Card titles use 24px serif type with 1.25 leading and 9px below; leave 18px above the card list and 15px between multiple upcoming cards. Use shared paper/accent tokens so light/dark follow the site. Preserve the reviewed metadata-aligned 11px plus/dots, 33px minimum target, keyboard focus and disclosure behavior. This is the approved upcoming-seminar exception to the earlier unboxed seminar treatment, not a new global announcement/promotional rule.
 
 Archiving a seminar into `talks` automatically removes the green box and uses the existing compact Past seminars treatment; retain archived logistics inside Event details. Seminars remain excluded from Home by default. The Events community heading is **Upcoming workshops and community events**; its shorter On this page label is **Upcoming workshops & events**, retaining #community-events. Publication evidence: CHANGELOG.
+
+
+November20 workshop portrait refinement: Dylan’s supplied Katherine Taylor portrait uses CSS scale1.30 and origin35%0% (Rachel’s subsequent tiny zoom reduction) to align head size/centering with adjacent cards. Original image and shared People/Home framing remain unchanged. Yael’s visible credit retains Dana Quigley and CC BY-SA4.0 links without the parenthetical “cropped and resized”; asset provenance still records the crop. Both selected-photo credits remain above the footer.
+
+
+November20 photo-credit audit: include confirmed exact-photo credits for Vincent Conitzer (Jared Lazarus / Duke Photography), Shafi Goldwasser (Ronen Goldman), and Vinod Vaikuntanathan (Lillie Paquette), alongside Dylan and Yael. Link clear professional/institutional source pages; do not infer a photographer from another photo of the same person. Host credits are matched to selected asset URLs. Rachel requested removing the separate visible CC BY-SA4.0 text from Yael’s credit; keep Dana Quigley linked to the Commons source with license/provenance recorded in the asset inventory. This supersedes the earlier visible-license-link treatment for Yael.

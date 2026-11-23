@@ -1,3 +1,50 @@
+## November 23 — workshop talk titles published and live verified
+
+Adam requested a screenshot preview adding regular-speaker talk titles from the
+event Google Doc, initially with no push. After reviewing it, he explicitly
+approved publication with “Go ahead and push it out.” Isolated worktree:
+`/Users/adam/code/resi-talk-titles-preview`, branch
+`codex/workshop-talk-titles-preview-nov23`, based on source `6384278` and checked
+against production `4487417`. Preview:
+http://127.0.0.1:4494/workshops/safe-by-design-superintelligence/.
+
+The approved Speakers and talks section uses two columns, compact existing
+portraits beside names/affiliations, and full-entry-width titles underneath. It
+stacks at 520px and below, superseding the prior portrait-only speaker grid.
+Eleven titles match Program option 1 as read November 23;
+Zico remains title-to-be-announced. Adam requested removing the general “Talk titles
+are tentative” sentence before publication. Orr's current title is retained while
+the planning program notes a revision is pending. Lightning/spotlight
+titles, timing, panels, hosts, photos/crops, affiliations, and Home/Events card
+layouts are unchanged. Optional talk titles also enter Search.
+
+Adam's second pre-publication follow-up moves Panels above RESI research spotlights,
+preserving their contents and stable anchors.
+
+Astro check (55 files, zero diagnostics), 18 announcement tests, build and whitespace
+checks passed. Desktop 1720px and phone 390px visually reviewed, including long
+titles and dark theme. 320px and 521px boundary checks show no overflow. Independent
+title and layout reviews passed. Screenshots and layout checks are in
+`/Users/adam/RESIST/output/workshop-talk-titles-preview-2026-11-23/`.
+Published through source PR346 (merge `3e1f88b`) and production PR347 (merge
+`5d88989`). GitHub Pages run `45163748877` succeeded. Only workshop HTML, its new
+route stylesheet, and Search HTML were published; all other generated files matched
+production. Ordinary live HTTPS responses match the reviewed build byte-for-byte.
+Edge live desktop and 390px checks confirm 11 titles, one TBA placeholder, no
+tentative-title notice, Panels before RESI research spotlights, and no horizontal
+overflow. Live panel-order screenshot reviewed; viewport restored. Evidence is in
+the preview output folder (`live-release-checks.json`, `live-phone-checks.json`,
+`live-panels-spotlights.jpg`). Independent endpoints and unrelated previews are
+preserved. No forms submitted.
+
+## November 20 — RESI-office event access wording published and live verified
+
+Rachel supplied the two-line replacement: “RESI Offices, Akami Building” / “Contact for access details,” with Contact alone linked to her RESI email. Confirmed `rachel@resi.org` from the connected account metadata; no email was sent. Preserve her supplied Akami spelling. Why ARC is the only current display record with the office address; updated its location HTML and canonical Search text. All eight past seminars are at MIT, so their locations and all other seminar fields remain unchanged. Source/content/public and production HTML audit found no other office-address displays. Generated HTML contains no office street/floor/postcode after the change.
+
+Recorded the interim rule in DESIGN-AND-EDITORIAL and EVENT-ROUTING for all current/past RESI-office events. It overrides preserving the old office address on archiving; future office entries must use the contact wording too. Other venues and their archive treatment are unchanged. Existing upcoming green card, title/speaker/date, abstract/bio, disclosure and no-Home routing are preserved. Broader Events/header previews stay separate.
+
+Source baseline2f88cc1 / main495e078; branch `codex/resi-event-access-wording-nov20` in `/Users/rachelsipser/Documents/GitHub/resi-website/output/resi-events-alignment-nov16`. Preview :4450 was refreshed (owned Astro process) to clear old module styling after source updates. All18 announcement checks pass; final Astro check55 files/zero diagnostics, build and whitespace checks pass. Local1280/390/320px verifies exact two-line wording, mailto target and no overflow. Generated comparison shows only Events/Search HTML differ from production; all other existing generated files match. Proof: `output/resi-access-proof-nov20/preview-checks.json`, `preview-1280.png`, `preview-390.png`. Scoped publication authorized by Rachel’s supplied text and standing instruction. Source PR329 merged at `a1859c86495353673b150eca0dee06288c1d8469`; publication PR330 merged at `85ca3944be5ec64127b97ef64297f3c45e7bde7c`. Pages run `44756385235` succeeded. Ordinary live Events after reload at1280/390/320px confirms the exact two-line venue wording, Contact → `mailto:rachel@resi.org`, preserved green seminar card and no overflow; the office street/floor/postcode are absent. Live Search includes the new venue/access text and no old address. Closed-card desktop/phone screenshots visually reviewed. Proof: `output/resi-access-proof-nov20/live-1280.png`, `live-390.png`, `live-checks.json` in the isolated checkout. Viewport restored; no mailto activation, email or form submission. The current eight past seminars retain their MIT venues; the new rule governs future/current/past RESI-office listings and archiving.
+
 ## November 19 — complete workshop speaker roster and correct affiliations
 
 Adam identified an omitted confirmed speaker and specified the event labels Zico Kolter — CMU, Aleksander Mądry — OpenAI and Yael Tauman Kalai — MIT, RESI. Added Dylan Hadfield-Menell (MIT) in surname order to the shared workshop roster (12 main speakers now), reusing his existing RESI portrait and approved framing. Corrected Zico and Yael in the canonical event record; Home, Events, Search and the workshop page inherit the appropriate updates. Madry is not yet listed on the public panel placeholders; his required OpenAI-only event label is recorded in DESIGN-AND-EDITORIAL for future panel publication. These instructions supersede the earlier event affiliation labels, without rewriting historical logs. No other speaker affiliations, portraits, panel assignments, program times or unrelated site content changed.
@@ -459,3 +506,39 @@ November19 People contents label: Rachel requested Team → Research team. Updat
 November19 popup right-edge refinement: Rachel requested every hover bar end at the right edge of the Support RESI button. Position and maximum width now derive from that button, replacing the Search/header boundary. All four bars at688/1280px match the button’s measured right edge exactly, remain25px high/single-row, and have no overflow. Astro check56 files/zero diagnostics, build and diff check passed. Proof: header-sections-support-edge-nov19.png and header-sections-support-edge-nov19.json in the same artifact folder. Mobile unchanged; still preview only.
 
 November19 centered-bar trial (current): Rachel requested each hover bar center align with its affiliated menu label, regardless of right edge. This supersedes the prior Support-edge alignment. CSS now uses50% left plus translateX(-50%) relative to each navigation item; removed Support-bound position/width calculations. All four bars at688/1280px match label centers within0.004px, remain25px high/single-row and stay within the viewport without overflow. Astro check56 files/zero diagnostics, build and diff check pass. Proof: header-sections-centered-nov19.png and header-sections-centered-nov19.json in the same artifact folder. Mobile remains unchanged; still preview only.
+
+## Workshop Dylan portrait — November 20, prepared
+
+Rachel supplied a replacement portrait of Dylan Hadfield-Menell and requested the photographer credit from the linked Forbes article. Workshop-only photo now uses the unchanged original 959 × 1438 WebP; the selected-photo credit reads “Dylan Hadfield-Menell: Katherine Taylor,” linked to the article, in the existing fine-text credits above the footer. Shared People/Home portrait, current 12-speaker roster and all responsive layout rules are preserved. Source branch `codex/dylan-workshop-portrait-nov20`, based on continuing source `47ed492` and production `85ca394`. Astro check: 55 files, zero errors/warnings/hints; build passed. Local desktop and 390px visual review confirms photo/credit, no phone overflow, and Jacob Tsimerman absent. Generated diff: only workshop HTML and two new Dylan WebP assets. Publication/live evidence follows after deployment.
+
+
+## Workshop Dylan portrait — November 20, published and live verified
+
+Application commit `5cf254d`; source PR [332](https://github.com/resi-org/resi-org.github.io/pull/332). Scoped publication PR [333](https://github.com/resi-org/resi-org.github.io/pull/333) merged at `c1dd2995697f23f33303a364e15da3157f9b83ec`; GitHub Pages run `44808660567` succeeded. Ordinary live workshop after reload loads `dylan-hadfield-menell-katherine-taylor.8cDrmI_A_Z1j5hFE.webp`. Desktop 1280px and phone 390px verification confirms loaded new portrait, all 12 current speakers, no horizontal overflow, and linked Katherine Taylor credit above the footer. Yael’s Dana Quigley/license credit is preserved; Jacob Tsimerman is absent. Only workshop HTML and two new photo assets were published. People/Home shared photo is unchanged. No forms submitted. Viewport restored. Proof: `/Users/rachelsipser/Documents/GitHub/resi-website/output/resi-workshop-subtitle-preview-nov16/output/dylan-portrait-proof-nov20/` (`live-desktop.png`, `live-credits.png`, `live-390.json`, `live-desktop.json`, `dist-diff.json`).
+
+
+## Workshop portrait refinement — November 20, prepared
+
+Rachel requested a closer Dylan Hadfield-Menell crop and removal of “cropped and resized” from Yael Tauman Kalai’s visible credit. Workshop-only Dylan framing now uses scale1.35 with origin35%0%, matching neighboring head sizes and centering his face while preserving original image pixels. Yael’s Dana Quigley attribution and CC BY-SA4.0 link remain. Based on source896a9ae/mainc1dd299. Astro check55 files/zero diagnostics and final build pass; desktop1280px/phone390px visual review passes without overflow. Exact generated diff changes only the standalone workshop HTML. Shared portraits, current12-speaker roster and other credits remain unchanged.
+
+
+November20 portrait refinement published/live verified: source application `8c1c426`, PR334; production PR335 merged at `aace56e7dfaef59005e867460d7734311a4b182d`. Pages run44810043990 succeeded. Ordinary live workshop after reload at1280/390px confirms Dylan’s scale1.35/origin35%0% framing, loaded photo, no overflow, and Yael credit without the parenthetical while retaining Dana Quigley and CC BY-SA4.0 links. Original photos, shared People/Home framing, all12 speakers and other content unchanged. Only workshop HTML published. No forms submitted; viewport restored. Screenshot: `output/dylan-framing-proof-nov20/live-desktop.png` in the workshop working checkout.
+
+
+November20 Dylan tiny crop follow-up: Rachel requested his face be just slightly smaller. Workshop CSS scale1.35 →1.30 (about3.7% smaller), origin35%0% retained. Source5cb1dca/mainaace56e baseline. Build passed; desktop visual review confirms the slight reduction. Exact generated diff changes only this inline scale in workshop HTML; original image, credit, roster and shared portraits preserved. Publication/live verification pending.
+
+
+November20 tiny Dylan crop follow-up published: source applicationbe91738/PR336; production PR337 merged6f32cad89dad9411f80503253790c508ec29e70b; Pages44810700607 succeeded. Ordinary live1280px after reload confirms scale1.30/origin35%0% and no overflow; local390px no-overflow/style check passed. Original image and other content unchanged. Viewport restored; no forms submitted. Proof: output/dylan-framing-proof-nov20/live-subtle-reduction.png in workshop working checkout.
+
+
+## Workshop selected-photo credit audit — November20, prepared
+
+Checked all12 selected speaker portraits and3 host portraits online and inspected available original metadata. Confirmed3 additional exact matches: Vincent Conitzer—Jared Lazarus / Duke Photography (source image EXIF), Shafi Goldwasser—Ronen Goldman (Simons caption), Vinod Vaikuntanathan—Lillie Paquette (MIT personal-page photo alt). Added all3 to existing fine-text credits above footer, with source links. Host credits depend on the matching selected asset. No reliable named attribution found for other10 selected photos; do not transfer Lou Jones’s Anat blackboard or David Kelly Crow’s different Elad portrait credit. Rachel separately requested cutting Yael’s visible CC BY-SA4.0 text; Dana Quigley/source link retained. Audit: references/workshop-speaker-photos-2026-11-13/photo-credit-audit-2026-11-20.md. Source baseline18d9e11/main6f32cad. Astro check55 files/zero diagnostics and build pass; exact output diff changes only workshop credit-list HTML. Desktop1280px reviewed; phone checks and publication/live evidence follow. No portraits, crops, roster or other page content changed.
+
+
+November20 photo-credit audit published/live verified: source application422a4b4/PR338. Production PR339 mergedb5ad4977d57dd3d72a05aa909494dc55d875689d; Pages44814158785 succeeded. Ordinary live workshop after reload at390/1280px confirms five named-credit lines and exact source links, Yael’s separate license text removed, no overflow, footer last, all12 speakers and Dylan’s approved1.30 crop unchanged. Only workshop credit-list HTML published; no asset or other-page changes. No forms submitted. Viewport restored. Proof: output/credits-audit-proof-nov20/live-phone.png and live-desktop.json in the workshop working checkout. Source audit documents all15 selected portraits and excludes misattributions to earlier/different photos.
+
+
+## D18 publication — November 23, authorized and preparing
+
+Rachel approved the final centered desktop trial for publication. Earlier November19 preview-only and Support-edge alignment notes are historical; the centered 25px horizontal row is the final approved design. Merged current continuing source4547902 into the isolated preview, preserving subsequent workshop/seminar changes. Core DESIGN now records the shared inventory, actual-fit header transition and unchanged collapsed/mobile layout. Production baseline290808d; source/publication merges and live verification pending.

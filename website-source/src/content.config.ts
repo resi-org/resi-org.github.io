@@ -180,6 +180,17 @@ const events = defineCollection({
     interestNote: z.string().trim().min(1).optional(),
     panels: z.array(z.string().trim().min(1)).optional().default([]),
     panelDescriptions: z.record(z.string(), z.string().trim().min(1)).optional().default({}),
+    panelDetails: z.record(z.string(), z.object({
+      participants: z.array(z.object({
+        name: z.string().trim().min(1),
+        affiliation: z.string().trim().min(1).optional(),
+      })).min(1),
+      moderator: z.string().trim().min(1).optional(),
+    })).optional().default({}),
+    spotlights: z.object({
+      speakers: z.array(z.string().trim().min(1)).min(1),
+      moderator: z.string().trim().min(1).optional(),
+    }).optional(),
     interestUrl: z.url().optional(),
     interestLabel: z.string().optional(),
     anchor: z.string().optional(),
@@ -192,6 +203,7 @@ const events = defineCollection({
     speakers: z.array(z.object({
       name: z.string().trim().min(1),
       affiliation: z.string().trim().min(1).optional(),
+      talkTitle: z.string().trim().min(1).optional(),
     })).optional().default([]),
     speakersLabel: z.string().trim().min(1).optional(),
     hosts: z.array(z.string().trim().min(1)).optional().default([]),

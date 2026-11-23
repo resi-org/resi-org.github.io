@@ -1,4 +1,4 @@
-/* Preview: use the full header until its actual identity/labels no longer fit.
+/* Use the full header until its actual identity/labels no longer fit.
    Legacy media rules remain the no-JavaScript fallback. */
 @media screen {
   .header-nav-item { position: relative; flex: 0 0 auto; }

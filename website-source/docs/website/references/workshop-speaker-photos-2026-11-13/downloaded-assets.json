@@ -90,5 +90,15 @@
     "sha256": "9ec0557f6c80fa92ed5c821cd4e4ed16fabca069c8856a517fe7af8f846c0821",
     "retrieved": "2026-11-18",
     "notes": "Original 3584 x 4480 JPEG preserved. Adam selected the Wikipedia portrait (white cardigan). Existing component resizes to WebP; CSS crops the displayed portrait to match nearby head sizes. No synthesis or changes to original photo pixels."
+  },
+  {
+    "file": "dylan-hadfield-menell-katherine-taylor.webp",
+    "source": "Portrait supplied by Rachel for Dylan Hadfield-Menell workshop listing on 2026-11-20",
+    "credit": "Katherine Taylor",
+    "credit_source": "https://www.forbes.com/sites/johnwerner/2023/08/28/the-struggle-to-make-ai-do-the-right-thing/",
+    "bytes": 97618,
+    "sha256": "dc782bc5e7834e56805ea39843e7ab1ea7f85e94ec7ca8f2a825340e952cb889",
+    "received": "2026-11-20",
+    "notes": "Original 959 x 1438 WebP copied unchanged. Forbes identifies Katherine Taylor beneath the matching Portrait of Dylan Hadfield-Menell. Credit remains attached to this workshop photo; shared People/Home portrait is unchanged."
   }
 ]
