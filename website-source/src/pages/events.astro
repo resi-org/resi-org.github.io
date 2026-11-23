@@ -6,6 +6,7 @@ import { isSeriesEvent } from '../lib/event-announcement-policy';
 const events = (await getAnnouncements()).filter((entry) => entry.category === 'Events').filter((entry) => !isSeriesEvent(entry.eventType)).sort((a, b) => a.start.valueOf() - b.start.valueOf());
 import Section from '../components/Section.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
+import { pageSections } from '../data/page-sections';
 import seminars from '../data/seminars.json';
 const upcomingSeminars: (typeof seminars.talks)[number][] = seminars.upcoming;
 import { seminarDisclosure, pastSeminarDisclosure } from '../lib/disclosure';
@@ -17,14 +18,7 @@ import { institute } from '../data/institute';
   <header class="page-hero">
     <h1>Seminars, workshops, and discussions on building the foundations of superintelligence safety</h1>
   </header>
-  <PageShortcuts
-    id="events-shortcuts"
-    items={[
-      { label: 'Upcoming workshops & events', href: '#community-events' },
-      { label: 'Upcoming seminars', href: '#upcoming-seminars' },
-      { label: 'Past seminars', href: '#past-seminars' },
-    ]}
-  />
+  <PageShortcuts id="events-shortcuts" items={pageSections['/events']} />
 
   <Section id="community-events" label="Upcoming workshops and community events" divider>
     <div class="event-list">

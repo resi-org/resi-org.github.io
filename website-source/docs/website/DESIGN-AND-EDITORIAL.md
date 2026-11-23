@@ -45,6 +45,14 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 - Header, footer, contents menus and utility controls are shared. Later approved utility alignment follows the footer's right edge, superseding earlier content-column positioning trials. Preserve mobile in-flow controls.
 - Review affected desktop/mobile layouts and light/dark interactions. Preserve reduced-motion behavior and stable focus/hover on the homepage portrait mosaic.
 
+## Desktop navigation and section menus — approved November 23
+
+When the full header fits, About, Research, People and Events expose their existing section links on pointer hover and keyboard focus. Use a compact horizontal row centered beneath the affiliated navigation word, regardless of its right edge. Preserve the established 9px uppercase, 500-weight, 0.13em-tracked type; the bar is 25px high with 14px horizontal padding and no On this page heading. Keep native page links, visible focus, ArrowDown entry, Escape dismissal and correct hidden/expanded semantics. News and Support remain ordinary links without invented section inventories.
+
+`src/data/page-sections.ts` is the single inventory used by Header and PageShortcuts. Preserve stable anchors, Research team under People and the shared hidden-visitor flag. Hide the in-intro contents only with full desktop navigation; retain the existing collapsed/mobile placement, appearance and interaction. Wide coarse/no-hover devices retain in-page contents as a touch fallback. This does not approve a new mobile contents design.
+
+`src/components/Header.astro` measures the brand, actual navigation labels (including current-page bold), Search and gaps after font loading and resize. Keep full navigation until the About-to-identity gap would be smaller than the spacing between menu words. Do not restore an arbitrary early tablet breakpoint. `src/styles/navigation.css`, imported by Base, owns these shared rules. Recheck popup centers, fit boundaries, focus transfer and mobile contents whenever header text or section inventories change.
+
 ## Outlined action buttons — 01b approved site-wide, November 12
 
 All outlined action buttons now use 01b: transparent fill; 1.25px full outline mixed from 80% accent / 20% paper; label weight 500; accent text; established 1.5px corners. Hover uses accent-hover for text/border and a 5% accent wash. Inherit the existing visible keyboard focus, type sizes, arrows, hit areas and responsive geometry. Home retains 6px horizontal padding so its four buttons fit between the existing outer edges. Use the shared theme tokens in light/dark; do not recreate separate page-specific border or weight values.

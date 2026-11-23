@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import IntroActions from '../components/IntroActions.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
+import { pageSections } from '../data/page-sections';
 import Section from '../components/Section.astro';
 import Papers from '../components/Papers.astro';
 import ResearchAreas from '../components/ResearchAreas.astro';
@@ -70,15 +71,7 @@ const papers = (await getCollection('selectedResearch')).sort(
       />
     </div>
   </Section>
-  <PageShortcuts
-    id="research-shortcuts"
-    items={[
-      { label: 'Research outputs', href: '#approach' },
-      { label: 'Research areas', href: '#areas' },
-      { label: 'Working groups', href: '#concentration' },
-      { label: 'Foundational research', href: '#evidence' },
-    ]}
-  />
+  <PageShortcuts id="research-shortcuts" items={pageSections['/research']} />
 
 
 

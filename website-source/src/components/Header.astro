@@ -1,5 +1,6 @@
 ---
 import Mark from './Mark.astro';
+import { pageSections } from '../data/page-sections';
 // The route pattern stays extensionless when the production build emits .html files.
 const path = Astro.routePattern.replace(/\/$/, '') || '/';
 const links = [
@@ -27,15 +28,32 @@ const links = [
       </span>
     </a>
     <nav class="desktop-nav" aria-label="Main navigation">
-      {links.map(([href, label]) => (
-        <a
-          href={href}
-          aria-current={path === href ? 'page' : undefined}
-          class:list={{ 'nav-support': href === '/support' }}
-        >
-          {label}
-        </a>
-      ))}
+      {links.map(([href, label]) => {
+        const sections = pageSections[href] ?? [];
+        const panelId = `header-sections-${href.slice(1)}`;
+        return (
+          <div class="header-nav-item">
+            <a
+              href={href}
+              aria-current={path === href ? 'page' : undefined}
+              aria-expanded={sections.length ? 'false' : undefined}
+              aria-controls={sections.length ? panelId : undefined}
+              class:list={{ 'nav-support': href === '/support' }}
+            >
+              {label}
+            </a>
+            {sections.length > 0 && (
+              <div class="header-section-panel" id={panelId} hidden>
+                <ul role="list" aria-label={`${label} sections`}>
+                  {sections.map((section) => (
+                    <li><a href={`${href}${section.href}`}>{section.label}</a></li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        );
+      })}
     </nav>
     <a
       class="mobile-support"
@@ -91,3 +109,119 @@ const links = [
     </details>
   </div>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.site-header')!;
+  const inner = header.querySelector<HTMLElement>('.header-inner')!;
+  const brand = header.querySelector<HTMLElement>('.brand')!;
+  const nav = header.querySelector<HTMLElement>('.desktop-nav')!;
+  const tools = header.querySelector<HTMLElement>('.header-tools')!;
+  const root = document.documentElement;
+  const menu = header.querySelector<HTMLDetailsElement>('.mobile-menu')!;
+
+  // Measure the actual labels and identity at their current font size, including
+  // the active page's bold label. About must retain at least one menu-word gap.
+  let previousWidth = 0;
+  const fitNavigation = () => {
+    header.dataset.navMeasuring = '';
+    const gap = parseFloat(getComputedStyle(nav).columnGap);
+    const required = brand.getBoundingClientRect().width
+      + nav.getBoundingClientRect().width
+      + tools.getBoundingClientRect().width + gap * 2;
+    delete header.dataset.navMeasuring;
+    const available = inner.getBoundingClientRect().width;
+    const desktop = available >= Math.ceil(required);
+    const previous = root.dataset.headerLayout;
+    const focusedInDesktop = nav.contains(document.activeElement);
+    root.dataset.headerLayout = desktop ? 'desktop' : 'collapsed';
+    if (desktop && menu.open) menu.open = false;
+    if (!desktop && previous === 'desktop' && focusedInDesktop) {
+      menu.querySelector<HTMLElement>('summary')?.focus();
+    }
+    if (previous !== root.dataset.headerLayout || previousWidth !== available) {
+      header.dispatchEvent(new Event('headerlayoutchange'));
+    }
+    previousWidth = available;
+  };
+  const observer = new ResizeObserver(fitNavigation);
+  observer.observe(inner);
+  observer.observe(brand);
+  document.fonts.ready.then(fitNavigation);
+  fitNavigation();
+
+  nav.querySelectorAll<HTMLElement>('.header-nav-item').forEach((item) => {
+    const trigger = item.querySelector<HTMLAnchorElement>('a')!;
+    const panel = item.querySelector<HTMLElement>('.header-section-panel');
+    if (!panel) return;
+    let dismissed = false;
+    const close = () => {
+      panel.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+    const open = () => {
+      if (dismissed || root.dataset.headerLayout !== 'desktop') return;
+      nav.querySelectorAll<HTMLElement>('.header-section-panel').forEach((other) => {
+        if (other !== panel) {
+          other.hidden = true;
+          other.parentElement?.querySelector('a')?.setAttribute('aria-expanded', 'false');
+        }
+      });
+      panel.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+    };
+    item.addEventListener('pointerenter', () => { dismissed = false; open(); });
+    item.addEventListener('pointerleave', () => {
+      dismissed = false;
+      if (!item.contains(document.activeElement)) close();
+    });
+    item.addEventListener('focusin', open);
+    item.addEventListener('focusout', (event) => {
+      if (!item.contains(event.relatedTarget as Node | null)) {
+        dismissed = false;
+        close();
+      }
+    });
+    item.addEventListener('keydown', (event) => {
+      if (event.target === trigger && event.key === 'ArrowDown') {
+        event.preventDefault();
+        dismissed = false;
+        open();
+        panel.querySelector<HTMLAnchorElement>('a')?.focus();
+      }
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || panel.hidden) return;
+      event.preventDefault();
+      dismissed = true;
+      const focused = item.contains(document.activeElement);
+      close();
+      if (focused) trigger.focus();
+    });
+    panel.addEventListener('click', (event) => {
+      const link = event.target instanceof Element ? event.target.closest('a') : null;
+      if (!link) return;
+      close();
+      // Same-page jumps leave focus at the chosen section, outside the popup.
+      if (link.pathname.replace(/\/$/, '') === location.pathname.replace(/\/$/, '')) {
+        const target = document.getElementById(link.hash.slice(1));
+        if (target) requestAnimationFrame(() => {
+          const previous = target.getAttribute('tabindex');
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+          target.addEventListener('blur', () => {
+            if (previous === null) target.removeAttribute('tabindex');
+            else target.setAttribute('tabindex', previous);
+          }, { once: true });
+        });
+      }
+    });
+    header.addEventListener('headerlayoutchange', () => {
+      const focused = panel.contains(document.activeElement);
+      close();
+      if (focused && root.dataset.headerLayout === 'desktop') {
+        dismissed = true;
+        trigger.focus();
+      }
+    });
+  });
+</script>

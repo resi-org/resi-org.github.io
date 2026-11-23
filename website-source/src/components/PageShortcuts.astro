@@ -42,6 +42,7 @@ const { id, items } = Astro.props;
     root.dataset.pageShortcuts = '';
     const observer = new ResizeObserver(measure);
     observer.observe(header);
+    header.addEventListener('headerlayoutchange', measure);
     observer.observe(bar);
     enoughHeight.addEventListener('change', measure);
     document.fonts.ready.then(measure);
