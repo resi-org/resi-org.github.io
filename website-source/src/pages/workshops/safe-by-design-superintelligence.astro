@@ -261,6 +261,7 @@ const date = event.start.toLocaleDateString('en-US', {
     --participant-columns: 5; display: flex; flex-wrap: wrap; justify-content: center;
     gap: 21px 24px; list-style: none; padding: 0; margin: 18px 0 0;
   }
+  .program-panels .participant-list { justify-content: flex-start; }
   .participant-list > li { width: calc((100% - (var(--participant-columns) - 1) * 24px) / var(--participant-columns)); min-width: 0; margin: 0; padding: 0; }
   .participant-photo { width: 80px; height: 80px; margin-bottom: 9px; }
   .participant-photo :global(.workshop-portrait) { margin: 0; }
