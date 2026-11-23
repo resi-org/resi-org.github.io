@@ -12,10 +12,14 @@ The approved Speakers and talks section uses two columns, compact existing
 portraits beside names/affiliations, and full-entry-width titles underneath. It
 stacks at 520px and below, superseding the prior portrait-only speaker grid.
 Eleven titles match Program option 1 as read November 23;
-Zico remains title-to-be-announced. Titles are labeled tentative, including Orr's
-current title while the program notes a revision is pending. Lightning/spotlight
+Zico remains title-to-be-announced. Adam requested removing the general “Talk titles
+are tentative” sentence before publication. Orr's current title is retained while
+the planning program notes a revision is pending. Lightning/spotlight
 titles, timing, panels, hosts, photos/crops, affiliations, and Home/Events card
 layouts are unchanged. Optional talk titles also enter Search.
+
+Adam's second pre-publication follow-up moves Panels above RESI research spotlights,
+preserving their contents and stable anchors.
 
 Astro check (55 files, zero diagnostics), 18 announcement tests, build and whitespace
 checks passed. Desktop 1720px and phone 390px visually reviewed, including long

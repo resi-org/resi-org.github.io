@@ -4,7 +4,7 @@ Prepared an isolated local version at Adam's request, based on continuing source
 `6384278`. Eleven regular talk titles were transcribed exactly from the event
 Doc's Program option 1. Zico's title is still TBA. The reviewed Speakers and talks
 layout pairs compact, unchanged portraits with name/affiliation headers and places
-each tentative title underneath at a readable width. Two desktop columns become
+each title underneath at a readable width. Two desktop columns become
 one at 520px/below. Spotlight names and all other event sections retain their
 existing content. Canonical optional `talkTitle` data also feeds Search without
 expanding Home or Events cards.
@@ -17,9 +17,11 @@ Independent review confirmed exact title provenance and readable layout. Branch
 http://127.0.0.1:4494/workshops/safe-by-design-superintelligence/.
 Screenshot: `/Users/adam/RESIST/output/workshop-talk-titles-preview-2026-11-23/desktop-speakers.jpg`.
 Adam subsequently approved publication with “Go ahead and push it out.” The shared
-design record now adopts this layout. Generated comparison against production
+design record now adopts this layout. His follow-up removes “Talk titles are
+tentative” before publication, along with its unused style. Generated comparison against production
 `4487417` limits publication to workshop HTML, its new route stylesheet, and Search
-HTML. Source and production PRs, deployment, and live verification follow.
+HTML. His second follow-up moves Panels above RESI research spotlights without
+changing their content or anchors. Source and production PRs, deployment, and live verification follow.
 
 ## November 20 — confirmed panels and RESI research spotlights
 

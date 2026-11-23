@@ -6,9 +6,11 @@ Use **Zico Kolter — CMU**, **Aleksander Mądry — OpenAI** **Yael Tauman Kala
 
 ## Workshop speakers and talks — approved November 23
 
-Adam approved publication of the reviewed talk-title layout. The standalone workshop section uses two equal-width columns above 520px and one column at 520px/below. Each entry pairs a compact 64px-wide portrait with the name and affiliation, followed by the tentative talk title across the entry's width. Keep the existing speaker order, original portraits and approved framing. Titles come from the event Google Doc and use canonical optional `speakers[].talkTitle` data; a missing title displays “Title to be announced.” The section notes that titles are tentative. Search includes available titles, while the compact Home/Events cards remain unchanged. Spotlight names remain a separate text list without talk titles.
+Adam approved publication of the reviewed talk-title layout. The standalone workshop section uses two equal-width columns above 520px and one column at 520px/below. Each entry pairs a compact 64px-wide portrait with the name and affiliation, followed by the talk title across the entry's width. Keep the existing speaker order, original portraits and approved framing. Titles come from the event Google Doc and use canonical optional `speakers[].talkTitle` data; a missing title displays “Title to be announced.” At Adam's follow-up request, omit the general “Talk titles are tentative” sentence. Search includes available titles, while the compact Home/Events cards remain unchanged. Spotlight names remain a separate text list without talk titles.
 
 This supersedes the November 17 four/three/two-column portrait-only layout for the standalone workshop page. Jacob Tsimerman must not be restored as a talk speaker; his subsequently approved panelist listing remains separate.
+
+At Adam's November 23 request, section order is Speakers and talks → Panels → RESI research spotlights → Hosted by. Preserve the existing section anchors and participant/moderator text.
 
 ## Events lineup columns — approved November 16
 

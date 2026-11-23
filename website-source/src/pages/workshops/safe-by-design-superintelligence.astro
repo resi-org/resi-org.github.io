@@ -58,7 +58,6 @@ const date = event.start.toLocaleDateString('en-US', {
     </header>
 
     <Section id="speakers" label="Speakers and talks" divider>
-      <p class="talks-note">Talk titles are tentative.</p>
       <ul class="speaker-list">
         {event.speakers.map((speaker) => <li>
           <div class="speaker-heading">
@@ -77,11 +76,6 @@ const date = event.start.toLocaleDateString('en-US', {
       </ul>
     </Section>
 
-    {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
-      <p class="program-participants">{event.spotlights.speakers.map((name, index) => <>{index > 0 && ', '}<strong>{name}</strong></>)}.</p>
-      {event.spotlights.moderator && <p class="program-moderator">Moderated by {event.spotlights.moderator}.</p>}
-    </Section>}
-
     <Section id="program" label="Panels" divider>
       {event.panels.length > 0 && <ul class="program-panels">
         {event.panels.map((title) => <li>
@@ -96,6 +90,11 @@ const date = event.start.toLocaleDateString('en-US', {
         </li>)}
       </ul>}
     </Section>
+
+    {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
+      <p class="program-participants">{event.spotlights.speakers.map((name, index) => <>{index > 0 && ', '}<strong>{name}</strong></>)}.</p>
+      {event.spotlights.moderator && <p class="program-moderator">Moderated by {event.spotlights.moderator}.</p>}
+    </Section>}
 
     <Section id="hosts" label={event.hostsLabel || 'Hosted by'} divider>
       <ul class="host-list">
@@ -191,7 +190,6 @@ const date = event.start.toLocaleDateString('en-US', {
   .workshop-interest:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
   .workshop-interest :global(svg) { width: 16px; height: 16px; flex: 0 0 16px; }
   .speaker-list, .host-list { list-style: none; padding: 0; margin: 0; }
-  .talks-note { margin: 0 0 24px; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
   .speaker-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
