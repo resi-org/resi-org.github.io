@@ -1,11 +1,13 @@
 ---
-import { getEntry } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Section from '../../components/Section.astro';
 import Arrow from '../../components/Arrow.astro';
 import WorkshopPortrait from '../../components/WorkshopPortrait.astro';
 import { workshopPortraits, workshopHostPhotoCredits } from '../../data/workshop-portraits';
 import { portraitFor } from '../../lib/portraits';
+import { workshopParticipantPortraits } from '../../data/workshop-participant-portraits';
+import type { WorkshopPhoto } from '../../data/workshop-portraits';
 
 // The workshop detail page shares confirmed facts with Home and Events.
 const entry = await getEntry('events', '2026-12-04-inaugural-workshop');
@@ -24,10 +26,24 @@ const hosts = await Promise.all(hostIds.map(async (id) => {
   if (!person) throw new Error(`Missing workshop host: ${id}`);
   return { name: person.data.name, portrait: portraitFor(id, person.data.photo) };
 }));
-const photographyCredits = [...speakerPhotographyCredits, ...hosts.flatMap((host) => {
+const people = await getCollection('people');
+const teamPortraits: Record<string, WorkshopPhoto> = Object.fromEntries(people.filter((person) => person.data.photo).map((person) => {
+  const portrait = portraitFor(person.id, person.data.photo);
+  return [person.data.name, { src: portrait.src!, style: portrait.style, label: 'Existing RESI People portrait' }];
+}));
+const participantPortraits = { ...teamPortraits, ...workshopPortraits, ...workshopParticipantPortraits };
+const programNames = [...event.panels.flatMap((title) => event.panelDetails[title]?.participants.map((person) => person.name) ?? []), ...(event.spotlights?.speakers ?? [])];
+for (const name of programNames) {
+  if (!participantPortraits[name]) throw new Error(`Missing selected workshop portrait: ${name}`);
+}
+const programPhotographyCredits = programNames.flatMap((name) => {
+  const credit = participantPortraits[name]?.credit;
+  return credit ? [{ person: name, credit }] : [];
+});
+const photographyCredits = [...speakerPhotographyCredits, ...programPhotographyCredits, ...hosts.flatMap((host) => {
   const credit = workshopHostPhotoCredits[host.portrait.src ?? ''];
   return credit ? [{ person: host.name, credit }] : [];
-})];
+})].filter((entry, index, credits) => credits.findIndex((item) => item.credit.id === entry.credit.id) === index);
 const date = event.start.toLocaleDateString('en-US', {
   weekday: 'long', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC',
 });
@@ -55,20 +71,19 @@ const date = event.start.toLocaleDateString('en-US', {
       </div>}
       {event.interestNote && <p class="interest-note">{event.interestNote}</p>}
       <p class="program-notice">The program will be posted here. The workshop will run 9am–5pm, with check-in and breakfast starting at 8:30am.</p>
+      <nav class="workshop-sections" aria-label="Workshop sections">
+        <a href="#speakers">Speakers and talks</a>
+        <a href="#program">Panels</a>
+        <a href="#spotlights">Research spotlights</a>
+      </nav>
     </header>
 
     <Section id="speakers" label="Speakers and talks" divider>
       <ul class="speaker-list">
         {event.speakers.map((speaker) => <li>
-          <div class="speaker-heading">
-            <div class="speaker-photo">
-              <WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} />
-            </div>
-            <div>
-              <h3>{speaker.name}</h3>
-              {speaker.affiliation && <p class="speaker-affiliation">{speaker.affiliation}</p>}
-            </div>
-          </div>
+          <WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} />
+          <h3>{speaker.name}</h3>
+          {speaker.affiliation && <p class="speaker-affiliation">{speaker.affiliation}</p>}
           {speaker.talkTitle
             ? <p class="talk-title">{speaker.talkTitle}</p>
             : <p class="talk-pending">Title to be announced</p>}
@@ -82,9 +97,13 @@ const date = event.start.toLocaleDateString('en-US', {
           <h3>{title}</h3>
           {event.panelDescriptions[title] && <p class="panel-description">{event.panelDescriptions[title]}</p>}
           {event.panelDetails[title] ? <>
-            <p class="program-participants">{event.panelDetails[title].participants.map((person, index) => <>
-              {index > 0 && ', '}<strong>{person.name}</strong>{person.affiliation && <> ({person.affiliation})</>}
-            </>)}.</p>
+            <ul class="participant-list">
+              {event.panelDetails[title].participants.map((person) => <li>
+                <div class="participant-photo"><WorkshopPortrait name={person.name} photo={participantPortraits[person.name]} square /></div>
+                <p class="participant-name">{person.name}</p>
+                {person.affiliation && <p class="participant-affiliation">{person.affiliation}</p>}
+              </li>)}
+            </ul>
             {event.panelDetails[title].moderator && <p class="program-moderator">Moderated by {event.panelDetails[title].moderator}.</p>}
           </> : <p class="program-moderator">Panelists will be announced soon.</p>}
         </li>)}
@@ -92,7 +111,12 @@ const date = event.start.toLocaleDateString('en-US', {
     </Section>
 
     {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
-      <p class="program-participants">{event.spotlights.speakers.map((name, index) => <>{index > 0 && ', '}<strong>{name}</strong></>)}.</p>
+      <ul class="participant-list spotlight-list">
+        {event.spotlights.speakers.map((name) => <li>
+          <div class="participant-photo"><WorkshopPortrait name={name} photo={participantPortraits[name]} square /></div>
+          <p class="participant-name">{name}</p>
+        </li>)}
+      </ul>
       {event.spotlights.moderator && <p class="program-moderator">Moderated by {event.spotlights.moderator}.</p>}
     </Section>}
 
@@ -170,7 +194,7 @@ const date = event.start.toLocaleDateString('en-US', {
   }
   .workshop-hero > .workshop-invitation { margin-top: 24px; }
   .interest-note { margin: 12px 0 0; max-width: 60ch; text-wrap: balance; color: var(--muted); font-size: 12px; line-height: 1.65; }
-  .program-notice { margin: 24px 0 0; color: var(--ink); font: 600 16.5px/1.5 var(--sans); }
+  .program-notice { margin: 24px 0 0; color: var(--ink); font: 400 12.75px/1.65 var(--sans); }
   .workshop-interest {
     display: inline-flex;
     align-items: center;
@@ -191,23 +215,38 @@ const date = event.start.toLocaleDateString('en-US', {
   .workshop-interest :global(svg) { width: 16px; height: 16px; flex: 0 0 16px; }
   .speaker-list, .host-list { list-style: none; padding: 0; margin: 0; }
   .speaker-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px 30px;
+    /* Two tracks per portrait allow centered incomplete rows. */
+    display: grid; grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 0 24px;
   }
-  .speaker-list > li { min-width: 0; }
-  .speaker-heading {
-    display: grid;
-    grid-template-columns: 64px minmax(0, 1fr);
-    align-items: center;
-    gap: 15px;
+  .speaker-list > li {
+    grid-column: span 2; grid-row: span 4; display: grid;
+    grid-template-rows: subgrid; row-gap: 0; min-width: 0;
+    margin: 0; padding: 0 0 30px;
   }
-  .speaker-photo :global(.workshop-portrait) { margin: 0; }
-  .speaker-list li, .host-list li { margin: 0; padding: 0; }
+  .host-list li { margin: 0; padding: 0; }
+  @media (min-width: 636px) {
+    .speaker-list > li:nth-child(4n + 1):last-child { grid-column: 4 / span 2; }
+    .speaker-list > li:nth-child(4n + 1):nth-last-child(2) { grid-column: 3 / span 2; }
+    .speaker-list > li:nth-child(4n + 1):nth-last-child(3) { grid-column: 2 / span 2; }
+  }
   .speaker-list h3 { margin: 0 0 3px; font: 500 15px/1.4 var(--sans); }
   .speaker-affiliation { margin: 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
-  .talk-title { margin: 15px 0 0; color: var(--ink); font: 700 16.5px/1.4 var(--serif); letter-spacing: -0.005em; }
-  .talk-pending { margin: 15px 0 0; color: var(--muted); font: 400 12.75px/1.5 var(--sans); }
+  .talk-title, .talk-pending { margin: 9px 0 0; font: 400 12px/1.5 var(--sans); }
+  .talk-title { color: var(--ink); }
+  .talk-pending { color: var(--muted); }
+  .workshop-sections { display: flex; flex-wrap: wrap; gap: 9px 21px; margin-top: 21px; font-size: 12px; }
+  .workshop-sections a { color: var(--accent); text-underline-offset: 3px; }
+  .participant-list {
+    --participant-columns: 5; display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 21px 24px; list-style: none; padding: 0; margin: 18px 0 0;
+  }
+  .participant-list > li { width: calc((100% - (var(--participant-columns) - 1) * 24px) / var(--participant-columns)); min-width: 0; margin: 0; padding: 0; }
+  .participant-photo { width: 80px; height: 80px; margin-bottom: 9px; }
+  .participant-photo :global(.workshop-portrait) { margin: 0; }
+  .participant-name { margin: 0; font: 500 12.75px/1.4 var(--sans); }
+  .participant-affiliation { margin: 3px 0 0; color: var(--muted); font: 400 11.25px/1.4 var(--sans); }
+  .spotlight-list { margin-top: 0; }
   .host-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; font-weight: 500; }
   .host-list li { container-type: inline-size; }
   .host-name { display: block; }
@@ -223,18 +262,23 @@ const date = event.start.toLocaleDateString('en-US', {
   .photography-credits ul { margin: 0; padding: 0; list-style: none; }
   .photography-credits li { margin: 0; }
   .photography-credits a { color: inherit; }
+  @media (max-width: 635px) {
+    .speaker-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .participant-list { --participant-columns: 3; }
+  }
+  @media (min-width: 481px) and (max-width: 635px) {
+    .speaker-list > li:nth-child(3n + 1):last-child { grid-column: 3 / span 2; }
+    .speaker-list > li:nth-child(3n + 1):nth-last-child(2) { grid-column: 2 / span 2; }
+  }
   @media (max-width: 600px) {
     .workshop-hero h1 { font-size: clamp(34.1px, 6.6vw, 44px); }
   }
   @media (max-width: 520px) {
     .workshop-hero h1 { font-size: clamp(29.7px, 6.875vw, 36.3px); }
-    .speaker-list { grid-template-columns: minmax(0, 1fr); row-gap: 27px; }
+
   }
   .panel-description { margin: 9px 0 0; font: 400 12.75px/1.65 var(--sans); }
-  .program-participants { margin: 0; font-size: 12.75px; line-height: 1.65; }
-  .program-participants strong { font-weight: 600; }
-  .program-panels .program-participants { margin-top: 12px; }
-  .program-moderator { margin: 9px 0 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
+  .program-moderator { margin: 18px 0 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
   .program-panels { list-style: none; padding: 0; margin: 0; display: grid; gap: 30px; }
   .program-panels li { margin: 0; }
   .program-panels h3 { margin: 0; font: 700 16.5px/1.4 var(--serif); letter-spacing: -0.005em; }
@@ -244,12 +288,17 @@ const date = event.start.toLocaleDateString('en-US', {
     .workshop-invitation { gap: 15px; }
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
     .workshop-hero > .workshop-invitation { margin-top: 21px; }
+    .speaker-list { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 18px; }
+    .speaker-list > li { padding-bottom: 24px; }
+    .speaker-list > li:nth-child(2n + 1):last-child { grid-column: 2 / span 2; }
     .speaker-list h3 { font-size: 14.25px; }
+    .participant-photo { width: 67.5px; height: 67.5px; }
+    .participant-name { font-size: 12px; }
     .host-list { gap: 18px; font-size: 12px; }
     .host-portrait { width: 67.5px; height: 67.5px; }
   }
 
   @media print {
-    .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .speaker-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
   }
 </style>
