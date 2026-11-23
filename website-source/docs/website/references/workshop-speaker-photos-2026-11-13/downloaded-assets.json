@@ -186,5 +186,19 @@
     ],
     "metadata": {},
     "notes": "Unpublished November23 panel portrait preview. Original source pixels preserved; displayed using square CSS crop. Event affiliation and role remain canonical event data."
+  },
+  {
+    "file": "tal-rabin-iu.jpg",
+    "source": "https://womenandtech.indiana.edu/images/programs/cybersecurity/rabin-square-768x7681.jpeg",
+    "page": "https://womenandtech.indiana.edu/programs/cybersecurity/profiles-current-trailblazers/rabin.html",
+    "retrieved": "2026-11-23",
+    "bytes": 89707,
+    "sha256": "9c69c6194dd67ff739f166a0e5da2ffb3126856b9552fa95e4b6d2b3d8718e47",
+    "dimensions": [
+      768,
+      768
+    ],
+    "metadata": {},
+    "notes": "Rachel selected this exact Indiana University portrait to replace the provisional Simons grayscale photo in the unpublished preview. No named photographer on source page or in EXIF/IPTC metadata. Source pixels unchanged; square CSS framing uses scale1.2/top origin. Event affiliation remains Amazon from canonical data."
   }
 ]

@@ -46,3 +46,10 @@ Panelists and spotlight researchers use80px squares, matching the hosts;67.5px a
 - Evidence: output/workshop-layout-proof/ contains responsive-checks.json, source captures/new-photo metadata, before/after screenshots, full desktop preview and phone/dark panels.
 
 This preview does not approve publication, altered event facts, additional speakers, image synthesis, a People/Home redesign or unrelated Events/working-group previews. Keep current continuing-source design rules unchanged until Rachel chooses the workshop design.
+
+
+## Selected Tal Rabin portrait — November23 follow-up (UNPUBLISHED)
+
+Rachel supplied an Indiana University image-search result and selected its exact color portrait. Added tal-rabin-iu.jpg (768×768,89707bytes) and switched only Tal’s participant-photo selection to it; original source pixels unchanged, square CSS scale1.2/top origin. Replaces the provisional grayscale Simons selection. No named photographer appears on the IU source page or in the image’s EXIF/IPTC metadata, so no invented credit was added. Provenance/hash recorded in the portrait manifest. Canonical Amazon affiliation/role and all other images/layouts are unchanged.
+
+Fresh check57files/zero diagnostics and build pass. Loaded selected image confirmed at80px desktop and67.5px phone, with centered incomplete panel row and no390px overflow. Desktop/mobile square framing visually reviewed; viewport reset and preview left open at#program. Screenshot: output/workshop-layout-proof/tal-rabin-iu-panel.png. No publication.
