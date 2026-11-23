@@ -57,20 +57,24 @@ const date = event.start.toLocaleDateString('en-US', {
       <p class="program-notice">The program will be posted here. The workshop will run 9am–5pm, with check-in and breakfast starting at 8:30am.</p>
     </header>
 
-    <Section id="speakers" label="Speakers" divider>
+    <Section id="speakers" label="Speakers and talks" divider>
       <ul class="speaker-list">
         {event.speakers.map((speaker) => <li>
-          <WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} />
-          <h3>{speaker.name}</h3>
-          {speaker.affiliation && <p>{speaker.affiliation}</p>}
+          <div class="speaker-heading">
+            <div class="speaker-photo">
+              <WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} />
+            </div>
+            <div>
+              <h3>{speaker.name}</h3>
+              {speaker.affiliation && <p class="speaker-affiliation">{speaker.affiliation}</p>}
+            </div>
+          </div>
+          {speaker.talkTitle
+            ? <p class="talk-title">{speaker.talkTitle}</p>
+            : <p class="talk-pending">Title to be announced</p>}
         </li>)}
       </ul>
     </Section>
-
-    {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
-      <p class="program-participants">{event.spotlights.speakers.map((name, index) => <>{index > 0 && ', '}<strong>{name}</strong></>)}.</p>
-      {event.spotlights.moderator && <p class="program-moderator">Moderated by {event.spotlights.moderator}.</p>}
-    </Section>}
 
     <Section id="program" label="Panels" divider>
       {event.panels.length > 0 && <ul class="program-panels">
@@ -86,6 +90,11 @@ const date = event.start.toLocaleDateString('en-US', {
         </li>)}
       </ul>}
     </Section>
+
+    {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
+      <p class="program-participants">{event.spotlights.speakers.map((name, index) => <>{index > 0 && ', '}<strong>{name}</strong></>)}.</p>
+      {event.spotlights.moderator && <p class="program-moderator">Moderated by {event.spotlights.moderator}.</p>}
+    </Section>}
 
     <Section id="hosts" label={event.hostsLabel || 'Hosted by'} divider>
       <ul class="host-list">
@@ -183,25 +192,22 @@ const date = event.start.toLocaleDateString('en-US', {
   .speaker-list, .host-list { list-style: none; padding: 0; margin: 0; }
   .speaker-list {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px 24px;
-    padding-top: 3px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 30px;
   }
-  @media screen {
-    .speaker-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      --speaker-width: calc((100% - 48px) / 3);
-    }
-    .speaker-list > li { flex: 0 0 auto; width: var(--speaker-width); min-width: 0; }
+  .speaker-list > li { min-width: 0; }
+  .speaker-heading {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    align-items: center;
+    gap: 15px;
   }
-  @media screen and (min-width: 636px) {
-    .speaker-list { --speaker-width: calc((100% - 72px) / 4); }
-  }
+  .speaker-photo :global(.workshop-portrait) { margin: 0; }
   .speaker-list li, .host-list li { margin: 0; padding: 0; }
   .speaker-list h3 { margin: 0 0 3px; font: 500 15px/1.4 var(--sans); }
-  .speaker-list p { margin: 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
+  .speaker-affiliation { margin: 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
+  .talk-title { margin: 15px 0 0; color: var(--ink); font: 700 16.5px/1.4 var(--serif); letter-spacing: -0.005em; }
+  .talk-pending { margin: 15px 0 0; color: var(--muted); font: 400 12.75px/1.5 var(--sans); }
   .host-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; font-weight: 500; }
   .host-list li { container-type: inline-size; }
   .host-name { display: block; }
@@ -222,6 +228,7 @@ const date = event.start.toLocaleDateString('en-US', {
   }
   @media (max-width: 520px) {
     .workshop-hero h1 { font-size: clamp(29.7px, 6.875vw, 36.3px); }
+    .speaker-list { grid-template-columns: minmax(0, 1fr); row-gap: 27px; }
   }
   .panel-description { margin: 9px 0 0; font: 400 12.75px/1.65 var(--sans); }
   .program-participants { margin: 0; font-size: 12.75px; line-height: 1.65; }
@@ -237,7 +244,6 @@ const date = event.start.toLocaleDateString('en-US', {
     .workshop-invitation { gap: 15px; }
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
     .workshop-hero > .workshop-invitation { margin-top: 21px; }
-    .speaker-list { --speaker-width: calc((100% - 18px) / 2); column-gap: 18px; row-gap: 21px; }
     .speaker-list h3 { font-size: 14.25px; }
     .host-list { gap: 18px; font-size: 12px; }
     .host-portrait { width: 67.5px; height: 67.5px; }

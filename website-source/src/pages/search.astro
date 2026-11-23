@@ -189,6 +189,7 @@ const entries = [
       event.data.start.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }),
       // Lineup names make the event findable by speaker or host, as readable sentences in the excerpt.
       event.data.speakers.length > 0 && `${event.data.speakersLabel || 'Speakers'}: ${event.data.speakers.map((speaker) => speaker.affiliation ? `${speaker.name} (${speaker.affiliation})` : speaker.name).join(', ')}.`,
+      ...event.data.speakers.filter((speaker) => speaker.talkTitle).map((speaker) => `${speaker.name}: ${speaker.talkTitle}.`),
       event.data.hosts.length > 0 && `${event.data.hostsLabel || 'Hosted by'}: ${event.data.hosts.join(', ')}.`].filter(Boolean).join(' '),
   })),
   ...updates.map((u) => ({

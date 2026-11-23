@@ -26,6 +26,7 @@ speakersLabel: "Confirmed speakers"                    # optional; defaults to "
 speakers:                                              # optional; confirmed people only, in display order
   - name: "Full Name"
     affiliation: "Institution"                         # optional
+    talkTitle: "Title supplied by the speaker"           # optional; detail page and Search only
 hostsLabel: "Hosted by RESI co-founders"               # optional; defaults to "Hosted by"
 hosts: ["Full Name"]                                   # optional; shown on Events only
 url: "https://example.org/event"                        # optional event site
@@ -60,6 +61,10 @@ This is a schema example, not a scheduled announcement. Do not add this object p
 Added November 12 at Adam's request. `speakers` and `hosts` are optional. An event without them renders exactly as before. List only confirmed people, with the affiliation each person uses publicly, and keep the order you want displayed (the workshop uses last-name order).
 
 The shared card shows them in two forms while the event is upcoming. Events shows the full list with affiliations and the hosts line below the summary. Home shows the speaker names alone in place of the summary, with no affiliations and no hosts, so the Home cards keep their height. Past cards show neither. Search indexes speaker and host names with the event entry.
+
+The optional `speakers[].talkTitle` stores a supplied talk title for a standalone
+detail page and Search. It does not expand Home or Events cards. Do not invent
+titles for missing entries or copy lightning-talk titles into the regular roster.
 
 
 ## Standalone event pages
