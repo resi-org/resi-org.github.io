@@ -1,4 +1,4 @@
-## November 23 — workshop talk-title layout approved for publication
+## November 23 — workshop talk titles published and live verified
 
 Prepared an isolated local version at Adam's request, based on continuing source
 `6384278`. Eleven regular talk titles were transcribed exactly from the event
@@ -21,7 +21,18 @@ design record now adopts this layout. His follow-up removes “Talk titles are
 tentative” before publication, along with its unused style. Generated comparison against production
 `4487417` limits publication to workshop HTML, its new route stylesheet, and Search
 HTML. His second follow-up moves Panels above RESI research spotlights without
-changing their content or anchors. Source and production PRs, deployment, and live verification follow.
+changing their content or anchors.
+
+Source PR346 merged at `3e1f88b519a95a1720dfbe40640aa9b78cbcf571`; generated
+publication PR347 merged at `5d88989956dedda1a788a5905a015637f9ce6709`. GitHub
+Pages run `45163748877` succeeded. Live workshop HTML, Search HTML, and
+`safe-by-design-superintelligence.c1WY3CIi.css` match the final build byte-for-byte.
+Edge live desktop/390px checks confirm 11 titles, Zico's single placeholder, no
+tentative-title notice, the requested section order, and no horizontal overflow.
+Live panel-order screenshot reviewed. Viewport restored; no forms submitted.
+Evidence: `live-release-checks.json`, `live-phone-checks.json`, and
+`live-panels-spotlights.jpg` in the preview output folder above. Independent
+endpoints, domain files, and unrelated previews remain unchanged.
 
 ## November 20 — confirmed panels and RESI research spotlights
 
