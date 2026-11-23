@@ -8,6 +8,22 @@
 - Baseline source: cc4ef58; production observed00f07c1, including independent /inaug and seminar Zoom endpoints. Neither production nor the original dirty checkout’s application files were changed.
 - Local static preview session33805 remains running for Rachel’s review. Rebuild website-source/dist after application edits; server serves dist on4513.
 
+## Current revision: prominent talk titles, November23
+
+Rachel requested another unpublished layout because the first preview made talk titles too quiet. This revision supersedes the four-column/12px-title treatment described in the earlier version record below. Current source/production references are unchanged (cc4ef58/00f07c1); open PR150 is an unrelated working-group preview.
+
+The talks section alone widens to840px and uses two columns of horizontal portrait/text entries above760px. The hero, panels, spotlights, hosts, invitations and credits retain the600px reading width. Each exact talk title becomes the h3, using the existing Cardo serif at21px/1.25 bold; speaker name and affiliation form a smaller Plex Sans byline below. Portraits retain132×165px and all selected sources/framing. Fine rules and18px row spacing separate entries. No title shortening, hidden text, invented schedule or copy changes. Zico’s pending title stays quieter. Below761px the entries stack; phone portraits are112×140px (96×120px at350px/below), with18.75px/18px titles. All remain original4:5 photographs. Incomplete two-column rows remain centered. The wide section reserves a gutter for fixed page utilities; their workshop-only right offset prevents overlap, while the shared footer link arrangement stays unchanged.
+
+Compared with version1’s desktop speaker-section measurement1147.3px, the current section is1332.7px (about16% taller). The tradeoff is substantially larger, fully visible talk titles with the same desktop portraits. Single-column mobile/tablet entries use more vertical space; no claim is made that this version is the shortest alternative. Current page height at1280px is3430px.
+
+Fresh final Astro check57 files: zero errors/warnings/hints. Build and git diff whitespace checks pass. Actual CSS viewport widths320/390/550/760/768/915/975/1280px show no horizontal overflow, escaped text or clipped titles. Fixed utility clearance at915/975/1280px is9/10.5/19.5px. The 256px extra probe still exposes the pre-existing unbreakable hero-title overflow, while speaker text is contained; no unrelated hero redesign was made. Long mobile titles visually reviewed, dark phone typography reviewed, light restored, and keyboard Enter on section jumps verified. All29 page portraits loaded during this revision’s browser review; six selected-photo credit entries remain before the footer. Event record, portrait data/assets, People/Home and other application routes are unchanged by this second revision. No forms submitted. Viewport reset; no physical-device or spoken screen-reader test.
+
+Proof: output/workshop-layout-proof/talks-v2-responsive.json, talks-v2-desktop.png, talks-v2-desktop-detail.png, talks-v2-mobile.png and talks-v2-mobile-long.png. Browser screenshot/zoom state was normalized during QA; the final JSON reports actual observed CSS widths. Earlier overwritten intermediate captures are not final proof.
+
+Fresh primary references and layout inference are recorded in [Talk layout references](../references/workshop-talk-layout-2026-11-23.md). This is still local-only at4513; do not merge or publish without Rachel’s approval.
+
+## Earlier version1 record (superseded layout, retained evidence)
+
 ## Adam’s current changes reviewed and preserved
 
 Read the published page after ordinary reload, current canonical event record and changes since the November20 portrait audit. Adam added11 exact talk titles; Zico’s title is pending. Current12-speaker order/affiliations are unchanged. Both panels now have confirmed participants and moderators: Cryptographic Resilience in the AI World (5 panelists, moderated by Vinod) and Academia and AI Safety (whose responsibility is it anyway?) (4 panelists, moderated by Shafi). Jacob remains a panelist only. RESI spotlights: Miranda, Greg, Sam, Jonathan and Neekon, moderated by Adam Tauman Kalai. Schedule notice says9am–5pm, breakfast/check-in8:30am. Section order: Speakers and talks → Panels → RESI research spotlights → Hosted by. All canonical wording/roles/order and stable anchors are preserved.

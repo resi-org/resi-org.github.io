@@ -52,6 +52,7 @@ const date = event.start.toLocaleDateString('en-US', {
 <Base
   title={pageTitle}
   description={event.overview || event.description}
+  wide
 >
   <article class="workshop-page">
     <header class="page-hero workshop-hero">
@@ -81,12 +82,14 @@ const date = event.start.toLocaleDateString('en-US', {
     <Section id="speakers" label="Speakers and talks" divider>
       <ul class="speaker-list">
         {event.speakers.map((speaker) => <li>
-          <WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} />
-          <h3>{speaker.name}</h3>
-          {speaker.affiliation && <p class="speaker-affiliation">{speaker.affiliation}</p>}
-          {speaker.talkTitle
-            ? <p class="talk-title">{speaker.talkTitle}</p>
-            : <p class="talk-pending">Title to be announced</p>}
+          <div class="speaker-photo"><WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} /></div>
+          <div class="speaker-copy">
+            {speaker.talkTitle
+              ? <h3 class="talk-title">{speaker.talkTitle}</h3>
+              : <h3 class="talk-pending">Title to be announced</h3>}
+            <p class="speaker-name">{speaker.name}</p>
+            {speaker.affiliation && <p class="speaker-affiliation">{speaker.affiliation}</p>}
+          </div>
         </li>)}
       </ul>
     </Section>
@@ -157,7 +160,18 @@ const date = event.start.toLocaleDateString('en-US', {
 </Base>
 
 <style>
-  .workshop-page { max-width: var(--content-width); margin-inline: auto; }
+  .workshop-page { width: min(840px, calc(100% - 36px)); margin-inline: auto; }
+  .workshop-hero, .workshop-closing-invitation, .workshop-page > :global(.section:not(#speakers)) {
+    max-width: var(--content-width); margin-inline: auto;
+  }
+  .workshop-page > :global(#speakers > .section-body) { max-width: none; }
+  @media screen and (min-width: 915px) {
+    /* Reserve a clear gutter for this page's wider talks and fixed utilities. */
+    .workshop-page { width: min(840px, calc(100% - 132px)); }
+    :global(.site-footer .footer-list .footer-controls) {
+      right: max(24px, calc((100% - 945px) / 2));
+    }
+  }
   .workshop-hero { padding-bottom: var(--section-space-before, 36px); }
   .workshop-hero h1 {
     margin: 0;
@@ -215,26 +229,32 @@ const date = event.start.toLocaleDateString('en-US', {
   .workshop-interest :global(svg) { width: 16px; height: 16px; flex: 0 0 16px; }
   .speaker-list, .host-list { list-style: none; padding: 0; margin: 0; }
   .speaker-list {
-    /* Two tracks per portrait allow centered incomplete rows. */
-    display: grid; grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: 0 24px;
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 30px;
   }
   .speaker-list > li {
-    grid-column: span 2; grid-row: span 4; display: grid;
-    grid-template-rows: subgrid; row-gap: 0; min-width: 0;
-    margin: 0; padding: 0 0 30px;
+    display: grid; grid-template-columns: 132px minmax(0, 1fr);
+    align-items: start; gap: 18px; min-width: 0;
+    margin: 0; padding: 0 0 18px; border-bottom: 0.75px solid var(--line);
   }
+  .speaker-list > li:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc((100% - 30px) / 2); justify-self: center; }
+  .speaker-photo :global(.workshop-portrait) { margin: 0; }
+  .speaker-copy { min-width: 0; overflow-wrap: anywhere; }
+  .speaker-list .talk-title, .speaker-list .talk-pending {
+    margin: -3px 0 0; font: 700 21px/1.25 var(--serif); letter-spacing: -0.005em;
+  }
+  .speaker-list .talk-title { color: var(--ink); }
+  .speaker-list .talk-pending { color: var(--muted); font-size: 18px; font-weight: 400; }
+  .speaker-list .speaker-name { margin: 12px 0 0; font: 500 13.5px/1.4 var(--sans); }
+  .speaker-list .speaker-affiliation { margin: 3px 0 0; color: var(--muted); font: 400 12px/1.4 var(--sans); }
   .host-list li { margin: 0; padding: 0; }
-  @media (min-width: 636px) {
-    .speaker-list > li:nth-child(4n + 1):last-child { grid-column: 4 / span 2; }
-    .speaker-list > li:nth-child(4n + 1):nth-last-child(2) { grid-column: 3 / span 2; }
-    .speaker-list > li:nth-child(4n + 1):nth-last-child(3) { grid-column: 2 / span 2; }
+  @media (max-width: 760px) {
+    .speaker-list { grid-template-columns: 1fr; gap: 18px; }
+    .speaker-list > li { grid-template-columns: 132px minmax(0, 1fr); gap: 24px; padding-bottom: 18px; }
+    .speaker-list > li:last-child:nth-child(odd) { grid-column: auto; width: auto; justify-self: stretch; }
+    .speaker-list .talk-title { font-size: 21px; }
+    .workshop-page > :global(#speakers) { max-width: var(--content-width); margin-inline: auto; }
   }
-  .speaker-list h3 { margin: 0 0 3px; font: 500 15px/1.4 var(--sans); }
-  .speaker-affiliation { margin: 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
-  .talk-title, .talk-pending { margin: 9px 0 0; font: 400 12px/1.5 var(--sans); }
-  .talk-title { color: var(--ink); }
-  .talk-pending { color: var(--muted); }
   .workshop-sections { display: flex; flex-wrap: wrap; gap: 9px 21px; margin-top: 21px; font-size: 12px; }
   .workshop-sections a { color: var(--accent); text-underline-offset: 3px; }
   .participant-list {
@@ -263,12 +283,7 @@ const date = event.start.toLocaleDateString('en-US', {
   .photography-credits li { margin: 0; }
   .photography-credits a { color: inherit; }
   @media (max-width: 635px) {
-    .speaker-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
     .participant-list { --participant-columns: 3; }
-  }
-  @media (min-width: 481px) and (max-width: 635px) {
-    .speaker-list > li:nth-child(3n + 1):last-child { grid-column: 3 / span 2; }
-    .speaker-list > li:nth-child(3n + 1):nth-last-child(2) { grid-column: 2 / span 2; }
   }
   @media (max-width: 600px) {
     .workshop-hero h1 { font-size: clamp(34.1px, 6.6vw, 44px); }
@@ -288,17 +303,22 @@ const date = event.start.toLocaleDateString('en-US', {
     .workshop-invitation { gap: 15px; }
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
     .workshop-hero > .workshop-invitation { margin-top: 21px; }
-    .speaker-list { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 18px; }
-    .speaker-list > li { padding-bottom: 24px; }
-    .speaker-list > li:nth-child(2n + 1):last-child { grid-column: 2 / span 2; }
-    .speaker-list h3 { font-size: 14.25px; }
+    .speaker-list > li { grid-template-columns: 112px minmax(0, 1fr); gap: 18px; }
+    .speaker-list .talk-title { font-size: 18.75px; }
+    .speaker-list .speaker-name { font-size: 12.75px; }
+    .speaker-list .speaker-affiliation { font-size: 11.25px; }
     .participant-photo { width: 67.5px; height: 67.5px; }
     .participant-name { font-size: 12px; }
     .host-list { gap: 18px; font-size: 12px; }
     .host-portrait { width: 67.5px; height: 67.5px; }
   }
 
+  @media (max-width: 350px) {
+    .speaker-list > li { grid-template-columns: 96px minmax(0, 1fr); gap: 15px; }
+    .speaker-list .talk-title { font-size: 18px; }
+  }
   @media print {
-    .speaker-list { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .speaker-list > li { break-inside: avoid; }
   }
 </style>
