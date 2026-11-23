@@ -203,6 +203,7 @@ const events = defineCollection({
     speakers: z.array(z.object({
       name: z.string().trim().min(1),
       affiliation: z.string().trim().min(1).optional(),
+      talkTitle: z.string().trim().min(1).optional(),
     })).optional().default([]),
     speakersLabel: z.string().trim().min(1).optional(),
     hosts: z.array(z.string().trim().min(1)).optional().default([]),

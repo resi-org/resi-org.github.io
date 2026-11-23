@@ -1,3 +1,31 @@
+## November 23 — workshop talk-title layout, approved for publication
+
+Adam requested a screenshot preview adding regular-speaker talk titles from the
+event Google Doc, initially with no push. After reviewing it, he explicitly
+approved publication with “Go ahead and push it out.” Isolated worktree:
+`/Users/adam/code/resi-talk-titles-preview`, branch
+`codex/workshop-talk-titles-preview-nov23`, based on source `6384278` and checked
+against production `4487417`. Preview:
+http://127.0.0.1:4494/workshops/safe-by-design-superintelligence/.
+
+The approved Speakers and talks section uses two columns, compact existing
+portraits beside names/affiliations, and full-entry-width titles underneath. It
+stacks at 520px and below, superseding the prior portrait-only speaker grid.
+Eleven titles match Program option 1 as read November 23;
+Zico remains title-to-be-announced. Titles are labeled tentative, including Orr's
+current title while the program notes a revision is pending. Lightning/spotlight
+titles, timing, panels, hosts, photos/crops, affiliations, and Home/Events card
+layouts are unchanged. Optional talk titles also enter Search.
+
+Astro check (55 files, zero diagnostics), 18 announcement tests, build and whitespace
+checks passed. Desktop 1720px and phone 390px visually reviewed, including long
+titles and dark theme. 320px and 521px boundary checks show no overflow. Independent
+title and layout reviews passed. Screenshots and layout checks are in
+`/Users/adam/RESIST/output/workshop-talk-titles-preview-2026-11-23/`.
+Publication is in progress. Generated comparison against current production shows
+only the workshop HTML, its new route stylesheet, and Search HTML need publication.
+Independent endpoints and unrelated previews are preserved. No forms submitted.
+
 ## November 20 — RESI-office event access wording published and live verified
 
 Rachel supplied the two-line replacement: “RESI Offices, Akami Building” / “Contact for access details,” with Contact alone linked to her RESI email. Confirmed `rachel@resi.org` from the connected account metadata; no email was sent. Preserve her supplied Akami spelling. Why ARC is the only current display record with the office address; updated its location HTML and canonical Search text. All eight past seminars are at MIT, so their locations and all other seminar fields remain unchanged. Source/content/public and production HTML audit found no other office-address displays. Generated HTML contains no office street/floor/postcode after the change.

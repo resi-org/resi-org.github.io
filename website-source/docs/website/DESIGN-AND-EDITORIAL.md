@@ -4,9 +4,11 @@
 
 Use **Zico Kolter — CMU**, **Aleksander Mądry — OpenAI** **Yael Tauman Kalai — MIT, RESI** and **Dylan Hadfield-Menell — MIT, RESI** for this event. These are the explicitly selected public affiliation labels; do not expand them based on email domains, board memberships or other institutional connections. This supersedes the November 17 Zico label “CMU, OpenAI” and Yael's November 18 “MIT” label. Madry remains a panelist, not a talk speaker. Dylan Hadfield-Menell (MIT, RESI) is a confirmed talk speaker and is included in the shared roster as of November 19.
 
-## Workshop speaker grid — November 17
+## Workshop speakers and talks — approved November 23
 
-The standalone workshop roster uses four equal-width cards across at636px viewport and wider, three at481–635px, and two at480px/below. Every incomplete final row is centered as a group, retaining equal card widths and left-aligned captions. The current twelve confirmed speakers (November 19) yield4/4/4 on desktop,3/3/3/3 at intermediate widths and six phone pairs. Preserve surname order, portrait aspect ratio/framing, typography, gaps and print grid. This supersedes the temporary desktop three-column layout. Jacob Tsimerman must not be restored as a talk speaker; any future panelist listing remains deferred until explicit instruction.
+Adam approved publication of the reviewed talk-title layout. The standalone workshop section uses two equal-width columns above 520px and one column at 520px/below. Each entry pairs a compact 64px-wide portrait with the name and affiliation, followed by the tentative talk title across the entry's width. Keep the existing speaker order, original portraits and approved framing. Titles come from the event Google Doc and use canonical optional `speakers[].talkTitle` data; a missing title displays “Title to be announced.” The section notes that titles are tentative. Search includes available titles, while the compact Home/Events cards remain unchanged. Spotlight names remain a separate text list without talk titles.
+
+This supersedes the November 17 four/three/two-column portrait-only layout for the standalone workshop page. Jacob Tsimerman must not be restored as a talk speaker; his subsequently approved panelist listing remains separate.
 
 ## Events lineup columns — approved November 16
 

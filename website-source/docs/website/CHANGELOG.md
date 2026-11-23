@@ -1,3 +1,26 @@
+## November 23 — workshop talk-title layout approved for publication
+
+Prepared an isolated local version at Adam's request, based on continuing source
+`6384278`. Eleven regular talk titles were transcribed exactly from the event
+Doc's Program option 1. Zico's title is still TBA. The reviewed Speakers and talks
+layout pairs compact, unchanged portraits with name/affiliation headers and places
+each tentative title underneath at a readable width. Two desktop columns become
+one at 520px/below. Spotlight names and all other event sections retain their
+existing content. Canonical optional `talkTitle` data also feeds Search without
+expanding Home or Events cards.
+
+All 18 existing announcement tests passed. Astro check reports 55 files and zero
+errors/warnings/hints; build and whitespace checks passed. Edge desktop/390px phone
+screenshots, 320/521px overflow checks, and light/dark visual inspection passed.
+Independent review confirmed exact title provenance and readable layout. Branch
+`codex/workshop-talk-titles-preview-nov23`, preview
+http://127.0.0.1:4494/workshops/safe-by-design-superintelligence/.
+Screenshot: `/Users/adam/RESIST/output/workshop-talk-titles-preview-2026-11-23/desktop-speakers.jpg`.
+Adam subsequently approved publication with “Go ahead and push it out.” The shared
+design record now adopts this layout. Generated comparison against production
+`4487417` limits publication to workshop HTML, its new route stylesheet, and Search
+HTML. Source and production PRs, deployment, and live verification follow.
+
 ## November 20 — confirmed panels and RESI research spotlights
 
 Adam requested matching the opening-workshop page to the sent November 20 announcement and adding the spotlights without portraits. Updated both panel titles, all nine panelist entries and affiliations, and their moderators from the sent campaign; added the five RESI research spotlight names and Adam Tauman Kalai as moderator. The email gives no individual spotlight talk titles, so none were inferred. Canonical event data now supplies both text sections and the connected Search index. Existing speaker portraits, program notice, host section and admission wording are preserved.
