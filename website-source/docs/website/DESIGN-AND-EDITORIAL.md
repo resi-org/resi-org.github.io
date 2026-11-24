@@ -242,3 +242,7 @@ Panel/spotlight/host squares are64px desktop/54px phone; panel/spotlight items h
 
 
 November24 workshop-layout publication confirmed: source PR354 /0a930c4 and generated production PR355 /48e37e9 are merged, Pages45430831695 succeeded, and ordinary live320–1280px plus full390px mobile visual/biography/Search checks passed. The approved workshop-specific rules above are now the live baseline; unrelated page standards remain unchanged.
+
+
+## Work at RESI opportunity — November 24
+Rachel approved replacing the People Work-card placeholder with a direct link labeled AI Safety Researcher to https://academicjobsonline.org/ajo/jobs/33484. This supersedes the earlier unlinked details-coming instruction for that line only; retain culture, dated hiring outlook, layout and other opportunities. The full RESI job-page design remains preview-only. Reuse approved AJO role wording, shared site fonts/themes/buttons, clear location/level/materials and Apply directly on AJO; no new employment commitments.
