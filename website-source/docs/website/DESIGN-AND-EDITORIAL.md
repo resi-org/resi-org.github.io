@@ -257,3 +257,8 @@ November24 Work-card refinement: label reads “Current opportunities:” with t
 
 
 November24 hiring-round notice approved: Rachel approved “Hiring update 2026: We expect positions in our current hiring round to begin in fall 2027.” This replaces the old over-the-coming-year notice in People → Join us → Work at RESI and matching Search excerpt. It describes the current hiring round; no individual-job or AJO start-date edit requested. Current opportunities colon/separate link/8px gap and internal job-page destination retained. Supersedes the pending wording decision and generic Anticipated start date recommendation for this card.
+
+
+## Compact workshop mobile participant rows — approved November24
+
+At635px/below, keep each panel, RESI spotlight group and hosts in a single portrait row. Participant counts drive flexible equal tracks; tighten horizontal and photo/name gaps, then let square photos shrink within their54px/64px caps. Hosts retain three columns with similarly tighter mobile gaps. Keep normal phone names12px; limit10.5px fallback labels to300px/below. Long names and Jacob’s affiliation can wrap naturally beneath their portraits rather than truncating. Preserve photo pixels/crops, People links, credits and24px panel block spacing. Above635px the existing desktop layout is unchanged. This supersedes the earlier wrapped mobile participant rows for this workshop only. Publication/live status is recorded in WORKLIST/CHANGELOG and the mobile-row brief.
