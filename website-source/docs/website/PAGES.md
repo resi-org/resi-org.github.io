@@ -92,3 +92,5 @@ Preview-only November24 researcher route `/jobs/ai-safety-researcher/` is in iso
 
 
 November24 full job-page release approved: `src/pages/jobs/ai-safety-researcher.astro` owns `/jobs/ai-safety-researcher/`, reusing Base/Section and approved AJO copy. Public/indexable with canonical metadata, dedicated Search entry and sitemap URL; incoming link from People’s Work at RESI card. AJO job33484 remains the application destination; no local form. Supersedes the preview-only route hold above.
+
+November24 header refinement published (D19): connected desktop label/row outline and smaller desktop Support. On this page stays directly after the intro whenever the full header collapses, including intermediate widths. Shared inventory/anchors and mobile layout are unchanged. SourcePR374 / publicationPR375 / successful Pages45489880591; see DESIGN/CHANGELOG.

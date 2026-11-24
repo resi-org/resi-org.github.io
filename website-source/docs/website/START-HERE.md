@@ -1,6 +1,6 @@
-## Connected desktop menu outline — November24 approved for publication
+## Connected desktop menu outline — November24 published and live verified
 
-Rachel approved the connected tab outline, slightly smaller desktop Support RESI button and raised section row. Preserve On this page after each page intro immediately when full navigation collapses, including intermediate widths; mobile remains unchanged. Source application74d15e5 from54ed2a7 / productiona4f9bc5. Core DESIGN now records this approved refinement; source/publication merges and live verification pending. See WORKLIST D19. Preserve other previews and current People/jobs/workshop updates.
+Rachel approved the connected outline around each hovered/focused desktop menu word, raised25px section row and slightly smaller desktop Support RESI button. Immediately when navigation collapses, On this page remains after each page intro at intermediate and mobile widths. Core DESIGN records this rule. Source PR374 merged ate7c0a35ef6b9bd48939ba6387a9e728a8131bba9; stylesheet-only production PR375 merged atdc55e3bcfe43bc2c9680525efafa065716f75b26. Pages45489880591 succeeded. Ordinary live13-page desktop checks, all four menus and700/690/390px contents/fallback checks passed; hover, keyboard/Escape and section jumps verified. Current page content, mobile controls, jobs/workshop updates and independent endpoints preserved. See WORKLIST D19/CHANGELOG for evidence. Isolated source output/resi-header-outline-preview-nov24; :4456 preview remains available. Preserve unrelated previews and the original dirty checkout.
 
 ## Current hiring-round notice — November24 published and live verified
 
