@@ -634,3 +634,6 @@ H6 completed, November24 — PUBLISHED AND LIVE VERIFIED: Source PR366 merged at
 
 
 H6 November24 Work-card follow-up: Rachel requested “Current opportunities:” with AI Safety Researcher on its own line and space above. Added an8px gap and retained the internal role-page destination. Rachel clarified that fall2027 is the expected position start, not the hiring period; final wording remains under review. Proposed “Anticipated start date: Fall2027” follows AJO examples. Existing notice retained for this layout-only release.
+
+
+H6 opportunity layout complete: Source PR369 merged at204c251fc55c82da0c3e7f101e435b912aa6ac9c; production PR370 merged atf46e193181320dd9faec3ba0415aadf1c1934ed4. Pages45477493765 succeeded. Ordinary live People1280px confirms Current opportunities:, separate block link with8px top margin, correct internal role destination and no overflow. Only People/Search HTML published. Existing hiring notice remains while Rachel reviews “Anticipated start date: Fall2027”; she confirmed fall2027 describes the position start. No AJO or job-page timing changes. Evidence/recommendation in references/start-date-wording-2026-11-24/report.md; the shared library still needs this local research indexed when writable.
