@@ -1,4 +1,6 @@
-# Panel portrait selections — November 23 preview only
+Publication update November24: Rachel approved the final selected/cropped panel and spotlight portraits. Source PR354 and production PR355 are merged; Pages45430831695 and live checks passed. Earlier preview-only wording below is historical, superseded for the final selected images. No image rights/permission claim is inferred from approval; source and credit evidence remains as recorded.
+
+# Panel portrait selections — November23 research, approved/published November24
 
 Rachel requested square panelist and RESI spotlight portraits at the current hosts’ size:80×80px desktop,67.5×67.5px on phones480px/below. These selections are a local design preview, not approval for publication. Original photographs are unchanged; square framing is CSS-only. November24 update: all panelist/spotlight/host photos are now20% smaller in the unpublished preview (64px desktop/54px phone). Tal’s selected IU portrait now uses CSS scale1.5/top origin; Jacob’s earlier Simons photo is restored with its attached credit.
 
