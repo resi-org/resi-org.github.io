@@ -103,7 +103,7 @@ const date = event.start.toLocaleDateString('en-US', {
           <h3>{title}</h3>
           {event.panelDescriptions[title] && <p class="panel-description">{event.panelDescriptions[title]}</p>}
           {event.panelDetails[title] ? <>
-            <ul class="participant-list">
+            <ul class="participant-list" style={`--participant-count: ${event.panelDetails[title].participants.length};`}>
               {event.panelDetails[title].participants.map((person) => <li>
                 <div class="participant-photo"><WorkshopBioLink name={person.name} href={teamBios[person.name]} portrait><WorkshopPortrait name={person.name} photo={participantPortraits[person.name]} square /></WorkshopBioLink></div>
                 <p class="participant-name"><WorkshopBioLink name={person.name} href={teamBios[person.name]}><WorkshopNameLines name={person.name} /></WorkshopBioLink></p>
@@ -119,7 +119,7 @@ const date = event.start.toLocaleDateString('en-US', {
     </Section>
 
     {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
-      <ul class="participant-list spotlight-list">
+      <ul class="participant-list spotlight-list" style={`--participant-count: ${event.spotlights.speakers.length};`}>
         {event.spotlights.speakers.map((name) => <li>
           <div class="participant-photo"><WorkshopBioLink name={name} href={teamBios[name]} portrait><WorkshopPortrait name={name} photo={participantPortraits[name]} square /></WorkshopBioLink></div>
           <p class="participant-name"><WorkshopBioLink name={name} href={teamBios[name]}><WorkshopNameLines name={name} /></WorkshopBioLink></p>
@@ -322,6 +322,37 @@ const date = event.start.toLocaleDateString('en-US', {
   @media (max-width: 350px) {
     .speaker-list > li { grid-template-columns: 112px minmax(0, 1fr); gap: 15px; }
     .workshop-page { --talk-title-size: 16.5px; --workshop-section-size: 20px; --speaker-photo-min: 140px; }
+  }
+  @media (max-width: 635px) {
+    .participant-list {
+      --participant-gap: clamp(6px, 2vw, 18px);
+      --small-photo-size: 64px;
+      display: grid;
+      grid-template-columns: repeat(var(--participant-count), minmax(0, 1fr));
+      width: min(100%, calc(var(--participant-count) * 84px + (var(--participant-count) - 1) * var(--participant-gap)));
+      gap: 21px var(--participant-gap);
+    }
+    .participant-list > li { width: auto; }
+    .participant-photo {
+      width: min(var(--small-photo-size), 100%);
+      height: auto; aspect-ratio: 1;
+      margin-bottom: clamp(3px, 1.2vw, 7px);
+    }
+    .affiliation-line { white-space: normal; }
+    .host-list { --small-photo-size: 64px; gap: clamp(6px, 2vw, 18px); }
+    .host-portrait {
+      width: min(var(--small-photo-size), 100%);
+      height: auto; aspect-ratio: 1;
+      margin-bottom: clamp(4px, 1.8vw, 9px);
+    }
+  }
+  @media (max-width: 480px) {
+    .participant-list, .host-list { --small-photo-size: 54px; }
+  }
+  @media (max-width: 300px) {
+    .participant-list { --participant-gap: 4px; }
+    .host-list { gap: 4px; }
+    .participant-name, .host-list, .participant-affiliation { font-size: 10.5px; }
   }
   @media print {
     .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
