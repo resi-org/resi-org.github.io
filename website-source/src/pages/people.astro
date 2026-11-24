@@ -139,8 +139,10 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
           junior researchers, we will actively support their credit and careers.
         </p>
         <p class="opportunities-note">
-          Current opportunities —{' '}
-          <a href="/jobs/ai-safety-researcher/">AI Safety Researcher</a>.
+          Current opportunities:
+          <span class="opportunity-link">
+            <a href="/jobs/ai-safety-researcher/">AI Safety Researcher</a>
+          </span>
         </p>
         <p class="hiring-update">
           <strong>Hiring update, <time datetime="2026-11">Nov 2026</time>:</strong>{' '}
@@ -291,6 +293,10 @@ const visitorSplit = Math.ceil((visitors.length - 1) / 2);
   }
   .opportunities-note {
     color: var(--muted);
+  }
+  .opportunity-link {
+    display: block;
+    margin-top: 8px;
   }
   .fellowship-programs {
     margin-top: 12px;

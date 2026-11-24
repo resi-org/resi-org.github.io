@@ -249,3 +249,6 @@ Rachel approved replacing the People Work-card placeholder with a direct link la
 
 
 November24 superseding opportunity direction: Rachel approved publication of the full reviewed AI Safety Researcher page. People’s Work at RESI role link now goes to `/jobs/ai-safety-researcher/`; this page uses “← Work at RESI,” two “Apply on AJO” actions and the approved role/materials. Contact line uses the same14px muted color as the rolling-review note, with28px above it. This replaces the direct-to-AJO Work-card destination and preview-only hold for this page. Retain all other Work-card content/layout, actual AJO application target and shared design.
+
+
+November24 Work-card refinement: label reads “Current opportunities:” with the AI Safety Researcher link on a separate line and8px above it. Keep the link’s clickable area limited to the title and target the RESI role page. Timing-notice wording remains under review.
