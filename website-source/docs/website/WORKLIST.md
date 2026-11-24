@@ -598,3 +598,8 @@ Fresh check59files/zero diagnostics and build pass; final CSS consolidation rebu
 
 
 November24 workshop preview spacing follow-up (UNPUBLISHED): Rachel requested slightly more space above panel/spotlight photos and then equal panel spacing above/below the participant blocks. Panel title-to-portraits and participant-to-moderator gaps are now24px each (previously18px); spotlight list gains6px top margin. Horizontal and host spacing/type/content unchanged. Build and whitespace review passed; actual320/390/1280px geometry confirms both24px panel gaps,6px spotlight margin and no overflow; desktop visual passed. Viewport reset,4513 preview left at#program. See current workshop brief and participant-vertical-spacing-nov24* proof. No push/merge/publication.
+
+
+## November24 — workshop redesign approved for publication; release in preparation
+
+Rachel explicitly requested publication of the final4513 preview through0fb2a10, including equal24px panel spacing. This supersedes the local-only hold for the complete reviewed workshop layout/participant photos/biography links. Fresh source/prod unchangedcc4ef58/00f07c1; unrelated PR150 preserved. Final check59files/zero diagnostics,18 announcement tests and build passed. Full390px mobile screenshot now visually reviewed, resolving earlier clipped-capture limitation. Production package is scoped to workshop/Search HTML, one workshop CSS and five new optimized images; all other pages/domain/independent endpoints preserved. Source/publication merges, deployment and live checks remain pending. See briefs/workshop-layout-release-2026-11-24.md. Do not infer completion from this preparation record.

@@ -1,14 +1,15 @@
 # Workshop layout and participant portraits — November 23 preview
 
-**Unpublished. Do not publish or merge this application preview without Rachel’s approval.**
+**Rachel approved publishing the final reviewed version on November24. Release preparation is under way; deployment and live verification are not yet complete.**
 
+- Release record: [Workshop layout publication](workshop-layout-release-2026-11-24.md)
 - Local review URL: http://127.0.0.1:4513/workshops/safe-by-design-superintelligence/#speakers
 - Isolated checkout: /Users/rachelsipser/Documents/GitHub/resi-website/output/resi-workshop-layout-preview-nov23
 - Branch: codex/workshop-layout-preview-nov23
 - Baseline source: cc4ef58; production observed00f07c1, including independent /inaug and seminar Zoom endpoints. Neither production nor the original dirty checkout’s application files were changed.
 - Local static preview session33805 remains running for Rachel’s review. Rebuild website-source/dist after application edits; server serves dist on4513.
 
-## Current revision6: full-column continuity and tighter participant rows — November24 (UNPUBLISHED)
+## Reviewed revision6: full-column continuity and tighter participant rows — November24
 
 Rachel requested the rest of the page match the720px opening/talk column, tighter left-aligned panelist photos, unchanged host photo spacing, Yael last after Tal, and Jacob last after Zico with “of” beginning the second affiliation line. She then requested spotlight spacing match the panelists.
 
@@ -16,9 +17,9 @@ All workshop sections, closing invitation and photography credits now share the7
 
 Current source/prod refs re-fetched unchanged atcc4ef58/00f07c1; open PR150 remains unrelated. Fresh check59files/zero diagnostics and build passed; final CSS-only consolidation rebuilt successfully. Geometry at actual320/390/550/760/915/1280px confirms shared widths, no horizontal overflow, all29 images loaded, left panel alignment, unchanged host pitches, Jacob’s two lines. Final panel/spotlight equality at320/390/760/1280px confirms identical item widths/gaps/alignment. Desktop visual review confirms ordering and spacing. Mobile geometry passed; browser mobile captures were clipped and are not full visual proof. No forms submitted or physical device test. Viewport reset;4513 preview left at#program. No push, merge or publication.
 
-Evidence: output/workshop-layout-proof/panel-spacing-nov24.json, spotlight-spacing-nov24.json and panel-spotlight-spacing-nov24-preview.png; panel-spotlight-spacing-nov24-detail.png is the review crop. All earlier preview changes remain unpublished.
+Evidence: output/workshop-layout-proof/panel-spacing-nov24.json, spotlight-spacing-nov24.json and panel-spotlight-spacing-nov24-preview.png; panel-spotlight-spacing-nov24-detail.png is the review crop. These earlier checks preceded Rachel’s November24 publication approval. See the release record for current status.
 
-### Revision6 spacing follow-up — November24 (UNPUBLISHED)
+### Approved revision6 spacing follow-up — November24
 
 Rachel requested a little more space above panel/spotlight photos, then equal space around the panel participant block before its moderator line. Panel lists now have24px above and moderator lines24px below the participant block (both previously18px). Spotlight list gains6px above; its heading’s existing spacing remains. Horizontal item gaps, host spacing, type and content are unchanged. Fresh build/whitespace review passed. Actual320/390/1280px checks measure24px above/below both panel blocks,6px spotlight list top margin and no overflow; desktop visual reviewed. Viewport reset, preview remains at#program. Proof: output/workshop-layout-proof/participant-vertical-spacing-nov24.json/png and participant-vertical-spacing-nov24-detail.png. No publication/push/merge.
 
