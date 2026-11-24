@@ -1,6 +1,6 @@
-## Connected desktop menu outline — November24 preview only
+## Connected desktop menu outline — November24 approved for publication
 
-Rachel requested a trial where the hover outline wraps around the navigation word and joins the section row, with a slightly smaller desktop Support RESI button and a higher bar. Isolated output/resi-header-outline-preview-nov24, branch codex/header-connected-outline-preview-nov24, from source54ed2a7/maina4f9bc5. Preview http://127.0.0.1:4456/about/. CSS-only trial in styles/navigation.css; no publication or core-design replacement. Mobile/collapsed geometry remains identical to live. See WORKLIST D19 for checks and evidence. Keep the published November23 rule until Rachel approves this refinement.
+Rachel approved the connected tab outline, slightly smaller desktop Support RESI button and raised section row. Preserve On this page after each page intro immediately when full navigation collapses, including intermediate widths; mobile remains unchanged. Source application74d15e5 from54ed2a7 / productiona4f9bc5. Core DESIGN now records this approved refinement; source/publication merges and live verification pending. See WORKLIST D19. Preserve other previews and current People/jobs/workshop updates.
 
 ## Current hiring-round notice — November24 published and live verified
 
