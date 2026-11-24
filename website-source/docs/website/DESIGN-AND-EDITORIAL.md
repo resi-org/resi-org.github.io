@@ -252,3 +252,6 @@ November24 superseding opportunity direction: Rachel approved publication of the
 
 
 November24 Work-card refinement: label reads “Current opportunities:” with the AI Safety Researcher link on a separate line and8px above it. Keep the link’s clickable area limited to the title and target the RESI role page. Timing-notice wording remains under review.
+
+
+November24 hiring-round notice approved: Rachel approved “Hiring update 2026: We expect positions in our current hiring round to begin in fall 2027.” This replaces the old over-the-coming-year notice in People → Join us → Work at RESI and matching Search excerpt. It describes the current hiring round; no individual-job or AJO start-date edit requested. Current opportunities colon/separate link/8px gap and internal job-page destination retained. Supersedes the pending wording decision and generic Anticipated start date recommendation for this card.
