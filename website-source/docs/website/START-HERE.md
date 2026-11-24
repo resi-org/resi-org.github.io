@@ -1,3 +1,7 @@
+## Connected desktop menu outline — November24 preview only
+
+Rachel requested a trial where the hover outline wraps around the navigation word and joins the section row, with a slightly smaller desktop Support RESI button and a higher bar. Isolated output/resi-header-outline-preview-nov24, branch codex/header-connected-outline-preview-nov24, from source54ed2a7/maina4f9bc5. Preview http://127.0.0.1:4456/about/. CSS-only trial in styles/navigation.css; no publication or core-design replacement. Mobile/collapsed geometry remains identical to live. See WORKLIST D19 for checks and evidence. Keep the published November23 rule until Rachel approves this refinement.
+
 ## Current hiring-round notice — November24 published and live verified
 
 People → Join us → Work at RESI now says “Hiring update 2026: We expect positions in our current hiring round to begin in fall 2027.” Matching Search text is updated. Rachel approved this round-wide wording; it supersedes the over-the-coming-year notice and the pending wording decision. Production PR373/a4f9bc5, successful Pages45479386418; ordinary live1280/390px and Search verified. Only People/Search HTML changed; the role page and AJO remain unchanged. See WORKLIST/CHANGELOG for validation.
