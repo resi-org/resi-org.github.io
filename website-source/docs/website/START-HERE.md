@@ -1,3 +1,7 @@
+## Connected desktop menu outline — November24 approved for publication
+
+Rachel approved the connected tab outline, slightly smaller desktop Support RESI button and raised section row. Preserve On this page after each page intro immediately when full navigation collapses, including intermediate widths; mobile remains unchanged. Source application74d15e5 from54ed2a7 / productiona4f9bc5. Core DESIGN now records this approved refinement; source/publication merges and live verification pending. See WORKLIST D19. Preserve other previews and current People/jobs/workshop updates.
+
 ## Current hiring-round notice — November24 published and live verified
 
 People → Join us → Work at RESI now says “Hiring update 2026: We expect positions in our current hiring round to begin in fall 2027.” Matching Search text is updated. Rachel approved this round-wide wording; it supersedes the over-the-coming-year notice and the pending wording decision. Production PR373/a4f9bc5, successful Pages45479386418; ordinary live1280/390px and Search verified. Only People/Search HTML changed; the role page and AJO remain unchanged. See WORKLIST/CHANGELOG for validation.
