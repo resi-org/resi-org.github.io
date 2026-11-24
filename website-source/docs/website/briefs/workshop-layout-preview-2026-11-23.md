@@ -8,7 +8,22 @@
 - Baseline source: cc4ef58; production observed00f07c1, including independent /inaug and seminar Zoom endpoints. Neither production nor the original dirty checkout’s application files were changed.
 - Local static preview session33805 remains running for Rachel’s review. Rebuild website-source/dist after application edits; server serves dist on4513.
 
-## Current revision: prominent talk titles, November23
+## Current revision3: sizing, names and biography links — November24 (UNPUBLISHED)
+
+Rachel requested larger speaker names, then larger main portraits to contain the longest talk/name/affiliation blocks;20% smaller panelist/spotlight/host squares; closer Tal framing; larger panel titles and Speakers and talks/Panels headings; consistently two-line small-portrait names; Jacob’s earlier image; and plain links from RESI team names/photos to their People biographies.
+
+- Main speaker names:16px desktop/15px phone, same Plex Sans weight500. Main frames use a160px column,225px minimum height and equal intrinsic grid rows; actual common desktop frames are160×240px at1280px, growing to261.2px tall at768px to fit the longer copy. Phone frames132×200px at390px,112×206.25px at320px. Uniform frames at each width expand with the longest entry rather than leaving text below a shorter photo. All selected image bytes/main crop variables are unchanged.
+- Smaller squares:64×64px desktop and54×54px phone, exactly80% of the prior80px/67.5px. Applies to both panels, five spotlights and three hosts. Panel rows remain left-aligned; spotlight arrangement unchanged.
+- Panel titles and Speakers and talks/Panels section headings share the actual talk-title size/face:21px Cardo bold,18.75px on phones and18px at350px/below. Other section headings are unchanged.
+- All17 panelist/spotlight/host name placements split into two lines before the final surname. Moderator captions retain their inline names and wording.
+- Tal: selected IU source unchanged, CSS scale1.5/top origin. Jacob: earlier jacob-tsimerman.jpg from Simons Foundation via Commons restored with its attached credit/license. Remains a panelist only; twelve main speakers unchanged. Personal Toronto alternate is no longer selected. Seven credit lines remain above footer.
+- WorkshopBioLink wraps team names/photos and inline moderator names with links derived from canonical People IDs; it inherits font/color and removes no existing visual treatment. There are29 links to12 valid existing People targets. No links are invented for external participants. Keyboard focus is visible without changing normal appearance. WorkshopNameLines supplies the consistent small-portrait name breaks.
+
+Verification: latest Astro check59files,0errors/warnings/hints; build and whitespace review pass. Observed320/390/550/760/768/915/1024/1280px: no horizontal overflow, every talk/name/affiliation block fits within its portrait height, both panel titles and requested section headings match talk sizes, all17 names are exactly two lines, and all small squares match the requested64px/54px. Link computed fonts/colors match parents with no underline. Fixed utilities remain clear. All29 photos loaded. Static People-target audit finds29 links,12 unique targets,zero missing IDs. Keyboard Tab to Miranda’s name shows2px focus; Enter lands at her visible bio below the sticky header. Shafi’s portrait click reaches her correct visible bio. Moderator links retain inline font/color; no forced break. Phone dark theme and all main/participant/host portrait framing reviewed; light restored and viewport reset. No forms submitted; no physical-device or spoken screen-reader test.
+
+Evidence: output/workshop-layout-proof/sizing-nov24.json, nov24-bio-targets.json, nov24-speakers-desktop.png, nov24-speakers-middle.png, nov24-panels-desktop.png, nov24-spotlights-hosts.png and nov24-panels-mobile.png; cropped nov24-speakers-detail.png/nov24-panels-detail.png for review. Same4513 URL, source/production baselinecc4ef58/00f07c1 verified current before edits; unrelated open PR150 preserved. No People/Home/event-data edits, no image synthesis, no source merge, push or production publication. Larger main portraits add vertical length by request. Keep the preview available for Rachel’s review; publication still requires approval.
+
+## Earlier revision2: prominent talk titles, November23
 
 Rachel requested another unpublished layout because the first preview made talk titles too quiet. This revision supersedes the four-column/12px-title treatment described in the earlier version record below. Current source/production references are unchanged (cc4ef58/00f07c1); open PR150 is an unrelated working-group preview.
 

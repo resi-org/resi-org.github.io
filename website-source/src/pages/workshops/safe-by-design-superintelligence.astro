@@ -4,6 +4,8 @@ import Base from '../../layouts/Base.astro';
 import Section from '../../components/Section.astro';
 import Arrow from '../../components/Arrow.astro';
 import WorkshopPortrait from '../../components/WorkshopPortrait.astro';
+import WorkshopBioLink from '../../components/WorkshopBioLink.astro';
+import WorkshopNameLines from '../../components/WorkshopNameLines.astro';
 import { workshopPortraits, workshopHostPhotoCredits } from '../../data/workshop-portraits';
 import { portraitFor } from '../../lib/portraits';
 import { workshopParticipantPortraits } from '../../data/workshop-participant-portraits';
@@ -27,6 +29,7 @@ const hosts = await Promise.all(hostIds.map(async (id) => {
   return { name: person.data.name, portrait: portraitFor(id, person.data.photo) };
 }));
 const people = await getCollection('people');
+const teamBios: Record<string, string> = Object.fromEntries(people.map((person) => [person.data.name, `/people#${person.id}`]));
 const teamPortraits: Record<string, WorkshopPhoto> = Object.fromEntries(people.filter((person) => person.data.photo).map((person) => {
   const portrait = portraitFor(person.id, person.data.photo);
   return [person.data.name, { src: portrait.src!, style: portrait.style, label: 'Existing RESI People portrait' }];
@@ -82,12 +85,12 @@ const date = event.start.toLocaleDateString('en-US', {
     <Section id="speakers" label="Speakers and talks" divider>
       <ul class="speaker-list">
         {event.speakers.map((speaker) => <li>
-          <div class="speaker-photo"><WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} /></div>
+          <div class="speaker-photo"><WorkshopBioLink name={speaker.name} href={teamBios[speaker.name]} portrait><WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} /></WorkshopBioLink></div>
           <div class="speaker-copy">
             {speaker.talkTitle
               ? <h3 class="talk-title">{speaker.talkTitle}</h3>
               : <h3 class="talk-pending">Title to be announced</h3>}
-            <p class="speaker-name">{speaker.name}</p>
+            <p class="speaker-name"><WorkshopBioLink name={speaker.name} href={teamBios[speaker.name]}>{speaker.name}</WorkshopBioLink></p>
             {speaker.affiliation && <p class="speaker-affiliation">{speaker.affiliation}</p>}
           </div>
         </li>)}
@@ -102,12 +105,12 @@ const date = event.start.toLocaleDateString('en-US', {
           {event.panelDetails[title] ? <>
             <ul class="participant-list">
               {event.panelDetails[title].participants.map((person) => <li>
-                <div class="participant-photo"><WorkshopPortrait name={person.name} photo={participantPortraits[person.name]} square /></div>
-                <p class="participant-name">{person.name}</p>
+                <div class="participant-photo"><WorkshopBioLink name={person.name} href={teamBios[person.name]} portrait><WorkshopPortrait name={person.name} photo={participantPortraits[person.name]} square /></WorkshopBioLink></div>
+                <p class="participant-name"><WorkshopBioLink name={person.name} href={teamBios[person.name]}><WorkshopNameLines name={person.name} /></WorkshopBioLink></p>
                 {person.affiliation && <p class="participant-affiliation">{person.affiliation}</p>}
               </li>)}
             </ul>
-            {event.panelDetails[title].moderator && <p class="program-moderator">Moderated by {event.panelDetails[title].moderator}.</p>}
+            {event.panelDetails[title].moderator && <p class="program-moderator">Moderated by <WorkshopBioLink name={event.panelDetails[title].moderator} href={teamBios[event.panelDetails[title].moderator]}>{event.panelDetails[title].moderator}</WorkshopBioLink>.</p>}
           </> : <p class="program-moderator">Panelists will be announced soon.</p>}
         </li>)}
       </ul>}
@@ -116,20 +119,20 @@ const date = event.start.toLocaleDateString('en-US', {
     {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
       <ul class="participant-list spotlight-list">
         {event.spotlights.speakers.map((name) => <li>
-          <div class="participant-photo"><WorkshopPortrait name={name} photo={participantPortraits[name]} square /></div>
-          <p class="participant-name">{name}</p>
+          <div class="participant-photo"><WorkshopBioLink name={name} href={teamBios[name]} portrait><WorkshopPortrait name={name} photo={participantPortraits[name]} square /></WorkshopBioLink></div>
+          <p class="participant-name"><WorkshopBioLink name={name} href={teamBios[name]}><WorkshopNameLines name={name} /></WorkshopBioLink></p>
         </li>)}
       </ul>
-      {event.spotlights.moderator && <p class="program-moderator">Moderated by {event.spotlights.moderator}.</p>}
+      {event.spotlights.moderator && <p class="program-moderator">Moderated by <WorkshopBioLink name={event.spotlights.moderator} href={teamBios[event.spotlights.moderator]}>{event.spotlights.moderator}</WorkshopBioLink>.</p>}
     </Section>}
 
     <Section id="hosts" label={event.hostsLabel || 'Hosted by'} divider>
       <ul class="host-list">
         {hosts.map((host) => <li>
-          <span class="host-portrait founder-portrait" style={host.portrait.style}>
+          <WorkshopBioLink name={host.name} href={teamBios[host.name]} portrait><span class="host-portrait founder-portrait" style={host.portrait.style}>
             <img src={host.portrait.src} alt="" width="80" height="80" loading="lazy" decoding="async" />
-          </span>
-          <span class="host-name">{host.name.slice(0, host.name.lastIndexOf(' '))}{' '}<span class="host-surname">{host.name.slice(host.name.lastIndexOf(' ') + 1)}</span></span>
+          </span></WorkshopBioLink>
+          <span class="host-name"><WorkshopBioLink name={host.name} href={teamBios[host.name]}><WorkshopNameLines name={host.name} /></WorkshopBioLink></span>
         </li>)}
       </ul>
     </Section>
@@ -160,7 +163,7 @@ const date = event.start.toLocaleDateString('en-US', {
 </Base>
 
 <style>
-  .workshop-page { width: min(840px, calc(100% - 36px)); margin-inline: auto; }
+  .workshop-page { --talk-title-size: 21px; --speaker-photo-min: 225px; width: min(840px, calc(100% - 36px)); margin-inline: auto; }
   .workshop-hero, .workshop-closing-invitation, .workshop-page > :global(.section:not(#speakers)) {
     max-width: var(--content-width); margin-inline: auto;
   }
@@ -230,29 +233,31 @@ const date = event.start.toLocaleDateString('en-US', {
   .speaker-list, .host-list { list-style: none; padding: 0; margin: 0; }
   .speaker-list {
     display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 30px;
+    grid-auto-rows: 1fr; gap: 18px 30px;
   }
   .speaker-list > li {
-    display: grid; grid-template-columns: 132px minmax(0, 1fr);
-    align-items: start; gap: 18px; min-width: 0;
+    display: grid; grid-template-columns: 160px minmax(0, 1fr);
+    align-items: stretch; gap: 18px; min-width: 0;
     margin: 0; padding: 0 0 18px; border-bottom: 0.75px solid var(--line);
   }
   .speaker-list > li:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc((100% - 30px) / 2); justify-self: center; }
-  .speaker-photo :global(.workshop-portrait) { margin: 0; }
+  .speaker-photo { display: grid; min-height: var(--speaker-photo-min); }
+  .speaker-photo :global(.workshop-bio-link) { height: 100%; }
+  .speaker-photo :global(.workshop-portrait) { margin: 0; height: 100%; aspect-ratio: auto; }
+  .speaker-copy { align-self: start; }
   .speaker-copy { min-width: 0; overflow-wrap: anywhere; }
   .speaker-list .talk-title, .speaker-list .talk-pending {
-    margin: -3px 0 0; font: 700 21px/1.25 var(--serif); letter-spacing: -0.005em;
+    margin: -3px 0 0; font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em;
   }
   .speaker-list .talk-title { color: var(--ink); }
   .speaker-list .talk-pending { color: var(--muted); font-size: 18px; font-weight: 400; }
-  .speaker-list .speaker-name { margin: 12px 0 0; font: 500 13.5px/1.4 var(--sans); }
+  .speaker-list .speaker-name { margin: 12px 0 0; font: 500 16px/1.4 var(--sans); }
   .speaker-list .speaker-affiliation { margin: 3px 0 0; color: var(--muted); font: 400 12px/1.4 var(--sans); }
   .host-list li { margin: 0; padding: 0; }
   @media (max-width: 760px) {
     .speaker-list { grid-template-columns: 1fr; gap: 18px; }
-    .speaker-list > li { grid-template-columns: 132px minmax(0, 1fr); gap: 24px; padding-bottom: 18px; }
+    .speaker-list > li { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; padding-bottom: 18px; }
     .speaker-list > li:last-child:nth-child(odd) { grid-column: auto; width: auto; justify-self: stretch; }
-    .speaker-list .talk-title { font-size: 21px; }
     .workshop-page > :global(#speakers) { max-width: var(--content-width); margin-inline: auto; }
   }
   .workshop-sections { display: flex; flex-wrap: wrap; gap: 9px 21px; margin-top: 21px; font-size: 12px; }
@@ -263,18 +268,14 @@ const date = event.start.toLocaleDateString('en-US', {
   }
   .program-panels .participant-list { justify-content: flex-start; }
   .participant-list > li { width: calc((100% - (var(--participant-columns) - 1) * 24px) / var(--participant-columns)); min-width: 0; margin: 0; padding: 0; }
-  .participant-photo { width: 80px; height: 80px; margin-bottom: 9px; }
+  .participant-photo { width: 64px; height: 64px; margin-bottom: 9px; }
   .participant-photo :global(.workshop-portrait) { margin: 0; }
   .participant-name { margin: 0; font: 500 12.75px/1.4 var(--sans); }
   .participant-affiliation { margin: 3px 0 0; color: var(--muted); font: 400 11.25px/1.4 var(--sans); }
   .spotlight-list { margin-top: 0; }
   .host-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; font-weight: 500; }
-  .host-list li { container-type: inline-size; }
   .host-name { display: block; }
-  @container (max-width: 10.1em) {
-    .host-surname { display: block; }
-  }
-  .host-portrait { width: 80px; height: 80px; margin-bottom: 12px; }
+  .host-portrait { width: 64px; height: 64px; margin-bottom: 12px; }
   .photography-credits {
     max-width: var(--content-width); padding-bottom: 18px;
     color: var(--muted); font: 400 8.25px/1.65 var(--sans);
@@ -297,26 +298,29 @@ const date = event.start.toLocaleDateString('en-US', {
   .program-moderator { margin: 18px 0 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
   .program-panels { list-style: none; padding: 0; margin: 0; display: grid; gap: 30px; }
   .program-panels li { margin: 0; }
-  .program-panels h3 { margin: 0; font: 700 16.5px/1.4 var(--serif); letter-spacing: -0.005em; }
+  .program-panels h3 { margin: 0; font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em; }
+  .workshop-page :global(#speakers > .section-label), .workshop-page :global(#program > .section-label) {
+    font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em; text-transform: none;
+  }
   @media (max-width: 480px) {
+    .workshop-page { --talk-title-size: 18.75px; --speaker-photo-min: 200px; }
     .workshop-subtitle, .workshop-join-label { font-size: 21px; }
     .workshop-subtitle { font-size: 19.5px; margin-top: 15px; }
     .workshop-invitation { gap: 15px; }
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
     .workshop-hero > .workshop-invitation { margin-top: 21px; }
-    .speaker-list > li { grid-template-columns: 112px minmax(0, 1fr); gap: 18px; }
-    .speaker-list .talk-title { font-size: 18.75px; }
-    .speaker-list .speaker-name { font-size: 12.75px; }
+    .speaker-list > li { grid-template-columns: 132px minmax(0, 1fr); gap: 18px; }
+    .speaker-list .speaker-name { font-size: 15px; }
     .speaker-list .speaker-affiliation { font-size: 11.25px; }
-    .participant-photo { width: 67.5px; height: 67.5px; }
+    .participant-photo { width: 54px; height: 54px; }
     .participant-name { font-size: 12px; }
     .host-list { gap: 18px; font-size: 12px; }
-    .host-portrait { width: 67.5px; height: 67.5px; }
+    .host-portrait { width: 54px; height: 54px; }
   }
 
   @media (max-width: 350px) {
-    .speaker-list > li { grid-template-columns: 96px minmax(0, 1fr); gap: 15px; }
-    .speaker-list .talk-title { font-size: 18px; }
+    .speaker-list > li { grid-template-columns: 112px minmax(0, 1fr); gap: 15px; }
+    .workshop-page { --talk-title-size: 18px; }
   }
   @media print {
     .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }

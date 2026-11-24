@@ -1,0 +1,7 @@
+---
+interface Props { name: string; }
+const { name } = Astro.props;
+const split = name.lastIndexOf(' ');
+---
+<span class="name-line">{name.slice(0, split)}</span>{' '}<span class="name-line">{name.slice(split + 1)}</span>
+<style>.name-line { display: block; }</style>
