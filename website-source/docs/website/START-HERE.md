@@ -1,3 +1,7 @@
+## Researcher job page — November24 publication approved, release in progress
+
+Rachel approved the reviewed full job page and its Join us link, superseding the preview-only hold below for this scope. Launch source `output/resi-researcher-launch-nov24`, branch `codex/researcher-page-launch-nov24`, from current continuing source738ea87/main0e09ccf. Route `/jobs/ai-safety-researcher/`; People → Join us → Work at RESI now points to this page; two Apply on AJO actions continue to job33484. Matching Search entry and sitemap included. Final contact line matches the14px muted rolling-review note, with28px top margin. Check/build and local phone/link review passed. Source/production merge, deployment and live verification are pending; see brief/CHANGELOG for actual stages. Preserve all unrelated work and the local4528 preview.
+
 ## Researcher opportunity — November24 live link; full page preview only
 People → Work at RESI now links AI Safety Researcher directly to published AJO33484. Source PR363/a2fadcb and production PR364/0e09ccf; Pages45449918762 succeeded; ordinary live People1280/390px and Search verified. This supersedes historical details-coming/AJO-on-hold notes for this role only. A full RESI job page remains unpublished at http://127.0.0.1:4528/jobs/ai-safety-researcher/, isolated output/resi-researcher-page-preview-nov24 / codex/researcher-page-preview-nov24 / d214ba6. Noindex/no incoming live link; do not publish it without Rachel’s approval. Preserve local preview and unrelated work. See WORKLIST H6 and briefs/researcher-job-page-2026-11-24.md.
 
