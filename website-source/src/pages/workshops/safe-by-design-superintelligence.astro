@@ -163,16 +163,16 @@ const date = event.start.toLocaleDateString('en-US', {
 </Base>
 
 <style>
-  .workshop-page { --talk-title-size: 21px; --speaker-photo-min: 225px; width: min(840px, calc(100% - 36px)); margin-inline: auto; }
+  .workshop-page { --talk-title-size: 18px; --workshop-section-size: 24px; --speaker-photo-min: 165px; width: min(760px, calc(100% - 36px)); margin-inline: auto; }
   .workshop-hero, .workshop-closing-invitation, .workshop-page > :global(.section:not(#speakers)) {
     max-width: var(--content-width); margin-inline: auto;
   }
   .workshop-page > :global(#speakers > .section-body) { max-width: none; }
   @media screen and (min-width: 915px) {
     /* Reserve a clear gutter for this page's wider talks and fixed utilities. */
-    .workshop-page { width: min(840px, calc(100% - 132px)); }
+    .workshop-page { width: min(760px, calc(100% - 132px)); }
     :global(.site-footer .footer-list .footer-controls) {
-      right: max(24px, calc((100% - 945px) / 2));
+      right: max(24px, calc((100% - 865px) / 2));
     }
   }
   .workshop-hero { padding-bottom: var(--section-space-before, 36px); }
@@ -236,13 +236,17 @@ const date = event.start.toLocaleDateString('en-US', {
     grid-auto-rows: 1fr; gap: 18px 30px;
   }
   .speaker-list > li {
-    display: grid; grid-template-columns: 160px minmax(0, 1fr);
+    display: grid; grid-template-columns: 132px minmax(0, 1fr);
     align-items: stretch; gap: 18px; min-width: 0;
     margin: 0; padding: 0 0 18px; border-bottom: 0.75px solid var(--line);
   }
+  .speaker-list > li:last-child { border-bottom: 0; }
+  @media (min-width: 761px) {
+    .speaker-list > li:nth-last-child(2):nth-child(odd) { border-bottom: 0; }
+  }
   .speaker-list > li:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc((100% - 30px) / 2); justify-self: center; }
-  .speaker-photo { display: grid; min-height: var(--speaker-photo-min); }
-  .speaker-photo :global(.workshop-bio-link) { height: 100%; }
+  .speaker-photo { position: relative; min-height: var(--speaker-photo-min); }
+  .speaker-photo :global(.workshop-bio-link) { position: absolute; inset: 0; height: 100%; }
   .speaker-photo :global(.workshop-portrait) { margin: 0; height: 100%; aspect-ratio: auto; }
   .speaker-copy { align-self: start; }
   .speaker-copy { min-width: 0; overflow-wrap: anywhere; }
@@ -250,13 +254,13 @@ const date = event.start.toLocaleDateString('en-US', {
     margin: -3px 0 0; font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em;
   }
   .speaker-list .talk-title { color: var(--ink); }
-  .speaker-list .talk-pending { color: var(--muted); font-size: 18px; font-weight: 400; }
+  .speaker-list .talk-pending { color: var(--muted); font-size: var(--talk-title-size); font-weight: 400; }
   .speaker-list .speaker-name { margin: 12px 0 0; font: 500 16px/1.4 var(--sans); }
   .speaker-list .speaker-affiliation { margin: 3px 0 0; color: var(--muted); font: 400 12px/1.4 var(--sans); }
   .host-list li { margin: 0; padding: 0; }
   @media (max-width: 760px) {
     .speaker-list { grid-template-columns: 1fr; gap: 18px; }
-    .speaker-list > li { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; padding-bottom: 18px; }
+    .speaker-list > li { grid-template-columns: 132px minmax(0, 1fr); gap: 24px; padding-bottom: 18px; }
     .speaker-list > li:last-child:nth-child(odd) { grid-column: auto; width: auto; justify-self: stretch; }
     .workshop-page > :global(#speakers) { max-width: var(--content-width); margin-inline: auto; }
   }
@@ -299,11 +303,11 @@ const date = event.start.toLocaleDateString('en-US', {
   .program-panels { list-style: none; padding: 0; margin: 0; display: grid; gap: 30px; }
   .program-panels li { margin: 0; }
   .program-panels h3 { margin: 0; font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em; }
-  .workshop-page :global(#speakers > .section-label), .workshop-page :global(#program > .section-label) {
-    font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em; text-transform: none;
+  .workshop-page :global(#speakers > .section-label), .workshop-page :global(#program > .section-label), .workshop-page :global(#spotlights > .section-label) {
+    font: 700 var(--workshop-section-size)/1.25 var(--serif); letter-spacing: -0.005em; text-transform: none;
   }
   @media (max-width: 480px) {
-    .workshop-page { --talk-title-size: 18.75px; --speaker-photo-min: 200px; }
+    .workshop-page { --talk-title-size: 17.25px; --workshop-section-size: 21px; }
     .workshop-subtitle, .workshop-join-label { font-size: 21px; }
     .workshop-subtitle { font-size: 19.5px; margin-top: 15px; }
     .workshop-invitation { gap: 15px; }
@@ -320,7 +324,7 @@ const date = event.start.toLocaleDateString('en-US', {
 
   @media (max-width: 350px) {
     .speaker-list > li { grid-template-columns: 112px minmax(0, 1fr); gap: 15px; }
-    .workshop-page { --talk-title-size: 18px; }
+    .workshop-page { --talk-title-size: 16.5px; --workshop-section-size: 20px; --speaker-photo-min: 140px; }
   }
   @media print {
     .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }

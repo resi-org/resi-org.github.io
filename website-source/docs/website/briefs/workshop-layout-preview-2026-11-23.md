@@ -8,7 +8,21 @@
 - Baseline source: cc4ef58; production observed00f07c1, including independent /inaug and seminar Zoom endpoints. Neither production nor the original dirty checkout’s application files were changed.
 - Local static preview session33805 remains running for Rachel’s review. Rebuild website-source/dist after application edits; server serves dist on4513.
 
-## Current revision3: sizing, names and biography links — November24 (UNPUBLISHED)
+## Current revision4: narrower column and reduced portrait height — November24 (UNPUBLISHED)
+
+Rachel requested stronger Speakers and talks, Panels and RESI research spotlights section headings, smaller talk/panel titles, a narrower speaker area, and reconsideration of the duplicated rules above Panels. She then clarified that revision3’s portraits were larger/taller than necessary: text may finish exactly at the photo bottom, without surplus height.
+
+A literal size swap would have been invisible because the prior requested section headings and talk titles both measured21px. The trial therefore uses24px section headings and18px talk/panel titles; phones use21px/17.25px, and350px/below20px/16.5px. All three requested section labels share the same larger scale. Speaker names stay at the previously requested16px/15px. Serif/sans families, weights and tokens remain unchanged.
+
+The desktop speaker section narrows840→760px. Photo columns reduce160→132px, with132×165px baseline frames and intrinsic equal grid rows driven by actual text. Portrait images are positioned inside their frames so intrinsic source dimensions no longer impose unnecessary height. Frames can grow when a longer text block needs it; phone132px and narrow-phone112px widths remain from revision3, with165px/140px baseline heights respectively. Original images/crop variables are unchanged. At1280px, Anat and Nickolai finish within about1.3/1.8px of their photo bottoms. At320px they finish flush/within0.5px. Wider single-column layouts retain a sensible portrait minimum even when their text wraps less. No text truncation or disclosure.
+
+One boundary rule above Panels remains: the shared Panels section divider. Removed the redundant bottom rules only from the final speaker row (both entries on desktop, only final entry when stacked). Earlier row separators stay intact. Workshop-only fixed utility position moves to follow the narrower content with a clear gutter. All selected smaller photos, Tal/Jacob choices/credits,17 two-line captions,29 biography links, event facts, roles/order and other sections from revision3 are preserved.
+
+Verification: fresh check59files/zero diagnostics and build pass; whitespace check passes. Observed320/390/550/760/768/915/1024/1280px: no horizontal overflow; all talk/name/affiliation blocks end within photo height. Main desktop section760px, main frames132×165px (last row165.5px because removing its border changes the track remainder by0.5px). Section headings24px versus18px titles; phone steps measured as above. Main section1308.5px high at1280px. Final speaker row has no bottom rule and Panels retains its single top rule; phone penultimate row still has its ordinary separator. Utility clearance19.5px on checked desktop widths. Full main portrait framing and long phone entries visually reviewed. No forms submitted, no physical-device/spoken screen-reader session. Viewport reset and preview left open at#speakers. No publication, push or merge.
+
+Evidence: output/workshop-layout-proof/compact-nov24.json, compact-nov24-desktop.png, compact-nov24-long-desktop.png, compact-nov24-phone.png and compact-nov24-long-phone.png; compact-nov24-top-detail.png/compact-nov24-long-detail.png are review crops. Same4513 preview and isolated branch; this is a reversible design trial awaiting Rachel’s review, not a published standard.
+
+## Earlier revision3: sizing, names and biography links — November24 (UNPUBLISHED)
 
 Rachel requested larger speaker names, then larger main portraits to contain the longest talk/name/affiliation blocks;20% smaller panelist/spotlight/host squares; closer Tal framing; larger panel titles and Speakers and talks/Panels headings; consistently two-line small-portrait names; Jacob’s earlier image; and plain links from RESI team names/photos to their People biographies.
 
