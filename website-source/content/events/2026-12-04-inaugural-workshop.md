@@ -16,10 +16,10 @@ panelDetails:
         affiliation: "Aria"
       - name: "Yuval Ishai"
         affiliation: "Technion"
-      - name: "Yael Tauman Kalai"
-        affiliation: "MIT, RESI"
       - name: "Tal Rabin"
         affiliation: "Amazon"
+      - name: "Yael Tauman Kalai"
+        affiliation: "MIT, RESI"
     moderator: "Vinod Vaikuntanathan"
   "Academia and AI Safety (whose responsibility is it anyway?)":
     participants:
@@ -27,10 +27,10 @@ panelDetails:
         affiliation: "Harvard Law"
       - name: "Aleksander Mądry"
         affiliation: "OpenAI"
-      - name: "Jacob Tsimerman"
-        affiliation: "MAISI, University of Toronto"
       - name: "Zico Kolter"
         affiliation: "CMU"
+      - name: "Jacob Tsimerman"
+        affiliation: "MAISI, University of Toronto"
     moderator: "Shafi Goldwasser"
 spotlights:
   speakers:

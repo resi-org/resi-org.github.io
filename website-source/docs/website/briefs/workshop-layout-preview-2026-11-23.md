@@ -8,7 +8,17 @@
 - Baseline source: cc4ef58; production observed00f07c1, including independent /inaug and seminar Zoom endpoints. Neither production nor the original dirty checkout’s application files were changed.
 - Local static preview session33805 remains running for Rachel’s review. Rebuild website-source/dist after application edits; server serves dist on4513.
 
-## Current revision5: aligned opening and modestly narrower talks — November24 (UNPUBLISHED)
+## Current revision6: full-column continuity and tighter participant rows — November24 (UNPUBLISHED)
+
+Rachel requested the rest of the page match the720px opening/talk column, tighter left-aligned panelist photos, unchanged host photo spacing, Yael last after Tal, and Jacob last after Zico with “of” beginning the second affiliation line. She then requested spotlight spacing match the panelists.
+
+All workshop sections, closing invitation and photography credits now share the720px maximum and matching left/right edges; at760px/below they share the600px/available-width cap. The shared site footer remains unchanged and last. Panel and spotlight lists use the same compact84px maximum item width and18px horizontal gap, left aligned even on incomplete rows; below320px-level available width the items shrink to fit three. Portrait dimensions/crops/type are unchanged. Host list retains its prior600px maximum and24px/18px responsive gaps, so host photo distances remain unchanged even as its section boundary aligns to the wider column. Canonical panel participant arrays swap Tal/Yael and Zico/Jacob; no participant or affiliation facts change. Jacob’s displayed affiliation breaks as “MAISI, University” / “of Toronto”.
+
+Current source/prod refs re-fetched unchanged atcc4ef58/00f07c1; open PR150 remains unrelated. Fresh check59files/zero diagnostics and build passed; final CSS-only consolidation rebuilt successfully. Geometry at actual320/390/550/760/915/1280px confirms shared widths, no horizontal overflow, all29 images loaded, left panel alignment, unchanged host pitches, Jacob’s two lines. Final panel/spotlight equality at320/390/760/1280px confirms identical item widths/gaps/alignment. Desktop visual review confirms ordering and spacing. Mobile geometry passed; browser mobile captures were clipped and are not full visual proof. No forms submitted or physical device test. Viewport reset;4513 preview left at#program. No push, merge or publication.
+
+Evidence: output/workshop-layout-proof/panel-spacing-nov24.json, spotlight-spacing-nov24.json and panel-spotlight-spacing-nov24-preview.png; panel-spotlight-spacing-nov24-detail.png is the review crop. All earlier preview changes remain unpublished.
+
+## Earlier revision5: aligned opening and modestly narrower talks — November24 (UNPUBLISHED)
 
 Rachel requested matching the opening section to the Speakers and talks width, then testing a further modest narrowing only if alignment stayed intact. Both sections now share720px maximum width and the same left/right edges (previous talks760px, opening600px). At760px/below they share the existing600px/available-width rule. All typography, image assets/crop variables, event facts, section order, panel/spotlight/host styles and biography links are preserved. Workshop utility offset follows the narrower column with the same clear gutter.
 
