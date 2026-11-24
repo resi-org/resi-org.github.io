@@ -8,7 +8,17 @@
 - Baseline source: cc4ef58; production observed00f07c1, including independent /inaug and seminar Zoom endpoints. Neither production nor the original dirty checkout’s application files were changed.
 - Local static preview session33805 remains running for Rachel’s review. Rebuild website-source/dist after application edits; server serves dist on4513.
 
-## Current revision4: narrower column and reduced portrait height — November24 (UNPUBLISHED)
+## Current revision5: aligned opening and modestly narrower talks — November24 (UNPUBLISHED)
+
+Rachel requested matching the opening section to the Speakers and talks width, then testing a further modest narrowing only if alignment stayed intact. Both sections now share720px maximum width and the same left/right edges (previous talks760px, opening600px). At760px/below they share the existing600px/available-width rule. All typography, image assets/crop variables, event facts, section order, panel/spotlight/host styles and biography links are preserved. Workshop utility offset follows the narrower column with the same clear gutter.
+
+Kept the720px trial after visual and geometry review: two desktop entries remain aligned at their photo tops and bottoms; the longest text fits within the photo height. Text columns are195px. Longer wrapping makes desktop portrait frames about132×186px and the speaker section1436px high, compared with revision4’s132×165px and1308.5px. This is a modest extra vertical cost of the requested narrower reading width. Phone layout retains its existing widths and sizing.
+
+Fresh Astro check59files/zero diagnostics and build passed. Actual observed CSS widths320/390/550/760/767/915/1280px: matching hero/speaker edges and widths, no horizontal overflow, no speaker text below its image, paired desktop rows aligned. Desktop longest titles and390px phone reviewed visually. Browser viewport override reset and4513 preview left open at#top. No forms submitted or physical-device testing. No publication, push or merge.
+
+Proof: output/workshop-layout-proof/hero-alignment-nov24.json, hero-alignment-nov24-desktop.png, hero-alignment-nov24-long.png, hero-alignment-nov24-mobile.png and hero-alignment-nov24-preview.png; hero-alignment-nov24-detail.png is a review crop. This supersedes revision4 widths only and remains a local trial awaiting Rachel’s review.
+
+## Earlier revision4: narrower column and reduced portrait height — November24 (UNPUBLISHED)
 
 Rachel requested stronger Speakers and talks, Panels and RESI research spotlights section headings, smaller talk/panel titles, a narrower speaker area, and reconsideration of the duplicated rules above Panels. She then clarified that revision3’s portraits were larger/taller than necessary: text may finish exactly at the photo bottom, without surplus height.
 
