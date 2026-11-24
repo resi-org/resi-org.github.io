@@ -23,6 +23,14 @@
     text-transform: uppercase;
   }
   .header-section-panel ul { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7.5px 16.5px; margin: 0; padding: 0; list-style: none; }
+  /* Invisible pointer tolerance below/beside the open row. Keep the top edge
+     unchanged so neighboring navigation links remain directly reachable. */
+  .header-section-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0 -10px -10px;
+    z-index: -1;
+  }
   .header-section-panel li { margin: 0; padding: 0; }
   .desktop-nav .header-section-panel a {
     display: block;
