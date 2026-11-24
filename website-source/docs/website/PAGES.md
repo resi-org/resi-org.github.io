@@ -78,3 +78,8 @@ November19 desktop header preview (D18; not merged/published): src/data/page-sec
 November23: D18 desktop header menus approved for publication; DESIGN records the final centered 25px row and shared inventory. The earlier preview-only note is superseded for this reviewed scope. Collapsed/mobile layout remains unchanged. Publication/live evidence follows in CHANGELOG.
 
 November23 D18 is now published/live verified: sourcePR350 / productionPR351 / Pages45222886639. About/Research/People/Events use the shared header/in-page inventory; final geometry/behavior and preserved mobile checks are in CHANGELOG. Earlier preview-only status is superseded.
+
+November24 workshop preview dependency (unpublished4513 only): WorkshopBioLink.astro maps RESI team names/photos and moderator names to canonical /people#<person.id> targets derived from the People collection. Preserve valid People anchors when reviewing this preview;29 link placements reach12 IDs. WorkshopNameLines.astro formats only the17 panelist/spotlight/host captions. Published People/Home/event records remain unchanged. See the current workshop preview brief for review scope and checks.
+
+
+November24 workshop layout approval: canonical detail page’s reviewed720px layout uses WorkshopBioLink.astro/WorkshopNameLines.astro and src/data/workshop-participant-portraits.ts for People biography links, two-line small captions and selected panel/spotlight images. Canonical event data still owns all roles/affiliations and the approved participant order. See briefs/workshop-layout-release-2026-11-24.md for source/publication/deployment status; People/Home themselves are unchanged.

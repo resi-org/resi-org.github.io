@@ -1,0 +1,11 @@
+---
+interface Props { name: string; href?: string; portrait?: boolean; }
+const { name, href, portrait = false } = Astro.props;
+const Tag = href ? 'a' : 'span';
+---
+<Tag href={href} aria-label={href && portrait ? `Read ${name}’s biography` : undefined} class:list={['workshop-bio-link', { 'portrait-link': portrait }]}><slot /></Tag>
+<style>
+  .workshop-bio-link { color: inherit; font: inherit; text-decoration: none; }
+  .portrait-link { display: block; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+</style>
