@@ -1,0 +1,159 @@
+---
+import Base from '../../layouts/Base.astro';
+import Section from '../../components/Section.astro';
+import { external } from '../../lib/external';
+
+const applyUrl = 'https://academicjobsonline.org/ajo/jobs/33484';
+---
+
+<Base
+  title="AI Safety Researcher"
+  description="Conduct original AI safety research at RESI in Cambridge, Massachusetts. Ongoing, full-time, in-person roles at the postdoctoral level and above, or equivalent research experience in industry or independent research."
+>
+  <article class="job-page">
+    <header class="page-hero">
+      <p class="job-back"><a href="/people#work-at-resi"><span aria-hidden="true">← </span>Work at RESI</a></p>
+      <h1>AI Safety Researcher</h1>
+      <ul class="job-facts" aria-label="Position details">
+        <li>Cambridge, Massachusetts · In person</li>
+        <li>Full-time · Ongoing</li>
+        <li>Postdoctoral level and above, or equivalent research experience in industry or independent research</li>
+      </ul>
+      <div class="job-action">
+        <a class="button" href={applyUrl} {...external(applyUrl)}>Apply on AJO</a>
+        <p class="review-note">Applications reviewed on a rolling basis.</p>
+      </div>
+    </header>
+
+    <Section divider id="environment">
+      <h2>Our research environment</h2>
+      <p>
+        The Institute for Responsible Superintelligence (RESI) is a non-profit research institute
+        dedicated to the urgent task of building the scientific foundations necessary to make
+        superintelligence safe by design.
+      </p>
+      <p>
+        RESI brings together core researchers, academics, and practitioners through interdisciplinary
+        working groups focused on specific research questions. Typically, 8–12 groups are active
+        at a time. Groups meet regularly, with smaller teams developing results to share with the
+        wider group.
+      </p>
+      <p>
+        Research at RESI is AI-assisted, with AI-generated suggestions subject to independent
+        examination and testing. Explore our <a href="/research">research agenda and working groups</a>.
+      </p>
+    </Section>
+
+    <Section divider id="role">
+      <h2>The role</h2>
+      <p>
+        You will conduct original research developing safe-by-design approaches to AI and, more
+        generally developing the scientific foundations of AI that enable understanding how AI
+        may and may not be safely built. Your research may involve techniques from cryptography,
+        verification, learning theory, or game theory, but it could also stem from areas further
+        afield such as law or philosophy.
+      </p>
+      <p>RESI researchers:</p>
+      <ul class="job-list">
+        <li>Develop and publish original research and present findings at conferences, workshops, and seminars.</li>
+        <li>Develop open-source code and other research artifacts, as appropriate to their work.</li>
+        <li>Lead or participate in working groups.</li>
+        <li>Contribute to RESI’s collaborative research program through shared inquiry, feedback, and collaboration.</li>
+      </ul>
+    </Section>
+
+    <Section divider id="qualifications">
+      <h2>Qualifications and level</h2>
+      <p>
+        Candidates should demonstrate expertise in AI safety and alignment research, a record of
+        original contributions appropriate to their career stage, and the ability to collaborate
+        across disciplines.
+      </p>
+      <p>
+        Positions are available at the postdoctoral level and above, including equivalent research
+        levels in industry or independent research. Appointment level will reflect research
+        accomplishments, independence, and leadership experience. Candidates from academic,
+        industry, and independent research backgrounds are welcome.
+      </p>
+    </Section>
+
+    <Section divider id="apply">
+      <h2>How to apply</h2>
+      <p>Submit your application through AcademicJobsOnline (AJO), including:</p>
+      <ul class="job-list application-materials">
+        <li>Cover letter</li>
+        <li>Curriculum vitae</li>
+        <li>
+          Research statement: approximately 1–2 pages describing your previous research and your
+          own contributions, the questions you would like to pursue at RESI, and how those
+          questions connect to RESI’s research agenda.
+        </li>
+        <li>Publication list</li>
+        <li>Two reference letters; a third is optional. Referees submit their letters directly on AJO.</li>
+      </ul>
+      <div class="job-action closing-action">
+        <a class="button" href={applyUrl} {...external(applyUrl)}>Apply on AJO</a>
+      </div>
+      <p class="job-contact">Questions about the role? <a href="mailto:jobs@resi.org">jobs@resi.org</a></p>
+    </Section>
+  </article>
+</Base>
+
+<style>
+  .job-page {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .job-back {
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .job-facts {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    color: var(--muted);
+  }
+  .job-facts li + li {
+    margin-top: 3px;
+  }
+  .job-action {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 18px;
+  }
+  .job-action .button {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  .job-action .review-note {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .job-list {
+    padding-left: 1.25em;
+    margin-bottom: 0;
+  }
+  .job-list li + li {
+    margin-top: 12px;
+  }
+  .closing-action {
+    margin-top: 24px;
+  }
+  .job-contact {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .job-contact a {
+    color: inherit;
+  }
+  @media (max-width: 600px) {
+    .job-action {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>
