@@ -1233,3 +1233,7 @@ November24 Work-card layout: colon after Current opportunities, role link on its
 
 
 November24 Work-card layout — PUBLISHED AND LIVE VERIFIED: Source PR369 merged at204c251fc55c82da0c3e7f101e435b912aa6ac9c; production PR370 merged atf46e193181320dd9faec3ba0415aadf1c1934ed4. Pages45477493765 succeeded. Ordinary live People1280px confirms Current opportunities:, separate block link with8px top margin, correct internal role destination and no overflow. Only People/Search HTML published. Existing hiring notice remains while Rachel reviews “Anticipated start date: Fall2027”; she confirmed fall2027 describes the position start. No AJO or job-page timing changes. Evidence/recommendation in references/start-date-wording-2026-11-24/report.md; the shared library still needs this local research indexed when writable.
+
+
+## November24 — hiring-round notice approved, prepared
+Rachel approved “Hiring update 2026: We expect positions in our current hiring round to begin in fall 2027.” This replaces the old over-the-coming-year notice in People → Join us → Work at RESI and matching Search excerpt. It describes the current hiring round; no individual-job or AJO start-date edit requested. Current opportunities colon/separate link/8px gap and internal job-page destination retained. Supersedes the pending wording decision and generic Anticipated start date recommendation for this card. Source/production merge, deployment and live verification pending.
