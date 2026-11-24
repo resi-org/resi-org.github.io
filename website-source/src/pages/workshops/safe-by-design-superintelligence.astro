@@ -267,7 +267,7 @@ const date = event.start.toLocaleDateString('en-US', {
   .workshop-sections a { color: var(--accent); text-underline-offset: 3px; }
   .participant-list {
     display: flex; flex-wrap: wrap; justify-content: flex-start;
-    gap: 21px 18px; list-style: none; padding: 0; margin: 18px 0 0;
+    gap: 21px 18px; list-style: none; padding: 0; margin: 24px 0 0;
   }
   .participant-list > li { width: min(84px, calc((100% - 36px) / 3)); min-width: 0; margin: 0; padding: 0; }
   .participant-photo { width: 64px; height: 64px; margin-bottom: 9px; }
@@ -275,7 +275,7 @@ const date = event.start.toLocaleDateString('en-US', {
   .participant-name { margin: 0; font: 500 12.75px/1.4 var(--sans); }
   .participant-affiliation { margin: 3px 0 0; color: var(--muted); font: 400 11.25px/1.4 var(--sans); }
   .affiliation-line { display: block; white-space: nowrap; }
-  .spotlight-list { margin-top: 0; }
+  .spotlight-list { margin-top: 6px; }
   .host-list { max-width: var(--content-width); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; font-weight: 500; }
   .host-name { display: block; }
   .host-portrait { width: 64px; height: 64px; margin-bottom: 12px; }
@@ -296,6 +296,7 @@ const date = event.start.toLocaleDateString('en-US', {
   }
   .panel-description { margin: 9px 0 0; font: 400 12.75px/1.65 var(--sans); }
   .program-moderator { margin: 18px 0 0; color: var(--muted); font-size: 12.75px; line-height: 1.5; }
+  .program-panels .program-moderator { margin-top: 24px; }
   .program-panels { list-style: none; padding: 0; margin: 0; display: grid; gap: 30px; }
   .program-panels li { margin: 0; }
   .program-panels h3 { margin: 0; font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em; }

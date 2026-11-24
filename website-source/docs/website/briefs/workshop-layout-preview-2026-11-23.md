@@ -18,6 +18,10 @@ Current source/prod refs re-fetched unchanged atcc4ef58/00f07c1; open PR150 rema
 
 Evidence: output/workshop-layout-proof/panel-spacing-nov24.json, spotlight-spacing-nov24.json and panel-spotlight-spacing-nov24-preview.png; panel-spotlight-spacing-nov24-detail.png is the review crop. All earlier preview changes remain unpublished.
 
+### Revision6 spacing follow-up — November24 (UNPUBLISHED)
+
+Rachel requested a little more space above panel/spotlight photos, then equal space around the panel participant block before its moderator line. Panel lists now have24px above and moderator lines24px below the participant block (both previously18px). Spotlight list gains6px above; its heading’s existing spacing remains. Horizontal item gaps, host spacing, type and content are unchanged. Fresh build/whitespace review passed. Actual320/390/1280px checks measure24px above/below both panel blocks,6px spotlight list top margin and no overflow; desktop visual reviewed. Viewport reset, preview remains at#program. Proof: output/workshop-layout-proof/participant-vertical-spacing-nov24.json/png and participant-vertical-spacing-nov24-detail.png. No publication/push/merge.
+
 ## Earlier revision5: aligned opening and modestly narrower talks — November24 (UNPUBLISHED)
 
 Rachel requested matching the opening section to the Speakers and talks width, then testing a further modest narrowing only if alignment stayed intact. Both sections now share720px maximum width and the same left/right edges (previous talks760px, opening600px). At760px/below they share the existing600px/available-width rule. All typography, image assets/crop variables, event facts, section order, panel/spotlight/host styles and biography links are preserved. Workshop utility offset follows the narrower column with the same clear gutter.
