@@ -1,6 +1,6 @@
 # Workshop compact mobile participant rows — November24, 2026
 
-**Rachel approved publishing this reviewed layout on November24. Release preparation is underway; deployment/live verification pending.**
+**Published and live verified November 24, 2026. Rachel approved the reviewed mobile layout.**
 
 Preview: http://127.0.0.1:4514/workshops/safe-by-design-superintelligence/#program
 Checkout: /Users/rachelsipser/Documents/GitHub/resi-website/output/resi-workshop-mobile-row-preview-nov24
@@ -27,3 +27,12 @@ Proof in output/mobile-row-proof/: responsive.json,320-full.png,390-full.png and
 ## Publication approval and release preparation
 
 Rachel approved this preview for publication. Release source is codex/workshop-mobile-row-release-nov24 in /private/tmp/resi-workshop-layout-live-records-nov24, based on current5a983af, preserving the newer header release records. Generated publication is codex/publish-workshop-mobile-rows-nov24 in /private/tmp/resi-workshop-layout-publish-nov24 from currentmaindc55e3b. Fresh check60files/zero diagnostics and build passed; only workshop HTML and its CSS change. HTML audit confirms all differences are participant-count styles and the new CSS reference. Deployment/live verification pending. Earlier preview-only statements above describe the pre-approval stage and are superseded for the reviewed layout.
+
+
+## Published and live verified — November 24
+
+Source application 752fe069eb4ddff0a982bdb0541259c978bca29c entered the continuing source branch through [PR378](https://github.com/resi-org/resi-org.github.io/pull/378), merge e30e5e8476b8d35c956e0b4a2597974884319ff5. Separate generated-output [PR377](https://github.com/resi-org/resi-org.github.io/pull/377) merged to production as 869749ec488e70ccab8028bd3d4d170cc40a1bbd. [Pages45492111356](https://github.com/resi-org/resi-org.github.io/actions/runs/45492111356) completed successfully. Package changes exactly workshop HTML and its new CsRyjUGT stylesheet; newer header/hiring changes and independent endpoints preserved.
+
+Ordinary live browser verification loads the new stylesheet at the canonical workshop URL. Actual widths 280/320/390/635/636/1280px: all four participant groups have one photo row and no viewport overflow. All mobile captions fit their items; normal-phone names remain12px, with10.5px only at300px/below. Desktop sizing is unchanged, including the previously approved Jacob affiliation overhang without viewport overflow. Roster12, biography links29, credits7 preserved; all29 images load. The320px live full-page crop through panels, spotlights and hosts was visually reviewed. Viewport reset and live tab retained. No forms submitted; no physical-device or spoken screen-reader session.
+
+Live evidence in the preview checkout output/mobile-row-proof/: live-responsive.json, live-320-full.png, live-320-groups.png. The local4514 preview remains available. Earlier pending-publication statements above are historical and superseded for this approved scope.
