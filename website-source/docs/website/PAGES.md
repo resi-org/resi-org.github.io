@@ -83,3 +83,6 @@ November24 workshop preview dependency (unpublished4513 only): WorkshopBioLink.a
 
 
 November24 workshop layout approval: canonical detail page’s reviewed720px layout uses WorkshopBioLink.astro/WorkshopNameLines.astro and src/data/workshop-participant-portraits.ts for People biography links, two-line small captions and selected panel/spotlight images. Canonical event data still owns all roles/affiliations and the approved participant order. See briefs/workshop-layout-release-2026-11-24.md for source/publication/deployment status; People/Home themselves are unchanged.
+
+
+November24 workshop layout is published/live verified: source PR354 /0a930c4, production PR355 /48e37e9, successful Pages45430831695. The canonical route retains stable anchors and Home/Events/Search links. Live320–1280px, desktop/mobile visual, biography-target and Search navigation checks passed. See the November24 release record; prior local-only status for the reviewed workshop design is superseded.
