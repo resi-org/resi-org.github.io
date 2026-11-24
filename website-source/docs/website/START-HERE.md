@@ -1,6 +1,6 @@
 ## Desktop hover tolerance — November24 preview only
 
-Rachel requested a more forgiving pointer area without changing the menu's appearance. Local preview http://127.0.0.1:4457/about/ in output/resi-header-hover-preview-nov24, branch codex/header-hover-tolerance-preview-nov24, from current source5a983af / productiondc55e3b. Adds an invisible10px side/bottom buffer,250ms close grace and150ms hover-switch grace; keyboard entry/Escape/resize remain immediate. Current visible design matches live exactly; collapsed On this page remains after the intro. See WORKLIST D20 for verification. Not merged or published; the November24 connected desktop design remains live.
+Rachel requested a more forgiving pointer area without changing the menu's appearance. Local preview http://127.0.0.1:4457/about/ in output/resi-header-hover-preview-nov24, branch codex/header-hover-tolerance-preview-nov24, from current source5a983af / productiondc55e3b. Adds an invisible10px side/bottom buffer,250ms close grace and50ms hover-switch grace; keyboard entry/Escape/resize remain immediate. Current visible design matches live exactly; collapsed On this page remains after the intro. See WORKLIST D20 for verification. Not merged or published; the November24 connected desktop design remains live.
 
 ## Connected desktop menu outline — November24 published and live verified
 

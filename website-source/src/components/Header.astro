@@ -183,7 +183,7 @@ const links = [
       const current = nav.querySelector('.header-section-panel:not([hidden])');
       // Crossing another label diagonally should not immediately replace the
       // menu the pointer is heading toward. Keyboard entry stays immediate.
-      if (current && current !== panel) openTimer = window.setTimeout(open, 150);
+      if (current && current !== panel) openTimer = window.setTimeout(open, 50);
       else open();
     });
     item.addEventListener('pointerleave', () => {
