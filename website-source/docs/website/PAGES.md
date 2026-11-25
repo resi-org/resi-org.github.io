@@ -103,3 +103,6 @@ November25 workshop preview only:4515 now uses Speakers (#speakers), Panelists (
 
 
 November25 preview-only workshop conduct page: /workshops/safe-by-design-superintelligence/code-of-conduct/ is owned by src/pages/workshops/safe-by-design-superintelligence/code-of-conduct.astro. Exact Rachel-approved December4policy; reporting mailto:hello@resi.org; workshop Getting here links it, and return link targets#directions. Search and sitemap carry the route. No global/footer/homepage policy promotion. W3 implementation complete in4515 preview; publication/live verification pending. See briefs/workshop-program-arrival-conduct-2026-11-25.md.
+
+
+November25 conduct preview refinement: heading/title Code of conduct; body remains explicitly December4workshop-only at Rachel’s choice. Existing workshop-scoped route retained. Reporting contact is now conduct@resi.org (Rachel’s explicit request), including Search excerpt; general footer hello@resi.org remains. No mailbox/alias administration or publication performed.
