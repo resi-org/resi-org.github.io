@@ -264,3 +264,10 @@ November24 hiring-round notice approved: Rachel approved “Hiring update 2026: 
 ## Compact workshop mobile participant rows — approved November24
 
 At635px/below, keep each panel, RESI spotlight group and hosts in a single portrait row. Participant counts drive flexible equal tracks; tighten horizontal and photo/name gaps, then let square photos shrink within their54px/64px caps. Hosts retain three columns with similarly tighter mobile gaps. Keep normal phone names12px; limit10.5px fallback labels to300px/below. Long names and Jacob’s affiliation can wrap naturally beneath their portraits rather than truncating. Preserve photo pixels/crops, People links, credits and24px panel block spacing. Above635px the existing desktop layout is unchanged. This supersedes the earlier wrapped mobile participant rows for this workshop only. Publication/live status is recorded in WORKLIST/CHANGELOG and the mobile-row brief.
+
+
+## Workshop Program and general conduct policy — November25 published
+
+The Dec4workshop now uses620px shared column,19px Cardo Bold name-first speaker headings and15.5px IBM Plex Sans talk titles (existing mobile steps retained). Section order is Speakers,Panelists,RESI research spotlights,Program,hosts/practical information. Portrait-side titles link plainly into exact timetable rows; only panels/spotlights link back from Program. Chronological Program heading uses local Eastern/subject-to-change note. This is workshop-specific hierarchy, not a sitewide font change. Preserve approved crops/credits and interest-not-admission wording.
+
+/code-of-conduct/ is the general event policy for RESI workshops,seminars and community events with conduct@resi.org reporting; it has workshop/Events return links and is linked from workshop practical information. Old workshop policy route redirects. Policy wording/scope/reporting channel changes need organizer authorization; do not invent response/confidentiality/enforcement commitments. No global/header/footer/homepage policy placement was authorized. SourcePR386/productionPR387; live verified.
