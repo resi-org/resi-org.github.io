@@ -13,5 +13,7 @@ export const workshopParticipantPortraits: Record<string, WorkshopPhoto> = {
   'Tal Rabin': { src: tal, label: 'Indiana University Women & Technology portrait', style: '--portrait-scale: 1.5; --portrait-origin: 50% 0%;' },
   'Martha Minow': { src: martha, label: 'Harvard Law faculty portrait', style: '--portrait-position: 50% 30%;' },
   'Aleksander Mądry': { src: madry, label: 'Personal-site portrait', style: '--portrait-position: 50% 30%;' },
+  // Keep Yael’s approved close square crop independent of her larger talk portrait.
+  'Yael Tauman Kalai': { ...workshopPortraits['Yael Tauman Kalai'], style: '--portrait-scale: 1.35; --portrait-origin: 50% 25%;' },
   'Jacob Tsimerman': workshopPortraits['Jacob Tsimerman'],
 };
