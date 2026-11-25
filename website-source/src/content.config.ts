@@ -190,6 +190,10 @@ const events = defineCollection({
     spotlights: z.object({
       speakers: z.array(z.string().trim().min(1)).min(1),
       moderator: z.string().trim().min(1).optional(),
+      titles: z.record(z.string(), z.object({
+        title: z.string().trim().min(1),
+        working: z.boolean().optional(),
+      })).optional().default({}),
     }).optional(),
     interestUrl: z.url().optional(),
     interestLabel: z.string().optional(),

@@ -40,6 +40,10 @@ spotlights:
     - "Jonathan Shafer"
     - "Neekon Vafa"
   moderator: "Adam Tauman Kalai"
+  titles:
+    "Sam Gunn":
+      title: "Data attribution"
+      working: true
 detailsHref: "/workshops/safe-by-design-superintelligence/"
 announced: 2026-11-02
 start: 2026-12-04
