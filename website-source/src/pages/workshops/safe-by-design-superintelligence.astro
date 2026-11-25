@@ -97,8 +97,9 @@ const programEntries = workshopProgram.map((session) => {
         <h1><span class="title-phrase">{event.title.split(' ')[0]}</span>{' '}{event.title.split(' ').slice(1).join(' ')}</h1>
         <p class="workshop-subtitle">{subtitle}</p>
         <div class="workshop-facts" aria-label="Date, time, location and attendance">
-          <span>{event.timeLabel && <>{event.timeLabel} · </>}<time datetime={event.start.toISOString().slice(0, 10)}>{date}</time></span>
-          <span>{event.location}{event.attendanceLabel && <> · {event.attendanceLabel}</>}</span>
+          <span><time datetime={event.start.toISOString().slice(0, 10)}>{date}</time></span>
+          <span class="workshop-location">{event.location}{event.attendanceLabel && <> · {event.attendanceLabel}</>}</span>
+          <span class="workshop-hours">9am–5pm · Check-in and breakfast from 8:30am</span>
         </div>
       </div>
       {event.interestUrl && <div class="workshop-invitation">
@@ -108,7 +109,6 @@ const programEntries = workshopProgram.map((session) => {
         </a>
       </div>}
       {event.interestNote && <p class="interest-note">{event.interestNote}</p>}
-      <p class="program-notice">The workshop will run 9am–5pm, with check-in and breakfast starting at 8:30am.</p>
       <nav class="workshop-sections" aria-label="Workshop sections">
         <a href="#speakers">Speakers</a>
         <a href="#program">Panelists</a>
@@ -271,17 +271,18 @@ const programEntries = workshopProgram.map((session) => {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 6px 24px;
+    gap: 3px 8px;
     margin-top: 24px;
     color: var(--ink);
     font-size: 12.75px;
     font-weight: 600;
     line-height: 1.65;
   }
+  .workshop-location::before { content: "· "; white-space: pre; }
+  .workshop-hours { flex-basis: 100%; }
   .workshop-hero > .workshop-invitation { margin-top: 24px; }
   .interest-note { margin: 12px 0 0; max-width: 60ch; text-wrap: balance; color: var(--muted); font-size: 12px; line-height: 1.65; }
   .conduct-link { margin: 12px 0 0; font: 400 12px/1.65 var(--sans); }
-  .program-notice { margin: 24px 0 0; color: var(--ink); font: 400 12.75px/1.65 var(--sans); }
   .schedule-note { margin: 0 0 12px; color: var(--muted); font: 400 12px/1.65 var(--sans); }
   .timetable { list-style: none; margin: 0; padding: 0; }
   .timetable > .schedule-row { display: grid; grid-template-columns: 124px minmax(0, 1fr); gap: 18px; margin: 0; padding: 15px 0; border-top: 0.75px solid var(--line); }
@@ -403,6 +404,8 @@ const programEntries = workshopProgram.map((session) => {
     .workshop-subtitle { font-size: 19.5px; margin-top: 15px; }
     .workshop-invitation { gap: 15px; }
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
+    .workshop-location::before { content: none; }
+    .workshop-hours { flex-basis: auto; }
     .workshop-hero > .workshop-invitation { margin-top: 21px; }
     .speaker-list > li { grid-template-columns: 132px minmax(0, 1fr); gap: 18px; }
     .speaker-list .talk-title, .speaker-list .talk-pending { font-size: 14.5px; }
