@@ -333,11 +333,11 @@ const programEntries = workshopProgram.map((session) => {
   .speaker-copy { align-self: start; }
   .speaker-copy { min-width: 0; overflow-wrap: anywhere; }
   .speaker-list .talk-title, .speaker-list .talk-pending {
-    margin: 12px 0 0; font: 500 16px/1.4 var(--sans);
+    margin: 12px 0 0; font: 500 15.5px/1.4 var(--sans);
   }
   .speaker-list .talk-title { color: var(--ink); }
   .speaker-list .talk-pending { color: var(--muted); font-weight: 400; }
-  .speaker-list .speaker-name { margin: -3px 0 0; font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em; }
+  .speaker-list .speaker-name { margin: -3px 0 0; font: 700 calc(var(--talk-title-size) + 1px)/1.25 var(--serif); letter-spacing: -0.005em; }
   .speaker-list .speaker-affiliation { margin: 3px 0 0; color: var(--muted); font: 400 12px/1.4 var(--sans); }
   .host-list li { margin: 0; padding: 0; }
   @media (max-width: 760px) {
@@ -394,7 +394,7 @@ const programEntries = workshopProgram.map((session) => {
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
     .workshop-hero > .workshop-invitation { margin-top: 21px; }
     .speaker-list > li { grid-template-columns: 132px minmax(0, 1fr); gap: 18px; }
-    .speaker-list .talk-title, .speaker-list .talk-pending { font-size: 15px; }
+    .speaker-list .talk-title, .speaker-list .talk-pending { font-size: 14.5px; }
     .speaker-list .speaker-affiliation { font-size: 11.25px; }
     .participant-photo { width: 54px; height: 54px; }
     .participant-name { font-size: 12px; }
