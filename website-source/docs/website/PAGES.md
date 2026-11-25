@@ -97,3 +97,6 @@ November24 header refinement published (D19): connected desktop label/row outlin
 
 
 November25 workshop program/arrival preview: isolated output/resi-workshop-program-preview-nov25 adds src/data/workshop-program.ts for public session times/references, optional spotlights.titles in canonical events schema/data, #schedule and #directions on the existing detail route. #program remains Panels and previous links remain valid. W3 conduct page/contact decision is tracked separately; approved contact hello@resi.org, wording pending Simons-informed review. This preview is not published. See briefs/workshop-program-arrival-conduct-2026-11-25.md.
+
+
+November25 workshop preview only:4515 now uses Speakers (#speakers), Panelists (legacy #program), RESI research spotlights (#spotlights), Program (#schedule), hosts and Getting here. Speaker detail IDs remain stable. This is Rachel’s reviewed-in-progress name-first trial, not the live baseline; see WORKLIST and briefs/workshop-program-arrival-conduct-2026-11-25.md.

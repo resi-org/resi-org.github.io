@@ -108,55 +108,32 @@ const programEntries = workshopProgram.map((session) => {
         </a>
       </div>}
       {event.interestNote && <p class="interest-note">{event.interestNote}</p>}
-      <p class="program-notice">The workshop will run 9am–5pm, with check-in and breakfast starting at 8:30am. See the <a href="#schedule">tentative program</a> below.</p>
+      <p class="program-notice">The workshop will run 9am–5pm, with check-in and breakfast starting at 8:30am. See the <a href="#schedule">program</a> below.</p>
       <nav class="workshop-sections" aria-label="Workshop sections">
-        <a href="#schedule">Tentative program</a>
-        <a href="#speakers">Speakers and talks</a>
-        <a href="#program">Panels</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#program">Panelists</a>
         <a href="#spotlights">RESI research spotlights</a>
+        <a href="#schedule">Program</a>
         <a href="#directions">Getting here</a>
       </nav>
     </header>
 
-    <Section id="schedule" label="Tentative program" divider>
-      <p class="schedule-note">All times Eastern (Cambridge, Massachusetts). Session times are subject to change.</p>
-      <ol class="timetable">
-        {programEntries.map((session) => <li class:list={['schedule-row', { 'schedule-pause': ['arrival', 'break', 'meal'].includes(session.kind) }]}>
-          <div class="session-time" aria-label={workshopTimeRange(session.start, session.end)}>
-            <time datetime={`2026-12-04T${session.start}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[0]}</time>–<time datetime={`2026-12-04T${session.end}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[1]}</time>
-          </div>
-          <div class="session-copy">
-            {(session.kind === 'panel' || session.kind === 'keynote') && <p class="session-kind">{session.kind === 'panel' ? 'Panel' : 'Keynote'}</p>}
-            <h3 class="session-title">{session.href ? <a href={session.href}>{session.title}</a> : session.title}</h3>
-            {session.speaker && <p class="session-byline"><WorkshopBioLink name={session.speaker} href={teamBios[session.speaker]}>{session.speaker}</WorkshopBioLink>{session.affiliation && <span class="session-affiliation"> · {session.affiliation}</span>}</p>}
-            {session.participants.length > 0 && <p class="session-participants">{session.participants.join(', ')}</p>}
-            {session.moderator && <p class="session-moderator">Moderated by <WorkshopBioLink name={session.moderator} href={teamBios[session.moderator]}>{session.moderator}</WorkshopBioLink>.</p>}
-            {session.kind === 'spotlights' && event.spotlights && <ul class="spotlight-program">
-              {event.spotlights.speakers.map((name) => <li>
-                <WorkshopBioLink name={name} href={teamBios[name]}>{name}</WorkshopBioLink>: {event.spotlights!.titles[name]?.title || 'Title to be announced'}{event.spotlights!.titles[name]?.working && <span class="working-title"> (working title)</span>}
-              </li>)}
-            </ul>}
-          </div>
-        </li>)}
-      </ol>
-    </Section>
-
-    <Section id="speakers" label="Speakers and talks" divider>
+    <Section id="speakers" label="Speakers" divider>
       <ul class="speaker-list">
         {event.speakers.map((speaker) => <li id={workshopTalkAnchor(speaker.name)}>
           <div class="speaker-photo"><WorkshopBioLink name={speaker.name} href={teamBios[speaker.name]} portrait><WorkshopPortrait name={speaker.name} photo={workshopPortraits[speaker.name]} /></WorkshopBioLink></div>
           <div class="speaker-copy">
-            {speaker.talkTitle
-              ? <h3 class="talk-title">{speaker.talkTitle}</h3>
-              : <h3 class="talk-pending">Title to be announced</h3>}
-            <p class="speaker-name"><WorkshopBioLink name={speaker.name} href={teamBios[speaker.name]}>{speaker.name}</WorkshopBioLink></p>
+            <h3 class="speaker-name"><WorkshopBioLink name={speaker.name} href={teamBios[speaker.name]}>{speaker.name}</WorkshopBioLink></h3>
             {speaker.affiliation && <p class="speaker-affiliation">{speaker.affiliation}</p>}
+            {speaker.talkTitle
+              ? <p class="talk-title">{speaker.talkTitle}</p>
+              : <p class="talk-pending">Title to be announced</p>}
           </div>
         </li>)}
       </ul>
     </Section>
 
-    <Section id="program" label="Panels" divider>
+    <Section id="program" label="Panelists" divider>
       {event.panels.length > 0 && <ul class="program-panels">
         {event.panels.map((title, index) => <li id={`panel-${index + 1}`}>
           <h3>{title}</h3>
@@ -186,6 +163,29 @@ const programEntries = workshopProgram.map((session) => {
       </ul>
       {event.spotlights.moderator && <p class="program-moderator">Moderated by <WorkshopBioLink name={event.spotlights.moderator} href={teamBios[event.spotlights.moderator]}>{event.spotlights.moderator}</WorkshopBioLink>.</p>}
     </Section>}
+
+    <Section id="schedule" label="Program" divider>
+      <p class="schedule-note"><em>All times Eastern (Cambridge, Massachusetts). Session times are subject to change.</em></p>
+      <ol class="timetable">
+        {programEntries.map((session) => <li class:list={['schedule-row', { 'schedule-pause': ['arrival', 'break', 'meal'].includes(session.kind) }]}>
+          <div class="session-time" aria-label={workshopTimeRange(session.start, session.end)}>
+            <time datetime={`2026-12-04T${session.start}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[0]}</time>–<time datetime={`2026-12-04T${session.end}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[1]}</time>
+          </div>
+          <div class="session-copy">
+            {(session.kind === 'panel' || session.kind === 'keynote') && <p class="session-kind">{session.kind === 'panel' ? 'Panel' : 'Keynote'}</p>}
+            <h3 class="session-title">{session.href ? <a href={session.href}>{session.title}</a> : session.title}</h3>
+            {session.speaker && <p class="session-byline"><WorkshopBioLink name={session.speaker} href={teamBios[session.speaker]}>{session.speaker}</WorkshopBioLink>{session.affiliation && <span class="session-affiliation"> · {session.affiliation}</span>}</p>}
+            {session.participants.length > 0 && <p class="session-participants">{session.participants.join(', ')}</p>}
+            {session.moderator && <p class="session-moderator">Moderated by <WorkshopBioLink name={session.moderator} href={teamBios[session.moderator]}>{session.moderator}</WorkshopBioLink>.</p>}
+            {session.kind === 'spotlights' && event.spotlights && <ul class="spotlight-program">
+              {event.spotlights.speakers.map((name) => <li>
+                <WorkshopBioLink name={name} href={teamBios[name]}>{name}</WorkshopBioLink>: {event.spotlights!.titles[name]?.title || 'Title to be announced'}{event.spotlights!.titles[name]?.working && <span class="working-title"> (working title)</span>}
+              </li>)}
+            </ul>}
+          </div>
+        </li>)}
+      </ol>
+    </Section>
 
     <Section id="hosts" label={event.hostsLabel || 'Hosted by'} divider>
       <ul class="host-list">
@@ -333,11 +333,11 @@ const programEntries = workshopProgram.map((session) => {
   .speaker-copy { align-self: start; }
   .speaker-copy { min-width: 0; overflow-wrap: anywhere; }
   .speaker-list .talk-title, .speaker-list .talk-pending {
-    margin: -3px 0 0; font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em;
+    margin: 12px 0 0; font: 500 16px/1.4 var(--sans);
   }
   .speaker-list .talk-title { color: var(--ink); }
-  .speaker-list .talk-pending { color: var(--muted); font-size: var(--talk-title-size); font-weight: 400; }
-  .speaker-list .speaker-name { margin: 12px 0 0; font: 500 16px/1.4 var(--sans); }
+  .speaker-list .talk-pending { color: var(--muted); font-weight: 400; }
+  .speaker-list .speaker-name { margin: -3px 0 0; font: 700 var(--talk-title-size)/1.25 var(--serif); letter-spacing: -0.005em; }
   .speaker-list .speaker-affiliation { margin: 3px 0 0; color: var(--muted); font: 400 12px/1.4 var(--sans); }
   .host-list li { margin: 0; padding: 0; }
   @media (max-width: 760px) {
@@ -394,7 +394,7 @@ const programEntries = workshopProgram.map((session) => {
     .workshop-facts { flex-direction: column; gap: 3px; margin-top: 21px; }
     .workshop-hero > .workshop-invitation { margin-top: 21px; }
     .speaker-list > li { grid-template-columns: 132px minmax(0, 1fr); gap: 18px; }
-    .speaker-list .speaker-name { font-size: 15px; }
+    .speaker-list .talk-title, .speaker-list .talk-pending { font-size: 15px; }
     .speaker-list .speaker-affiliation { font-size: 11.25px; }
     .participant-photo { width: 54px; height: 54px; }
     .participant-name { font-size: 12px; }
