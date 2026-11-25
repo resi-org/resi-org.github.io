@@ -155,22 +155,20 @@ const links = [
     const panel = item.querySelector<HTMLElement>('.header-section-panel');
     if (!panel) return;
     let dismissed = false;
-    let openTimer: ReturnType<typeof window.setTimeout> | undefined;
     let closeTimer: ReturnType<typeof window.setTimeout> | undefined;
-    const cancelTimers = () => {
-      window.clearTimeout(openTimer);
+    const cancelClose = () => {
       window.clearTimeout(closeTimer);
-      openTimer = closeTimer = undefined;
+      closeTimer = undefined;
     };
     const close = () => {
-      cancelTimers();
+      cancelClose();
       panel.hidden = true;
       trigger.setAttribute('aria-expanded', 'false');
     };
     closeSectionMenus.add(close);
     const open = () => {
       if (dismissed || root.dataset.headerLayout !== 'desktop') return;
-      cancelTimers();
+      cancelClose();
       closeSectionMenus.forEach((closeOther) => {
         if (closeOther !== close) closeOther();
       });
@@ -178,16 +176,11 @@ const links = [
       trigger.setAttribute('aria-expanded', 'true');
     };
     item.addEventListener('pointerenter', () => {
-      cancelTimers();
       dismissed = false;
-      const current = nav.querySelector('.header-section-panel:not([hidden])');
-      // Crossing another label diagonally should not immediately replace the
-      // menu the pointer is heading toward. Keyboard entry stays immediate.
-      if (current && current !== panel) openTimer = window.setTimeout(open, 45);
-      else open();
+      open();
     });
     item.addEventListener('pointerleave', () => {
-      cancelTimers();
+      cancelClose();
       dismissed = false;
       if (!item.contains(document.activeElement)) {
         closeTimer = window.setTimeout(close, 250);
