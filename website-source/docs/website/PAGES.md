@@ -109,3 +109,6 @@ November25 conduct preview refinement: heading/title Code of conduct; body remai
 
 
 November25 conduct preview now general to RESI workshops, seminars and community events, per Rachel’s superseding request. Canonical source src/pages/code-of-conduct.astro and URL /code-of-conduct/; earlier workshop-specific URL redirects via astro.config.mjs. Workshop Getting here, Search and sitemap use the new route. Reporting conduct@resi.org; ending link /events. No homepage/global-nav/footer policy link. Unpublished4515preview; details in workshop Program/arrival/conduct brief.
+
+
+November25 workshop release now PUBLISHED AND LIVE VERIFIED: /workshops/safe-by-design-superintelligence/ includes620px reviewed layout,26entry Program and Getting here; /code-of-conduct/ is the general event policy with conduct@resi.org. Workshop→policy,policy→workshop#directions/Events,Search/sitemap and old-policy redirect are connected. SourcePR386/fd6211a,productionPR387/f450d3e,successfulPages45712583468. Preview-only holds for this scope superseded. Full verification in workshop Program/arrival/conduct brief.
