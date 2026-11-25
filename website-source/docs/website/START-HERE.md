@@ -1,6 +1,6 @@
-## Immediate desktop hover switching — November25 preview only
+## Immediate desktop hover switching — November25 approved for publication
 
-Rachel requested trying no opening/switching delay while retaining the forgiving edge. Preview http://127.0.0.1:4457/about/ now opens/switches directly on pointer entry;10px side/bottom buffer and250ms closing grace remain. Removed the open timer entirely; CSS/visible design, native links and keyboard/collapsed behavior are unchanged. Isolated source output/resi-header-hover-preview-nov24, branch codex/header-hover-immediate-preview-nov25, from current source937b0d0 / production00eac38. Not published; the approved45ms version remains live. See WORKLIST D20 refinement below.
+Rachel approved publishing the reviewed no-delay version for now. Pointer entry opens/switches menus immediately; keep the invisible10px side/bottom buffer and250ms closing grace. No CSS/visible design, keyboard, mobile or after-intro contents change. Source applicationf899a15, current source937b0d0/main00eac38; core DESIGN now records the immediate-switch rule. Publication will replace only the shared Header script in13 modern pages. Merges/deployment/live verification pending; see WORKLIST D20.
 
 ## Desktop hover tolerance — November25 published and live verified
 
