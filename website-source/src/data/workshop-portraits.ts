@@ -33,7 +33,7 @@ export const workshopPortraits: Record<string, WorkshopPhoto> = {
   'Yael Tauman Kalai': { src: yael, label: 'Dana Quigley portrait via Wikimedia Commons', style: '--portrait-scale: 1.28; --portrait-origin: 60% 25%; --portrait-position: 47.5% 50%;', credit: { id: 'yael-tauman-kalai', text: 'Dana Quigley', href: 'https://commons.wikimedia.org/wiki/File:Yael_Tauman_Kalai_portrait-public.jpg' } },
   'Zico Kolter': { src: zico, label: 'Supplied workshop portrait' },
   'Orr Paradise': { src: orr, label: 'Personal-site portrait' },
-  'Anat Perry': { src: approvedAnat.src!, label: 'Existing RESI portrait', style: `${approvedAnat.style} --portrait-position: 40% 0%; --portrait-origin: 65% 0%; --portrait-shift-y: -3%;` },
+  'Anat Perry': { src: approvedAnat.src!, label: 'Existing RESI portrait', style: `${approvedAnat.style} --portrait-position: 40% 0%; --portrait-scale: 1.25; --portrait-origin: 65% 0%; --portrait-shift-y: -2.25%;` },
   'Roy Rinberg': { src: royFar, label: 'FAR.AI portrait', style: '--portrait-position: 40% 50%;' },
   'Jacob Tsimerman': { src: jacob, label: 'Simons Foundation portrait via Wikimedia Commons', style: '--portrait-position: 50% 0%;', credit: { id: 'jacob-tsimerman', text: 'Simons Foundation', href: 'https://commons.wikimedia.org/wiki/File:Jacob_Tsimerman2_c.Simons_Foundation.jpg', licenseHref: 'https://creativecommons.org/licenses/by/4.0/', note: 'cropped' } },
   'Nickolai Zeldovich': { src: nickolai, label: 'Amazon Science portrait', style: '--portrait-position: 50% 0%;' },
