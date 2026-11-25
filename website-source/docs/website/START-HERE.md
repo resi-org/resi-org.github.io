@@ -1,6 +1,6 @@
-## Desktop hover tolerance — November25 approved for publication
+## Desktop hover tolerance — November25 published and live verified
 
-Rachel approved the more forgiving desktop hover behavior and requested the tiniest additional switching-delay reduction:50ms to45ms. Retain the invisible10px side/bottom buffer and250ms closing grace, unchanged visible design, immediate keyboard/Escape behavior and collapsed On this page menu after each intro. Current source8b097ef / production869749e incorporated before release, preserving the latest workshop mobile portraits. Core DESIGN now records the interaction rule. Source/publication merges and live verification pending; see WORKLIST D20.
+The approved hover refinement is live:45ms switching grace after the final50→45ms trim,250ms closing grace and an invisible10px side/bottom buffer. Visible design, first opening, keyboard/Escape, native links and collapsed On this page after the intro are preserved. Source PR380 merged at4acc61fd80d0abb217908ade085a76097c59269e; generated production PR381 merged at00eac380427ef3b43d8b49a47159f7568b700857. Pages45696461635 succeeded. Ordinary live13-page desktop, all four hover/keyboard menus, diagonal paths/edge tolerance and all four690/390px contents fallback/jump checks passed. All four menus' visible geometry/paint matches the pre-release live design exactly. Core DESIGN records the approved behavior. Newer workshop mobile rows and all other body content/endpoints preserved. See WORKLIST D20/CHANGELOG. Source/preview remains output/resi-header-hover-preview-nov24 / :4457; original dirty checkout and other previews preserved.
 
 ## Connected desktop menu outline — November24 published and live verified
 
