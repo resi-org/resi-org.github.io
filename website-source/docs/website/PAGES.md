@@ -112,3 +112,6 @@ November25 conduct preview now general to RESI workshops, seminars and community
 
 
 November25 workshop release now PUBLISHED AND LIVE VERIFIED: /workshops/safe-by-design-superintelligence/ includes620px reviewed layout,26entry Program and Getting here; /code-of-conduct/ is the general event policy with conduct@resi.org. Workshop→policy,policy→workshop#directions/Events,Search/sitemap and old-policy redirect are connected. SourcePR386/fd6211a,productionPR387/f450d3e,successfulPages45712583468. Preview-only holds for this scope superseded. Full verification in workshop Program/arrival/conduct brief.
+
+
+November25 workshop refinement approval: current workshop-only crop overrides are split between workshop-portraits.ts (large talks) and workshop-participant-portraits.ts (square panelists). Yael’s square override inherits image/credit but supplies independent style. Policy link moves from #directions to below #join-us .interest-note; /code-of-conduct/ and its return links unchanged.620pxcolumn,3line full-width subtitle and grouped intro timing are approved; shared event data/Home/Events/People/Search remain unchanged. Publication/live stages in CHANGELOG.
