@@ -4,5 +4,5 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'ignore',
   build: { format: 'directory' },
-  redirects: { '/mission': '/about/', '/announcements': '/news/', '/home-announcements': '/' },
+  redirects: { '/workshops/safe-by-design-superintelligence/code-of-conduct': '/code-of-conduct/', '/mission': '/about/', '/announcements': '/news/', '/home-announcements': '/' },
 });

@@ -94,3 +94,18 @@ Preview-only November24 researcher route `/jobs/ai-safety-researcher/` is in iso
 November24 full job-page release approved: `src/pages/jobs/ai-safety-researcher.astro` owns `/jobs/ai-safety-researcher/`, reusing Base/Section and approved AJO copy. Public/indexable with canonical metadata, dedicated Search entry and sitemap URL; incoming link from People’s Work at RESI card. AJO job33484 remains the application destination; no local form. Supersedes the preview-only route hold above.
 
 November24 header refinement published (D19): connected desktop label/row outline and smaller desktop Support. On this page stays directly after the intro whenever the full header collapses, including intermediate widths. Shared inventory/anchors and mobile layout are unchanged. SourcePR374 / publicationPR375 / successful Pages45489880591; see DESIGN/CHANGELOG.
+
+
+November25 workshop program/arrival preview: isolated output/resi-workshop-program-preview-nov25 adds src/data/workshop-program.ts for public session times/references, optional spotlights.titles in canonical events schema/data, #schedule and #directions on the existing detail route. #program remains Panels and previous links remain valid. W3 conduct page/contact decision is tracked separately; approved contact hello@resi.org, wording pending Simons-informed review. This preview is not published. See briefs/workshop-program-arrival-conduct-2026-11-25.md.
+
+
+November25 workshop preview only:4515 now uses Speakers (#speakers), Panelists (legacy #program), RESI research spotlights (#spotlights), Program (#schedule), hosts and Getting here. Speaker detail IDs remain stable. This is Rachel’s reviewed-in-progress name-first trial, not the live baseline; see WORKLIST and briefs/workshop-program-arrival-conduct-2026-11-25.md.
+
+
+November25 preview-only workshop conduct page: /workshops/safe-by-design-superintelligence/code-of-conduct/ is owned by src/pages/workshops/safe-by-design-superintelligence/code-of-conduct.astro. Exact Rachel-approved December4policy; reporting mailto:hello@resi.org; workshop Getting here links it, and return link targets#directions. Search and sitemap carry the route. No global/footer/homepage policy promotion. W3 implementation complete in4515 preview; publication/live verification pending. See briefs/workshop-program-arrival-conduct-2026-11-25.md.
+
+
+November25 conduct preview refinement: heading/title Code of conduct; body remains explicitly December4workshop-only at Rachel’s choice. Existing workshop-scoped route retained. Reporting contact is now conduct@resi.org (Rachel’s explicit request), including Search excerpt; general footer hello@resi.org remains. No mailbox/alias administration or publication performed.
+
+
+November25 conduct preview now general to RESI workshops, seminars and community events, per Rachel’s superseding request. Canonical source src/pages/code-of-conduct.astro and URL /code-of-conduct/; earlier workshop-specific URL redirects via astro.config.mjs. Workshop Getting here, Search and sitemap use the new route. Reporting conduct@resi.org; ending link /events. No homepage/global-nav/footer policy link. Unpublished4515preview; details in workshop Program/arrival/conduct brief.
