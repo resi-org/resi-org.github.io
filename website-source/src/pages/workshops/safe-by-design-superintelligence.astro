@@ -173,7 +173,7 @@ const programEntries = workshopProgram.map((session) => {
           </div>
           <div class="session-copy">
             {(session.kind === 'panel' || session.kind === 'keynote') && <p class="session-kind">{session.kind === 'panel' ? 'Panel' : 'Keynote'}</p>}
-            <h3 class="session-title">{session.href ? <a href={session.href}>{session.title}</a> : session.title}</h3>
+            <h3 class="session-title">{session.href && (session.kind === 'panel' || session.kind === 'spotlights') ? <a href={session.href}>{session.title}</a> : session.title}</h3>
             {session.speaker && <p class="session-byline"><WorkshopBioLink name={session.speaker} href={teamBios[session.speaker]}>{session.speaker}</WorkshopBioLink>{session.affiliation && <span class="session-affiliation"> · {session.affiliation}</span>}</p>}
             {session.participants.length > 0 && <p class="session-participants">{session.participants.join(', ')}</p>}
             {session.moderator && <p class="session-moderator">Moderated by <WorkshopBioLink name={session.moderator} href={teamBios[session.moderator]}>{session.moderator}</WorkshopBioLink>.</p>}
