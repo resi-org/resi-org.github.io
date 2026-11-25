@@ -30,7 +30,7 @@ export const workshopPortraits: Record<string, WorkshopPhoto> = {
   'Mitchell Gordon': { src: mitchell, label: 'Personal-site portrait', style: '--portrait-scale: 1.24; --portrait-origin: 50% 35%; --portrait-shift-y: -7%;' },
   'Dylan Hadfield-Menell': { src: dylan, label: 'Katherine Taylor portrait supplied for workshop', style: '--portrait-scale: 1.30; --portrait-origin: 20% 0%; --portrait-shift-y: -3%;', credit: { id: 'dylan-hadfield-menell', text: 'Katherine Taylor', href: 'https://www.forbes.com/sites/johnwerner/2023/08/28/the-struggle-to-make-ai-do-the-right-thing/' } },
   'Elad Hazan': { src: elad, label: 'Personal-site portrait', style: '--portrait-scale: 1.15; --portrait-origin: 50% 10%;' },
-  'Yael Tauman Kalai': { src: yael, label: 'Dana Quigley portrait via Wikimedia Commons', style: '--portrait-scale: 1.28; --portrait-origin: 90% 25%; --portrait-position: 60% 50%;', credit: { id: 'yael-tauman-kalai', text: 'Dana Quigley', href: 'https://commons.wikimedia.org/wiki/File:Yael_Tauman_Kalai_portrait-public.jpg' } },
+  'Yael Tauman Kalai': { src: yael, label: 'Dana Quigley portrait via Wikimedia Commons', style: '--portrait-scale: 1.28; --portrait-origin: 50% 25%; --portrait-position: 35% 50%;', credit: { id: 'yael-tauman-kalai', text: 'Dana Quigley', href: 'https://commons.wikimedia.org/wiki/File:Yael_Tauman_Kalai_portrait-public.jpg' } },
   'Zico Kolter': { src: zico, label: 'Supplied workshop portrait' },
   'Orr Paradise': { src: orr, label: 'Personal-site portrait' },
   'Anat Perry': { src: approvedAnat.src!, label: 'Existing RESI portrait', style: `${approvedAnat.style} --portrait-position: 40% 0%; --portrait-origin: 65% 0%; --portrait-shift-y: -3%;` },
