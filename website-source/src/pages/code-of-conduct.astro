@@ -7,6 +7,10 @@ import Base from '../layouts/Base.astro';
   description="Code of conduct and reporting contact for RESI’s workshops, seminars, and community events."
 >
   <header class="page-hero">
+    <nav class="conduct-return-links" aria-label="Event links">
+      <a href="/workshops/safe-by-design-superintelligence/#directions"><span aria-hidden="true">← </span>Safe-by-Design workshop</a>
+      <a href="/events"><span aria-hidden="true">← </span>Events</a>
+    </nav>
     <h1>Code of conduct</h1>
   </header>
   <div class="prose">
@@ -27,11 +31,11 @@ import Base from '../layouts/Base.astro';
 
     <h2>Reporting a concern</h2>
     <p>If you experience or witness conduct that may violate this code, or have a question about it, contact <a href="mailto:conduct@resi.org">conduct@resi.org</a>.</p>
-    <p><a href="/events">RESI events</a></p>
   </div>
 </Base>
 
 <style>
+  .conduct-return-links { display: flex; flex-wrap: wrap; gap: 9px 24px; margin-bottom: 18px; font-size: 14px; line-height: 1.5; }
   .conduct-examples { margin: 12px 0 18px; padding-inline-start: 18px; }
   .conduct-examples li { margin: 6px 0; }
 </style>
