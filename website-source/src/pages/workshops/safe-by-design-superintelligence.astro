@@ -202,7 +202,6 @@ const programEntries = workshopProgram.map((session) => {
       <div class="arrival-copy">
         <p>Akamai building, 145 Broadway, Cambridge, MA. <a href="https://www.google.com/maps/search/?api=1&query=145+Broadway%2C+Cambridge%2C+MA+02142" target="_blank" rel="noopener noreferrer">Google Maps</a></p>
         <p>Public transport is recommended: take the Red Line to Kendall/MIT, approximately a <a href="https://www.google.com/maps/dir/?api=1&origin=Kendall%2FMIT+station%2C+Cambridge%2C+MA&destination=145+Broadway%2C+Cambridge%2C+MA+02142&travelmode=walking" target="_blank" rel="noopener noreferrer">6-minute walk</a> away. Nearby paid public parking options include the <a href="https://www.google.com/maps/search/?api=1&query=Kendall+Center+Green+Garage%2C+90+Broadway%2C+Cambridge%2C+MA" target="_blank" rel="noopener noreferrer">Green Garage</a> on Broadway and the <a href="https://www.google.com/maps/search/?api=1&query=Kendall+Center+Yellow+Garage%2C+Cambridge%2C+MA" target="_blank" rel="noopener noreferrer">Yellow Garage</a> with an entrance on Ames Place.</p>
-        <p><a href="/code-of-conduct/">Code of conduct</a></p>
       </div>
     </Section>
 
@@ -214,6 +213,7 @@ const programEntries = workshopProgram.map((session) => {
         </a>
       </div>}
       {event.interestNote && <p class="interest-note">{event.interestNote}</p>}
+      <p class="conduct-link"><a href="/code-of-conduct/">Code of conduct</a></p>
     </div>
 
   </article>
@@ -277,6 +277,7 @@ const programEntries = workshopProgram.map((session) => {
   }
   .workshop-hero > .workshop-invitation { margin-top: 24px; }
   .interest-note { margin: 12px 0 0; max-width: 60ch; text-wrap: balance; color: var(--muted); font-size: 12px; line-height: 1.65; }
+  .conduct-link { margin: 12px 0 0; font: 400 12px/1.65 var(--sans); }
   .program-notice { margin: 24px 0 0; color: var(--ink); font: 400 12.75px/1.65 var(--sans); }
   .schedule-note { margin: 0 0 12px; color: var(--muted); font: 400 12px/1.65 var(--sans); }
   .timetable { list-style: none; margin: 0; padding: 0; }
