@@ -280,3 +280,6 @@ Rachel approved the complete current4515preview. This supersedes earlier preview
 Workshop-only approved portrait framing is canonical in workshop-portraits.ts and workshop-participant-portraits.ts. Yael’s main1.28scale crop and close1.35scale square crop are independent. Keep current approved Anat/Dylan/AdamGleave framing and small Nicola/Yael/Martha/Tal headroom. Shared People/Home framing and actual pixels/assets remain untouched. Nicola cannot be uniformly zoomed out further without a wider original or new background treatment.
 
 Code of conduct link belongs beneath the lower interest/admission note, outside Getting here:12pxfont/700weight,24pxmargin above. Lower invitation uses12px top padding/36px bottom padding. Policy content/reporting address/general route and all credits/footer-last rule remain. Publication/live evidence follows in CHANGELOG/WORKLIST.
+
+
+November25 workshop refinements are PUBLISHED AND LIVE VERIFIED: sourcePR389/b9e3d2e,productionPR390/4c59ed2,successfulPages45717222391. The approved current framing/three-line intro/grouped timing/bold lower conduct-link rules above are live. Actual320–1280px and native links/redirect checked; see workshop brief/CHANGELOG for exact evidence.

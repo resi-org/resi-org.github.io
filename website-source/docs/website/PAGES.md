@@ -115,3 +115,6 @@ November25 workshop release now PUBLISHED AND LIVE VERIFIED: /workshops/safe-by-
 
 
 November25 workshop refinement approval: current workshop-only crop overrides are split between workshop-portraits.ts (large talks) and workshop-participant-portraits.ts (square panelists). Yael’s square override inherits image/credit but supplies independent style. Policy link moves from #directions to below #join-us .interest-note; /code-of-conduct/ and its return links unchanged.620pxcolumn,3line full-width subtitle and grouped intro timing are approved; shared event data/Home/Events/People/Search remain unchanged. Publication/live stages in CHANGELOG.
+
+
+November25 workshop refinements are PUBLISHED AND LIVE VERIFIED: sourcePR389/b9e3d2e,productionPR390/4c59ed2,successfulPages45717222391. The approved current framing/three-line intro/grouped timing/bold lower conduct-link rules above are live. Actual320–1280px and native links/redirect checked; see workshop brief/CHANGELOG for exact evidence.
