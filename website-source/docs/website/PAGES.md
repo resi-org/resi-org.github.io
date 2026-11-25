@@ -100,3 +100,6 @@ November25 workshop program/arrival preview: isolated output/resi-workshop-progr
 
 
 November25 workshop preview only:4515 now uses Speakers (#speakers), Panelists (legacy #program), RESI research spotlights (#spotlights), Program (#schedule), hosts and Getting here. Speaker detail IDs remain stable. This is Rachel’s reviewed-in-progress name-first trial, not the live baseline; see WORKLIST and briefs/workshop-program-arrival-conduct-2026-11-25.md.
+
+
+November25 preview-only workshop conduct page: /workshops/safe-by-design-superintelligence/code-of-conduct/ is owned by src/pages/workshops/safe-by-design-superintelligence/code-of-conduct.astro. Exact Rachel-approved December4policy; reporting mailto:hello@resi.org; workshop Getting here links it, and return link targets#directions. Search and sitemap carry the route. No global/footer/homepage policy promotion. W3 implementation complete in4515 preview; publication/live verification pending. See briefs/workshop-program-arrival-conduct-2026-11-25.md.
