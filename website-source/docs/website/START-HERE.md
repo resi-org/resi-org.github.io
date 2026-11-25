@@ -1,6 +1,6 @@
-## Immediate desktop hover switching — November25 approved for publication
+## Immediate desktop hover switching — November25 published and live verified
 
-Rachel approved publishing the reviewed no-delay version for now. Pointer entry opens/switches menus immediately; keep the invisible10px side/bottom buffer and250ms closing grace. No CSS/visible design, keyboard, mobile or after-intro contents change. Source applicationf899a15, current source937b0d0/main00eac38; core DESIGN now records the immediate-switch rule. Publication will replace only the shared Header script in13 modern pages. Merges/deployment/live verification pending; see WORKLIST D20.
+Rachel’s current approved version is live: no opening/switching delay, with the invisible10px side/bottom buffer and250ms closing grace retained. Core DESIGN now specifies immediate pointer entry. Source PR383 merged at6222f13c5ca736577579b240e9d26bd2c856799b; Header-script-only production PR384 merged atee29a0967ac024a911b82b8fc908af8a0a97b7c6. Pages45710949930 succeeded. All13 live modern pages exactly match the release Header script without desktop overflow. All four pointer switches, edge tolerance/automatic close, keyboard entry/Escape and four-page690/390px after-intro contents checks pass. CSS, visible design, body content, other scripts/assets/endpoints and mobile layout preserved. This supersedes the earlier45ms switching rule below. See WORKLIST D20/CHANGELOG. Preview/source remains output/resi-header-hover-preview-nov24 / :4457; preserve original dirty checkout and other previews.
 
 ## Desktop hover tolerance — November25 published and live verified
 
