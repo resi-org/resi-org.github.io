@@ -259,7 +259,7 @@ const programEntries = workshopProgram.map((session) => {
     font-size: 22px;
     margin: 18px 0 0;
     max-width: 100%;
-    text-wrap: balance;
+    text-wrap: wrap;
   }
   .workshop-closing-invitation { padding: 36px 0; }
   .workshop-invitation { display: flex; align-items: center; gap: 18px; }
@@ -327,7 +327,7 @@ const programEntries = workshopProgram.map((session) => {
   }
   .speaker-list > li {
     display: grid; grid-template-columns: 132px minmax(0, 1fr);
-    align-items: stretch; gap: 18px; min-width: 0;
+    align-items: stretch; gap: 12px; min-width: 0;
     margin: 0; padding: 0 0 18px; border-bottom: 0.75px solid var(--line);
   }
   .speaker-list > li:last-child { border-bottom: 0; }
@@ -341,7 +341,7 @@ const programEntries = workshopProgram.map((session) => {
   .speaker-copy { align-self: start; }
   .speaker-copy { min-width: 0; overflow-wrap: anywhere; }
   .speaker-list .talk-title, .speaker-list .talk-pending {
-    margin: 12px 0 0; font: 500 15.5px/1.4 var(--sans);
+    margin: 18px 0 0; font: 500 15.5px/1.4 var(--sans);
   }
   .speaker-list .talk-title { color: var(--ink); }
   .speaker-list .talk-pending { color: var(--muted); font-weight: 400; }
