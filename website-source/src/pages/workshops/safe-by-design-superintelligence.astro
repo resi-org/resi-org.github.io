@@ -82,7 +82,7 @@ const programEntries = workshopProgram.map((session) => {
   } else {
     throw new Error('Program session has no public title.');
   }
-  return { ...session, title, href, speaker, affiliation, moderator, participants };
+  return { ...session, id: href ? `schedule-${href.slice(1)}` : `schedule-${session.start.replace(':', '')}`, title, href, speaker, affiliation, moderator, participants };
 });
 ---
 
@@ -126,8 +126,8 @@ const programEntries = workshopProgram.map((session) => {
             <h3 class="speaker-name"><WorkshopBioLink name={speaker.name} href={teamBios[speaker.name]}>{speaker.name}</WorkshopBioLink></h3>
             {speaker.affiliation && <p class="speaker-affiliation">{speaker.affiliation}</p>}
             {speaker.talkTitle
-              ? <p class="talk-title">{speaker.talkTitle}</p>
-              : <p class="talk-pending">Title to be announced</p>}
+              ? <p class="talk-title"><a href={`#schedule-${workshopTalkAnchor(speaker.name)}`}>{speaker.talkTitle}</a></p>
+              : <p class="talk-pending"><a href={`#schedule-${workshopTalkAnchor(speaker.name)}`}>Title to be announced</a></p>}
           </div>
         </li>)}
       </ul>
@@ -136,7 +136,7 @@ const programEntries = workshopProgram.map((session) => {
     <Section id="program" label="Panelists" divider>
       {event.panels.length > 0 && <ul class="program-panels">
         {event.panels.map((title, index) => <li id={`panel-${index + 1}`}>
-          <h3>{title}</h3>
+          <h3><a href={`#schedule-panel-${index + 1}`}>{title}</a></h3>
           {event.panelDescriptions[title] && <p class="panel-description">{event.panelDescriptions[title]}</p>}
           {event.panelDetails[title] ? <>
             <ul class="participant-list" style={`--participant-count: ${event.panelDetails[title].participants.length};`}>
@@ -154,7 +154,7 @@ const programEntries = workshopProgram.map((session) => {
       </ul>}
     </Section>
 
-    {event.spotlights && <Section id="spotlights" label="RESI research spotlights" divider>
+    {event.spotlights && <Section id="spotlights" label="RESI research spotlights" labelHref="#schedule-spotlights" divider>
       <ul class="participant-list spotlight-list" style={`--participant-count: ${event.spotlights.speakers.length};`}>
         {event.spotlights.speakers.map((name) => <li>
           <div class="participant-photo"><WorkshopBioLink name={name} href={teamBios[name]} portrait><WorkshopPortrait name={name} photo={participantPortraits[name]} square /></WorkshopBioLink></div>
@@ -167,7 +167,7 @@ const programEntries = workshopProgram.map((session) => {
     <Section id="schedule" label="Program" divider>
       <p class="schedule-note"><em>All times Eastern (Cambridge, Massachusetts). Session times are subject to change.</em></p>
       <ol class="timetable">
-        {programEntries.map((session) => <li class:list={['schedule-row', { 'schedule-pause': ['arrival', 'break', 'meal'].includes(session.kind) }]}>
+        {programEntries.map((session) => <li id={session.id} tabindex="-1" class:list={['schedule-row', { 'schedule-pause': ['arrival', 'break', 'meal'].includes(session.kind) }]}>
           <div class="session-time" aria-label={workshopTimeRange(session.start, session.end)}>
             <time datetime={`2026-12-04T${session.start}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[0]}</time>–<time datetime={`2026-12-04T${session.end}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[1]}</time>
           </div>
@@ -293,7 +293,14 @@ const programEntries = workshopProgram.map((session) => {
   .arrival-copy { font: 400 12.75px/1.65 var(--sans); }
   .arrival-copy p { margin: 0; }
   .arrival-copy p + p { margin-top: 9px; }
-  .speaker-list > li[id], .program-panels > li[id] { scroll-margin-top: 90px; }
+  .speaker-list > li[id], .program-panels > li[id], .schedule-row[id] { scroll-margin-top: 90px; }
+  .talk-title a, .talk-pending a, .program-panels h3 a, .workshop-page :global(#spotlights > .section-label a) {
+    color: inherit; text-decoration-thickness: 0.75px; text-underline-offset: 3px;
+  }
+  .talk-title a:hover, .talk-pending a:hover, .program-panels h3 a:hover, .workshop-page :global(#spotlights > .section-label a:hover) { color: var(--accent); }
+  .talk-title a:focus-visible, .talk-pending a:focus-visible, .program-panels h3 a:focus-visible, .workshop-page :global(#spotlights > .section-label a:focus-visible) {
+    outline: 2px solid var(--accent); outline-offset: 3px;
+  }
   .workshop-interest {
     display: inline-flex;
     align-items: center;
