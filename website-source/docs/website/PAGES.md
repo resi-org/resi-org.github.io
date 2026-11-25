@@ -106,3 +106,6 @@ November25 preview-only workshop conduct page: /workshops/safe-by-design-superin
 
 
 November25 conduct preview refinement: heading/title Code of conduct; body remains explicitly December4workshop-only at Rachel’s choice. Existing workshop-scoped route retained. Reporting contact is now conduct@resi.org (Rachel’s explicit request), including Search excerpt; general footer hello@resi.org remains. No mailbox/alias administration or publication performed.
+
+
+November25 conduct preview now general to RESI workshops, seminars and community events, per Rachel’s superseding request. Canonical source src/pages/code-of-conduct.astro and URL /code-of-conduct/; earlier workshop-specific URL redirects via astro.config.mjs. Workshop Getting here, Search and sitemap use the new route. Reporting conduct@resi.org; ending link /events. No homepage/global-nav/footer policy link. Unpublished4515preview; details in workshop Program/arrival/conduct brief.
