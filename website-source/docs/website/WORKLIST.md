@@ -1,3 +1,11 @@
+## November 26: About FAQ and homepage descriptions
+
+Adam requested a new FAQ immediately after “What do you mean by superintelligence?” It asks “Is RESI planning to build superintelligence?” and answers “No. We think superintelligent systems should only be deployed once we have ways to build them whose safety can be analyzed in advance.” The shared FAQ data automatically includes the entry in Search and preserves a direct link at `/about#faq-building-superintelligence`.
+
+Adam also requested the exact homepage description “RESI is an independent nonprofit AI safety research institute in Cambridge, MA, building the scientific foundations for making superintelligence safe by design.” HomePage passes it to Base, which sets meta, Open Graph and Twitter descriptions together. Page titles, other-page descriptions, the organization schema and visible homepage text are unchanged.
+
+Prepared from source `506a714dca422742583e697fd4716a6a96d44045` and production `1c95acaf5aaa09d7655fc1dff35799da4e5a0c4d`. Baseline matches all 19 production HTML pages. Astro check (62 files, zero diagnostics), build and whitespace check pass. The generated diff affects Home, About and Search only, with identical assets and other pages. Desktop/390px FAQ layout, direct-anchor expansion, mouse/keyboard toggling and Search retrieval pass. Homepage output differs in exactly the three requested description tags. Publication and live verification pending.
+
 ## November 25: remove workshop interest form and timezone note
 
 Adam requested removing the December 4 workshop interest form from the website and the sentence “All times Eastern (Cambridge, Massachusetts).” Removed the canonical event's interest URL, label and admission note. Existing conditional rendering removes all five links, both Join us labels and both signup explanations across Home, Events and the workshop detail page. The Program note now says “Session times are subject to change.” Learn more, the Code of conduct link, schedule times and all other content remain unchanged. The Google Form itself is not modified.
