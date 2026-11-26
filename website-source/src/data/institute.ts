@@ -52,13 +52,19 @@ export const pathway = [
   { title: 'Safer advanced AI', text: 'Contributions to more reliable systems and oversight' },
 ];
 
-// Four supplied HTML answers, plus the two additional topics required by the brief using Draft B prose.
+// Shared FAQ copy for About and Search.
 export const faq = [
   {
     id: 'superintelligence',
     question: 'What do you mean by superintelligence?',
     answer:
       'Superintelligence means systems that greatly exceed individual humans, and potentially expert teams, across a broad range of cognitive tasks.',
+  },
+  {
+    id: 'building-superintelligence',
+    question: 'Is RESI planning to build superintelligence?',
+    answer:
+      'No. We think superintelligent systems should only be deployed once we have ways to build them whose safety can be analyzed in advance.',
   },
   {
     id: 'proofs',
