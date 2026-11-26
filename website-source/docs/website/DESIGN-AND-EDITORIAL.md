@@ -1,3 +1,7 @@
+## Workshop signup removal: November 25
+
+Adam requested removing the December 4 workshop interest-form links and their signup explanations from Home, Events and the workshop detail page. This supersedes earlier instructions to preserve that workshop's interest buttons and admission note. Retain Learn more and Code of conduct. The Program note now reads “Session times are subject to change.” The actual schedule times are unchanged. Other signup forms keep their existing behavior.
+
 # RESI design and editorial guidance
 
 ## Workshop affiliation labels — Adam's November 19 correction

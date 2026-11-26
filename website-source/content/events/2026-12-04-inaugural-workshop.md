@@ -3,7 +3,6 @@ title: "Safe-by-Design Superintelligence"
 eventType: community
 description: "Join us for RESI's inaugural workshop bringing together researchers from frontier AI labs, AI safety organizations, and academia to discuss the scientific foundations for safer advanced AI"
 overview: "This workshop marks our opening, bringing together researchers from frontier AI labs, AI safety organizations, and academia."
-interestNote: "Space is limited. Completing the interest form does not confirm attendance. We will follow up by email with further details."
 panels:
   - "Cryptographic Resilience in the AI World"
   - "Academia and AI Safety (whose responsibility is it anyway?)"
@@ -51,8 +50,6 @@ timeLabel: "Full day"
 location: "Cambridge, MA"
 attendanceLabel: "In person only"
 announcementLabel: "Save the date · Inaugural workshop"
-interestUrl: "https://forms.gle/bepnqhw2Q8eGK2bB8"
-interestLabel: "Interest form"
 anchor: "workshop"
 speakersLabel: "Confirmed speakers"
 speakers:
