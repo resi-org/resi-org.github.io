@@ -165,7 +165,7 @@ const programEntries = workshopProgram.map((session) => {
     </Section>}
 
     <Section id="schedule" label="Program" divider>
-      <p class="schedule-note"><em>All times Eastern (Cambridge, Massachusetts). Session times are subject to change.</em></p>
+      <p class="schedule-note"><em>Session times are subject to change.</em></p>
       <ol class="timetable">
         {programEntries.map((session) => <li id={session.id} tabindex="-1" class:list={['schedule-row', { 'schedule-pause': ['arrival', 'break', 'meal'].includes(session.kind) }]}>
           <div class="session-time" aria-label={workshopTimeRange(session.start, session.end)}>

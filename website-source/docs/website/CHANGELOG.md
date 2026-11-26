@@ -1,3 +1,9 @@
+## November 25: remove workshop interest form and timezone note
+
+Adam requested removing the December 4 workshop interest form from the website and the sentence “All times Eastern (Cambridge, Massachusetts).” Removed the canonical event's interest URL, label and admission note. Existing conditional rendering removes all five links, both Join us labels and both signup explanations across Home, Events and the workshop detail page. The Program note now says “Session times are subject to change.” Learn more, the Code of conduct link, schedule times and all other content remain unchanged. The Google Form itself is not modified.
+
+Prepared from source `c39aec3586b557ebc7aed9b50501535875634a47` and production `ebe43cce5871c305281c60424aefe31f2128a430`. Baseline build matched all 19 production HTML pages exactly. Astro check (62 files, zero diagnostics), build and whitespace check passed. Generated diff is only three HTML pages; assets, Search and other pages are byte-identical. Desktop/390px review of all three affected pages confirms no workshop interest links or horizontal overflow; the shortened Program note and Code of conduct link are present. Production PR 396 merged at `1c95acaf5aaa09d7655fc1dff35799da4e5a0c4d`; GitHub Pages run `45726663582` succeeded. Ordinary live Home, Events and workshop verified after reload: all five links are gone, the workshop has no signup explanations, the shortened Program note is present, all 26 schedule rows remain, and Learn more/Code of conduct are intact. Live workshop at390px also has no horizontal overflow. Source PR395 carries the change and this record. Proof: `remove-workshop-interest-2026-11-25/live-workshop.png` and `live-checks.json` in this chat workspace.
+
 ## November 23 — workshop talk titles published and live verified
 
 Prepared an isolated local version at Adam's request, based on continuing source
