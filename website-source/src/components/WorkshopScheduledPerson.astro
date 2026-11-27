@@ -1,6 +1,7 @@
 ---
 import WorkshopPortrait from './WorkshopPortrait.astro';
 import WorkshopBioLink from './WorkshopBioLink.astro';
+import WorkshopNameLines from './WorkshopNameLines.astro';
 import type { WorkshopPhoto } from '../data/workshop-portraits';
 
 interface Props {
@@ -9,22 +10,33 @@ interface Props {
   href?: string;
   detail?: string;
   working?: boolean;
+  stacked?: boolean;
 }
-const { name, photo, href, detail, working = false } = Astro.props;
+const { name, photo, href, detail, working = false, stacked = false } = Astro.props;
 ---
-<div class="scheduled-person">
+<div class:list={['scheduled-person', { stacked }]}>
   <div class="scheduled-person-photo"><WorkshopBioLink name={name} href={href} portrait><WorkshopPortrait name={name} photo={photo} square /></WorkshopBioLink></div>
   <div class="scheduled-person-copy">
-    <p class="scheduled-person-name"><WorkshopBioLink name={name} href={href}>{name}</WorkshopBioLink></p>
+    <p class="scheduled-person-name"><WorkshopBioLink name={name} href={href}>{stacked ? <WorkshopNameLines name={name} /> : name}</WorkshopBioLink></p>
     {detail && <p class="scheduled-person-detail">{detail}{working && <span> (working title)</span>}</p>}
   </div>
 </div>
 
 <style>
-  .scheduled-person { display: grid; grid-template-columns: 54px minmax(0, 1fr); align-items: center; gap: 14px; margin-top: 12px; }
-  .scheduled-person-photo { width: 54px; height: 54px; }
-  .scheduled-person-photo :global(.workshop-portrait) { width: 54px; height: 54px; aspect-ratio: 1; margin: 0; }
+  .scheduled-person { display: grid; grid-template-columns: var(--scheduled-person-photo-size, 54px) minmax(0, 1fr); align-items: center; gap: 14px; margin-top: 12px; }
+  .scheduled-person-photo { width: var(--scheduled-person-photo-size, 54px); height: var(--scheduled-person-photo-size, 54px); }
+  .scheduled-person-photo :global(.workshop-portrait) { width: 100%; height: 100%; aspect-ratio: 1; margin: 0; }
   .scheduled-person-copy { min-width: 0; overflow-wrap: anywhere; }
   .scheduled-person-name { margin: 0; font: 400 12.75px/1.5 var(--sans); }
   .scheduled-person-detail { margin: 3px 0 0; color: var(--muted); font: 400 11.25px/1.4 var(--sans); }
+  .stacked { display: block; }
+  .stacked .scheduled-person-copy { margin-top: 7px; }
+  .stacked .scheduled-person-name { font-weight: 500; }
+  @media (max-width: 480px) {
+    .stacked .scheduled-person-name { font-size: 11.25px; }
+    .stacked .scheduled-person-detail { font-size: 10.5px; }
+  }
+  @media (max-width: 350px) {
+    .stacked .scheduled-person-name, .stacked .scheduled-person-detail { font-size: 9.5px; }
+  }
 </style>
