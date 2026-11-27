@@ -118,3 +118,6 @@ November25 workshop refinement approval: current workshop-only crop overrides ar
 
 
 November25 workshop refinements are PUBLISHED AND LIVE VERIFIED: sourcePR389/b9e3d2e,productionPR390/4c59ed2,successfulPages45717222391. The approved current framing/three-line intro/grouped timing/bold lower conduct-link rules above are live. Actual320–1280px and native links/redirect checked; see workshop brief/CHANGELOG for exact evidence.
+
+
+November27 review routes: `/previews/workshop-portraits/` and `/previews/workshop-integrated-program/`, driven by `src/components/WorkshopLayoutPreview.astro`, are deliberately isolated layout alternatives for the December4workshop. Both use current event/program/portrait data and `Base noindex`, with no incoming navigation/Search/sitemap entries. They do not replace the canonical detail page. See briefs/workshop-layout-options-2026-11-27.md for publication status.
