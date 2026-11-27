@@ -127,3 +127,5 @@ November27 compact workshop review option: `/previews/workshop-compact-program/`
 
 
 November27 canonical workshop adoption: `src/pages/workshops/safe-by-design-superintelligence.astro` renders `WorkshopLayoutPreview.astro` in integrated mode with `preview={false}`. Despite the component’s historical filename, it now serves canonical and review variants from one event/program/portrait source. Preview-only metadata is explicitly disabled for canonical, retained for all /previews routes. Canonical and integrated/compact variants omit individual spotlight titles. Legacy #speakers/#program/#hosts aliases preserve bookmarks after integration; #schedule and all timed entry/talk/panel/spotlight IDs remain stable. The compact alternative remains separate; publication evidence is in the layout-options brief.
+
+November27 compact square framing: `src/data/workshop-compact-portraits.ts` owns compact-only overrides and the supplied wider Nickolai asset; exact People portrait/framing is used for Anat. Preserve independent larger/canonical crops and host references. See layout-options brief for publication evidence.

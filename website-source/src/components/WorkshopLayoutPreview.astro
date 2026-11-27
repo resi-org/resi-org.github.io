@@ -10,6 +10,7 @@ import WorkshopScheduledPerson from '../components/WorkshopScheduledPerson.astro
 import { workshopPortraits, workshopHostPhotoCredits } from '../data/workshop-portraits';
 import { portraitFor } from '../lib/portraits';
 import { workshopParticipantPortraits } from '../data/workshop-participant-portraits';
+import { workshopCompactPortraits } from '../data/workshop-compact-portraits';
 import type { WorkshopPhoto } from '../data/workshop-portraits';
 import { workshopProgram, workshopTalkAnchor, workshopTimeRange } from '../data/workshop-program';
 
@@ -38,7 +39,7 @@ const teamPortraits: Record<string, WorkshopPhoto> = Object.fromEntries(people.f
   const portrait = portraitFor(person.id, person.data.photo);
   return [person.data.name, { src: portrait.src!, style: portrait.style, label: 'Existing RESI People portrait' }];
 }));
-const participantPortraits = { ...teamPortraits, ...workshopPortraits, ...workshopParticipantPortraits };
+const participantPortraits = { ...teamPortraits, ...workshopPortraits, ...workshopParticipantPortraits, ...(layout === 'compact' ? workshopCompactPortraits : {}) };
 const programNames = [...event.panels.flatMap((title) => event.panelDetails[title]?.participants.map((person) => person.name) ?? []), ...(event.spotlights?.speakers ?? [])];
 for (const name of programNames) {
   if (!participantPortraits[name]) throw new Error(`Missing selected workshop portrait: ${name}`);
