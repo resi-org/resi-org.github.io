@@ -22,5 +22,9 @@
   {
     "name": "MIT Algorithmic Alignment Group",
     "url": "https://algorithmicalignment.csail.mit.edu/"
+  },
+  {
+    "name": "Princeton AIAS",
+    "url": "https://alignment.dais.princeton.edu/"
   }
 ]

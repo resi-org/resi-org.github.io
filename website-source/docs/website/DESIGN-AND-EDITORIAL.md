@@ -81,7 +81,7 @@ Research areas share src/data/research-agenda.json. The homepage highlights four
 
 People records live in content/people/. Shared src/lib/portraits.ts supplies People and the homepage mosaic. Inspect both sizes after a framing change. Current settings supersede earlier successive zoom requests. Preserve face pixels; existing background extensions are intentional assets. New AI editing requires a requested image edit and careful visual review.
 
-Founders precede researchers and operations. Research group leaders are prioritized. Later refinements place Chloé immediately before Sam and Miranda immediately before Ran. The visitor roster remains hidden; replacement policy and Adam Chlipala's eventual placement remain open.
+Founders precede researchers and operations. Adam's November 27 instruction makes the People page's Research team alphabetical by last name, superseding the earlier group-leader priority and Chloé/Sam and Miranda/Ran ordering exceptions. Founders remain in their separate section with their configured order. This page-level ordering does not change the homepage mosaic or Search order. The visitor roster remains hidden; replacement policy and Adam Chlipala's eventual placement remain open.
 
 ## Editorial conventions
 

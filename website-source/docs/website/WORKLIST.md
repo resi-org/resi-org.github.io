@@ -1,3 +1,9 @@
+## November 27: Princeton affiliation and alphabetical Research team
+
+Adam requested adding Princeton AIAS with a hyperlink to Affiliated groups and alphabetizing the team members by last name, separate from the founders. Added Princeton AIAS at the end of the shared affiliated list, linking to its verified official site, https://alignment.dais.princeton.edu/. The People page now sorts its 19 Research team profiles alphabetically by surname. This supersedes group-leader priority and the former pairwise ordering exceptions. Founders remain separate; Operations retains its existing alphabetical order. Profile content, homepage mosaic, Search, and other pages are unchanged.
+
+Prepared from source `aabb93a022fd49e73d36c21ff9e708dd95887c79` and production `3b3f4ab2527f99029cfafc4f61a3028cb5be3bc3`. Baseline matches all 19 production HTML pages. Astro check (62 files, zero diagnostics), build, whitespace check and desktop/390px browser review pass. Only People HTML changes; assets, metadata and other pages are identical. All 19 research profiles appear in surname order, and the founders, Operations and Join us sections remain byte-identical. The Princeton link has the verified destination and the existing external-link treatment. Publication and live verification pending.
+
 ## November 26: About FAQ and homepage descriptions
 
 Adam requested a new FAQ immediately after “What do you mean by superintelligence?” It asks “Is RESI planning to build superintelligence?” and answers “No. We think superintelligent systems should only be deployed once we have ways to build them whose safety can be analyzed in advance.” The shared FAQ data automatically includes the entry in Search and preserves a direct link at `/about#faq-building-superintelligence`.

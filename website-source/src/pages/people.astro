@@ -4,7 +4,6 @@ import { external } from '../lib/external';
 import { showVisitingResearchers } from '../data/visibility';
 import SectionLinks from '../components/SectionLinks.astro';
 import { institute } from '../data/institute';
-import { groups } from '../data/groups';
 import Base from '../layouts/Base.astro';
 import IntroActions from '../components/IntroActions.astro';
 import PageShortcuts from '../components/PageShortcuts.astro';
@@ -13,32 +12,19 @@ import Section from '../components/Section.astro';
 import Person from '../components/Person.astro';
 import Founder from '../components/Founder.astro';
 
-// Ordering follows Rachel's instructions of 2026-09-14: founding scientific
-// team, research team, operations, visiting researchers,
-// how to get involved, and affiliated groups (Rachel, November 5). Research-team leaders come first,
-// with Chloé directly before Sam and Miranda directly before Ran
-// (Rachel, 2026-10-25). Preserve the existing order within the remaining groups.
-// Every group uses the same treatment, so seniority shows only in the order.
+// Keep the existing section order and separate founding scientists.
+// Research team is alphabetical by last name (Adam, November 27).
+// Preserve configured ordering for founders, operations and affiliated groups.
 const people = await getCollection('people');
 const byOrder = (a: any, b: any) => a.data.order - b.data.order;
 const founders = people.filter((p) => p.data.group === 'founders').sort(byOrder);
-const leaderLinks = new Set(groups.map((g) => g.leadHref));
-const leadershipRank = (p: (typeof people)[number]) =>
-  leaderLinks.has('/people#' + p.id) ? 0 : 1;
+const lastName = (name: string) => name.trim().split(/\s+/).at(-1) ?? name;
 const research = people
   .filter((p) => p.data.group === 'research')
-  .sort((a, b) => leadershipRank(a) - leadershipRank(b) || byOrder(a, b));
-for (const [personId, beforeId] of [
-  ['chloe-bakalar', 'sam-gunn'],
-  ['miranda-christ', 'ran-canetti'],
-]) {
-  const person = research.find((p) => p.id === personId);
-  const before = research.find((p) => p.id === beforeId);
-  if (person && before) {
-    research.splice(research.indexOf(person), 1);
-    research.splice(research.indexOf(before), 0, person);
-  }
-}
+  .sort((a, b) =>
+    lastName(a.data.name).localeCompare(lastName(b.data.name), 'en', { sensitivity: 'base' })
+    || a.data.name.localeCompare(b.data.name, 'en', { sensitivity: 'base' }),
+  );
 const operations = people.filter((p) => p.data.group === 'operations').sort(byOrder);
 const visitors = (await getCollection('visitors')).sort(byOrder);
 const affiliated = (await getCollection('affiliated')).sort(byOrder);
