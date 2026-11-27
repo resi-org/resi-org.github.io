@@ -1,8 +1,8 @@
-## Workshop alternatives retired — November 27 current instruction
+## Workshop alternatives offline — November27 current status
 
-Rachel requested that only the selected canonical workshop remain online. All three workshop review routes are removed from src/pages and preserved as .astro.txt wrappers in archive/workshop-layout-routes-2026-11-27/, with designs, crops, evidence and recovery revisions retained. Do not regenerate or publicly host them without new explicit authorization. This supersedes older statements that alternatives remain shareable. The canonical compact workshop and its content/framing remain unchanged.
+The three RESI preview routes have been removed: sourcePR431/474a148; generated-onlyPR432/c392838; successfulPages46080516103 and exact API built revision. All nine tested old URL forms (slash/no slash/index.html) return404 without a program. Canonical workshop remains HTTP200 and byte-for-byte identical to selected compact release. Archived route wrappers/reusable designs remain outside page generation; do not restore public alternatives without Rachel’s new request.
 
-The original separate Sites project appgprj_6af732ae76f881919f876fe9f1a9ce51 (version38) was also found still public. Its audience has now been reduced to custom/owner-only, no other allowed users/groups. Sites provides no unpublish/delete operation in the available connector; native Codex management UI is blocked from computer control. Full removal of that platform deployment/URL remains an explicit limitation, not a completed unpublication. Do not claim it has no URL. No source credentials or bypass tokens are recorded here.
+The legacy separate Sites preview is owner-only and anonymous HTTP403. Manual browser settings were subsequently accessible through the ChatGPT Sites library, superseding the earlier UI-capability limitation. They expose permanent Delete site, no separate unpublish. Full source history (verified Git bundle at exact version38commitdb2b270) and version38built archive are saved locally in output/retired-workshop-sites-backup-nov27 in the isolated two-options checkout. Final deletion awaits Rachel’s action-time confirmation because the UI explicitly says permanent and deletes uploaded data. Current resi.org is unaffected.
 
 ## Workshop canonical layout — selected November 27
 
