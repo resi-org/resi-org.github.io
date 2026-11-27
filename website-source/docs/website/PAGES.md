@@ -1,3 +1,9 @@
+## Workshop alternatives retired — November 27 current instruction
+
+Rachel requested that only the selected canonical workshop remain online. All three workshop review routes are removed from src/pages and preserved as .astro.txt wrappers in archive/workshop-layout-routes-2026-11-27/, with designs, crops, evidence and recovery revisions retained. Do not regenerate or publicly host them without new explicit authorization. This supersedes older statements that alternatives remain shareable. The canonical compact workshop and its content/framing remain unchanged.
+
+The original separate Sites project appgprj_6af732ae76f881919f876fe9f1a9ce51 (version38) was also found still public. Its audience has now been reduced to custom/owner-only, no other allowed users/groups. Sites provides no unpublish/delete operation in the available connector; native Codex management UI is blocked from computer control. Full removal of that platform deployment/URL remains an explicit limitation, not a completed unpublication. Do not claim it has no URL. No source credentials or bypass tokens are recorded here.
+
 ## Workshop option 3 — November 27 current selection
 
 Canonical /workshops/safe-by-design-superintelligence/ now selects layout="compact", preview={false}, from WorkshopLayoutPreview.astro. Compact square crops in src/data/workshop-compact-portraits.ts now serve canonical and compact preview; People/Home and the larger integrated alternative remain independent. src/data/workshop-participant-portraits.ts also owns selected People-image credits keyed by asset, including Miranda/Anna Lu. Current Program content/anchors are shared and unchanged. Publication/live evidence: briefs/workshop-layout-options-2026-11-27.md.
