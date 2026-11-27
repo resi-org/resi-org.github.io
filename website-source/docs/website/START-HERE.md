@@ -1,3 +1,7 @@
+## Workshop layout options — November 27 published for review
+
+Two unlisted/noindex previews are available: [portrait roster](https://resi.org/previews/workshop-portraits/) and [integrated program](https://resi.org/previews/workshop-integrated-program/). Neither replaces the canonical workshop. Martha’s approved AAPSS portrait and lower framing are live on the canonical page and both previews. Source PR 403 / `f2a936a`; generated PR 404 / `7edfbee`; Pages run `46034693144` and live desktop/mobile checks verified. See [implementation and release evidence](briefs/workshop-layout-options-2026-11-27.md). Preserve unrelated previews and dirty checkouts. W1–W4 are complete; Rachel asked to retire those labels for this follow-up work.
+
 ## Workshop refinements — November25 published and live verified
 
 Rachel approved the complete later4515preview. SourcePR389/b9e3d2e; generated-onlyproductionPR390/4c59ed2; Pages45717222391success and exact API built revision. Only workshopHTML/newB_5rsxo8CSS changed. Live320–1280px confirms3line full-width description,grouped facts,approved portrait/headroom refinements,Vincentnamefit and bold separated lowerconductlink. All26Programrows,29photos,7credits,admission wording,Maps/parkinglinks,/inaug and otherpages/endpoints preserved. This supersedes the later portrait/spacing/conduct-link preview-only holds. Full verification in workshop Program/arrival/conduct brief and CHANGELOG. Other previews/original dirty checkout remain preserved.
