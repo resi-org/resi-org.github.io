@@ -18,3 +18,8 @@ export const workshopParticipantPortraits: Record<string, WorkshopPhoto> = {
   'Yael Tauman Kalai': { ...workshopPortraits['Yael Tauman Kalai'], style: '--portrait-scale: 1.35; --portrait-origin: 50% 25%; --portrait-position: 50% 20%;' },
   'Jacob Tsimerman': workshopPortraits['Jacob Tsimerman'],
 };
+
+// Match a credit to the selected People asset, rather than to the person's name.
+export const workshopTeamPhotoCredits: Record<string, NonNullable<WorkshopPhoto['credit']>> = {
+  '/people/miranda-christ.jpg': { id: 'miranda-christ', text: 'Anna Lu', href: 'https://mirandachrist.github.io/' },
+};

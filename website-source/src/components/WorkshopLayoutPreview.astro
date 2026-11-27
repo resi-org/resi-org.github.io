@@ -9,7 +9,7 @@ import WorkshopNameLines from '../components/WorkshopNameLines.astro';
 import WorkshopScheduledPerson from '../components/WorkshopScheduledPerson.astro';
 import { workshopPortraits, workshopHostPhotoCredits } from '../data/workshop-portraits';
 import { portraitFor } from '../lib/portraits';
-import { workshopParticipantPortraits } from '../data/workshop-participant-portraits';
+import { workshopParticipantPortraits, workshopTeamPhotoCredits } from '../data/workshop-participant-portraits';
 import { workshopCompactPortraits } from '../data/workshop-compact-portraits';
 import type { WorkshopPhoto } from '../data/workshop-portraits';
 import { workshopProgram, workshopTalkAnchor, workshopTimeRange } from '../data/workshop-program';
@@ -37,7 +37,7 @@ const people = await getCollection('people');
 const teamBios: Record<string, string> = Object.fromEntries(people.map((person) => [person.data.name, `/people#${person.id}`]));
 const teamPortraits: Record<string, WorkshopPhoto> = Object.fromEntries(people.filter((person) => person.data.photo).map((person) => {
   const portrait = portraitFor(person.id, person.data.photo);
-  return [person.data.name, { src: portrait.src!, style: portrait.style, label: 'Existing RESI People portrait' }];
+  return [person.data.name, { src: portrait.src!, style: portrait.style, label: 'Existing RESI People portrait', credit: workshopTeamPhotoCredits[portrait.src ?? ''] }];
 }));
 const participantPortraits = { ...teamPortraits, ...workshopPortraits, ...workshopParticipantPortraits, ...(layout === 'compact' ? workshopCompactPortraits : {}) };
 const programNames = [...event.panels.flatMap((title) => event.panelDetails[title]?.participants.map((person) => person.name) ?? []), ...(event.spotlights?.speakers ?? [])];
@@ -96,7 +96,7 @@ const programEntries = workshopProgram.map((session) => {
   wide
   noindex={preview}
 >
-  <article class:list={["workshop-page", `preview-${layout}`]}>
+  <article class:list={["workshop-page", `preview-${layout}`, { 'balanced-conduct-spacing': !preview || layout === 'compact' }]}>
     <header class="page-hero workshop-hero">
       <div class="workshop-heading">
         <h1><span class="title-phrase">{event.title.split(' ')[0]}</span>{' '}{event.title.split(' ').slice(1).join(' ')}</h1>
@@ -358,6 +358,9 @@ const programEntries = workshopProgram.map((session) => {
   .workshop-hero > .workshop-invitation { margin-top: 24px; }
   .interest-note { margin: 12px 0 0; max-width: 60ch; text-wrap: balance; color: var(--muted); font-size: 12px; line-height: 1.65; }
   .conduct-link { margin: 24px 0 0; font: 700 12px/1.65 var(--sans); }
+  .balanced-conduct-spacing > :global(#directions) { padding-bottom: 0; }
+  .balanced-conduct-spacing .workshop-closing-invitation { padding-top: 36px; }
+  .balanced-conduct-spacing .conduct-link { margin-top: 0; }
   .schedule-note { margin: 0 0 12px; color: var(--muted); font: 400 12px/1.65 var(--sans); }
   .timetable { list-style: none; margin: 0; padding: 0; }
   .timetable > .schedule-row { display: grid; grid-template-columns: 124px minmax(0, 1fr); gap: 18px; margin: 0; padding: 15px 0; border-top: 0.75px solid var(--line); }

@@ -3,8 +3,8 @@ import { workshopPortraits, type WorkshopPhoto } from './workshop-portraits';
 import { workshopParticipantPortraits } from './workshop-participant-portraits';
 import { portraitFor } from '../lib/portraits';
 
-// Square-only framing for the unlisted compact alternative. Keep the taller
-// published portraits and shared People/Home framing independent.
+// Approved square framing for the canonical workshop and compact alternative.
+// Keep the taller integrated alternative and shared People/Home framing independent.
 const anat = portraitFor('anat-perry', '/people/anat-perry.jpg');
 export const workshopCompactPortraits: Record<string, WorkshopPhoto> = {
   'Boaz Barak': { ...workshopPortraits['Boaz Barak'], style: '--portrait-position: 50% 38%; --portrait-scale: 1.42; --portrait-origin: 50% 30%;' },
