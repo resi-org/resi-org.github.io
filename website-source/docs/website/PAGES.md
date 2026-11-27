@@ -121,3 +121,6 @@ November25 workshop refinements are PUBLISHED AND LIVE VERIFIED: sourcePR389/b9e
 
 
 November27 review routes: `/previews/workshop-portraits/` and `/previews/workshop-integrated-program/`, driven by `src/components/WorkshopLayoutPreview.astro`, are deliberately isolated layout alternatives for the December4workshop. Both use current event/program/portrait data and `Base noindex`, with no incoming navigation/Search/sitemap entries. They do not replace the canonical detail page. See briefs/workshop-layout-options-2026-11-27.md for publication status.
+
+
+November27 compact workshop review option: `/previews/workshop-compact-program/` is owned by `src/pages/previews/workshop-compact-program.astro`, `WorkshopLayoutPreview.astro` compact mode and `WorkshopScheduledPerson.astro`. All participants use the same small square/photo-and-name composition. Shares canonical event/program data and approved portraits; noindex, no incoming site links and absent from Search/sitemap. Separate from the canonical page and the existing roster/integrated alternatives; see the workshop layout-options brief for current release evidence.
