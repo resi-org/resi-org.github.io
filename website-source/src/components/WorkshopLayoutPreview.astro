@@ -200,15 +200,17 @@ const programEntries = workshopProgram.map((session) => {
           const host = !isTalk && session.speaker ? hosts.find((host) => host.name === session.speaker) : undefined;
           return <li id={session.id} tabindex="-1" class:list={['schedule-row', { 'schedule-pause': ['arrival', 'break', 'meal'].includes(session.kind), 'session-with-portrait': isTalk, 'session-group': !!panel || session.kind === 'spotlights', 'session-host': !!host }]}>
             <div class="session-time" aria-label={workshopTimeRange(session.start, session.end)}>
-              <time datetime={`2026-12-04T${session.start}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[0]}</time>–<time datetime={`2026-12-04T${session.end}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[1]}</time>
-              {(session.kind === 'panel' || session.kind === 'keynote') && <span class="session-type"> · {session.kind === 'panel' ? 'Panel' : 'Keynote'}</span>}
+              <span class="time-start"><time datetime={`2026-12-04T${session.start}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[0]}</time>–</span><time class="time-end" datetime={`2026-12-04T${session.end}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[1]}</time>
+              {(session.kind === 'panel' || session.kind === 'keynote') && <span class="session-type">{session.kind === 'panel' ? 'Panel' : 'Keynote'}</span>}
             </div>
             {isTalk && session.speaker ? <div class="integrated-talk" id={workshopTalkAnchor(session.speaker)}>
               <div class="integrated-speaker-photo"><WorkshopBioLink name={session.speaker} href={teamBios[session.speaker]} portrait><WorkshopPortrait name={session.speaker} photo={workshopPortraits[session.speaker]} /></WorkshopBioLink></div>
               <div class="session-copy">
-                <h3 class="integrated-speaker-name"><WorkshopBioLink name={session.speaker} href={teamBios[session.speaker]}>{session.speaker}</WorkshopBioLink></h3>
-                {session.affiliation && <p class="integrated-affiliation">{session.affiliation}</p>}
-                <p class:list={['integrated-talk-title', { 'talk-pending': !event.speakers.find((person) => person.name === session.speaker)?.talkTitle }]}>{session.title}</p>
+                <h3 class:list={['integrated-talk-title', { 'talk-pending': !event.speakers.find((person) => person.name === session.speaker)?.talkTitle }]}>{session.title}</h3>
+                <div class="integrated-speaker-details">
+                  <p class="integrated-speaker-name"><WorkshopBioLink name={session.speaker} href={teamBios[session.speaker]}>{session.speaker}</WorkshopBioLink></p>
+                  {session.affiliation && <p class="integrated-affiliation">{session.affiliation}</p>}
+                </div>
               </div>
             </div> : <div class="session-copy">
               <h3 class="session-title" id={panel ? session.href?.slice(1) : session.kind === 'spotlights' ? 'spotlights' : undefined}>{session.title}</h3>
@@ -527,18 +529,27 @@ const programEntries = workshopProgram.map((session) => {
   .preview-roster .speaker-name { font: 700 17px/1.25 var(--serif); margin: 0; overflow-wrap: normal; }
   .preview-roster .speaker-affiliation { font-size: 11.5px; }
   /* Integrated option: a single sequence with appreciable portraits and shorter utility rows. */
-  .integrated-timetable > .schedule-row { display: block; padding: 16px 0; }
-  .integrated-timetable .session-time { margin: 0 0 8px; color: var(--accent); font-weight: 600; }
-  .integrated-talk { display: grid; grid-template-columns: 168px minmax(0, 1fr); gap: 22px; align-items: stretch; }
-  .integrated-speaker-photo { position: relative; min-height: 210px; }
+  .integrated-timetable > .schedule-row { grid-template-columns: 124px minmax(0, 1fr); align-items: start; padding: 16px 0; }
+  .integrated-timetable .session-time { margin: 0; color: var(--muted); font-weight: 600; }
+  .integrated-timetable .session-type { display: block; margin-top: 4px; font-weight: 400; }
+  .integrated-talk { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 18px; align-items: stretch; min-width: 0; }
+  .integrated-speaker-photo { position: relative; min-height: 140px; }
   .integrated-speaker-photo :global(.portrait-link) { position: absolute; inset: 0; }
   .integrated-speaker-photo :global(.workshop-portrait) { height: 100%; aspect-ratio: auto; margin: 0; }
-  .integrated-speaker-name { margin: -3px 0 0; font: 700 21px/1.25 var(--serif); letter-spacing: -0.005em; }
+  .integrated-speaker-details { margin-top: 16px; }
+  .integrated-speaker-name { margin: 0; font: 500 16px/1.4 var(--sans); }
   .integrated-affiliation { margin: 4px 0 0; color: var(--muted); font: 400 12px/1.45 var(--sans); }
-  .integrated-talk-title { margin: 16px 0 0; font: 500 16px/1.4 var(--sans); }
-  .integrated-timetable > .schedule-pause { display: flex; gap: 18px; align-items: baseline; padding: 12px 0; }
-  .integrated-timetable .schedule-pause .session-time { margin: 0; min-width: 124px; color: var(--muted); }
-  .integrated-timetable .participant-list { margin-top: 20px; }
+  .integrated-talk-title { margin: -3px 0 0; font: 700 21px/1.25 var(--serif); letter-spacing: -0.005em; }
+  .integrated-timetable > .schedule-pause { padding: 12px 0; }
+  .integrated-timetable .participant-list {
+    --participant-gap: 18px;
+    display: grid; grid-template-columns: repeat(var(--participant-count), minmax(0, 1fr));
+    width: min(100%, calc(var(--participant-count) * 84px + (var(--participant-count) - 1) * var(--participant-gap)));
+    gap: 21px var(--participant-gap); margin-top: 20px;
+  }
+  .integrated-timetable .participant-list > li { width: auto; }
+  .integrated-timetable .participant-photo { width: min(var(--small-photo-size, 64px), 100%); height: auto; aspect-ratio: 1; }
+  .integrated-timetable .participant-name, .integrated-timetable .participant-affiliation { overflow-wrap: anywhere; }
   .integrated-spotlights .participant-affiliation { overflow-wrap: anywhere; }
   .integrated-timetable .session-moderator { margin-top: 20px; }
   .scheduled-host { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
@@ -549,19 +560,29 @@ const programEntries = workshopProgram.map((session) => {
   @media (max-width: 650px) {
     .preview-roster .speaker-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 18px; }
   }
+  @media (max-width: 600px) {
+    .integrated-timetable > .schedule-row { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
+    .integrated-timetable .session-time { white-space: normal; }
+    .integrated-timetable .time-start, .integrated-timetable .time-end { display: block; }
+    .integrated-talk { grid-template-columns: 88px minmax(0, 1fr); gap: 12px; align-items: start; }
+    .integrated-talk > .session-copy { display: contents; }
+    .integrated-talk-title { grid-column: 1 / -1; grid-row: 1; margin: -3px 0 0; }
+    .integrated-speaker-photo { grid-column: 1; grid-row: 2; min-height: 0; height: 110px; }
+    .integrated-speaker-details { grid-column: 2; grid-row: 2; margin: 0; }
+    .integrated-timetable .participant-list { --participant-gap: clamp(4px, 1.4vw, 10px); }
+  }
   @media (max-width: 480px) {
-    .integrated-talk { grid-template-columns: 112px minmax(0, 1fr); gap: 16px; }
-    .integrated-speaker-photo { min-height: 140px; }
-    .integrated-speaker-name { font-size: 19px; }
-    .integrated-talk-title { font-size: 14.5px; margin-top: 12px; }
+    .integrated-talk-title { font-size: 19px; }
+    .integrated-speaker-name { font-size: 14.5px; }
     .integrated-affiliation { font-size: 11.25px; }
-    .integrated-timetable > .schedule-pause { display: block; }
-    .integrated-timetable .schedule-pause .session-time { margin-bottom: 2px; }
   }
   @media (max-width: 350px) {
-    .integrated-talk { grid-template-columns: 100px minmax(0, 1fr); gap: 13px; }
-    .integrated-speaker-photo { min-height: 125px; }
-    .integrated-speaker-name { font-size: 18px; }
+    .integrated-timetable > .schedule-row { grid-template-columns: 54px minmax(0, 1fr); gap: 10px; }
+    .integrated-timetable .session-time { font-size: 11.25px; }
+    .integrated-talk { grid-template-columns: 80px minmax(0, 1fr); gap: 10px; }
+    .integrated-speaker-photo { height: 100px; }
+    .integrated-talk-title { font-size: 18px; }
+    .integrated-timetable .participant-name, .integrated-timetable .participant-affiliation { font-size: 10.5px; }
     .preview-roster .speaker-name { font-size: 16px; }
   }
 </style>
