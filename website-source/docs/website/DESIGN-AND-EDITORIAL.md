@@ -287,3 +287,8 @@ Code of conduct link belongs beneath the lower interest/admission note, outside 
 
 
 November25 workshop refinements are PUBLISHED AND LIVE VERIFIED: sourcePR389/b9e3d2e,productionPR390/4c59ed2,successfulPages45717222391. The approved current framing/three-line intro/grouped timing/bold lower conduct-link rules above are live. Actual320–1280px and native links/redirect checked; see workshop brief/CHANGELOG for exact evidence.
+
+
+## Integrated workshop program — approved November 27
+
+Rachel selected the current integrated program for canonical publication. Use the existing 620px column and chronological time-left rows throughout. Main talks use 112px-wide portraits (140px minimum height, longer text may extend), title-first 21px Cardo Bold, then 16px Plex Sans names and existing muted affiliations. Preserve the reviewed responsive title/portrait arrangement and smaller grouped panel/spotlight/host photos. Fold the existing people/session facts into the timetable rather than repeating the separate full speaker/talk gallery. Spotlight names/photos/moderator remain, but individual spotlight titles and pending/working labels are temporarily omitted. Keep selected portrait pixels, credits, content, times and canonical metadata intact; retain older section anchors as aliases. This supersedes the earlier separate Speakers/Panelists/Spotlights/Program section layout for this workshop only. The uniform 54px-square composition remains a separate unlisted preview and is not selected as the canonical design. See the layout-options brief for publication and live-verification status.

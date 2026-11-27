@@ -13,9 +13,9 @@ import { workshopParticipantPortraits } from '../data/workshop-participant-portr
 import type { WorkshopPhoto } from '../data/workshop-portraits';
 import { workshopProgram, workshopTalkAnchor, workshopTimeRange } from '../data/workshop-program';
 
-interface Props { layout: 'roster' | 'integrated' | 'compact'; }
-const { layout } = Astro.props;
-// Review options share canonical facts and selected portraits with the published workshop.
+interface Props { layout: 'roster' | 'integrated' | 'compact'; preview?: boolean; }
+const { layout, preview = true } = Astro.props;
+// The published integrated page and review options share canonical facts and selected portraits.
 const entry = await getEntry('events', '2026-12-04-inaugural-workshop');
 if (!entry) throw new Error('The inaugural workshop record is missing.');
 const event = entry.data;
@@ -90,10 +90,10 @@ const programEntries = workshopProgram.map((session) => {
 ---
 
 <Base
-  title={`${pageTitle} — ${layout === "roster" ? "Portrait roster preview" : layout === "compact" ? "Compact program preview" : "Integrated program preview"}`}
+  title={preview ? `${pageTitle} — ${layout === "roster" ? "Portrait roster preview" : layout === "compact" ? "Compact program preview" : "Integrated program preview"}` : pageTitle}
   description={event.overview || event.description}
   wide
-  noindex
+  noindex={preview}
 >
   <article class:list={["workshop-page", `preview-${layout}`]}>
     <header class="page-hero workshop-hero">
@@ -204,6 +204,9 @@ const programEntries = workshopProgram.map((session) => {
               <span class="time-start"><time datetime={`2026-12-04T${session.start}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[0]}</time>–</span><time class="time-end" datetime={`2026-12-04T${session.end}:00-05:00`}>{workshopTimeRange(session.start, session.end).split('–')[1]}</time>
               {(session.kind === 'panel' || session.kind === 'keynote') && <span class="session-type">{session.kind === 'panel' ? 'Panel' : 'Keynote'}</span>}
             </div>
+            {session.id === 'schedule-talk-boaz-barak' && <span class="legacy-anchor" id="speakers" aria-hidden="true"></span>}
+            {session.id === 'schedule-panel-1' && <span class="legacy-anchor" id="program" aria-hidden="true"></span>}
+            {session.id === 'schedule-0900' && <span class="legacy-anchor" id="hosts" aria-hidden="true"></span>}
             {isTalk && session.speaker && layout === 'compact' ? <div class="session-copy" id={workshopTalkAnchor(session.speaker)}>
               <h3 class="session-title">{session.title}</h3>
               <WorkshopScheduledPerson name={session.speaker} href={teamBios[session.speaker]} photo={participantPortraits[session.speaker]} detail={session.affiliation} />
@@ -235,10 +238,9 @@ const programEntries = workshopProgram.map((session) => {
               {session.kind === 'spotlights' && event.spotlights && <>
                 <ul class="participant-list integrated-spotlights" style={`--participant-count: ${event.spotlights.speakers.length};`}>
                   {event.spotlights.speakers.map((name) => <li>
-                    {layout === 'compact' ? <WorkshopScheduledPerson name={name} href={teamBios[name]} photo={participantPortraits[name]} detail={event.spotlights!.titles[name]?.title || 'Title to be announced'} working={event.spotlights!.titles[name]?.working} /> : <>
+                    {layout === 'compact' ? <WorkshopScheduledPerson name={name} href={teamBios[name]} photo={participantPortraits[name]} /> : <>
                     <div class="participant-photo"><WorkshopBioLink name={name} href={teamBios[name]} portrait><WorkshopPortrait name={name} photo={participantPortraits[name]} square /></WorkshopBioLink></div>
                     <p class="participant-name"><WorkshopBioLink name={name} href={teamBios[name]}><WorkshopNameLines name={name} /></WorkshopBioLink></p>
-                    <p class="participant-affiliation">{event.spotlights!.titles[name]?.title || 'Title to be announced'}{event.spotlights!.titles[name]?.working && <span class="working-title"> (working title)</span>}</p>
                     </>}
                   </li>)}
                 </ul>
@@ -538,6 +540,8 @@ const programEntries = workshopProgram.map((session) => {
   .preview-roster .speaker-affiliation { font-size: 11.5px; }
   /* Integrated option: a single sequence with appreciable portraits and shorter utility rows. */
   .integrated-timetable > .schedule-row { grid-template-columns: 124px minmax(0, 1fr); align-items: start; padding: 16px 0; }
+  .integrated-timetable > .schedule-row { position: relative; }
+  .legacy-anchor { position: absolute; inset: 0 auto auto 0; width: 0; height: 0; scroll-margin-top: 90px; }
   .integrated-timetable .session-time { margin: 0; color: var(--muted); font-weight: 600; }
   .integrated-timetable .session-type { display: block; margin-top: 4px; font-weight: 400; }
   .integrated-talk { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 18px; align-items: stretch; min-width: 0; }
