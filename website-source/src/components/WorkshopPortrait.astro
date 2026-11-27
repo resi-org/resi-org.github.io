@@ -20,7 +20,7 @@ const url = typeof photo.src === 'string' ? photo.src : (await getImage({
   .workshop-portrait.square { aspect-ratio: 1; }
   .photo-frame { display: block; width: 100%; height: 100%; overflow: hidden; }
   img {
-    display: block; width: 100%; height: 100%; object-fit: cover;
+    display: block; width: 100%; height: 100%; object-fit: var(--portrait-fit, cover);
     object-position: var(--portrait-position, 50% 50%);
     transform: translateY(var(--portrait-shift-y, 0%)) scale(var(--portrait-scale, 1));
     transform-origin: var(--portrait-origin, 50% 50%);

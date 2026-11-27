@@ -187,7 +187,7 @@
     ],
     "metadata": {},
     "notes": "Unpublished November23 panel portrait preview. Original source pixels preserved; displayed using square CSS crop. Event affiliation and role remain canonical event data.",
-    "previewUpdate2026-11-24": "No longer selected in the current preview; replaced by earlier Simons Foundation portrait at Rachel’s request."
+    "previewUpdate2026-11-24": "No longer selected in the current preview; replaced by earlier Simons Foundation portrait at Rachel\u2019s request."
   },
   {
     "file": "tal-rabin-iu.jpg",
@@ -203,5 +203,13 @@
     "metadata": {},
     "notes": "Rachel selected this exact Indiana University portrait to replace the provisional Simons grayscale photo in the unpublished preview. No named photographer on source page or in EXIF/IPTC metadata. Source pixels unchanged; square CSS framing uses scale1.2/top origin. Event affiliation remains Amazon from canonical data.",
     "previewUpdate2026-11-24": "Selected portrait unchanged; Rachel requested a closer CSS crop. Scale1.5, top origin,64px desktop/54px phone square."
+  },
+  {
+    "file": "nickolai-zeldovich-supplied-nov27.jpg",
+    "source": "Rachel-supplied wider portrait for the compact workshop preview",
+    "bytes": 208526,
+    "sha256": "16fec6bbeee4c95a6ffe0db128d2829b101a2c0bda092de0175d55977dda5d76",
+    "retrieved": "2026-11-27",
+    "scope": "Uniform-square compact preview only; original taller portrait preserved."
   }
 ]
