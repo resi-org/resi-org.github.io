@@ -13,7 +13,7 @@ type Session = {
 
 export const workshopProgram: Session[] = [
   { start: '08:30', end: '09:00', kind: 'arrival', title: 'Check-in and breakfast' },
-  { start: '09:00', end: '09:30', kind: 'remarks', title: 'Opening remarks', speaker: 'Shafi Goldwasser' },
+  { start: '09:00', end: '09:30', kind: 'remarks', title: 'RESI: What is safe by design? — Opening remarks', speaker: 'Shafi Goldwasser' },
   { start: '09:30', end: '09:45', kind: 'talk', speaker: 'Boaz Barak' },
   { start: '09:45', end: '09:55', kind: 'overview', title: 'Introducing RESI / research overview', speaker: 'Adam Tauman Kalai' },
   { start: '09:55', end: '10:25', kind: 'spotlights' },
