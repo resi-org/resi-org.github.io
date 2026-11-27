@@ -1,3 +1,7 @@
+## Workshop option 3 — November 27 current selection
+
+Canonical /workshops/safe-by-design-superintelligence/ now selects layout="compact", preview={false}, from WorkshopLayoutPreview.astro. Compact square crops in src/data/workshop-compact-portraits.ts now serve canonical and compact preview; People/Home and the larger integrated alternative remain independent. src/data/workshop-participant-portraits.ts also owns selected People-image credits keyed by asset, including Miranda/Anna Lu. Current Program content/anchors are shared and unchanged. Publication/live evidence: briefs/workshop-layout-options-2026-11-27.md.
+
 ## Workshop introduction — November16 approved release
 
 Standalone workshop uses the combined subtitle (frontier labs, safety organizations, and academia),22px desktop/19.5px phones; small opening paragraph removed. Shared event data, metadata, Home/Events/Search stay unchanged. Publication/live verification recorded in CHANGELOG/WORKLIST.

@@ -1,3 +1,7 @@
+## Workshop canonical layout — selected November 27
+
+Rachel selected option 3: the integrated chronological program with uniform square portraits. Canonical and compact preview share compact layout/framing; the larger-portrait integrated alternative stays independently available. This supersedes earlier canonical speaker-gallery and larger-portrait selections. Preserve all current scientific content, stable anchors and square crops; panel/spotlight names stay below their photos in a single responsive row. Names share medium500 weight without forcing panel-style line breaks on standalone speakers. Conduct link has36px above/below on canonical and compact; footer remains last. Display credits only for clearly named human photographers or explicit image attribution requirements; the selected Simons Jacob photo meets the latter. Miranda’s selected People image is by Anna Lu. See the November27photo audit.
+
 ## Workshop signup removal: November 25
 
 Adam requested removing the December 4 workshop interest-form links and their signup explanations from Home, Events and the workshop detail page. This supersedes earlier instructions to preserve that workshop's interest buttons and admission note. Retain Learn more and Code of conduct. The Program note now reads “Session times are subject to change.” The actual schedule times are unchanged. Other signup forms keep their existing behavior.
