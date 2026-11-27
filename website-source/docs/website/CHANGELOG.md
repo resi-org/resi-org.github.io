@@ -1,3 +1,11 @@
+## November 27: Ariel Procaccia profile
+
+Adam requested adding Ariel Procaccia to the Research team using his approved profile details. The new shared profile uses the approved Harvard/AI-and-economics bio, his personal website, and his selected papers: Generative Social Choice (JACM 2026) and Axioms for AI Alignment from Human Feedback (NeurIPS 2024), with the supplied public PDF links and independently verified citation metadata. He appears alphabetically between Anat Perry and Daniela Rus. Home’s automatic portrait roster and Search include him through the same collection.
+
+The supplied 1500×1500 portrait is served as a 400×400, 18,556-byte JPEG, reduced from the 429,684-byte original. The face and composition are unchanged, and image metadata is stripped from the public derivative. The original remains outside the repository. This addresses Adam’s request to keep the small website portrait lightweight.
+
+Prepared from source `f903024b492e6db4f52da85150d9bda705313318` and production `8007d84ed78e91590c9dd3108297e29631d71cde`. Baseline matches all 19 production HTML pages. Astro check (62 files, zero diagnostics), build and whitespace check pass. Generated changes are limited to Home, People, Search and the new JPEG; page heads and existing assets are identical. Desktop/390px profile review confirms the portrait, exact bio, alphabetical neighbors and both publication links. Search returns his profile, and the homepage portrait is loaded and links to his anchor. Live publication pending.
+
 ## November 27: Princeton affiliation and alphabetical Research team
 
 Adam requested adding Princeton AIAS with a hyperlink to Affiliated groups and alphabetizing the team members by last name, separate from the founders. Added Princeton AIAS at the end of the shared affiliated list, linking to its verified official site, https://alignment.dais.princeton.edu/. The People page now sorts its 19 Research team profiles alphabetically by surname. This supersedes group-leader priority and the former pairwise ordering exceptions. Founders remain separate; Operations retains its existing alphabetical order. Profile content, homepage mosaic, Search, and other pages are unchanged.
