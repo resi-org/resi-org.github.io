@@ -224,7 +224,7 @@ const programEntries = workshopProgram.map((session) => {
               {panel && <>
                 <ul class="participant-list" style={`--participant-count: ${panel.participants.length};`}>
                   {panel.participants.map((person) => <li>
-                    {layout === 'compact' ? <WorkshopScheduledPerson name={person.name} href={teamBios[person.name]} photo={participantPortraits[person.name]} detail={person.affiliation} /> : <>
+                    {layout === 'compact' ? <WorkshopScheduledPerson name={person.name} href={teamBios[person.name]} photo={participantPortraits[person.name]} detail={person.affiliation} stacked /> : <>
                     <div class="participant-photo"><WorkshopBioLink name={person.name} href={teamBios[person.name]} portrait><WorkshopPortrait name={person.name} photo={participantPortraits[person.name]} square /></WorkshopBioLink></div>
                     <p class="participant-name"><WorkshopBioLink name={person.name} href={teamBios[person.name]}><WorkshopNameLines name={person.name} /></WorkshopBioLink></p>
                     {person.affiliation && <p class="participant-affiliation">{person.name === 'Jacob Tsimerman'
@@ -238,7 +238,7 @@ const programEntries = workshopProgram.map((session) => {
               {session.kind === 'spotlights' && event.spotlights && <>
                 <ul class="participant-list integrated-spotlights" style={`--participant-count: ${event.spotlights.speakers.length};`}>
                   {event.spotlights.speakers.map((name) => <li>
-                    {layout === 'compact' ? <WorkshopScheduledPerson name={name} href={teamBios[name]} photo={participantPortraits[name]} /> : <>
+                    {layout === 'compact' ? <WorkshopScheduledPerson name={name} href={teamBios[name]} photo={participantPortraits[name]} stacked /> : <>
                     <div class="participant-photo"><WorkshopBioLink name={name} href={teamBios[name]} portrait><WorkshopPortrait name={name} photo={participantPortraits[name]} square /></WorkshopBioLink></div>
                     <p class="participant-name"><WorkshopBioLink name={name} href={teamBios[name]}><WorkshopNameLines name={name} /></WorkshopBioLink></p>
                     </>}
@@ -597,9 +597,12 @@ const programEntries = workshopProgram.map((session) => {
     .integrated-timetable .participant-name, .integrated-timetable .participant-affiliation { font-size: 10.5px; }
     .preview-roster .speaker-name { font-size: 16px; }
   }
-  .preview-compact .participant-list { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; gap: 18px 24px; }
-  .preview-compact .participant-list :global(.scheduled-person) { margin-top: 0; }
-  @media (max-width: 600px) {
-    .preview-compact .participant-list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .preview-compact { --compact-participant-gap: clamp(4px, 1.4vw, 18px); --scheduled-person-photo-size: min(54px, calc(20cqw - .8 * var(--compact-participant-gap))); }
+  .preview-compact .schedule-row > .session-copy { container-type: inline-size; }
+  .preview-compact .participant-list {
+    --participant-gap: var(--compact-participant-gap);
+    grid-template-columns: repeat(var(--participant-count), minmax(0, 1fr));
+    gap: var(--participant-gap);
   }
+  .preview-compact .participant-list :global(.scheduled-person) { margin-top: 0; }
 </style>
