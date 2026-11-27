@@ -113,9 +113,11 @@ const programEntries = workshopProgram.map((session) => {
       </div>}
       {event.interestNote && <p class="interest-note">{event.interestNote}</p>}
       <nav class="workshop-sections" aria-label="Workshop sections">
-        {layout === 'roster' && <a href="#speakers">Speakers</a>}
-        <a href={layout === "roster" ? "#program" : "#schedule-panel-1"}>Panelists</a>
-        <a href={layout === "roster" ? "#spotlights" : "#schedule-spotlights"}>RESI research spotlights</a>
+        {layout === 'roster' && <>
+          <a href="#speakers">Speakers</a>
+          <a href="#program">Panelists</a>
+          <a href="#spotlights">RESI research spotlights</a>
+        </>}
         <a href="#schedule">Program</a>
         <a href="#directions">Getting here</a>
       </nav>
