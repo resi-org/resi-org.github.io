@@ -1,6 +1,6 @@
-## Workshop compact option selected — November 27 publication in progress
+## Workshop compact option — November 27 PUBLISHED AND LIVE VERIFIED
 
-Rachel selected option3 for the canonical workshop. Uniform-square integrated program now prepared for canonical publication, together with equal conduct-link gaps and the selected-photo credit audit (Miranda/Anna Lu added; mandatory Jacob/Simons credit retained). All26session content fields and29selected compact photos/crops verified. This supersedes the previous larger-portrait canonical selection only once deployed/live verified. Source/generated releases remain separate. See WORKLIST and workshop-layout-options brief for evidence/status. Preserve other previews, unrelatedPR150 and original dirty checkout.
+Rachel selected option3 for the canonical workshop: uniform-square integrated program. Source PR428/f1c39b8 and generated PR429/d8779dd; Pages46077206646 succeeded and API confirms exact revision. Live1422–320px checks:26rows/29loadeduniform squares, three single-row participant groups, no overflow/missing fragments, equal36pxconduct gaps and working policy link. All Program facts/content preserved; missing Miranda/Anna Lu credit added after all-photo audit, mandatory Jacob/Simons credit retained (eightentries). Canonical/compactpublicbytes match review; otherpreview/Home/Events/People/SearchHTML unchanged. This supersedes the larger-portrait canonical selection below; alternatives remain unlisted/noindex. Full proof/release details in workshop-layout-options brief/WORKLIST/CHANGELOG. Preserve unrelatedPR150/original dirty checkout. W1–W4remain retired.
 
 ## Workshop integrated program — November 27 published and live verified
 
