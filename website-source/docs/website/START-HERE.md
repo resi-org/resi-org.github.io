@@ -180,6 +180,7 @@ Consult [WORKLIST](WORKLIST.md) before changing branches or publishing. Build ou
 
 1. Read this guide, [design and editorial guidance](DESIGN-AND-EDITORIAL.md), the relevant [page reference](PAGES.md), and active work item.
 2. Check local changes, current source/production revisions and pending PRs. Preserve work from other people and chats.
+   New pages and components must inherit the established design; do not independently choose visual exceptions without Rachel's explicit direction. Before presenting them as matching, compare rendered equivalent content roles with an established page at the same viewport, including typography, spacing, content width and buttons. Shared imports alone are insufficient. Clearly separate local-preview checks from live-site checks. See AGENTS.md and the shared visual-system rule in DESIGN-AND-EDITORIAL.
 3. For News additions, use [shared News guidance](../../content/updates/_README.md): automatic Home eligibility with event priority and a three-slot cap; explicit exclusion/review policy. For event/seminar/group additions, apply [EVENT-ROUTING.md](EVENT-ROUTING.md) before selecting a content file or homepage placement. Edit shared source/data where appropriate. Review connected pages, search, metadata, anchors and mobile behavior.
 4. Record material decisions and evidence. Keep iterative work in its chat; use focused chats for distinct substantial outcomes. Capture tangents in the work list.
 5. Publish within Rachel's established authorization, then verify live behavior and update [CHANGELOG](CHANGELOG.md).
