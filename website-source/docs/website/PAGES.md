@@ -103,6 +103,8 @@ Preview-only November24 researcher route `/jobs/ai-safety-researcher/` is in iso
 
 November24 full job-page release approved: `src/pages/jobs/ai-safety-researcher.astro` owns `/jobs/ai-safety-researcher/`, reusing Base/Section and approved AJO copy. Public/indexable with canonical metadata, dedicated Search entry and sitemap URL; incoming link from People’s Work at RESI card. AJO job33484 remains the application destination; no local form. Supersedes the preview-only route hold above.
 
+November27 design alignment is published/live verified: the job page inherits the same12.75px prose, metadata scale,01b button dimensions and list rhythm as ordinary interior pages, with its article centered at the shared600px width. Do not restore the earlier local16px body/button exception. Shared headings/mobile title enlargement, approved text, metadata, anchors and AJO links remain. Source PR436/production PR437; see H6 and the role-page brief for evidence. All future pages follow the explicit design-inheritance/comparison requirement in AGENTS and DESIGN-AND-EDITORIAL.
+
 November24 header refinement published (D19): connected desktop label/row outline and smaller desktop Support. On this page stays directly after the intro whenever the full header collapses, including intermediate widths. Shared inventory/anchors and mobile layout are unchanged. SourcePR374 / publicationPR375 / successful Pages45489880591; see DESIGN/CHANGELOG.
 
 
