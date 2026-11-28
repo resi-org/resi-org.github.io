@@ -9,7 +9,7 @@ export interface PageSection {
 export const pageSections: Record<string, PageSection[]> = {
   '/about': [
     { label: 'How we work', href: '#how-we-work' },
-    { label: 'What success looks like', href: '#progress' },
+    { label: 'How we define success', href: '#progress' },
     { label: 'FAQ', href: '#questions' },
   ],
   '/research': [
