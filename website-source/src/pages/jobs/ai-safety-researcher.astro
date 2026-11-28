@@ -12,7 +12,7 @@ const applyUrl = 'https://academicjobsonline.org/ajo/jobs/33484';
 >
   <article class="job-page">
     <header class="page-hero">
-      <p class="job-back"><a href="/people#work-at-resi"><span aria-hidden="true">← </span>Work at RESI</a></p>
+      <p class="job-back meta"><a href="/people#work-at-resi"><span aria-hidden="true">← </span>Work at RESI</a></p>
       <h1>AI Safety Researcher</h1>
       <ul class="job-facts" aria-label="Position details">
         <li>Cambridge, Massachusetts · In person</li>
@@ -21,7 +21,7 @@ const applyUrl = 'https://academicjobsonline.org/ajo/jobs/33484';
       </ul>
       <div class="job-action">
         <a class="button" href={applyUrl} {...external(applyUrl)}>Apply on AJO</a>
-        <p class="review-note">Applications reviewed on a rolling basis.</p>
+        <p class="review-note meta">Applications reviewed on a rolling basis.</p>
       </div>
     </header>
 
@@ -94,19 +94,20 @@ const applyUrl = 'https://academicjobsonline.org/ajo/jobs/33484';
       <div class="job-action closing-action">
         <a class="button" href={applyUrl} {...external(applyUrl)}>Apply on AJO</a>
       </div>
-      <p class="job-contact">Questions about the role? <a href="mailto:jobs@resi.org">jobs@resi.org</a></p>
+      <p class="job-contact meta">Questions about the role? <a href="mailto:jobs@resi.org">jobs@resi.org</a></p>
     </Section>
   </article>
 </Base>
 
 <style>
-  .job-page {
-    font-size: 16px;
-    line-height: 1.65;
+  @media screen {
+    .job-page {
+      max-width: var(--content-width);
+      margin-inline: auto;
+    }
   }
   .job-back {
     margin-bottom: 18px;
-    font-size: 14px;
   }
   .job-facts {
     list-style: none;
@@ -123,29 +124,18 @@ const applyUrl = 'https://academicjobsonline.org/ajo/jobs/33484';
     align-items: center;
     gap: 12px 18px;
   }
-  .job-action .button {
-    min-height: 44px;
-    font-size: 16px;
-  }
   .job-action .review-note {
     margin: 0;
-    font-size: 14px;
-    color: var(--muted);
   }
   .job-list {
     padding-left: 1.25em;
     margin-bottom: 0;
-  }
-  .job-list li + li {
-    margin-top: 12px;
   }
   .closing-action {
     margin-top: 24px;
   }
   .job-contact {
     margin-top: 28px;
-    font-size: 14px;
-    color: var(--muted);
   }
   .job-contact a {
     color: inherit;
