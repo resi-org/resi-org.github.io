@@ -17,7 +17,7 @@ const applyUrl = 'https://academicjobsonline.org/ajo/jobs/33484';
       <ul class="job-facts" aria-label="Position details">
         <li>Cambridge, Massachusetts · In person</li>
         <li>Full-time · Ongoing</li>
-        <li>Postdoctoral level and above, or equivalent research experience in industry or independent research</li>
+        <li class="job-level">Postdoctoral level and above, or equivalent research experience in industry or independent research</li>
       </ul>
       <div class="job-action">
         <a class="button" href={applyUrl} {...external(applyUrl)}>Apply on AJO</a>
@@ -117,6 +117,9 @@ const applyUrl = 'https://academicjobsonline.org/ajo/jobs/33484';
   }
   .job-facts li + li {
     margin-top: 3px;
+  }
+  .job-facts li + li.job-level {
+    margin-top: 12px;
   }
   .job-action {
     display: flex;
