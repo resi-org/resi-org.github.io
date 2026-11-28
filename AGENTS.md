@@ -34,6 +34,7 @@ Before finishing substantive work, update only materially affected records. Disc
 
 ## Content and design
 
+- Every new page, section and component must inherit the established shared design. Reuse existing typography, sizing, spacing, content widths, buttons, colors and responsive behavior; do not introduce local alternatives for readability, prominence or aesthetics without Rachel's explicit exception or request for a treatment not already defined. General content/page approval does not approve an undisclosed design exception. If a required treatment is missing, identify that gap and develop it for review rather than silently inventing a new standard. Record explicit exceptions and their limited scope in DESIGN-AND-EDITORIAL.
 - Use shared components/data and check affected pages, metadata, search and stable links.
 - People and homepage portraits share `src/lib/portraits.ts` under website-source. Preserve actual face pixels and approved framing. Use the image-editing tool and visual review for requested AI image edits.
 - The visitor roster is deliberately hidden by `showVisitingResearchers = false`. Preserve this until Rachel supplies an approved replacement or requests restoration.
@@ -46,6 +47,8 @@ Before finishing substantive work, update only materially affected records. Disc
 - Keep private correspondence, raw transcripts, credentials and applicant/donor details out of public source/site files. Save necessary approved facts and sanitized decisions.
 
 ## Verification
+
+For new or changed layouts, compare the rendered result with an established page serving the same content roles, at the same viewport width. Check actual computed type sizes/weights/line heights, content alignment, spacing, button dimensions and responsive behavior; shared component imports alone do not establish a match. Review local overrides against the design record before calling a page consistent. Distinguish preview measurements from the live site's current appearance.
 
 For application changes, run appropriate checks from website-source (`npm run check`, `npm run build` as applicable), inspect affected desktop/mobile layouts, interactions, links and search/metadata. Reuse existing checks; avoid tests that merely repeat trivial implementation. Verify live changes separately after authorized publication.
 

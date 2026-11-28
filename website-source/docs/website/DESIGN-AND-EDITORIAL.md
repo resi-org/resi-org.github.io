@@ -39,6 +39,8 @@ Current conventions for resi.org, incorporating C.2 and subsequent approved chan
 
 ## Shared visual system
 
+- November27 clarification from Rachel: new pages, sections and components inherit this system by default. Established typography, dimensions, spacing, widths, action styles, colors and responsive rules are requirements. Do not create independent visual settings merely because a page is new or a different size seems more readable. Exceptions require Rachel's explicit direction, with the precise scope recorded here; ordinary approval of content or a page is not approval of an undisclosed departure. When a requested treatment is genuinely absent, surface the missing design decision for review. Verify rendered equivalent content roles against an established page at the same viewport, including computed typography and button/layout dimensions. Reusing Base or shared components is necessary but does not excuse overriding their design locally. State clearly whether evidence describes a local preview or live production.
+
 - November 12 approved intro/workshop spacing refinement: keep Home’s matched prose/card bottoms. Side-by-side prose uses a 20px first gap and 15px minimum bridge gap; phones use 16/12px. Featured card row gap 10px. Above 650px, featured speaker names may wrap naturally to use its full line width; narrower featured cards retain whole-name wrapping. This changes spacing only, preserving all content, type sizes, ordinary announcements and Events layout.
 
 - November 12 header support action: Support RESI is always bold (700) in desktop navigation, the mobile header button and mobile menu, while retaining its existing quiet filled treatment.
